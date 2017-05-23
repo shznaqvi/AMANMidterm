@@ -61,6 +61,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".AndroidDatabaseManager" />
+        <activity android:name=".AntenatalCareActivity" />
+        <activity android:name=".DeliveryActivity" />
+        <activity android:name=".PostpartumCareActivity" />
+        <activity android:name=".NeonatalHealthActivity"></activity>
     </application>
 
 </manifest>
