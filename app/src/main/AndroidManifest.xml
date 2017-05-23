@@ -64,7 +64,9 @@
         <activity android:name=".AntenatalCareActivity" />
         <activity android:name=".DeliveryActivity" />
         <activity android:name=".PostpartumCareActivity" />
-        <activity android:name=".NeonatalHealthActivity"></activity>
+        <activity android:name=".NeonatalHealthActivity" />
+        <activity android:name=".ChildMorbidityActivity" />
+        <activity android:name=".BirthsDeathsActivity"></activity>
     </application>
 
 </manifest>
