@@ -440,6 +440,29 @@
     <string name="cre06"> 6 مہینوں کی عمر میں </string>
     <string name="cre06Vitamin"> Vitamin A</string>
 
+    <!--- Strings Related to Part 3 Delivery-->
+    <string name="d01">گزشتہ حمل کا نتیجہ کیا تھا؟</string>
+    <string name="d01a">زندہ پیدائش</string>
+    <string name="d01b">مردہ پیدائش </string>
+    <string name="d01c">اسقاط حمل</string>
+    <string name="d02">زچگی کہاں ہوئی تھی؟ </string>
+    <string name="d02a">گورنمنٹ کے مرکز صحت میں</string>
+    <string name="d02b">پرائیوٹ مرکز صحت میں</string>
+    <string name="d02c">دیہی مرکز صحت میں  </string>
+    <string name="d02d">بنیادی مرکز صحت میں  </string>
+    <string name="d02e">پرائیوٹ مرکز صحت</string>
+    <string name="d02f">گھر میں  </string>
+    <string name="d03">زچگی کہاں ہوئی تھی؟ </string>
+    <string name="d03a">لیڈی ڈاکٹر  </string>
+    <string name="d03b">نرس/ایل ایچ وی  </string>
+    <string name="d03c">دائی   </string>
+    <string name="d03d">خاندان کے کسی فرد نے  </string>
+    <string name="d03e">کوئی نہیں</string>
+    <string name="d04">زچگی کی نوعیت کیا تھی؟</string>
+    <string name="d04a">نارمل زچگی</string>
+    <string name="d04b">اوزار کے زریعے زچگی</string>
+    <string name="d04c">بڑا اپریشن کے زریعے</string>
+
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
