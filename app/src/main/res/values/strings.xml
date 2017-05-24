@@ -399,6 +399,48 @@
     <string name="mnResp"> جواب دہندہ </string>
     <string name="title_activity_login">Log in</string>
 
+    <string name="crnheading"> Section N : Births and Deaths in the Last One Year </string>
+    <string name="crnheadingsub"> پہچلے سال جنوری سے دسمبر 2016 تک آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
+    <string name="crna"> Indicators </string>
+    <string name="crnb"> Statistics
+    None = 0 </string>
+    <string name="crnba"> Number </string>
+    <string name="crnc"> تاریخ پیدائش </string>
+    <string name="crnd"> تاریخ وفات </string>
+    <string name="crn01"> حمل ضائع ہونا </string>
+    <string name="crn02"> مردہ پیدائش </string>
+    <string name="crn03"> زندہ پیدائش </string>
+    <string name="crn04"> 7 دن کے اندر بچوں کی اموات </string>
+    <string name="crn05"> 8 سے 28 دن میں بچوں کی اموات </string>
+    <string name="crn06">  29 سے 364 دنوں کے اندر بچوں کی اموات </string>
+    <string name="crn07">    12 سے 59 ماہ کے اندر بچوں کی اموات </string>
+    <string name="crn08"> ماں کی حمل کے دوران یا زچگی کے دوران یا زچگی کے 42 دن تک کی اموات </string>
+
+    <string name="cre01"> کیا کبھی بچے نے کسی بیماری کی ویکسین لگوائی ہے بشمول پولیو کی قومی مہم کے دوران
+    اگر کارڈ موجود ہے تو اس میں سے کس طرح کی ویکسینز لگوائی ہیں درج کریں۔ </string>
+    <string name="cre01a">کیا کارڈ موجود ہے؟</string>
+    <string name="card"> کارڈ کے مطابق ویسکسینشن کی تصدیق </string>
+    <string name="mother"> ماں کے مطابق </string>
+    <string name="cre02"> پیدائش کے وقت </string>
+    <string name="cre02bcg"> BCG </string>
+    <string name="cre02polio"> Polio 0 </string>
+    <string name="cre03"> 6 ہفتوں کی عمر میں </string>
+    <string name="cre03penta"> Penta 1 </string>
+    <string name="cre03pcv"> PCV 1 </string>
+    <string name="cre03opv"> OPV 1 </string>
+    <string name="cre04"> 10 ہفتوں کی عمر میں </string>
+    <string name="cre04penta"> Penta 2 </string>
+    <string name="cre04pcv"> PCV 2 </string>
+    <string name="cre04opv"> OPV 2 </string>
+    <string name="cre05"> 14 ہفتوں کی عمر میں </string>
+    <string name="cre05penta"> Penta 3 </string>
+    <string name="cre05pcv"> PCV 3 </string>
+    <string name="cre05opv"> OPV 3 </string>
+    <string name="cre05ipv"> IPV </string>
+    <string name="cre06"> 6 مہینوں کی عمر میں </string>
+    <string name="cre06Vitamin"> Vitamin A</string>
+
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

@@ -4,15 +4,13 @@ package edu.aku.hassannaqvi.amanmidterm;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -26,151 +24,229 @@ public class ChildVaccinationActivity extends Activity {
 
     @BindView(R.id.activity_section_c)
     ScrollView activitySectionC;
-    @BindView(R.id.txtmnc1)
-    TextView txtmnc1;
-    @BindView(R.id.mnc1)
-    RadioGroup mnc1;
-    @BindView(R.id.mnc1a)
-    RadioButton mnc1a;
-    @BindView(R.id.mnc1b)
-    RadioButton mnc1b;
-    @BindView(R.id.mnc1c)
-    RadioButton mnc1c;
-    @BindView(R.id.txtmnc2)
-    TextView txtmnc2;
-    @BindView(R.id.mnc2)
-    RadioGroup mnc2;
-    @BindView(R.id.mnc2a)
-    RadioButton mnc2a;
-    @BindView(R.id.mnc2b)
-    RadioButton mnc2b;
-    @BindView(R.id.mnc2c)
-    RadioButton mnc2c;
-    @BindView(R.id.fldGrpmnc3)
-    LinearLayout fldGrpmnc3;
-    @BindView(R.id.mnc3)
-    RadioGroup mnc3;
-    @BindView(R.id.mnc3a)
-    RadioButton mnc3a;
-    @BindView(R.id.mnc3b)
-    RadioButton mnc3b;
-    @BindView(R.id.fldGrpmnc4)
-    LinearLayout fldGrpmnc4;
-    @BindView(R.id.txtmnc4)
-    TextView txtmnc4;
-    @BindView(R.id.mnc4)
-    RadioGroup mnc4;
-    @BindView(R.id.mnc4a)
-    RadioButton mnc4a;
-    @BindView(R.id.mnc4b)
-    RadioButton mnc4b;
-    @BindView(R.id.mnc4c)
-    RadioButton mnc4c;
-    @BindView(R.id.mnc5bcg)
-    EditText mnc5bcg;
-    @BindView(R.id.mnc5opv0)
-    EditText mnc5opv0;
-    @BindView(R.id.mnc5p1)
-    EditText mnc5p1;
-    @BindView(R.id.mnc5pcv1)
-    EditText mnc5pcv1;
-    @BindView(R.id.mnc5opv1)
-    EditText mnc5opv1;
-    @BindView(R.id.mnc5p2)
-    EditText mnc5p2;
-    @BindView(R.id.mnc5pcv2)
-    EditText mnc5pcv2;
-    @BindView(R.id.mnc5opv2)
-    EditText mnc5opv2;
-    @BindView(R.id.mnc5p3)
-    EditText mnc5p3;
-    @BindView(R.id.mnc5pcv3)
-    EditText mnc5pcv3;
-    @BindView(R.id.mnc5opv3)
-    EditText mnc5opv3;
-    @BindView(R.id.mnc5ipv1)
-    EditText mnc5ipv1;
-    @BindView(R.id.mnc5m1)
-    EditText mnc5m1;
-    @BindView(R.id.mnc5ipv2)
-    EditText mnc5ipv2;
-    @BindView(R.id.mnc5m2)
-    EditText mnc5m2;
-    @BindView(R.id.mnc5ipv3)
-    EditText mnc5ipv3;
-    @BindView(R.id.txtmnc6)
-    TextView txtmnc6;
-    @BindView(R.id.mnc6)
-    RadioGroup mnc6;
-    @BindView(R.id.mnc6a)
-    RadioButton mnc6a;
-    @BindView(R.id.mnc6b)
-    RadioButton mnc6b;
-    @BindView(R.id.mnc6c)
-    RadioButton mnc6c;
-    @BindView(R.id.txtmnc7)
-    TextView txtmnc7;
-    @BindView(R.id.mnc7)
-    RadioGroup mnc7;
-    @BindView(R.id.mnc7a)
-    RadioButton mnc7a;
-    @BindView(R.id.mnc7b)
-    RadioButton mnc7b;
-    @BindView(R.id.mnc7c)
-    RadioButton mnc7c;
-    @BindView(R.id.txtmnc8)
-    TextView txtmnc8;
-    @BindView(R.id.mnc8)
-    EditText mnc8;
-    @BindView(R.id.txtmnc9)
-    TextView txtmnc9;
-    @BindView(R.id.mnc9)
-    RadioGroup mnc9;
-    @BindView(R.id.mnc9a)
-    RadioButton mnc9a;
-    @BindView(R.id.mnc9b)
-    RadioButton mnc9b;
-    @BindView(R.id.mnc9c)
-    RadioButton mnc9c;
-    @BindView(R.id.mnc10yy)
-    EditText mnc10yy;
-    @BindView(R.id.mnc10mm)
-    EditText mnc10mm;
-    @BindView(R.id.mnc11)
-    RadioGroup mnc11;
-    @BindView(R.id.mnc11a)
-    RadioButton mnc11a;
-    @BindView(R.id.mnc11b)
-    RadioButton mnc11b;
-    @BindView(R.id.mnc11c)
-    RadioButton mnc11c;
-    @BindView(R.id.mnc11d)
-    RadioButton mnc11d;
-    @BindView(R.id.mnc11name)
-    EditText mnc11name;
-    @BindView(R.id.mnc12)
-    RadioGroup mnc12;
-    @BindView(R.id.mnc12a)
-    RadioButton mnc12a;
-    @BindView(R.id.mnc12b)
-    RadioButton mnc12b;
-    @BindView(R.id.txtmnc13)
-    TextView txtmnc13;
-    @BindView(R.id.mnc13)
-    RadioGroup mnc13;
-    @BindView(R.id.mnc13a)
-    RadioButton mnc13a;
-    @BindView(R.id.mnc13b)
-    RadioButton mnc13b;
-    @BindView(R.id.mnc13c)
-    RadioButton mnc13c;
-    @BindView(R.id.mnc13d)
-    RadioButton mnc13d;
+    @BindView(R.id.cre01)
+    RadioGroup cre01;
+    @BindView(R.id.cre0101)
+    RadioButton cre0101;
+    @BindView(R.id.cre0102)
+    RadioButton cre0102;
+    @BindView(R.id.fldGrpcre01)
+    LinearLayout fldGrpcre01;
+    @BindView(R.id.cre01a)
+    RadioGroup cre01a;
+    @BindView(R.id.cre01a01)
+    RadioButton cre01a01;
+    @BindView(R.id.cre01a02)
+    RadioButton cre01a02;
+    @BindView(R.id.fldGrpBcgM)
+    LinearLayout fldGrpBcgM;
+    @BindView(R.id.cre0201b)
+    RadioGroup cre0201b;
+    @BindView(R.id.cre0201b01)
+    RadioButton cre0201b01;
+    @BindView(R.id.cre0201b02)
+    RadioButton cre0201b02;
+    @BindView(R.id.fldGrpBcg)
+    LinearLayout fldGrpBcg;
+    @BindView(R.id.cre0201a)
+    RadioGroup cre0201a;
+    @BindView(R.id.cre0201a01)
+    RadioButton cre0201a01;
+    @BindView(R.id.cre0201a02)
+    RadioButton cre0201a02;
+    @BindView(R.id.fldGrpPolioM)
+    LinearLayout fldGrpPolioM;
+    @BindView(R.id.cre0202b)
+    RadioGroup cre0202b;
+    @BindView(R.id.cre0202b01)
+    RadioButton cre0202b01;
+    @BindView(R.id.cre0202b02)
+    RadioButton cre0202b02;
+    @BindView(R.id.fldGrpPolio)
+    LinearLayout fldGrpPolio;
+    @BindView(R.id.cre0202a)
+    RadioGroup cre0202a;
+    @BindView(R.id.cre0202a01)
+    RadioButton cre0202a01;
+    @BindView(R.id.cre0202a02)
+    RadioButton cre0202a02;
+    @BindView(R.id.fldGrpPenta1M)
+    LinearLayout fldGrpPenta1M;
+    @BindView(R.id.cre0301b)
+    RadioGroup cre0301b;
+    @BindView(R.id.cre0301b01)
+    RadioButton cre0301b01;
+    @BindView(R.id.cre0301b02)
+    RadioButton cre0301b02;
+    @BindView(R.id.fldGrpPenta1)
+    LinearLayout fldGrpPenta1;
+    @BindView(R.id.cre0301a)
+    RadioGroup cre0301a;
+    @BindView(R.id.cre0301a01)
+    RadioButton cre0301a01;
+    @BindView(R.id.cre0301a02)
+    RadioButton cre0301a02;
+    @BindView(R.id.fldGrppcv1M)
+    LinearLayout fldGrppcv1M;
+    @BindView(R.id.cre0302b)
+    RadioGroup cre0302b;
+    @BindView(R.id.cre0302b01)
+    RadioButton cre0302b01;
+    @BindView(R.id.cre0302b02)
+    RadioButton cre0302b02;
+    @BindView(R.id.fldGrppcv1)
+    LinearLayout fldGrppcv1;
+    @BindView(R.id.cre0302a)
+    RadioGroup cre0302a;
+    @BindView(R.id.cre0302a01)
+    RadioButton cre0302a01;
+    @BindView(R.id.cre0302a02)
+    RadioButton cre0302a02;
+    @BindView(R.id.fldGrpopv1M)
+    LinearLayout fldGrpopv1M;
+    @BindView(R.id.cre0303b)
+    RadioGroup cre0303b;
+    @BindView(R.id.cre0303b01)
+    RadioButton cre0303b01;
+    @BindView(R.id.cre0303b02)
+    RadioButton cre0303b02;
+    @BindView(R.id.fldGrpopv1)
+    LinearLayout fldGrpopv1;
+    @BindView(R.id.cre0303a)
+    RadioGroup cre0303a;
+    @BindView(R.id.cre0303a01)
+    RadioButton cre0303a01;
+    @BindView(R.id.cre0303a02)
+    RadioButton cre0303a02;
+    @BindView(R.id.fldGrppenta2M)
+    LinearLayout fldGrppenta2M;
+    @BindView(R.id.cre0401b)
+    RadioGroup cre0401b;
+    @BindView(R.id.cre0401b01)
+    RadioButton cre0401b01;
+    @BindView(R.id.cre0401b02)
+    RadioButton cre0401b02;
+    @BindView(R.id.fldGrppenta2)
+    LinearLayout fldGrppenta2;
+    @BindView(R.id.cre0401a)
+    RadioGroup cre0401a;
+    @BindView(R.id.cre0401a01)
+    RadioButton cre0401a01;
+    @BindView(R.id.cre0401a02)
+    RadioButton cre0401a02;
+    @BindView(R.id.fldGrppcv2M)
+    LinearLayout fldGrppcv2M;
+    @BindView(R.id.cre0402b)
+    RadioGroup cre0402b;
+    @BindView(R.id.cre0402b01)
+    RadioButton cre0402b01;
+    @BindView(R.id.cre0402b02)
+    RadioButton cre0402b02;
+    @BindView(R.id.fldGrppcv2)
+    LinearLayout fldGrppcv2;
+    @BindView(R.id.cre0402a)
+    RadioGroup cre0402a;
+    @BindView(R.id.cre0402a01)
+    RadioButton cre0402a01;
+    @BindView(R.id.cre0402a02)
+    RadioButton cre0402a02;
+    @BindView(R.id.fldGrpopv2M)
+    LinearLayout fldGrpopv2M;
+    @BindView(R.id.cre0403b)
+    RadioGroup cre0403b;
+    @BindView(R.id.cre0403b01)
+    RadioButton cre0403b01;
+    @BindView(R.id.cre0403b02)
+    RadioButton cre0403b02;
+    @BindView(R.id.fldGrpopv2)
+    LinearLayout fldGrpopv2;
+    @BindView(R.id.cre0403a)
+    RadioGroup cre0403a;
+    @BindView(R.id.cre0403a01)
+    RadioButton cre0403a01;
+    @BindView(R.id.cre0403a02)
+    RadioButton cre0403a02;
+    @BindView(R.id.fldGrpPenta3M)
+    LinearLayout fldGrpPenta3M;
+    @BindView(R.id.cre0501b)
+    RadioGroup cre0501b;
+    @BindView(R.id.cre0501b01)
+    RadioButton cre0501b01;
+    @BindView(R.id.cre0501b02)
+    RadioButton cre0501b02;
+    @BindView(R.id.fldGrpenta3)
+    LinearLayout fldGrpenta3;
+    @BindView(R.id.cre0501a)
+    RadioGroup cre0501a;
+    @BindView(R.id.cre0501a01)
+    RadioButton cre0501a01;
+    @BindView(R.id.cre0501a02)
+    RadioButton cre0501a02;
+    @BindView(R.id.fldGrppcv3M)
+    LinearLayout fldGrppcv3M;
+    @BindView(R.id.cre0502b)
+    RadioGroup cre0502b;
+    @BindView(R.id.cre0502b01)
+    RadioButton cre0502b01;
+    @BindView(R.id.cre0502b02)
+    RadioButton cre0502b02;
+    @BindView(R.id.fldGrppcv3)
+    LinearLayout fldGrppcv3;
+    @BindView(R.id.cre0502a)
+    RadioGroup cre0502a;
+    @BindView(R.id.cre0502a01)
+    RadioButton cre0502a01;
+    @BindView(R.id.cre0502a02)
+    RadioButton cre0502a02;
+    @BindView(R.id.fldGrpopv3M)
+    LinearLayout fldGrpopv3M;
+    @BindView(R.id.cre0503b)
+    RadioGroup cre0503b;
+    @BindView(R.id.cre0503b01)
+    RadioButton cre0503b01;
+    @BindView(R.id.cre0503b02)
+    RadioButton cre0503b02;
+    @BindView(R.id.fldGrpopv3)
+    LinearLayout fldGrpopv3;
+    @BindView(R.id.cre0503a)
+    RadioGroup cre0503a;
+    @BindView(R.id.cre0503a01)
+    RadioButton cre0503a01;
+    @BindView(R.id.cre0503a02)
+    RadioButton cre0503a02;
+    @BindView(R.id.fldGrpipvM)
+    LinearLayout fldGrpipvM;
+    @BindView(R.id.cre0504b)
+    RadioGroup cre0504b;
+    @BindView(R.id.cre0504b01)
+    RadioButton cre0504b01;
+    @BindView(R.id.cre0504b02)
+    RadioButton cre0504b02;
+    @BindView(R.id.fldGrpipv)
+    LinearLayout fldGrpipv;
+    @BindView(R.id.cre0504a)
+    RadioGroup cre0504a;
+    @BindView(R.id.cre0504a01)
+    RadioButton cre0504a01;
+    @BindView(R.id.cre0504a02)
+    RadioButton cre0504a02;
+    @BindView(R.id.fldGrpVitaminAM)
+    LinearLayout fldGrpVitaminAM;
+    @BindView(R.id.cre0601b)
+    RadioGroup cre0601b;
+    @BindView(R.id.cre0601b01)
+    RadioButton cre0601b01;
+    @BindView(R.id.cre0601b02)
+    RadioButton cre0601b02;
+    @BindView(R.id.fldGrpVitaminA)
+    LinearLayout fldGrpVitaminA;
+    @BindView(R.id.cre0601a)
+    RadioGroup cre0601a;
+    @BindView(R.id.cre0601a01)
+    RadioButton cre0601a01;
+    @BindView(R.id.cre0601a02)
+    RadioButton cre0601a02;
 
-    @BindView(R.id.fldGrpmnc8)
-    LinearLayout fldGrpmnc8;
-    @BindView(R.id.fldGrpmnc10)
-    LinearLayout fldGrpmnc10;
 
 
     @Override
@@ -179,81 +255,131 @@ public class ChildVaccinationActivity extends Activity {
         setContentView(R.layout.activity_child_vaccination);
         ButterKnife.bind(this);
 
-
-        txtmnc1.setText(txtmnc1.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc2.setText(txtmnc2.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc4.setText(txtmnc4.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc6.setText(txtmnc6.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc7.setText(txtmnc7.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc8.setText(txtmnc8.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc9.setText(txtmnc9.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-
-
-        // SKIP PATTERNS
-        mnc2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        cre01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnc2a.isChecked()) {
-                    fldGrpmnc3.setVisibility(View.VISIBLE);
-                    fldGrpmnc4.setVisibility(View.GONE);
-                    mnc4.clearCheck();
-                }
-                if (mnc2b.isChecked() || mnc2c.isChecked()) {
-                    fldGrpmnc3.setVisibility(View.GONE);
-                    fldGrpmnc4.setVisibility(View.VISIBLE);
-                    mnc3.clearCheck();
-                }
-            }
-        });
-        mnc6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnc6a.isChecked()) {
-                    fldGrpmnc8.setVisibility(View.VISIBLE);
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (cre0101.isChecked()) {
+                    fldGrpcre01.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpmnc8.setVisibility(View.GONE);
-                    mnc8.setText(null);
-                }
-            }
-        });
-        mnc6a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                                             @Override
-                                             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                                 if (isChecked) {
-                                                     fldGrpmnc8.setVisibility(View.VISIBLE);
-                                                 } else {
-                                                     fldGrpmnc8.setVisibility(View.GONE);
-                                                     mnc8.setText(null);
-                                                 }
-                                             }
-                                         }
-        );
-        mnc9.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnc9a.isChecked()) {
-                    fldGrpmnc10.setVisibility(View.VISIBLE);
-                }
-                if (mnc9b.isChecked() || mnc9c.isChecked()) {
-                    fldGrpmnc10.setVisibility(View.GONE);
-                    mnc10yy.setText(null);
-                    mnc10mm.setText(null);
-                    mnc11.clearCheck();
-                    mnc11name.setText(null);
+                    fldGrpcre01.setVisibility(View.GONE);
+                    cre01a.clearCheck();
+                    cre0201a.clearCheck();
+                    cre0201b.clearCheck();
+                    cre0202a.clearCheck();
+                    cre0202b.clearCheck();
+                    cre0301a.clearCheck();
+                    cre0301b.clearCheck();
+                    cre0302a.clearCheck();
+                    cre0302b.clearCheck();
+                    cre0303a.clearCheck();
+                    cre0303b.clearCheck();
+                    cre0401a.clearCheck();
+                    cre0401b.clearCheck();
+                    cre0402a.clearCheck();
+                    cre0402b.clearCheck();
+                    cre0403a.clearCheck();
+                    cre0403b.clearCheck();
+                    cre0501a.clearCheck();
+                    cre0501b.clearCheck();
+                    cre0502a.clearCheck();
+                    cre0502b.clearCheck();
+                    cre0503a.clearCheck();
+                    cre0503b.clearCheck();
+                    cre0504a.clearCheck();
+                    cre0504b.clearCheck();
+                    cre0601a.clearCheck();
+                    cre0601b.clearCheck();
+
                 }
             }
         });
 
-        mnc11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        cre01a.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnc11d.isChecked()) {
-                    mnc11name.setVisibility(View.VISIBLE);
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (cre01a01.isChecked()) {
+                    fldGrpBcg.setVisibility(View.VISIBLE);
+                    fldGrpBcgM.setVisibility(View.GONE);
+                    cre0201b.clearCheck();
+                    cre0202b.clearCheck();
+                    fldGrpPolio.setVisibility(View.VISIBLE);
+                    fldGrpPolioM.setVisibility(View.GONE);
+                    cre0301b.clearCheck();
+                    cre0302b.clearCheck();
+                    cre0303b.clearCheck();
+                    fldGrpPenta1.setVisibility(View.VISIBLE);
+                    fldGrpPenta1M.setVisibility(View.GONE);
+                    cre0401b.clearCheck();
+                    cre0402b.clearCheck();
+                    cre0403b.clearCheck();
+                    fldGrppcv1.setVisibility(View.VISIBLE);
+                    fldGrppcv1M.setVisibility(View.GONE);
+                    cre0501b.clearCheck();
+                    cre0502b.clearCheck();
+                    cre0503b.clearCheck();
+                    fldGrpopv1.setVisibility(View.VISIBLE);
+                    fldGrpopv1M.setVisibility(View.GONE);
+                    cre0601b.clearCheck();
+                    fldGrppenta2.setVisibility(View.VISIBLE);
+                    fldGrppenta2M.setVisibility(View.GONE);
+                    fldGrppcv2.setVisibility(View.VISIBLE);
+                    fldGrppcv2M.setVisibility(View.GONE);
+                    fldGrpopv2.setVisibility(View.VISIBLE);
+                    fldGrpopv2M.setVisibility(View.GONE);
+                    fldGrpenta3.setVisibility(View.VISIBLE);
+                    fldGrpPenta3M.setVisibility(View.GONE);
+                    fldGrppcv3.setVisibility(View.VISIBLE);
+                    fldGrppcv3M.setVisibility(View.GONE);
+                    fldGrpopv3.setVisibility(View.VISIBLE);
+                    fldGrpopv3M.setVisibility(View.GONE);
+                    fldGrpipv.setVisibility(View.VISIBLE);
+                    fldGrpipvM.setVisibility(View.GONE);
+                    fldGrpVitaminA.setVisibility(View.VISIBLE);
+                    fldGrpVitaminAM.setVisibility(View.GONE);
                 } else {
-                    mnc11name.setVisibility(View.GONE);
+                    fldGrpBcg.setVisibility(View.GONE);
+                    fldGrpBcgM.setVisibility(View.VISIBLE);
+                    cre0201a.clearCheck();
+                    fldGrpPolio.setVisibility(View.GONE);
+                    fldGrpPolioM.setVisibility(View.VISIBLE);
+                    cre0202a.clearCheck();
+                    fldGrpPenta1.setVisibility(View.GONE);
+                    fldGrpPenta1M.setVisibility(View.VISIBLE);
+                    cre0301a.clearCheck();
+                    fldGrppcv1.setVisibility(View.GONE);
+                    fldGrppcv1M.setVisibility(View.VISIBLE);
+                    cre0302a.clearCheck();
+                    fldGrpopv1.setVisibility(View.GONE);
+                    fldGrpopv1M.setVisibility(View.VISIBLE);
+                    cre0303a.clearCheck();
+                    fldGrppenta2.setVisibility(View.GONE);
+                    fldGrppenta2M.setVisibility(View.VISIBLE);
+                    cre0401a.clearCheck();
+                    fldGrppcv2.setVisibility(View.GONE);
+                    fldGrppcv2M.setVisibility(View.VISIBLE);
+                    cre0402a.clearCheck();
+                    fldGrpopv2.setVisibility(View.GONE);
+                    fldGrpopv2M.setVisibility(View.VISIBLE);
+                    cre0403a.clearCheck();
+                    fldGrpenta3.setVisibility(View.GONE);
+                    fldGrpPenta3M.setVisibility(View.VISIBLE);
+                    cre0501a.clearCheck();
+                    fldGrppcv3.setVisibility(View.GONE);
+                    fldGrppcv3M.setVisibility(View.VISIBLE);
+                    cre0502a.clearCheck();
+                    fldGrpopv3.setVisibility(View.GONE);
+                    fldGrpopv3M.setVisibility(View.VISIBLE);
+                    cre0503a.clearCheck();
+                    fldGrpipv.setVisibility(View.GONE);
+                    fldGrpipvM.setVisibility(View.VISIBLE);
+                    cre0504a.clearCheck();
+                    fldGrpVitaminA.setVisibility(View.GONE);
+                    fldGrpVitaminAM.setVisibility(View.VISIBLE);
+                    cre0601a.clearCheck();
                 }
             }
         });
+
 
     }
 
@@ -288,180 +414,47 @@ public class ChildVaccinationActivity extends Activity {
     private void SaveDraft() throws JSONException {
         JSONObject sc = new JSONObject();
 
-        switch (mnc1.getCheckedRadioButtonId()) {
-            case R.id.mnc1a:
-                sc.put("mnc1", "1");
-                break;
-            case R.id.mnc1b:
-                sc.put("mnc1", "2");
-                break;
-            case R.id.mnc1c:
-                sc.put("mnc1", "99");
-                break;
-            default:
-                sc.put("mnc1", "default");
-                break;
-        }
-        switch (mnc2.getCheckedRadioButtonId()) {
-            case R.id.mnc2a:
-                sc.put("mnc2", "1");
-                break;
-            case R.id.mnc2b:
-                sc.put("mnc2", "2");
-                break;
-            case R.id.mnc2c:
-                sc.put("mnc2", "99");
-                break;
-            default:
-                sc.put("mnc2", "default");
-                break;
-        }
-        switch (mnc3.getCheckedRadioButtonId()) {
-            case R.id.mnc3a:
-                sc.put("mnc3", "1");
-                break;
-            case R.id.mnc3b:
-                sc.put("mnc3", "2");
-                break;
-            default:
-                sc.put("mnc3", "default");
-                break;
-        }
+        sc.put("cre01", cre0101.isChecked() ? "1" : cre0102.isChecked() ? "2" : "0");
+        sc.put("cre01a", cre01a01.isChecked() ? "1" : cre01a02.isChecked() ? "2" : "0");
+        // BCG At Birth
+        sc.put("cre0201a", cre0201a01.isChecked() ? "1" : cre0201a02.isChecked() ? "2" : "0");
+        sc.put("cre0201b", cre0201b01.isChecked() ? "1" : cre0201b02.isChecked() ? "2" : "0");
+        //Polio At Birth
+        sc.put("cre0202a", cre0202a01.isChecked() ? "1" : cre0202a02.isChecked() ? "2" : "0");
+        sc.put("cre0202b", cre0202b01.isChecked() ? "1" : cre0202b02.isChecked() ? "2" : "0");
+        // Penta 1 at 6 weeks
+        sc.put("cre0301a", cre0301a01.isChecked() ? "1" : cre0301a02.isChecked() ? "2" : "0");
+        sc.put("cre0301b", cre0301b01.isChecked() ? "1" : cre0301b02.isChecked() ? "2" : "0");
+        //PCV 1 at 6 weeks
+        sc.put("cre0302a", cre0302a01.isChecked() ? "1" : cre0302a02.isChecked() ? "2" : "0");
+        sc.put("cre0302b", cre0302b01.isChecked() ? "1" : cre0302b02.isChecked() ? "2" : "0");
+        // OPV 1 at 6 weeks
+        sc.put("cre0303a", cre0303a01.isChecked() ? "1" : cre0303a02.isChecked() ? "2" : "0");
+        sc.put("cre0303b", cre0303b01.isChecked() ? "1" : cre0303b02.isChecked() ? "2" : "0");
+        // Penta 2 at 10 weeks
+        sc.put("cre0401a", cre0401a01.isChecked() ? "1" : cre0401a02.isChecked() ? "2" : "0");
+        sc.put("cre0401b", cre0401b01.isChecked() ? "1" : cre0401b02.isChecked() ? "2" : "0");
+        // PCV 2 at 6 weeks
+        sc.put("cre0402a", cre0402a01.isChecked() ? "1" : cre0402a02.isChecked() ? "2" : "0");
+        sc.put("cre0402b", cre0402b01.isChecked() ? "1" : cre0402b02.isChecked() ? "2" : "0");
+        // OPV 2 at 6 weeks
+        sc.put("cre0403a", cre0403a01.isChecked() ? "1" : cre0403a02.isChecked() ? "2" : "0");
+        sc.put("cre0403b", cre0403b01.isChecked() ? "1" : cre0403b02.isChecked() ? "2" : "0");
+        // Penta 3 at 14 weeks
+        sc.put("cre0501a", cre0501a01.isChecked() ? "1" : cre0501a02.isChecked() ? "2" : "0");
+        sc.put("cre0501b", cre0501b01.isChecked() ? "1" : cre0501b02.isChecked() ? "2" : "0");
+        // PCV 3 at 14 weeks
+        sc.put("cre0502a", cre0502a01.isChecked() ? "1" : cre0502a02.isChecked() ? "2" : "0");
+        sc.put("cre0502b", cre0502b01.isChecked() ? "1" : cre0502b02.isChecked() ? "2" : "0");
+        // OPV 3 at 14 weeks
+        sc.put("cre0503a", cre0503a01.isChecked() ? "1" : cre0503a02.isChecked() ? "2" : "0");
+        sc.put("cre0503b", cre0503b01.isChecked() ? "1" : cre0503b02.isChecked() ? "2" : "0");
+        // IPV at 14 weeks
+        sc.put("cre0504a", cre0504a01.isChecked() ? "1" : cre0504a02.isChecked() ? "2" : "0");
+        sc.put("cre0504b", cre0504b01.isChecked() ? "1" : cre0504b02.isChecked() ? "2" : "0");
 
-        switch (mnc4.getCheckedRadioButtonId()) {
-            case R.id.mnc4a:
-                sc.put("mnc4", "1");
-                break;
-            case R.id.mnc4b:
-                sc.put("mnc4", "2");
-                break;
-            case R.id.mnc4c:
-                sc.put("mnc4", "99");
-                break;
-            default:
-                sc.put("mnc4", "default");
-                break;
-        }
-
-        sc.put("mnc5bcg", mnc5bcg.getText().toString());
-        sc.put("mnc5opv0", mnc5opv0.getText().toString());
-        sc.put("mnc5opv1", mnc5opv1.getText().toString());
-        sc.put("mnc5opv2", mnc5opv2.getText().toString());
-        sc.put("mnc5opv3", mnc5opv3.getText().toString());
-        sc.put("mnc5pcv1", mnc5pcv1.getText().toString());
-        sc.put("mnc5pcv2", mnc5pcv2.getText().toString());
-        sc.put("mnc5pcv3", mnc5pcv3.getText().toString());
-        sc.put("mnc5ipv1", mnc5ipv1.getText().toString());
-        sc.put("mnc5ipv2", mnc5ipv2.getText().toString());
-        sc.put("mnc5ipv3", mnc5ipv3.getText().toString());
-        sc.put("mnc5ipv3", mnc5pcv2.getText().toString());
-        sc.put("mnc5p1", mnc5p1.getText().toString());
-        sc.put("mnc5p2", mnc5p2.getText().toString());
-        sc.put("mnc5p3", mnc5p3.getText().toString());
-        sc.put("mnc5m1", mnc5m1.getText().toString());
-        sc.put("mnc5m2", mnc5m2.getText().toString());
-
-        switch (mnc6.getCheckedRadioButtonId()) {
-            case R.id.mnc6a:
-                sc.put("mnc6", "1");
-                break;
-            case R.id.mnc6b:
-                sc.put("mnc6", "2");
-                break;
-            case R.id.mnc6c:
-                sc.put("mnc6", "99");
-                break;
-
-            default:
-                sc.put("mnc6", "default");
-                break;
-        }
-
-        switch (mnc7.getCheckedRadioButtonId()) {
-            case R.id.mnc7a:
-                sc.put("mnc7", "1");
-                break;
-            case R.id.mnc7b:
-                sc.put("mnc7", "2");
-                break;
-            case R.id.mnc7c:
-                sc.put("mnc7", "99");
-                break;
-
-            default:
-                sc.put("mnc7", "default");
-                break;
-        }
-
-        switch (mnc9.getCheckedRadioButtonId()) {
-            case R.id.mnc9a:
-                sc.put("mnc9", "1");
-                break;
-            case R.id.mnc9b:
-                sc.put("mnc9", "2");
-                break;
-            case R.id.mnc9c:
-                sc.put("mnc9", "99");
-                break;
-
-            default:
-                sc.put("mnc9", "default");
-                break;
-        }
-
-        sc.put("mnc8", mnc8.getText().toString());
-        sc.put("mnc10yy", mnc10yy.getText().toString());
-        sc.put("mnc10mm", mnc10mm.getText().toString());
-
-
-        switch (mnc11.getCheckedRadioButtonId()) {
-            case R.id.mnc11a:
-                sc.put("mnc11", "1");
-                break;
-            case R.id.mnc11b:
-                sc.put("mnc11", "2");
-                break;
-            case R.id.mnc11c:
-                sc.put("mnc11", "3");
-                break;
-            case R.id.mnc11d:
-                sc.put("mnc11", "4");
-                break;
-            default:
-                sc.put("mnc11", "default");
-                break;
-        }
-        sc.put("mnc11name", mnc11name.getText().toString());
-
-        switch (mnc12.getCheckedRadioButtonId()) {
-            case R.id.mnc12a:
-                sc.put("mnc12", "1");
-                break;
-            case R.id.mnc12b:
-                sc.put("mnc12", "2");
-                break;
-            default:
-                sc.put("mnc12", "default");
-                break;
-        }
-        switch (mnc13.getCheckedRadioButtonId()) {
-            case R.id.mnc13a:
-                sc.put("mnc13", "1");
-                break;
-            case R.id.mnc13b:
-                sc.put("mnc13", "2");
-                break;
-            case R.id.mnc13c:
-                sc.put("mnc13", "3");
-                break;
-            case R.id.mnc13d:
-                sc.put("mnc13", "99");
-                break;
-            default:
-                sc.put("mnc13", "default");
-                break;
-        }
-
+        sc.put("cre601a", cre0601a01.isChecked() ? "1" : cre0601a02.isChecked() ? "2" : "0");
+        sc.put("cre0601b", cre0601b01.isChecked() ? "1" : cre0601b02.isChecked() ? "2" : "0");
 
         AppMain.fc.setChildVaccination(String.valueOf(sc));
 
@@ -473,349 +466,291 @@ public class ChildVaccinationActivity extends Activity {
 
         Toast.makeText(this, "Validating Section C", Toast.LENGTH_SHORT).show();
 
-        // C1
-        if (mnc1.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc1), Toast.LENGTH_LONG).show();
-            mnc1c.setError("This data is Required!");
-            Log.i(TAG, "mnc1: This data is Required!");
+        //============ Q 1 ==========
+        if (cre01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre01), Toast.LENGTH_SHORT).show();
+            cre0102.setError("This data is Required!");
+            Log.i(TAG, "cre01: This data is Required!");
             return false;
         } else {
-            mnc1c.setError(null);
+            cre0102.setError(null);
         }
 
-        // C2
-        if (mnc2.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc2), Toast.LENGTH_LONG).show();
-            mnc2c.setError("This data is Required!");
-            Log.i(TAG, "mnc2: This data is Required!");
-            return false;
-        } else {
-            mnc2c.setError(null);
-        }
-
-        // C3 (with C2 = Yes)
-        if (mnc2a.isChecked() && mnc3.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc3), Toast.LENGTH_LONG).show();
-            mnc3b.setError("This data is Required!");
-            Log.i(TAG, "mnc3: This data is Required!");
-            return false;
-        } else {
-            mnc3b.setError(null);
-        }
-
-        // C4 (with C2 = No OR Don't Know)
-        if ((mnc2b.isChecked() || mnc2c.isChecked()) && mnc4.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc4), Toast.LENGTH_LONG).show();
-            mnc4c.setError("This data is Required!");
-            Log.i(TAG, "mnc4: This data is Required!");
-            return false;
-        } else {
-            mnc4c.setError(null);
-        }
-
-        // C5 - BCG
-        if (mnc5bcg.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5bcg), Toast.LENGTH_LONG).show();
-            mnc5bcg.setError("This data is Required!");
-            Log.i(TAG, "mnc5bcg: This data is Required!");
-            return false;
-        } else {
-            mnc5bcg.setError(null);
-        }
-
-        // C5 - OPV0
-        if (mnc5opv0.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5opv0), Toast.LENGTH_LONG).show();
-            mnc5opv0.setError("This data is Required!");
-            Log.i(TAG, "mnc5opv0: This data is Required!");
-            return false;
-        } else {
-            mnc5opv0.setError(null);
-        }
-
-        // C5 - OPV1
-        if (mnc5opv1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5opv1), Toast.LENGTH_LONG).show();
-            mnc5opv1.setError("This data is Required!");
-            Log.i(TAG, "mnc5opv1: This data is Required!");
-            return false;
-        } else {
-            mnc5opv1.setError(null);
-        }
-
-        // C5 - OPV2
-        if (mnc5opv2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5opv2), Toast.LENGTH_LONG).show();
-            mnc5opv2.setError("This data is Required!");
-            Log.i(TAG, "mnc5opv2: This data is Required!");
-            return false;
-        } else {
-            mnc5opv2.setError(null);
-        }
-
-        // C5 - OPV3
-        if (mnc5opv3.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5opv3), Toast.LENGTH_LONG).show();
-            mnc5opv3.setError("This data is Required!");
-            Log.i(TAG, "mnc5opv3: This data is Required!");
-            return false;
-        } else {
-            mnc5opv3.setError(null);
-        }
-
-        // C5 - Penta 1
-        if (mnc5p1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5p1), Toast.LENGTH_LONG).show();
-            mnc5p1.setError("This data is Required!");
-            Log.i(TAG, "mnc5p1: This data is Required!");
-            return false;
-        } else {
-            mnc5p1.setError(null);
-        }
-
-        // C5 - Penta 2
-        if (mnc5p2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5p2), Toast.LENGTH_LONG).show();
-            mnc5p2.setError("This data is Required!");
-            Log.i(TAG, "mnc5p2: This data is Required!");
-            return false;
-        } else {
-            mnc5p2.setError(null);
-        }
-
-        // C5 - Penta 3
-        if (mnc5p3.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5p3), Toast.LENGTH_LONG).show();
-            mnc5p3.setError("This data is Required!");
-            Log.i(TAG, "mnc5p3: This data is Required!");
-            return false;
-        } else {
-            mnc5p3.setError(null);
-        }
-
-        // C5 - PCV1
-        if (mnc5pcv1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5pcv1), Toast.LENGTH_LONG).show();
-            mnc5pcv1.setError("This data is Required!");
-            Log.i(TAG, "mnc5pcv1: This data is Required!");
-            return false;
-        } else {
-            mnc5pcv1.setError(null);
-        }
-
-        // C5 - PCV2
-        if (mnc5pcv2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5pcv2), Toast.LENGTH_LONG).show();
-            mnc5pcv2.setError("This data is Required!");
-            Log.i(TAG, "mnc5pcv2: This data is Required!");
-            return false;
-        } else {
-            mnc5pcv2.setError(null);
-        }
-
-        // C5 - PCV3
-        if (mnc5pcv3.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5pcv3), Toast.LENGTH_LONG).show();
-            mnc5pcv3.setError("This data is Required!");
-            Log.i(TAG, "mnc5pcv3: This data is Required!");
-            return false;
-        } else {
-            mnc5pcv3.setError(null);
-        }
-
-        // C5 - IPV1
-        if (mnc5ipv1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5ipv1), Toast.LENGTH_LONG).show();
-            mnc5ipv1.setError("This data is Required!");
-            Log.i(TAG, "mnc5ipv1: This data is Required!");
-            return false;
-        } else {
-            mnc5ipv1.setError(null);
-        }
-
-        // C5 - IPV2
-        if (mnc5ipv2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5ipv2), Toast.LENGTH_LONG).show();
-            mnc5ipv2.setError("This data is Required!");
-            Log.i(TAG, "mnc5ipv2: This data is Required!");
-            return false;
-        } else {
-            mnc5ipv2.setError(null);
-        }
-
-        // C5 - IPV3
-        if (mnc5ipv3.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5ipv3), Toast.LENGTH_LONG).show();
-            mnc5ipv3.setError("This data is Required!");
-            Log.i(TAG, "mnc5ipv3: This data is Required!");
-            return false;
-        } else {
-            mnc5ipv3.setError(null);
-        }
-
-        // C5 - Measles 1
-        if (mnc5m1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5m1), Toast.LENGTH_LONG).show();
-            mnc5m1.setError("This data is Required!");
-            Log.i(TAG, "mnc5m1: This data is Required!");
-            return false;
-        } else {
-            mnc5m1.setError(null);
-        }
-
-        // C5 - Measles 2
-        if (mnc5m2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5m2), Toast.LENGTH_LONG).show();
-            mnc5m2.setError("This data is Required!");
-            Log.i(TAG, "mnc5m2: This data is Required!");
-            return false;
-        } else {
-            mnc5m2.setError(null);
-        }
-
-        if (mnc1a.isChecked() && (
-                mnc5bcg.getText().toString().equals("2")
-                        && mnc5opv0.getText().toString().equals("2")
-                        && mnc5opv1.getText().toString().equals("2")
-                        && mnc5opv2.getText().toString().equals("2")
-                        && mnc5opv3.getText().toString().equals("2")
-                        && mnc5p1.getText().toString().equals("2")
-                        && mnc5p2.getText().toString().equals("2")
-                        && mnc5p3.getText().toString().equals("2")
-                        && mnc5pcv1.getText().toString().equals("2")
-                        && mnc5pcv2.getText().toString().equals("2")
-                        && mnc5pcv3.getText().toString().equals("2")
-                        && mnc5ipv1.getText().toString().equals("2")
-                        && mnc5ipv2.getText().toString().equals("2")
-                        && mnc5ipv3.getText().toString().equals("2")
-                        && mnc5m1.getText().toString().equals("2")
-                        && mnc5m2.getText().toString().equals("2")
-        )) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mnc5), Toast.LENGTH_LONG).show();
-            mnc5m2.setError("At least one should be YES.");
-            Log.i(TAG, "mnc5: the answer is invalid");
-            return false;
-        } else {
-            mnc5m2.setError(null);
-        }
-
-        // C6
-        if (mnc6.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc6), Toast.LENGTH_LONG).show();
-            mnc6c.setError("Not selected");
-            Log.i(TAG, "mnc6: Not selected");
-            return false;
-        } else {
-            mnc6c.setError(null);
-        }
-
-        // C7 
-        if (mnc7.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc7), Toast.LENGTH_LONG).show();
-            mnc7c.setError("Not selected");
-            Log.i(TAG, "mnc7: Not selected");
-            return false;
-        } else {
-            mnc7c.setError(null);
-        }
-
-        // C8
-        if (mnc6a.isChecked() && mnc8.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc8), Toast.LENGTH_LONG).show();
-            mnc8.setError("This data is Required!");
-            Log.i(TAG, "mnc8: This data is Required!");
-            return false;
-        } else {
-            mnc8.setError(null);
-        }
-
-        // C9 (C10 + C11 and C12)
-        if (mnc9.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc9), Toast.LENGTH_LONG).show();
-            mnc9c.setError("Not selected");
-            Log.i(TAG, "mnc9: Not selected");
-            return false;
-        } else {
-            mnc9c.setError(null);
-        }
-
-        if (mnc9a.isChecked()) {
-
-            if (mnc10yy.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mnc10yy), Toast.LENGTH_LONG).show();
-                mnc10yy.setError("Date is empty");
-                Log.i(TAG, "mnc10: empty");
+        if (cre0101.isChecked()) {
+            //============ Q 1a ==========
+            if (cre01a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre01a), Toast.LENGTH_SHORT).show();
+                cre01a02.setError("This data is Required!");
+                Log.i(TAG, "cre01a: This data is Required!");
                 return false;
             } else {
-                mnc10yy.setError(null);
+                cre01a02.setError(null);
             }
-            if (mnc10mm.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mnc10mm), Toast.LENGTH_LONG).show();
-                mnc10mm.setError("Date is empty");
-                Log.i(TAG, "mnc10: empty");
-                return false;
+
+            if (cre01a01.isChecked()) {
+                //============ BCG / Card Present ==========
+                if (cre0201a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre02bcg), Toast.LENGTH_SHORT).show();
+                    cre0201a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0201a: This data is Required!");
+                    return false;
+                } else {
+                    cre0201a02.setError(null);
+                }
+
+                //============ Polio 0 / Card Present ==========
+                if (cre0202a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre02polio), Toast.LENGTH_SHORT).show();
+                    cre0202a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0202a: This data is Required!");
+                    return false;
+                } else {
+                    cre0202a02.setError(null);
+                }
+
+                //============ Penta 1 / Card Present ==========
+                if (cre0301a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03penta), Toast.LENGTH_SHORT).show();
+                    cre0301a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0301a: This data is Required!");
+                    return false;
+                } else {
+                    cre0301a02.setError(null);
+                }
+
+                //============ PCV 1 / Card Present ==========
+                if (cre0302a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03pcv), Toast.LENGTH_SHORT).show();
+                    cre0302a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0302a: This data is Required!");
+                    return false;
+                } else {
+                    cre0302a02.setError(null);
+                }
+
+                //============ OPV 1 / Card Present ==========
+                if (cre0303a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03opv), Toast.LENGTH_SHORT).show();
+                    cre0303a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0303a: This data is Required!");
+                    return false;
+                } else {
+                    cre0303a02.setError(null);
+                }
+
+                //============ Penta 2 / Card Present ==========
+                if (cre0401a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04penta), Toast.LENGTH_SHORT).show();
+                    cre0401a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0401a: This data is Required!");
+                    return false;
+                } else {
+                    cre0401a02.setError(null);
+                }
+
+                //============ PCV 2 / Card Present ==========
+                if (cre0402a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04pcv), Toast.LENGTH_SHORT).show();
+                    cre0402a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0402a: This data is Required!");
+                    return false;
+                } else {
+                    cre0402a02.setError(null);
+                }
+
+                //============ OPV 2 / Card Present ==========
+                if (cre0403a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04opv), Toast.LENGTH_SHORT).show();
+                    cre0403a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0403a: This data is Required!");
+                    return false;
+                } else {
+                    cre0403a02.setError(null);
+                }
+
+                //============ Penta 3 / Card Present ==========
+                if (cre0501a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05penta), Toast.LENGTH_SHORT).show();
+                    cre0501a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0501a: This data is Required!");
+                    return false;
+                } else {
+                    cre0501a02.setError(null);
+                }
+
+                //============ PCV 3 / Card Present ==========
+                if (cre0502a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05pcv), Toast.LENGTH_SHORT).show();
+                    cre0502a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0502a: This data is Required!");
+                    return false;
+                } else {
+                    cre0502a02.setError(null);
+                }
+
+
+                //============ OPV 3 / Card Present ==========
+                if (cre0503a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05opv), Toast.LENGTH_SHORT).show();
+                    cre0503a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0503a: This data is Required!");
+                    return false;
+                } else {
+                    cre0503a02.setError(null);
+                }
+
+                //============ IPV / Card Present ==========
+                if (cre0504a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05ipv), Toast.LENGTH_SHORT).show();
+                    cre0504a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0504a: This data is Required!");
+                    return false;
+                } else {
+                    cre0504a02.setError(null);
+                }
+
+                //============ Vitamin / Card Present ==========
+                if (cre0601a.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre06Vitamin), Toast.LENGTH_SHORT).show();
+                    cre0601a02.setError("This data is Required!");
+                    Log.i(TAG, "cre0601a: This data is Required!");
+                    return false;
+                } else {
+                    cre0601a02.setError(null);
+                }
+
             } else {
-                mnc10mm.setError(null);
+                //============ BCG / Mother ==========
+                if (cre0201b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre02bcg), Toast.LENGTH_SHORT).show();
+                    cre0201b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0201b: This data is Required!");
+                    return false;
+                } else {
+                    cre0201b02.setError(null);
+                }
+
+                //============ Polio 0 / Mother ==========
+                if (cre0202b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre02polio), Toast.LENGTH_SHORT).show();
+                    cre0202b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0202b: This data is Required!");
+                    return false;
+                } else {
+                    cre0202b02.setError(null);
+                }
+
+                //============ Penta 1 / Mother ==========
+                if (cre0301b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03penta), Toast.LENGTH_SHORT).show();
+                    cre0301b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0301b: This data is Required!");
+                    return false;
+                } else {
+                    cre0301b02.setError(null);
+                }
+
+                //============ PCV 1 / Mother ==========
+                if (cre0302b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03pcv), Toast.LENGTH_SHORT).show();
+                    cre0302b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0302b: This data is Required!");
+                    return false;
+                } else {
+                    cre0302b02.setError(null);
+                }
+
+                //============ OPV 1 / Mother ==========
+                if (cre0303b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03opv), Toast.LENGTH_SHORT).show();
+                    cre0303b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0303b: This data is Required!");
+                    return false;
+                } else {
+                    cre0303b02.setError(null);
+                }
+
+                //============ Penta 2 / Mother ==========
+                if (cre0401b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04penta), Toast.LENGTH_SHORT).show();
+                    cre0401b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0401b: This data is Required!");
+                    return false;
+                } else {
+                    cre0401b02.setError(null);
+                }
+
+                //============ PCV 2 / Mother ==========
+                if (cre0402b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04pcv), Toast.LENGTH_SHORT).show();
+                    cre0402b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0402b: This data is Required!");
+                    return false;
+                } else {
+                    cre0402b02.setError(null);
+                }
+
+                //============ OPV 2 / Mother ==========
+                if (cre0403b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04opv), Toast.LENGTH_SHORT).show();
+                    cre0403b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0403b: This data is Required!");
+                    return false;
+                } else {
+                    cre0403b02.setError(null);
+                }
+
+                //============ Penta 3 / Mother ==========
+                if (cre0501b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05penta), Toast.LENGTH_SHORT).show();
+                    cre0501b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0501b: This data is Required!");
+                    return false;
+                } else {
+                    cre0501b02.setError(null);
+                }
+
+                //============ PCV / Mother ==========
+                if (cre0502b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05pcv), Toast.LENGTH_SHORT).show();
+                    cre0502b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0502b: This data is Required!");
+                    return false;
+                } else {
+                    cre0502b02.setError(null);
+                }
+
+
+                //============ OPV 3 / Mother ==========
+                if (cre0503b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05opv), Toast.LENGTH_SHORT).show();
+                    cre0503b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0503b: This data is Required!");
+                    return false;
+                } else {
+                    cre0503b02.setError(null);
+                }
+
+                //============ IPV / Mother ==========
+                if (cre0504b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05ipv), Toast.LENGTH_SHORT).show();
+                    cre0504b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0504b: This data is Required!");
+                    return false;
+                } else {
+                    cre0504b02.setError(null);
+                }
+
+                //============ Vitamin A / Mother ==========
+                if (cre0601b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre06Vitamin), Toast.LENGTH_SHORT).show();
+                    cre0601b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0601b: This data is Required!");
+                    return false;
+                } else {
+                    cre0601b02.setError(null);
+                }
             }
-
-
-            if (Integer.valueOf(mnc10mm.getText().toString()) > 12) {
-                Toast.makeText(this, "ERROR(invalid month): " + getString(R.string.mnc10mm), Toast.LENGTH_LONG).show();
-                mnc10mm.setError("Invalid data");
-                Log.i(TAG, "mnc10: Not selected");
-                return false;
-            } else {
-                mnc10mm.setError(null);
-            }
-            if (!mnc10yy.getText().toString().equals("2015") && !mnc10yy.getText().toString().equals("2016") && !mnc10yy.getText().toString().equals("2017")) {
-                Toast.makeText(this, "ERROR(invalid year): " + getString(R.string.mnc10), Toast.LENGTH_LONG).show();
-                mnc10yy.setError("Invalid data");
-                Log.i(TAG, "mnc10: Not selected");
-                return false;
-            } else {
-                mnc10yy.setError(null);
-            }
-
-        }
-        // C11 NGO Text
-        if (mnc11d.isChecked() && mnc11name.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc11d), Toast.LENGTH_LONG).show();
-            mnc11name.setError("This data is Required!");
-            Log.i(TAG, "mnc11name: This data is Required!");
-            return false;
-        } else {
-            mnc11name.setError(null);
-        }
-
-        if (mnc9a.isChecked() && mnc11.getCheckedRadioButtonId() == -1) {
-            mnc9c.setError(null);
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc11), Toast.LENGTH_LONG).show();
-            mnc11d.setError("Not Selected");
-            Log.i(TAG, "mnc11: Not Selected");
-            return false;
-        } else {
-            mnc11d.setError(null);
-        }
-
-
-        if (mnc12.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc12), Toast.LENGTH_LONG).show();
-            mnc12b.setError("Not selected");
-            Log.i(TAG, "mnc12: Not selected");
-            return false;
-        } else {
-            mnc12b.setError(null);
-        }
-
-
-        // C13
-        if (mnc13.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc13), Toast.LENGTH_LONG).show();
-            mnc13d.setError("Not selected");
-            Log.i(TAG, "mnc13: Not selected");
-            return false;
-        } else {
-            mnc13d.setError(null);
         }
 
         return true;

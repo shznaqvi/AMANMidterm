@@ -45,7 +45,7 @@ public class BasicInfoActivity extends Activity {
     EditText mna5;
     @BindView(R.id.child_name)
     CheckBox childName;
-    @BindView(R.id.child_name)
+    @BindView(R.id.childName)
     TextView child_name;
     @BindView(R.id.mna8)
     EditText mna8;
