@@ -45,7 +45,7 @@ public class FormsList extends Activity {
 
         for (FormsContract fc : forms) {
             fTotal++;
-            if (fc.getMna7().contains("1")) {
+            if (fc.getiStatus().contains("1")) {
                 fComplete++;
             }
         }

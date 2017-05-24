@@ -781,7 +781,7 @@ public class KAPActivity extends Activity {
         }
         se.put("mne18x96", mne18x96.getText().toString());
 
-        AppMain.fc.setsE(String.valueOf(se));
+        AppMain.fc.setKap(String.valueOf(se));
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 

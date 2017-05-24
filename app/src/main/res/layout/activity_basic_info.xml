@@ -80,10 +80,10 @@
         </LinearLayout>
 
         <CheckBox
-            android:id="@+id/mna6"
+            android:id="@+id/childName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mna6" />
+            android:text="@string/childName" />
 
         <LinearLayout
             android:id="@+id/fldGrpmna6"

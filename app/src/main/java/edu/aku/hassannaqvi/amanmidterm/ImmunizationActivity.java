@@ -394,7 +394,7 @@ public class ImmunizationActivity extends Activity {
 
         if (rowId != null) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Current Form UID: " + AppMain.fc.getUID(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Current Form UID: " + AppMain.fc.getFUID(), Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "Current IM UID: " + AppMain.im.getUID(), Toast.LENGTH_SHORT).show();
             return true;
         } else {
@@ -411,8 +411,8 @@ public class ImmunizationActivity extends Activity {
 
         AppMain.im = new IMsContract();
 
-        AppMain.im.setUID(AppMain.fc.getUID());
-        AppMain.im.setChid(AppMain.fc.getUID() + String.format("%02d", AppMain.chCount));
+        AppMain.im.setUID(AppMain.fc.getFUID());
+        AppMain.im.setChid(AppMain.fc.getFUID() + String.format("%02d", AppMain.chCount));
 
         JSONObject im = new JSONObject();
 

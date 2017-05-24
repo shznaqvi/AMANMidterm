@@ -29,10 +29,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/mna7" />
+            android:text="@string/iStatus" />
 
         <RadioGroup
-            android:id="@+id/mna7"
+            android:id="@+id/iStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

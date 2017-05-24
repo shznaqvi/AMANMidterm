@@ -18,22 +18,16 @@ public class FormsContract {
     private final String surveyType = "SN";
     public String Round = "2";
     private String _ID = "";
-    private String UID = "";
-    private String mna1 = ""; // Date
+    private String FUID = "";
+    private String formDateTime = ""; // Date
     private String mna2 = "0000"; // DC name
     private String mna3 = ""; // District
     private String mna4 = ""; // PSU
     private String mna5 = ""; // HH no.
-    private String mna6 = ""; // Index Child Name
+    private String childName = ""; // Index Child Name
+    private String motherName = ""; // Index Child Name
     private String mna6a = ""; // Name Confirmation
-    private String mna7 = ""; // Form Status
-    private String sA = "";
-    private String sB = "";
-    private String sC = "";
-    private String sD = "";
-    private String sE = "";
-    private String sF = "";
-    private String sG = "";
+    private String iStatus = ""; // Form Status
     private String gpsLat = "";
     private String gpsLng = "";
     private String gpsTime = "";
@@ -42,33 +36,50 @@ public class FormsContract {
     private String synced = "";
     private String synced_date = "";
 
+    // MODULES
+    private String antenatalCare = "";
+    private String basicInfo = "";
+    private String childHealth = "";
+    private String childMorbidity = "";
+    private String childVaccination = "";
+    private String delivery = "";
+    private String immunization = "";
+    private String indexChild = "";
+    private String kap = "";
+    private String labInfo = "";
+    private String neonatalHealth = "";
+    private String postpartumCare = "";
+    private String socioEconomic = "";
+
+
+
     public FormsContract() {
     }
 
-    public FormsContract(String mna1, String mna5, String mna7) {
-        this.mna1 = mna1;
+    public FormsContract(String formDateTime, String mna5, String iStatus) {
+        this.formDateTime = formDateTime;
         this.mna5 = mna5;
-        this.mna7 = mna7;
+        this.iStatus = iStatus;
     }
 
     public FormsContract sync(JSONObject jsonObject) throws JSONException {
         this._ID = jsonObject.getString(singleForm._ID);
-        this.UID = jsonObject.getString(singleForm.COLUMN_UID);
-        this.mna1 = jsonObject.getString(singleForm.COLUMN_MNA1);
+        this.FUID = jsonObject.getString(singleForm.COLUMN_FUID);
+        this.formDateTime = jsonObject.getString(singleForm.COLUMN_MNA1);
         this.mna2 = jsonObject.getString(singleForm.COLUMN_MNA2);
         this.mna3 = jsonObject.getString(singleForm.COLUMN_MNA3);
         this.mna4 = jsonObject.getString(singleForm.COLUMN_MNA4);
         this.mna5 = jsonObject.getString(singleForm.COLUMN_MNA5);
-        this.mna6 = jsonObject.getString(singleForm.COLUMN_MNA6);
+        this.childName = jsonObject.getString(singleForm.COLUMN_MNA6);
         this.mna6a = jsonObject.getString(singleForm.COLUMN_MNA6A);
-        this.mna7 = jsonObject.getString(singleForm.COLUMN_MNA7);
-        this.sA = jsonObject.getString(singleForm.COLUMN_SA);
-        this.sB = jsonObject.getString(singleForm.COLUMN_SB);
-        this.sC = jsonObject.getString(singleForm.COLUMN_SC);
-        this.sD = jsonObject.getString(singleForm.COLUMN_SD);
-        this.sE = jsonObject.getString(singleForm.COLUMN_SE);
-        this.sF = jsonObject.getString(singleForm.COLUMN_SF);
-        this.sG = jsonObject.getString(singleForm.COLUMN_SG);
+        this.iStatus = jsonObject.getString(singleForm.COLUMN_MNA7);
+        this.basicInfo = jsonObject.getString(singleForm.COLUMN_SA);
+        this.indexChild = jsonObject.getString(singleForm.COLUMN_SB);
+        this.childVaccination = jsonObject.getString(singleForm.COLUMN_SC);
+        this.childHealth = jsonObject.getString(singleForm.COLUMN_SD);
+        this.kap = jsonObject.getString(singleForm.COLUMN_SE);
+        this.socioEconomic = jsonObject.getString(singleForm.COLUMN_SF);
+        this.labInfo = jsonObject.getString(singleForm.COLUMN_SG);
         this.gpsLat = jsonObject.getString(singleForm.COLUMN_GPS_LAT);
         this.gpsLng = jsonObject.getString(singleForm.COLUMN_GPS_LNG);
         this.gpsTime = jsonObject.getString(singleForm.COLUMN_GPS_TIME);
@@ -83,22 +94,22 @@ public class FormsContract {
 
     public FormsContract hydrate(Cursor cursor) {
         this._ID = cursor.getString(cursor.getColumnIndex(singleForm._ID));
-        this.UID = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_UID));
-        this.mna1 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA1));
+        this.FUID = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_FUID));
+        this.formDateTime = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA1));
         this.mna2 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA2));
         this.mna3 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA3));
         this.mna4 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA4));
         this.mna5 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA5));
-        this.mna6 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA6));
+        this.childName = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA6));
         this.mna6a = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA6A));
-        this.mna7 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA7));
-        this.sA = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SA));
-        this.sB = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SB));
-        this.sC = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SC));
-        this.sD = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SD));
-        this.sE = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SE));
-        this.sF = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SF));
-        this.sG = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SG));
+        this.iStatus = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA7));
+        this.basicInfo = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SA));
+        this.indexChild = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SB));
+        this.childVaccination = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SC));
+        this.childHealth = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SD));
+        this.kap = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SE));
+        this.socioEconomic = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SF));
+        this.labInfo = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SG));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_GPS_LAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_GPS_LNG));
         this.gpsTime = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_GPS_TIME));
@@ -119,12 +130,12 @@ public class FormsContract {
         this._ID = _ID;
     }
 
-    public String getUID() {
-        return UID;
+    public String getFUID() {
+        return FUID;
     }
 
-    public void setUID(String UID) {
-        this.UID = UID;
+    public void setFUID(String FUID) {
+        this.FUID = FUID;
     }
 
     public String getProjectName() {
@@ -135,12 +146,12 @@ public class FormsContract {
         return surveyType;
     }
 
-    public String getMna1() {
-        return mna1;
+    public String getFormDateTime() {
+        return formDateTime;
     }
 
-    public void setMna1(String mna1) {
-        this.mna1 = mna1;
+    public void setFormDateTime(String formDateTime) {
+        this.formDateTime = formDateTime;
     }
 
     public String getMna2() {
@@ -175,12 +186,12 @@ public class FormsContract {
         this.mna5 = mna5;
     }
 
-    public String getMna6() {
-        return mna6;
+    public String getChildName() {
+        return childName;
     }
 
-    public void setMna6(String mna6) {
-        this.mna6 = mna6;
+    public void setChildName(String childName) {
+        this.childName = childName;
     }
 
     public String getMna6a() {
@@ -191,69 +202,69 @@ public class FormsContract {
         this.mna6a = mna6a;
     }
 
-    public String getMna7() {
-        return mna7;
+    public String getiStatus() {
+        return iStatus;
     }
 
-    public void setMna7(String mna7) {
-        this.mna7 = mna7;
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
     }
 
-    public String getsA() {
-        return this.sA;
+    public String getBasicInfo() {
+        return this.basicInfo;
     }
 
-    public void setsA(String sA) {
-        this.sA = sA;
+    public void setBasicInfo(String basicInfo) {
+        this.basicInfo = basicInfo;
     }
 
-    public String getsB() {
+    public String getIndexChild() {
 
-        return sB;
+        return indexChild;
     }
 
-    public void setsB(String sB) {
-        this.sB = sB;
+    public void setIndexChild(String indexChild) {
+        this.indexChild = indexChild;
     }
 
-    public String getsC() {
-        return sC;
+    public String getChildVaccination() {
+        return childVaccination;
     }
 
-    public void setsC(String sC) {
-        this.sC = sC;
+    public void setChildVaccination(String childVaccination) {
+        this.childVaccination = childVaccination;
     }
 
-    public String getsD() {
-        return sD;
+    public String getChildHealth() {
+        return childHealth;
     }
 
-    public void setsD(String sD) {
-        this.sD = sD;
+    public void setChildHealth(String childHealth) {
+        this.childHealth = childHealth;
     }
 
-    public String getsE() {
-        return sE;
+    public String getKap() {
+        return kap;
     }
 
-    public void setsE(String sE) {
-        this.sE = sE;
+    public void setKap(String kap) {
+        this.kap = kap;
     }
 
-    public String getsF() {
-        return sF;
+    public String getSocioEconomic() {
+        return socioEconomic;
     }
 
-    public void setsF(String sF) {
-        this.sF = sF;
+    public void setSocioEconomic(String socioEconomic) {
+        this.socioEconomic = socioEconomic;
     }
 
-    public String getsG() {
-        return sG;
+    public String getLabInfo() {
+        return labInfo;
     }
 
-    public void setsG(String sG) {
-        this.sG = sG;
+    public void setLabInfo(String labInfo) {
+        this.labInfo = labInfo;
     }
 
     public String getGpsLat() {
@@ -325,7 +336,7 @@ public class FormsContract {
         JSONObject json = new JSONObject();
 
         json.put(singleForm._ID, this._ID == null ? JSONObject.NULL : this._ID);
-        json.put(singleForm.COLUMN_UID, this.UID == null ? JSONObject.NULL : this.UID);
+        json.put(singleForm.COLUMN_FUID, this.FUID == null ? JSONObject.NULL : this.FUID);
         json.put(singleForm.COLUMN_PROJECT_NAME, this.projectName == null ? JSONObject.NULL : this.projectName);
         json.put(singleForm.COLUMN_SURVEY_TYPE, this.surveyType == null ? JSONObject.NULL : this.surveyType);
         json.put(singleForm.COLUMN_DEVICE_ID, this.deviceID == null ? JSONObject.NULL : this.deviceID);
@@ -335,32 +346,32 @@ public class FormsContract {
         json.put(singleForm.COLUMN_GPS_ACC, this.gpsAcc == null ? JSONObject.NULL : this.gpsAcc);
         json.put(singleForm.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
         json.put(singleForm.COLUMN_SYNCED_DATE, this.synced_date == null ? JSONObject.NULL : this.synced_date);
-        json.put(singleForm.COLUMN_MNA1, this.mna1 == null ? JSONObject.NULL : this.mna1);
+        json.put(singleForm.COLUMN_MNA1, this.formDateTime == null ? JSONObject.NULL : this.formDateTime);
         json.put(singleForm.COLUMN_MNA2, this.mna2 == null ? JSONObject.NULL : this.mna2);
         json.put(singleForm.COLUMN_MNA3, this.mna3 == null ? JSONObject.NULL : this.mna3);
         json.put(singleForm.COLUMN_MNA4, this.mna4 == null ? JSONObject.NULL : this.mna4);
         json.put(singleForm.COLUMN_MNA5, this.mna5 == null ? JSONObject.NULL : this.mna5);
-        json.put(singleForm.COLUMN_MNA6, this.mna6 == null ? JSONObject.NULL : this.mna6);
+        json.put(singleForm.COLUMN_MNA6, this.childName == null ? JSONObject.NULL : this.childName);
         json.put(singleForm.COLUMN_MNA6A, this.mna6a == null ? JSONObject.NULL : this.mna6a);
-        json.put(singleForm.COLUMN_MNA7, this.mna7 == null ? JSONObject.NULL : this.mna7);
+        json.put(singleForm.COLUMN_MNA7, this.iStatus == null ? JSONObject.NULL : this.iStatus);
 
 
-/*        json = jsonMerge(json, new JSONObject(this.sA));
-        json = jsonMerge(json, new JSONObject(this.sB));
-        json = jsonMerge(json, new JSONObject(this.sC));
-        json = jsonMerge(json, new JSONObject(this.sD));
-        json = jsonMerge(json, new JSONObject(this.sE));
-        json = jsonMerge(json, new JSONObject(this.sF));
-        json = jsonMerge(json, new JSONObject(this.sG));*/
+/*        json = jsonMerge(json, new JSONObject(this.basicInfo));
+        json = jsonMerge(json, new JSONObject(this.indexChild));
+        json = jsonMerge(json, new JSONObject(this.childVaccination));
+        json = jsonMerge(json, new JSONObject(this.childHealth));
+        json = jsonMerge(json, new JSONObject(this.kap));
+        json = jsonMerge(json, new JSONObject(this.socioEconomic));
+        json = jsonMerge(json, new JSONObject(this.labInfo));*/
 
-        json.put(singleForm.COLUMN_SA, this.sA == null ? JSONObject.NULL : this.sA);
-        json.put(singleForm.COLUMN_SB, this.sB == null ? JSONObject.NULL : this.sB);
-        json.put(singleForm.COLUMN_SB, this.sB == null ? JSONObject.NULL : this.sB);
-        json.put(singleForm.COLUMN_SC, this.sC == null ? JSONObject.NULL : this.sC);
-        json.put(singleForm.COLUMN_SD, this.sD == null ? JSONObject.NULL : this.sD);
-        json.put(singleForm.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
-        json.put(singleForm.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
-        json.put(singleForm.COLUMN_SG, this.sG == null ? JSONObject.NULL : this.sG);
+        json.put(singleForm.COLUMN_SA, this.basicInfo == null ? JSONObject.NULL : this.basicInfo);
+        json.put(singleForm.COLUMN_SB, this.indexChild == null ? JSONObject.NULL : this.indexChild);
+        json.put(singleForm.COLUMN_SB, this.indexChild == null ? JSONObject.NULL : this.indexChild);
+        json.put(singleForm.COLUMN_SC, this.childVaccination == null ? JSONObject.NULL : this.childVaccination);
+        json.put(singleForm.COLUMN_SD, this.childHealth == null ? JSONObject.NULL : this.childHealth);
+        json.put(singleForm.COLUMN_SE, this.kap == null ? JSONObject.NULL : this.kap);
+        json.put(singleForm.COLUMN_SF, this.socioEconomic == null ? JSONObject.NULL : this.socioEconomic);
+        json.put(singleForm.COLUMN_SG, this.labInfo == null ? JSONObject.NULL : this.labInfo);
 
         json.put(singleForm.COLUMN_NAME_ROUND, this.Round);
 
@@ -393,8 +404,8 @@ public class FormsContract {
 
         public static final String TABLE_NAME = "forms";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String _ID = "_id";
-        public static final String COLUMN_UID = "uid";
+        public static final String _ID = "id";
+        public static final String COLUMN_FUID = "fuid";
         public static final String COLUMN_PROJECT_NAME = "projectname";
         public static final String COLUMN_SURVEY_TYPE = "surveytype";
         public static final String COLUMN_DEVICE_ID = "deviceid";
@@ -404,14 +415,14 @@ public class FormsContract {
         public static final String COLUMN_GPS_TIME = "gpstime";
         public static final String COLUMN_SYNCED = "sync";
         public static final String COLUMN_SYNCED_DATE = "sync_date";
-        public static final String COLUMN_MNA1 = "mna1";
+        public static final String COLUMN_MNA1 = "formDateTime";
         public static final String COLUMN_MNA2 = "mna2";
         public static final String COLUMN_MNA3 = "mna3";
         public static final String COLUMN_MNA4 = "mna4";
         public static final String COLUMN_MNA5 = "mna5";
-        public static final String COLUMN_MNA6 = "mna6";
+        public static final String COLUMN_MNA6 = "childName";
         public static final String COLUMN_MNA6A = "mna6a";
-        public static final String COLUMN_MNA7 = "mna7";
+        public static final String COLUMN_MNA7 = "iStatus";
         public static final String COLUMN_SA = "sa";
         public static final String COLUMN_SB = "sb";
         public static final String COLUMN_SC = "sc";

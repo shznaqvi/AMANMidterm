@@ -22,15 +22,15 @@
 
     <string name="mnfrmno"> ڈی ایم یو سیریل نمبر </string>
     <string name="mnsid"> تحقیقی شناخت نمبر </string>
-    <string name="mna1"> دورے کی تاریخ </string>
+    <string name="formDateTime"> دورے کی تاریخ </string>
     <string name="mna2"> انٹرویو کرنے والے کا نام </string>
     <string name="mna2nm"> انٹرویو کرنے والے کا نام </string>
     <string name="mna3"> فیلڈ سائیٹ/ضلع </string>
     <string name="mna4"> پی ایس یو نمبر اور نام </string>
     <string name="mna5"> گھرانے کا نمبر </string>
     <string name="mna5_ext"> خاندان نمبر </string>
-    <string name="mna6"> منتخب بچے کا نام (لائن لسٹنگ کے مطابق) </string>
-    <string name="mna7"> دورے کا نتیجہ </string>
+    <string name="childName"> منتخب بچے کا نام (لائن لسٹنگ کے مطابق) </string>
+    <string name="iStatus"> دورے کا نتیجہ </string>
     <string name="mna7a"> مکمل </string>
     <string name="mna7b"> گھر بند تھا </string>
     <string name="mna7c"> منع کردیا </string>

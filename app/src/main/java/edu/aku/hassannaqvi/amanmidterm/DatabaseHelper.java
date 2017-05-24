@@ -46,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsContract.singleForm.TABLE_NAME + "("
             + FormsContract.singleForm._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + FormsContract.singleForm.COLUMN_UID + " TEXT,"
+            + FormsContract.singleForm.COLUMN_FUID + " TEXT,"
             + FormsContract.singleForm.COLUMN_DEVICE_ID + " TEXT,"
             + FormsContract.singleForm.COLUMN_PROJECT_NAME + " TEXT,"
             + FormsContract.singleForm.COLUMN_SURVEY_TYPE + " TEXT,"
@@ -124,15 +124,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.singleForm.COLUMN_GPS_LNG, fc.getGpsLng());
         values.put(FormsContract.singleForm.COLUMN_GPS_TIME, fc.getGpsTime());
         values.put(FormsContract.singleForm.COLUMN_NAME_ROUND, fc.getRound());
-        values.put(FormsContract.singleForm.COLUMN_MNA1, fc.getMna1());
+        values.put(FormsContract.singleForm.COLUMN_MNA1, fc.getFormDateTime());
         values.put(FormsContract.singleForm.COLUMN_MNA2, fc.getMna2());
         values.put(FormsContract.singleForm.COLUMN_MNA3, fc.getMna3());
         values.put(FormsContract.singleForm.COLUMN_MNA4, fc.getMna4());
         values.put(FormsContract.singleForm.COLUMN_MNA5, fc.getMna5());
-        values.put(FormsContract.singleForm.COLUMN_MNA6, fc.getMna6());
+        values.put(FormsContract.singleForm.COLUMN_MNA6, fc.getChildName());
         values.put(FormsContract.singleForm.COLUMN_MNA6A, fc.getMna6a());
-        values.put(FormsContract.singleForm.COLUMN_MNA7, fc.getMna7());
-        values.put(FormsContract.singleForm.COLUMN_SA, fc.getsA());
+        values.put(FormsContract.singleForm.COLUMN_MNA7, fc.getiStatus());
+        values.put(FormsContract.singleForm.COLUMN_SA, fc.getBasicInfo());
 
 
         // Insert the new row, returning the primary key value of the new row
@@ -187,7 +187,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {
                 FormsContract.singleForm._ID,
-                FormsContract.singleForm.COLUMN_UID,
+                FormsContract.singleForm.COLUMN_FUID,
                 FormsContract.singleForm.COLUMN_PROJECT_NAME,
                 FormsContract.singleForm.COLUMN_SURVEY_TYPE,
                 FormsContract.singleForm.COLUMN_DEVICE_ID,
@@ -255,7 +255,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {
                 FormsContract.singleForm._ID,
-                FormsContract.singleForm.COLUMN_UID,
+                FormsContract.singleForm.COLUMN_FUID,
                 FormsContract.singleForm.COLUMN_PROJECT_NAME,
                 FormsContract.singleForm.COLUMN_SURVEY_TYPE,
                 FormsContract.singleForm.COLUMN_DEVICE_ID,
@@ -416,8 +416,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsContract.singleForm.COLUMN_SB, AppMain.fc.getsB());
-        values.put(FormsContract.singleForm.COLUMN_UID, AppMain.fc.getUID());
+        values.put(FormsContract.singleForm.COLUMN_SB, AppMain.fc.getIndexChild());
+        values.put(FormsContract.singleForm.COLUMN_FUID, AppMain.fc.getFUID());
 
 
 // Which row to update, based on the ID
@@ -437,7 +437,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsContract.singleForm.COLUMN_SC, AppMain.fc.getsC());
+        values.put(FormsContract.singleForm.COLUMN_SC, AppMain.fc.getChildVaccination());
 
 
         // Which row to update, based on the ID
@@ -456,7 +456,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsContract.singleForm.COLUMN_SD, AppMain.fc.getsD());
+        values.put(FormsContract.singleForm.COLUMN_SD, AppMain.fc.getChildHealth());
 
 
         // Which row to update, based on the ID
@@ -475,7 +475,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsContract.singleForm.COLUMN_SE, AppMain.fc.getsE());
+        values.put(FormsContract.singleForm.COLUMN_SE, AppMain.fc.getKap());
 
 
         // Which row to update, based on the ID
@@ -494,7 +494,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsContract.singleForm.COLUMN_SF, AppMain.fc.getsF());
+        values.put(FormsContract.singleForm.COLUMN_SF, AppMain.fc.getSocioEconomic());
 
         // Which row to update, based on the ID
         String selection = FormsContract.singleForm._ID + " = ?";
@@ -512,7 +512,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsContract.singleForm.COLUMN_SG, AppMain.fc.getsG());
+        values.put(FormsContract.singleForm.COLUMN_SG, AppMain.fc.getLabInfo());
 
 
         // Which row to update, based on the ID
@@ -531,7 +531,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsContract.singleForm.COLUMN_MNA7, AppMain.fc.getMna7());
+        values.put(FormsContract.singleForm.COLUMN_MNA7, AppMain.fc.getiStatus());
 
 
         // Which row to update, based on the ID
@@ -663,9 +663,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 FormsContract form = new FormsContract();
-                form.setMna1(cursor.getString(cursor.getColumnIndex(FormsContract.singleForm.COLUMN_MNA1)));
+                form.setFormDateTime(cursor.getString(cursor.getColumnIndex(FormsContract.singleForm.COLUMN_MNA1)));
                 form.setMna5(cursor.getString(cursor.getColumnIndex(FormsContract.singleForm.COLUMN_MNA5)));
-                form.setMna7(cursor.getString(cursor.getColumnIndex(FormsContract.singleForm.COLUMN_MNA7)));
+                form.setiStatus(cursor.getString(cursor.getColumnIndex(FormsContract.singleForm.COLUMN_MNA7)));
 
                 // Adding contact to list
                 formList.add(form);

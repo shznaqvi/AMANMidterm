@@ -463,7 +463,7 @@ public class ChildVaccinationActivity extends Activity {
         }
 
 
-        AppMain.fc.setsC(String.valueOf(sc));
+        AppMain.fc.setChildVaccination(String.valueOf(sc));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

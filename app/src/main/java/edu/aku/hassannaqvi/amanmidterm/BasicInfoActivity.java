@@ -43,8 +43,8 @@ public class BasicInfoActivity extends Activity {
     EditText mna4;
     @BindView(R.id.mna5)
     EditText mna5;
-    @BindView(R.id.mna6)
-    CheckBox mna6;
+    @BindView(R.id.childName)
+    CheckBox childName;
     @BindView(R.id.child_name)
     TextView child_name;
     @BindView(R.id.mna8)
@@ -162,10 +162,10 @@ public class BasicInfoActivity extends Activity {
         values.add("93");
 
         txtmna3.setText(getString(R.string.mna3) + ": " + lables.get(values.indexOf(String.valueOf(AppMain.mna3))));
-        mna6.setEnabled(false);
+        childName.setEnabled(false);
 
 
-        mna6.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        childName.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -207,9 +207,9 @@ public class BasicInfoActivity extends Activity {
 
         child_name.setText(chName);
         if (chName.equals("No Child Found")) {
-            mna6.setEnabled(false);
+            childName.setEnabled(false);
         } else {
-            mna6.setEnabled(true);
+            childName.setEnabled(true);
             AppMain.mnb1 = chName.split("|")[0];
             AppMain.mna06a = chName.split("|")[1];
         }
@@ -256,9 +256,9 @@ public class BasicInfoActivity extends Activity {
 
         if (rowId != null) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            AppMain.fc.setUID(
+            AppMain.fc.setFUID(
                     (AppMain.fc.getDeviceID() + AppMain.fc.getID()));
-            Toast.makeText(this, "Current Form No: " + AppMain.fc.getUID(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Current Form No: " + AppMain.fc.getFUID(), Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -272,12 +272,12 @@ public class BasicInfoActivity extends Activity {
         AppMain.fc = new FormsContract();
         AppMain.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
-        AppMain.fc.setMna1(dtToday);
+        AppMain.fc.setFormDateTime(dtToday);
         AppMain.fc.setMna2(AppMain.mna2);
         AppMain.fc.setMna3(String.valueOf(AppMain.mna3));
         AppMain.fc.setMna4(mna4.getText().toString());
         AppMain.fc.setMna5(mna5.getText().toString());
-        AppMain.fc.setMna6(mna6.isChecked() ? "1" : "2");
+        AppMain.fc.setChildName(childName.isChecked() ? "1" : "2");
 
         AppMain.fc.setMna6a(AppMain.mna06a);
 
@@ -342,7 +342,7 @@ public class BasicInfoActivity extends Activity {
         sA.put("mna12x96", mna12x96.getText().toString());
         sA.put("mna13", mna13.getText().toString());
 
-        AppMain.fc.setsA(String.valueOf(sA));
+        AppMain.fc.setBasicInfo(String.valueOf(sA));
         setGPS();
 
         Toast.makeText(this, "Saving Draft... Successful!", Toast.LENGTH_SHORT).show();
@@ -392,7 +392,7 @@ public class BasicInfoActivity extends Activity {
             mna5.setError(null);
         }
 
-        if (mna6.isChecked()) {
+        if (childName.isChecked()) {
 
 
             if (mna8.getText().toString().isEmpty()) {

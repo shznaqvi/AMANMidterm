@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
         String iStatus = "";
         for (FormsContract fc : todaysForms) {
 
-            switch (fc.getMna7()) {
+            switch (fc.getiStatus()) {
                 case "1":
                     iStatus = "Complete";
                     break;

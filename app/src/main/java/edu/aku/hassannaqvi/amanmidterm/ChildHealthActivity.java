@@ -588,7 +588,7 @@ public class ChildHealthActivity extends Activity {
         sd.put("mnd15x96", mnd15x96.getText().toString());
 
 
-        AppMain.fc.setsD(String.valueOf(sd));
+        AppMain.fc.setChildHealth(String.valueOf(sd));
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 

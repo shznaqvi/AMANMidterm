@@ -560,7 +560,7 @@ public class SocioEconomicActivity extends Activity {
         sf.put("mnf9t", mnf9t.getText().toString());
 
 
-        AppMain.fc.setsF(String.valueOf(sf));
+        AppMain.fc.setSocioEconomic(String.valueOf(sf));
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 

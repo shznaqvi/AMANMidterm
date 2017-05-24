@@ -21,7 +21,7 @@ public class EndingActivity extends Activity {
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
-    @BindView(R.id.mna7)
+    @BindView(R.id.iStatus)
     RadioGroup mna7;
     @BindView(R.id.mna7a)
     RadioButton mna7a;
@@ -81,19 +81,19 @@ public class EndingActivity extends Activity {
 
         switch (mna7.getCheckedRadioButtonId()) {
             case R.id.mna7a:
-                AppMain.fc.setMna7("1");
+                AppMain.fc.setiStatus("1");
                 break;
             case R.id.mna7b:
-                AppMain.fc.setMna7("2");
+                AppMain.fc.setiStatus("2");
                 break;
             case R.id.mna7c:
-                AppMain.fc.setMna7("3");
+                AppMain.fc.setiStatus("3");
                 break;
             case R.id.mna7d:
-                AppMain.fc.setMna7("4");
+                AppMain.fc.setiStatus("4");
                 break;
             default:
-                AppMain.fc.setMna7("default");
+                AppMain.fc.setiStatus("default");
                 break;
         }
 
@@ -103,7 +103,7 @@ public class EndingActivity extends Activity {
         Toast.makeText(this, "Validating Closing Section", Toast.LENGTH_SHORT).show();
 
         if (mna7.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getResources().getResourceTypeName(R.string.mna7), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(not selected): " + getResources().getResourceTypeName(R.string.iStatus), Toast.LENGTH_LONG).show();
             mna7d.setError("This data is Required!");
             Log.i(TAG, "mnd9: This data is Required!");
             return false;
