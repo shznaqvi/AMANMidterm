@@ -142,7 +142,8 @@ public class MainActivity extends Activity {
     }
 
     public void openE(View v) {
-        Intent iD = new Intent(this, KAPActivity.class);
+        //Intent iD = new Intent(this, KAPActivity.class);
+        Intent iD = new Intent(this, ms.class);
         startActivity(iD);
     }
 

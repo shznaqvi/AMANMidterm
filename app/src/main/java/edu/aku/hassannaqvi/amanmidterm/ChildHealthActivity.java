@@ -22,7 +22,6 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ChildHealthActivity extends Activity {
 
