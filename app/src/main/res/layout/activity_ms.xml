@@ -16,6 +16,12 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/section_F"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
             android:id="@+id/lbl_ms01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
