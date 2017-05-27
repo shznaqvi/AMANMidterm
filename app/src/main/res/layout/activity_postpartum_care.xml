@@ -1,8 +1,540 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="edu.aku.hassannaqvi.amanmidterm.PostpartumCareActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/postPartumCare"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pc01"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RadioGroup
+            android:id="@+id/pc01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/pc01a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mnYES" />
+
+            <RadioButton
+                android:id="@+id/pc01b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mnNO" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/fldGrppc02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/pc02"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <CheckBox
+                android:id="@+id/pc02a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc02a" />
+
+            <CheckBox
+                android:id="@+id/pc02b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc02b" />
+
+            <CheckBox
+                android:id="@+id/pc02c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc02c" />
+
+            <CheckBox
+                android:id="@+id/pc02d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc02d" />
+
+            <CheckBox
+                android:id="@+id/pc02e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc02e" />
+
+            <CheckBox
+                android:id="@+id/pc0288"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mnOther" />
+
+            <EditText
+                android:id="@+id/pc0288x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mnOther"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/pc03"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RadioGroup
+                android:id="@+id/pc03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/pc03a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mnYES" />
+
+                <RadioButton
+                    android:id="@+id/pc03b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mnNO" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/fldGrppc04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/pc04"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/pc04a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pc04" />
+
+                <EditText
+                    android:id="@+id/pc04b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pc04" />
+
+                <EditText
+                    android:id="@+id/pc04c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pc04" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fldGrppc05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/pc05"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <CheckBox
+                    android:id="@+id/pc05a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc05a" />
+
+                <CheckBox
+                    android:id="@+id/pc05b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc05b" />
+
+                <CheckBox
+                    android:id="@+id/pc05c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc05c" />
+
+                <CheckBox
+                    android:id="@+id/pc05d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc05d" />
+
+                <CheckBox
+                    android:id="@+id/pc05e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc05e" />
+
+
+                <CheckBox
+                    android:id="@+id/pc0588"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mnOther" />
+
+                <EditText
+                    android:id="@+id/pc0588x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mnOther"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pc06"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/pc06a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mnDays" />
+
+        <EditText
+            android:id="@+id/pc06b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mnWeeks" />
+
+        <CheckBox
+            android:id="@+id/pc0699"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pc0699" />
+
+        <LinearLayout
+            android:id="@+id/fldGrppc07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/pc07"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <CheckBox
+                android:id="@+id/pc07a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc07a" />
+
+            <CheckBox
+                android:id="@+id/pc07b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc07b" />
+
+            <CheckBox
+                android:id="@+id/pc07c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc07c" />
+
+            <CheckBox
+                android:id="@+id/pc07d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc07d" />
+
+            <CheckBox
+                android:id="@+id/pc07e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc07e" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pc08"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RadioGroup
+            android:id="@+id/pc08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/pc08a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mnYES" />
+
+            <RadioButton
+                android:id="@+id/pc08b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mnNO" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/fldGrppc09"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/pc09"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+            <CheckBox
+                android:id="@+id/pc09a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc09a" />
+
+            <CheckBox
+                android:id="@+id/pc09b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc09b" />
+
+            <CheckBox
+                android:id="@+id/pc09c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc09c" />
+
+            <CheckBox
+                android:id="@+id/pc09d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc09d" />
+
+            <CheckBox
+                android:id="@+id/pc09e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc09e" />
+
+
+            <CheckBox
+                android:id="@+id/pc09f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc09f" />
+
+            <CheckBox
+                android:id="@+id/pc09g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc09g" />
+
+            <CheckBox
+                android:id="@+id/pc09h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pc09h" />
+
+
+            <CheckBox
+                android:id="@+id/pc0988"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mnOther" />
+
+            <EditText
+                android:id="@+id/pc0988x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mnOther"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/pc10"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RadioGroup
+                android:id="@+id/pc10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/pc10a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mnYES" />
+
+                <RadioButton
+                    android:id="@+id/pc10b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mnNO" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/fldGrppc11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/pc11"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/pc11a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pc11" />
+
+                <EditText
+                    android:id="@+id/pc11b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pc11" />
+
+                <EditText
+                    android:id="@+id/pc11c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pc11" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/fldGrppc12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/pc12"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <CheckBox
+                    android:id="@+id/pc12a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc12a" />
+
+                <CheckBox
+                    android:id="@+id/pc12b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc12b" />
+
+                <CheckBox
+                    android:id="@+id/pc12c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc12c" />
+
+                <CheckBox
+                    android:id="@+id/pc12d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc12d" />
+
+                <CheckBox
+                    android:id="@+id/pc12e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pc12e" />
+
+                <CheckBox
+                    android:id="@+id/pc1288"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mnOther" />
+
+                <EditText
+                    android:id="@+id/pc1288x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mnOther"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:onClick="submitSecA"
+            android:text="@string/nextSection"
+            android:textColor="#00ef00" />
+
+        <Button
+            android:id="@+id/btnEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:onClick="endForm"
+            android:text="@string/endForm"
+            android:textColor="#000" />
+    </LinearLayout>
+
+</ScrollView>

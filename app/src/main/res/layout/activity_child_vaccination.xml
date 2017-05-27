@@ -29,23 +29,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/cre01" />
-
+            android:text="@string/cv01" />
 
         <RadioGroup
-            android:id="@+id/cre01"
+            android:id="@+id/cv01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/cre0101"
+                android:id="@+id/cv01a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/mnYES" />
 
             <RadioButton
-                android:id="@+id/cre0102"
+                android:id="@+id/cv01b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -54,7 +53,7 @@
         </RadioGroup>
 
         <LinearLayout
-            android:id="@+id/fldGrpcre01"
+            android:id="@+id/fldGrpcv02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -63,23 +62,78 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/cre01a" />
+                android:text="@string/cv02" />
+
+            <EditText
+                android:id="@+id/cv02a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/cv02a" />
+
+            <CheckBox
+                android:id="@+id/cv0299"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mnDNK" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cv03" />
+
+
+        <RadioGroup
+            android:id="@+id/cv03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/cv03a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/mnYES" />
+
+            <RadioButton
+                android:id="@+id/cv03b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/mnNO" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/fldGrpcv04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cv04" />
 
 
             <RadioGroup
-                android:id="@+id/cre01a"
+                android:id="@+id/cv04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/cre01a01"
+                    android:id="@+id/cv04a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/mnYES" />
 
                 <RadioButton
-                    android:id="@+id/cre01a02"
+                    android:id="@+id/cv04b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -94,7 +148,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="#e0f2f1"
-                android:text="@string/cre02"
+                android:text="@string/atBirth"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 tools:typeface="serif" />
@@ -103,7 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre02bcg"
+                android:text="@string/bcg"
                 android:textAlignment="center" />
 
             <!--<LinearLayout
@@ -128,19 +182,19 @@
                     android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
-                    android:id="@+id/cre0201b"
+                    android:id="@+id/bcgM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0201b01"
+                        android:id="@+id/bcgMa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0201b02"
+                        android:id="@+id/bcgMb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -158,7 +212,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrpBcg"
+                android:id="@+id/fldGrpBcgCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -175,19 +229,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0201a"
+                    android:id="@+id/bcgC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0201a01"
+                        android:id="@+id/bcgCa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0201a02"
+                        android:id="@+id/bcgCb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -203,7 +257,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre02polio"
+                android:text="@string/opv0"
                 android:textAlignment="center" />
 
             <!-- <LinearLayout
@@ -213,7 +267,7 @@
                  android:weightSum="100">-->
 
             <LinearLayout
-                android:id="@+id/fldGrpPolioM"
+                android:id="@+id/fldGrpOpv0M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -229,19 +283,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0202b"
+                    android:id="@+id/opv0M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0202b01"
+                        android:id="@+id/opv0Ma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0202b02"
+                        android:id="@+id/opv0Mb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -258,7 +312,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrpPolio"
+                android:id="@+id/fldGrpOpv0Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -275,19 +329,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0202a"
+                    android:id="@+id/opv0C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0202a01"
+                        android:id="@+id/opv0Ca"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0202a02"
+                        android:id="@+id/opv0Cb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -304,7 +358,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/cre03"
+                android:background="#e0f2f1"
+                android:text="@string/at6weeks"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 tools:typeface="serif" />
@@ -313,7 +368,107 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre03penta"
+                android:text="@string/opv1"
+                android:textAlignment="center" />
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+    -->
+            <LinearLayout
+                android:id="@+id/fldGrpOpv1M"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:gravity="center"
+                    android:text="@string/mother"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/opv1M"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/opv1Ma"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/mnYES" />
+
+                    <RadioButton
+                        android:id="@+id/opv1Mb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/mnNO" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+
+            <LinearLayout
+                android:id="@+id/fldGrpOpv1Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:text="@string/card"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/opv1C"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/opv1Ca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/mnYES" />
+
+                    <RadioButton
+                        android:id="@+id/opv1Cb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/mnNO" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <!--        </LinearLayout>-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/penta1"
                 android:textAlignment="center" />
 
             <!--<LinearLayout
@@ -339,19 +494,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0301b"
+                    android:id="@+id/penta1M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0301b01"
+                        android:id="@+id/penta1Ma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0301b02"
+                        android:id="@+id/penta1Mb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -368,7 +523,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrpPenta1"
+                android:id="@+id/fldGrpPenta1C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -385,119 +540,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0301a"
+                    android:id="@+id/penta1C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0301a01"
+                        android:id="@+id/penta1Ca"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0301a02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/mnNO" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <!--        </LinearLayout>-->
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/cre03pcv"
-                android:textAlignment="center" />
-
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="100">
-    -->
-            <LinearLayout
-                android:id="@+id/fldGrppcv1M"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/mother"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/cre0302b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/cre0302b01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/mnYES" />
-
-                    <RadioButton
-                        android:id="@+id/cre0302b02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/mnNO" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
-
-            <LinearLayout
-                android:id="@+id/fldGrppcv1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/cre0302a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/cre0302a01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/mnYES" />
-
-                    <RadioButton
-                        android:id="@+id/cre0302a02"
+                        android:id="@+id/penta1Cb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -513,7 +568,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre03opv"
+                android:text="@string/pneumo1"
                 android:textAlignment="center" />
 
             <!--<LinearLayout
@@ -523,7 +578,7 @@
                 android:weightSum="100">
     -->
             <LinearLayout
-                android:id="@+id/fldGrpopv1M"
+                android:id="@+id/fldGrpPneumo1M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -539,19 +594,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0303b"
+                    android:id="@+id/pneumo1M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0303b01"
+                        android:id="@+id/pneumo1Ma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0303b02"
+                        android:id="@+id/pneumo1Mb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -568,7 +623,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrpopv1"
+                android:id="@+id/fldGrpPneumo1C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -585,19 +640,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0303a"
+                    android:id="@+id/pneumo1C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0303a01"
+                        android:id="@+id/pneumo1Ca"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0303a02"
+                        android:id="@+id/pneumo1Cb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -614,7 +669,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/cre04"
+                android:background="#e0f2f1"
+                android:text="@string/at10weeks"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 tools:typeface="serif" />
@@ -623,7 +679,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre04penta"
+                android:text="@string/opv2"
                 android:textAlignment="center" />
 
             <!--<LinearLayout
@@ -633,7 +689,7 @@
                 android:weightSum="100">-->
 
             <LinearLayout
-                android:id="@+id/fldGrppenta2M"
+                android:id="@+id/fldGrpOpv2M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -649,19 +705,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0401b"
+                    android:id="@+id/opv2M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0401b01"
+                        android:id="@+id/opv2Ma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0401b02"
+                        android:id="@+id/opv2Mb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -678,7 +734,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrppenta2"
+                android:id="@+id/fldGrpOpv2C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -695,19 +751,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0401a"
+                    android:id="@+id/opv2C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0401a01"
+                        android:id="@+id/opv2Ca"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0401a02"
+                        android:id="@+id/opv2Cb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -723,7 +779,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre04pcv"
+                android:text="@string/penta2"
                 android:textAlignment="center" />
 
             <!-- <LinearLayout
@@ -733,7 +789,7 @@
                  android:weightSum="100">
      -->
             <LinearLayout
-                android:id="@+id/fldGrppcv2M"
+                android:id="@+id/fldGrpPenta2M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -749,19 +805,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0402b"
+                    android:id="@+id/penta2M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0402b01"
+                        android:id="@+id/penta2Ma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0402b02"
+                        android:id="@+id/penta2Mb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -778,7 +834,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrppcv2"
+                android:id="@+id/fldGrpPenta2C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -795,19 +851,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0402a"
+                    android:id="@+id/penta2C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0402a01"
+                        android:id="@+id/penta2Ca"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0402a02"
+                        android:id="@+id/penta2Cb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -823,7 +879,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre04opv"
+                android:text="@string/pneumo2"
                 android:textAlignment="center" />
 
             <!--<LinearLayout
@@ -833,7 +889,7 @@
                 android:weightSum="100">-->
 
             <LinearLayout
-                android:id="@+id/fldGrpopv2M"
+                android:id="@+id/fldGrpPneumo2M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -849,19 +905,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0403b"
+                    android:id="@+id/pneumo2M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0403b01"
+                        android:id="@+id/pneumo2Ma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0403b02"
+                        android:id="@+id/pneumo2Mb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -878,7 +934,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrpopv2"
+                android:id="@+id/fldGrpPneumo2C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -895,19 +951,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0403a"
+                    android:id="@+id/pneumo2C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0403a01"
+                        android:id="@+id/pneumo2Ca"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0403a02"
+                        android:id="@+id/pneumo2Cb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -924,7 +980,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/cre05"
+                android:background="#e0f2f1"
+                android:text="@string/at14weeks"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 tools:typeface="serif" />
@@ -933,7 +990,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre05penta"
+                android:text="@string/opv3"
                 android:textAlignment="center" />
 
             <!--<LinearLayout
@@ -942,6 +999,106 @@
                 android:orientation="horizontal"
                 android:weightSum="100">-->
 
+            <LinearLayout
+                android:id="@+id/fldGrpOpv3M"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:gravity="center"
+                    android:text="@string/mother"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/opv3M"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/opv3Ma"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/mnYES" />
+
+                    <RadioButton
+                        android:id="@+id/opv3Mb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/mnNO" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+
+            <LinearLayout
+                android:id="@+id/fldGrOpv3C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:text="@string/card"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/opv3C"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/opv3Ca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/mnYES" />
+
+                    <RadioButton
+                        android:id="@+id/opv3Cb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/mnNO" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <!--</LinearLayout>
+    -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/penta3"
+                android:textAlignment="center" />
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+    -->
             <LinearLayout
                 android:id="@+id/fldGrpPenta3M"
                 android:layout_width="match_parent"
@@ -959,19 +1116,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0501b"
+                    android:id="@+id/penta3M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0501b01"
+                        android:id="@+id/penta3Ma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0501b02"
+                        android:id="@+id/penta3Mb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -988,7 +1145,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrpenta3"
+                android:id="@+id/fldGrpPenta3C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -1005,119 +1162,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0501a"
+                    android:id="@+id/penta3C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0501a01"
+                        android:id="@+id/penta3Ca"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0501a02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/mnNO" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <!--</LinearLayout>
-    -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/cre05pcv"
-                android:textAlignment="center" />
-
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="100">
-    -->
-            <LinearLayout
-                android:id="@+id/fldGrppcv3M"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/mother"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/cre0502b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/cre0502b01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/mnYES" />
-
-                    <RadioButton
-                        android:id="@+id/cre0502b02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/mnNO" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
-
-            <LinearLayout
-                android:id="@+id/fldGrppcv3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/cre0502a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/cre0502a01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/mnYES" />
-
-                    <RadioButton
-                        android:id="@+id/cre0502a02"
+                        android:id="@+id/penta3Cb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -1133,7 +1190,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre05opv"
+                android:text="@string/pneumo3"
                 android:textAlignment="center" />
 
             <!--<LinearLayout
@@ -1143,7 +1200,7 @@
                 android:weightSum="100">-->
 
             <LinearLayout
-                android:id="@+id/fldGrpopv3M"
+                android:id="@+id/fldGrpPneumo3M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -1159,19 +1216,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0503b"
+                    android:id="@+id/pneumo3M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0503b01"
+                        android:id="@+id/pneumo3Ma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0503b02"
+                        android:id="@+id/pneumo3Mb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -1188,7 +1245,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrpopv3"
+                android:id="@+id/fldGrpPneumo3C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -1205,19 +1262,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0503a"
+                    android:id="@+id/pneumo3C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0503a01"
+                        android:id="@+id/pneumo3Ca"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0503a02"
+                        android:id="@+id/pneumo3Cb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -1233,7 +1290,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre05ipv"
+                android:text="@string/ipv"
                 android:textAlignment="center" />
 
             <!--<LinearLayout
@@ -1259,19 +1316,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0504b"
+                    android:id="@+id/ipvM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0504b01"
+                        android:id="@+id/ipvMa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0504b02"
+                        android:id="@+id/ipvMb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -1288,7 +1345,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrpipv"
+                android:id="@+id/fldGrpipvC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -1305,19 +1362,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0504a"
+                    android:id="@+id/ipvC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0504a01"
+                        android:id="@+id/ipvCa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0504a02"
+                        android:id="@+id/ipvCb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -1335,7 +1392,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/cre06"
+                android:background="#e0f2f1"
+                android:text="@string/at9month"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 tools:typeface="serif" />
@@ -1344,7 +1402,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/cre06Vitamin"
+                android:text="@string/measles1"
                 android:textAlignment="center" />
 
             <!--<LinearLayout
@@ -1354,7 +1412,7 @@
                 android:weightSum="100">-->
 
             <LinearLayout
-                android:id="@+id/fldGrpVitaminAM"
+                android:id="@+id/fldGrpMeasles1M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -1370,19 +1428,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0601b"
+                    android:id="@+id/measles1M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0601b01"
+                        android:id="@+id/measles1Ma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0601b02"
+                        android:id="@+id/measles1Mb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -1399,7 +1457,7 @@
 
 
             <LinearLayout
-                android:id="@+id/fldGrpVitaminA"
+                android:id="@+id/fldGrpMeasles1C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -1416,19 +1474,19 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/cre0601a"
+                    android:id="@+id/measles1C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/cre0601a01"
+                        android:id="@+id/measles1Ca"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/mnYES" />
 
                     <RadioButton
-                        android:id="@+id/cre0601a02"
+                        android:id="@+id/measles1Cb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -1437,6 +1495,117 @@
                 </RadioGroup>
 
             </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="#e0f2f1"
+                android:text="@string/at15month"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                tools:typeface="serif" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/measles2"
+                android:textAlignment="center" />
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">-->
+
+            <LinearLayout
+                android:id="@+id/fldGrpMeasles2M"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:gravity="center"
+                    android:text="@string/mother"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/measles2M"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/measles2Ma"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/mnYES" />
+
+                    <RadioButton
+                        android:id="@+id/measles2Mb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/mnNO" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+
+            <LinearLayout
+                android:id="@+id/fldGrpMeasles2C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:text="@string/card"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/measles2C"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/measles2Ca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/mnYES" />
+
+                    <RadioButton
+                        android:id="@+id/measles2Cb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/mnNO" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
 
             <!--</LinearLayout>-->
 

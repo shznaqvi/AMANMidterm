@@ -1,17 +1,22 @@
 <resources>
     <string name="app_name">Seropervalence Survey Pakistan - 2016/17 </string>
     <string name="section_A"> سیکشن \'اے\': گھر کی شناخت </string>
+    <string name="delivery">Delivery</string>
+    <string name="postPartumCare">زچگی کے بعد کی نگھداشت</string>
+    <string name="childMorbidity">بچے کی بیماریاں اور ان کا علاج</string>
 
     <string name="mnDob">تاریخ پیدائش</string>
     <string name="mnAge">عمر</string>
     <string name="mnMonths">ماہ</string>
     <string name="mnDays">دن</string>
+    <string name="mnWeeks">ہفتے</string>
     <string name="mnSex">جنس</string>
     <string name="mnMale">مرد</string>
     <string name="mnFemale">عورت</string>
     <string name="mnYES">ہاں</string>
     <string name="mnNO">نہیں</string>
     <string name="mnDNK">معلوم نہیں</string>
+    <string name="None">کوئی نہیں</string>
 
     <string name="mnOther">کوئی اور (وضاحت کریں)۔</string>
 
@@ -66,7 +71,7 @@
     <string name="mnb6yy"> بچے کی عمر (دن) </string>
     <string name="mnb7"> بچے کی جنس </string>
 
-    <string name="section_C">سیکشن سی : ٹیکوں کی معلومات</string>
+    <string name="section_C">Growth Monitoring / Vaccination</string>
     <string name="section_C1">معمول کے ٹیکے</string>
     <string name="section_C2">اضافی ٹیکے</string>
     <string name="section_C3">سفر کی غرز سے ٹیکے</string>
@@ -198,35 +203,7 @@
     <string name="im_5"> (at 15 Months) </string>
     <string name="im_6"> Morbidity/Illness (in Last 14 days) </string>
 
-    <string name="bcg"> BCG </string>
-    <string name="bcgsrc"> Source </string>
-    <string name="bcgscar"> Scar </string>
-    <string name="opv0"> OPV 0 </string>
-    <string name="opv0src"> Source </string>
-    <string name="p1"> Penta 1 </string>
-    <string name="p1src"> Source </string>
-    <string name="pcv1"> PCV 1 </string>
-    <string name="pcv1src"> Source </string>
-    <string name="opv1"> OPV 1 </string>
-    <string name="opv1src"> Source </string>
-    <string name="p2"> Penta 2 </string>
-    <string name="p2src"> Source </string>
-    <string name="pcv2"> PCV 2 </string>
-    <string name="pcv2src"> Source </string>
-    <string name="opv2"> OPV 2 </string>
-    <string name="opv2src"> Source </string>
-    <string name="p3"> Penta 3 </string>
-    <string name="p3src"> Source </string>
-    <string name="pcv3"> PCV 3 </string>
-    <string name="pcv3src"> Source </string>
-    <string name="opv3"> OPV 3 </string>
-    <string name="opv3src"> Source </string>
-    <string name="m1"> Measles 1 </string>
-    <string name="m1src"> Source </string>
-    <string name="m2"> Measles 2 </string>
-    <string name="m2src"> Source </string>
-    <string name="imdr"> Diarrhea </string>
-    <string name="imari"> ARI </string>
+
 
     <string name="section_E">سیکشن ای: ٹیکوں کے بارے میں معلومات</string>
 
@@ -416,29 +393,37 @@
     <string name="crn07">    12 سے 59 ماہ کے اندر بچوں کی اموات </string>
     <string name="crn08"> ماں کی حمل کے دوران یا زچگی کے دوران یا زچگی کے 42 دن تک کی اموات </string>
 
-    <string name="cre01"> کیا کبھی بچے نے کسی بیماری کی ویکسین لگوائی ہے بشمول پولیو کی قومی مہم کے دوران
+
+    <!-- Strings Related to Part 6  Child Vaccincation-->
+
+    <string name="cv01">کیا بچے کی پیدائش کے وقت وزن ہوا تھا؟</string>
+    <string name="cv02">اگر ہاں تو پیدائش کے وقت بچے کا وزن کتنا تھا؟</string>
+    <string name="cv02a">وزن کلو گرام میں</string>
+    <string name="cv03"> کیا کبھی بچے نے کسی بیماری کی ویکسین لگوائی ہے بشمول پولیو کی قومی مہم کے دوران
     اگر کارڈ موجود ہے تو اس میں سے کس طرح کی ویکسینز لگوائی ہیں درج کریں۔ </string>
-    <string name="cre01a">کیا کارڈ موجود ہے؟</string>
+    <string name="cv04">کیا کارڈ موجود ہے؟</string>
     <string name="card"> کارڈ کے مطابق ویسکسینشن کی تصدیق </string>
     <string name="mother"> ماں کے مطابق </string>
-    <string name="cre02"> پیدائش کے وقت </string>
-    <string name="cre02bcg"> BCG </string>
-    <string name="cre02polio"> Polio 0 </string>
-    <string name="cre03"> 6 ہفتوں کی عمر میں </string>
-    <string name="cre03penta"> Penta 1 </string>
-    <string name="cre03pcv"> PCV 1 </string>
-    <string name="cre03opv"> OPV 1 </string>
-    <string name="cre04"> 10 ہفتوں کی عمر میں </string>
-    <string name="cre04penta"> Penta 2 </string>
-    <string name="cre04pcv"> PCV 2 </string>
-    <string name="cre04opv"> OPV 2 </string>
-    <string name="cre05"> 14 ہفتوں کی عمر میں </string>
-    <string name="cre05penta"> Penta 3 </string>
-    <string name="cre05pcv"> PCV 3 </string>
-    <string name="cre05opv"> OPV 3 </string>
-    <string name="cre05ipv"> IPV </string>
-    <string name="cre06"> 6 مہینوں کی عمر میں </string>
-    <string name="cre06Vitamin"> Vitamin A</string>
+    <string name="atBirth"> پیدائش کے وقت </string>
+    <string name="bcg"> BCG </string>
+    <string name="opv0"> OPV - 0 </string>
+    <string name="at6weeks"> 6 ہفتوں کی عمر میں </string>
+    <string name="penta1"> Penta 1 </string>
+    <string name="opv1"> OPV 1 </string>
+    <string name="pneumo1">Pneumo - 1</string>
+    <string name="at10weeks"> 10 ہفتوں کی عمر میں </string>
+    <string name="penta2"> Penta 2 </string>
+    <string name="opv2"> OPV 2 </string>
+    <string name="pneumo2">Pneumo - 2</string>
+    <string name="at14weeks"> 14 ہفتوں کی عمر میں </string>
+    <string name="opv3"> OPV 3 </string>
+    <string name="penta3"> Penta 3 </string>
+    <string name="pneumo3">Pneumo - 3</string>
+    <string name="ipv"> IPV </string>
+    <string name="at9month">نو مہینے کی عمر میں</string>
+    <string name="measles1"> خسرہ 1 </string>
+    <string name="at15month">پندرہ مہینے کی عمر میں</string>
+    <string name="measles2"> خسرہ 2 </string>
 
     <!--- Strings Related to Part 3 Delivery-->
     <string name="d01">گزشتہ حمل کا نتیجہ کیا تھا؟</string>
@@ -462,6 +447,70 @@
     <string name="d04a">نارمل زچگی</string>
     <string name="d04b">اوزار کے زریعے زچگی</string>
     <string name="d04c">بڑا اپریشن کے زریعے</string>
+
+    <!--- String related to Part 4.. Postpartum care-->
+    <string name="pc01">کیا گزشتہ زچگی کے بعد آپ کو کوئی پیچیدگی پیش آئی تھی؟</string>
+    <string name="pc02">اگر ہاں تو آپ کو ان میں سے کونسی پیچیدگیاں پیش آئی تھیں؟ </string>
+    <string name="pc02a">بہت زیادہ خون آنا</string>
+    <string name="pc02b">پیٹ کے نچلے حصے میں شدید درد</string>
+    <string name="pc02c">جھٹکے/دورے </string>
+    <string name="pc02d">سو سے زیادہ بخار</string>
+    <string name="pc02e">دھندلاپن</string>
+    <string name="pc03">اگر ہاں تو کیا آپ نے ان علامات کے لئے علاج کروایا تھا؟</string>
+    <string name="pc04">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
+    <string name="pc05">اگر ہاں تو آپ نے اپنا  معائنہ کہاں سے کروایا تھا؟</string>
+    <string name="pc05a">گورنمنٹ کے مرکز صحت میں</string>
+    <string name="pc05b">پرائیوٹ مرکز صحت</string>
+    <string name="pc05c">ایل ایچ وی/مڈوائف کے گھر آنا/جانا</string>
+    <string name="pc05d">ایل ایچ وی کے گھر آنا /جانا</string>
+    <string name="pc05e">دائی/ٹی بی اے  </string>
+    <string name="pc06">زچگی کے کتنے دن یا ہفتے بعد آپ نے اپنا پہلا معائنہ کروایا تھا ؟ اگر اسی دن ہی معائنہ کروایا ہےتو 00 لکھ دیں۔</string>
+    <string name="pc0699">آج تک کوئی معائنہ نہیں کروایا۔</string>
+    <string name="pc07">کیا بچے کی پیدائش کے بعدآپ کو درجہ ذیل میں سے کوئی مشورہ دیا گیا تھا؟ (ایک ایک کر کے سوال پوچھئیے اور 1 یا 2 پر نشان لگائیے)</string>
+    <string name="pc07a">بچوں میں وقفہ</string>
+    <string name="pc07b">صرف اور صرف ماں کا دودھ پلانا</string>
+    <string name="pc07c">بچوں کے ٹیکے</string>
+    <string name="pc07d">بچوں کے دست</string>
+    <string name="pc07e">نمونیہ کی علامات</string>
+    <string name="pc08">کیا آپ کو زچگی کے 40 دن بعد کوئی پیچیدگی پیش آئی تھی؟</string>
+    <string name="pc09">اگر ہاں تو آپ کو کیا ہوا تھا؟</string>
+    <string name="pc09a">بہت زیادہ خون آنا </string>
+    <string name="pc09b">پیٹ کے نچلے صحے میں درد</string>
+    <string name="pc09c">جھٹکے/دورے </string>
+    <string name="pc09d">سو سے زیادہ بخار</string>
+    <string name="pc09e">دھندلاپن </string>
+    <string name="pc09f">چھاتی کا کھچاؤ</string>
+    <string name="pc09g">مایوسی </string>
+    <string name="pc09h">نیام سے پانی کا اخراج </string>
+    <string name="pc10">کیا آپ نے ان پیچیدگیوں کے لئے اپنا علاج کروایا تھا؟</string>
+    <string name="pc11">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
+    <string name="pc12">اگر ہاں تو آپ نے کہاں سے علاج کروایا تھا؟</string>
+    <string name="pc12a">گورنمنٹ کے مرکز صحت میں</string>
+    <string name="pc12b">پرائیوٹ مرکز صحت</string>
+    <string name="pc12c">ایل ایچ وی/مڈوائف کے گھر آنا/جانا</string>
+    <string name="pc12d">ایل ایچ وی کے گھر آنا /جانا</string>
+    <string name="pc12e">دائی/ٹی بی اے  </string>
+
+    <!-- String related to Part 7.. Child Morbidity & care seeking-->
+    <string name="cm01">کیا بچہ پچھلے دو ہفتوں کے دوران ان میں سے کسی بیماری میں مبتلہ رہا ہے ؟(اس کے علاوہ کوئی اور؟)</string>
+    <string name="cm01a">شدید بخار</string>
+    <string name="cm01b">دست</string>
+    <string name="cm01c">کھانسی /زکام</string>
+    <string name="cm01d">سانس میں دشواری</string>
+    <string name="cm01e">سینے کی تکلیف</string>
+    <string name="cm01f">جلد کی بیماری</string>
+    <string name="cm01g">پاخانے میں کیڑے</string>
+    <string name="cm01h">داخ دھبے اور خارش</string>
+    <string name="cm02">کیا آپ نےپچھلے دو ہفتوں میں کسی بیماری کا علاج کروایا؟</string>
+    <string name="cm03">پچھلےدو ہفتوںمیں ان میں سے کسی بیماری کا علاج کس سے کروایا؟ ہر شخص کے بارے میں پوچھیں اور تمام بتائے ہوئے لوگوں کا اندراج کریں۔</string>
+    <string name="cm03a">ڈاکٹر</string>
+    <string name="cm03b">نرس /دائی/لیڈی ہیلتھ وسیٹر</string>
+    <string name="cm03c">کمیونٹی مڈ وائف</string>
+    <string name="cm03d">دائی/ ٹی بی اے</string>
+    <string name="cm03e"> لیڈی ہیلتھ ورکر</string>
+    <string name="cm03f">ہمیوپیھتک</string>
+    <string name="cm03g">حکیم</string>
+    <string name="cm03h">کمپوڈر/ڈسپنسر </string>
 
 
     <!-- Strings related to login -->

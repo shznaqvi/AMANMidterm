@@ -141,9 +141,9 @@ public class DeliveryActivity extends Activity {
 
                 finish();
 
-                //Intent secNext = new Intent(this, Section5cActivity.class);
-                //secNext.putExtra("check", false);
-                //startActivity(secNext);
+                Intent secNext = new Intent(this, PostpartumCareActivity.class);
+                secNext.putExtra("check", false);
+                startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -235,6 +235,8 @@ public class DeliveryActivity extends Activity {
             d0388.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "d0388: This data is Required!");
             return false;
+        } else {
+            d0388.setError(null);
         }
 
         if (d0388.isChecked() && d0388x.getText().toString().isEmpty()) {
