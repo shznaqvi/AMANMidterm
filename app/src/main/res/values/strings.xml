@@ -163,7 +163,7 @@
     <string name="iy010d">ایل ایچ وی/مڈوائف کے گھر آنا/جانا</string>
     <string name="iy010e">ایل ایچ وی کے گھر آنا /جانا</string>
     <string name="iy010f">دائی/ٹی بی اے</string>
-    <string name="iy010goth">کوئی اور (وضاحت کریں)</string>
+    <string name="iy010x">کوئی اور (وضاحت کریں)</string>
     <string name="iy011">آپ نے زچگی کے کتنے دن یا ہفتے بعد بچے کا پہلا معائنہ کروایا تھا؟ (اگر پیدائش کے دن ہی معائنہ کروایا ہو تو 00 لکھ دیں)</string>
     <string name="iy011d">دن</string>
     <string name="iy011w">ہفتے</string>
@@ -217,6 +217,51 @@
     <string name="ms18"> ہمیشہ تھکاوٹ محسوس ہونا </string>
     <string name="ms19"> معدے کے مسائل </string>
     <string name="ms20"> فوری تھک جانا </string>
+
+
+    <string name="ancheading"> حمل کے دوران نگہداشت </string>
+    <string name="anc01"> کیا آپ نے گزشتہ حمل کے دوران اپنا معائنہ کروائی تھی؟ </string>
+    <string name="anc01a"> اگر نہیں تو معائنہ نہ کروانے کی وجوہات بتائے۔ </string>
+    <string name="anc01b"> اگر نہیں تو معائنہ نہ کروانے کی وجوہات بتائے۔ </string>
+    <string name="anc02"> آپ نےگزشتہ حمل کے دوران کتنی مرتبہ اپنا معائنہ کروائی تھی ؟ </string>
+    <string name="anc03">اگر ہاں تو گزشتہ حمل کے دوران کس سے معائنہ کروا ئی تھی ؟ (ایک سےزیادہ جوابات دینے کی اجازت ہے) </string>
+    <string name="anc03a"> گورنمنٹ ڈاکٹر </string>
+    <string name="anc03b"> پرائیوٹ ڈاکٹر </string>
+    <string name="anc03c"> ایل ایچ وی/ نرس </string>
+    <string name="anc03d"> ایل ایچ وی/مڈوائف کے گھر آنا/جانا </string>
+    <string name="anc03e"> ایل ایچ وی کے گھر آنا /جانا </string>
+    <string name="anc03f"> دائی/ٹی بی اے </string>
+    <string name="anc04"> کیا آپ نے گزشتہ حمل کے دوران فولاد کا طاقت کی دوائی لی یا خریدی تھی؟ </string>
+    <string name="anc05"> اگر ہاں تو آپ نے کتنے دن یہ دوائی استعمال کی تھی؟ </string>
+    <string name="anc05dnk"> اگر ہاں تو آپ نے کتنے دن یہ دوائی استعمال کی تھی؟ </string>
+    <string name="anc05d"> دنوں کی تعداد </string>
+    <string name="anc06"> کیا آپ کو گزشتہ حمل کے دوران کسی خطرناک علامت کا سامنا ہوا تھا؟ </string>
+    <string name="anc07"> اگر ہاں تو یہ خطرناک علامت کیا تھی؟ </string>
+    <string name="anc07a"> 100 سےزیادہ بخار </string>
+    <string name="anc07b"> دھندلاپن </string>
+    <string name="anc07c"> خون آنا </string>
+    <string name="anc07d"> جسم ، ہاتھوں اور چہرے پر سوجن </string>
+    <string name="anc08"> کیا آپ نے ان علامات کے لئے اپنا علاج کروائی تھی؟ </string>
+    <string name="anc09"> اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟ </string>
+    <string name="anc010"> اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟ </string>
+    <string name="anc011"> اگر ہاں تو گزشتہ حمل کے دوران کسی نے علاج فراہم کی تھی؟ </string>
+    <string name="anc011a"> گورنمنٹ ڈاکٹر </string>
+    <string name="anc011b"> پرائیوٹ ڈاکٹر </string>
+    <string name="anc011c"> ایل ایچ وی/ نرس </string>
+    <string name="anc011d"> ایل ایچ وی/مڈوائف کے گھر آنا/جانا </string>
+    <string name="anc011e"> ایل ایچ وی کے گھر آنا /جانا </string>
+    <string name="anc011f"> دائی/ٹی بی اے </string>
+    <string name="anc012"> کیا آپ نے اپنے بچے کی پیدائش سے پہلے اپنے بازو میں ٹی ٹی کا انجکشن لگوائی تھی جو کہ بچے کو بعد میں جھٹکے لگنے سے بچاتا ہے؟ </string>
+    <string name="anc013"> اگر ہاں تو کتنی مرتبہ؟ </string>
+    <string name="anc014"> کیا اس وقت آپ فیملی پلاننگ کے لئے کوئی طریقہ استعمال کرتی ہیں؟ </string>
+    <string name="anc015"> اگر ہاں تو آپ اس وقت کونسا طریقہ استعمال کرتی ہیں؟ </string>
+    <string name="anc015a"> گولیاں </string>
+    <string name="anc015b"> انجکشن </string>
+    <string name="anc015c"> کنڈم/ساتھی </string>
+    <string name="anc015d"> آئی یو ڈی </string>
+    <string name="anc015e"> نس بندی </string>
+    <string name="anc015f"> ازل </string>
+    <string name="anc015g"> دیگر وضاحت کریں </string>
 
 
     <!--    RWIC: Relation With Index Child    -->

@@ -67,7 +67,8 @@
         <activity android:name=".NeonatalHealthActivity" />
         <activity android:name=".ChildMorbidityActivity" />
         <activity android:name=".BirthsDeathsActivity" />
-        <activity android:name=".ms"></activity>
+        <activity android:name=".ms" />
+        <activity android:name=".anc"></activity>
     </application>
 
 </manifest>

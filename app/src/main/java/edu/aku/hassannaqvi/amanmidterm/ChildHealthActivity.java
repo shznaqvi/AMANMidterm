@@ -67,10 +67,10 @@ public class ChildHealthActivity extends Activity {
     CheckBox iy05i;
     @BindView(R.id.iy05j)
     CheckBox iy05j;
-    @BindView(R.id.iy05k)
-    CheckBox iy05k;
-    @BindView(R.id.iy05koth)
-    EditText iy05koth;
+    @BindView(R.id.iy0588)
+    CheckBox iy0588;
+    @BindView(R.id.iy05x)
+    EditText iy05x;
     @BindView(R.id.iy06d)
     EditText iy06d;
     @BindView(R.id.iy07)
@@ -99,10 +99,10 @@ public class ChildHealthActivity extends Activity {
     RadioButton iy08d;
     @BindView(R.id.iy08e)
     RadioButton iy08e;
-    @BindView(R.id.iy08f)
-    RadioButton iy08f;
-    @BindView(R.id.iy08foth)
-    EditText iy08foth;
+    @BindView(R.id.iy0888)
+    RadioButton iy0888;
+    @BindView(R.id.iy08x)
+    EditText iy08x;
     @BindView(R.id.iy09)
     RadioGroup iy09;
     @BindView(R.id.iy09a)
@@ -121,10 +121,10 @@ public class ChildHealthActivity extends Activity {
     CheckBox iy010e;
     @BindView(R.id.iy010f)
     CheckBox iy010f;
-    @BindView(R.id.iy010g)
-    CheckBox iy010g;
-    @BindView(R.id.iy010goth)
-    EditText iy010goth;
+    @BindView(R.id.iy01088)
+    CheckBox iy01088;
+    @BindView(R.id.iy010x)
+    EditText iy010x;
     @BindView(R.id.iy011d)
     EditText iy011d;
     @BindView(R.id.iy011w)
@@ -169,10 +169,10 @@ public class ChildHealthActivity extends Activity {
     CheckBox iy015h;
     @BindView(R.id.iy015i)
     CheckBox iy015i;
-    @BindView(R.id.iy015j)
-    CheckBox iy015j;
-    @BindView(R.id.iy015joth)
-    EditText iy015joth;
+    @BindView(R.id.iy01588)
+    CheckBox iy01588;
+    @BindView(R.id.iy015x)
+    EditText iy015x;
     @BindView(R.id.iy016m)
     EditText iy016m;
     @BindView(R.id.iy01677)
@@ -195,6 +195,9 @@ public class ChildHealthActivity extends Activity {
 
     @BindView(R.id.fldGrpiy05koth)
     LinearLayout fldGrpiy05koth;
+
+    @BindView(R.id.fldGrpiy07)
+    LinearLayout fldGrpiy07;
 
     @BindView(R.id.fldGrpiy08foth)
     LinearLayout fldGrpiy08foth;
@@ -255,9 +258,9 @@ public class ChildHealthActivity extends Activity {
                     iy05h.setChecked(false);
                     iy05i.setChecked(false);
                     iy05j.setChecked(false);
-                    iy05k.setChecked(false);
+                    iy0588.setChecked(false);
 
-                    iy015joth.setText(null);
+                    iy015x.setText(null);
 
                     iy016m.setText(null);
                     iy01677.setChecked(false);
@@ -276,14 +279,14 @@ public class ChildHealthActivity extends Activity {
         });
 
 
-        iy05k.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        iy0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy05k.isChecked()) {
+                if (iy0588.isChecked()) {
                     fldGrpiy05koth.setVisibility(View.VISIBLE);
-                    iy05k.requestFocus();
+                    iy0588.requestFocus();
                 } else {
-                    iy05koth.setText(null);
+                    iy05x.setText(null);
                     fldGrpiy05koth.setVisibility(View.GONE);
                 }
             }
@@ -293,8 +296,8 @@ public class ChildHealthActivity extends Activity {
         iy07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (iy07a.isChecked()) {
-                    fldGrpiy04.setVisibility(View.VISIBLE);
+                if (iy07b.isChecked()) {
+                    fldGrpiy07.setVisibility(View.VISIBLE);
                     iy07aa.requestFocus();
                 } else {
 
@@ -302,7 +305,7 @@ public class ChildHealthActivity extends Activity {
                     iy07bb.setText(null);
                     iy07cc.setText(null);
 
-                    fldGrpiy04.setVisibility(View.GONE);
+                    fldGrpiy07.setVisibility(View.GONE);
                 }
             }
         });
@@ -311,11 +314,11 @@ public class ChildHealthActivity extends Activity {
         iy08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (iy08f.isChecked()) {
+                if (iy0888.isChecked()) {
                     fldGrpiy08foth.setVisibility(View.VISIBLE);
-                    iy08foth.requestFocus();
+                    iy08x.requestFocus();
                 } else {
-                    iy08foth.setText(null);
+                    iy08x.setText(null);
                     fldGrpiy08foth.setVisibility(View.GONE);
                 }
             }
@@ -335,9 +338,9 @@ public class ChildHealthActivity extends Activity {
                     iy010d.setChecked(false);
                     iy010e.setChecked(false);
                     iy010f.setChecked(false);
-                    iy010g.setChecked(false);
+                    iy01088.setChecked(false);
 
-                    iy010goth.setText(null);
+                    iy010x.setText(null);
 
                     fldGrpiy09.setVisibility(View.GONE);
                 }
@@ -345,14 +348,14 @@ public class ChildHealthActivity extends Activity {
         });
 
 
-        iy010g.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        iy01088.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy010g.isChecked()) {
+                if (iy01088.isChecked()) {
                     fldGrpiy010goth.setVisibility(View.VISIBLE);
-                    iy010goth.requestFocus();
+                    iy010x.requestFocus();
                 } else {
-                    iy010goth.setText(null);
+                    iy010x.setText(null);
                     fldGrpiy010goth.setVisibility(View.GONE);
                 }
             }
@@ -378,28 +381,28 @@ public class ChildHealthActivity extends Activity {
         });
 
 
-        iy015j.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        iy01588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy015j.isChecked()) {
+                if (iy01588.isChecked()) {
                     fldGrpiy015joth.setVisibility(View.VISIBLE);
-                    iy015joth.requestFocus();
+                    iy015x.requestFocus();
                 } else {
-                    iy015joth.setText(null);
+                    iy015x.setText(null);
                     fldGrpiy015joth.setVisibility(View.GONE);
                 }
             }
         });
 
 
-        iy015j.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        iy01588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy015j.isChecked()) {
+                if (iy01588.isChecked()) {
                     fldGrpiy015joth.setVisibility(View.VISIBLE);
-                    iy015joth.requestFocus();
+                    iy015x.requestFocus();
                 } else {
-                    iy015joth.setText(null);
+                    iy015x.setText(null);
                     fldGrpiy015joth.setVisibility(View.GONE);
                 }
             }
@@ -558,116 +561,133 @@ public class ChildHealthActivity extends Activity {
         }
 
 
-        if (!iy05a.isChecked()
-                && !iy05b.isChecked()
-                && !iy05c.isChecked()
-                && !iy05d.isChecked()
-                && !iy05e.isChecked()
-                && !iy05f.isChecked()
-                && !iy05g.isChecked()
-                && !iy05h.isChecked()
-                && !iy05i.isChecked()
-                && !iy05j.isChecked()
-                && !iy05k.isChecked()) {
-            iy05a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy05), Toast.LENGTH_LONG).show();
-            iy05a.requestFocus();
-            return false;
-        } else {
-            iy05a.setError(null);
-        }
+        if (var_iy04 == "1") {
+
+            if (!iy05a.isChecked()
+                    && !iy05b.isChecked()
+                    && !iy05c.isChecked()
+                    && !iy05d.isChecked()
+                    && !iy05e.isChecked()
+                    && !iy05f.isChecked()
+                    && !iy05g.isChecked()
+                    && !iy05h.isChecked()
+                    && !iy05i.isChecked()
+                    && !iy05j.isChecked()
+                    && !iy0588.isChecked()) {
+                iy05a.setError(getString(R.string.rdoerr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy05), Toast.LENGTH_LONG).show();
+                iy05a.requestFocus();
+                return false;
+            } else {
+                iy05a.setError(null);
+            }
 
 
-        if (iy05koth.getText().toString().isEmpty() || iy05koth.getText().toString() == null) {
-            iy05koth.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
-            iy05koth.requestFocus();
-            return false;
-        } else {
-            iy05koth.setError(null);
-        }
-
-        if (iy06d.getText().toString().isEmpty() || iy06d.getText().toString() == null) {
-            iy06d.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
-            iy06d.requestFocus();
-            return false;
-        } else {
-            iy06d.setError(null);
-        }
+            if (iy0588.isChecked()) {
+                if (iy05x.getText().toString().isEmpty() || iy05x.getText().toString() == null) {
+                    iy05x.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                    iy05x.requestFocus();
+                    return false;
+                } else {
+                    iy05x.setError(null);
+                }
+            }
 
 
-        rdo_iy07 = iy07.getCheckedRadioButtonId();
-
-        switch (rdo_iy07) {
-            case R.id.iy07a:
-                var_iy07 = "1";
-                break;
-            case R.id.iy07b:
-                var_iy07 = "2";
-                break;
-        }
-
-        if (rdo_iy07 == -1) {
-            iy07a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07), Toast.LENGTH_LONG).show();
-            iy07a.requestFocus();
-            return false;
-        } else {
-            iy07a.setError(null);
-        }
+            if (iy06d.getText().toString().isEmpty() || iy06d.getText().toString() == null) {
+                iy06d.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
+                iy06d.requestFocus();
+                return false;
+            } else {
+                iy06d.setError(null);
+            }
 
 
-        if (iy07aa.getText().toString().isEmpty() || iy07aa.getText().toString() == null) {
-            iy07aa.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07a), Toast.LENGTH_LONG).show();
-            iy07aa.requestFocus();
-            return false;
-        } else {
-            iy07aa.setError(null);
-        }
+            rdo_iy07 = iy07.getCheckedRadioButtonId();
+
+            switch (rdo_iy07) {
+                case R.id.iy07a:
+                    var_iy07 = "1";
+                    break;
+                case R.id.iy07b:
+                    var_iy07 = "2";
+                    break;
+            }
+
+            if (rdo_iy07 == -1) {
+                iy07a.setError(getString(R.string.rdoerr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07), Toast.LENGTH_LONG).show();
+                iy07a.requestFocus();
+                return false;
+            } else {
+                iy07a.setError(null);
+            }
 
 
-        rdo_iy08 = iy08.getCheckedRadioButtonId();
+            if (var_iy07 == "2") {
 
-        switch (rdo_iy08) {
-            case R.id.iy08a:
-                var_iy08 = "1";
-                break;
-            case R.id.iy08b:
-                var_iy08 = "2";
-                break;
-            case R.id.iy08c:
-                var_iy08 = "3";
-                break;
-            case R.id.iy08d:
-                var_iy08 = "4";
-                break;
-            case R.id.iy08e:
-                var_iy08 = "5";
-                break;
-            case R.id.iy08f:
-                var_iy08 = "6";
-                break;
-        }
-
-        if (rdo_iy08 == -1) {
-            iy08a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
-            iy08a.requestFocus();
-            return false;
-        } else {
-            iy08a.setError(null);
-        }
+                if (iy07aa.getText().toString().isEmpty() || iy07aa.getText().toString() == null) {
+                    iy07aa.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07a), Toast.LENGTH_LONG).show();
+                    iy07aa.requestFocus();
+                    return false;
+                } else {
+                    iy07aa.setError(null);
+                }
 
 
-        if (iy08foth.getText().toString().isEmpty() || iy08foth.getText().toString() == null) {
-            iy08foth.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
-            iy08foth.requestFocus();
-            return false;
-        } else {
-            iy08foth.setError(null);
+                rdo_iy08 = iy08.getCheckedRadioButtonId();
+
+                switch (rdo_iy08) {
+                    case R.id.iy08a:
+                        var_iy08 = "1";
+                        break;
+                    case R.id.iy08b:
+                        var_iy08 = "2";
+                        break;
+                    case R.id.iy08c:
+                        var_iy08 = "3";
+                        break;
+                    case R.id.iy08d:
+                        var_iy08 = "4";
+                        break;
+                    case R.id.iy08e:
+                        var_iy08 = "5";
+                        break;
+                    case R.id.iy0888:
+                        var_iy08 = "6";
+                        break;
+                }
+
+                if (rdo_iy08 == -1) {
+                    iy08a.setError(getString(R.string.rdoerr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
+                    iy08a.requestFocus();
+                    return false;
+                } else {
+                    iy08a.setError(null);
+                }
+
+
+                if (var_iy08 == "6") {
+
+                    if (iy08x.getText().toString().isEmpty() || iy08x.getText().toString() == null) {
+                        iy08x.setError(getString(R.string.txterr));
+                        Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                        iy08x.requestFocus();
+                        return false;
+                    } else {
+                        iy08x.setError(null);
+                    }
+
+                }
+
+
+            }
+
+
         }
 
 
@@ -692,30 +712,39 @@ public class ChildHealthActivity extends Activity {
         }
 
 
-        if (!iy010a.isChecked()
-                && !iy010b.isChecked()
-                && !iy010c.isChecked()
-                && !iy010d.isChecked()
-                && !iy010e.isChecked()
-                && !iy010f.isChecked()
-                && !iy010g.isChecked()) {
-            iy010a.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy010), Toast.LENGTH_LONG).show();
-            iy010a.requestFocus();
-            return false;
-        } else {
-            iy010a.setError(null);
-        }
+        if (var_iy09 == "2") {
+
+            if (!iy010a.isChecked()
+                    && !iy010b.isChecked()
+                    && !iy010c.isChecked()
+                    && !iy010d.isChecked()
+                    && !iy010e.isChecked()
+                    && !iy010f.isChecked()
+                    && !iy01088.isChecked()) {
+                iy010a.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy010), Toast.LENGTH_LONG).show();
+                iy010a.requestFocus();
+                return false;
+            } else {
+                iy010a.setError(null);
+            }
 
 
-        if (iy010goth.getText().toString().isEmpty() || iy010goth.getText().toString() == null) {
-            iy010goth.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
-            iy010goth.requestFocus();
-            return false;
-        } else {
-            iy010goth.setError(null);
+            if (iy01088.isChecked()) {
+
+                if (iy010x.getText().toString().isEmpty() || iy010x.getText().toString() == null) {
+                    iy010x.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                    iy010x.requestFocus();
+                    return false;
+                } else {
+                    iy010x.setError(null);
+                }
+
+            }
+
         }
+
 
         if (iy011d.getText().toString().isEmpty() || iy011d.getText().toString() == null) {
             iy011d.setError(getString(R.string.txterr));
@@ -818,7 +847,7 @@ public class ChildHealthActivity extends Activity {
                 && !iy015g.isChecked()
                 && !iy015h.isChecked()
                 && !iy015i.isChecked()
-                && !iy015j.isChecked()) {
+                && !iy01588.isChecked()) {
             iy015a.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy015), Toast.LENGTH_LONG).show();
             iy015a.requestFocus();
@@ -828,13 +857,16 @@ public class ChildHealthActivity extends Activity {
         }
 
 
-        if (iy015joth.getText().toString().isEmpty() || iy015joth.getText().toString() == null) {
-            iy015joth.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
-            iy015joth.requestFocus();
-            return false;
-        } else {
-            iy015joth.setError(null);
+        if (iy01588.isChecked()) {
+            if (iy015x.getText().toString().isEmpty() || iy015x.getText().toString() == null) {
+                iy015x.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                iy015x.requestFocus();
+                return false;
+            } else {
+                iy015x.setError(null);
+            }
+
         }
 
 
@@ -1031,10 +1063,10 @@ public class ChildHealthActivity extends Activity {
         js.put("iy05h", iy05h.isChecked() ? "1" : "2");
         js.put("iy05i", iy05i.isChecked() ? "1" : "2");
         js.put("iy05j", iy05j.isChecked() ? "1" : "2");
-        js.put("iy05k", iy05k.isChecked() ? "1" : "2");
+        js.put("iy0588", iy0588.isChecked() ? "1" : "2");
 
 
-        js.put("iy05koth", iy05koth.getText().toString());
+        js.put("iy05x", iy05x.getText().toString());
 
         js.put("iy06d", iy06d.getText().toString());
 
@@ -1064,10 +1096,10 @@ public class ChildHealthActivity extends Activity {
         js.put("iy08c", iy08c.isChecked() ? "1" : "2");
         js.put("iy08d", iy08d.isChecked() ? "1" : "2");
         js.put("iy08e", iy08e.isChecked() ? "1" : "2");
-        js.put("iy08f", iy08f.isChecked() ? "1" : "2");
+        js.put("iy0888", iy0888.isChecked() ? "1" : "2");
 
 
-        js.put("iy08foth", iy08foth.getText().toString());
+        js.put("iy08x", iy08x.getText().toString());
 
         rdo_iy09 = iy09.getCheckedRadioButtonId();
 
@@ -1088,9 +1120,9 @@ public class ChildHealthActivity extends Activity {
         js.put("iy010d", iy010d.isChecked() ? "1" : "2");
         js.put("iy010e", iy010e.isChecked() ? "1" : "2");
         js.put("iy010f", iy010f.isChecked() ? "1" : "2");
-        js.put("iy010g", iy010g.isChecked() ? "1" : "2");
+        js.put("iy01088", iy01088.isChecked() ? "1" : "2");
 
-        js.put("iy010goth", iy010goth.getText().toString());
+        js.put("iy010x", iy010x.getText().toString());
 
 
         js.put("iy011d", iy011d.getText().toString());
@@ -1130,7 +1162,7 @@ public class ChildHealthActivity extends Activity {
                 break;
         }
 
-        js.put("iy013", var_iy014);
+        js.put("iy014", var_iy014);
 
         js.put("iy015a", iy015a.isChecked() ? "1" : "2");
         js.put("iy015b", iy015b.isChecked() ? "1" : "2");
@@ -1141,10 +1173,10 @@ public class ChildHealthActivity extends Activity {
         js.put("iy015g", iy015g.isChecked() ? "1" : "2");
         js.put("iy015h", iy015h.isChecked() ? "1" : "2");
         js.put("iy015i", iy015i.isChecked() ? "1" : "2");
-        js.put("iy015j", iy015j.isChecked() ? "1" : "2");
+        js.put("iy01588", iy01588.isChecked() ? "1" : "2");
 
 
-        js.put("iy015joth", iy015joth.getText().toString());
+        js.put("iy015x", iy015x.getText().toString());
 
         js.put("iy016m", iy016m.getText().toString());
         js.put("iy01677", iy01677.getText().toString());
