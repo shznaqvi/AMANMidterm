@@ -116,7 +116,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
         //A button which generates a text view from which user can write custome queries
         final EditText customquerytext = new EditText(this);
         customquerytext.setVisibility(View.GONE);
-        customquerytext.setHint("Enter Your Query here and Click on Submit Query Button .Results will be displayed below");
+        customquerytext.setHint("Enter Your Query here and Click on Submit Query Button. Results will be displayed below");
         mainLayout.addView(customquerytext);
 
         final Button submitQuery = new Button(AndroidDatabaseManager.this);
