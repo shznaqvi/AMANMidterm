@@ -198,6 +198,9 @@ public class anc extends Activity {
     @BindView(R.id.fldGrpanc09a)
     LinearLayout fldGrpanc09a;
 
+    @BindView(R.id.fldGrpanc03)
+    LinearLayout fldGrpanc03;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,11 +213,25 @@ public class anc extends Activity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (anc01b.isChecked()) {
                     fldGrpanc01.setVisibility(View.VISIBLE);
+                    fldGrpanc03.setVisibility(View.GONE);
+
                     anc01aa.requestFocus();
                 } else {
                     anc01aa.setText(null);
                     anc02.setText(null);
                     fldGrpanc01.setVisibility(View.GONE);
+
+                    anc03a.setChecked(false);
+                    anc03b.setChecked(false);
+                    anc03c.setChecked(false);
+                    anc03d.setChecked(false);
+                    anc03e.setChecked(false);
+                    anc03f.setChecked(false);
+                    anc0388.setChecked(false);
+
+                    fldGrpanc03.setVisibility(View.VISIBLE);
+
+                    anc03a.requestFocus();
                 }
             }
         });
@@ -621,22 +638,23 @@ public class anc extends Activity {
                 anc02.setError(null);
             }
 
-        }
+        } else if (var_anc01 == "1") {
 
+            if (!anc03a.isChecked()
+                    && !anc03b.isChecked()
+                    && !anc03c.isChecked()
+                    && !anc03d.isChecked()
+                    && !anc03e.isChecked()
+                    && !anc03f.isChecked()
+                    && !anc0388.isChecked()) {
+                anc03a.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc03), Toast.LENGTH_LONG).show();
+                anc03a.requestFocus();
+                return false;
+            } else {
+                anc03a.setError(null);
+            }
 
-        if (!anc03a.isChecked()
-                && !anc03b.isChecked()
-                && !anc03c.isChecked()
-                && !anc03d.isChecked()
-                && !anc03e.isChecked()
-                && !anc03f.isChecked()
-                && !anc0388.isChecked()) {
-            anc03a.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc03), Toast.LENGTH_LONG).show();
-            anc03a.requestFocus();
-            return false;
-        } else {
-            anc03a.setError(null);
         }
 
 
@@ -808,7 +826,6 @@ public class anc extends Activity {
         } else {
             anc014a.setError(null);
         }
-
 
 
         if (var_anc014 == "1") {

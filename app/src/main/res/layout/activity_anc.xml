@@ -88,56 +88,66 @@
 
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpanc03"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/anc03"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
 
-        <CheckBox
-            android:id="@+id/anc03a"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/anc03a" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/anc03"
+                android:textStyle="bold"
+                tools:typeface="serif" />
 
-        <CheckBox
-            android:id="@+id/anc03b"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/anc03b" />
+            <CheckBox
+                android:id="@+id/anc03a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/anc03a" />
 
-        <CheckBox
-            android:id="@+id/anc03c"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/anc03c" />
+            <CheckBox
+                android:id="@+id/anc03b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/anc03b" />
 
-        <CheckBox
-            android:id="@+id/anc03d"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/anc03d" />
+            <CheckBox
+                android:id="@+id/anc03c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/anc03c" />
 
-        <CheckBox
-            android:id="@+id/anc03e"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/anc03e" />
+            <CheckBox
+                android:id="@+id/anc03d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/anc03d" />
 
-        <CheckBox
-            android:id="@+id/anc03f"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/anc03f" />
+            <CheckBox
+                android:id="@+id/anc03e"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/anc03e" />
 
-        <CheckBox
-            android:id="@+id/anc0388"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mnOther" />
+            <CheckBox
+                android:id="@+id/anc03f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/anc03f" />
+
+            <CheckBox
+                android:id="@+id/anc0388"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mnOther" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/fldGrpanc03x"
