@@ -124,9 +124,9 @@
 
     <string name="section_E">سیکشن ڈی : بچے کی صحت کی معلومات</string>
 
-    <string name="iy01">Name of child</string>
-    <string name="iy02">Gender of child</string>
-    <string name="iy03">Age of child</string>
+    <string name="iy01">بچے کا نام</string>
+    <string name="iy02">بچے کی جنس</string>
+    <string name="iy03">بچے کی عمر</string>
     <string name="iy03m">مہینے</string>
     <string name="iy03d">دن</string>
     <string name="iy04">کیا بچے کو پیدائش کے پہلے آٹھائیس دنوں میں کوئی طبعی مسئلہ/بیماری ہوئی تھی</string>

@@ -549,6 +549,53 @@
                 android:layout_height="wrap_content"
                 android:text="@string/mnOther" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/iy011"
+                android:textStyle="bold"
+                tools:typeface="serif" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/iy011d"
+                android:textStyle="bold"
+                tools:typeface="serif" />
+
+            <EditText
+                android:id="@+id/iy011d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/iy011w"
+                android:textStyle="bold"
+                tools:typeface="serif" />
+
+            <EditText
+                android:id="@+id/iy011w"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="2" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -579,52 +626,6 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy011"
-            android:textStyle="bold"
-            tools:typeface="serif" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy011d"
-            android:textStyle="bold"
-            tools:typeface="serif" />
-
-        <EditText
-            android:id="@+id/iy011d"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:digits="0123456789"
-            android:ems="10"
-            android:inputType="number"
-            android:maxLength="2" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy011w"
-            android:textStyle="bold"
-            tools:typeface="serif" />
-
-        <EditText
-            android:id="@+id/iy011w"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:digits="0123456789"
-            android:ems="10"
-            android:inputType="number"
-            android:maxLength="2" />
 
         <TextView
             android:layout_width="match_parent"
@@ -749,74 +750,84 @@
 
         </RadioGroup>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpiy014"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy015"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
 
-        <CheckBox
-            android:id="@+id/iy015a"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015a" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/iy015"
+                android:textStyle="bold"
+                tools:typeface="serif" />
 
-        <CheckBox
-            android:id="@+id/iy015b"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015b" />
+            <CheckBox
+                android:id="@+id/iy015a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015a" />
 
-        <CheckBox
-            android:id="@+id/iy015c"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015c" />
+            <CheckBox
+                android:id="@+id/iy015b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015b" />
 
-        <CheckBox
-            android:id="@+id/iy015d"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015d" />
+            <CheckBox
+                android:id="@+id/iy015c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015c" />
 
-        <CheckBox
-            android:id="@+id/iy015e"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015e" />
+            <CheckBox
+                android:id="@+id/iy015d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015d" />
 
-        <CheckBox
-            android:id="@+id/iy015f"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015f" />
+            <CheckBox
+                android:id="@+id/iy015e"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015e" />
 
-        <CheckBox
-            android:id="@+id/iy015g"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015g" />
+            <CheckBox
+                android:id="@+id/iy015f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015f" />
 
-        <CheckBox
-            android:id="@+id/iy015h"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015h" />
+            <CheckBox
+                android:id="@+id/iy015g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015g" />
 
-        <CheckBox
-            android:id="@+id/iy015i"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015i" />
+            <CheckBox
+                android:id="@+id/iy015h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015h" />
 
-        <CheckBox
-            android:id="@+id/iy01588"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iy015j" />
+            <CheckBox
+                android:id="@+id/iy015i"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015i" />
+
+            <CheckBox
+                android:id="@+id/iy01588"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iy015j" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/fldGrpiy015joth"
@@ -969,7 +980,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:maxLength="2"
             android:text="@string/iy018m"
             android:textStyle="bold"
             tools:typeface="serif" />
