@@ -68,7 +68,8 @@
                 android:id="@+id/cv02a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/cv02a" />
+                android:hint="@string/cv02a"
+                android:inputType="numberDecimal" />
 
             <CheckBox
                 android:id="@+id/cv0299"
@@ -1606,8 +1607,6 @@
 
             </LinearLayout>
 
-
-            <!--</LinearLayout>-->
 
         </LinearLayout>
 

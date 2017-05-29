@@ -8,6 +8,7 @@ import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -287,6 +288,31 @@ public class ChildVaccinationActivity extends Activity {
         setContentView(R.layout.activity_child_vaccination);
         ButterKnife.bind(this);
 
+        cv01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (cv01a.isChecked()) {
+                    fldGrpcv02.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcv02.setVisibility(View.GONE);
+                    cv02a.setText(null);
+                    cv0299.setChecked(false);
+                }
+            }
+        });
+
+        cv0299.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cv02a.setVisibility(View.GONE);
+                    cv02a.setText(null);
+                } else {
+                    cv02a.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         cv03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -502,8 +528,48 @@ public class ChildVaccinationActivity extends Activity {
     private boolean formValidation() {
 
         Toast.makeText(this, "Validating Section C", Toast.LENGTH_SHORT).show();
+        //============= Q1================
+        if (cv01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cv01), Toast.LENGTH_SHORT).show();
+            cv01b.setError("This data is Required!");
+            Log.i(TAG, "cv01: This data is Required!");
+            return false;
+        } else {
+            cv01b.setError(null);
+        }
 
-        //============ Q 1 ==========
+        if (cv01a.isChecked()) {
+            if (cv02a.getText().toString().isEmpty() && !cv0299.isChecked()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cv02), Toast.LENGTH_SHORT).show();
+                cv02a.setError("This data is Required!");
+                Log.i(TAG, "cv02: This data is Required!");
+                return false;
+            } else {
+                cv02a.setError(null);
+            }
+
+            if (!cv0299.isChecked()) {
+                if (Double.parseDouble(cv02a.getText().toString()) == 0) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.cv02a), Toast.LENGTH_SHORT).show();
+                    cv02a.setError("Invalid: Data cannot be Zero");
+                    Log.i(TAG, "cv02a: Invalid data is 0");
+                    return false;
+                } else {
+                    cv02a.setError(null);
+                    if (Double.parseDouble(cv02a.getText().toString()) < 0.9 || Double.parseDouble(cv02a.getText().toString()) > 6.0) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.cv02a), Toast.LENGTH_SHORT).show();
+                        cv02a.setError("Invalid: Range is 0.9 - 6.0");
+                        Log.i(TAG, "cv02a: Invalid Range is 0.9 - 6.0 kg");
+                        return false;
+                    } else {
+                        cv02a.setError(null);
+                    }
+                }
+            }
+        }
+
+
+        //============ Q 3 ==========
         if (cv03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.cv03), Toast.LENGTH_SHORT).show();
             cv03b.setError("This data is Required!");

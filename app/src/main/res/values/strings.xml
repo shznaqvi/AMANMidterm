@@ -204,6 +204,34 @@
     <string name="im_6"> Morbidity/Illness (in Last 14 days) </string>
 
 
+    <string name="bcgsrc"> Source </string>
+    <string name="bcgscar"> Scar </string>
+
+    <string name="opv0src"> Source </string>
+    <string name="p1"> Penta 1 </string>
+    <string name="p1src"> Source </string>
+    <string name="pcv1"> PCV 1 </string>
+    <string name="pcv1src"> Source </string>
+
+    <string name="opv1src"> Source </string>
+    <string name="p2"> Penta 2 </string>
+    <string name="p2src"> Source </string>
+    <string name="pcv2"> PCV 2 </string>
+    <string name="pcv2src"> Source </string>
+
+    <string name="opv2src"> Source </string>
+    <string name="p3"> Penta 3 </string>
+    <string name="p3src"> Source </string>
+    <string name="pcv3"> PCV 3 </string>
+    <string name="pcv3src"> Source </string>
+
+    <string name="opv3src"> Source </string>
+    <string name="m1"> Measles 1 </string>
+    <string name="m1src"> Source </string>
+    <string name="m2"> Measles 2 </string>
+    <string name="m2src"> Source </string>
+    <string name="imdr"> Diarrhea </string>
+    <string name="imari"> ARI </string>
 
     <string name="section_E">سیکشن ای: ٹیکوں کے بارے میں معلومات</string>
 
@@ -376,22 +404,22 @@
     <string name="mnResp"> جواب دہندہ </string>
     <string name="title_activity_login">Log in</string>
 
-    <string name="crnheading"> Section N : Births and Deaths in the Last One Year </string>
-    <string name="crnheadingsub"> پہچلے سال جنوری سے دسمبر 2016 تک آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
-    <string name="crna"> Indicators </string>
-    <string name="crnb"> Statistics
+    <string name="bdheading"> Section N : Births and Deaths in the Last One Year </string>
+    <string name="bdheadingsub"> پہچلے سال جنوری سے دسمبر 2016 تک آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
+    <string name="bda"> Indicators </string>
+    <string name="bdb"> Statistics
     None = 0 </string>
-    <string name="crnba"> Number </string>
-    <string name="crnc"> تاریخ پیدائش </string>
-    <string name="crnd"> تاریخ وفات </string>
-    <string name="crn01"> حمل ضائع ہونا </string>
-    <string name="crn02"> مردہ پیدائش </string>
-    <string name="crn03"> زندہ پیدائش </string>
-    <string name="crn04"> 7 دن کے اندر بچوں کی اموات </string>
-    <string name="crn05"> 8 سے 28 دن میں بچوں کی اموات </string>
-    <string name="crn06">  29 سے 364 دنوں کے اندر بچوں کی اموات </string>
-    <string name="crn07">    12 سے 59 ماہ کے اندر بچوں کی اموات </string>
-    <string name="crn08"> ماں کی حمل کے دوران یا زچگی کے دوران یا زچگی کے 42 دن تک کی اموات </string>
+    <string name="bdba"> Number </string>
+    <string name="bdc"> تاریخ پیدائش </string>
+    <string name="bdd"> تاریخ وفات </string>
+    <string name="bd01"> حمل ضائع ہونا </string>
+    <string name="bd02"> مردہ پیدائش </string>
+    <string name="bd03"> زندہ پیدائش </string>
+    <string name="bd04"> 7 دن کے اندر بچوں کی اموات </string>
+    <string name="bd05"> 8 سے 28 دن میں بچوں کی اموات </string>
+    <string name="bd06">  29 سے 364 دنوں کے اندر بچوں کی اموات </string>
+    <string name="bd07">    12 سے 59 ماہ کے اندر بچوں کی اموات </string>
+    <string name="bd08"> ماں کی حمل کے دوران یا زچگی کے دوران یا زچگی کے 42 دن تک کی اموات </string>
 
 
     <!-- Strings Related to Part 6  Child Vaccincation-->
