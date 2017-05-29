@@ -294,10 +294,12 @@ public class anc extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (anc08b.isChecked()) {
+                    fldGrpanc09a.setVisibility(View.GONE);
                     fldGrpanc09.setVisibility(View.VISIBLE);
                     anc09.requestFocus();
                 } else {
                     anc09.setText(null);
+                    fldGrpanc09a.setVisibility(View.VISIBLE);
                     fldGrpanc09.setVisibility(View.GONE);
                 }
             }
@@ -528,8 +530,7 @@ public class anc extends Activity {
 
 
         js.put("anc01", var_anc01);
-        js.put("anc01a", anc01a.getText().toString());
-        js.put("anc01b", anc01b.getText().toString());
+        js.put("anc01aa", anc01aa.getText().toString());
         js.put("anc02", anc02.getText().toString());
 
         js.put("anc03a", anc03a.isChecked() ? "1" : "2");
@@ -780,18 +781,22 @@ public class anc extends Activity {
         }
 
 
-        if (!anc01399.isChecked()) {
-            if (anc013.getText().toString().isEmpty() || anc013.getText().toString() == null) {
-                anc013.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
-                anc013.requestFocus();
-                return false;
+        if (var_anc012 == "1") {
+
+            if (!anc01399.isChecked()) {
+                if (anc013.getText().toString().isEmpty() || anc013.getText().toString() == null) {
+                    anc013.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
+                    anc013.requestFocus();
+                    return false;
+                } else {
+                    anc013.setError(null);
+                }
+
             } else {
-                anc013.setError(null);
+                anc013.setText(null);
             }
 
-        } else {
-            anc013.setText(null);
         }
 
 
@@ -805,7 +810,6 @@ public class anc extends Activity {
         }
 
 
-        Toast.makeText(this, var_anc014, Toast.LENGTH_LONG).show();
 
         if (var_anc014 == "1") {
 
