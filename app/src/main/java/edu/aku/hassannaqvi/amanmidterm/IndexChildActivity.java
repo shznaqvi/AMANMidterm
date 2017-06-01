@@ -277,9 +277,9 @@ public class IndexChildActivity extends Activity {
         return true;
     }
 
-    @Override
+    /*@Override
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "Back Button NOT Allowed!", Toast.LENGTH_SHORT).show();
 
-    }
+    }*/
 }

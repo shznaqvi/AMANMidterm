@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">Seropervalence Survey Pakistan - 2016/17 </string>
+
+    <string name="txterr">This data is required</string>
+    <string name="rdoerr">This data is required</string>
+
+
+    <string name="app_name">Mid-term assessment of AMAN Community Health Program</string>
     <string name="section_A"> سیکشن \'اے\': گھر کی شناخت </string>
     <string name="delivery">Delivery</string>
     <string name="postPartumCare">زچگی کے بعد کی نگھداشت</string>
@@ -122,58 +127,148 @@
     <string name="mnc13"> کیا (بچے کا نام) نے کبھی بھی سفر کے دوران چیک پوائنٹ پر پولیو کے قطرے پئیے؟ </string>
     <string name="mnc13c"> سفر نہیں کیا </string>
 
-    <string name="section_D">سیکشن ڈی : بچے کی صحت کی معلومات</string>
+    <string name="section_E">سیکشن ڈی : بچے کی صحت کی معلومات</string>
 
-    <string name="mnd1"> کیا گزشتہ دو ہفتوں کے دوران (بچے کا نام) کو کھانسی یا زکام ہوا تھا؟ </string>
-    <string name="mnd2"> کیا گزشتہ دو ہفتے کے دوران (بچے کا نام) کو سانس لینے میں شکایت ہوئی تھی؟ </string>
-    <string name="mnd3"> کیا گزشتہ دو ہفتے کے دوران (بچے کا نام) کو سینہ چلنے کی شکایت ہوئی ہے؟ </string>
-    <string name="mnd4"> کیا گزشتہ دو ہفتے کے دوران (بچے کا نام) کو دست ہوئے ہیں؟ (دست سے مراد بچے کو 2 دن تک 3یاا س سے ذیادہ بار پتلے پاخانے ہونا) </string>
-    <string name="mnd5"> کیا بچہ اس وقت کسی بیماری میں مبتلا ہے؟ </string>
-    <string name="mnd6"> کیا آپ کا بچہ اس وقت ان میں سے کسی بیماری کا شکار ہے؟ </string>
-    <string name="mnd6a"> (کھانسی/زکام ) </string>
-    <string name="mnd6b"> (بخار) </string>
-    <string name="mnd6c">(تیزی سے سانس لینا ) </string>
-    <string name="mnd6d"> (سینے میں تکلیٖف) </string>
-    <string name="mnd6e"> (دست) </string>
-    <string name="mnd6f"> (پیچش) </string>
-    <string name="mnd6g"> (قے/الٹی) </string>
-    <string name="mnd6h"> (پیٹ کا درد) </string>
-    <string name="mnd6i"> (پیشاب کے وقت رونا) </string>
-    <string name="mnd7"> مشاہدہ کریں کے بچہ تیز سانس لے رہا ہے؟ </string>
-    <string name="mnd8"> مشاہدہ کریں کہ بچے کا سینہ چل رہا ہے ؟ </string>
-    <string name="mnd9"> کیا (بچے کا نام) گزشتہ چھ ماہ کے دوران کسی بیماری کی وجہ سے ہسپتال میں داخل کرنا پڑا؟ </string>
-    <string name="mnd10"> اگر ہاں تو کس بیماری کی وجہ سے وضاحت کریں؟ جواہندہ جو بیماریا ں بتا رہا ہے اسکو درج کریں </string>
-    <string name="mnd10a"> کھانسی/زکام </string>
-    <string name="mnd10b"> بخار </string>
-    <string name="mnd10c"> تیز سانس لینا </string>
-    <string name="mnd10d"> سینہ چلنے کی شکایت </string>
-    <string name="mnd10e"> دست </string>
-    <string name="mnd10f"> پیچش </string>
-    <string name="mnd10g"> قے/الٹی </string>
-    <string name="mnd10h"> پیٹ کا درد </string>
-    <string name="mnd10i"> پیشاب کے وقت رونا </string>
+    <string name="iy01">بچے کا نام</string>
+    <string name="iy02">بچے کی جنس</string>
+    <string name="iy03">بچے کی عمر</string>
+    <string name="iy03m">مہینے</string>
+    <string name="iy03d">دن</string>
+    <string name="iy04">کیا بچے کو پیدائش کے پہلے آٹھائیس دنوں میں کوئی طبعی مسئلہ/بیماری ہوئی تھی</string>
+    <string name="iy05">اگر ہاں تو بچے کو کیا طبعی مسائل / پیچیدگیاں ہوئی تھیں؟</string>
+    <string name="iy05a">بچہ دودھ نہیں پی سکت تھا/تھی </string>
+    <string name="iy05b">بچے کو بہت ٹھنڈ لگی تھی</string>
+    <string name="iy05c">بخار</string>
+    <string name="iy05d">کھانسی</string>
+    <string name="iy05e">گلے سے سیٹھی کی آواز</string>
+    <string name="iy05f">تیز تیز سانس لینا</string>
+    <string name="iy05g">دل کی دھڑکن تیز ہونا/پسلیوں کا ابھار</string>
+    <string name="iy05h">چڑچڑاپن</string>
+    <string name="iy05i">بیہوشی</string>
+    <string name="iy05j">جھٹکے</string>
+    <string name="iy06">اگر ہاں تو بچہ پیدائش کے کتنی دیر بعد ان پیچیدگیوں میں مبتلا ہوا تھا۔ (جوابات صفر سے آٹھائیس دن کے درمیان آنا چاہئیے اور اگر جواب اسی دن کا آئے تو دنوں کے کالم میں صفر لکیھں۔ </string>
+    <string name="iy06d">دن</string>
+    <string name="iy07">اگر ہاں تو آپ نے بیماری کے دوران علاج کروائی تھی؟</string>
+    <string name="iy07a">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
+    <string name="iy07b">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
+    <string name="iy07c">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
+    <string name="iy08">اگر ہاں تو کہا سے علاج کروائی تھی؟</string>
+    <string name="iy08a">گورنمنٹ کے مرکز صحت میں</string>
+    <string name="iy08b">پرائیوٹ مرکز صحت</string>
+    <string name="iy08c">ایل ایچ وی/مڈوائف کے گھر آنا/جانا</string>
+    <string name="iy08d">ایل ایچ وی کے گھر آنا /جانا</string>
+    <string name="iy08e">دائی/ٹی بی اے  </string>
+    <string name="iy08f">کوئی اور (وضاحت)</string>
+    <string name="iy09">کیا آپ نے بچے کی پیدائش کے بعد عام معائنہ کروائی تھی؟</string>
 
-    <string name="mnd11"> کیا(بچے کا نام)نے کبھی ماں کا دودھ پیا ہے؟ </string>
-    <string name="mnd12"> بچہ ابھی بھی ماں کا دودھ پیتا ہے </string>
-    <string name="mnd13"> کیا (بچے کا نام) نے کل دن یا رات میں ماں کا دودھ پیا ہے؟ </string>
-    <string name="mnd14"> کس عمر تک (بچے کا نام) نے ماں کا دودھ پیا ہے؟ </string>
-    <string name="mnd15"> کیا (بچے کا نام) نے کل دن یا رات میں اِن میں سے کوئی مائع اشیاء استمال کی ہیں؟ </string>
-    <string name="mnd15a"> سادہ پانی </string>
-    <string name="mnd15b"> گلوکوز کا پانی </string>
-    <string name="mnd15c"> جانور کا دودھ یا خشک دودھ </string>
-    <string name="mnd15d"> پھلوں کا جوس یا شربت </string>
-    <string name="mnd15e"> یخنی یا سوپ </string>
-    <string name="mnd15f"> دہی یا لسی </string>
-    <string name="mnd15g"> پتلا دلیہ </string>
-    <string name="mnd15h"> وٹامن کے قطرے یا کوئی دوا </string>
-    <string name="mnd15i"> ORS / نمکول </string>
+    <string name="iy010">اگر ہاں تو کس سے معائنہ کروائی تھی؟ (سب سے زیادہ سند یافتہ فرد کے لئے چھان بین کریں)</string>
+    <string name="iy010a">گورنمنٹ ڈاکٹر</string>
+    <string name="iy010b">پرائیوٹ ڈاکٹر</string>
+    <string name="iy010c">ایل ایچ وی/ نرس</string>
+    <string name="iy010d">ایل ایچ وی/مڈوائف کے گھر آنا/جانا</string>
+    <string name="iy010e">ایل ایچ وی کے گھر آنا /جانا</string>
+    <string name="iy010f">دائی/ٹی بی اے</string>
+    <string name="iy010x">کوئی اور (وضاحت کریں)</string>
+    <string name="iy011">آپ نے زچگی کے کتنے دن یا ہفتے بعد بچے کا پہلا معائنہ کروایا تھا؟ (اگر پیدائش کے دن ہی معائنہ کروایا ہو تو 00 لکھ دیں)</string>
+    <string name="iy011d">دن</string>
+    <string name="iy011w">ہفتے</string>
+    <string name="iy012">آپ نے بچے کو پیدائش کے کتنی دیر بعد اپنا دودھ پلائی تھی؟ (اگر ایک گھنٹے سے پہلے اپنا دودھ پلائی ہو تو اے سیکشن میں 00 لکھیں اور اگر 24 گھنٹے کے اندر پلائی ہو تو گھنٹے لکھ ورنہ بی سیکشن میں دن لکھ دیں)</string>
+    <string name="iy012h">گھنٹے</string>
+    <string name="iy012d">دن</string>
+    <string name="iy012n">ماں کا دودھ نہیں پلایا</string>
+    <string name="iy013">کیا آپ نے بچے کو زچگی کے بعد 3 دن تک آنے والا اپنا پہلا دودھ پلائی تھی؟</string>
+    <string name="iy014">کیا آپ نے بچے کو پیدائش کے پہلے 3 دنوں میں اپنے دودھ کے علاوہ کچھ اور  پینے کے لئے دی تھی ؟</string>
+    <string name="iy015">اگر ہاں تو پینے کے لئے کیا دی تھی؟ (دی گئ لسٹ مت پرھیں) ایک سے زیادہ جوابات کی اجازت ہے۔ اسکے علاوہ کچھ اور؟</string>
+    <string name="iy015a">ماں کے دودھ کے علاوہ کوئی اور دودھ</string>
+    <string name="iy015b">عام پانی</string>
+    <string name="iy015c">شکر کا یا گلوکوز کا پانی</string>
+    <string name="iy015d">گرائپ واٹر</string>
+    <string name="iy015e">شکر اور نمک ملا پانی</string>
+    <string name="iy015f">فروٹ کا جوس  </string>
+    <string name="iy015g">بچوں کا بازاری دودھ </string>
+    <string name="iy015h">چائے/کہوا</string>
+    <string name="iy015i">شہد</string>
+    <string name="iy015j">کوئی اور (وضاحت کریں)</string>
+    <string name="iy016"> ">آپ نے کتنے مہینے تک بچے کو اپنا دودھ پلائی تھی؟ اپنے دودھ کے علاوہ کچھ اور پینے کے لئےنہیں دی ہو (اگر ایک مہینے سے کم ہو تو 00 لکھیں)</string>
+    <string name="iy016m">مہینے</string>
+    <string name="iy01677">بچہ ابھی تک ماں کا دودھ پی رہا ہے۔</string>
+    <string name="iy017">آپ نے پہلی دفعہ بچے کو اپنے دودھ کے علاوہ کوئی اور چیز مثلاً جوس یا چائے وغیرہ  کب دی تھی؟</string>
+    <string name="iy017d">دن</string>
+    <string name="iy017m">مہینے</string>
+    <string name="iy01788">ابھی شروع نہیں کروایا۔</string>
+    <string name="iy018">آپ نے پہلی دفعہ بچے کو کب نیم ٹھوس یا ٹھوس غذا دی تھی؟</string>
+    <string name="iy018d">دن</string>
+    <string name="iy018m">مہینے</string>
+    <string name="iy01888">ابھی شروع نہیں کروایا۔</string>
+
+    <string name="section_F"> سیکشن ڈی۔ مائوں میں زہنی دبائو سے متعلق سوالنامہ </string>
+    <string name="ms01"> سر درد </string>
+    <string name="ms02"> بھوک کی کمی </string>
+    <string name="ms03"> نیند کی کمی </string>
+    <string name="ms04"> گبھراہٹ </string>
+    <string name="ms05"> ہاتھوں کا کپ کپانا </string>
+    <string name="ms06"> بے چینی </string>
+    <string name="ms07"> ہاضمہ کی خرابی </string>
+    <string name="ms08"> غیر واضح سوچ </string>
+    <string name="ms09"> افسردہ </string>
+    <string name="ms10"> معمول سے زیا دہ رونا </string>
+    <string name="ms11"> کام سے لطف اندوز نہ ہونا </string>
+    <string name="ms12"> فیصلہ سازی میں مشکلات </string>
+    <string name="ms13"> کام کا متاثر ہونا </string>
+    <string name="ms14"> زندگی کو بے مقصد سمجھنا </string>
+    <string name="ms15"> زندگی میں عدم دلچسپی </string>
+    <string name="ms16"> جذبات/بے حسی </string>
+    <string name="ms17"> زندگی کو ختم کرنے کہ بارے میں سوچنا </string>
+    <string name="ms18"> ہمیشہ تھکاوٹ محسوس ہونا </string>
+    <string name="ms19"> معدے کے مسائل </string>
+    <string name="ms20"> فوری تھک جانا </string>
 
 
-    <string name="imfrmno"> ڈی ایم یو سیریل نمبر </string>
-    <string name="imchid"> بچے کی آئ ڈی </string>
-    <string name="imcompid">  </string>
-    <string name="ima"> بچے کا نام </string>
-    <string name="imaf"> بچے کے والد کا نام </string>
+    <string name="ancheading"> حمل کے دوران نگہداشت </string>
+    <string name="anc01"> کیا آپ نے گزشتہ حمل کے دوران اپنا معائنہ کروائی تھی؟ </string>
+    <string name="anc01a"> اگر نہیں تو معائنہ نہ کروانے کی وجوہات بتائے۔ </string>
+    <string name="anc01b"> اگر نہیں تو معائنہ نہ کروانے کی وجوہات بتائے۔ </string>
+    <string name="anc02"> آپ نےگزشتہ حمل کے دوران کتنی مرتبہ اپنا معائنہ کروائی تھی ؟ </string>
+    <string name="anc03">اگر ہاں تو گزشتہ حمل کے دوران کس سے معائنہ کروا ئی تھی ؟ (ایک سےزیادہ جوابات دینے کی اجازت ہے) </string>
+    <string name="anc03a"> گورنمنٹ ڈاکٹر </string>
+    <string name="anc03b"> پرائیوٹ ڈاکٹر </string>
+    <string name="anc03c"> ایل ایچ وی/ نرس </string>
+    <string name="anc03d"> ایل ایچ وی/مڈوائف کے گھر آنا/جانا </string>
+    <string name="anc03e"> ایل ایچ وی کے گھر آنا /جانا </string>
+    <string name="anc03f"> دائی/ٹی بی اے </string>
+    <string name="anc04"> کیا آپ نے گزشتہ حمل کے دوران فولاد کا طاقت کی دوائی لی یا خریدی تھی؟ </string>
+    <string name="anc05"> اگر ہاں تو آپ نے کتنے دن یہ دوائی استعمال کی تھی؟ </string>
+    <string name="anc05dnk"> اگر ہاں تو آپ نے کتنے دن یہ دوائی استعمال کی تھی؟ </string>
+    <string name="anc05d"> دنوں کی تعداد </string>
+    <string name="anc06"> کیا آپ کو گزشتہ حمل کے دوران کسی خطرناک علامت کا سامنا ہوا تھا؟ </string>
+    <string name="anc07"> اگر ہاں تو یہ خطرناک علامت کیا تھی؟ </string>
+    <string name="anc07a"> 100 سےزیادہ بخار </string>
+    <string name="anc07b"> دھندلاپن </string>
+    <string name="anc07c"> خون آنا </string>
+    <string name="anc07d"> جسم ، ہاتھوں اور چہرے پر سوجن </string>
+    <string name="anc08"> کیا آپ نے ان علامات کے لئے اپنا علاج کروائی تھی؟ </string>
+    <string name="anc09"> اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟ </string>
+    <string name="anc010"> اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟ </string>
+    <string name="anc011"> اگر ہاں تو گزشتہ حمل کے دوران کسی نے علاج فراہم کی تھی؟ </string>
+    <string name="anc011a"> گورنمنٹ ڈاکٹر </string>
+    <string name="anc011b"> پرائیوٹ ڈاکٹر </string>
+    <string name="anc011c"> ایل ایچ وی/ نرس </string>
+    <string name="anc011d"> ایل ایچ وی/مڈوائف کے گھر آنا/جانا </string>
+    <string name="anc011e"> ایل ایچ وی کے گھر آنا /جانا </string>
+    <string name="anc011f"> دائی/ٹی بی اے </string>
+    <string name="anc012"> کیا آپ نے اپنے بچے کی پیدائش سے پہلے اپنے بازو میں ٹی ٹی کا انجکشن لگوائی تھی جو کہ بچے کو بعد میں جھٹکے لگنے سے بچاتا ہے؟ </string>
+    <string name="anc013"> اگر ہاں تو کتنی مرتبہ؟ </string>
+    <string name="anc014"> کیا اس وقت آپ فیملی پلاننگ کے لئے کوئی طریقہ استعمال کرتی ہیں؟ </string>
+    <string name="anc015"> اگر ہاں تو آپ اس وقت کونسا طریقہ استعمال کرتی ہیں؟ </string>
+    <string name="anc015a"> گولیاں </string>
+    <string name="anc015b"> انجکشن </string>
+    <string name="anc015c"> کنڈم/ساتھی </string>
+    <string name="anc015d"> آئی یو ڈی </string>
+    <string name="anc015e"> نس بندی </string>
+    <string name="anc015f"> ازل </string>
+    <string name="anc015g"> دیگر وضاحت کریں </string>
+
+
     <!--    RWIC: Relation With Index Child    -->
     <string name="imrwic"> منتخب شدہ بچے سے رشتہ </string>
     <string name="imrwica"> بہن/بھائی </string>
@@ -233,7 +328,7 @@
     <string name="imdr"> Diarrhea </string>
     <string name="imari"> ARI </string>
 
-    <string name="section_E">سیکشن ای: ٹیکوں کے بارے میں معلومات</string>
+    <string name="section_E1">سیکشن ای: ٹیکوں کے بارے میں معلومات</string>
 
     <string name="mne1"> کیا آپ نے کبھی حفاظتی ٹیکوں کے بارے میں سنا ہے؟ اگر جواب 2 یا 99 ہے تو E.4 پر جائیں اور اگر 1 ہے تو E.2 پوچھیں </string>
     <string name="mne2"> آپ نے ٹیکوں کے بارے میں معلومات کہاں سے حاصل کی؟ </string>
@@ -316,7 +411,7 @@
     <string name="mne18a"> پولیو کا ٹیکہ کافی ہے، پولیو کے قطروں کی ضرورت نہیں ہے؟ </string>
     <string name="mne18b"> بار بار قطرے دینے سے خوراک کی مقدار زیادہ ہوجاتی ہے جس سے مضراثرات ہوتے ہیں. </string>
 
-    <string name="section_F">ایف : سماجی اور معاشی معلومات</string>
+    <string name="section_F1">ایف : سماجی اور معاشی معلومات</string>
 
 
     <string name="mnf1"> عموماً آپ اپنے گھر میں کونسی زبان بولتے ہیں؟ </string>
@@ -560,4 +655,3 @@
     <string name="mna7d">منتخب شدہ بچہ موجود نہیں</string>
 
 </resources>
-

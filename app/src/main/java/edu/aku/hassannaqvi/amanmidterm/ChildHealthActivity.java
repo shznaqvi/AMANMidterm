@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.amanmidterm;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -23,268 +25,218 @@ import butterknife.ButterKnife;
 
 public class ChildHealthActivity extends Activity {
 
-    private static final String TAG = ChildHealthActivity.class.getSimpleName();
-
     @BindView(R.id.activity_section_d)
     ScrollView activitySectionD;
-    @BindView(R.id.txtmnd1)
-    TextView txtmnd1;
-    @BindView(R.id.mnd1)
-    RadioGroup mnd1;
-    @BindView(R.id.mnd1a)
-    RadioButton mnd1a;
-    @BindView(R.id.mnd1b)
-    RadioButton mnd1b;
-    @BindView(R.id.mnd1c)
-    RadioButton mnd1c;
-    @BindView(R.id.txtmnd2)
-    TextView txtmnd2;
-    @BindView(R.id.mnd2)
-    RadioGroup mnd2;
-    @BindView(R.id.mnd2a)
-    RadioButton mnd2a;
-    @BindView(R.id.mnd2b)
-    RadioButton mnd2b;
-    @BindView(R.id.mnd2c)
-    RadioButton mnd2c;
-    @BindView(R.id.txtmnd3)
-    TextView txtmnd3;
-    @BindView(R.id.mnd3)
-    RadioGroup mnd3;
-    @BindView(R.id.mnd3a)
-    RadioButton mnd3a;
-    @BindView(R.id.mnd3b)
-    RadioButton mnd3b;
-    @BindView(R.id.mnd3c)
-    RadioButton mnd3c;
-    @BindView(R.id.txtmnd4)
-    TextView txtmnd4;
-    @BindView(R.id.mnd4)
-    RadioGroup mnd4;
-    @BindView(R.id.mnd4a)
-    RadioButton mnd4a;
-    @BindView(R.id.mnd4b)
-    RadioButton mnd4b;
-    @BindView(R.id.mnd4c)
-    RadioButton mnd4c;
-    @BindView(R.id.mnd5)
-    RadioGroup mnd5;
-    @BindView(R.id.mnd5a)
-    RadioButton mnd5a;
-    @BindView(R.id.mnd5b)
-    RadioButton mnd5b;
-    @BindView(R.id.txtmnd6)
-    TextView txtmnd6;
-    @BindView(R.id.mnd6a)
-    CheckBox mnd6a;
-    @BindView(R.id.mnd6b)
-    CheckBox mnd6b;
-    @BindView(R.id.mnd6c)
-    CheckBox mnd6c;
-    @BindView(R.id.mnd6d)
-    CheckBox mnd6d;
-    @BindView(R.id.mnd6e)
-    CheckBox mnd6e;
-    @BindView(R.id.mnd6f)
-    CheckBox mnd6f;
-    @BindView(R.id.mnd6g)
-    CheckBox mnd6g;
-    @BindView(R.id.mnd6h)
-    CheckBox mnd6h;
-    @BindView(R.id.mnd6i)
-    CheckBox mnd6i;
-    @BindView(R.id.mnd6x)
-    CheckBox mnd6x;
-    @BindView(R.id.mnd6x96)
-    EditText mnd6x96;
-    @BindView(R.id.mnd7)
-    RadioGroup mnd7;
-    @BindView(R.id.mnd7a)
-    RadioButton mnd7a;
-    @BindView(R.id.mnd7b)
-    RadioButton mnd7b;
-    @BindView(R.id.mnd8)
-    RadioGroup mnd8;
-    @BindView(R.id.mnd8a)
-    RadioButton mnd8a;
-    @BindView(R.id.mnd8b)
-    RadioButton mnd8b;
-    @BindView(R.id.txtmnd9)
-    TextView txtmnd9;
-    @BindView(R.id.mnd9)
-    RadioGroup mnd9;
-    @BindView(R.id.mnd9a)
-    RadioButton mnd9a;
-    @BindView(R.id.mnd9b)
-    RadioButton mnd9b;
-    @BindView(R.id.mnd10a)
-    CheckBox mnd10a;
-    @BindView(R.id.mnd10b)
-    CheckBox mnd10b;
-    @BindView(R.id.mnd10c)
-    CheckBox mnd10c;
-    @BindView(R.id.mnd10d)
-    CheckBox mnd10d;
-    @BindView(R.id.mnd10e)
-    CheckBox mnd10e;
-    @BindView(R.id.mnd10f)
-    CheckBox mnd10f;
-    @BindView(R.id.mnd10g)
-    CheckBox mnd10g;
-    @BindView(R.id.mnd10h)
-    CheckBox mnd10h;
-    @BindView(R.id.mnd10i)
-    CheckBox mnd10i;
-    @BindView(R.id.mnd10x)
-    CheckBox mnd10x;
-    @BindView(R.id.mnd10x96)
-    EditText mnd10x96;
-    @BindView(R.id.txtmnd11)
-    TextView txtmnd11;
-    @BindView(R.id.mnd11)
-    RadioGroup mnd11;
-    @BindView(R.id.mnd11a)
-    RadioButton mnd11a;
-    @BindView(R.id.mnd11b)
-    RadioButton mnd11b;
-    @BindView(R.id.mnd11c)
-    RadioButton mnd11c;
-    @BindView(R.id.fldGrpd12)
-    LinearLayout fldGrpd12;
-    @BindView(R.id.txtmnd12)
-    TextView txtmnd12;
-    @BindView(R.id.mnd12)
-    RadioGroup mnd12;
-    @BindView(R.id.mnd12a)
-    RadioButton mnd12a;
-    @BindView(R.id.mnd12b)
-    RadioButton mnd12b;
-    @BindView(R.id.fldGrpmnd13)
-    LinearLayout fldGrpmnd13;
-    @BindView(R.id.txtmnd13)
-    TextView txtmnd13;
-    @BindView(R.id.mnd13)
-    RadioGroup mnd13;
-    @BindView(R.id.mnd13a)
-    RadioButton mnd13a;
-    @BindView(R.id.mnd13b)
-    RadioButton mnd13b;
-    @BindView(R.id.mnd13c)
-    RadioButton mnd13c;
-    @BindView(R.id.fldGrpmnd14)
-    LinearLayout fldGrpmnd14;
-    @BindView(R.id.txtmnd14)
-    TextView txtmnd14;
-    @BindView(R.id.mnd14d)
-    EditText mnd14d;
-    @BindView(R.id.mnd14m)
-    EditText mnd14m;
-    @BindView(R.id.txtmnd15)
-    TextView txtmnd15;
-    @BindView(R.id.txtmnd15a)
-    TextView txtmnd15a;
-    @BindView(R.id.mnd15a)
-    RadioGroup mnd15a;
-    @BindView(R.id.mnd15a1)
-    RadioButton mnd15a1;
-    @BindView(R.id.mnd15a2)
-    RadioButton mnd15a2;
-    @BindView(R.id.mnd15a99)
-    RadioButton mnd15a99;
-    @BindView(R.id.txtmnd15b)
-    TextView txtmnd15b;
-    @BindView(R.id.mnd15b)
-    RadioGroup mnd15b;
-    @BindView(R.id.mnd15b1)
-    RadioButton mnd15b1;
-    @BindView(R.id.mnd15b2)
-    RadioButton mnd15b2;
-    @BindView(R.id.mnd15b99)
-    RadioButton mnd15b99;
-    @BindView(R.id.txtmnd15c)
-    TextView txtmnd15c;
-    @BindView(R.id.mnd15c)
-    RadioGroup mnd15c;
-    @BindView(R.id.mnd15c1)
-    RadioButton mnd15c1;
-    @BindView(R.id.mnd15c2)
-    RadioButton mnd15c2;
-    @BindView(R.id.mnd15c99)
-    RadioButton mnd15c99;
-    @BindView(R.id.txtmnd15d)
-    TextView txtmnd15d;
-    @BindView(R.id.mnd15d)
-    RadioGroup mnd15d;
-    @BindView(R.id.mnd15d1)
-    RadioButton mnd15d1;
-    @BindView(R.id.mnd15d2)
-    RadioButton mnd15d2;
-    @BindView(R.id.mnd15d99)
-    RadioButton mnd15d99;
-    @BindView(R.id.txtmnd15e)
-    TextView txtmnd15e;
-    @BindView(R.id.mnd15e)
-    RadioGroup mnd15e;
-    @BindView(R.id.mnd15e1)
-    RadioButton mnd15e1;
-    @BindView(R.id.mnd15e2)
-    RadioButton mnd15e2;
-    @BindView(R.id.mnd15e99)
-    RadioButton mnd15e99;
-    @BindView(R.id.txtmnd15f)
-    TextView txtmnd15f;
-    @BindView(R.id.mnd15f)
-    RadioGroup mnd15f;
-    @BindView(R.id.mnd15f1)
-    RadioButton mnd15f1;
-    @BindView(R.id.mnd15f2)
-    RadioButton mnd15f2;
-    @BindView(R.id.mnd15f99)
-    RadioButton mnd15f99;
-    @BindView(R.id.txtmnd15g)
-    TextView txtmnd15g;
-    @BindView(R.id.mnd15g)
-    RadioGroup mnd15g;
-    @BindView(R.id.mnd15g1)
-    RadioButton mnd15g1;
-    @BindView(R.id.mnd15g2)
-    RadioButton mnd15g2;
-    @BindView(R.id.mnd15g99)
-    RadioButton mnd15g99;
-    @BindView(R.id.txtmnd15h)
-    TextView txtmnd15h;
-    @BindView(R.id.mnd15h)
-    RadioGroup mnd15h;
-    @BindView(R.id.mnd15h1)
-    RadioButton mnd15h1;
-    @BindView(R.id.mnd15h2)
-    RadioButton mnd15h2;
-    @BindView(R.id.mnd15h99)
-    RadioButton mnd15h99;
-    @BindView(R.id.txtmnd15i)
-    TextView txtmnd15i;
-    @BindView(R.id.mnd15i)
-    RadioGroup mnd15i;
-    @BindView(R.id.mnd15i1)
-    RadioButton mnd15i1;
-    @BindView(R.id.mnd15i2)
-    RadioButton mnd15i2;
-    @BindView(R.id.mnd15i99)
-    RadioButton mnd15i99;
-    @BindView(R.id.mnd15x)
-    RadioGroup mnd15x;
-    @BindView(R.id.mnd15x1)
-    RadioButton mnd15x1;
-    @BindView(R.id.mnd15x2)
-    RadioButton mnd15x2;
-    @BindView(R.id.mnd15x99)
-    RadioButton mnd15x99;
-    @BindView(R.id.mnd15x96)
-    EditText mnd15x96;
-    @BindView(R.id.fldGrpmnd6)
-    LinearLayout fldGrpmnd6;
-    @BindView(R.id.fldGrpmnd10)
-    LinearLayout fldGrpmnd10;
+    @BindView(R.id.iy01)
+    EditText iy01;
+    @BindView(R.id.iy02)
+    RadioGroup iy02;
+    @BindView(R.id.iy02a)
+    RadioButton iy02a;
+    @BindView(R.id.iy02b)
+    RadioButton iy02b;
+    @BindView(R.id.iy03m)
+    EditText iy03m;
+    @BindView(R.id.iy03d)
+    EditText iy03d;
+    @BindView(R.id.iy04)
+    RadioGroup iy04;
+    @BindView(R.id.iy04a)
+    RadioButton iy04a;
+    @BindView(R.id.iy04b)
+    RadioButton iy04b;
+    @BindView(R.id.iy04c)
+    RadioButton iy04c;
+    @BindView(R.id.iy05a)
+    CheckBox iy05a;
+    @BindView(R.id.iy05b)
+    CheckBox iy05b;
+    @BindView(R.id.iy05c)
+    CheckBox iy05c;
+    @BindView(R.id.iy05d)
+    CheckBox iy05d;
+    @BindView(R.id.iy05e)
+    CheckBox iy05e;
+    @BindView(R.id.iy05f)
+    CheckBox iy05f;
+    @BindView(R.id.iy05g)
+    CheckBox iy05g;
+    @BindView(R.id.iy05h)
+    CheckBox iy05h;
+    @BindView(R.id.iy05i)
+    CheckBox iy05i;
+    @BindView(R.id.iy05j)
+    CheckBox iy05j;
+    @BindView(R.id.iy0588)
+    CheckBox iy0588;
+    @BindView(R.id.iy05x)
+    EditText iy05x;
+    @BindView(R.id.iy06d)
+    EditText iy06d;
+    @BindView(R.id.iy07)
+    RadioGroup iy07;
+    @BindView(R.id.iy07a)
+    RadioButton iy07a;
+    @BindView(R.id.iy07b)
+    RadioButton iy07b;
+    @BindView(R.id.iy07c)
+    RadioButton iy07c;
+    @BindView(R.id.iy07aa)
+    EditText iy07aa;
+    @BindView(R.id.iy07bb)
+    EditText iy07bb;
+    @BindView(R.id.iy07cc)
+    EditText iy07cc;
+    @BindView(R.id.iy08)
+    RadioGroup iy08;
+    @BindView(R.id.iy08a)
+    RadioButton iy08a;
+    @BindView(R.id.iy08b)
+    RadioButton iy08b;
+    @BindView(R.id.iy08c)
+    RadioButton iy08c;
+    @BindView(R.id.iy08d)
+    RadioButton iy08d;
+    @BindView(R.id.iy08e)
+    RadioButton iy08e;
+    @BindView(R.id.iy0888)
+    RadioButton iy0888;
+    @BindView(R.id.iy08x)
+    EditText iy08x;
+    @BindView(R.id.iy09)
+    RadioGroup iy09;
+    @BindView(R.id.iy09a)
+    RadioButton iy09a;
+    @BindView(R.id.iy09b)
+    RadioButton iy09b;
+    @BindView(R.id.iy010a)
+    CheckBox iy010a;
+    @BindView(R.id.iy010b)
+    CheckBox iy010b;
+    @BindView(R.id.iy010c)
+    CheckBox iy010c;
+    @BindView(R.id.iy010d)
+    CheckBox iy010d;
+    @BindView(R.id.iy010e)
+    CheckBox iy010e;
+    @BindView(R.id.iy010f)
+    CheckBox iy010f;
+    @BindView(R.id.iy01088)
+    CheckBox iy01088;
+    @BindView(R.id.iy010x)
+    EditText iy010x;
+    @BindView(R.id.iy011d)
+    EditText iy011d;
+    @BindView(R.id.iy011w)
+    EditText iy011w;
+    @BindView(R.id.iy012h)
+    EditText iy012h;
+    @BindView(R.id.iy012d)
+    EditText iy012d;
+    @BindView(R.id.iy01299)
+    CheckBox iy01299;
+    @BindView(R.id.iy013)
+    RadioGroup iy013;
+    @BindView(R.id.iy013a)
+    RadioButton iy013a;
+    @BindView(R.id.iy013b)
+    RadioButton iy013b;
+    @BindView(R.id.iy013c)
+    RadioButton iy013c;
+    @BindView(R.id.iy014)
+    RadioGroup iy014;
+    @BindView(R.id.iy014a)
+    RadioButton iy014a;
+    @BindView(R.id.iy014b)
+    RadioButton iy014b;
+    @BindView(R.id.iy014c)
+    RadioButton iy014c;
+    @BindView(R.id.iy015a)
+    CheckBox iy015a;
+    @BindView(R.id.iy015b)
+    CheckBox iy015b;
+    @BindView(R.id.iy015c)
+    CheckBox iy015c;
+    @BindView(R.id.iy015d)
+    CheckBox iy015d;
+    @BindView(R.id.iy015e)
+    CheckBox iy015e;
+    @BindView(R.id.iy015f)
+    CheckBox iy015f;
+    @BindView(R.id.iy015g)
+    CheckBox iy015g;
+    @BindView(R.id.iy015h)
+    CheckBox iy015h;
+    @BindView(R.id.iy015i)
+    CheckBox iy015i;
+    @BindView(R.id.iy01588)
+    CheckBox iy01588;
+    @BindView(R.id.iy015x)
+    EditText iy015x;
+    @BindView(R.id.iy016m)
+    EditText iy016m;
+    @BindView(R.id.iy01677)
+    CheckBox iy01677;
+    @BindView(R.id.iy017d)
+    EditText iy017d;
+    @BindView(R.id.iy017m)
+    EditText iy017m;
+    @BindView(R.id.iy01788)
+    CheckBox iy01788;
+    @BindView(R.id.iy018d)
+    EditText iy018d;
+    @BindView(R.id.iy018m)
+    EditText iy018m;
+    @BindView(R.id.iy01888)
+    CheckBox iy01888;
+
+    @BindView(R.id.fldGrpiy04)
+    LinearLayout fldGrpiy04;
+
+    @BindView(R.id.fldGrpiy05koth)
+    LinearLayout fldGrpiy05koth;
+
+    @BindView(R.id.fldGrpiy07)
+    LinearLayout fldGrpiy07;
+
+    @BindView(R.id.fldGrpiy08foth)
+    LinearLayout fldGrpiy08foth;
+
+    @BindView(R.id.fldGrpiy09)
+    LinearLayout fldGrpiy09;
+
+    @BindView(R.id.fldGrpiy010goth)
+    LinearLayout fldGrpiy010goth;
+
+    @BindView(R.id.fldGrpiy015joth)
+    LinearLayout fldGrpiy015joth;
+
+    @BindView(R.id.fldGrpiy014)
+    LinearLayout fldGrpiy014;
+
+
+    int rdo_iy02;
+    String var_iy02 = "";
+
+    int rdo_iy04;
+    String var_iy04 = "";
+
+    int rdo_iy07;
+    String var_iy07;
+
+    int rdo_iy08;
+    String var_iy08;
+
+    int rdo_iy09;
+    String var_iy09;
+
+
+    int rdo_iy013;
+    String var_iy013;
+
+    int rdo_iy014;
+    String var_iy014;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -292,138 +244,265 @@ public class ChildHealthActivity extends Activity {
         setContentView(R.layout.activity_child_health);
         ButterKnife.bind(this);
 
-        txtmnd1.setText(txtmnd1.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnd2.setText(txtmnd2.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnd4.setText(txtmnd4.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnd6.setText(txtmnd6.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnd9.setText(txtmnd9.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-
-        mnd5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        iy04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnd5a.isChecked()) {
-                    fldGrpmnd6.setVisibility(View.VISIBLE);
+                if (iy04a.isChecked()) {
+                    fldGrpiy04.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpmnd6.setVisibility(View.GONE);
-                    mnd6a.setChecked(false);
-                    mnd6b.setChecked(false);
-                    mnd6c.setChecked(false);
-                    mnd6d.setChecked(false);
-                    mnd6e.setChecked(false);
-                    mnd6f.setChecked(false);
-                    mnd6g.setChecked(false);
-                    mnd6h.setChecked(false);
-                    mnd6i.setChecked(false);
-                    mnd6x.setChecked(false);
+
+                    iy05a.setChecked(false);
+                    iy05b.setChecked(false);
+                    iy05c.setChecked(false);
+                    iy05d.setChecked(false);
+                    iy05e.setChecked(false);
+                    iy05f.setChecked(false);
+                    iy05g.setChecked(false);
+                    iy05h.setChecked(false);
+                    iy05i.setChecked(false);
+                    iy05j.setChecked(false);
+                    iy0588.setChecked(false);
+
+                    iy015x.setText(null);
+
+                    iy016m.setText(null);
+                    iy01677.setChecked(false);
+
+                    iy017d.setText(null);
+                    iy017m.setText(null);
+                    iy01788.setChecked(false);
+
+                    iy018d.setText(null);
+                    iy018m.setText(null);
+                    iy01888.setChecked(false);
+
+                    fldGrpiy04.setVisibility(View.GONE);
                 }
             }
         });
 
-        mnd6x.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        iy0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    mnd6x96.setVisibility(View.VISIBLE);
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (iy0588.isChecked()) {
+                    fldGrpiy05koth.setVisibility(View.VISIBLE);
+                    iy0588.requestFocus();
                 } else {
-                    mnd6x96.setText(null);
-                    mnd6x96.setVisibility(View.GONE);
+                    iy05x.setText(null);
+                    fldGrpiy05koth.setVisibility(View.GONE);
                 }
             }
         });
 
-        mnd9a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    fldGrpmnd10.setVisibility(View.VISIBLE);
-                } else {
-                    fldGrpmnd10.setVisibility(View.GONE);
-                    mnd10a.setChecked(false);
-                    mnd10b.setChecked(false);
-                    mnd10c.setChecked(false);
-                    mnd10d.setChecked(false);
-                    mnd10e.setChecked(false);
-                    mnd10f.setChecked(false);
-                    mnd10g.setChecked(false);
-                    mnd10h.setChecked(false);
-                    mnd10i.setChecked(false);
-                    mnd10x.setChecked(false);
-                    mnd10x96.setText(null);
-                }
-            }
-        });
-        mnd10x.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    mnd10x96.setVisibility(View.VISIBLE);
-                } else {
-                    mnd10x96.setText(null);
-                    mnd10x96.setVisibility(View.GONE);
-                }
-            }
-        });
 
-        mnd11a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    fldGrpd12.setVisibility(View.VISIBLE);
-                } else {
-                    fldGrpd12.setVisibility(View.GONE);
-                    mnd12.clearCheck();
-                    mnd13.clearCheck();
-                    mnd14d.setText(null);
-                    mnd14m.setText(null);
-
-                }
-            }
-        });
-
-        mnd12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        iy07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnd12a.isChecked()) {
-                    fldGrpmnd13.setVisibility(View.VISIBLE);
-                    fldGrpmnd14.setVisibility(View.GONE);
-                    mnd14d.setText(null);
-                    mnd14m.setText(null);
-                } else if (mnd12b.isChecked()) {
-                    fldGrpmnd14.setVisibility(View.VISIBLE);
-                    fldGrpmnd13.setVisibility(View.GONE);
-                    mnd13.clearCheck();
+                if (iy07b.isChecked()) {
+                    fldGrpiy07.setVisibility(View.VISIBLE);
+                    fldGrpiy08foth.setVisibility(View.GONE);
+                    iy07aa.requestFocus();
+                } else {
+
+                    iy08.clearCheck();
+
+                    iy07aa.setText(null);
+                    iy07bb.setText(null);
+                    iy07cc.setText(null);
+
+                    fldGrpiy07.setVisibility(View.GONE);
+                    fldGrpiy08foth.setVisibility(View.GONE);
                 }
             }
         });
 
-        mnd15x1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        iy08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    mnd15x96.setVisibility(View.VISIBLE);
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (iy0888.isChecked()) {
+                    fldGrpiy08foth.setVisibility(View.VISIBLE);
+                    iy08x.requestFocus();
                 } else {
-                    mnd15x96.setVisibility(View.GONE);
-                    mnd15x96.setText(null);
+                    iy08x.setText(null);
+                    fldGrpiy08foth.setVisibility(View.GONE);
                 }
             }
         });
+
+
+        iy09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (iy09a.isChecked()) {
+                    fldGrpiy09.setVisibility(View.VISIBLE);
+                } else {
+
+                    iy010a.setChecked(false);
+                    iy010b.setChecked(false);
+                    iy010c.setChecked(false);
+                    iy010d.setChecked(false);
+                    iy010e.setChecked(false);
+                    iy010f.setChecked(false);
+                    iy01088.setChecked(false);
+
+                    iy010x.setText(null);
+
+                    fldGrpiy09.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        iy01088.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (iy01088.isChecked()) {
+                    fldGrpiy010goth.setVisibility(View.VISIBLE);
+                    iy010x.requestFocus();
+                } else {
+                    iy010x.setText(null);
+                    fldGrpiy010goth.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        iy01299.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (iy01299.isChecked()) {
+                    iy012h.setText(null);
+                    iy012d.setText(null);
+
+                    iy012h.setEnabled(false);
+                    iy012d.setEnabled(false);
+                } else {
+                    iy012h.setEnabled(true);
+                    iy012d.setEnabled(true);
+
+                    iy012h.requestFocus();
+                }
+            }
+        });
+
+
+        iy014.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (iy014a.isChecked()) {
+                    fldGrpiy014.setVisibility(View.VISIBLE);
+                    iy015a.requestFocus();
+                } else {
+
+                    iy015a.setChecked(false);
+                    iy015b.setChecked(false);
+                    iy015c.setChecked(false);
+                    iy015d.setChecked(false);
+                    iy015e.setChecked(false);
+                    iy015f.setChecked(false);
+                    iy015g.setChecked(false);
+                    iy015h.setChecked(false);
+                    iy015i.setChecked(false);
+                    iy01588.setChecked(false);
+
+                    iy015x.setText(null);
+
+                    fldGrpiy014.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        iy01588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (iy01588.isChecked()) {
+                    fldGrpiy015joth.setVisibility(View.VISIBLE);
+                    iy015x.requestFocus();
+                } else {
+                    iy015x.setText(null);
+                    fldGrpiy015joth.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        iy01588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (iy01588.isChecked()) {
+                    fldGrpiy015joth.setVisibility(View.VISIBLE);
+                    iy015x.requestFocus();
+                } else {
+                    iy015x.setText(null);
+                    fldGrpiy015joth.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        iy01677.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (iy01677.isChecked()) {
+                    iy016m.setText(null);
+                    iy016m.setEnabled(false);
+                } else {
+                    iy016m.setEnabled(true);
+                    iy016m.requestFocus();
+                }
+            }
+        });
+
+
+        iy01788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (iy01788.isChecked()) {
+                    iy017d.setText(null);
+                    iy017m.setText(null);
+
+                    iy017d.setEnabled(false);
+                    iy017m.setEnabled(false);
+                } else {
+                    iy017d.setEnabled(true);
+                    iy017m.setEnabled(true);
+                }
+            }
+        });
+
+
+        iy01888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (iy01888.isChecked()) {
+                    iy018d.setText(null);
+                    iy018m.setText(null);
+
+                    iy018d.setEnabled(false);
+                    iy018m.setEnabled(false);
+                } else {
+                    iy018d.setEnabled(true);
+                    iy018m.setEnabled(true);
+                }
+            }
+        });
+
+
     }
 
-    public void submitSecD(View v) throws JSONException {
-        Toast.makeText(this, "Processing Section D", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
-            SaveDraft();
-            if (UpdateDB()) {
-                Intent secIM;
-                if (AppMain.chCount < AppMain.chTotal) {
-                    Toast.makeText(this, "Starting Section IM", Toast.LENGTH_SHORT).show();
-                    secIM = new Intent(this, ImmunizationActivity.class);
-                } else {
-                    Toast.makeText(this, "Starting Section E", Toast.LENGTH_SHORT).show();
-                    secIM = new Intent(this, KAPActivity.class);
-                }
-                startActivity(secIM);
+    public void submitSecD(View view) {
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -433,445 +512,784 @@ public class ChildHealthActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSD();
+        //db.updateSD();
 
-        if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
-
-    private void SaveDraft() throws JSONException {
-        JSONObject sd = new JSONObject();
-
-        switch (mnd1.getCheckedRadioButtonId()) {
-            case R.id.mnd1a:
-                sd.put("mnd1", "1");
-                break;
-            case R.id.mnd1b:
-                sd.put("mnd1", "2");
-                break;
-            case R.id.mnd1c:
-                sd.put("mnd1", "99");
-                break;
-            default:
-                sd.put("mnd1", "default");
-                break;
-        }
-
-        switch (mnd2.getCheckedRadioButtonId()) {
-            case R.id.mnd2a:
-                sd.put("mnd2", "1");
-                break;
-            case R.id.mnd2b:
-                sd.put("mnd2", "2");
-                break;
-            case R.id.mnd2c:
-                sd.put("mnd2", "99");
-                break;
-            default:
-                sd.put("mnd2", "default");
-                break;
-        }
-        switch (mnd3.getCheckedRadioButtonId()) {
-            case R.id.mnd3a:
-                sd.put("mnd3", "1");
-                break;
-            case R.id.mnd3b:
-                sd.put("mnd3", "2");
-                break;
-            case R.id.mnd3c:
-                sd.put("mnd3", "99");
-                break;
-            default:
-                sd.put("mnd3", "default");
-                break;
-        }
-        switch (mnd4.getCheckedRadioButtonId()) {
-            case R.id.mnd4a:
-                sd.put("mnd4", "1");
-                break;
-            case R.id.mnd4b:
-                sd.put("mnd4", "2");
-                break;
-            case R.id.mnd4c:
-                sd.put("mnd4", "99");
-                break;
-            default:
-                sd.put("mnd4", "default");
-                break;
-        }
-        switch (mnd5.getCheckedRadioButtonId()) {
-            case R.id.mnd5a:
-                sd.put("mnd5", "1");
-                break;
-            case R.id.mnd5b:
-                sd.put("mnd5", "2");
-                break;
-            default:
-                sd.put("mnd5", "default");
-                break;
-        }
-        sd.put("mnd6a", mnd6a.isChecked() ? "1" : "");
-        sd.put("mnd6b", mnd6b.isChecked() ? "2" : "");
-        sd.put("mnd6c", mnd6c.isChecked() ? "3" : "");
-        sd.put("mnd6d", mnd6d.isChecked() ? "4" : "");
-        sd.put("mnd6e", mnd6e.isChecked() ? "5" : "");
-        sd.put("mnd6f", mnd6f.isChecked() ? "6" : "");
-        sd.put("mnd6g", mnd6g.isChecked() ? "7" : "");
-        sd.put("mnd6h", mnd6h.isChecked() ? "8" : "");
-        sd.put("mnd6i", mnd6i.isChecked() ? "9" : "");
-        sd.put("mnd6x", mnd6x.isChecked() ? "96" : "");
-        sd.put("mnd6x96", mnd6x96.getText().toString());
-        switch (mnd7.getCheckedRadioButtonId()) {
-            case R.id.mnd7a:
-                sd.put("mnd7", "1");
-                break;
-            case R.id.mnd7b:
-                sd.put("mnd7", "2");
-                break;
-            default:
-                sd.put("mnd7", "default");
-                break;
-        }
-        switch (mnd8.getCheckedRadioButtonId()) {
-            case R.id.mnd8a:
-                sd.put("mnd8", "1");
-                break;
-            case R.id.mnd8b:
-                sd.put("mnd8", "2");
-                break;
-            default:
-                sd.put("mnd8", "default");
-                break;
-        }
-        switch (mnd9.getCheckedRadioButtonId()) {
-            case R.id.mnd9a:
-                sd.put("mnd9", "1");
-                break;
-            case R.id.mnd9b:
-                sd.put("mnd9", "2");
-                break;
-            default:
-                sd.put("mnd9", "default");
-                break;
-        }
-        sd.put("mnd10a", mnd10a.isChecked() ? "1" : "");
-        sd.put("mnd10b", mnd10b.isChecked() ? "2" : "");
-        sd.put("mnd10c", mnd10c.isChecked() ? "3" : "");
-        sd.put("mnd10d", mnd10d.isChecked() ? "4" : "");
-        sd.put("mnd10e", mnd10e.isChecked() ? "5" : "");
-        sd.put("mnd10f", mnd10f.isChecked() ? "6" : "");
-        sd.put("mnd10g", mnd10g.isChecked() ? "7" : "");
-        sd.put("mnd10h", mnd10h.isChecked() ? "8" : "");
-        sd.put("mnd10i", mnd10i.isChecked() ? "9" : "");
-        sd.put("mnd10x", mnd10x.isChecked() ? "96" : "");
-        sd.put("mnd10x96", mnd10x96.getText().toString());
-        sd.put("mnd11", mnd11a.isChecked() ? "1" : mnd11b.isChecked() ? "2" : mnd11c.isChecked() ? "99" : "xxx");
-        sd.put("mnd12", mnd12a.isChecked() ? "1" : mnd12b.isChecked() ? "2" : "xxx");
-        sd.put("mnd13", mnd13a.isChecked() ? "1" : mnd13b.isChecked() ? "2" : mnd13c.isChecked() ? "99" : "xxx");
-        sd.put("mnd14d", mnd14d.getText().toString());
-        sd.put("mnd14m", mnd14m.getText().toString());
-        sd.put("mnd15a", mnd15a1.isChecked() ? "1" : mnd15a2.isChecked() ? "2" : mnd15a99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15b", mnd15b1.isChecked() ? "1" : mnd15b2.isChecked() ? "2" : mnd15b99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15c", mnd15c1.isChecked() ? "1" : mnd15c2.isChecked() ? "2" : mnd15c99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15d", mnd15d1.isChecked() ? "1" : mnd15d2.isChecked() ? "2" : mnd15d99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15e", mnd15e1.isChecked() ? "1" : mnd15e2.isChecked() ? "2" : mnd15e99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15f", mnd15f1.isChecked() ? "1" : mnd15f2.isChecked() ? "2" : mnd15f99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15g", mnd15g1.isChecked() ? "1" : mnd15g2.isChecked() ? "2" : mnd15g99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15h", mnd15h1.isChecked() ? "1" : mnd15h2.isChecked() ? "2" : mnd15h99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15i", mnd15i1.isChecked() ? "1" : mnd15i2.isChecked() ? "2" : mnd15i99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15x", mnd15x1.isChecked() ? "1" : mnd15x2.isChecked() ? "2" : mnd15x99.isChecked() ? "99" : "xxx");
-        sd.put("mnd15x96", mnd15x96.getText().toString());
-
-
-        AppMain.fc.setChildHealth(String.valueOf(sd));
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+        return true;
     }
 
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
 
-        Toast.makeText(this, "Validating Section D", Toast.LENGTH_SHORT).show();
-
-        // D1
-        if (mnd1.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd1), Toast.LENGTH_LONG).show();
-            mnd1c.setError("This data is Required!");
-            Log.i(TAG, "mnd1: This data is Required!");
+        if (iy01.getText().toString().isEmpty() || iy01.getText().toString() == null) {
+            iy01.setError(getString(R.string.txterr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy01), Toast.LENGTH_LONG).show();
+            iy01.requestFocus();
             return false;
         } else {
-            mnd1c.setError(null);
-        }
-        // D2
-        if (mnd2.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd2), Toast.LENGTH_LONG).show();
-            mnd2c.setError("This data is Required!");
-            Log.i(TAG, "mnd2: This data is Required!");
-            return false;
-        } else {
-            mnd2c.setError(null);
-        }
-        // D3
-        if (mnd3.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd3), Toast.LENGTH_LONG).show();
-            mnd3c.setError("This data is Required!");
-            Log.i(TAG, "mnd3: This data is Required!");
-            return false;
-        } else {
-            mnd3c.setError(null);
-        }
-        // D4
-        if (mnd4.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd4), Toast.LENGTH_LONG).show();
-            mnd4c.setError("This data is Required!");
-            Log.i(TAG, "mnd4: This data is Required!");
-            return false;
-        } else {
-            mnd4c.setError(null);
+            iy01.setError(null);
         }
 
-        // D4
-        if (mnd4.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd4), Toast.LENGTH_LONG).show();
-            mnd4c.setError("This data is Required!");
-            Log.i(TAG, "mnd4: This data is Required!");
-            return false;
-        } else {
-            mnd4c.setError(null);
+        rdo_iy02 = iy02.getCheckedRadioButtonId();
+
+        switch (rdo_iy02) {
+            case R.id.iy02a:
+                var_iy02 = "1";
+                break;
+            case R.id.iy02b:
+                var_iy02 = "2";
+                break;
         }
 
-        // D5
-        if (mnd5.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd5), Toast.LENGTH_LONG).show();
-            mnd5b.setError("This data is Required!");
-            Log.i(TAG, "mnd5: This data is Required!");
+        if (rdo_iy02 == -1) {
+            iy02a.setError(getString(R.string.rdoerr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy02), Toast.LENGTH_LONG).show();
+            iy02a.requestFocus();
             return false;
         } else {
-            mnd5b.setError(null);
+            iy02a.setError(null);
         }
 
-        // D6
-        if (mnd5a.isChecked() && !(mnd6a.isChecked() || mnd6b.isChecked() || mnd6c.isChecked() || mnd6d.isChecked() || mnd6e.isChecked() || mnd6f.isChecked() || mnd6g.isChecked() || mnd6h.isChecked() || mnd6i.isChecked() || mnd6x.isChecked())) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd6), Toast.LENGTH_LONG).show();
-            mnd6x.setError("This data is Required!");
-            Log.i(TAG, "mnd6: This data is Required!");
-            return false;
-        } else if (mnd6x.isChecked() && mnd6x96.getText().toString().isEmpty()) {
-            mnd6x.setError(null);
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mnd6), Toast.LENGTH_LONG).show();
-            mnd6x96.setError("This data is empty!");
-            Log.i(TAG, "mnd6: This data is empty!");
+
+        if (iy03m.getText().toString().isEmpty() || iy03m.getText().toString() == null) {
+            iy03m.setError(getString(R.string.txterr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            iy03m.requestFocus();
             return false;
         } else {
-            mnd6x.setError(null);
-            mnd6x96.setError(null);
+            iy03m.setError(null);
         }
 
-        // D7
-        if (mnd7.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd7), Toast.LENGTH_LONG).show();
-            mnd7b.setError("This data is Required!");
-            Log.i(TAG, "mnd7: This data is Required!");
+
+        if (iy03d.getText().toString().isEmpty() || iy03d.getText().toString() == null) {
+            iy03d.setError(getString(R.string.txterr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            iy03d.requestFocus();
             return false;
         } else {
-            mnd7b.setError(null);
+            iy03d.setError(null);
         }
 
-        // D8
-        if (mnd8.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd8), Toast.LENGTH_LONG).show();
-            mnd8b.setError("This data is Required!");
-            Log.i(TAG, "mnd8: This data is Required!");
+
+        rdo_iy04 = iy04.getCheckedRadioButtonId();
+
+        switch (rdo_iy04) {
+            case R.id.iy04a:
+                var_iy04 = "1";
+                break;
+            case R.id.iy04b:
+                var_iy04 = "2";
+                break;
+            case R.id.iy04c:
+                var_iy04 = "88";
+                break;
+        }
+
+
+        if (rdo_iy04 == -1) {
+            iy04a.setError(getString(R.string.rdoerr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy04), Toast.LENGTH_LONG).show();
+            iy04a.requestFocus();
             return false;
         } else {
-            mnd8b.setError(null);
+            iy04a.setError(null);
         }
 
-        // D9
-        if (mnd9.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd9), Toast.LENGTH_LONG).show();
-            mnd9b.setError("This data is Required!");
-            Log.i(TAG, "mnd9: This data is Required!");
-            return false;
-        } else {
-            mnd9b.setError(null);
-        }
 
-        // D10
-        if (mnd9a.isChecked() && !(mnd10a.isChecked() || mnd10b.isChecked() || mnd10c.isChecked() || mnd10d.isChecked() || mnd10e.isChecked() || mnd10f.isChecked() || mnd10g.isChecked() || mnd10h.isChecked() || mnd10i.isChecked() || mnd10x.isChecked())) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd10), Toast.LENGTH_LONG).show();
-            mnd10x.setError("This data is Required!");
-            Log.i(TAG, "mnd10: This data is Required!");
-            return false;
-        } else if (mnd10x.isChecked() && mnd10x96.getText().toString().isEmpty()) {
-            mnd10x.setError(null);
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mnd10), Toast.LENGTH_LONG).show();
-            mnd10x96.setError("This data is empty!");
-            Log.i(TAG, "mnd10: This data is empty!");
-            return false;
-        } else {
-            mnd10x.setError(null);
-            mnd10x96.setError(null);
-        }
+        if (var_iy04 == "1") {
 
-        // D11
-        if (mnd11.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd11), Toast.LENGTH_LONG).show();
-            mnd11c.setError("This data is Required!");
-            Log.i(TAG, "mnd11: This data is Required!");
-            return false;
-        } else {
-            mnd11c.setError(null);
-        }
-
-        // D12Days
-        if (mnd11a.isChecked()) {
-            if (mnd12.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd12), Toast.LENGTH_LONG).show();
-                mnd12b.setError("This data is Required!");
-                Log.i(TAG, "mnd12: This data is Required!");
+            if (!iy05a.isChecked()
+                    && !iy05b.isChecked()
+                    && !iy05c.isChecked()
+                    && !iy05d.isChecked()
+                    && !iy05e.isChecked()
+                    && !iy05f.isChecked()
+                    && !iy05g.isChecked()
+                    && !iy05h.isChecked()
+                    && !iy05i.isChecked()
+                    && !iy05j.isChecked()
+                    && !iy0588.isChecked()) {
+                iy05a.setError(getString(R.string.rdoerr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy05), Toast.LENGTH_LONG).show();
+                iy05a.requestFocus();
                 return false;
             } else {
-                mnd12b.setError(null);
+                iy05a.setError(null);
             }
 
-            if (mnd12a.isChecked() && mnd13.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd13), Toast.LENGTH_LONG).show();
-                mnd13c.setError("This data is Required!");
-                Log.i(TAG, "mnd13: This data is Required!");
+
+            if (iy0588.isChecked()) {
+                if (iy05x.getText().toString().isEmpty() || iy05x.getText().toString() == null) {
+                    iy05x.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                    iy05x.requestFocus();
+                    return false;
+                } else {
+                    iy05x.setError(null);
+                }
+            }
+
+
+            if (iy06d.getText().toString().isEmpty() || iy06d.getText().toString() == null) {
+                iy06d.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
+                iy06d.requestFocus();
                 return false;
             } else {
-                mnd13c.setError(null);
+                iy06d.setError(null);
             }
-            if (mnd12b.isChecked() && mnd14d.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd14), Toast.LENGTH_LONG).show();
-                mnd14d.setError("This data is Required!");
-                Log.i(TAG, "mnd14: This data is Required!");
-                return false;
-            } else if (!mnd14d.getText().toString().isEmpty() && Integer.valueOf(mnd14d.getText().toString()) > AppMain.MONTHS_LIMIT) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mnd14), Toast.LENGTH_LONG).show();
-                mnd14d.setError("This data is Invalid!");
-                Log.i(TAG, "mnd14d: This data is Invalid!");
+
+
+            rdo_iy07 = iy07.getCheckedRadioButtonId();
+
+            switch (rdo_iy07) {
+                case R.id.iy07a:
+                    var_iy07 = "1";
+                    break;
+                case R.id.iy07b:
+                    var_iy07 = "2";
+                    break;
+            }
+
+            if (rdo_iy07 == -1) {
+                iy07a.setError(getString(R.string.rdoerr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07), Toast.LENGTH_LONG).show();
+                iy07a.requestFocus();
                 return false;
             } else {
-                mnd14d.setError(null);
+                iy07a.setError(null);
             }
-            if (mnd12b.isChecked() && mnd14m.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd14), Toast.LENGTH_LONG).show();
-                mnd14m.setError("This data is Required!");
-                Log.i(TAG, "mnd14m: This data is Required!");
-                return false;
-            } else if (!mnd14m.getText().toString().isEmpty() && Integer.valueOf(mnd14d.getText().toString()) > AppMain.MONTHS_LIMIT) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mnd14), Toast.LENGTH_LONG).show();
-                mnd14m.setError("This data is Invalid!");
-                Log.i(TAG, "mnd14m: This data is Invalid!");
+
+
+            if (var_iy07 == "2") {
+
+                if (iy07aa.getText().toString().isEmpty() || iy07aa.getText().toString() == null) {
+                    iy07aa.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07a), Toast.LENGTH_LONG).show();
+                    iy07aa.requestFocus();
+                    return false;
+                } else {
+                    iy07aa.setError(null);
+                }
+
+
+                rdo_iy08 = iy08.getCheckedRadioButtonId();
+
+                switch (rdo_iy08) {
+                    case R.id.iy08a:
+                        var_iy08 = "1";
+                        break;
+                    case R.id.iy08b:
+                        var_iy08 = "2";
+                        break;
+                    case R.id.iy08c:
+                        var_iy08 = "3";
+                        break;
+                    case R.id.iy08d:
+                        var_iy08 = "4";
+                        break;
+                    case R.id.iy08e:
+                        var_iy08 = "5";
+                        break;
+                    case R.id.iy0888:
+                        var_iy08 = "6";
+                        break;
+                }
+
+                if (rdo_iy08 == -1) {
+                    iy08a.setError(getString(R.string.rdoerr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
+                    iy08a.requestFocus();
+                    return false;
+                } else {
+                    iy08a.setError(null);
+                }
+
+
+                if (var_iy08 == "6") {
+
+                    if (iy08x.getText().toString().isEmpty() || iy08x.getText().toString() == null) {
+                        iy08x.setError(getString(R.string.txterr));
+                        Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                        iy08x.requestFocus();
+                        return false;
+                    } else {
+                        iy08x.setError(null);
+                    }
+
+                }
+
+
+            }
+
+
+        }
+
+
+        rdo_iy09 = iy09.getCheckedRadioButtonId();
+
+        switch (rdo_iy09) {
+            case R.id.iy09a:
+                var_iy09 = "1";
+                break;
+            case R.id.iy09b:
+                var_iy09 = "2";
+                break;
+        }
+
+        if (rdo_iy09 == -1) {
+            iy09a.setError(getString(R.string.rdoerr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy09), Toast.LENGTH_LONG).show();
+            iy09a.requestFocus();
+            return false;
+        } else {
+            iy09a.setError(null);
+        }
+
+
+        if (var_iy09 == "1") {
+
+            if (!iy010a.isChecked()
+                    && !iy010b.isChecked()
+                    && !iy010c.isChecked()
+                    && !iy010d.isChecked()
+                    && !iy010e.isChecked()
+                    && !iy010f.isChecked()
+                    && !iy01088.isChecked()) {
+                iy010a.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy010), Toast.LENGTH_LONG).show();
+                iy010a.requestFocus();
                 return false;
             } else {
-                mnd14m.setError(null);
+                iy010a.setError(null);
+            }
+
+
+            if (iy01088.isChecked()) {
+
+                if (iy010x.getText().toString().isEmpty() || iy010x.getText().toString() == null) {
+                    iy010x.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                    iy010x.requestFocus();
+                    return false;
+                } else {
+                    iy010x.setError(null);
+                }
+
             }
 
         }
 
-        // D15a
-        if (mnd15a.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd15a), Toast.LENGTH_LONG).show();
-            mnd15a99.setError("This data is Required!");
-            Log.i(TAG, "mnd15a: This data is Required!");
-            return false;
-        } else {
-            mnd15a99.setError(null);
+
+        if (var_iy09 == "1") {
+
+            if (iy011d.getText().toString().isEmpty() || iy011d.getText().toString() == null) {
+                iy011d.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy011d), Toast.LENGTH_LONG).show();
+                iy011d.requestFocus();
+                return false;
+            } else {
+                iy011d.setError(null);
+            }
+
+            if (iy011w.getText().toString().isEmpty() || iy011w.getText().toString() == null) {
+                iy011w.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy011w), Toast.LENGTH_LONG).show();
+                iy011w.requestFocus();
+                return false;
+            } else {
+                iy011w.setError(null);
+            }
+
         }
 
-        // D15b
-        if (mnd15b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd15b), Toast.LENGTH_LONG).show();
-            mnd15b99.setError("This data is Required!");
-            Log.i(TAG, "mnd15b: This data is Required!");
-            return false;
+
+        if (iy01299.isChecked() == false) {
+
+            if (iy012h.getText().toString().isEmpty() || iy012h.getText().toString() == null) {
+                iy012h.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy012h), Toast.LENGTH_LONG).show();
+                iy012h.requestFocus();
+                return false;
+            } else {
+                iy012h.setError(null);
+            }
+
+            if (iy012d.getText().toString().isEmpty() || iy012d.getText().toString() == null) {
+                iy012d.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy012d), Toast.LENGTH_LONG).show();
+                iy012d.requestFocus();
+                return false;
+            } else {
+                iy012d.setError(null);
+            }
         } else {
-            mnd15b99.setError(null);
+            iy012h.setText(null);
+            iy012d.setText(null);
         }
 
-        // D15c
-        if (mnd15c.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd15c), Toast.LENGTH_LONG).show();
-            mnd15c99.setError("This data is Required!");
-            Log.i(TAG, "mnd15c: This data is Required!");
-            return false;
-        } else {
-            mnd15c99.setError(null);
+
+        rdo_iy013 = iy013.getCheckedRadioButtonId();
+
+        switch (rdo_iy013) {
+            case R.id.iy013a:
+                var_iy013 = "1";
+                break;
+            case R.id.iy013b:
+                var_iy013 = "2";
+                break;
+            case R.id.iy013c:
+                var_iy013 = "88";
+                break;
         }
 
-        // D15e
-        if (mnd15e.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd15e), Toast.LENGTH_LONG).show();
-            mnd15e99.setError("This data is Required!");
-            Log.i(TAG, "mnd15e: This data is Required!");
+        if (rdo_iy013 == -1) {
+            iy013a.setError(getString(R.string.rdoerr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy013), Toast.LENGTH_LONG).show();
+            iy013a.requestFocus();
             return false;
         } else {
-            mnd15e99.setError(null);
+            iy013a.setError(null);
         }
 
-        // D15f
-        if (mnd15f.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd15f), Toast.LENGTH_LONG).show();
-            mnd15f99.setError("This data is Required!");
-            Log.i(TAG, "mnd15f: This data is Required!");
+
+        rdo_iy014 = iy014.getCheckedRadioButtonId();
+
+        if (rdo_iy014 == -1) {
+            iy014a.setError(getString(R.string.rdoerr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy014), Toast.LENGTH_LONG).show();
+            iy014a.requestFocus();
             return false;
         } else {
-            mnd15f99.setError(null);
+            iy014a.setError(null);
         }
 
-        // D15g
-        if (mnd15g.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd15g), Toast.LENGTH_LONG).show();
-            mnd15g99.setError("This data is Required!");
-            Log.i(TAG, "mnd15g: This data is Required!");
-            return false;
-        } else {
-            mnd15g99.setError(null);
+        switch (rdo_iy014) {
+            case R.id.iy014a:
+                var_iy014 = "1";
+                break;
+            case R.id.iy014b:
+                var_iy014 = "2";
+                break;
+            case R.id.iy014c:
+                var_iy014 = "88";
+                break;
         }
 
-        // D15h
-        if (mnd15h.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd15h), Toast.LENGTH_LONG).show();
-            mnd15h99.setError("This data is Required!");
-            Log.i(TAG, "mnd15h: This data is Required!");
-            return false;
-        } else {
-            mnd15h99.setError(null);
+        if (var_iy014 == "1") {
+
+            if (!iy015a.isChecked()
+                    && !iy015b.isChecked()
+                    && !iy015c.isChecked()
+                    && !iy015d.isChecked()
+                    && !iy015e.isChecked()
+                    && !iy015f.isChecked()
+                    && !iy015g.isChecked()
+                    && !iy015h.isChecked()
+                    && !iy015i.isChecked()
+                    && !iy01588.isChecked()) {
+                iy015a.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy015), Toast.LENGTH_LONG).show();
+                iy015a.requestFocus();
+                return false;
+            } else {
+                iy015a.setError(null);
+            }
+
         }
 
-        // D15i
-        if (mnd15i.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnd15i), Toast.LENGTH_LONG).show();
-            mnd15i99.setError("This data is Required!");
-            Log.i(TAG, "mnd15i: This data is Required!");
-            return false;
-        } else {
-            mnd15i99.setError(null);
+
+        if (iy01588.isChecked()) {
+            if (iy015x.getText().toString().isEmpty() || iy015x.getText().toString() == null) {
+                iy015x.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                iy015x.requestFocus();
+                return false;
+            } else {
+                iy015x.setError(null);
+            }
+
         }
 
-        // D15x
-        if (mnd15x.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
-            mnd15x99.setError("This data is Required!");
-            Log.i(TAG, "mnd15x: This data is Required!");
+
+        if (iy016m.getText().toString().isEmpty() || iy016m.getText().toString() == null) {
+            iy016m.setError(getString(R.string.txterr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy016m), Toast.LENGTH_LONG).show();
+            iy016m.requestFocus();
             return false;
         } else {
-            mnd15x99.setError(null);
+            iy016m.setError(null);
+        }
+
+        if (iy01677.getText().toString().isEmpty() || iy01677.getText().toString() == null) {
+            iy01677.setError(getString(R.string.txterr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy01677), Toast.LENGTH_LONG).show();
+            iy01677.requestFocus();
+            return false;
+        } else {
+            iy01677.setError(null);
+        }
+
+        if (!iy01788.isChecked()) {
+
+            if (iy017d.getText().toString().isEmpty() || iy017d.getText().toString() == null) {
+                iy017d.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017d), Toast.LENGTH_LONG).show();
+                iy017d.requestFocus();
+                return false;
+            } else {
+                iy017d.setError(null);
+            }
+
+            if (iy017m.getText().toString().isEmpty() || iy017m.getText().toString() == null) {
+                iy017m.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017m), Toast.LENGTH_LONG).show();
+                iy017m.requestFocus();
+                return false;
+            } else {
+                iy017m.setError(null);
+            }
+
+        } else {
+            iy017d.setText(null);
+            iy017m.setText(null);
+        }
+
+
+        if (!iy01888.isChecked()) {
+            if (iy018d.getText().toString().isEmpty() || iy018d.getText().toString() == null) {
+                iy018d.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018d), Toast.LENGTH_LONG).show();
+                iy018d.requestFocus();
+                return false;
+            } else {
+                iy018d.setError(null);
+            }
+
+            if (iy018m.getText().toString().isEmpty() || iy018m.getText().toString() == null) {
+                iy018m.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018m), Toast.LENGTH_LONG).show();
+                iy018m.requestFocus();
+                return false;
+            } else {
+                iy018m.setError(null);
+            }
+        } else {
+            iy018d.setText(null);
+            iy018m.setText(null);
+        }
+
+        if (!iy03m.getText().toString().isEmpty() && iy03m.getText().toString() != null) {
+
+            if (Integer.parseInt(iy03m.getText().toString()) < 0 || Integer.parseInt(iy03m.getText().toString()) > 11) {
+                iy03m.setError("Age in months must be between 0 - 11");
+                iy03m.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (!iy03d.getText().toString().isEmpty() && iy03d.getText().toString() != null) {
+
+            if (Integer.parseInt(iy03d.getText().toString()) < 0 || Integer.parseInt(iy03d.getText().toString()) > 30) {
+                iy03d.setError("Age in days must be between 0 - 30");
+                iy03d.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (!iy06d.getText().toString().isEmpty() && iy06d.getText().toString() != null) {
+
+            if (Integer.parseInt(iy06d.getText().toString()) < 0 || Integer.parseInt(iy06d.getText().toString()) > 28) {
+                iy06d.setError("Must be between 0 - 28");
+                iy06d.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (!iy011d.getText().toString().isEmpty() && iy011d.getText().toString() != null) {
+
+
+            if (Integer.parseInt(iy011d.getText().toString()) < 0 || Integer.parseInt(iy011d.getText().toString()) > 30) {
+                iy011d.setError("Must be between 0 - 30");
+                iy011d.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (!iy011w.getText().toString().isEmpty() && iy011w.getText().toString() != null) {
+
+
+            if (Integer.parseInt(iy011w.getText().toString()) < 0 || Integer.parseInt(iy011w.getText().toString()) > 4) {
+                iy011w.setError("Must be between 0 - 4");
+                iy011w.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (!iy012d.getText().toString().isEmpty() && iy012d.getText().toString() != null) {
+
+            if (Integer.parseInt(iy012d.getText().toString()) < 0 || Integer.parseInt(iy012d.getText().toString()) > 30) {
+                iy012d.setError("Must be between 0 - 30");
+                iy012d.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (!iy012h.getText().toString().isEmpty() && iy012h.getText().toString() != null) {
+
+            if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 24) {
+                iy012h.setError("Must be between 0 - 24");
+                iy012h.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (!iy016m.getText().toString().isEmpty() && iy016m.getText().toString() != null) {
+
+            if (Integer.parseInt(iy016m.getText().toString()) < 0 || Integer.parseInt(iy016m.getText().toString()) > 11) {
+                iy016m.setError("Must be between 0 - 11");
+                iy016m.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (iy017d.getText().toString() != "" && iy017d.getText().toString() != null) {
+
+            if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
+                iy017d.setError("Must be between 0 - 30");
+                iy017d.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (iy017m.getText().toString() != "" && iy017m.getText().toString() != null) {
+
+            if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 11) {
+                iy017m.setError("Must be between 0 - 11");
+                iy017m.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (iy018d.getText().toString() != "" && iy018d.getText().toString() != null) {
+
+            if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 30) {
+                iy018d.setError("Must be between 0 - 30");
+                iy018d.requestFocus();
+                return false;
+            }
+
+        }
+
+
+        if (iy018m.getText().toString() != "" && iy018m.getText().toString() != null) {
+
+            if (Integer.parseInt(iy018m.getText().toString()) < 0 || Integer.parseInt(iy018m.getText().toString()) > 11) {
+                iy018m.setError("Must be between 0 - 11");
+                iy018m.requestFocus();
+                return false;
+            }
+
         }
 
         return true;
     }
 
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "Back Button NOT Allowed!", Toast.LENGTH_SHORT).show();
 
+    private boolean SaveDraft() throws JSONException {
+
+        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+
+        JSONObject js = new JSONObject();
+
+        js.put("iy01", iy01.getText().toString());
+        js.put("iy01", iy01.getText().toString());
+        rdo_iy02 = iy02.getCheckedRadioButtonId();
+
+        switch (rdo_iy02) {
+            case R.id.iy02a:
+                var_iy02 = "1";
+                break;
+            case R.id.iy02b:
+                var_iy02 = "2";
+                break;
+        }
+
+        js.put("iy02", var_iy02);
+        js.put("iy03m", iy03m.getText().toString());
+        js.put("iy03d", iy03d.getText().toString());
+
+        rdo_iy04 = iy04.getCheckedRadioButtonId();
+
+        switch (rdo_iy04) {
+            case R.id.iy04a:
+                var_iy04 = "1";
+                break;
+            case R.id.iy04b:
+                var_iy04 = "2";
+                break;
+            case R.id.iy04c:
+                var_iy04 = "88";
+                break;
+        }
+
+        js.put("iy04", var_iy04);
+
+        js.put("iy05a", iy05a.isChecked() ? "1" : "2");
+        js.put("iy05b", iy05b.isChecked() ? "1" : "2");
+        js.put("iy05c", iy05c.isChecked() ? "1" : "2");
+        js.put("iy05d", iy05d.isChecked() ? "1" : "2");
+        js.put("iy05e", iy05e.isChecked() ? "1" : "2");
+        js.put("iy05f", iy05f.isChecked() ? "1" : "2");
+        js.put("iy05g", iy05g.isChecked() ? "1" : "2");
+        js.put("iy05h", iy05h.isChecked() ? "1" : "2");
+        js.put("iy05i", iy05i.isChecked() ? "1" : "2");
+        js.put("iy05j", iy05j.isChecked() ? "1" : "2");
+        js.put("iy0588", iy0588.isChecked() ? "1" : "2");
+
+
+        js.put("iy05x", iy05x.getText().toString());
+
+        js.put("iy06d", iy06d.getText().toString());
+
+        rdo_iy07 = iy07.getCheckedRadioButtonId();
+
+        switch (rdo_iy07) {
+            case R.id.iy07a:
+                var_iy07 = "1";
+                break;
+            case R.id.iy07b:
+                var_iy07 = "2";
+                break;
+            case R.id.iy07c:
+                var_iy07 = "88";
+                break;
+        }
+
+        js.put("iy07", var_iy07);
+
+        js.put("iy07aa", iy07aa.getText().toString());
+        js.put("iy07bb", iy07bb.getText().toString());
+        js.put("iy07cc", iy07cc.getText().toString());
+
+
+        js.put("iy08a", iy08a.isChecked() ? "1" : "2");
+        js.put("iy08b", iy08b.isChecked() ? "1" : "2");
+        js.put("iy08c", iy08c.isChecked() ? "1" : "2");
+        js.put("iy08d", iy08d.isChecked() ? "1" : "2");
+        js.put("iy08e", iy08e.isChecked() ? "1" : "2");
+        js.put("iy0888", iy0888.isChecked() ? "1" : "2");
+
+
+        js.put("iy08x", iy08x.getText().toString());
+
+        rdo_iy09 = iy09.getCheckedRadioButtonId();
+
+        switch (rdo_iy09) {
+            case R.id.iy09a:
+                var_iy09 = "1";
+                break;
+            case R.id.iy09b:
+                var_iy09 = "2";
+                break;
+        }
+
+        js.put("iy09", var_iy09);
+
+        js.put("iy010a", iy010a.isChecked() ? "1" : "2");
+        js.put("iy010b", iy010b.isChecked() ? "1" : "2");
+        js.put("iy010c", iy010c.isChecked() ? "1" : "2");
+        js.put("iy010d", iy010d.isChecked() ? "1" : "2");
+        js.put("iy010e", iy010e.isChecked() ? "1" : "2");
+        js.put("iy010f", iy010f.isChecked() ? "1" : "2");
+        js.put("iy01088", iy01088.isChecked() ? "1" : "2");
+
+        js.put("iy010x", iy010x.getText().toString());
+
+
+        js.put("iy011d", iy011d.getText().toString());
+        js.put("iy011w", iy011w.getText().toString());
+        js.put("iy012h", iy012h.getText().toString());
+        js.put("iy012d", iy012d.getText().toString());
+        js.put("iy01299", iy01299.isChecked() ? "88" : "");
+
+        rdo_iy013 = iy013.getCheckedRadioButtonId();
+
+        switch (rdo_iy013) {
+            case R.id.iy013a:
+                var_iy013 = "1";
+                break;
+            case R.id.iy013b:
+                var_iy013 = "2";
+                break;
+            case R.id.iy013c:
+                var_iy013 = "88";
+                break;
+        }
+
+        js.put("iy013", var_iy013);
+
+
+        rdo_iy014 = iy014.getCheckedRadioButtonId();
+
+        switch (rdo_iy014) {
+            case R.id.iy014a:
+                var_iy014 = "1";
+                break;
+            case R.id.iy014b:
+                var_iy014 = "2";
+                break;
+            case R.id.iy014c:
+                var_iy014 = "88";
+                break;
+        }
+
+        js.put("iy014", var_iy014);
+
+        js.put("iy015a", iy015a.isChecked() ? "1" : "2");
+        js.put("iy015b", iy015b.isChecked() ? "1" : "2");
+        js.put("iy015c", iy015c.isChecked() ? "1" : "2");
+        js.put("iy015d", iy015d.isChecked() ? "1" : "2");
+        js.put("iy015e", iy015e.isChecked() ? "1" : "2");
+        js.put("iy015f", iy015f.isChecked() ? "1" : "2");
+        js.put("iy015g", iy015g.isChecked() ? "1" : "2");
+        js.put("iy015h", iy015h.isChecked() ? "1" : "2");
+        js.put("iy015i", iy015i.isChecked() ? "1" : "2");
+        js.put("iy01588", iy01588.isChecked() ? "1" : "2");
+
+
+        js.put("iy015x", iy015x.getText().toString());
+
+        js.put("iy016m", iy016m.getText().toString());
+        js.put("iy01677", iy01677.getText().toString());
+
+        js.put("iy017d", iy017d.getText().toString());
+        js.put("iy017m", iy017m.getText().toString());
+        js.put("iy01788", iy01788.isChecked() ? "88" : "");
+
+        js.put("iy018d", iy018d.getText().toString());
+        js.put("iy018m", iy018m.getText().toString());
+        js.put("iy01888", iy01888.isChecked() ? "88" : "");
+
+        return true;
     }
 }

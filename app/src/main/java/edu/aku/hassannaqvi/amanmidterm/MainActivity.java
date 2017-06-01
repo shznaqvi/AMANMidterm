@@ -142,12 +142,14 @@ public class MainActivity extends Activity {
     }
 
     public void openE(View v) {
-        Intent iD = new Intent(this, KAPActivity.class);
+        //Intent iD = new Intent(this, KAPActivity.class);
+        Intent iD = new Intent(this, ms.class);
         startActivity(iD);
     }
 
     public void openF(View v) {
-        Intent iD = new Intent(this, SocioEconomicActivity.class);
+        //Intent iD = new Intent(this, SocioEconomicActivity.class);
+        Intent iD = new Intent(this, anc.class);
         startActivity(iD);
     }
 
