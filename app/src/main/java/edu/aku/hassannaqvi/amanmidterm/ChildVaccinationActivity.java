@@ -4,8 +4,10 @@ package edu.aku.hassannaqvi.amanmidterm;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -26,151 +28,258 @@ public class ChildVaccinationActivity extends Activity {
 
     @BindView(R.id.activity_section_c)
     ScrollView activitySectionC;
-    @BindView(R.id.txtmnc1)
-    TextView txtmnc1;
-    @BindView(R.id.mnc1)
-    RadioGroup mnc1;
-    @BindView(R.id.mnc1a)
-    RadioButton mnc1a;
-    @BindView(R.id.mnc1b)
-    RadioButton mnc1b;
-    @BindView(R.id.mnc1c)
-    RadioButton mnc1c;
-    @BindView(R.id.txtmnc2)
-    TextView txtmnc2;
-    @BindView(R.id.mnc2)
-    RadioGroup mnc2;
-    @BindView(R.id.mnc2a)
-    RadioButton mnc2a;
-    @BindView(R.id.mnc2b)
-    RadioButton mnc2b;
-    @BindView(R.id.mnc2c)
-    RadioButton mnc2c;
-    @BindView(R.id.fldGrpmnc3)
-    LinearLayout fldGrpmnc3;
-    @BindView(R.id.mnc3)
-    RadioGroup mnc3;
-    @BindView(R.id.mnc3a)
-    RadioButton mnc3a;
-    @BindView(R.id.mnc3b)
-    RadioButton mnc3b;
-    @BindView(R.id.fldGrpmnc4)
-    LinearLayout fldGrpmnc4;
-    @BindView(R.id.txtmnc4)
-    TextView txtmnc4;
-    @BindView(R.id.mnc4)
-    RadioGroup mnc4;
-    @BindView(R.id.mnc4a)
-    RadioButton mnc4a;
-    @BindView(R.id.mnc4b)
-    RadioButton mnc4b;
-    @BindView(R.id.mnc4c)
-    RadioButton mnc4c;
-    @BindView(R.id.mnc5bcg)
-    EditText mnc5bcg;
-    @BindView(R.id.mnc5opv0)
-    EditText mnc5opv0;
-    @BindView(R.id.mnc5p1)
-    EditText mnc5p1;
-    @BindView(R.id.mnc5pcv1)
-    EditText mnc5pcv1;
-    @BindView(R.id.mnc5opv1)
-    EditText mnc5opv1;
-    @BindView(R.id.mnc5p2)
-    EditText mnc5p2;
-    @BindView(R.id.mnc5pcv2)
-    EditText mnc5pcv2;
-    @BindView(R.id.mnc5opv2)
-    EditText mnc5opv2;
-    @BindView(R.id.mnc5p3)
-    EditText mnc5p3;
-    @BindView(R.id.mnc5pcv3)
-    EditText mnc5pcv3;
-    @BindView(R.id.mnc5opv3)
-    EditText mnc5opv3;
-    @BindView(R.id.mnc5ipv1)
-    EditText mnc5ipv1;
-    @BindView(R.id.mnc5m1)
-    EditText mnc5m1;
-    @BindView(R.id.mnc5ipv2)
-    EditText mnc5ipv2;
-    @BindView(R.id.mnc5m2)
-    EditText mnc5m2;
-    @BindView(R.id.mnc5ipv3)
-    EditText mnc5ipv3;
-    @BindView(R.id.txtmnc6)
-    TextView txtmnc6;
-    @BindView(R.id.mnc6)
-    RadioGroup mnc6;
-    @BindView(R.id.mnc6a)
-    RadioButton mnc6a;
-    @BindView(R.id.mnc6b)
-    RadioButton mnc6b;
-    @BindView(R.id.mnc6c)
-    RadioButton mnc6c;
-    @BindView(R.id.txtmnc7)
-    TextView txtmnc7;
-    @BindView(R.id.mnc7)
-    RadioGroup mnc7;
-    @BindView(R.id.mnc7a)
-    RadioButton mnc7a;
-    @BindView(R.id.mnc7b)
-    RadioButton mnc7b;
-    @BindView(R.id.mnc7c)
-    RadioButton mnc7c;
-    @BindView(R.id.txtmnc8)
-    TextView txtmnc8;
-    @BindView(R.id.mnc8)
-    EditText mnc8;
-    @BindView(R.id.txtmnc9)
-    TextView txtmnc9;
-    @BindView(R.id.mnc9)
-    RadioGroup mnc9;
-    @BindView(R.id.mnc9a)
-    RadioButton mnc9a;
-    @BindView(R.id.mnc9b)
-    RadioButton mnc9b;
-    @BindView(R.id.mnc9c)
-    RadioButton mnc9c;
-    @BindView(R.id.mnc10yy)
-    EditText mnc10yy;
-    @BindView(R.id.mnc10mm)
-    EditText mnc10mm;
-    @BindView(R.id.mnc11)
-    RadioGroup mnc11;
-    @BindView(R.id.mnc11a)
-    RadioButton mnc11a;
-    @BindView(R.id.mnc11b)
-    RadioButton mnc11b;
-    @BindView(R.id.mnc11c)
-    RadioButton mnc11c;
-    @BindView(R.id.mnc11d)
-    RadioButton mnc11d;
-    @BindView(R.id.mnc11name)
-    EditText mnc11name;
-    @BindView(R.id.mnc12)
-    RadioGroup mnc12;
-    @BindView(R.id.mnc12a)
-    RadioButton mnc12a;
-    @BindView(R.id.mnc12b)
-    RadioButton mnc12b;
-    @BindView(R.id.txtmnc13)
-    TextView txtmnc13;
-    @BindView(R.id.mnc13)
-    RadioGroup mnc13;
-    @BindView(R.id.mnc13a)
-    RadioButton mnc13a;
-    @BindView(R.id.mnc13b)
-    RadioButton mnc13b;
-    @BindView(R.id.mnc13c)
-    RadioButton mnc13c;
-    @BindView(R.id.mnc13d)
-    RadioButton mnc13d;
-
-    @BindView(R.id.fldGrpmnc8)
-    LinearLayout fldGrpmnc8;
-    @BindView(R.id.fldGrpmnc10)
-    LinearLayout fldGrpmnc10;
+    @BindView(R.id.cv01)
+    RadioGroup cv01;
+    @BindView(R.id.cv01a)
+    RadioButton cv01a;
+    @BindView(R.id.cv01b)
+    RadioButton cv01b;
+    @BindView(R.id.fldGrpcv02)
+    LinearLayout fldGrpcv02;
+    @BindView(R.id.cv02a)
+    EditText cv02a;
+    @BindView(R.id.cv0299)
+    CheckBox cv0299;
+    @BindView(R.id.cv03)
+    RadioGroup cv03;
+    @BindView(R.id.cv03a)
+    RadioButton cv03a;
+    @BindView(R.id.cv03b)
+    RadioButton cv03b;
+    @BindView(R.id.fldGrpcv04)
+    LinearLayout fldGrpcv04;
+    @BindView(R.id.cv04)
+    RadioGroup cv04;
+    @BindView(R.id.cv04a)
+    RadioButton cv04a;
+    @BindView(R.id.cv04b)
+    RadioButton cv04b;
+    @BindView(R.id.textView)
+    TextView textView;
+    @BindView(R.id.fldGrpBcgM)
+    LinearLayout fldGrpBcgM;
+    @BindView(R.id.bcgM)
+    RadioGroup bcgM;
+    @BindView(R.id.bcgMa)
+    RadioButton bcgMa;
+    @BindView(R.id.bcgMb)
+    RadioButton bcgMb;
+    @BindView(R.id.fldGrpBcgCard)
+    LinearLayout fldGrpBcgCard;
+    @BindView(R.id.bcgC)
+    RadioGroup bcgC;
+    @BindView(R.id.bcgCa)
+    RadioButton bcgCa;
+    @BindView(R.id.bcgCb)
+    RadioButton bcgCb;
+    @BindView(R.id.fldGrpOpv0M)
+    LinearLayout fldGrpOpv0M;
+    @BindView(R.id.opv0M)
+    RadioGroup opv0M;
+    @BindView(R.id.opv0Ma)
+    RadioButton opv0Ma;
+    @BindView(R.id.opv0Mb)
+    RadioButton opv0Mb;
+    @BindView(R.id.fldGrpOpv0Card)
+    LinearLayout fldGrpOpv0Card;
+    @BindView(R.id.opv0C)
+    RadioGroup opv0C;
+    @BindView(R.id.opv0Ca)
+    RadioButton opv0Ca;
+    @BindView(R.id.opv0Cb)
+    RadioButton opv0Cb;
+    @BindView(R.id.fldGrpOpv1M)
+    LinearLayout fldGrpOpv1M;
+    @BindView(R.id.opv1M)
+    RadioGroup opv1M;
+    @BindView(R.id.opv1Ma)
+    RadioButton opv1Ma;
+    @BindView(R.id.opv1Mb)
+    RadioButton opv1Mb;
+    @BindView(R.id.fldGrpOpv1Card)
+    LinearLayout fldGrpOpv1Card;
+    @BindView(R.id.opv1C)
+    RadioGroup opv1C;
+    @BindView(R.id.opv1Ca)
+    RadioButton opv1Ca;
+    @BindView(R.id.opv1Cb)
+    RadioButton opv1Cb;
+    @BindView(R.id.fldGrpPenta1M)
+    LinearLayout fldGrpPenta1M;
+    @BindView(R.id.penta1M)
+    RadioGroup penta1M;
+    @BindView(R.id.penta1Ma)
+    RadioButton penta1Ma;
+    @BindView(R.id.penta1Mb)
+    RadioButton penta1Mb;
+    @BindView(R.id.fldGrpPenta1C)
+    LinearLayout fldGrpPenta1C;
+    @BindView(R.id.penta1C)
+    RadioGroup penta1C;
+    @BindView(R.id.penta1Ca)
+    RadioButton penta1Ca;
+    @BindView(R.id.penta1Cb)
+    RadioButton penta1Cb;
+    @BindView(R.id.fldGrpPneumo1M)
+    LinearLayout fldGrpPneumo1M;
+    @BindView(R.id.pneumo1M)
+    RadioGroup pneumo1M;
+    @BindView(R.id.pneumo1Ma)
+    RadioButton pneumo1Ma;
+    @BindView(R.id.pneumo1Mb)
+    RadioButton pneumo1Mb;
+    @BindView(R.id.fldGrpPneumo1C)
+    LinearLayout fldGrpPneumo1C;
+    @BindView(R.id.pneumo1C)
+    RadioGroup pneumo1C;
+    @BindView(R.id.pneumo1Ca)
+    RadioButton pneumo1Ca;
+    @BindView(R.id.pneumo1Cb)
+    RadioButton pneumo1Cb;
+    @BindView(R.id.fldGrpOpv2M)
+    LinearLayout fldGrpOpv2M;
+    @BindView(R.id.opv2M)
+    RadioGroup opv2M;
+    @BindView(R.id.opv2Ma)
+    RadioButton opv2Ma;
+    @BindView(R.id.opv2Mb)
+    RadioButton opv2Mb;
+    @BindView(R.id.fldGrpOpv2C)
+    LinearLayout fldGrpOpv2C;
+    @BindView(R.id.opv2C)
+    RadioGroup opv2C;
+    @BindView(R.id.opv2Ca)
+    RadioButton opv2Ca;
+    @BindView(R.id.opv2Cb)
+    RadioButton opv2Cb;
+    @BindView(R.id.fldGrpPenta2M)
+    LinearLayout fldGrpPenta2M;
+    @BindView(R.id.penta2M)
+    RadioGroup penta2M;
+    @BindView(R.id.penta2Ma)
+    RadioButton penta2Ma;
+    @BindView(R.id.penta2Mb)
+    RadioButton penta2Mb;
+    @BindView(R.id.fldGrpPenta2C)
+    LinearLayout fldGrpPenta2C;
+    @BindView(R.id.penta2C)
+    RadioGroup penta2C;
+    @BindView(R.id.penta2Ca)
+    RadioButton penta2Ca;
+    @BindView(R.id.penta2Cb)
+    RadioButton penta2Cb;
+    @BindView(R.id.fldGrpPneumo2M)
+    LinearLayout fldGrpPneumo2M;
+    @BindView(R.id.pneumo2M)
+    RadioGroup pneumo2M;
+    @BindView(R.id.pneumo2Ma)
+    RadioButton pneumo2Ma;
+    @BindView(R.id.pneumo2Mb)
+    RadioButton pneumo2Mb;
+    @BindView(R.id.fldGrpPneumo2C)
+    LinearLayout fldGrpPneumo2C;
+    @BindView(R.id.pneumo2C)
+    RadioGroup pneumo2C;
+    @BindView(R.id.pneumo2Ca)
+    RadioButton pneumo2Ca;
+    @BindView(R.id.pneumo2Cb)
+    RadioButton pneumo2Cb;
+    @BindView(R.id.fldGrpOpv3M)
+    LinearLayout fldGrpOpv3M;
+    @BindView(R.id.opv3M)
+    RadioGroup opv3M;
+    @BindView(R.id.opv3Ma)
+    RadioButton opv3Ma;
+    @BindView(R.id.opv3Mb)
+    RadioButton opv3Mb;
+    @BindView(R.id.fldGrOpv3C)
+    LinearLayout fldGrOpv3C;
+    @BindView(R.id.opv3C)
+    RadioGroup opv3C;
+    @BindView(R.id.opv3Ca)
+    RadioButton opv3Ca;
+    @BindView(R.id.opv3Cb)
+    RadioButton opv3Cb;
+    @BindView(R.id.fldGrpPenta3M)
+    LinearLayout fldGrpPenta3M;
+    @BindView(R.id.penta3M)
+    RadioGroup penta3M;
+    @BindView(R.id.penta3Ma)
+    RadioButton penta3Ma;
+    @BindView(R.id.penta3Mb)
+    RadioButton penta3Mb;
+    @BindView(R.id.fldGrpPenta3C)
+    LinearLayout fldGrpPenta3C;
+    @BindView(R.id.penta3C)
+    RadioGroup penta3C;
+    @BindView(R.id.penta3Ca)
+    RadioButton penta3Ca;
+    @BindView(R.id.penta3Cb)
+    RadioButton penta3Cb;
+    @BindView(R.id.fldGrpPneumo3M)
+    LinearLayout fldGrpPneumo3M;
+    @BindView(R.id.pneumo3M)
+    RadioGroup pneumo3M;
+    @BindView(R.id.pneumo3Ma)
+    RadioButton pneumo3Ma;
+    @BindView(R.id.pneumo3Mb)
+    RadioButton pneumo3Mb;
+    @BindView(R.id.fldGrpPneumo3C)
+    LinearLayout fldGrpPneumo3C;
+    @BindView(R.id.pneumo3C)
+    RadioGroup pneumo3C;
+    @BindView(R.id.pneumo3Ca)
+    RadioButton pneumo3Ca;
+    @BindView(R.id.pneumo3Cb)
+    RadioButton pneumo3Cb;
+    @BindView(R.id.fldGrpipvM)
+    LinearLayout fldGrpipvM;
+    @BindView(R.id.ipvM)
+    RadioGroup ipvM;
+    @BindView(R.id.ipvMa)
+    RadioButton ipvMa;
+    @BindView(R.id.ipvMb)
+    RadioButton ipvMb;
+    @BindView(R.id.fldGrpipvC)
+    LinearLayout fldGrpipvC;
+    @BindView(R.id.ipvC)
+    RadioGroup ipvC;
+    @BindView(R.id.ipvCa)
+    RadioButton ipvCa;
+    @BindView(R.id.ipvCb)
+    RadioButton ipvCb;
+    @BindView(R.id.fldGrpMeasles1M)
+    LinearLayout fldGrpMeasles1M;
+    @BindView(R.id.measles1M)
+    RadioGroup measles1M;
+    @BindView(R.id.measles1Ma)
+    RadioButton measles1Ma;
+    @BindView(R.id.measles1Mb)
+    RadioButton measles1Mb;
+    @BindView(R.id.fldGrpMeasles1C)
+    LinearLayout fldGrpMeasles1C;
+    @BindView(R.id.measles1C)
+    RadioGroup measles1C;
+    @BindView(R.id.measles1Ca)
+    RadioButton measles1Ca;
+    @BindView(R.id.measles1Cb)
+    RadioButton measles1Cb;
+    @BindView(R.id.fldGrpMeasles2M)
+    LinearLayout fldGrpMeasles2M;
+    @BindView(R.id.measles2M)
+    RadioGroup measles2M;
+    @BindView(R.id.measles2Ma)
+    RadioButton measles2Ma;
+    @BindView(R.id.measles2Mb)
+    RadioButton measles2Mb;
+    @BindView(R.id.fldGrpMeasles2C)
+    LinearLayout fldGrpMeasles2C;
+    @BindView(R.id.measles2C)
+    RadioGroup measles2C;
+    @BindView(R.id.measles2Ca)
+    RadioButton measles2Ca;
+    @BindView(R.id.measles2Cb)
+    RadioButton measles2Cb;
 
 
     @Override
@@ -179,81 +288,168 @@ public class ChildVaccinationActivity extends Activity {
         setContentView(R.layout.activity_child_vaccination);
         ButterKnife.bind(this);
 
-
-        txtmnc1.setText(txtmnc1.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc2.setText(txtmnc2.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc4.setText(txtmnc4.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc6.setText(txtmnc6.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc7.setText(txtmnc7.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc8.setText(txtmnc8.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-        txtmnc9.setText(txtmnc9.getText().toString().replace("(بچے کا نام)", AppMain.mnb1));
-
-
-        // SKIP PATTERNS
-        mnc2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        cv01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnc2a.isChecked()) {
-                    fldGrpmnc3.setVisibility(View.VISIBLE);
-                    fldGrpmnc4.setVisibility(View.GONE);
-                    mnc4.clearCheck();
-                }
-                if (mnc2b.isChecked() || mnc2c.isChecked()) {
-                    fldGrpmnc3.setVisibility(View.GONE);
-                    fldGrpmnc4.setVisibility(View.VISIBLE);
-                    mnc3.clearCheck();
-                }
-            }
-        });
-        mnc6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnc6a.isChecked()) {
-                    fldGrpmnc8.setVisibility(View.VISIBLE);
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (cv01a.isChecked()) {
+                    fldGrpcv02.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpmnc8.setVisibility(View.GONE);
-                    mnc8.setText(null);
-                }
-            }
-        });
-        mnc6a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                                             @Override
-                                             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                                 if (isChecked) {
-                                                     fldGrpmnc8.setVisibility(View.VISIBLE);
-                                                 } else {
-                                                     fldGrpmnc8.setVisibility(View.GONE);
-                                                     mnc8.setText(null);
-                                                 }
-                                             }
-                                         }
-        );
-        mnc9.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnc9a.isChecked()) {
-                    fldGrpmnc10.setVisibility(View.VISIBLE);
-                }
-                if (mnc9b.isChecked() || mnc9c.isChecked()) {
-                    fldGrpmnc10.setVisibility(View.GONE);
-                    mnc10yy.setText(null);
-                    mnc10mm.setText(null);
-                    mnc11.clearCheck();
-                    mnc11name.setText(null);
+                    fldGrpcv02.setVisibility(View.GONE);
+                    cv02a.setText(null);
+                    cv0299.setChecked(false);
                 }
             }
         });
 
-        mnc11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        cv0299.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mnc11d.isChecked()) {
-                    mnc11name.setVisibility(View.VISIBLE);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cv02a.setVisibility(View.GONE);
+                    cv02a.setText(null);
                 } else {
-                    mnc11name.setVisibility(View.GONE);
+                    cv02a.setVisibility(View.VISIBLE);
                 }
             }
         });
+
+        cv03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (cv03a.isChecked()) {
+                    fldGrpcv04.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcv04.setVisibility(View.GONE);
+                    cv04.clearCheck();
+                    bcgM.clearCheck();
+                    bcgC.clearCheck();
+                    opv0C.clearCheck();
+                    opv0M.clearCheck();
+                    opv1C.clearCheck();
+                    opv1M.clearCheck();
+                    penta1C.clearCheck();
+                    penta1M.clearCheck();
+                    pneumo1C.clearCheck();
+                    pneumo1M.clearCheck();
+                    opv2C.clearCheck();
+                    opv2M.clearCheck();
+                    penta2C.clearCheck();
+                    penta2M.clearCheck();
+                    pneumo2C.clearCheck();
+                    pneumo2M.clearCheck();
+                    opv3C.clearCheck();
+                    opv3M.clearCheck();
+                    penta3C.clearCheck();
+                    penta3M.clearCheck();
+                    pneumo3C.clearCheck();
+                    pneumo3M.clearCheck();
+                    ipvC.clearCheck();
+                    ipvM.clearCheck();
+                    measles1C.clearCheck();
+                    measles1M.clearCheck();
+                    measles2C.clearCheck();
+                    measles2M.clearCheck();
+
+                }
+            }
+        });
+
+        cv04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (cv04a.isChecked()) {
+                    fldGrpBcgCard.setVisibility(View.VISIBLE);
+                    fldGrpBcgM.setVisibility(View.GONE);
+                    bcgM.clearCheck();
+                    opv0M.clearCheck();
+                    fldGrpOpv0Card.setVisibility(View.VISIBLE);
+                    fldGrpOpv0M.setVisibility(View.GONE);
+                    fldGrpOpv1Card.setVisibility(View.VISIBLE);
+                    fldGrpOpv1M.setVisibility(View.GONE);
+                    opv1M.clearCheck();
+                    fldGrpPenta1C.setVisibility(View.VISIBLE);
+                    fldGrpPenta1M.setVisibility(View.GONE);
+                    penta1M.clearCheck();
+                    fldGrpPneumo1C.setVisibility(View.VISIBLE);
+                    fldGrpPneumo1M.setVisibility(View.GONE);
+                    pneumo1M.clearCheck();
+                    fldGrpOpv2C.setVisibility(View.VISIBLE);
+                    fldGrpOpv2M.setVisibility(View.GONE);
+                    opv2M.clearCheck();
+                    fldGrpPenta2C.setVisibility(View.VISIBLE);
+                    fldGrpPenta2M.setVisibility(View.GONE);
+                    penta2M.clearCheck();
+                    fldGrpPneumo2C.setVisibility(View.VISIBLE);
+                    fldGrpPneumo2M.setVisibility(View.GONE);
+                    pneumo2M.clearCheck();
+                    fldGrOpv3C.setVisibility(View.VISIBLE);
+                    fldGrpOpv3M.setVisibility(View.GONE);
+                    opv3M.clearCheck();
+                    fldGrpPenta3C.setVisibility(View.VISIBLE);
+                    fldGrpPenta3M.setVisibility(View.GONE);
+                    penta3M.clearCheck();
+                    fldGrpPneumo3C.setVisibility(View.VISIBLE);
+                    fldGrpPneumo3M.setVisibility(View.GONE);
+                    pneumo3M.clearCheck();
+                    fldGrpipvC.setVisibility(View.VISIBLE);
+                    fldGrpipvM.setVisibility(View.GONE);
+                    ipvM.clearCheck();
+                    fldGrpMeasles1C.setVisibility(View.VISIBLE);
+                    fldGrpMeasles1M.setVisibility(View.GONE);
+                    measles1M.clearCheck();
+                    fldGrpMeasles2C.setVisibility(View.VISIBLE);
+                    fldGrpMeasles2M.setVisibility(View.GONE);
+                    measles2M.clearCheck();
+
+
+                } else {
+                    fldGrpBcgCard.setVisibility(View.GONE);
+                    fldGrpBcgM.setVisibility(View.VISIBLE);
+                    bcgC.clearCheck();
+                    opv0C.clearCheck();
+                    fldGrpOpv0Card.setVisibility(View.GONE);
+                    fldGrpOpv0M.setVisibility(View.VISIBLE);
+                    fldGrpOpv1Card.setVisibility(View.GONE);
+                    fldGrpOpv1M.setVisibility(View.VISIBLE);
+                    opv1C.clearCheck();
+                    fldGrpPenta1C.setVisibility(View.GONE);
+                    fldGrpPenta1M.setVisibility(View.VISIBLE);
+                    penta1C.clearCheck();
+                    fldGrpPneumo1C.setVisibility(View.GONE);
+                    fldGrpPneumo1M.setVisibility(View.VISIBLE);
+                    pneumo1C.clearCheck();
+                    fldGrpOpv2C.setVisibility(View.GONE);
+                    fldGrpOpv2M.setVisibility(View.VISIBLE);
+                    opv2C.clearCheck();
+                    fldGrpPenta2C.setVisibility(View.GONE);
+                    fldGrpPenta2M.setVisibility(View.VISIBLE);
+                    penta2C.clearCheck();
+                    fldGrpPneumo2C.setVisibility(View.GONE);
+                    fldGrpPneumo2M.setVisibility(View.VISIBLE);
+                    pneumo2C.clearCheck();
+                    fldGrOpv3C.setVisibility(View.GONE);
+                    fldGrpOpv3M.setVisibility(View.VISIBLE);
+                    opv3C.clearCheck();
+                    fldGrpPenta3C.setVisibility(View.GONE);
+                    fldGrpPenta3M.setVisibility(View.VISIBLE);
+                    penta3C.clearCheck();
+                    fldGrpPneumo3C.setVisibility(View.GONE);
+                    fldGrpPneumo3M.setVisibility(View.VISIBLE);
+                    pneumo3C.clearCheck();
+                    fldGrpipvC.setVisibility(View.GONE);
+                    fldGrpipvM.setVisibility(View.VISIBLE);
+                    ipvC.clearCheck();
+                    fldGrpMeasles1C.setVisibility(View.GONE);
+                    fldGrpMeasles1M.setVisibility(View.VISIBLE);
+                    measles1C.clearCheck();
+                    fldGrpMeasles2C.setVisibility(View.GONE);
+                    fldGrpMeasles2M.setVisibility(View.VISIBLE);
+                    measles2C.clearCheck();
+
+                }
+            }
+        });
+
 
     }
 
@@ -288,180 +484,40 @@ public class ChildVaccinationActivity extends Activity {
     private void SaveDraft() throws JSONException {
         JSONObject sc = new JSONObject();
 
-        switch (mnc1.getCheckedRadioButtonId()) {
-            case R.id.mnc1a:
-                sc.put("mnc1", "1");
-                break;
-            case R.id.mnc1b:
-                sc.put("mnc1", "2");
-                break;
-            case R.id.mnc1c:
-                sc.put("mnc1", "99");
-                break;
-            default:
-                sc.put("mnc1", "default");
-                break;
-        }
-        switch (mnc2.getCheckedRadioButtonId()) {
-            case R.id.mnc2a:
-                sc.put("mnc2", "1");
-                break;
-            case R.id.mnc2b:
-                sc.put("mnc2", "2");
-                break;
-            case R.id.mnc2c:
-                sc.put("mnc2", "99");
-                break;
-            default:
-                sc.put("mnc2", "default");
-                break;
-        }
-        switch (mnc3.getCheckedRadioButtonId()) {
-            case R.id.mnc3a:
-                sc.put("mnc3", "1");
-                break;
-            case R.id.mnc3b:
-                sc.put("mnc3", "2");
-                break;
-            default:
-                sc.put("mnc3", "default");
-                break;
-        }
+        sc.put("cv01", cv01a.isChecked() ? "1" : cv01b.isChecked() ? "2" : "0");
+        sc.put("cv02a", cv02a.getText().toString());
+        sc.put("cv0299", cv0299.isChecked() ? "99" : "0");
+        sc.put("cv03", cv03a.isChecked() ? "1" : cv03b.isChecked() ? "2" : "0");
+        sc.put("cv04", cv04a.isChecked() ? "1" : cv04b.isChecked() ? "2" : "0");
+        sc.put("bcgC", bcgCa.isChecked() ? "1" : bcgCb.isChecked() ? "2" : "0");
+        sc.put("bcgM", bcgMa.isChecked() ? "1" : bcgMb.isChecked() ? "2" : "0");
+        sc.put("opv0C", opv0Ca.isChecked() ? "1" : opv0Cb.isChecked() ? "2" : "0");
+        sc.put("opv0M", opv0Ma.isChecked() ? "1" : opv0Mb.isChecked() ? "2" : "0");
+        sc.put("opv1C", opv1Ca.isChecked() ? "1" : opv1Cb.isChecked() ? "2" : "0");
+        sc.put("opv1M", opv1Ma.isChecked() ? "1" : opv1Mb.isChecked() ? "2" : "0");
+        sc.put("penta1C", penta1Ca.isChecked() ? "1" : penta1Cb.isChecked() ? "2" : "0");
+        sc.put("penta1M", penta1Ma.isChecked() ? "1" : penta1Mb.isChecked() ? "2" : "0");
+        sc.put("pneumo1C", pneumo1Ca.isChecked() ? "1" : pneumo1Cb.isChecked() ? "2" : "0");
+        sc.put("pneumo1M", pneumo1Ma.isChecked() ? "1" : pneumo1Mb.isChecked() ? "2" : "0");
+        sc.put("opv2C", opv2Ca.isChecked() ? "1" : opv2Cb.isChecked() ? "2" : "0");
+        sc.put("opv2M", opv2Ma.isChecked() ? "1" : opv2Mb.isChecked() ? "2" : "0");
+        sc.put("penta2C", penta2Ca.isChecked() ? "1" : penta2Cb.isChecked() ? "2" : "0");
+        sc.put("penta2M", penta2Ma.isChecked() ? "1" : penta2Mb.isChecked() ? "2" : "0");
+        sc.put("peneumo2C", pneumo2Ca.isChecked() ? "1" : pneumo2Cb.isChecked() ? "2" : "0");
+        sc.put("pneumo2M", pneumo2Ma.isChecked() ? "1" : pneumo2Mb.isChecked() ? "2" : "0");
+        sc.put("opv3C", opv3Ca.isChecked() ? "1" : opv3Cb.isChecked() ? "2" : "0");
+        sc.put("opv3M", opv3Ma.isChecked() ? "1" : opv3Mb.isChecked() ? "2" : "0");
+        sc.put("penta3C", penta3Ca.isChecked() ? "1" : penta3Cb.isChecked() ? "2" : "0");
+        sc.put("penta3M", penta3Ma.isChecked() ? "1" : penta3Mb.isChecked() ? "2" : "0");
+        sc.put("pneumo3C", pneumo3Ca.isChecked() ? "1" : pneumo3Cb.isChecked() ? "2" : "0");
+        sc.put("pneumo3M", pneumo3Ma.isChecked() ? "1" : pneumo3Mb.isChecked() ? "2" : "0");
+        sc.put("ipvC", ipvCa.isChecked() ? "1" : ipvCb.isChecked() ? "2" : "0");
+        sc.put("ipvM", ipvMa.isChecked() ? "1" : ipvMb.isChecked() ? "2" : "0");
+        sc.put("measles1C", measles1Ca.isChecked() ? "1" : measles1Cb.isChecked() ? "2" : "0");
+        sc.put("measles1M", measles1Ma.isChecked() ? "1" : measles1Mb.isChecked() ? "2" : "0");
 
-        switch (mnc4.getCheckedRadioButtonId()) {
-            case R.id.mnc4a:
-                sc.put("mnc4", "1");
-                break;
-            case R.id.mnc4b:
-                sc.put("mnc4", "2");
-                break;
-            case R.id.mnc4c:
-                sc.put("mnc4", "99");
-                break;
-            default:
-                sc.put("mnc4", "default");
-                break;
-        }
-
-        sc.put("mnc5bcg", mnc5bcg.getText().toString());
-        sc.put("mnc5opv0", mnc5opv0.getText().toString());
-        sc.put("mnc5opv1", mnc5opv1.getText().toString());
-        sc.put("mnc5opv2", mnc5opv2.getText().toString());
-        sc.put("mnc5opv3", mnc5opv3.getText().toString());
-        sc.put("mnc5pcv1", mnc5pcv1.getText().toString());
-        sc.put("mnc5pcv2", mnc5pcv2.getText().toString());
-        sc.put("mnc5pcv3", mnc5pcv3.getText().toString());
-        sc.put("mnc5ipv1", mnc5ipv1.getText().toString());
-        sc.put("mnc5ipv2", mnc5ipv2.getText().toString());
-        sc.put("mnc5ipv3", mnc5ipv3.getText().toString());
-        sc.put("mnc5ipv3", mnc5pcv2.getText().toString());
-        sc.put("mnc5p1", mnc5p1.getText().toString());
-        sc.put("mnc5p2", mnc5p2.getText().toString());
-        sc.put("mnc5p3", mnc5p3.getText().toString());
-        sc.put("mnc5m1", mnc5m1.getText().toString());
-        sc.put("mnc5m2", mnc5m2.getText().toString());
-
-        switch (mnc6.getCheckedRadioButtonId()) {
-            case R.id.mnc6a:
-                sc.put("mnc6", "1");
-                break;
-            case R.id.mnc6b:
-                sc.put("mnc6", "2");
-                break;
-            case R.id.mnc6c:
-                sc.put("mnc6", "99");
-                break;
-
-            default:
-                sc.put("mnc6", "default");
-                break;
-        }
-
-        switch (mnc7.getCheckedRadioButtonId()) {
-            case R.id.mnc7a:
-                sc.put("mnc7", "1");
-                break;
-            case R.id.mnc7b:
-                sc.put("mnc7", "2");
-                break;
-            case R.id.mnc7c:
-                sc.put("mnc7", "99");
-                break;
-
-            default:
-                sc.put("mnc7", "default");
-                break;
-        }
-
-        switch (mnc9.getCheckedRadioButtonId()) {
-            case R.id.mnc9a:
-                sc.put("mnc9", "1");
-                break;
-            case R.id.mnc9b:
-                sc.put("mnc9", "2");
-                break;
-            case R.id.mnc9c:
-                sc.put("mnc9", "99");
-                break;
-
-            default:
-                sc.put("mnc9", "default");
-                break;
-        }
-
-        sc.put("mnc8", mnc8.getText().toString());
-        sc.put("mnc10yy", mnc10yy.getText().toString());
-        sc.put("mnc10mm", mnc10mm.getText().toString());
-
-
-        switch (mnc11.getCheckedRadioButtonId()) {
-            case R.id.mnc11a:
-                sc.put("mnc11", "1");
-                break;
-            case R.id.mnc11b:
-                sc.put("mnc11", "2");
-                break;
-            case R.id.mnc11c:
-                sc.put("mnc11", "3");
-                break;
-            case R.id.mnc11d:
-                sc.put("mnc11", "4");
-                break;
-            default:
-                sc.put("mnc11", "default");
-                break;
-        }
-        sc.put("mnc11name", mnc11name.getText().toString());
-
-        switch (mnc12.getCheckedRadioButtonId()) {
-            case R.id.mnc12a:
-                sc.put("mnc12", "1");
-                break;
-            case R.id.mnc12b:
-                sc.put("mnc12", "2");
-                break;
-            default:
-                sc.put("mnc12", "default");
-                break;
-        }
-        switch (mnc13.getCheckedRadioButtonId()) {
-            case R.id.mnc13a:
-                sc.put("mnc13", "1");
-                break;
-            case R.id.mnc13b:
-                sc.put("mnc13", "2");
-                break;
-            case R.id.mnc13c:
-                sc.put("mnc13", "3");
-                break;
-            case R.id.mnc13d:
-                sc.put("mnc13", "99");
-                break;
-            default:
-                sc.put("mnc13", "default");
-                break;
-        }
-
+        sc.put("measles2C", measles2Ca.isChecked() ? "1" : measles2Cb.isChecked() ? "2" : "0");
+        sc.put("measles2M", measles2Ma.isChecked() ? "1" : measles2Mb.isChecked() ? "2" : "0");
 
         AppMain.fc.setChildVaccination(String.valueOf(sc));
 
@@ -472,350 +528,353 @@ public class ChildVaccinationActivity extends Activity {
     private boolean formValidation() {
 
         Toast.makeText(this, "Validating Section C", Toast.LENGTH_SHORT).show();
-
-        // C1
-        if (mnc1.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc1), Toast.LENGTH_LONG).show();
-            mnc1c.setError("This data is Required!");
-            Log.i(TAG, "mnc1: This data is Required!");
+        //============= Q1================
+        if (cv01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cv01), Toast.LENGTH_SHORT).show();
+            cv01b.setError("This data is Required!");
+            Log.i(TAG, "cv01: This data is Required!");
             return false;
         } else {
-            mnc1c.setError(null);
+            cv01b.setError(null);
         }
 
-        // C2
-        if (mnc2.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc2), Toast.LENGTH_LONG).show();
-            mnc2c.setError("This data is Required!");
-            Log.i(TAG, "mnc2: This data is Required!");
-            return false;
-        } else {
-            mnc2c.setError(null);
-        }
-
-        // C3 (with C2 = Yes)
-        if (mnc2a.isChecked() && mnc3.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc3), Toast.LENGTH_LONG).show();
-            mnc3b.setError("This data is Required!");
-            Log.i(TAG, "mnc3: This data is Required!");
-            return false;
-        } else {
-            mnc3b.setError(null);
-        }
-
-        // C4 (with C2 = No OR Don't Know)
-        if ((mnc2b.isChecked() || mnc2c.isChecked()) && mnc4.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc4), Toast.LENGTH_LONG).show();
-            mnc4c.setError("This data is Required!");
-            Log.i(TAG, "mnc4: This data is Required!");
-            return false;
-        } else {
-            mnc4c.setError(null);
-        }
-
-        // C5 - BCG
-        if (mnc5bcg.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5bcg), Toast.LENGTH_LONG).show();
-            mnc5bcg.setError("This data is Required!");
-            Log.i(TAG, "mnc5bcg: This data is Required!");
-            return false;
-        } else {
-            mnc5bcg.setError(null);
-        }
-
-        // C5 - OPV0
-        if (mnc5opv0.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5opv0), Toast.LENGTH_LONG).show();
-            mnc5opv0.setError("This data is Required!");
-            Log.i(TAG, "mnc5opv0: This data is Required!");
-            return false;
-        } else {
-            mnc5opv0.setError(null);
-        }
-
-        // C5 - OPV1
-        if (mnc5opv1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5opv1), Toast.LENGTH_LONG).show();
-            mnc5opv1.setError("This data is Required!");
-            Log.i(TAG, "mnc5opv1: This data is Required!");
-            return false;
-        } else {
-            mnc5opv1.setError(null);
-        }
-
-        // C5 - OPV2
-        if (mnc5opv2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5opv2), Toast.LENGTH_LONG).show();
-            mnc5opv2.setError("This data is Required!");
-            Log.i(TAG, "mnc5opv2: This data is Required!");
-            return false;
-        } else {
-            mnc5opv2.setError(null);
-        }
-
-        // C5 - OPV3
-        if (mnc5opv3.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5opv3), Toast.LENGTH_LONG).show();
-            mnc5opv3.setError("This data is Required!");
-            Log.i(TAG, "mnc5opv3: This data is Required!");
-            return false;
-        } else {
-            mnc5opv3.setError(null);
-        }
-
-        // C5 - Penta 1
-        if (mnc5p1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5p1), Toast.LENGTH_LONG).show();
-            mnc5p1.setError("This data is Required!");
-            Log.i(TAG, "mnc5p1: This data is Required!");
-            return false;
-        } else {
-            mnc5p1.setError(null);
-        }
-
-        // C5 - Penta 2
-        if (mnc5p2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5p2), Toast.LENGTH_LONG).show();
-            mnc5p2.setError("This data is Required!");
-            Log.i(TAG, "mnc5p2: This data is Required!");
-            return false;
-        } else {
-            mnc5p2.setError(null);
-        }
-
-        // C5 - Penta 3
-        if (mnc5p3.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5p3), Toast.LENGTH_LONG).show();
-            mnc5p3.setError("This data is Required!");
-            Log.i(TAG, "mnc5p3: This data is Required!");
-            return false;
-        } else {
-            mnc5p3.setError(null);
-        }
-
-        // C5 - PCV1
-        if (mnc5pcv1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5pcv1), Toast.LENGTH_LONG).show();
-            mnc5pcv1.setError("This data is Required!");
-            Log.i(TAG, "mnc5pcv1: This data is Required!");
-            return false;
-        } else {
-            mnc5pcv1.setError(null);
-        }
-
-        // C5 - PCV2
-        if (mnc5pcv2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5pcv2), Toast.LENGTH_LONG).show();
-            mnc5pcv2.setError("This data is Required!");
-            Log.i(TAG, "mnc5pcv2: This data is Required!");
-            return false;
-        } else {
-            mnc5pcv2.setError(null);
-        }
-
-        // C5 - PCV3
-        if (mnc5pcv3.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5pcv3), Toast.LENGTH_LONG).show();
-            mnc5pcv3.setError("This data is Required!");
-            Log.i(TAG, "mnc5pcv3: This data is Required!");
-            return false;
-        } else {
-            mnc5pcv3.setError(null);
-        }
-
-        // C5 - IPV1
-        if (mnc5ipv1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5ipv1), Toast.LENGTH_LONG).show();
-            mnc5ipv1.setError("This data is Required!");
-            Log.i(TAG, "mnc5ipv1: This data is Required!");
-            return false;
-        } else {
-            mnc5ipv1.setError(null);
-        }
-
-        // C5 - IPV2
-        if (mnc5ipv2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5ipv2), Toast.LENGTH_LONG).show();
-            mnc5ipv2.setError("This data is Required!");
-            Log.i(TAG, "mnc5ipv2: This data is Required!");
-            return false;
-        } else {
-            mnc5ipv2.setError(null);
-        }
-
-        // C5 - IPV3
-        if (mnc5ipv3.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5ipv3), Toast.LENGTH_LONG).show();
-            mnc5ipv3.setError("This data is Required!");
-            Log.i(TAG, "mnc5ipv3: This data is Required!");
-            return false;
-        } else {
-            mnc5ipv3.setError(null);
-        }
-
-        // C5 - Measles 1
-        if (mnc5m1.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5m1), Toast.LENGTH_LONG).show();
-            mnc5m1.setError("This data is Required!");
-            Log.i(TAG, "mnc5m1: This data is Required!");
-            return false;
-        } else {
-            mnc5m1.setError(null);
-        }
-
-        // C5 - Measles 2
-        if (mnc5m2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc5m2), Toast.LENGTH_LONG).show();
-            mnc5m2.setError("This data is Required!");
-            Log.i(TAG, "mnc5m2: This data is Required!");
-            return false;
-        } else {
-            mnc5m2.setError(null);
-        }
-
-        if (mnc1a.isChecked() && (
-                mnc5bcg.getText().toString().equals("2")
-                        && mnc5opv0.getText().toString().equals("2")
-                        && mnc5opv1.getText().toString().equals("2")
-                        && mnc5opv2.getText().toString().equals("2")
-                        && mnc5opv3.getText().toString().equals("2")
-                        && mnc5p1.getText().toString().equals("2")
-                        && mnc5p2.getText().toString().equals("2")
-                        && mnc5p3.getText().toString().equals("2")
-                        && mnc5pcv1.getText().toString().equals("2")
-                        && mnc5pcv2.getText().toString().equals("2")
-                        && mnc5pcv3.getText().toString().equals("2")
-                        && mnc5ipv1.getText().toString().equals("2")
-                        && mnc5ipv2.getText().toString().equals("2")
-                        && mnc5ipv3.getText().toString().equals("2")
-                        && mnc5m1.getText().toString().equals("2")
-                        && mnc5m2.getText().toString().equals("2")
-        )) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mnc5), Toast.LENGTH_LONG).show();
-            mnc5m2.setError("At least one should be YES.");
-            Log.i(TAG, "mnc5: the answer is invalid");
-            return false;
-        } else {
-            mnc5m2.setError(null);
-        }
-
-        // C6
-        if (mnc6.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc6), Toast.LENGTH_LONG).show();
-            mnc6c.setError("Not selected");
-            Log.i(TAG, "mnc6: Not selected");
-            return false;
-        } else {
-            mnc6c.setError(null);
-        }
-
-        // C7 
-        if (mnc7.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc7), Toast.LENGTH_LONG).show();
-            mnc7c.setError("Not selected");
-            Log.i(TAG, "mnc7: Not selected");
-            return false;
-        } else {
-            mnc7c.setError(null);
-        }
-
-        // C8
-        if (mnc6a.isChecked() && mnc8.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc8), Toast.LENGTH_LONG).show();
-            mnc8.setError("This data is Required!");
-            Log.i(TAG, "mnc8: This data is Required!");
-            return false;
-        } else {
-            mnc8.setError(null);
-        }
-
-        // C9 (C10 + C11 and C12)
-        if (mnc9.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc9), Toast.LENGTH_LONG).show();
-            mnc9c.setError("Not selected");
-            Log.i(TAG, "mnc9: Not selected");
-            return false;
-        } else {
-            mnc9c.setError(null);
-        }
-
-        if (mnc9a.isChecked()) {
-
-            if (mnc10yy.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mnc10yy), Toast.LENGTH_LONG).show();
-                mnc10yy.setError("Date is empty");
-                Log.i(TAG, "mnc10: empty");
+        if (cv01a.isChecked()) {
+            if (cv02a.getText().toString().isEmpty() && !cv0299.isChecked()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cv02), Toast.LENGTH_SHORT).show();
+                cv02a.setError("This data is Required!");
+                Log.i(TAG, "cv02: This data is Required!");
                 return false;
             } else {
-                mnc10yy.setError(null);
+                cv02a.setError(null);
             }
-            if (mnc10mm.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mnc10mm), Toast.LENGTH_LONG).show();
-                mnc10mm.setError("Date is empty");
-                Log.i(TAG, "mnc10: empty");
+
+            if (!cv0299.isChecked()) {
+                if (Double.parseDouble(cv02a.getText().toString()) == 0) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.cv02a), Toast.LENGTH_SHORT).show();
+                    cv02a.setError("Invalid: Data cannot be Zero");
+                    Log.i(TAG, "cv02a: Invalid data is 0");
+                    return false;
+                } else {
+                    cv02a.setError(null);
+                    if (Double.parseDouble(cv02a.getText().toString()) < 0.9 || Double.parseDouble(cv02a.getText().toString()) > 6.0) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.cv02a), Toast.LENGTH_SHORT).show();
+                        cv02a.setError("Invalid: Range is 0.9 - 6.0");
+                        Log.i(TAG, "cv02a: Invalid Range is 0.9 - 6.0 kg");
+                        return false;
+                    } else {
+                        cv02a.setError(null);
+                    }
+                }
+            }
+        }
+
+
+        //============ Q 3 ==========
+        if (cv03.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cv03), Toast.LENGTH_SHORT).show();
+            cv03b.setError("This data is Required!");
+            Log.i(TAG, "cv03: This data is Required!");
+            return false;
+        } else {
+            cv03b.setError(null);
+        }
+
+        if (cv03a.isChecked()) {
+            //============ Q 1a ==========
+            if (cv04.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cv04), Toast.LENGTH_SHORT).show();
+                cv04b.setError("This data is Required!");
+                Log.i(TAG, "cv04: This data is Required!");
                 return false;
             } else {
-                mnc10mm.setError(null);
+                cv04b.setError(null);
             }
 
+            if (cv04a.isChecked()) {
+                //============ BCG / Card Present ==========
+                if (bcgC.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg), Toast.LENGTH_SHORT).show();
+                    bcgCb.setError("This data is Required!");
+                    Log.i(TAG, "bcgC: This data is Required!");
+                    return false;
+                } else {
+                    bcgCb.setError(null);
+                }
 
-            if (Integer.valueOf(mnc10mm.getText().toString()) > 12) {
-                Toast.makeText(this, "ERROR(invalid month): " + getString(R.string.mnc10mm), Toast.LENGTH_LONG).show();
-                mnc10mm.setError("Invalid data");
-                Log.i(TAG, "mnc10: Not selected");
-                return false;
+                //============ Polio 0 / Card Present ==========
+                if (opv0C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0), Toast.LENGTH_SHORT).show();
+                    opv0Cb.setError("This data is Required!");
+                    Log.i(TAG, "opv0C: This data is Required!");
+                    return false;
+                } else {
+                    opv0Cb.setError(null);
+                }
+
+                //============ Penta 1 / Card Present ==========
+                if (opv1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1), Toast.LENGTH_SHORT).show();
+                    opv1Cb.setError("This data is Required!");
+                    Log.i(TAG, "opv1C: This data is Required!");
+                    return false;
+                } else {
+                    opv1Cb.setError(null);
+                }
+
+                //============ PCV 1 / Card Present ==========
+                if (penta1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1), Toast.LENGTH_SHORT).show();
+                    penta1Ca.setError("This data is Required!");
+                    Log.i(TAG, "penta1C: This data is Required!");
+                    return false;
+                } else {
+                    penta1Cb.setError(null);
+                }
+
+                //============ OPV 1 / Card Present ==========
+                if (pneumo1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pneumo1), Toast.LENGTH_SHORT).show();
+                    pneumo1Cb.setError("This data is Required!");
+                    Log.i(TAG, "pneumo1C: This data is Required!");
+                    return false;
+                } else {
+                    pneumo1Cb.setError(null);
+                }
+
+                //============ Penta 2 / Card Present ==========
+                if (opv2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2), Toast.LENGTH_SHORT).show();
+                    opv2Cb.setError("This data is Required!");
+                    Log.i(TAG, "opv2: This data is Required!");
+                    return false;
+                } else {
+                    opv2Cb.setError(null);
+                }
+
+                //============ PCV 2 / Card Present ==========
+
+                if (penta2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2), Toast.LENGTH_SHORT).show();
+                    penta2Cb.setError("This data is Required!");
+                    Log.i(TAG, "penta2C: This data is Required!");
+                    return false;
+                } else {
+                    penta2Cb.setError(null);
+                }
+                //============ OPV 2 / Card Present ==========
+                if (pneumo2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pneumo2), Toast.LENGTH_SHORT).show();
+                    pneumo2Cb.setError("This data is Required!");
+                    Log.i(TAG, "pneumo2C: This data is Required!");
+                    return false;
+                } else {
+                    pneumo2Cb.setError(null);
+                }
+
+                //============ Penta 3 / Card Present ==========
+                if (opv3C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3), Toast.LENGTH_SHORT).show();
+                    opv3Cb.setError("This data is Required!");
+                    Log.i(TAG, "opv3C: This data is Required!");
+                    return false;
+                } else {
+                    opv3Cb.setError(null);
+                }
+
+
+
+                //============ Penta 3 / Card Present ==========
+                if (penta3C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3), Toast.LENGTH_SHORT).show();
+                    penta3Cb.setError("This data is Required!");
+                    Log.i(TAG, "penta3C: This data is Required!");
+                    return false;
+                } else {
+                    penta3Cb.setError(null);
+                }
+
+                //============ PCV 3 / Card Present ==========
+
+                if (pneumo3C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pneumo3), Toast.LENGTH_SHORT).show();
+                    pneumo3Cb.setError("This data is Required!");
+                    Log.i(TAG, "pneumo3C: This data is Required!");
+                    return false;
+                } else {
+                    pneumo3Cb.setError(null);
+                }
+                //============ OPV 3 / Card Present ==========
+                if (ipvC.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv), Toast.LENGTH_SHORT).show();
+                    ipvCb.setError("This data is Required!");
+                    Log.i(TAG, "ipvC: This data is Required!");
+                    return false;
+                } else {
+                    ipvCb.setError(null);
+                }
+
+                //============ IPV / Card Present ==========
+                if (measles1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1), Toast.LENGTH_SHORT).show();
+                    measles1Cb.setError("This data is Required!");
+                    Log.i(TAG, "measles1C: This data is Required!");
+                    return false;
+                } else {
+                    measles1Cb.setError(null);
+                }
+
+                //============ Vitamin / Card Present ==========
+                if (measles2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2), Toast.LENGTH_SHORT).show();
+                    measles2Cb.setError("This data is Required!");
+                    Log.i(TAG, "measles2C: This data is Required!");
+                    return false;
+                } else {
+                    measles2Cb.setError(null);
+                }
+
             } else {
-                mnc10mm.setError(null);
+                //============ BCG / Card Present ==========
+                if (bcgM.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg), Toast.LENGTH_SHORT).show();
+                    bcgMb.setError("This data is Required!");
+                    Log.i(TAG, "bcgM: This data is Required!");
+                    return false;
+                } else {
+                    bcgMb.setError(null);
+                }
+
+                //============ Polio 0 / Card Present ==========
+                if (opv0M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0), Toast.LENGTH_SHORT).show();
+                    opv0Mb.setError("This data is Required!");
+                    Log.i(TAG, "opv0M: This data is Required!");
+                    return false;
+                } else {
+                    opv0Mb.setError(null);
+                }
+
+                //============ Penta 1 / Card Present ==========
+                if (opv1M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1), Toast.LENGTH_SHORT).show();
+                    opv1Mb.setError("This data is Required!");
+                    Log.i(TAG, "opv1M: This data is Required!");
+                    return false;
+                } else {
+                    opv1Mb.setError(null);
+                }
+
+                //============ PCV 1 / Card Present ==========
+                if (penta1M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1), Toast.LENGTH_SHORT).show();
+                    penta1Ma.setError("This data is Required!");
+                    Log.i(TAG, "penta1M: This data is Required!");
+                    return false;
+                } else {
+                    penta1Mb.setError(null);
+                }
+
+                //============ OPV 1 / Card Present ==========
+                if (pneumo1M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pneumo1), Toast.LENGTH_SHORT).show();
+                    pneumo1Mb.setError("This data is Required!");
+                    Log.i(TAG, "pneumo1M: This data is Required!");
+                    return false;
+                } else {
+                    pneumo1Mb.setError(null);
+                }
+
+                //============ Penta 2 / Card Present ==========
+                if (opv2M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2), Toast.LENGTH_SHORT).show();
+                    opv2Mb.setError("This data is Required!");
+                    Log.i(TAG, "opv2: This data is Required!");
+                    return false;
+                } else {
+                    opv2Mb.setError(null);
+                }
+
+                //============ PCV 2 / Card Present ==========
+
+                if (penta2M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2), Toast.LENGTH_SHORT).show();
+                    penta2Mb.setError("This data is Required!");
+                    Log.i(TAG, "penta2C: This data is Required!");
+                    return false;
+                } else {
+                    penta2Mb.setError(null);
+                }
+                //============ OPV 2 / Card Present ==========
+                if (pneumo2M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pneumo2), Toast.LENGTH_SHORT).show();
+                    pneumo2Mb.setError("This data is Required!");
+                    Log.i(TAG, "pneumo2C: This data is Required!");
+                    return false;
+                } else {
+                    pneumo2Mb.setError(null);
+                }
+
+                //============ Penta 3 / Card Present ==========
+                if (opv3M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3), Toast.LENGTH_SHORT).show();
+                    opv3Mb.setError("This data is Required!");
+                    Log.i(TAG, "opv3C: This data is Required!");
+                    return false;
+                } else {
+                    opv3Mb.setError(null);
+                }
+
+
+                //============ Penta 3 / Card Present ==========
+                if (penta3M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3), Toast.LENGTH_SHORT).show();
+                    penta3Mb.setError("This data is Required!");
+                    Log.i(TAG, "penta3C: This data is Required!");
+                    return false;
+                } else {
+                    penta3Mb.setError(null);
+                }
+
+                //============ PCV 3 / Card Present ==========
+
+                if (pneumo3M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pneumo3), Toast.LENGTH_SHORT).show();
+                    pneumo3Mb.setError("This data is Required!");
+                    Log.i(TAG, "pneumo3C: This data is Required!");
+                    return false;
+                } else {
+                    pneumo3Mb.setError(null);
+                }
+                //============ OPV 3 / Card Present ==========
+                if (ipvM.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv), Toast.LENGTH_SHORT).show();
+                    ipvMb.setError("This data is Required!");
+                    Log.i(TAG, "ipvC: This data is Required!");
+                    return false;
+                } else {
+                    ipvMb.setError(null);
+                }
+
+                //============ IPV / Card Present ==========
+                if (measles1M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1), Toast.LENGTH_SHORT).show();
+                    measles1Mb.setError("This data is Required!");
+                    Log.i(TAG, "measles1C: This data is Required!");
+                    return false;
+                } else {
+                    measles1Mb.setError(null);
+                }
+
+                //============ Vitamin / Card Present ==========
+                if (measles2M.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2), Toast.LENGTH_SHORT).show();
+                    measles2Mb.setError("This data is Required!");
+                    Log.i(TAG, "measles2C: This data is Required!");
+                    return false;
+                } else {
+                    measles2Mb.setError(null);
+                }
             }
-            if (!mnc10yy.getText().toString().equals("2015") && !mnc10yy.getText().toString().equals("2016") && !mnc10yy.getText().toString().equals("2017")) {
-                Toast.makeText(this, "ERROR(invalid year): " + getString(R.string.mnc10), Toast.LENGTH_LONG).show();
-                mnc10yy.setError("Invalid data");
-                Log.i(TAG, "mnc10: Not selected");
-                return false;
-            } else {
-                mnc10yy.setError(null);
-            }
-
-        }
-        // C11 NGO Text
-        if (mnc11d.isChecked() && mnc11name.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(required): " + getString(R.string.mnc11d), Toast.LENGTH_LONG).show();
-            mnc11name.setError("This data is Required!");
-            Log.i(TAG, "mnc11name: This data is Required!");
-            return false;
-        } else {
-            mnc11name.setError(null);
-        }
-
-        if (mnc9a.isChecked() && mnc11.getCheckedRadioButtonId() == -1) {
-            mnc9c.setError(null);
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc11), Toast.LENGTH_LONG).show();
-            mnc11d.setError("Not Selected");
-            Log.i(TAG, "mnc11: Not Selected");
-            return false;
-        } else {
-            mnc11d.setError(null);
-        }
-
-
-        if (mnc12.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc12), Toast.LENGTH_LONG).show();
-            mnc12b.setError("Not selected");
-            Log.i(TAG, "mnc12: Not selected");
-            return false;
-        } else {
-            mnc12b.setError(null);
-        }
-
-
-        // C13
-        if (mnc13.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.mnc13), Toast.LENGTH_LONG).show();
-            mnc13d.setError("Not selected");
-            Log.i(TAG, "mnc13: Not selected");
-            return false;
-        } else {
-            mnc13d.setError(null);
         }
 
         return true;

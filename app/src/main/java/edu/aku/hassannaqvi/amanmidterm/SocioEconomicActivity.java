@@ -298,8 +298,8 @@ public class SocioEconomicActivity extends Activity {
         if (formValidation()) {
             SaveDraft();
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Section G", Toast.LENGTH_SHORT).show();
-                Intent secG = new Intent(this, LabInfoActivity.class);
+                Toast.makeText(this, "Staring Part 2", Toast.LENGTH_SHORT).show();
+                Intent secG = new Intent(this, AntenatalCareActivity.class);
                 startActivity(secG);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
