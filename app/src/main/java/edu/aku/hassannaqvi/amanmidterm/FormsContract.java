@@ -47,6 +47,7 @@ public class FormsContract {
     private String indexChild = "";
     private String kap = "";
     private String labInfo = "";
+    private String iycf = "";
     private String neonatalHealth = "";
     private String postpartumCare = "";
     private String socioEconomic = "";

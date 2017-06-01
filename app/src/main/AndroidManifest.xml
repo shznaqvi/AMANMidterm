@@ -44,11 +44,16 @@
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"
             tools:replace="screenOrientation" />
-        <activity android:name=".EndingActivity" />
-        <activity android:name=".ImmunizationActivity" />
+        <activity
+            android:name=".EndingActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ImmunizationActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -60,13 +65,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AndroidDatabaseManager" />
-        <activity android:name=".AntenatalCareActivity" />
-        <activity android:name=".DeliveryActivity" />
-        <activity android:name=".PostpartumCareActivity" />
-        <activity android:name=".NeonatalHealthActivity" />
-        <activity android:name=".ChildMorbidityActivity" />
-        <activity android:name=".BirthsDeathsActivity"></activity>
+        <activity
+            android:name=".AndroidDatabaseManager"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".AntenatalCareActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".DeliveryActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".PostpartumCareActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".NeonatalHealthActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".ChildMorbidityActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".BirthsDeathsActivity"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize"></activity>
     </application>
 
 </manifest>
