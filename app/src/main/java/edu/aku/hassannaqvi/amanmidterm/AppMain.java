@@ -51,9 +51,11 @@ public class AppMain extends Application {
     public static String deviceId;
 
     public static Boolean admin = false;
-    public static String mna2;
-    public static int mna3 = -1;
-    public static String mnb1 = "TEST";
+    public static String username;
+    public static int majorArea = -1;
+    public static int minorArea = -1;
+    public static int subArea = -1;
+    public static String childName = "TEST";
     public static int chCount = 0;
     public static int chTotal = 0;
     public static boolean scanned = false;

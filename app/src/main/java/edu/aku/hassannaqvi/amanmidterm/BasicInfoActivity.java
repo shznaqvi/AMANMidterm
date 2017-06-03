@@ -32,7 +32,7 @@ public class BasicInfoActivity extends Activity {
 
     private static final String TAG = BasicInfoActivity.class.getSimpleName();
     // District Spinner (used in LoginActivity)
-    public static ArrayList<String> lables;
+    public static ArrayList<String> labels;
     public static ArrayList<String> values;
 
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
@@ -101,35 +101,35 @@ public class BasicInfoActivity extends Activity {
         ButterKnife.bind(this);
         TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/JameelNooriNastaleeq.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
 
-        lables = new ArrayList<String>();
-//        lables.add("K. Abdullah");
-//        lables.add("Quetta");
-//        lables.add("Pishin");
-//        lables.add("J & Bara");
-//        lables.add("Town 1 & 2");
-//        lables.add("Town 3 & 4");
-//        lables.add("K Zone 1");
-//        lables.add("K Zone 2");
-//        lables.add("K Zone 3");
-//        lables.add("Sukkur");
-//        lables.add("Larkhana");
-//        lables.add("Rawalpindi");
-//        lables.add("Lahore");
-//        lables.add("Multan");
-        lables.add("K. Abdullah");
-        lables.add("Quetta");
-        lables.add("Pishin");
-        lables.add("Mardan/Swabi");
-        lables.add("Town 1 & 2");
-        lables.add("Town 3 & 4");
-        lables.add("K Zone 1");
-        lables.add("K Zone 2");
-        lables.add("K Zone 3");
-        lables.add("Sukkur");
-        lables.add("Larkhana");
-        lables.add("Rawalpindi");
-        lables.add("Lahore");
-        lables.add("Multan");
+        labels = new ArrayList<String>();
+//        labels.add("K. Abdullah");
+//        labels.add("Quetta");
+//        labels.add("Pishin");
+//        labels.add("J & Bara");
+//        labels.add("Town 1 & 2");
+//        labels.add("Town 3 & 4");
+//        labels.add("K Zone 1");
+//        labels.add("K Zone 2");
+//        labels.add("K Zone 3");
+//        labels.add("Sukkur");
+//        labels.add("Larkhana");
+//        labels.add("Rawalpindi");
+//        labels.add("Lahore");
+//        labels.add("Multan");
+        labels.add("K. Abdullah");
+        labels.add("Quetta");
+        labels.add("Pishin");
+        labels.add("Mardan/Swabi");
+        labels.add("Town 1 & 2");
+        labels.add("Town 3 & 4");
+        labels.add("K Zone 1");
+        labels.add("K Zone 2");
+        labels.add("K Zone 3");
+        labels.add("Sukkur");
+        labels.add("Larkhana");
+        labels.add("Rawalpindi");
+        labels.add("Lahore");
+        labels.add("Multan");
 
         values = new ArrayList<String>();
 //        values.add("11");
@@ -161,7 +161,7 @@ public class BasicInfoActivity extends Activity {
         values.add("92");
         values.add("93");
 
-        txtmna3.setText(getString(R.string.mna3) + ": " + lables.get(values.indexOf(String.valueOf(AppMain.mna3))));
+        txtmna3.setText(getString(R.string.mna3) + ": " + labels.get(values.indexOf(String.valueOf(AppMain.majorArea))));
         childName.setEnabled(false);
 
 
@@ -199,20 +199,6 @@ public class BasicInfoActivity extends Activity {
             }
         });
 
-    }
-
-    public void checkChild(View v) {
-        DatabaseHelper db = new DatabaseHelper(BasicInfoActivity.this);
-        String chName = db.getChildByHH(mna5.getText().toString(), mna4.getText().toString());
-
-        child_name.setText(chName);
-        if (chName.equals("No Child Found")) {
-            childName.setEnabled(false);
-        } else {
-            childName.setEnabled(true);
-            AppMain.mnb1 = chName.split("|")[0];
-            AppMain.mna06a = chName.split("|")[1];
-        }
     }
 
     public void submitSecA(View v) throws JSONException {
@@ -256,9 +242,9 @@ public class BasicInfoActivity extends Activity {
 
         if (rowId != null) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            AppMain.fc.setFUID(
+            /*AppMain.fc.setFUID(
                     (AppMain.fc.getDeviceID() + AppMain.fc.getID()));
-            Toast.makeText(this, "Current Form No: " + AppMain.fc.getFUID(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Current Form No: " + AppMain.fc.getFUID(), Toast.LENGTH_SHORT).show();*/
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -272,16 +258,12 @@ public class BasicInfoActivity extends Activity {
         AppMain.fc = new FormsContract();
         AppMain.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
-        AppMain.fc.setFormDateTime(dtToday);
-        AppMain.fc.setMna2(AppMain.mna2);
-        AppMain.fc.setMna3(String.valueOf(AppMain.mna3));
-        AppMain.fc.setMna4(mna4.getText().toString());
-        AppMain.fc.setMna5(mna5.getText().toString());
-        AppMain.fc.setChildName(childName.isChecked() ? "1" : "2");
-
-        AppMain.fc.setMna6a(AppMain.mna06a);
-
-        AppMain.mna06a = "";
+        AppMain.fc.setFormDate(dtToday);
+        AppMain.fc.setUserName(AppMain.username);
+        AppMain.fc.setMajorArea(String.valueOf(AppMain.majorArea));
+        AppMain.fc.setPrimaryUnit(mna4.getText().toString());
+        AppMain.fc.setHouseHold(mna5.getText().toString());
+        AppMain.fc.setchildName(childName.isChecked() ? "1" : "2");
 
         JSONObject sA = new JSONObject();
 

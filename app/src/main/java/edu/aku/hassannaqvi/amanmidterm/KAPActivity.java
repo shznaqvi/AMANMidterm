@@ -504,7 +504,7 @@ public class KAPActivity extends Activity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
-
+/*
         int updcount = db.updateSE();
 
         if (updcount == 1) {
@@ -513,7 +513,8 @@ public class KAPActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+        return false;
     }
 
     private void SaveDraft() throws JSONException {

@@ -54,7 +54,7 @@ public class EndingActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Closing Form!", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, MainActivity.class);
-                AppMain.mnb1 = "TEST";
+                AppMain.childName = "TEST";
                 startActivity(endSec);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

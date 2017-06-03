@@ -1,23 +1,21 @@
 package edu.aku.hassannaqvi.amanmidterm;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.RadioGroup;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 
 
-public class ms extends Activity {
+public class MaternalMentalHealthActivity extends Activity {
 
     @BindView(R.id.ms01)
     RadioGroup ms01;
@@ -236,7 +234,7 @@ public class ms extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ms);
+        setContentView(R.layout.activity_maternal_mental_health);
         ButterKnife.bind(this);
     }
 

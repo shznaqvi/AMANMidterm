@@ -149,6 +149,7 @@ public class IndexChildActivity extends Activity {
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
+/*
 
         int updcount = db.updateSB();
 
@@ -159,7 +160,8 @@ public class IndexChildActivity extends Activity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
+*/
+        return false;
     }
 
     private void SaveDraft() throws JSONException {

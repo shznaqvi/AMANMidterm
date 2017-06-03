@@ -61,13 +61,13 @@
                 android:id="@+id/iy02a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnMale" />
+                android:text="@string/male" />
 
             <RadioButton
                 android:id="@+id/iy02b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnFemale" />
+                android:text="@string/female" />
 
         </RadioGroup>
 
@@ -136,19 +136,19 @@
                 android:id="@+id/iy04a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/iy04b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/iy04c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK" />
+                android:text="@string/dnk" />
 
         </RadioGroup>
 
@@ -233,7 +233,7 @@
                 android:id="@+id/iy0588"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
             <LinearLayout
                 android:id="@+id/fldGrpiy05koth"
@@ -248,7 +248,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/mnOther"
+                    android:text="@string/other"
                     android:textStyle="bold"
                     tools:typeface="serif" />
 
@@ -300,19 +300,19 @@
                     android:id="@+id/iy07a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnYES" />
+                    android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/iy07b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnNO" />
+                    android:text="@string/no" />
 
                 <RadioButton
                     android:id="@+id/iy07c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnDNK" />
+                    android:text="@string/dnk" />
 
             </RadioGroup>
 
@@ -445,7 +445,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/mnOther"
+                    android:text="@string/other"
                     android:textStyle="bold"
                     tools:typeface="serif" />
 
@@ -480,13 +480,13 @@
                 android:id="@+id/iy09a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/iy09b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
         </RadioGroup>
 
@@ -547,7 +547,7 @@
                 android:id="@+id/iy01088"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -611,7 +611,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/mnOther"
+                android:text="@string/other"
                 android:textStyle="bold"
                 tools:typeface="serif" />
 
@@ -700,19 +700,19 @@
                 android:id="@+id/iy013a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/iy013b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/iy013c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK" />
+                android:text="@string/dnk" />
 
         </RadioGroup>
 
@@ -734,19 +734,19 @@
                 android:id="@+id/iy014a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/iy014b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/iy014c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK" />
+                android:text="@string/dnk" />
 
         </RadioGroup>
 
@@ -842,7 +842,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/mnOther"
+                android:text="@string/other"
                 android:textStyle="bold"
                 tools:typeface="serif" />
 
@@ -1007,7 +1007,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:onClick="submitSecD"
-            android:text="@string/nextSection" />
+            android:text="@string/next_section" />
 
     </LinearLayout>
 </ScrollView>

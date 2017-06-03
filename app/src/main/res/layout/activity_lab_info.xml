@@ -45,7 +45,7 @@
                 android:id="@+id/mng1a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES"
+                android:text="@string/yes"
 
                 />
 
@@ -53,7 +53,7 @@
                 android:id="@+id/mng1b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO"
+                android:text="@string/no"
 
                 />
 

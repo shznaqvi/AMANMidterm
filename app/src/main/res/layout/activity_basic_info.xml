@@ -171,7 +171,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/mnOther" />
+                    android:text="@string/other" />
 
             </RadioGroup>
 
@@ -180,7 +180,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="@string/digits"
-                android:hint="@string/mnOther"
+                android:hint="@string/other"
                 android:inputType="text" />
 
             <TextView
@@ -263,7 +263,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/mnOther" />
+                    android:text="@string/other" />
 
             </RadioGroup>
 
@@ -272,7 +272,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="@string/digits"
-                android:hint="@string/mnOther"
+                android:hint="@string/other"
                 android:inputType="text" />
 
             <TextView
@@ -296,7 +296,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
                 android:onClick="submitSecA"
-                android:text="@string/nextSection"
+                android:text="@string/next_section"
                 android:textColor="#00ef00" />
         </LinearLayout>
 

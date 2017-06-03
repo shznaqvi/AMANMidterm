@@ -9,14 +9,7 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Collection;
 
 /**
  * Created by hassan.naqvi on 7/26/2016.
@@ -101,14 +94,14 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<IMsContract> ims = db.getAllIMs();
+       /* Collection<IMsContract> ims = db.getAllIMs();
         Log.d(TAG, String.valueOf(ims.size()));
         if (ims.size() > 0) {
             try {
                 URL url = new URL(myurl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setReadTimeout(20000 /* milliseconds */);
-                conn.setConnectTimeout(30000 /* milliseconds */);
+                conn.setReadTimeout(20000 *//* milliseconds *//*);
+                conn.setConnectTimeout(30000 *//* milliseconds *//*);
                 conn.setRequestMethod("POST");
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
@@ -136,7 +129,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
                     e.printStackTrace();
                 }
 
-/*===================================================================*/
+*//*===================================================================*//*
                 int HttpResult = conn.getResponseCode();
 
                 if (HttpResult == HttpURLConnection.HTTP_OK) {
@@ -163,7 +156,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
             }
         } else {
             return "No new records to sync";
-        }
+        }*/
         return line;
     }
 

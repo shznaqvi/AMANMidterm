@@ -42,20 +42,20 @@
                 android:id="@+id/mne1a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/mne1b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
 
             <RadioButton
                 android:id="@+id/mne1c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK" />
+                android:text="@string/dnk" />
 
         </RadioGroup>
 
@@ -141,13 +141,13 @@
                 android:id="@+id/mne2x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
             <EditText
                 android:id="@+id/mne2x96"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mnOther" />
+                android:hint="@string/other" />
 
         </LinearLayout>
 
@@ -167,7 +167,7 @@
                 android:id="@+id/mne3a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES"
+                android:text="@string/yes"
 
                 />
 
@@ -176,7 +176,7 @@
                 android:id="@+id/mne3b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO"
+                android:text="@string/no"
 
                 />
 
@@ -252,19 +252,19 @@
             android:id="@+id/mne4x99"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mnDNK" />
+            android:text="@string/dnk" />
 
         <CheckBox
             android:id="@+id/mne4x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mnOther" />
+            android:text="@string/other" />
 
         <EditText
             android:id="@+id/mne4x96"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnOther"
+            android:hint="@string/other"
 
             />
 
@@ -310,20 +310,20 @@
             android:id="@+id/mne5x99"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mnDNK" />
+            android:text="@string/dnk" />
 
         <CheckBox
             android:id="@+id/mne5x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mnOther" />
+            android:text="@string/other" />
 
 
         <EditText
             android:id="@+id/mne5x96"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnOther"
+            android:hint="@string/other"
 
             />
 
@@ -367,7 +367,7 @@
                 android:id="@+id/mne6x99"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK"
+                android:text="@string/dnk"
 
                 />
 
@@ -375,14 +375,14 @@
                 android:id="@+id/mne6x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
         </RadioGroup>
 
         <EditText
             android:id="@+id/mne6x96"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnOther" />
+            android:hint="@string/other" />
 
 
         <TextView
@@ -402,14 +402,14 @@
                 android:id="@+id/mne7a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
 
             <RadioButton
                 android:id="@+id/mne7b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
         </RadioGroup>
 
@@ -473,13 +473,13 @@
                 android:id="@+id/mne8x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
             <EditText
                 android:id="@+id/mne8x96"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mnOther" />
+                android:hint="@string/other" />
 
         </LinearLayout>
 
@@ -499,7 +499,7 @@
                 android:id="@+id/mne9a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES"
+                android:text="@string/yes"
 
                 />
 
@@ -507,7 +507,7 @@
                 android:id="@+id/mne9b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO"
+                android:text="@string/no"
 
                 />
 
@@ -515,7 +515,7 @@
                 android:id="@+id/mne9c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK"
+                android:text="@string/dnk"
 
                 />
 
@@ -558,14 +558,14 @@
                 android:id="@+id/mne10x99"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK" />
+                android:text="@string/dnk" />
 
 
             <RadioButton
                 android:id="@+id/mne10x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
 
         </RadioGroup>
@@ -575,7 +575,7 @@
             android:id="@+id/mne10x96"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnOther" />
+            android:hint="@string/other" />
 
 
         <TextView
@@ -629,14 +629,14 @@
                 android:id="@+id/mne11x99"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK" />
+                android:text="@string/dnk" />
 
 
             <RadioButton
                 android:id="@+id/mne11x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
 
         </RadioGroup>
@@ -645,7 +645,7 @@
             android:id="@+id/mne11x96"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnOther"
+            android:hint="@string/other"
 
             />
 
@@ -710,7 +710,7 @@
                 android:id="@+id/mne12x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
 
         </RadioGroup>
@@ -719,7 +719,7 @@
             android:id="@+id/mne12x96"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnOther" />
+            android:hint="@string/other" />
 
         <LinearLayout
             android:id="@+id/fldGrpe13"
@@ -785,7 +785,7 @@
                     android:id="@+id/mne13x99"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnDNK"
+                    android:text="@string/dnk"
 
                     />
 
@@ -793,7 +793,7 @@
                     android:id="@+id/mne13x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnOther"
+                    android:text="@string/other"
 
                     />
 
@@ -805,7 +805,7 @@
                 android:id="@+id/mne13x96"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mnOther" />
+                android:hint="@string/other" />
         </LinearLayout>
 
         <TextView
@@ -827,7 +827,7 @@
                 android:id="@+id/mne14a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES"
+                android:text="@string/yes"
 
                 />
 
@@ -835,7 +835,7 @@
                 android:id="@+id/mne14b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO"
+                android:text="@string/no"
 
                 />
 
@@ -843,7 +843,7 @@
                 android:id="@+id/mne14c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK"
+                android:text="@string/dnk"
 
                 />
 
@@ -865,13 +865,13 @@
                 android:id="@+id/mne15a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/mne15b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
         </RadioGroup>
 
@@ -951,7 +951,7 @@
                 android:id="@+id/mne16x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther"
+                android:text="@string/other"
 
                 />
 
@@ -959,7 +959,7 @@
                 android:id="@+id/mne16x96"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mnOther"
+                android:hint="@string/other"
 
                 />
         </LinearLayout>
@@ -980,19 +980,19 @@
                 android:id="@+id/mne17a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/mne17b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/mne17c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnDNK" />
+                android:text="@string/dnk" />
 
         </RadioGroup>
 
@@ -1038,7 +1038,7 @@
                     android:id="@+id/mne18x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnOther"
+                    android:text="@string/other"
 
 
                     />
@@ -1049,7 +1049,7 @@
                 android:id="@+id/mne18x96"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mnOther"
+                android:hint="@string/other"
 
 
                 />
@@ -1060,6 +1060,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:onClick="submitSecE"
-            android:text="@string/nextSection" />
+            android:text="@string/next_section" />
     </LinearLayout>
 </ScrollView>

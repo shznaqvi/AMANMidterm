@@ -69,7 +69,7 @@ public class LabInfoActivity extends Activity {
         Toast.makeText(this, "Processing Section G", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             SaveDraft();
-            if (UpdateDG()) {
+            if (UpdateDB()) {
                 Toast.makeText(this, "Starting Section G", Toast.LENGTH_SHORT).show();
                 Intent secG = new Intent(this, EndingActivity.class);
                 startActivity(secG);
@@ -79,9 +79,9 @@ public class LabInfoActivity extends Activity {
         }
     }
 
-    private boolean UpdateDG() {
+    private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
-
+/*
         int updcount = db.updateSG();
 
         if (updcount == 1) {
@@ -90,7 +90,8 @@ public class LabInfoActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+        return false;
     }
 
     private void SaveDraft() throws JSONException {

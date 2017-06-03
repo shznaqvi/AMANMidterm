@@ -17,8 +17,6 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 
 import butterknife.BindView;
@@ -43,7 +41,7 @@ public class MainActivity extends Activity {
         ButterKnife.bind(this);
 
         // Reset working variables
-        AppMain.mnb1 = "Test";
+        AppMain.childName = "Test";
         AppMain.chCount = 0;
         AppMain.chTotal = 0;
 
@@ -54,7 +52,7 @@ public class MainActivity extends Activity {
         }
 
 
-        DatabaseHelper db = new DatabaseHelper(this);
+     /*   DatabaseHelper db = new DatabaseHelper(this);
         Collection<FormsContract> todaysForms = new ArrayList<>();
 
         todaysForms = db.getTodayForms();
@@ -83,7 +81,7 @@ public class MainActivity extends Activity {
                     break;
             }
 
-            rSumText += fc.getMna4() + " " + fc.getMna5() + " " + iStatus;
+            rSumText += fc.getPrimaryUnit() + " " + fc.getHouseHold() + " " + iStatus;
             rSumText += "\r\n";
 
         }
@@ -98,7 +96,7 @@ public class MainActivity extends Activity {
             rSumText += "\r\n";
         }
         recordSummary.setText(rSumText);
-
+*/
 
     }
 
@@ -143,13 +141,13 @@ public class MainActivity extends Activity {
 
     public void openE(View v) {
         //Intent iD = new Intent(this, KAPActivity.class);
-        Intent iD = new Intent(this, ms.class);
+        Intent iD = new Intent(this, MaternalMentalHealthActivity.class);
         startActivity(iD);
     }
 
     public void openF(View v) {
         //Intent iD = new Intent(this, SocioEconomicActivity.class);
-        Intent iD = new Intent(this, anc.class);
+        Intent iD = new Intent(this, AntenatalCareActivity.class);
         startActivity(iD);
     }
 
@@ -216,10 +214,6 @@ public class MainActivity extends Activity {
             GetUsers gu = new GetUsers(this);
             Toast.makeText(getApplicationContext(), "Syncing Users", Toast.LENGTH_SHORT).show();
             gu.execute();
-
-            GetChildren gc = new GetChildren(this);
-            Toast.makeText(getApplicationContext(), "Syncing Children", Toast.LENGTH_SHORT).show();
-            gc.execute();
 
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);

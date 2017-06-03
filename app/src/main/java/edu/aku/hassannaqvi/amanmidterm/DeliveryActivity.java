@@ -153,16 +153,16 @@ public class DeliveryActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateS5b();
+        int updcount = db.updateDelivery();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-        */
+
         return false;
-        //}
+        }
 
     }
 
@@ -222,7 +222,7 @@ public class DeliveryActivity extends Activity {
 
         // Others / EditText Q 5.30
         if (d0288.isChecked() && d0288x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.d02) + " - " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.d02) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
             d0288x.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "d0288: This data is Required!");
             return false;
@@ -240,7 +240,7 @@ public class DeliveryActivity extends Activity {
         }
 
         if (d0388.isChecked() && d0388x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.d03) + " - " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.d03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
             d0388x.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "d0388: This data is Required!");
             return false;

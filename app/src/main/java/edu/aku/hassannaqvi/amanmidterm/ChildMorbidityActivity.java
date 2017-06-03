@@ -277,7 +277,7 @@ public class ChildMorbidityActivity extends Activity {
         }
 
         if (cm0188.isChecked() && cm0188x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm01) + " - " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm01) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
             cm0188x.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "cm0188x: This data is Required!");
             return false;
@@ -309,7 +309,7 @@ public class ChildMorbidityActivity extends Activity {
                 }
 
                 if (cm0388.isChecked() && cm0388x.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm03) + " - " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                     cm0388x.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "cm0388x: This data is Required!");
                     return false;

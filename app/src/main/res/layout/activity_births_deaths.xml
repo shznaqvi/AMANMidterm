@@ -963,7 +963,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:onClick="submitSecA"
-            android:text="@string/nextSection"
+            android:text="@string/next_section"
             android:textColor="#00ef00" />
 
         <Button

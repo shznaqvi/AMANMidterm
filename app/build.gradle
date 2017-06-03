@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "edu.aku.hassannaqvi.amanmidterm"
         minSdkVersion 22
@@ -15,6 +15,19 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            exclude '**/IndexChildActivity.java'
+        }
+    }
+    androidTest {
+        java {
+//            exclude '**/TestSomeExcludedClass.java'
         }
     }
 }

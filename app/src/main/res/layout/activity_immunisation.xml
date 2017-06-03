@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:onClick="submitSecIM"
-            android:text="@string/nextSection" />
+            android:text="@string/next_section" />
 
 
     </LinearLayout>

@@ -193,10 +193,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         values.add("93");
 
 
-        // Polulating 'lables' and 'values' from ucList
+        // Polulating 'labels' and 'values' from ucList
         // ==>> OPTIMIZED
        /* for (UCContract uc : ucList) {
-            lables.add(uc.getUCName);
+            labels.add(uc.getUCName);
         }
         for (UCContract uc : ucList) {
             values.add(uc.getID);
@@ -204,7 +204,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         // ==>> OLD
         /*for (int i = 0; i < ucList.size(); i++) {
-            lables.add(ucList.get(i).getUCName());
+            labels.add(ucList.get(i).getUCName());
             values.add(String.valueOf(ucList.get(i).getID()));
 
             Log.i("Key - Value:", ucList.get(i).getTownId() + " - " + ucList.get(i).getUCId() + " - " + ucList.get(i).getUCName() + " - " + ucList.get(i).getID());
@@ -241,7 +241,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         spUC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                AppMain.mna3 = Integer.valueOf(values.get(position));
+                AppMain.majorArea = Integer.valueOf(values.get(position));
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
                 Toast.makeText(LoginActivity.this, values.get(position), Toast.LENGTH_SHORT).show();
@@ -525,7 +525,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
                 if ((mEmail.equals("dmu@aku") && mPassword.equals("aku?dmu")) || db.Login(mEmail, mPassword)) {
-                    AppMain.mna2 = mEmail;
+                    AppMain.username = mEmail;
                     AppMain.admin = mEmail.contains("@");
                     Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(iLogin);

@@ -106,7 +106,7 @@
                 android:id="@+id/d0288"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
         </RadioGroup>
 
@@ -114,7 +114,7 @@
             android:id="@+id/d0288x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnOther" />
+            android:hint="@string/other" />
 
         <TextView
             android:layout_width="match_parent"
@@ -159,14 +159,14 @@
             android:id="@+id/d0388"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mnOther" />
+            android:text="@string/other" />
 
 
         <EditText
             android:id="@+id/d0388x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnOther"
+            android:hint="@string/other"
             android:visibility="gone" />
 
 
@@ -210,7 +210,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:onClick="submitSecA"
-            android:text="@string/nextSection"
+            android:text="@string/next_section"
             android:textColor="#00ef00" />
 
         <Button

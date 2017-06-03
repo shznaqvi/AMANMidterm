@@ -106,8 +106,8 @@
             android:layout_marginTop="16dp"
             android:padding="16dp"
             android:textAlignment="center"
-            android:textOff="@string/mnAge"
-            android:textOn="@string/mnDob"
+            android:textOff="@string/age"
+            android:textOn="@string/dob"
             android:textSize="20sp" />
 
         <LinearLayout
@@ -121,7 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/mnDob" />
+                android:text="@string/dob" />
 
             <DatePicker
                 android:id="@+id/mnb5"
@@ -145,7 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/mnAge" />
+                android:text="@string/age" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -155,7 +155,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnMonths" />
+                    android:text="@string/months" />
 
                 <EditText
                     android:id="@+id/mnb6m"
@@ -164,7 +164,7 @@
                     android:layout_marginBottom="1dp"
                     android:layout_weight="2"
                     android:digits="1234567890"
-                    android:hint="@string/mnMonths"
+                    android:hint="@string/months"
                     android:inputType="number"
                     android:maxLength="2" />
             </LinearLayout>
@@ -177,7 +177,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnDays" />
+                    android:text="@string/days" />
 
                 <EditText
                     android:id="@+id/mnb6d"
@@ -186,7 +186,7 @@
                     android:layout_marginBottom="1dp"
                     android:layout_weight="2"
                     android:digits="1234567890"
-                    android:hint="@string/mnDays"
+                    android:hint="@string/days"
                     android:inputType="number"
                     android:maxLength="2" />
             </LinearLayout>
@@ -196,7 +196,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/mnSex" />
+            android:text="@string/sex" />
 
         <RadioGroup
             android:id="@+id/mnb7"
@@ -208,14 +208,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/mnMale" />
+                android:text="@string/male" />
 
             <RadioButton
                 android:id="@+id/mnb7f"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/mnFemale" />
+                android:text="@string/female" />
         </RadioGroup>
 
         <Button
@@ -223,6 +223,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:onClick="submitSecB"
-            android:text="@string/nextSection" />
+            android:text="@string/next_section" />
     </LinearLayout>
 </ScrollView>

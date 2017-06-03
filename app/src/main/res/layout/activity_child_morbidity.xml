@@ -79,19 +79,19 @@
             android:id="@+id/cm0177"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/None" />
+            android:text="@string/none" />
 
         <CheckBox
             android:id="@+id/cm0188"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mnOther" />
+            android:text="@string/other" />
 
         <EditText
             android:id="@+id/cm0188x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnOther"
+            android:hint="@string/other"
             android:visibility="gone" />
 
         <LinearLayout
@@ -116,13 +116,13 @@
                     android:id="@+id/cm02a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnYES" />
+                    android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/cm02b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnNO" />
+                    android:text="@string/no" />
 
             </RadioGroup>
 
@@ -192,13 +192,13 @@
                     android:id="@+id/cm0388"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnOther" />
+                    android:text="@string/other" />
 
                 <EditText
                     android:id="@+id/cm0388x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mnOther"
+                    android:hint="@string/other"
                     android:visibility="gone" />
 
 
@@ -213,7 +213,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:onClick="submitSecA"
-            android:text="@string/nextSection"
+            android:text="@string/next_section"
             android:textColor="#00ef00" />
 
         <Button

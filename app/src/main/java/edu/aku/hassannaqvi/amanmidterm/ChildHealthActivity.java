@@ -1,11 +1,7 @@
 package edu.aku.hassannaqvi.amanmidterm;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -14,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -620,7 +615,7 @@ public class ChildHealthActivity extends Activity {
             if (iy0588.isChecked()) {
                 if (iy05x.getText().toString().isEmpty() || iy05x.getText().toString() == null) {
                     iy05x.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
                     iy05x.requestFocus();
                     return false;
                 } else {
@@ -709,7 +704,7 @@ public class ChildHealthActivity extends Activity {
 
                     if (iy08x.getText().toString().isEmpty() || iy08x.getText().toString() == null) {
                         iy08x.setError(getString(R.string.txterr));
-                        Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
                         iy08x.requestFocus();
                         return false;
                     } else {
@@ -768,7 +763,7 @@ public class ChildHealthActivity extends Activity {
 
                 if (iy010x.getText().toString().isEmpty() || iy010x.getText().toString() == null) {
                     iy010x.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
                     iy010x.requestFocus();
                     return false;
                 } else {
@@ -901,7 +896,7 @@ public class ChildHealthActivity extends Activity {
         if (iy01588.isChecked()) {
             if (iy015x.getText().toString().isEmpty() || iy015x.getText().toString() == null) {
                 iy015x.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 iy015x.requestFocus();
                 return false;
             } else {

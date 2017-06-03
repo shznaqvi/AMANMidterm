@@ -472,7 +472,7 @@ public class PostpartumCareActivity extends Activity {
 
             // Others / EditText Q 5.30
             if (pc0288.isChecked() && pc0288x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc02) + " - " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc02) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 pc0288x.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "pc0288x: This data is Required!");
                 return false;
@@ -511,7 +511,7 @@ public class PostpartumCareActivity extends Activity {
                 }
 
                 if (pc0588.isChecked() && pc0588x.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05) + " - " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                     pc0588x.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "pc0588x: This data is Required!");
                     return false;
@@ -567,7 +567,7 @@ public class PostpartumCareActivity extends Activity {
             }
 
             if (pc0988.isChecked() && pc0988x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc09) + " - " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc09) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 pc0988x.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "pc0988x: This data is Required!");
                 return false;
@@ -598,7 +598,7 @@ public class PostpartumCareActivity extends Activity {
                 }
 
                 if (pc1288.isChecked() && pc1288x.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc12) + " - " + getString(R.string.mnOther), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc12) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                     pc1288x.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "pc1288x: This data is Required!");
                     return false;

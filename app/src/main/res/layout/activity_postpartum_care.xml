@@ -36,13 +36,13 @@
                 android:id="@+id/pc01a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/pc01b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
         </RadioGroup>
 
@@ -93,13 +93,13 @@
                 android:id="@+id/pc0288"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
             <EditText
                 android:id="@+id/pc0288x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mnOther"
+                android:hint="@string/other"
                 android:visibility="gone" />
 
             <TextView
@@ -118,13 +118,13 @@
                     android:id="@+id/pc03a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnYES" />
+                    android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/pc03b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnNO" />
+                    android:text="@string/no" />
 
             </RadioGroup>
 
@@ -210,13 +210,13 @@
                     android:id="@+id/pc0588"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnOther" />
+                    android:text="@string/other" />
 
                 <EditText
                     android:id="@+id/pc0588x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mnOther"
+                    android:hint="@string/other"
                     android:visibility="gone" />
 
             </LinearLayout>
@@ -234,13 +234,13 @@
             android:id="@+id/pc06a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnDays" />
+            android:hint="@string/days" />
 
         <EditText
             android:id="@+id/pc06b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mnWeeks" />
+            android:hint="@string/weeks" />
 
         <CheckBox
             android:id="@+id/pc0699"
@@ -309,13 +309,13 @@
                 android:id="@+id/pc08a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnYES" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/pc08b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnNO" />
+                android:text="@string/no" />
 
         </RadioGroup>
 
@@ -387,13 +387,13 @@
                 android:id="@+id/pc0988"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mnOther" />
+                android:text="@string/other" />
 
             <EditText
                 android:id="@+id/pc0988x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/mnOther"
+                android:hint="@string/other"
                 android:visibility="gone" />
 
 
@@ -413,13 +413,13 @@
                     android:id="@+id/pc10a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnYES" />
+                    android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/pc10b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnNO" />
+                    android:text="@string/no" />
 
             </RadioGroup>
 
@@ -504,13 +504,13 @@
                     android:id="@+id/pc1288"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mnOther" />
+                    android:text="@string/other" />
 
                 <EditText
                     android:id="@+id/pc1288x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mnOther"
+                    android:hint="@string/other"
                     android:visibility="gone" />
 
             </LinearLayout>
@@ -524,7 +524,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:onClick="submitSecA"
-            android:text="@string/nextSection"
+            android:text="@string/next_section"
             android:textColor="#00ef00" />
 
         <Button

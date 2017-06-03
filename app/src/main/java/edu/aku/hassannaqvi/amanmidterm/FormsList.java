@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
 public class FormsList extends Activity {
 
     private RecyclerView mRecyclerView;
@@ -32,7 +30,7 @@ public class FormsList extends Activity {
         cNo.setText("Forms for Cluster: " + psu);
         Log.d("TAG:Cluster", psu);
         DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-        List<FormsContract> forms = db.getFormsByPSU(psu);
+        //List<FormsContract> forms = db.getFormsByPSU(psu);
 
 //        Sample Testing
 //        List<FormsContract> forms = new ArrayList<>();
@@ -43,12 +41,12 @@ public class FormsList extends Activity {
 //        forms.add(new FormsContract("5","1","Ali"));
 
 
-        for (FormsContract fc : forms) {
+       /* for (FormsContract fc : forms) {
             fTotal++;
             if (fc.getiStatus().contains("1")) {
                 fComplete++;
             }
-        }
+        }*/
         tf.setText("Total Forms: " + fTotal);
         cf.setText("Complete Forms: " + fComplete);
 
@@ -59,7 +57,7 @@ public class FormsList extends Activity {
         mLayoutManager = new LinearLayoutManager(this);
 
 
-        mAdapter = new FormsAdapter(forms, getApplication());
+        //mAdapter = new FormsAdapter(forms, getApplication());
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
