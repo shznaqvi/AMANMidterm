@@ -30,6 +30,7 @@
             </intent-filter>
             -->
         </activity>
+        <activity android:name=".AmanInfoActivity" />
         <activity android:name=".BasicInfoActivity" />
         <activity android:name=".IndexChildActivity" />
         <activity android:name=".ChildVaccinationActivity" />
@@ -87,7 +88,7 @@
             android:name=".BirthsDeathsActivity"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".AmanInfoActivity"></activity>
+
     </application>
 
 </manifest>

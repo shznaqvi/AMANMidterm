@@ -63,6 +63,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/mna7d" />
+
+            <RadioButton
+                android:id="@+id/mna7e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/mna7e" />
+
         </RadioGroup>
 
         <Button

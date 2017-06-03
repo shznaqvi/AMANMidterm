@@ -22,6 +22,7 @@
     <string name="no">نہیں</string>
     <string name="dnk">معلوم نہیں</string>
     <string name="none">کوئی نہیں</string>
+    <string name="year">سال</string>
 
     <string name="other">کوئی اور (وضاحت کریں)۔</string>
 
@@ -35,6 +36,24 @@
     <string name="mnfrmno"> ڈی ایم یو سیریل نمبر </string>
     <string name="mnsid"> تحقیقی شناخت نمبر </string>
     <string name="formDateTime"> دورے کی تاریخ </string>
+    <string name="AmanInfo">اے- بنیادی اور شناختی معلومات  </string>
+    <string name="biuc">یونین کاؤنسل کا نام </string>
+    <string name="biPara">پارہ کا نام </string>
+    <string name="biACHW">اے سی ایچ ڈبلیو کا نام </string>
+    <string name="biHH">گھر کا نمبر </string>
+    <string name="bi01">زبانی رضامندی </string>
+    <string name="bi0101">  جوابدہندہ انٹرویو دینے کے لئے رضامند ہوئی </string>
+    <string name="bi0102">جوابدہندہ انٹرویو دینے کے لئے رضامند نہیں ہوئی  </string>
+    <string name="bib01">جواب دہندہ </string>
+    <string name="bib03">جواب دہندہ </string>
+    <string name="bib04">جواب دہندہ </string>
+    <string name="bib05">جواب دہندہ </string>
+    <string name="bib06">شوہر </string>
+    <string name="bib07">  گھر کا سربراہ</string>
+    <string name="bib08">آپ اس علاقے میں کب سے رہ ہے ہیں؟ </string>
+    <string name="bic01">گھر کے تمام افراد کی تعداد </string>
+    <string name="bic04">15 سے 49 سال کی عورتیں</string>
+    <string name="bic05">5سال سے کم عمر بچے</string>
     <string name="mna2"> انٹرویو کرنے والے کا نام </string>
     <string name="mna2nm"> انٹرویو کرنے والے کا نام </string>
     <string name="mna3"> فیلڈ سائیٹ/ضلع </string>
@@ -42,10 +61,12 @@
     <string name="mna5"> گھرانے کا نمبر </string>
     <string name="mna5_ext"> خاندان نمبر </string>
     <string name="childName"> منتخب بچے کا نام (لائن لسٹنگ کے مطابق) </string>
-    <string name="iStatus"> دورے کا نتیجہ </string>
+    <string name="iStatus"> انٹرویو کی نوعیت   </string>
     <string name="mna7a"> مکمل </string>
-    <string name="mna7b"> گھر بند تھا </string>
-    <string name="mna7c"> منع کردیا </string>
+    <string name="mna7b">جزوی طور پر مکمل </string>
+    <string name="mna7c">انکار کردیا </string>
+    <string name="mna7d">واب دہندہ گھر پر موجود نہیں </string>
+    <string name="mna7e">ملتوی </string>
     <string name="mna8"> گھر کے سربراہ کا نام </string>
     <string name="mna9"> جواب دینے والے کا نام </string>
     <string name="mna10"> جواب دینے والے کا منتخب بچے سے رشتہ </string>
@@ -820,6 +841,6 @@
     <string name="title_activity_splash_screen">Splash Screen Activity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="mna7d">منتخب شدہ بچہ موجود نہیں</string>
+
 
 </resources>
