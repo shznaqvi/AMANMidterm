@@ -399,7 +399,7 @@ public class AntenatalCareActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (formValidation()) {
+       /* if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {

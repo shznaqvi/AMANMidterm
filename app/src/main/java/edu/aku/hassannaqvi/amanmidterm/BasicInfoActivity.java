@@ -37,62 +37,62 @@ public class BasicInfoActivity extends Activity {
 
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
-    @BindView(R.id.txtmna3)
-    TextView txtmna3;
-    @BindView(R.id.mna4)
-    EditText mna4;
-    @BindView(R.id.mna5)
-    EditText mna5;
+    @BindView(R.id.txtbi3)
+    TextView txtbi3;
+    @BindView(R.id.bi4)
+    EditText bi4;
+    @BindView(R.id.bi5)
+    EditText bi5;
     @BindView(R.id.childName)
     CheckBox childName;
     @BindView(R.id.child_name)
     TextView child_name;
-    @BindView(R.id.mna8)
-    EditText mna8;
-    @BindView(R.id.mna9)
-    EditText mna9;
-    @BindView(R.id.mna10)
-    RadioGroup mna10;
-    @BindView(R.id.mna10a)
-    RadioButton mna10a;
-    @BindView(R.id.mna10b)
-    RadioButton mna10b;
-    @BindView(R.id.mna10c)
-    RadioButton mna10c;
-    @BindView(R.id.mna10d)
-    RadioButton mna10d;
-    @BindView(R.id.mna10e)
-    RadioButton mna10e;
-    @BindView(R.id.mna10x)
-    RadioButton mna10x;
-    @BindView(R.id.mna10x96)
-    EditText mna10x96;
-    @BindView(R.id.mna11)
-    EditText mna11;
-    @BindView(R.id.mna12)
-    RadioGroup mna12;
-    @BindView(R.id.mna12a)
-    RadioButton mna12a;
-    @BindView(R.id.mna12b)
-    RadioButton mna12b;
-    @BindView(R.id.mna12c)
-    RadioButton mna12c;
-    @BindView(R.id.mna12d)
-    RadioButton mna12d;
-    @BindView(R.id.mna12e)
-    RadioButton mna12e;
-    @BindView(R.id.mna12f)
-    RadioButton mna12f;
-    @BindView(R.id.mna12g)
-    RadioButton mna12g;
-    @BindView(R.id.mna12x)
-    RadioButton mna12x;
-    @BindView(R.id.mna12x96)
-    EditText mna12x96;
-    @BindView(R.id.mna13)
-    EditText mna13;
-    @BindView(R.id.fldGrpmna6)
-    LinearLayout fldGrpmna6;
+    @BindView(R.id.bi8)
+    EditText bi8;
+    @BindView(R.id.bi9)
+    EditText bi9;
+    @BindView(R.id.bi10)
+    RadioGroup bi10;
+    @BindView(R.id.bi10a)
+    RadioButton bi10a;
+    @BindView(R.id.bi10b)
+    RadioButton bi10b;
+    @BindView(R.id.bi10c)
+    RadioButton bi10c;
+    @BindView(R.id.bi10d)
+    RadioButton bi10d;
+    @BindView(R.id.bi10e)
+    RadioButton bi10e;
+    @BindView(R.id.bi10x)
+    RadioButton bi10x;
+    @BindView(R.id.bi10x96)
+    EditText bi10x96;
+    @BindView(R.id.bi11)
+    EditText bi11;
+    @BindView(R.id.bi12)
+    RadioGroup bi12;
+    @BindView(R.id.bi12a)
+    RadioButton bi12a;
+    @BindView(R.id.bi12b)
+    RadioButton bi12b;
+    @BindView(R.id.bi12c)
+    RadioButton bi12c;
+    @BindView(R.id.bi12d)
+    RadioButton bi12d;
+    @BindView(R.id.bi12e)
+    RadioButton bi12e;
+    @BindView(R.id.bi12f)
+    RadioButton bi12f;
+    @BindView(R.id.bi12g)
+    RadioButton bi12g;
+    @BindView(R.id.bi12x)
+    RadioButton bi12x;
+    @BindView(R.id.bi12x96)
+    EditText bi12x96;
+    @BindView(R.id.bi13)
+    EditText bi13;
+    @BindView(R.id.fldGrpbi6)
+    LinearLayout fldGrpbi6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,7 +161,7 @@ public class BasicInfoActivity extends Activity {
         values.add("92");
         values.add("93");
 
-        txtmna3.setText(getString(R.string.mna3) + ": " + labels.get(values.indexOf(String.valueOf(AppMain.majorArea))));
+        txtbi3.setText(getString(R.string.bi3) + ": " + labels.get(values.indexOf(String.valueOf(AppMain.majorArea))));
         childName.setEnabled(false);
 
 
@@ -169,32 +169,32 @@ public class BasicInfoActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpmna6.setVisibility(View.VISIBLE);
+                    fldGrpbi6.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpmna6.setVisibility(View.GONE);
+                    fldGrpbi6.setVisibility(View.GONE);
                 }
             }
         });
-        mna10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mna10x.isChecked()) {
-                    mna10x96.setVisibility(View.VISIBLE);
+                if (bi10x.isChecked()) {
+                    bi10x96.setVisibility(View.VISIBLE);
                 } else {
-                    mna10x96.setVisibility(View.GONE);
-                    mna10x96.setText(null);
+                    bi10x96.setVisibility(View.GONE);
+                    bi10x96.setText(null);
                 }
             }
         });
 
-        mna12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (mna12x.isChecked()) {
-                    mna12x96.setVisibility(View.VISIBLE);
+                if (bi12x.isChecked()) {
+                    bi12x96.setVisibility(View.VISIBLE);
                 } else {
-                    mna12x96.setVisibility(View.GONE);
-                    mna12x96.setText(null);
+                    bi12x96.setVisibility(View.GONE);
+                    bi12x96.setText(null);
                 }
             }
         });
@@ -203,12 +203,12 @@ public class BasicInfoActivity extends Activity {
 
     public void submitSecA(View v) throws JSONException {
         Toast.makeText(this, "Processing Section A", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             SaveDraft();
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Socio-Economic Section", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, SocioEconomicActivity.class);
-                AppMain.chTotal = Integer.valueOf(mna13.getText().toString()) - 1; // exclude index child
+                AppMain.chTotal = Integer.valueOf(bi13.getText().toString()) - 1; // exclude index child
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -261,68 +261,68 @@ public class BasicInfoActivity extends Activity {
         AppMain.fc.setFormDate(dtToday);
         AppMain.fc.setUserName(AppMain.username);
         AppMain.fc.setMajorArea(String.valueOf(AppMain.majorArea));
-        AppMain.fc.setPrimaryUnit(mna4.getText().toString());
-        AppMain.fc.setHouseHold(mna5.getText().toString());
+        AppMain.fc.setPrimaryUnit(bi4.getText().toString());
+        AppMain.fc.setHouseHold(bi5.getText().toString());
         AppMain.fc.setchildName(childName.isChecked() ? "1" : "2");
 
         JSONObject sA = new JSONObject();
 
-        sA.put("mna8", mna8.getText().toString());
-        sA.put("mna9", mna9.getText().toString());
-        switch (mna10.getCheckedRadioButtonId()) {
-            case R.id.mna10a:
-                sA.put("mna10", "1");
+        sA.put("bi8", bi8.getText().toString());
+        sA.put("bi9", bi9.getText().toString());
+        switch (bi10.getCheckedRadioButtonId()) {
+            case R.id.bi10a:
+                sA.put("bi10", "1");
                 break;
-            case R.id.mna10b:
-                sA.put("mna10", "2");
+            case R.id.bi10b:
+                sA.put("bi10", "2");
                 break;
-            case R.id.mna10c:
-                sA.put("mna10", "3");
+            case R.id.bi10c:
+                sA.put("bi10", "3");
                 break;
-            case R.id.mna10d:
-                sA.put("mna10", "4");
+            case R.id.bi10d:
+                sA.put("bi10", "4");
                 break;
-            case R.id.mna10e:
-                sA.put("mna10", "5");
+            case R.id.bi10e:
+                sA.put("bi10", "5");
                 break;
-            case R.id.mna10x:
-                sA.put("mna10", "96");
-                break;
-            default:
-                sA.put("mna10", "default");
-        }
-        sA.put("mna10x96", mna10x96.getText().toString());
-        sA.put("mna11", mna11.getText().toString());
-        switch (mna12.getCheckedRadioButtonId()) {
-            case R.id.mna12a:
-                sA.put("mna12", "1");
-                break;
-            case R.id.mna12b:
-                sA.put("mna12", "2");
-                break;
-            case R.id.mna12c:
-                sA.put("mna12", "3");
-                break;
-            case R.id.mna12d:
-                sA.put("mna12", "4");
-                break;
-            case R.id.mna12e:
-                sA.put("mna12", "5");
-                break;
-            case R.id.mna12f:
-                sA.put("mna12", "6");
-                break;
-            case R.id.mna12g:
-                sA.put("mna12", "7");
-                break;
-            case R.id.mna12x:
-                sA.put("mna12", "96");
+            case R.id.bi10x:
+                sA.put("bi10", "96");
                 break;
             default:
-                sA.put("mna12", "default");
+                sA.put("bi10", "default");
         }
-        sA.put("mna12x96", mna12x96.getText().toString());
-        sA.put("mna13", mna13.getText().toString());
+        sA.put("bi10x96", bi10x96.getText().toString());
+        sA.put("bi11", bi11.getText().toString());
+        switch (bi12.getCheckedRadioButtonId()) {
+            case R.id.bi12a:
+                sA.put("bi12", "1");
+                break;
+            case R.id.bi12b:
+                sA.put("bi12", "2");
+                break;
+            case R.id.bi12c:
+                sA.put("bi12", "3");
+                break;
+            case R.id.bi12d:
+                sA.put("bi12", "4");
+                break;
+            case R.id.bi12e:
+                sA.put("bi12", "5");
+                break;
+            case R.id.bi12f:
+                sA.put("bi12", "6");
+                break;
+            case R.id.bi12g:
+                sA.put("bi12", "7");
+                break;
+            case R.id.bi12x:
+                sA.put("bi12", "96");
+                break;
+            default:
+                sA.put("bi12", "default");
+        }
+        sA.put("bi12x96", bi12x96.getText().toString());
+        sA.put("bi13", bi13.getText().toString());
 
         AppMain.fc.setBasicInfo(String.valueOf(sA));
         setGPS();
@@ -333,125 +333,125 @@ public class BasicInfoActivity extends Activity {
 
     }
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
         Toast.makeText(this, "Validating Section A", Toast.LENGTH_SHORT).show();
 
 
-        if (mna4.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna4), Toast.LENGTH_LONG).show();
-            mna4.setError("This data is Required!");
-            Log.i(TAG, "mna4: This data is Required!");
+        if (bi4.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi4), Toast.LENGTH_LONG).show();
+            bi4.setError("This data is Required!");
+            Log.i(TAG, "bi4: This data is Required!");
             return false;
         } else {
-            mna4.setError(null);
+            bi4.setError(null);
         }
 
-        if (mna4.getText().toString().length() < 5) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mna4), Toast.LENGTH_LONG).show();
-            mna4.setError("This data is invalid!");
-            Log.i(TAG, "mna4: This data is invalid!");
+        if (bi4.getText().toString().length() < 5) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.bi4), Toast.LENGTH_LONG).show();
+            bi4.setError("This data is invalid!");
+            Log.i(TAG, "bi4: This data is invalid!");
             return false;
         } else {
-            mna4.setError(null);
+            bi4.setError(null);
         }
 
 
-        if (mna5.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna5), Toast.LENGTH_LONG).show();
-            mna5.setError("This data is Required!");
-            Log.i(TAG, "mna5: This data is Required!");
+        if (bi5.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi5), Toast.LENGTH_LONG).show();
+            bi5.setError("This data is Required!");
+            Log.i(TAG, "bi5: This data is Required!");
             return false;
         } else {
-            mna5.setError(null);
+            bi5.setError(null);
         }
 
-        if (mna5.getText().toString().length() < 5 || !mna5.getText().toString().contains("-")) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mna5), Toast.LENGTH_LONG).show();
-            mna5.setError("This data is invalid!");
-            Log.i(TAG, "mna5: This data is invalid!");
+        if (bi5.getText().toString().length() < 5 || !bi5.getText().toString().contains("-")) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.bi5), Toast.LENGTH_LONG).show();
+            bi5.setError("This data is invalid!");
+            Log.i(TAG, "bi5: This data is invalid!");
             return false;
         } else {
-            mna5.setError(null);
+            bi5.setError(null);
         }
 
         if (childName.isChecked()) {
 
 
-            if (mna8.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna8), Toast.LENGTH_LONG).show();
-                mna8.setError("This data is Required!");
-                Log.i(TAG, "mna8: This data is Required!");
+            if (bi8.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi8), Toast.LENGTH_LONG).show();
+                bi8.setError("This data is Required!");
+                Log.i(TAG, "bi8: This data is Required!");
                 return false;
             } else {
-                mna8.setError(null);
+                bi8.setError(null);
             }
 
-            if (mna9.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna9), Toast.LENGTH_LONG).show();
-                mna9.setError("This data is Required!");
-                Log.i(TAG, "mna9: This data is Required!");
+            if (bi9.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi9), Toast.LENGTH_LONG).show();
+                bi9.setError("This data is Required!");
+                Log.i(TAG, "bi9: This data is Required!");
                 return false;
             } else {
-                mna9.setError(null);
+                bi9.setError(null);
             }
 
-            if (mna10.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna10), Toast.LENGTH_LONG).show();
-                mna10x.setError("This data is Required!");
-                Log.i(TAG, "mna10: This data is Required!");
+            if (bi10.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi10), Toast.LENGTH_LONG).show();
+                bi10x.setError("This data is Required!");
+                Log.i(TAG, "bi10: This data is Required!");
                 return false;
-            } else if (mna10x.isChecked() && mna10x96.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna10), Toast.LENGTH_LONG).show();
-                mna10x96.setError("Other is Required!");
-                Log.i(TAG, "mna10: Other is Required!");
+            } else if (bi10x.isChecked() && bi10x96.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi10), Toast.LENGTH_LONG).show();
+                bi10x96.setError("Other is Required!");
+                Log.i(TAG, "bi10: Other is Required!");
 
-                mna10x.setError(null);
+                bi10x.setError(null);
                 return false;
             } else {
-                mna10x96.setError(null);
+                bi10x96.setError(null);
             }
 
-            if (mna11.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna11), Toast.LENGTH_LONG).show();
-                mna11.setError("This data is Required!");
-                Log.i(TAG, "mna11: This data is Required!");
+            if (bi11.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi11), Toast.LENGTH_LONG).show();
+                bi11.setError("This data is Required!");
+                Log.i(TAG, "bi11: This data is Required!");
                 return false;
-            } else if (Integer.valueOf(mna11.getText().toString()) < 15) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mna11), Toast.LENGTH_LONG).show();
-                mna11.setError("This data is Invalid!");
-                Log.i(TAG, "mna11: This data is Invalid!");
+            } else if (Integer.valueOf(bi11.getText().toString()) < 15) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.bi11), Toast.LENGTH_LONG).show();
+                bi11.setError("This data is Invalid!");
+                Log.i(TAG, "bi11: This data is Invalid!");
                 return false;
             } else {
-                mna11.setError(null);
+                bi11.setError(null);
             }
 
-            if (mna12.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna12), Toast.LENGTH_LONG).show();
-                mna12x.setError("This data is Required!");
-                Log.i(TAG, "mna12: This data is Required!");
+            if (bi12.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi12), Toast.LENGTH_LONG).show();
+                bi12x.setError("This data is Required!");
+                Log.i(TAG, "bi12: This data is Required!");
                 return false;
-            } else if (mna12x.isChecked() && mna12x96.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna12), Toast.LENGTH_LONG).show();
-                mna12x96.setError("Other is Required!");
-                Log.i(TAG, "mna12: Other is Required!");
+            } else if (bi12x.isChecked() && bi12x96.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi12), Toast.LENGTH_LONG).show();
+                bi12x96.setError("Other is Required!");
+                Log.i(TAG, "bi12: Other is Required!");
 
-                mna12x.setError(null);
+                bi12x.setError(null);
                 return false;
             } else {
-                mna12x96.setError(null);
+                bi12x96.setError(null);
             }
-            if (mna13.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.mna13), Toast.LENGTH_LONG).show();
-                mna13.setError("This data is Required!");
-                Log.i(TAG, "mna13: This data is Required!");
+            if (bi13.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi13), Toast.LENGTH_LONG).show();
+                bi13.setError("This data is Required!");
+                Log.i(TAG, "bi13: This data is Required!");
                 return false;
-            } else if (Integer.valueOf(mna13.getText().toString()) == 0) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.mna13), Toast.LENGTH_LONG).show();
-                mna13.setError("This data is invalid!");
-                Log.i(TAG, "mna13: This data is invalid!");
+            } else if (Integer.valueOf(bi13.getText().toString()) == 0) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.bi13), Toast.LENGTH_LONG).show();
+                bi13.setError("This data is invalid!");
+                Log.i(TAG, "bi13: This data is invalid!");
                 return false;
             } else {
-                mna13.setError(null);
+                bi13.setError(null);
             }
         }
         return true;

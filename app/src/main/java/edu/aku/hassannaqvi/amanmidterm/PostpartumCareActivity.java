@@ -334,7 +334,7 @@ public class PostpartumCareActivity extends Activity {
     void onBtnNextClick() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -345,7 +345,7 @@ public class PostpartumCareActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, NeonatalHealthActivity.class);
+                Intent secNext = new Intent(this, IYCFActivity.class);
                 secNext.putExtra("check", false);
                 startActivity(secNext);
             } else {
@@ -359,7 +359,7 @@ public class PostpartumCareActivity extends Activity {
     void onBtnEndClick() {
 
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (formValidation()) {
+       /* if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -443,7 +443,7 @@ public class PostpartumCareActivity extends Activity {
     }
 
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 

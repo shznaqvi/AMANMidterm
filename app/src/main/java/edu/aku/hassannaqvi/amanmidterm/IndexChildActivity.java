@@ -134,7 +134,7 @@ public class IndexChildActivity extends Activity {
 
     public void submitSecB(View v) throws JSONException {
         Toast.makeText(this, "Processing Section B", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             SaveDraft();
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Section B", Toast.LENGTH_SHORT).show();
@@ -188,7 +188,7 @@ public class IndexChildActivity extends Activity {
     }
 
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
         Toast.makeText(this, "Validating Section B", Toast.LENGTH_SHORT).show();
 
 

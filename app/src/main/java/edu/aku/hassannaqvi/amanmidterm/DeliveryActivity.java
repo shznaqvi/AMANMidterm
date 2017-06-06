@@ -110,7 +110,7 @@ public class DeliveryActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (formValidation()) {
+       /* if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -127,28 +127,28 @@ public class DeliveryActivity extends Activity {
         } */
     }
 
-    @OnClick(R.id.btnNext)
+    @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
+
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             try {
-                SaveDraft();
+                if (SaveDraft()) {
+
+                    if (UpdateDB()) {
+                        Toast.makeText(this, "Saving Form", Toast.LENGTH_SHORT).show();
+
+                        finish();
+
+                        startActivity(new Intent(this, DeliveryActivity.class));
+                    } else {
+                        Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                    }
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                Intent secNext = new Intent(this, PostpartumCareActivity.class);
-                secNext.putExtra("check", false);
-                startActivity(secNext);
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
         }
-    }
 
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
@@ -194,7 +194,7 @@ public class DeliveryActivity extends Activity {
 
     }
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 

@@ -455,7 +455,7 @@ public class ChildVaccinationActivity extends Activity {
 
     public void submitSecC(View v) throws JSONException {
         Toast.makeText(this, "Processing Section C", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             SaveDraft();
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Section C", Toast.LENGTH_SHORT).show();
@@ -525,7 +525,7 @@ public class ChildVaccinationActivity extends Activity {
     }
 
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
 
         Toast.makeText(this, "Validating Section C", Toast.LENGTH_SHORT).show();
         //============= Q1================

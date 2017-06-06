@@ -403,8 +403,6 @@ public class SocioEconomicActivity extends Activity {
         setContentView(R.layout.activity_socio_economic);
         ButterKnife.bind(this);
 
-        appHeader.setText("SRC - > Section 8");
-
 
         // ============== 8.12 ============
 
@@ -651,7 +649,7 @@ public class SocioEconomicActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (formValidation()) {
+       /* if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -673,7 +671,7 @@ public class SocioEconomicActivity extends Activity {
     void onBtnContinueClick() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             try {
                 if (SaveDraft()) {
 
@@ -810,7 +808,7 @@ public class SocioEconomicActivity extends Activity {
         return true;
     }
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
@@ -1121,7 +1119,7 @@ public class SocioEconomicActivity extends Activity {
             if ((Integer.parseInt(se16.getText().toString()) < 1) || (Integer.parseInt(se16.getText().toString()) > 180)) {
                 Toast.makeText(this, "Range is 1 - 180", Toast.LENGTH_LONG).show();
                 se16.setError("Range is 1 - 180 .. Check Again");// Set Error on last radio button
-                Log.d(TAG, "formValidation: 0816 not selected");
+                Log.d(TAG, "ValidateForm: 0816 not selected");
                 return false;
 
             } else {

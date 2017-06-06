@@ -207,23 +207,31 @@
         </LinearLayout>
 
 
-        <Button
-            android:id="@+id/btnNext"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:onClick="submitSecA"
-            android:text="@string/next_section"
-            android:textColor="#00ef00" />
+            android:layout_gravity="end"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnEnd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:onClick="endForm"
-            android:text="@string/endForm"
-            android:textColor="#000" />
+            <Button
+                android:id="@+id/btn_End"
+                style="@style/btnButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/end_interview"
+                android:textColor="#ff1e1e" />
+
+            <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+
+            <Button
+                android:id="@+id/btn_Continue"
+                style="@style/btnButton"
+                android:text="@string/next_section"
+                android:textColor="#1ed61e" />
+            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+
+
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>
