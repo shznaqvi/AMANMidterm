@@ -31,6 +31,8 @@ public class EndingActivity extends Activity {
     RadioButton mna7c;
     @BindView(R.id.mna7d)
     RadioButton mna7d;
+    @BindView(R.id.mna7e)
+    RadioButton mna7e;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +94,10 @@ public class EndingActivity extends Activity {
             case R.id.mna7d:
                 AppMain.fc.setiStatus("4");
                 break;
+            case R.id.mna7e:
+                AppMain.fc.setiStatus("5");
+                break;
+
             default:
                 AppMain.fc.setiStatus("default");
                 break;
