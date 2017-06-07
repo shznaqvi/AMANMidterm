@@ -418,7 +418,7 @@ public class SocioEconomicActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (formValidation()) {
+       /* if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -440,7 +440,7 @@ public class SocioEconomicActivity extends Activity {
     void onBtnContinueClick() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             try {
                 if (SaveDraft()) {
 
@@ -526,7 +526,7 @@ public class SocioEconomicActivity extends Activity {
         return true;
     }
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 

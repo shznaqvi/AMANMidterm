@@ -47,7 +47,7 @@ public class EndingActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Processing Closing Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -105,7 +105,7 @@ public class EndingActivity extends Activity {
 
     }
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
         Toast.makeText(this, "Validating Closing Section", Toast.LENGTH_SHORT).show();
 
         if (mna7.getCheckedRadioButtonId() == -1) {

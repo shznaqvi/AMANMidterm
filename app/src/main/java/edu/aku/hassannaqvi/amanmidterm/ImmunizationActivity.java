@@ -39,7 +39,7 @@ public class ImmunizationActivity extends Activity {
     }
 
 
-    private boolean formValidation() {
+    private boolean ValidateForm() {
         return true;
     }
 

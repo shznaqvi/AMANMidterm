@@ -50,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_NAME_CHILDID + " TEXT,"
             + FormsTable.COLUMN_NAME_CHILDNAME + " TEXT,"
             + FormsTable.COLUMN_NAME_ISTATUS + " TEXT,"
-            + FormsTable.COLUMN_NAME_TAGID + " TEXT,"
+            + FormsTable.COLUMN_NAME_DEVICETAG + " TEXT,"
             + FormsTable.COLUMN_NAME_ANTENATALCARE + " TEXT,"
             + FormsTable.COLUMN_NAME_BASICINFO + " TEXT,"
             + FormsTable.COLUMN_NAME_BIRTHSDEATHS + " TEXT,"
@@ -127,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_CHILDID, fc.getChildId());
         values.put(FormsTable.COLUMN_NAME_CHILDNAME, fc.getchildName());
         values.put(FormsTable.COLUMN_NAME_ISTATUS, fc.getiStatus());
-        values.put(FormsTable.COLUMN_NAME_TAGID, fc.getTagId());
+        values.put(FormsTable.COLUMN_NAME_DEVICETAG, fc.getDeviceTag());
         values.put(FormsTable.COLUMN_NAME_ANTENATALCARE, fc.getAntenatalCare());
         values.put(FormsTable.COLUMN_NAME_BASICINFO, fc.getBasicInfo());
         values.put(FormsTable.COLUMN_NAME_BIRTHSDEATHS, fc.getBirthsDeaths());
@@ -217,7 +217,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_NAME_CHILDID,
                 FormsTable.COLUMN_NAME_CHILDNAME,
                 FormsTable.COLUMN_NAME_ISTATUS,
-                FormsTable.COLUMN_NAME_TAGID,
+                FormsTable.COLUMN_NAME_DEVICETAG,
                 FormsTable.COLUMN_NAME_ANTENATALCARE,
                 FormsTable.COLUMN_NAME_BASICINFO,
                 FormsTable.COLUMN_NAME_BIRTHSDEATHS,
@@ -296,7 +296,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_NAME_CHILDID,
                 FormsTable.COLUMN_NAME_CHILDNAME,
                 FormsTable.COLUMN_NAME_ISTATUS,
-                FormsTable.COLUMN_NAME_TAGID,
+                FormsTable.COLUMN_NAME_DEVICETAG,
                 FormsTable.COLUMN_NAME_ANTENATALCARE,
                 FormsTable.COLUMN_NAME_BASICINFO,
                 FormsTable.COLUMN_NAME_BIRTHSDEATHS,
@@ -663,7 +663,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 null);
         return count;
     }
-
     public int updateMaternalMentalHealth() {
         SQLiteDatabase db = this.getReadableDatabase();
 

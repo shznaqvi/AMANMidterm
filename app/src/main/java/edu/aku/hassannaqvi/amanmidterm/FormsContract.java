@@ -29,7 +29,7 @@ public class FormsContract {
     private String childId = ""; // Index Child ID
     private String childName = ""; // Child Name
     private String iStatus = ""; // Form Status
-    private String tagId = "";
+    private String deviceTag = "";
     private String antenatalCare = "";
     private String basicInfo = "";
     private String birthsDeaths = "";
@@ -51,6 +51,7 @@ public class FormsContract {
     private String gpsTime = "";
     private String gpsAcc = "";
     private String deviceID = "";
+    private String appVer = "";
     private String synced = "";
     private String synced_date = "";
 
@@ -71,7 +72,7 @@ public class FormsContract {
         this.childId = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDID);
         this.childName = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDNAME);
         this.iStatus = jsonObject.getString(FormsTable.COLUMN_NAME_ISTATUS);
-        this.tagId = jsonObject.getString(FormsTable.COLUMN_NAME_TAGID);
+        this.deviceTag = jsonObject.getString(FormsTable.COLUMN_NAME_DEVICETAG);
         this.antenatalCare = jsonObject.getString(FormsTable.COLUMN_NAME_ANTENATALCARE);
         this.basicInfo = jsonObject.getString(FormsTable.COLUMN_NAME_BASICINFO);
         this.birthsDeaths = jsonObject.getString(FormsTable.COLUMN_NAME_BIRTHSDEATHS);
@@ -93,6 +94,7 @@ public class FormsContract {
         this.gpsTime = jsonObject.getString(FormsTable.COLUMN_NAME_GPSTIME);
         this.gpsAcc = jsonObject.getString(FormsTable.COLUMN_NAME_GPSACC);
         this.deviceID = jsonObject.getString(FormsTable.COLUMN_NAME_DEVICEID);
+        this.appVer = jsonObject.getString(FormsTable.COLUMN_NAME_APPVERSION);
 
         return this;
     }
@@ -209,12 +211,12 @@ public class FormsContract {
         this.iStatus = iStatus;
     }
 
-    public String getTagId() {
-        return tagId;
+    public String getDeviceTag() {
+        return deviceTag;
     }
 
-    public void setTagId(String tagId) {
-        this.tagId = tagId;
+    public void setDeviceTag(String deviceTag) {
+        this.deviceTag = deviceTag;
     }
 
     public String getAntenatalCare() {
@@ -385,6 +387,14 @@ public class FormsContract {
         this.deviceID = deviceID;
     }
 
+    public String getAppVer() {
+        return appVer;
+    }
+
+    public void setAppVer(String appVer) {
+        this.appVer = appVer;
+    }
+
     public String getSynced() {
         return synced;
     }
@@ -415,7 +425,7 @@ public class FormsContract {
         this.childId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDID));
         this.childName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDNAME));
         this.iStatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_ISTATUS));
-        this.tagId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_TAGID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_DEVICETAG));
         this.antenatalCare = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_ANTENATALCARE));
         this.basicInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_BASICINFO));
         this.birthsDeaths = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_BIRTHSDEATHS));
@@ -437,6 +447,7 @@ public class FormsContract {
         this.gpsTime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_GPSTIME));
         this.gpsAcc = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_GPSACC));
         this.deviceID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_DEVICEID));
+        this.appVer = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_APPVERSION));
 
         return this;
     }
@@ -460,7 +471,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_NAME_CHILDID, this.childId == null ? JSONObject.NULL : this.childId);
         json.put(FormsTable.COLUMN_NAME_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
         json.put(FormsTable.COLUMN_NAME_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
-        json.put(FormsTable.COLUMN_NAME_TAGID, this.tagId == null ? JSONObject.NULL : this.tagId);
+        json.put(FormsTable.COLUMN_NAME_DEVICETAG, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
 
         json.put(FormsTable.COLUMN_NAME_ANTENATALCARE, this.antenatalCare == null ? JSONObject.NULL : new JSONObject(this.antenatalCare));
         json.put(FormsTable.COLUMN_NAME_BASICINFO, this.basicInfo == null ? JSONObject.NULL : new JSONObject(this.basicInfo));
@@ -483,6 +494,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_NAME_GPSTIME, this.gpsTime == null ? JSONObject.NULL : this.gpsTime);
         json.put(FormsTable.COLUMN_NAME_GPSACC, this.gpsAcc == null ? JSONObject.NULL : this.gpsAcc);
         json.put(FormsTable.COLUMN_NAME_DEVICEID, this.deviceID == null ? JSONObject.NULL : this.deviceID);
+        json.put(FormsTable.COLUMN_NAME_APPVERSION, this.appVer == null ? JSONObject.NULL : this.appVer);
         json.put(FormsTable.COLUMN_NAME_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
         json.put(FormsTable.COLUMN_NAME_SYNCED_DATE, this.synced_date == null ? JSONObject.NULL : this.synced_date);
 
@@ -510,7 +522,7 @@ public class FormsContract {
         }
 
         return mergedObj;
-    }
+        }
 
     public static abstract class FormsTable implements BaseColumns {
 
@@ -519,45 +531,46 @@ public class FormsContract {
 
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
 
-        public static final String COLUMN_NAME_PROJECTNAME = "projectname ";
-        public static final String COLUMN_NAME_SURVEYTYPE = "surveytype ";
-        public static final String COLUMN_NAME_USERNAME = "username ";
-        public static final String ID = "id ";
-        public static final String COLUMN_NAME_UID = "uid ";
-        public static final String COLUMN_NAME_FORMDATE = "formdate ";
-        public static final String COLUMN_NAME_MAJORAREA = "majorarea ";
-        public static final String COLUMN_NAME_HFACILITY = "hfacility ";
-        public static final String COLUMN_NAME_MINORAREA = "minorarea ";
-        public static final String COLUMN_NAME_PRIMARYUNIT = "primaryunit ";
-        public static final String COLUMN_NAME_SECONDARYUNIT = "secondaryunit ";
-        public static final String COLUMN_NAME_HOUSEHOLD = "household ";
-        public static final String COLUMN_NAME_CHILDID = "childid ";
-        public static final String COLUMN_NAME_CHILDNAME = "childname ";
-        public static final String COLUMN_NAME_ISTATUS = "istatus ";
-        public static final String COLUMN_NAME_TAGID = "tagid ";
-        public static final String COLUMN_NAME_ANTENATALCARE = "antenatalcare ";
-        public static final String COLUMN_NAME_BASICINFO = "basicinfo ";
-        public static final String COLUMN_NAME_BIRTHSDEATHS = "birthsdeaths ";
-        public static final String COLUMN_NAME_CHILDHEALTH = "childhealth ";
-        public static final String COLUMN_NAME_CHILDMORBIDITY = "childmorbidity ";
-        public static final String COLUMN_NAME_CHILDVACCINATION = "childvaccination ";
-        public static final String COLUMN_NAME_DELIVERY = "delivery ";
-        public static final String COLUMN_NAME_IMMUNIZATION = "immunization ";
-        public static final String COLUMN_NAME_INDEXCHILD = "indexchild ";
-        public static final String COLUMN_NAME_KAP = "kap ";
-        public static final String COLUMN_NAME_LABINFO = "labinfo ";
-        public static final String COLUMN_NAME_IYCF = "iycf ";
-        public static final String COLUMN_NAME_MATERNALMENTALHEALTH = "maternalmentalhealth ";
-        public static final String COLUMN_NAME_NEONATALHEALTH = "neonatalhealth ";
-        public static final String COLUMN_NAME_POSTPARTUMCARE = "postpartumcare ";
-        public static final String COLUMN_NAME_SOCIOECONOMIC = "socioeconomic ";
-        public static final String COLUMN_NAME_GPSLAT = "gpslat ";
-        public static final String COLUMN_NAME_GPSLNG = "gpslng ";
-        public static final String COLUMN_NAME_GPSTIME = "gpstime ";
-        public static final String COLUMN_NAME_GPSACC = "gpsacc ";
-        public static final String COLUMN_NAME_DEVICEID = "deviceid ";
-        public static final String COLUMN_NAME_SYNCED = "synced ";
-        public static final String COLUMN_NAME_SYNCED_DATE = "synced_date ";
+        public static final String COLUMN_NAME_PROJECTNAME = "projectname";
+        public static final String COLUMN_NAME_SURVEYTYPE = "surveytype";
+        public static final String COLUMN_NAME_USERNAME = "username";
+        public static final String ID = "id";
+        public static final String COLUMN_NAME_UID = "uid";
+        public static final String COLUMN_NAME_FORMDATE = "formdate";
+        public static final String COLUMN_NAME_MAJORAREA = "majorarea";
+        public static final String COLUMN_NAME_HFACILITY = "hfacility";
+        public static final String COLUMN_NAME_MINORAREA = "minorarea";
+        public static final String COLUMN_NAME_PRIMARYUNIT = "primaryunit";
+        public static final String COLUMN_NAME_SECONDARYUNIT = "secondaryunit";
+        public static final String COLUMN_NAME_HOUSEHOLD = "household";
+        public static final String COLUMN_NAME_CHILDID = "childid";
+        public static final String COLUMN_NAME_CHILDNAME = "childname";
+        public static final String COLUMN_NAME_ISTATUS = "istatus";
+        public static final String COLUMN_NAME_DEVICETAG = "tagid";
+        public static final String COLUMN_NAME_ANTENATALCARE = "antenatalcare";
+        public static final String COLUMN_NAME_BASICINFO = "basicinfo";
+        public static final String COLUMN_NAME_BIRTHSDEATHS = "birthsdeaths";
+        public static final String COLUMN_NAME_CHILDHEALTH = "childhealth";
+        public static final String COLUMN_NAME_CHILDMORBIDITY = "childmorbidity";
+        public static final String COLUMN_NAME_CHILDVACCINATION = "childvaccination";
+        public static final String COLUMN_NAME_DELIVERY = "delivery";
+        public static final String COLUMN_NAME_IMMUNIZATION = "immunization";
+        public static final String COLUMN_NAME_INDEXCHILD = "indexchild";
+        public static final String COLUMN_NAME_KAP = "kap";
+        public static final String COLUMN_NAME_LABINFO = "labinfo";
+        public static final String COLUMN_NAME_IYCF = "iycf";
+        public static final String COLUMN_NAME_MATERNALMENTALHEALTH = "maternalmentalhealth";
+        public static final String COLUMN_NAME_NEONATALHEALTH = "neonatalhealth";
+        public static final String COLUMN_NAME_POSTPARTUMCARE = "postpartumcare";
+        public static final String COLUMN_NAME_SOCIOECONOMIC = "socioeconomic";
+        public static final String COLUMN_NAME_GPSLAT = "gpslat";
+        public static final String COLUMN_NAME_GPSLNG = "gpslng";
+        public static final String COLUMN_NAME_GPSTIME = "gpstime";
+        public static final String COLUMN_NAME_GPSACC = "gpsacc";
+        public static final String COLUMN_NAME_DEVICEID = "deviceid";
+        public static final String COLUMN_NAME_APPVERSION = "appver";
+        public static final String COLUMN_NAME_SYNCED = "synced";
+        public static final String COLUMN_NAME_SYNCED_DATE = "synced_date";
 
 
     }
