@@ -129,27 +129,26 @@ public class DeliveryActivity extends Activity {
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
-
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (ValidateForm()) {
             try {
-                if (SaveDraft()) {
-
-                    if (UpdateDB()) {
-                        Toast.makeText(this, "Saving Form", Toast.LENGTH_SHORT).show();
-
-                        finish();
-
-                        startActivity(new Intent(this, DeliveryActivity.class));
-                    } else {
-                        Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
+                finish();
+
+                Intent secNext = new Intent(this, SocioEconomicActivity.class);
+                secNext.putExtra("check", false);
+                startActivity(secNext);
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
