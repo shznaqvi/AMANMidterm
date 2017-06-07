@@ -345,7 +345,7 @@ public class PostpartumCareActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, NeonatalHealthActivity.class);
+                Intent secNext = new Intent(this, ChildHealthActivity.class);
                 secNext.putExtra("check", false);
                 startActivity(secNext);
             } else {
@@ -387,7 +387,7 @@ public class PostpartumCareActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
         */
-        return false;
+        return true;
         //}
 
     }

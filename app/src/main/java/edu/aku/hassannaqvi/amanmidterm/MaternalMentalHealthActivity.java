@@ -1,8 +1,8 @@
 package edu.aku.hassannaqvi.amanmidterm;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 public class MaternalMentalHealthActivity extends Activity {
@@ -238,15 +239,60 @@ public class MaternalMentalHealthActivity extends Activity {
         ButterKnife.bind(this);
     }
 
-    public void submitSecMS(View view) {
+    @OnClick(R.id.btnEnd)
+    void onBtnEndClick() {
+        Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
+       /* if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {*/
+        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("check", false);
+        startActivity(endSec);
+           /* } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        } */
+
+    }
+
+
+    @OnClick(R.id.btnNext)
+    void onBtnContinueClick() {
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                Intent secNext = new Intent(this, BirthsDeathsActivity.class);
+                secNext.putExtra("check", false);
+                startActivity(secNext);
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
         }
     }
+
+    private boolean UpdateDB() {
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        //db.updateSD();
+
+        return true;
+    }
+
+
 
 
     private boolean SaveDraft() throws JSONException {

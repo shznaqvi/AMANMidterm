@@ -1003,11 +1003,20 @@
             android:text="@string/iy01888" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_Continue"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:onClick="submitSecD"
-            android:text="@string/next_section" />
+            android:text="@string/next_section"
+            android:textColor="#00ef00" />
+
+        <Button
+            android:id="@+id/btnEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="@string/endForm"
+            android:textColor="#000" />
 
     </LinearLayout>
 </ScrollView>

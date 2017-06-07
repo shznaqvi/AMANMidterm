@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.amanmidterm;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -17,6 +18,7 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ChildHealthActivity extends Activity {
 
@@ -488,21 +490,51 @@ public class ChildHealthActivity extends Activity {
 
     }
 
-    public void submitSecD(View view) {
+    @OnClick(R.id.btnEnd)
+    void onBtnEndClick() {
+        Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
+       /* if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {*/
+        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("check", false);
+        startActivity(endSec);
+           /* } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        } */
+
+    }
+
+
+    @OnClick(R.id.btn_Continue)
+    void onBtnContinueClick() {
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                Intent secNext = new Intent(this, ChildVaccinationActivity.class);
+                secNext.putExtra("check", false);
+                startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
 
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);

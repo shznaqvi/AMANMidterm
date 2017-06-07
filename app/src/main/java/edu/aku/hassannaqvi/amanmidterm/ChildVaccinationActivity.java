@@ -22,6 +22,7 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ChildVaccinationActivity extends Activity {
     private static final String TAG = ChildVaccinationActivity.class.getSimpleName();
@@ -453,24 +454,56 @@ public class ChildVaccinationActivity extends Activity {
 
     }
 
-    public void submitSecC(View v) throws JSONException {
-        Toast.makeText(this, "Processing Section C", Toast.LENGTH_SHORT).show();
+    @OnClick(R.id.btnEnd)
+    void onBtnEndClick() {
+        Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
+       /* if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {*/
+        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("check", false);
+        startActivity(endSec);
+           /* } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        } */
+
+    }
+
+
+    @OnClick(R.id.btn_Continue)
+    void onBtnContinueClick() {
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
-            SaveDraft();
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Section C", Toast.LENGTH_SHORT).show();
-                Intent secC = new Intent(this, ChildHealthActivity.class);
-                startActivity(secC);
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                Intent secNext = new Intent(this, ChildMorbidityActivity.class);
+                secNext.putExtra("check", false);
+                startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
+
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateChildVacc();
+        /*int updcount = db.updateChildVacc();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -478,7 +511,9 @@ public class ChildVaccinationActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
     }
 
     private void SaveDraft() throws JSONException {

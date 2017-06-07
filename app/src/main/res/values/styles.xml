@@ -45,7 +45,7 @@
 
     <style name="lblTextView" parent="android:TextAppearance.Widget.TextView">
         <item name="android:background">@color/colorPrimaryDark</item>
-        <item name="android:textColor">#d6d6d6</item>
+        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:padding">@dimen/activity_horizontal_margin</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -86,6 +86,7 @@
         <item name="android:layout_marginTop">@dimen/activity_horizontal_margin</item>
         <item name="android:typeface">serif</item>
         <item name="android:textSize">20sp</item>
+
 
     </style>
 

@@ -170,8 +170,8 @@
                 android:id="@+id/bib03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="numbers"
                 android:hint="@string/age"
+                android:inputType="number"
                 android:maxLength="2" />
 
             <TextView
@@ -180,11 +180,25 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/bib04" />
 
+            <EditText
+                android:id="@+id/bib04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bib04"
+                android:inputType="number"
+                android:maxLength="2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/bib05" />
+
+            <EditText
+                android:id="@+id/bib05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bib05" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -204,38 +218,174 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib07" />
+                android:text="@string/sex" />
+
+            <RadioGroup
+                android:id="@+id/bib07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/bib0701"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/bib0702"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/female" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/age" />
 
             <EditText
-                android:id="@+id/bib07"
+                android:id="@+id/bib08"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/age"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/bib09" />
+
+            <EditText
+                android:id="@+id/bib09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bib09"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/bib10" />
+
+            <EditText
+                android:id="@+id/bib10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bib10" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/bib11" />
+
+            <EditText
+                android:id="@+id/bib11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-                android:hint="@string/bib07"
+                android:hint="@string/bib11"
                 android:inputType="textPersonName" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib08" />
+                android:text="@string/sex" />
+
+            <RadioGroup
+                android:id="@+id/bib12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/bib1201"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/bib1202"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/female" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/age" />
+
+            <EditText
+                android:id="@+id/bib13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/age"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/bib14" />
+
+            <EditText
+                android:id="@+id/bib14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bib14"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/bib15" />
+
+            <EditText
+                android:id="@+id/bib15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bib15" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/bib16" />
 
 
             <EditText
-                android:id="@+id/bib0801"
+                android:id="@+id/bib1601"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="numbers"
+                android:layout_marginBottom="1dp"
                 android:hint="@string/year"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
             <EditText
-                android:id="@+id/bib0802"
+                android:id="@+id/bib1602"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="numbers"
                 android:hint="@string/months"
+                android:inputType="number"
                 android:maxLength="2" />
 
             <TextView
@@ -249,8 +399,8 @@
                 android:id="@+id/bic01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="numbers"
                 android:hint="@string/bic01"
+                android:inputType="number"
                 android:maxLength="2" />
 
             <TextView
@@ -264,8 +414,8 @@
                 android:id="@+id/bic02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="numbers"
                 android:hint="@string/male"
+                android:inputType="number"
                 android:maxLength="2" />
 
             <TextView
@@ -279,8 +429,8 @@
                 android:id="@+id/bic03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="numbers"
                 android:hint="@string/female"
+                android:inputType="number"
                 android:maxLength="2" />
 
             <TextView
@@ -294,8 +444,8 @@
                 android:id="@+id/bic04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="numbers"
                 android:hint="@string/bic04"
+                android:inputType="number"
                 android:maxLength="2" />
 
             <TextView
@@ -309,8 +459,8 @@
                 android:id="@+id/bic05"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="numbers"
                 android:hint="@string/bic05"
+                android:inputType="number"
                 android:maxLength="2" />
         </LinearLayout>
 
@@ -319,7 +469,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:onClick="submitSecA"
             android:text="@string/next_section"
             android:textColor="#00ef00" />
 

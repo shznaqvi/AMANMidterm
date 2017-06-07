@@ -9,6 +9,7 @@ import android.support.annotation.IdRes;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -21,6 +22,7 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import static android.content.ContentValues.TAG;
 
@@ -42,26 +44,54 @@ public class AmanInfoActivity extends Activity {
     RadioButton bi0101;
     @BindView(R.id.bi0102)
     RadioButton bi0102;
+    @BindView(R.id.fldGrpbi01)
+    LinearLayout fldGrpbi01;
     @BindView(R.id.bib01)
     EditText bib01;
     @BindView(R.id.bib02)
     RadioGroup bib02;
-    @BindView(R.id.fldGrpbi01)
-    LinearLayout fldGrpbi01;
     @BindView(R.id.bib0201)
     RadioButton bib0201;
     @BindView(R.id.bib0202)
     RadioButton bib0202;
     @BindView(R.id.bib03)
     EditText bib03;
+    @BindView(R.id.bib04)
+    EditText bib04;
+    @BindView(R.id.bib05)
+    EditText bib05;
     @BindView(R.id.bib06)
     EditText bib06;
     @BindView(R.id.bib07)
-    EditText bib07;
-    @BindView(R.id.bib0801)
-    EditText bib0801;
-    @BindView(R.id.bib0802)
-    EditText bib0802;
+    RadioGroup bib07;
+    @BindView(R.id.bib0701)
+    RadioButton bib0701;
+    @BindView(R.id.bib0702)
+    RadioButton bib0702;
+    @BindView(R.id.bib08)
+    EditText bib08;
+    @BindView(R.id.bib09)
+    EditText bib09;
+    @BindView(R.id.bib10)
+    EditText bib10;
+    @BindView(R.id.bib11)
+    EditText bib11;
+    @BindView(R.id.bib12)
+    RadioGroup bib12;
+    @BindView(R.id.bib1201)
+    RadioButton bib1201;
+    @BindView(R.id.bib1202)
+    RadioButton bib1202;
+    @BindView(R.id.bib13)
+    EditText bib13;
+    @BindView(R.id.bib14)
+    EditText bib14;
+    @BindView(R.id.bib15)
+    EditText bib15;
+    @BindView(R.id.bib1601)
+    EditText bib1601;
+    @BindView(R.id.bib1602)
+    EditText bib1602;
     @BindView(R.id.bic01)
     EditText bic01;
     @BindView(R.id.bic02)
@@ -72,6 +102,8 @@ public class AmanInfoActivity extends Activity {
     EditText bic04;
     @BindView(R.id.bic05)
     EditText bic05;
+    @BindView(R.id.btnNext)
+    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,16 +119,27 @@ public class AmanInfoActivity extends Activity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (bi0101.isChecked()) {
                     fldGrpbi01.setVisibility(View.VISIBLE);
-
+                    btnNext.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpbi01.setVisibility(View.GONE);
+                    btnNext.setVisibility(View.GONE);
                     bib01.setText(null);
                     bib02.clearCheck();
                     bib03.setText(null);
+                    bib04.setText(null);
+                    bib05.setText(null);
                     bib06.setText(null);
-                    bib07.setText(null);
-                    bib0801.setText(null);
-                    bib0802.setText(null);
+                    bib07.clearCheck();
+                    bib08.setText(null);
+                    bib09.setText(null);
+                    bib10.setText(null);
+                    bib11.setText(null);
+                    bib12.clearCheck();
+                    bib13.setText(null);
+                    bib14.setText(null);
+                    bib15.setText(null);
+                    bib1601.setText(null);
+                    bib1602.setText(null);
                     bic01.setText(null);
                     bic02.setText(null);
                     bic03.setText(null);
@@ -108,15 +151,24 @@ public class AmanInfoActivity extends Activity {
 
     }
 
-    public void submitSecA(View v) throws JSONException {
-        Toast.makeText(this, "Processing Section A", Toast.LENGTH_SHORT).show();
+
+    @OnClick(R.id.btnNext)
+    void onBtnContinueClick() {
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
-            //     SaveDraft();
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Socio-Economic Section", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, SocioEconomicActivity.class);
-                //    AppMain.chTotal = Integer.valueOf(mna13.getText().toString()) - 1; // exclude index child
-                startActivity(intent);
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                Intent secNext = new Intent(this, SocioEconomicActivity.class);
+                secNext.putExtra("check", false);
+                startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -151,10 +203,20 @@ public class AmanInfoActivity extends Activity {
         sa.put("bib01", bib01.getText().toString());
         sa.put("bib02", bib0201.isChecked() ? "1" : bib0202.isChecked() ? "2" : "0");
         sa.put("bib03", bib03.getText().toString());
+        sa.put("bib04", bib04.getText().toString());
+        sa.put("bib05", bib05.getText().toString());
         sa.put("bib06", bib06.getText().toString());
-        sa.put("bib07", bib07.getText().toString());
-        sa.put("bib0801", bib0801.getText().toString());
-        sa.put("bib0802", bib0802.getText().toString());
+        sa.put("bib07", bib0701.isChecked() ? "1" : bib0702.isChecked() ? "2" : "0");
+        sa.put("bib08", bib08.getText().toString());
+        sa.put("bib09", bib09.getText().toString());
+        sa.put("bib10", bib10.getText().toString());
+        sa.put("bib11", bib11.getText().toString());
+        sa.put("bib12", bib1201.isChecked() ? "1" : bib1202.isChecked() ? "2" : "0");
+        sa.put("bib13", bib13.getText().toString());
+        sa.put("bib14", bib14.getText().toString());
+        sa.put("bib15", bib15.getText().toString());
+        sa.put("bib1601", bib1601.getText().toString());
+        sa.put("bib1602", bib1602.getText().toString());
         sa.put("bic01", bic01.getText().toString());
         sa.put("bic02", bic02.getText().toString());
         sa.put("bic03", bic03.getText().toString());
@@ -279,14 +341,32 @@ public class AmanInfoActivity extends Activity {
                 bib03.setError(null);
             }
 
-            if (Integer.parseInt(bib03.getText().toString()) == 0) {
+            if (Integer.valueOf(bib03.getText().toString()) < 15 || Integer.valueOf(bib03.getText().toString()) > 99) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.age), Toast.LENGTH_SHORT).show();
-                bib03.setError("Invalid: Data cannot be Zero");
-                Log.i(TAG, "bib03: Invalid data is 0");
+                bib03.setError("Invalid: Range is 15 - 99 years");
+                Log.i(TAG, "bib03: Range is 15 - 99 years");
                 return false;
             } else {
                 bib03.setError(null);
             }
+            if (bib04.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib04), Toast.LENGTH_LONG).show();
+                bib04.setError("This data is Required!");
+                Log.i(TAG, "bib04: This data is Required!");
+                return false;
+            } else {
+                bib04.setError(null);
+            }
+
+            if (bib05.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib05), Toast.LENGTH_LONG).show();
+                bib05.setError("This data is Required!");
+                Log.i(TAG, "bib05: This data is Required!");
+                return false;
+            } else {
+                bib05.setError(null);
+            }
+
 
             if (bib06.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib06), Toast.LENGTH_LONG).show();
@@ -297,31 +377,119 @@ public class AmanInfoActivity extends Activity {
                 bib06.setError(null);
             }
 
-            if (bib07.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib07), Toast.LENGTH_LONG).show();
-                bib07.setError("This data is Required!");
+            if (bib07.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.sex), Toast.LENGTH_LONG).show();
+                bib0702.setError("This data is Required!");
                 Log.i(TAG, "bib07: This data is Required!");
                 return false;
             } else {
-                bib07.setError(null);
+                bib0702.setError(null);
             }
 
-            if (bib0801.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib08) + getString(R.string.year), Toast.LENGTH_LONG).show();
-                bib0801.setError("This data is Required!");
+            if (bib08.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.age), Toast.LENGTH_LONG).show();
+                bib08.setError("This data is Required!");
                 Log.i(TAG, "bib08: This data is Required!");
                 return false;
             } else {
-                bib0801.setError(null);
+                bib08.setError(null);
             }
 
-            if (bib0802.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib08) + getString(R.string.months), Toast.LENGTH_LONG).show();
-                bib0802.setError("This data is Required!");
-                Log.i(TAG, "bib08: This data is Required!");
+            if (Integer.valueOf(bib08.getText().toString()) < 15 || Integer.valueOf(bib08.getText().toString()) > 99) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.age), Toast.LENGTH_SHORT).show();
+                bib08.setError("Invalid: Range is 15 - 99 years");
+                Log.i(TAG, "bib08: Range is 15 - 99 years");
                 return false;
             } else {
-                bib0802.setError(null);
+                bib08.setError(null);
+            }
+            if (bib09.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib09), Toast.LENGTH_LONG).show();
+                bib09.setError("This data is Required!");
+                Log.i(TAG, "bib09: This data is Required!");
+                return false;
+            } else {
+                bib09.setError(null);
+            }
+
+            if (bib10.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib10), Toast.LENGTH_LONG).show();
+                bib10.setError("This data is Required!");
+                Log.i(TAG, "bib10: This data is Required!");
+                return false;
+            } else {
+                bib10.setError(null);
+            }
+
+            if (bib11.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib11), Toast.LENGTH_LONG).show();
+                bib11.setError("This data is Required!");
+                Log.i(TAG, "bib11: This data is Required!");
+                return false;
+            } else {
+                bib11.setError(null);
+            }
+
+            if (bib12.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.sex), Toast.LENGTH_LONG).show();
+                bib1202.setError("This data is Required!");
+                Log.i(TAG, "bib12: This data is Required!");
+                return false;
+            } else {
+                bib1202.setError(null);
+            }
+
+            if (bib13.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.age), Toast.LENGTH_LONG).show();
+                bib13.setError("This data is Required!");
+                Log.i(TAG, "bib13: This data is Required!");
+                return false;
+            } else {
+                bib13.setError(null);
+            }
+
+            if (Integer.valueOf(bib13.getText().toString()) < 15 || Integer.valueOf(bib13.getText().toString()) > 99) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.age), Toast.LENGTH_SHORT).show();
+                bib13.setError("Invalid: Range is 15 - 99 years");
+                Log.i(TAG, "bib13: Range is 15 - 99 years");
+                return false;
+            } else {
+                bib13.setError(null);
+            }
+            if (bib14.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib14), Toast.LENGTH_LONG).show();
+                bib14.setError("This data is Required!");
+                Log.i(TAG, "bib14: This data is Required!");
+                return false;
+            } else {
+                bib14.setError(null);
+            }
+
+            if (bib15.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib16), Toast.LENGTH_LONG).show();
+                bib15.setError("This data is Required!");
+                Log.i(TAG, "bib15: This data is Required!");
+                return false;
+            } else {
+                bib15.setError(null);
+            }
+
+            if (bib1601.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib16) + " - " + getString(R.string.year), Toast.LENGTH_LONG).show();
+                bib1601.setError("This data is Required!");
+                Log.i(TAG, "bib1601: This data is Required!");
+                return false;
+            } else {
+                bib1601.setError(null);
+            }
+
+            if (bib1602.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib12) + " - " + getString(R.string.year), Toast.LENGTH_LONG).show();
+                bib1602.setError("This data is Required!");
+                Log.i(TAG, "bib1602: This data is Required!");
+                return false;
+            } else {
+                bib1602.setError(null);
             }
 
             if (bic01.getText().toString().isEmpty()) {

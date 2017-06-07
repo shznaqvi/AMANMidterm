@@ -575,7 +575,10 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, EndingActivity.class));
+                Intent endSec = new Intent(this, EndingActivity.class);
+                endSec.putExtra("complete", true);
+                startActivity(endSec);
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -1048,7 +1051,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
          */
-        return false;
+        return true;
     }
     // }
 

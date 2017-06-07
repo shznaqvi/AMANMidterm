@@ -396,7 +396,7 @@ public class AntenatalCareActivity extends Activity {
     }
 
 
-    @OnClick(R.id.btn_End)
+    @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
        /* if (formValidation()) {
@@ -445,7 +445,7 @@ public class AntenatalCareActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateAntenatalCare();
+        /*int updcount = db.updateAntenatalCare();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -453,7 +453,9 @@ public class AntenatalCareActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
 
     }
 
@@ -770,73 +772,72 @@ public class AntenatalCareActivity extends Activity {
                 anc07a.setError(null);
             }
 
-        }
 
+            if (var_anc07 == "88") {
 
-        if (var_anc07 == "88") {
+                if (anc07x.getText().toString().isEmpty() || anc07x.getText().toString() == null) {
+                    anc07x.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    anc07x.requestFocus();
+                    return false;
+                } else {
+                    anc07x.setError(null);
+                }
 
-            if (anc07x.getText().toString().isEmpty() || anc07x.getText().toString() == null) {
-                anc07x.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                anc07x.requestFocus();
-                return false;
-            } else {
-                anc07x.setError(null);
             }
 
-        }
 
-
-        if (rdo_anc08 == -1) {
-            anc08a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc08), Toast.LENGTH_LONG).show();
-            anc08a.requestFocus();
-            return false;
-        } else {
-            anc08a.setError(null);
-        }
-
-
-        if (var_anc08 == "2") {
-
-            if (anc09.getText().toString().isEmpty() || anc09.getText().toString() == null) {
-                anc09.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc09), Toast.LENGTH_LONG).show();
-                anc09.requestFocus();
+            if (rdo_anc08 == -1) {
+                anc08a.setError(getString(R.string.rdoerr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc08), Toast.LENGTH_LONG).show();
+                anc08a.requestFocus();
                 return false;
             } else {
-                anc09.setError(null);
+                anc08a.setError(null);
             }
 
-        } else if (var_anc08 == "1") {
-            if (!anc011a.isChecked()
-                    && !anc011b.isChecked()
-                    && !anc011c.isChecked()
-                    && !anc011d.isChecked()
-                    && !anc011e.isChecked()
-                    && !anc011f.isChecked()
-                    && !anc01188.isChecked()) {
-                anc011a.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc011), Toast.LENGTH_LONG).show();
-                anc011a.requestFocus();
-                return false;
-            } else {
-                anc011a.setError(null);
+
+            if (var_anc08 == "2") {
+
+                if (anc09.getText().toString().isEmpty() || anc09.getText().toString() == null) {
+                    anc09.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc09), Toast.LENGTH_LONG).show();
+                    anc09.requestFocus();
+                    return false;
+                } else {
+                    anc09.setError(null);
+                }
+
+            } else if (var_anc08 == "1") {
+                if (!anc011a.isChecked()
+                        && !anc011b.isChecked()
+                        && !anc011c.isChecked()
+                        && !anc011d.isChecked()
+                        && !anc011e.isChecked()
+                        && !anc011f.isChecked()
+                        && !anc01188.isChecked()) {
+                    anc011a.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc011), Toast.LENGTH_LONG).show();
+                    anc011a.requestFocus();
+                    return false;
+                } else {
+                    anc011a.setError(null);
+                }
             }
-        }
 
 
-        if (anc01188.isChecked()) {
+            if (anc01188.isChecked()) {
 
-            if (anc011x.getText().toString().isEmpty() || anc011x.getText().toString() == null) {
-                anc011x.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                anc011x.requestFocus();
-                return false;
-            } else {
-                anc011x.setError(null);
+                if (anc011x.getText().toString().isEmpty() || anc011x.getText().toString() == null) {
+                    anc011x.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    anc011x.requestFocus();
+                    return false;
+                } else {
+                    anc011x.setError(null);
+                }
+
             }
-
         }
 
 

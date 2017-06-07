@@ -153,7 +153,7 @@ public class DeliveryActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateDelivery();
+        /*int updcount = db.updateDelivery();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -162,7 +162,9 @@ public class DeliveryActivity extends Activity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
 
         return false;
-        }
+        }*/
+
+        return true;
 
     }
 
@@ -230,7 +232,8 @@ public class DeliveryActivity extends Activity {
             d0288x.setError(null);
         }
 
-        if (!(d03a.isChecked() && d03b.isChecked() && d03c.isChecked() && d03d.isChecked() && d03e.isChecked() && d0388.isChecked())) {
+        if (!(d03a.isChecked() || d03b.isChecked() || d03c.isChecked() || d03d.isChecked()
+                || d03e.isChecked() || d0388.isChecked())) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.d03), Toast.LENGTH_LONG).show();
             d0388.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "d0388: This data is Required!");

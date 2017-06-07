@@ -178,9 +178,9 @@ public class ChildMorbidityActivity extends Activity {
 
                 finish();
 
-                //Intent secNext = new Intent(this, Section5cActivity.class);
-                //secNext.putExtra("check", false);
-                //startActivity(secNext);
+                Intent secNext = new Intent(this, MaternalMentalHealthActivity.class);
+                secNext.putExtra("check", false);
+                startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -220,7 +220,7 @@ public class ChildMorbidityActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
         */
-        return false;
+        return true;
         //}
 
     }
