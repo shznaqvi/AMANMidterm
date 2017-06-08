@@ -4,6 +4,8 @@
     android:id="@+id/activity_section_a"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -15,21 +17,28 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
         <TextView
+            android:id="@+id/app_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:text="@string/section_A"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:textSize="30sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent" />
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/biuc" />
+            android:text="@string/biuc"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
         <EditText
@@ -44,7 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/biPara" />
+            android:text="@string/biPara"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
         <EditText
@@ -59,7 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/biACHW" />
+            android:text="@string/biACHW"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
         <EditText
@@ -74,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/biHH" />
+            android:text="@string/biHH"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
             android:id="@+id/biHH"
@@ -88,7 +100,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/bi01" />
+            android:text="@string/bi01"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <RadioGroup
             android:id="@+id/bi01"
@@ -106,7 +119,6 @@
                 android:id="@+id/bi0102"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
                 android:text="@string/bi0102" />
 
         </RadioGroup>
@@ -123,7 +135,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib01" />
+                android:text="@string/bib01"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib01"
@@ -137,7 +150,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/sex" />
+                android:text="@string/sex"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <RadioGroup
                 android:id="@+id/bib02"
@@ -155,7 +169,6 @@
                     android:id="@+id/bib0202"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
                     android:text="@string/female" />
 
             </RadioGroup>
@@ -164,7 +177,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/age" />
+                android:text="@string/age"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib03"
@@ -178,7 +192,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib04" />
+                android:text="@string/bib04"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib04"
@@ -192,7 +207,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib05" />
+                android:text="@string/bib05"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib05"
@@ -204,7 +220,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib06" />
+                android:text="@string/bib06"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib06"
@@ -218,7 +235,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/sex" />
+                android:text="@string/sex"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <RadioGroup
                 android:id="@+id/bib07"
@@ -245,7 +263,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/age" />
+                android:text="@string/age"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib08"
@@ -259,7 +278,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib09" />
+                android:text="@string/bib09"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib09"
@@ -273,7 +293,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib10" />
+                android:text="@string/bib10"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib10"
@@ -285,7 +306,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib11" />
+                android:text="@string/bib11"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib11"
@@ -299,7 +321,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/sex" />
+                android:text="@string/sex"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <RadioGroup
                 android:id="@+id/bib12"
@@ -326,7 +349,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/age" />
+                android:text="@string/age"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib13"
@@ -340,7 +364,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib14" />
+                android:text="@string/bib14"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib14"
@@ -354,7 +379,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib15" />
+                android:text="@string/bib15"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/bib15"
@@ -367,7 +393,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bib16" />
+                android:text="@string/bib16"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
             <EditText
@@ -392,13 +419,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bic01" />
+                android:text="@string/bic01"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
             <EditText
                 android:id="@+id/bic01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:hint="@string/bic01"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -407,7 +436,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/male" />
+                android:text="@string/male"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
             <EditText
@@ -422,7 +452,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/female" />
+                android:text="@string/female"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
             <EditText
@@ -437,7 +468,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bic04" />
+                android:text="@string/bic04"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
             <EditText
@@ -452,7 +484,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/bic05" />
+                android:text="@string/bic05"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
             <EditText

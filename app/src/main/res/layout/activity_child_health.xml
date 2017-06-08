@@ -4,6 +4,8 @@
     android:id="@+id/activity_section_d"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -16,23 +18,24 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/app_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:text="@string/section_E"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:textSize="30sp" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy01"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy01" />
 
         <EditText
             android:id="@+id/iy01"
@@ -48,9 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy02"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy02" />
 
         <RadioGroup
             android:id="@+id/iy02"
@@ -76,18 +77,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy03"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy03" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy03m"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy03m" />
 
         <EditText
             android:id="@+id/iy03m"
@@ -104,9 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy03d"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy03d" />
 
         <EditText
             android:id="@+id/iy03d"
@@ -123,9 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy04"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy04" />
 
         <RadioGroup
             android:id="@+id/iy04"
@@ -165,9 +158,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy05"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/iy05" />
 
             <CheckBox
                 android:id="@+id/iy05a"
@@ -248,9 +239,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/other"
-                    android:textStyle="bold"
-                    tools:typeface="serif" />
+                    android:text="@string/other" />
 
                 <EditText
                     android:id="@+id/iy05x"
@@ -268,9 +257,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy06"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/iy06" />
 
             <EditText
                 android:id="@+id/iy06d"
@@ -287,9 +274,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy07"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/iy07" />
 
             <RadioGroup
                 android:id="@+id/iy07"
@@ -329,9 +314,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/iy07a"
-                    android:textStyle="bold"
-                    tools:typeface="serif" />
+                    android:text="@string/iy07a" />
 
                 <EditText
                     android:id="@+id/iy07aa"
@@ -347,9 +330,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/iy07b"
-                    android:textStyle="bold"
-                    tools:typeface="serif" />
+                    android:text="@string/iy07b" />
 
                 <EditText
                     android:id="@+id/iy07bb"
@@ -365,9 +346,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/iy07c"
-                    android:textStyle="bold"
-                    tools:typeface="serif" />
+                    android:text="@string/iy07c" />
 
                 <EditText
                     android:id="@+id/iy07cc"
@@ -383,9 +362,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/iy08"
-                    android:textStyle="bold"
-                    tools:typeface="serif" />
+                    android:text="@string/iy08" />
 
                 <RadioGroup
                     android:id="@+id/iy08"
@@ -445,9 +422,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/other"
-                    android:textStyle="bold"
-                    tools:typeface="serif" />
+                    android:text="@string/other" />
 
                 <EditText
                     android:id="@+id/iy08x"
@@ -467,9 +442,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy09"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy09" />
 
         <RadioGroup
             android:id="@+id/iy09"
@@ -503,9 +476,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy010"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/iy010" />
 
             <CheckBox
                 android:id="@+id/iy010a"
@@ -554,18 +525,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy011"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/iy011" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy011d"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/iy011d" />
 
             <EditText
                 android:id="@+id/iy011d"
@@ -582,9 +549,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy011w"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/iy011w" />
 
             <EditText
                 android:id="@+id/iy011w"
@@ -611,9 +576,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/other"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/other" />
 
             <EditText
                 android:id="@+id/iy010x"
@@ -632,18 +595,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy012"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy012" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy012h"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy012h" />
 
         <EditText
             android:id="@+id/iy012h"
@@ -660,9 +619,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy012d"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy012d" />
 
         <EditText
             android:id="@+id/iy012d"
@@ -687,9 +644,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy013"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy013" />
 
         <RadioGroup
             android:id="@+id/iy013"
@@ -721,9 +676,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy014"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy014" />
 
         <RadioGroup
             android:id="@+id/iy014"
@@ -763,9 +716,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy015"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/iy015" />
 
             <CheckBox
                 android:id="@+id/iy015a"
@@ -842,9 +793,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/other"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:text="@string/other" />
 
             <EditText
                 android:id="@+id/iy015x"
@@ -862,9 +811,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy016"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy016" />
 
         <TextView
             android:layout_width="match_parent"
@@ -898,18 +845,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy017"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy017" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy017d"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy017d" />
 
         <EditText
             android:id="@+id/iy017d"
@@ -926,9 +869,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy017m"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy017m" />
 
         <EditText
             android:id="@+id/iy017m"
@@ -953,18 +894,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy018"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy018" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy018d"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy018d" />
 
         <EditText
             android:id="@+id/iy018d"
@@ -980,9 +917,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy018m"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:text="@string/iy018m" />
 
         <EditText
             android:id="@+id/iy018m"

@@ -115,17 +115,17 @@ public class MainActivity extends Activity {
     }
 
     public void openForm(View v) {
-        Intent oF = new Intent(this, AmanInfoActivity.class);
+        Intent oF = new Intent(this, AntenatalCareActivity.class);
         startActivity(oF);
     }
 
     public void openA(View v) {
-        Intent iA = new Intent(this, BasicInfoActivity.class);
+        Intent iA = new Intent(this, AmanInfoActivity.class);
         startActivity(iA);
     }
 
     public void openB(View v) {
-        Intent iB = new Intent(this, IndexChildActivity.class);
+        Intent iB = new Intent(this, SocioEconomicActivity.class);
         startActivity(iB);
     }
 

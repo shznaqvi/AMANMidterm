@@ -334,7 +334,7 @@ public class PostpartumCareActivity extends Activity {
     void onBtnNextClick() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {

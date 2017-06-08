@@ -27,7 +27,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorAccent" />
 
         <TextView
             android:layout_width="match_parent"
@@ -45,6 +45,7 @@
                 android:id="@+id/anc01a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
@@ -111,22 +112,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/anc03"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <CheckBox
                 android:id="@+id/anc03a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc03a" />
 
             <CheckBox
                 android:id="@+id/anc03b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc03b" />
 
             <CheckBox
@@ -139,24 +140,28 @@
                 android:id="@+id/anc03d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc03d" />
 
             <CheckBox
                 android:id="@+id/anc03e"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc03e" />
 
             <CheckBox
                 android:id="@+id/anc03f"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc03f" />
 
             <CheckBox
                 android:id="@+id/anc0388"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/other" />
 
         </LinearLayout>
@@ -169,14 +174,6 @@
             android:visibility="gone"
             tools:visibility="visible">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/other"
-                android:textStyle="bold"
-                tools:typeface="serif" />
-
             <EditText
                 android:id="@+id/anc03x"
                 android:layout_width="match_parent"
@@ -184,6 +181,7 @@
                 android:layout_weight="1"
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
+                android:hint="@string/other"
                 android:inputType="text" />
 
         </LinearLayout>
@@ -204,6 +202,7 @@
                 android:id="@+id/anc04a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
@@ -233,6 +232,7 @@
                 android:id="@+id/anc05d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:digits="0123456789"
                 android:ems="10"
@@ -251,6 +251,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/anc06"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -263,18 +264,21 @@
                 android:id="@+id/anc06a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/anc06b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/anc0699"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/dnk" />
 
         </RadioGroup>
@@ -290,6 +294,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="@string/anc07"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -302,36 +307,42 @@
                     android:id="@+id/anc07a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc07a" />
 
                 <RadioButton
                     android:id="@+id/anc07b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc07b" />
 
                 <RadioButton
                     android:id="@+id/anc07c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc07c" />
 
                 <RadioButton
                     android:id="@+id/anc07d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc07d" />
 
                 <RadioButton
                     android:id="@+id/anc0788"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/other" />
 
                 <RadioButton
                     android:id="@+id/anc0799"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/dnk" />
 
             </RadioGroup>
@@ -344,14 +355,6 @@
             android:visibility="gone"
             tools:visibility="visible">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/other"
-                android:textStyle="bold"
-                tools:typeface="serif" />
 
             <EditText
                 android:id="@+id/anc07x"
@@ -360,6 +363,7 @@
                 android:layout_weight="1"
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
+                android:hint="@string/other"
                 android:inputType="text" />
 
         </LinearLayout>
@@ -367,6 +371,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/anc08"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -379,12 +384,14 @@
                 android:id="@+id/anc08a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/anc08b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/no" />
 
         </RadioGroup>
@@ -400,11 +407,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/anc09"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/anc09"
@@ -432,6 +437,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="@string/anc011"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -439,6 +445,7 @@
                 android:id="@+id/anc011a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc011a" />
 
             <CheckBox
@@ -451,30 +458,35 @@
                 android:id="@+id/anc011c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc011c" />
 
             <CheckBox
                 android:id="@+id/anc011d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc011d" />
 
             <CheckBox
                 android:id="@+id/anc011e"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc011e" />
 
             <CheckBox
                 android:id="@+id/anc011f"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/anc011f" />
 
             <CheckBox
                 android:id="@+id/anc01188"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/other" />
 
         </LinearLayout>
@@ -487,14 +499,6 @@
             android:visibility="gone"
             tools:visibility="visible">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/other"
-                android:textStyle="bold"
-                tools:typeface="serif" />
 
             <EditText
                 android:id="@+id/anc011x"
@@ -503,6 +507,7 @@
                 android:layout_weight="1"
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
+                android:hint="@string/other"
                 android:inputType="text" />
 
         </LinearLayout>
@@ -510,6 +515,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/anc012"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -522,18 +528,21 @@
                 android:id="@+id/anc012a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/anc012b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/anc01299"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/dnk" />
 
         </RadioGroup>
@@ -549,19 +558,19 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/anc013"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/anc013"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:digits="0123456789"
                 android:ems="10"
+                android:hint="@string/anc013"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -569,6 +578,7 @@
                 android:id="@+id/anc01399"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/dnk" />
 
         </LinearLayout>
@@ -576,6 +586,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/anc014"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -588,12 +599,14 @@
                 android:id="@+id/anc014a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/anc014b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/no" />
 
         </RadioGroup>
@@ -609,6 +622,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="@string/anc015"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -621,42 +635,49 @@
                     android:id="@+id/anc015a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc015a" />
 
                 <RadioButton
                     android:id="@+id/anc015b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc015b" />
 
                 <RadioButton
                     android:id="@+id/anc015c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc015c" />
 
                 <RadioButton
                     android:id="@+id/anc015d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc015d" />
 
                 <RadioButton
                     android:id="@+id/anc015e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc015e" />
 
                 <RadioButton
                     android:id="@+id/anc015f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc015f" />
 
                 <RadioButton
                     android:id="@+id/anc01588"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/anc015g" />
 
             </RadioGroup>
@@ -671,14 +692,6 @@
             android:visibility="gone"
             tools:visibility="visible">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/other"
-                android:textStyle="bold"
-                tools:typeface="serif" />
 
             <EditText
                 android:id="@+id/anc015x"
@@ -687,6 +700,7 @@
                 android:layout_weight="1"
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
+                android:hint="@string/other"
                 android:inputType="text" />
 
         </LinearLayout>

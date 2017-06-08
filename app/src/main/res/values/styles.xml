@@ -45,14 +45,15 @@
 
     <style name="lblTextView" parent="android:TextAppearance.Widget.TextView">
         <item name="android:background">@color/colorPrimaryDark</item>
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorText</item>
         <item name="android:padding">@dimen/activity_horizontal_margin</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
         <item name="android:typeface">serif</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:drawableBottom">#000</item>
 
     </style>
@@ -74,18 +75,19 @@
         <item name="android:background">#d6d6d6</item>
         <item name="android:layout_margin">16dp</item>
         <item name="android:typeface">serif</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
 
 
     </style>
 
     <style name="btnButton" parent="android:Widget.Button">
-        <item name="android:textColor">#efefef</item>
+        <item name="android:textColor">@color/colorText</item>
         <item name="android:background">@drawable/button_bg</item>
         <item name="android:padding">@dimen/activity_horizontal_margin</item>
         <item name="android:layout_marginTop">@dimen/activity_horizontal_margin</item>
         <item name="android:typeface">serif</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
+
 
 
     </style>
@@ -96,7 +98,8 @@
         <item name="android:background">#d6d6d6</item>
         <item name="android:layout_margin">16dp</item>
         <item name="android:typeface">serif</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
+
 
     </style>
 
@@ -106,7 +109,8 @@
         <item name="android:background">#d6d6d6</item>
         <item name="android:layout_margin">16dp</item>
         <item name="android:typeface">serif</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
+
 
     </style>
 
