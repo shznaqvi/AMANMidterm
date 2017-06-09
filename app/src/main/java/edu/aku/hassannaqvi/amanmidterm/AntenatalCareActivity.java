@@ -214,13 +214,7 @@ public class AntenatalCareActivity extends Activity {
                 if (anc01b.isChecked()) {
                     fldGrpanc01.setVisibility(View.VISIBLE);
                     fldGrpanc03.setVisibility(View.GONE);
-
-                    anc01aa.requestFocus();
-                } else {
-                    anc01aa.setText(null);
                     anc02.setText(null);
-                    fldGrpanc01.setVisibility(View.GONE);
-
                     anc03a.setChecked(false);
                     anc03b.setChecked(false);
                     anc03c.setChecked(false);
@@ -229,9 +223,11 @@ public class AntenatalCareActivity extends Activity {
                     anc03f.setChecked(false);
                     anc0388.setChecked(false);
 
+                } else {
+                    anc01aa.setText(null);
+                    fldGrpanc01.setVisibility(View.GONE);
                     fldGrpanc03.setVisibility(View.VISIBLE);
 
-                    anc03a.requestFocus();
                 }
             }
         });
@@ -391,6 +387,32 @@ public class AntenatalCareActivity extends Activity {
                 }
             }
         });
+
+        anc0599.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    anc05d.setVisibility(View.GONE);
+                    anc05d.setText(null);
+                } else {
+                    anc05d.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        anc01399.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    anc013.setVisibility(View.GONE);
+                    anc013.setText(null);
+                } else {
+                    anc013.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
 
 
     }
@@ -682,6 +704,10 @@ public class AntenatalCareActivity extends Activity {
             }
 
 
+
+
+        } else if (var_anc01 == "1") {
+
             if (anc02.getText().toString().isEmpty() || anc02.getText().toString() == null) {
                 anc02.setError(getString(R.string.txterr));
                 Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc02), Toast.LENGTH_LONG).show();
@@ -690,8 +716,6 @@ public class AntenatalCareActivity extends Activity {
             } else {
                 anc02.setError(null);
             }
-
-        } else if (var_anc01 == "1") {
 
             if (!anc03a.isChecked()
                     && !anc03b.isChecked()

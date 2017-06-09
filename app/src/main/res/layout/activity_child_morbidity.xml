@@ -17,14 +17,19 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/app_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:text="@string/childMorbidity"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent" />
 
         <TextView
             android:layout_width="match_parent"
@@ -37,60 +42,70 @@
             android:id="@+id/cm01a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/cm01a" />
 
         <CheckBox
             android:id="@+id/cm01b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/cm01b" />
 
         <CheckBox
             android:id="@+id/cm01c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/cm01c" />
 
         <CheckBox
             android:id="@+id/cm01d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/cm01d" />
 
         <CheckBox
             android:id="@+id/cm01e"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/cm01e" />
 
         <CheckBox
             android:id="@+id/cm01f"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/cm01f" />
 
         <CheckBox
             android:id="@+id/cm01g"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/cm01g" />
 
         <CheckBox
             android:id="@+id/cm01h"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/cm01h" />
 
         <CheckBox
             android:id="@+id/cm0177"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/none" />
 
         <CheckBox
             android:id="@+id/cm0188"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:text="@string/other" />
 
         <EditText
@@ -122,12 +137,14 @@
                     android:id="@+id/cm02a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/cm02b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/no" />
 
             </RadioGroup>
@@ -150,54 +167,63 @@
                     android:id="@+id/cm03a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/cm03a" />
 
                 <CheckBox
                     android:id="@+id/cm03b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/cm03b" />
 
                 <CheckBox
                     android:id="@+id/cm03c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/cm03c" />
 
                 <CheckBox
                     android:id="@+id/cm03d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/cm03d" />
 
                 <CheckBox
                     android:id="@+id/cm03e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/cm03e" />
 
                 <CheckBox
                     android:id="@+id/cm03f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/cm03f" />
 
                 <CheckBox
                     android:id="@+id/cm03g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/cm03g" />
 
                 <CheckBox
                     android:id="@+id/cm03h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/cm03h" />
 
                 <CheckBox
                     android:id="@+id/cm0388"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/other" />
 
                 <EditText

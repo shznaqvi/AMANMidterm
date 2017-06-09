@@ -24,6 +24,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:text="@string/section_E"
+            android:textColor="@color/colorAccent"
             android:textSize="30sp" />
 
         <View
@@ -33,9 +34,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy01" />
+            android:text="@string/iy01"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
             android:id="@+id/iy01"
@@ -44,14 +45,15 @@
             android:layout_weight="1"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
             android:ems="10"
-            android:inputType="text" />
+            android:hint="@string/iy01"
+            android:inputType="textCapWords" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy02" />
+            android:text="@string/iy02"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <RadioGroup
             android:id="@+id/iy02"
@@ -60,14 +62,16 @@
 
             <RadioButton
                 android:id="@+id/iy02a"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/male" />
 
             <RadioButton
                 android:id="@+id/iy02b"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/female" />
 
         </RadioGroup>
@@ -77,31 +81,22 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy03" />
+            android:text="@string/iy03"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy03m" />
 
         <EditText
             android:id="@+id/iy03m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:digits="0123456789"
             android:ems="10"
+            android:hint="@string/iy03m"
             android:inputType="number"
             android:maxLength="2" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy03d" />
 
         <EditText
             android:id="@+id/iy03d"
@@ -110,15 +105,16 @@
             android:layout_weight="1"
             android:digits="0123456789"
             android:ems="10"
+            android:hint="@string/iy03d"
             android:inputType="number"
             android:maxLength="2" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy04" />
+            android:text="@string/iy04"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <RadioGroup
             android:id="@+id/iy04"
@@ -127,20 +123,23 @@
 
             <RadioButton
                 android:id="@+id/iy04a"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/iy04b"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/iy04c"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/dnk" />
 
         </RadioGroup>
@@ -156,74 +155,85 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy05" />
+                android:text="@string/iy05"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <CheckBox
                 android:id="@+id/iy05a"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05a" />
 
             <CheckBox
                 android:id="@+id/iy05b"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05b" />
 
             <CheckBox
                 android:id="@+id/iy05c"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05c" />
 
             <CheckBox
                 android:id="@+id/iy05d"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05d" />
 
             <CheckBox
                 android:id="@+id/iy05e"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05e" />
 
             <CheckBox
                 android:id="@+id/iy05f"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05f" />
 
             <CheckBox
                 android:id="@+id/iy05g"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05g" />
 
             <CheckBox
                 android:id="@+id/iy05h"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05h" />
 
             <CheckBox
                 android:id="@+id/iy05i"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05i" />
 
             <CheckBox
                 android:id="@+id/iy05j"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy05j" />
 
             <CheckBox
                 android:id="@+id/iy0588"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/other" />
 
             <LinearLayout
@@ -234,13 +244,6 @@
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/other" />
-
                 <EditText
                     android:id="@+id/iy05x"
                     android:layout_width="match_parent"
@@ -248,6 +251,7 @@
                     android:layout_weight="1"
                     android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                     android:ems="10"
+                    android:hint="@string/other"
                     android:inputType="text" />
 
             </LinearLayout>
@@ -255,9 +259,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy06" />
+                android:text="@string/iy06"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/iy06d"
@@ -266,15 +270,16 @@
                 android:layout_weight="1"
                 android:digits="0123456789"
                 android:ems="10"
+                android:hint="@string/iy06d"
                 android:inputType="number"
                 android:maxLength="2" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy07" />
+                android:text="@string/iy07"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <RadioGroup
                 android:id="@+id/iy07"
@@ -283,20 +288,23 @@
 
                 <RadioButton
                     android:id="@+id/iy07a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/iy07b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/no" />
 
                 <RadioButton
                     android:id="@+id/iy07c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/dnk" />
 
             </RadioGroup>
@@ -314,55 +322,50 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/iy07a" />
+                    android:text="@string/iy07a"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
                     android:id="@+id/iy07aa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                     android:ems="10"
+                    android:hint="@string/iy07a"
                     android:inputType="text" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/iy07b" />
 
                 <EditText
                     android:id="@+id/iy07bb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                     android:ems="10"
+                    android:hint="@string/iy07a"
                     android:inputType="text" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/iy07c" />
 
                 <EditText
                     android:id="@+id/iy07cc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                     android:ems="10"
+                    android:hint="@string/iy07a"
                     android:inputType="text" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/iy08" />
+                    android:text="@string/iy08"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <RadioGroup
                     android:id="@+id/iy08"
@@ -371,38 +374,44 @@
 
                     <RadioButton
                         android:id="@+id/iy08a"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/iy08a" />
 
                     <RadioButton
                         android:id="@+id/iy08b"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/iy08b" />
 
                     <RadioButton
                         android:id="@+id/iy08c"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/iy08c" />
 
                     <RadioButton
                         android:id="@+id/iy08d"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/iy08d" />
 
                     <RadioButton
                         android:id="@+id/iy08e"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/iy08e" />
 
                     <RadioButton
                         android:id="@+id/iy0888"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/iy08f" />
 
                 </RadioGroup>
@@ -417,13 +426,6 @@
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/other" />
-
                 <EditText
                     android:id="@+id/iy08x"
                     android:layout_width="match_parent"
@@ -431,7 +433,8 @@
                     android:layout_weight="1"
                     android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:hint="@string/other"
+                    android:inputType="textCapWords" />
 
             </LinearLayout>
 
@@ -440,9 +443,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy09" />
+            android:text="@string/iy09"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <RadioGroup
             android:id="@+id/iy09"
@@ -451,14 +454,16 @@
 
             <RadioButton
                 android:id="@+id/iy09a"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/iy09b"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/no" />
 
         </RadioGroup>
@@ -474,82 +479,100 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy010" />
+                android:text="@string/iy010"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <CheckBox
                 android:id="@+id/iy010a"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy010a" />
 
             <CheckBox
                 android:id="@+id/iy010b"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy010b" />
 
             <CheckBox
                 android:id="@+id/iy010c"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy010c" />
 
             <CheckBox
                 android:id="@+id/iy010d"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy010d" />
 
             <CheckBox
                 android:id="@+id/iy010e"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy010e" />
 
             <CheckBox
                 android:id="@+id/iy010f"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy010f" />
 
             <CheckBox
                 android:id="@+id/iy01088"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/other" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpiy010goth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/iy011" />
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+
+                <EditText
+                    android:id="@+id/iy010x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                    android:ems="10"
+                    android:hint="@string/other"
+                    android:inputType="textCapWords" />
+
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy011d" />
+                android:text="@string/iy011"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
 
             <EditText
                 android:id="@+id/iy011d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:digits="0123456789"
                 android:ems="10"
+                android:hint="@string/iy011d"
                 android:inputType="number"
                 android:maxLength="2" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/iy011w" />
 
             <EditText
                 android:id="@+id/iy011w"
@@ -558,76 +581,43 @@
                 android:layout_weight="1"
                 android:digits="0123456789"
                 android:ems="10"
+                android:hint="@string/iy011w"
                 android:inputType="number"
                 android:maxLength="2" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/fldGrpiy010goth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            tools:visibility="visible">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/other" />
-
-            <EditText
-                android:id="@+id/iy010x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-                android:ems="10"
-                android:inputType="text" />
-
-        </LinearLayout>
-
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy012" />
+            android:text="@string/iy012"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy012h" />
 
         <EditText
             android:id="@+id/iy012h"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:digits="0123456789"
             android:ems="10"
+            android:hint="@string/iy012h"
             android:inputType="number"
             android:maxLength="2" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy012d" />
 
         <EditText
             android:id="@+id/iy012d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:digits="0123456789"
             android:ems="10"
+            android:hint="@string/iy012d"
             android:inputType="number"
             android:maxLength="2" />
 
@@ -642,9 +632,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy013" />
+            android:text="@string/iy013"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <RadioGroup
             android:id="@+id/iy013"
@@ -653,20 +643,23 @@
 
             <RadioButton
                 android:id="@+id/iy013a"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/iy013b"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/iy013c"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/dnk" />
 
         </RadioGroup>
@@ -674,9 +667,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy014" />
+            android:text="@string/iy014"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <RadioGroup
             android:id="@+id/iy014"
@@ -685,20 +678,23 @@
 
             <RadioButton
                 android:id="@+id/iy014a"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/iy014b"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/iy014c"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/dnk" />
 
         </RadioGroup>
@@ -714,68 +710,78 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/iy015" />
+                android:text="@string/iy015"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <CheckBox
                 android:id="@+id/iy015a"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015a" />
 
             <CheckBox
                 android:id="@+id/iy015b"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015b" />
 
             <CheckBox
                 android:id="@+id/iy015c"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015c" />
 
             <CheckBox
                 android:id="@+id/iy015d"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015d" />
 
             <CheckBox
                 android:id="@+id/iy015e"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015e" />
 
             <CheckBox
                 android:id="@+id/iy015f"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015f" />
 
             <CheckBox
                 android:id="@+id/iy015g"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015g" />
 
             <CheckBox
                 android:id="@+id/iy015h"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015h" />
 
             <CheckBox
                 android:id="@+id/iy015i"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015i" />
 
             <CheckBox
                 android:id="@+id/iy01588"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/iy015j" />
 
         </LinearLayout>
@@ -788,12 +794,6 @@
             android:visibility="gone"
             tools:visibility="visible">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/other" />
 
             <EditText
                 android:id="@+id/iy015x"
@@ -802,33 +802,28 @@
                 android:layout_weight="1"
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
-                android:inputType="text" />
+                android:hint="@string/other"
+                android:inputType="textCapWords" />
 
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy016" />
+            android:text="@string/iy016"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy016m"
-            android:textStyle="bold"
-            tools:typeface="serif" />
 
         <EditText
             android:id="@+id/iy016m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:digits="0123456789"
             android:ems="10"
+            android:hint="@string/iy016m"
             android:inputType="number"
             android:maxLength="2" />
 
@@ -836,6 +831,7 @@
             android:id="@+id/iy01677"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:ems="10"
             android:text="@string/iy01677" />
@@ -843,41 +839,32 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy017" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy017d" />
+            android:text="@string/iy017"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
             android:id="@+id/iy017d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:digits="0123456789"
             android:ems="10"
+            android:hint="@string/iy017d"
             android:inputType="number"
             android:maxLength="2" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy017m" />
 
         <EditText
             android:id="@+id/iy017m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:digits="0123456789"
             android:ems="10"
+            android:hint="@string/iy017m"
             android:inputType="number"
             android:maxLength="2" />
 
@@ -885,6 +872,7 @@
             android:id="@+id/iy01788"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:ems="10"
             android:text="@string/iy01788" />
@@ -892,40 +880,32 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/iy018" />
+            android:text="@string/iy018"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy018d" />
 
         <EditText
             android:id="@+id/iy018d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:digits="0123456789"
             android:ems="10"
+            android:hint="@string/iy018d"
             android:inputType="number" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/iy018m" />
 
         <EditText
             android:id="@+id/iy018m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:digits="0123456789"
             android:ems="10"
+            android:hint="@string/iy018m"
             android:inputType="number"
             android:maxLength="2" />
 
@@ -933,6 +913,7 @@
             android:id="@+id/iy01888"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:layout_weight="1"
             android:ems="10"
             android:text="@string/iy01888" />

@@ -141,7 +141,7 @@ public class DeliveryActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SocioEconomicActivity.class);
+                Intent secNext = new Intent(this, PostpartumCareActivity.class);
                 secNext.putExtra("check", false);
                 startActivity(secNext);
             } else {

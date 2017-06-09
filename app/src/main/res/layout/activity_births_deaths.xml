@@ -19,22 +19,27 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/app_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Births and Deaths in the Last One Year"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="Births and Deaths in Last One Year"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorAccent"
+            android:background="@color/colorYellowlight"
             android:text="@string/bdheadingsub"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorAccent" />
 
 
         <TextView
@@ -47,9 +52,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:background="#e1f5fe"
+            android:background="@color/colorGreenLight"
             android:text="@string/bdb"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:textSize="12sp" />
 
         <EditText
@@ -75,9 +80,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorAccent"
+                android:background="@color/colorYellowlight"
                 android:text="@string/bdd"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
@@ -114,9 +119,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:background="#e1f5fe"
+            android:background="@color/colorGreenLight"
             android:text="@string/bdb"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:textSize="12sp" />
 
         <EditText
@@ -142,9 +147,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorAccent"
+                android:background="@color/colorYellowlight"
                 android:text="@string/bdd"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
 
@@ -182,9 +187,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:background="#e1f5fe"
+            android:background="@color/colorGreenLight"
             android:text="@string/bdb"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:textSize="12sp" />
 
         <EditText
@@ -210,9 +215,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorAccent"
+                android:background="@color/colorYellowlight"
                 android:text="@string/bdc"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
 
@@ -261,9 +266,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:background="@color/colorAccent"
+            android:background="@color/colorGreenLight"
             android:text="@string/bdb"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:textSize="12sp" />
 
         <EditText
@@ -295,15 +300,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:text="@string/bdc"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
 
                 <TextView
@@ -311,9 +316,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:text="@string/bdd"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -337,7 +342,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
@@ -373,7 +378,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                     android:id="@+id/bd04dod2"
@@ -400,9 +405,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:background="#e1f5fe"
+            android:background="@color/colorGreenLight"
             android:text="@string/bdb"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:textSize="12sp" />
 
         <EditText
@@ -434,24 +439,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:text="@string/bdc"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:text="@string/bdd"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -476,7 +481,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                     android:id="@+id/bd05dod1"
@@ -511,7 +516,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                     android:id="@+id/bd05dod2"
@@ -539,9 +544,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:background="#e1f5fe"
+            android:background="@color/colorGreenLight"
             android:text="@string/bdb"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:textSize="12sp" />
 
         <EditText
@@ -572,24 +577,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:text="@string/bdc"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:text="@string/bdd"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -614,7 +619,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                     android:id="@+id/bd06dod1"
@@ -650,7 +655,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                     android:id="@+id/bd06dod2"
@@ -678,9 +683,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:background="#e1f5fe"
+            android:background="@color/colorGreenLight"
             android:text="@string/bdb"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:textSize="12sp" />
 
         <EditText
@@ -711,24 +716,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:text="@string/bdc"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:text="@string/bdd"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -752,7 +757,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
@@ -789,7 +794,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
@@ -820,9 +825,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:background="#e1f5fe"
+            android:background="@color/colorGreenLight"
             android:text="@string/bdb"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:textSize="12sp" />
 
         <EditText
@@ -853,27 +858,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:gravity="center"
                     android:text="@string/bdc"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
 
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorYellowlight"
                     android:gravity="center"
                     android:text="@string/bdd"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
 
@@ -900,7 +905,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                     android:id="@+id/bd08dod1"
@@ -937,7 +942,7 @@
                 <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorAccent"></View>
 
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText

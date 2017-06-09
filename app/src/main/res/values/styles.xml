@@ -44,7 +44,7 @@
     </style>
 
     <style name="lblTextView" parent="android:TextAppearance.Widget.TextView">
-        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:background">@drawable/background_grad</item>
         <item name="android:textColor">@color/colorText</item>
         <item name="android:padding">@dimen/activity_horizontal_margin</item>
         <item name="android:layout_width">match_parent</item>

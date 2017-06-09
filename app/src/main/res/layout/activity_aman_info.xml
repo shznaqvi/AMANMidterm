@@ -25,6 +25,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:text="@string/section_A"
+            android:textColor="@color/colorAccent"
             android:textSize="30sp" />
 
         <View

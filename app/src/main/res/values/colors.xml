@@ -2,7 +2,9 @@
 <resources>
     <color name="colorPrimaryDark">#ffc107</color>
     <color name="colorPrimary">#ffff00</color>
+    <color name="colorYellowlight">#fdfa9c</color>
     <color name="colorAccent">#2e7d32</color>
+    <color name="colorGreenLight">#cefdd4</color>
     <color name="colorHeading">#f44336</color>
     <color name="colorText">#050505</color>
 

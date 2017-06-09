@@ -115,7 +115,7 @@ public class MainActivity extends Activity {
     }
 
     public void openForm(View v) {
-        Intent oF = new Intent(this, AntenatalCareActivity.class);
+        Intent oF = new Intent(this, AmanInfoActivity.class);
         startActivity(oF);
     }
 

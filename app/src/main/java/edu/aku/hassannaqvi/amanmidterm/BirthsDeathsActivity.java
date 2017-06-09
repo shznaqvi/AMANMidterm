@@ -562,7 +562,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.btnNext)
+    @OnClick(R.id.btn_Continue)
     void onBtnNextClick() {
         if (ValidateForm()) {
             try {
