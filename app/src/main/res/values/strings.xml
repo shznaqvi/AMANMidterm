@@ -74,6 +74,7 @@
     <string name="mna5"> گھرانے کا نمبر </string>
     <string name="mna5_ext"> خاندان نمبر </string>
     <string name="childName"> منتخب بچے کا نام (لائن لسٹنگ کے مطابق) </string>
+    <string name="iStatus"> انٹرویو کی نوعیت</string>
     <string name="mna7a"> مکمل </string>
     <string name="mna7b">جزوی طور پر مکمل </string>
     <string name="mna7c">انکار کردیا </string>
@@ -97,10 +98,7 @@
     <string name="mna12f"> Masters سولہویں </string>
     <string name="mna12g"> Religious Education دینی تعلیم </string>
     <string name="mna13"> پانچ سال سے کم عمر بچوں کی تعداد (بشمول منتخب بچےکے) </string>
-    <string name="iStatus"> دورے کا نتیجہ </string>
-    <string name="bi7a"> مکمل </string>
-    <string name="bi7b"> گھر بند تھا </string>
-    <string name="bi7c"> منع کردیا </string>
+
     <string name="bi8"> گھر کے سربراہ کا نام </string>
     <string name="bi9"> جواب دینے والے کا نام </string>
     <string name="bi10"> جواب دینے والے کا منتخب بچے سے رشتہ </string>
@@ -559,8 +557,7 @@
     <string name="bdheading"> Section N : Births and Deaths in the Last One Year </string>
     <string name="bdheadingsub"> پہچلے سال جنوری سے دسمبر 2016 تک آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
     <string name="bda"> Indicators </string>
-    <string name="bdb"> Statistics
-    None = 0 </string>
+    <string name="bdb"> Statistics None = 0 </string>
     <string name="bdba"> Number </string>
     <string name="bdc"> تاریخ پیدائش </string>
     <string name="bdd"> تاریخ وفات </string>
