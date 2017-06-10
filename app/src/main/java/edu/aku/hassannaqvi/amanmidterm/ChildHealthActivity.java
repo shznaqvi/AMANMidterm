@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -20,6 +21,8 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static android.content.ContentValues.TAG;
 
 public class ChildHealthActivity extends Activity {
 
@@ -187,20 +190,28 @@ public class ChildHealthActivity extends Activity {
     EditText iy018m;
     @BindView(R.id.iy01888)
     CheckBox iy01888;
+
     @BindView(R.id.fldGrpiy04)
     LinearLayout fldGrpiy04;
+
     @BindView(R.id.fldGrpiy05koth)
     LinearLayout fldGrpiy05koth;
+
     @BindView(R.id.fldGrpiy07)
     LinearLayout fldGrpiy07;
+
     @BindView(R.id.fldGrpiy08foth)
     LinearLayout fldGrpiy08foth;
+
     @BindView(R.id.fldGrpiy09)
     LinearLayout fldGrpiy09;
+
     @BindView(R.id.fldGrpiy010goth)
     LinearLayout fldGrpiy010goth;
+
     @BindView(R.id.fldGrpiy015joth)
     LinearLayout fldGrpiy015joth;
+
     @BindView(R.id.fldGrpiy014)
     LinearLayout fldGrpiy014;
     @BindView(R.id.fldGrpiy016)
@@ -543,7 +554,8 @@ public class ChildHealthActivity extends Activity {
 
         if (iy01.getText().toString().isEmpty() || iy01.getText().toString() == null) {
             iy01.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy01), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy01), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy01 : empty");
             iy01.requestFocus();
             return false;
         } else {
@@ -552,8 +564,9 @@ public class ChildHealthActivity extends Activity {
 
         if (iy02.getCheckedRadioButtonId() == -1) {
             iy02a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy02), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy02), Toast.LENGTH_LONG).show();
             iy02a.requestFocus();
+            Log.d(TAG, "iy02a: empty ");
             return false;
         } else {
             iy02a.setError(null);
@@ -562,7 +575,8 @@ public class ChildHealthActivity extends Activity {
 
         if (iy03m.getText().toString().isEmpty() || iy03m.getText().toString() == null) {
             iy03m.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy03m: empty ");
             iy03m.requestFocus();
             return false;
         } else {
@@ -572,7 +586,8 @@ public class ChildHealthActivity extends Activity {
 
         if (iy03d.getText().toString().isEmpty() || iy03d.getText().toString() == null) {
             iy03d.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy03d: empty ");
             iy03d.requestFocus();
             return false;
         } else {
@@ -606,7 +621,8 @@ public class ChildHealthActivity extends Activity {
 
         if (iy04.getCheckedRadioButtonId() == -1) {
             iy04a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy04), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy04), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy04: this data is required ");
             iy04a.requestFocus();
             return false;
         } else {
@@ -629,6 +645,7 @@ public class ChildHealthActivity extends Activity {
                     && !iy0588.isChecked()) {
                 iy05a.setError(getString(R.string.rdoerr));
                 Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy05), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy05: empty ");
                 iy05a.requestFocus();
                 return false;
             } else {
@@ -639,7 +656,8 @@ public class ChildHealthActivity extends Activity {
             if (iy0588.isChecked()) {
                 if (iy05x.getText().toString().isEmpty() || iy05x.getText().toString() == null) {
                     iy05x.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy05x: empty ");
                     iy05x.requestFocus();
                     return false;
                 } else {
@@ -650,7 +668,8 @@ public class ChildHealthActivity extends Activity {
 
             if (iy06d.getText().toString().isEmpty() || iy06d.getText().toString() == null) {
                 iy06d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy06d: empty ");
                 iy06d.requestFocus();
                 return false;
             } else {
@@ -670,7 +689,8 @@ public class ChildHealthActivity extends Activity {
 
             if (iy07.getCheckedRadioButtonId() == -1) {
                 iy07a.setError(getString(R.string.rdoerr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy07), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy07a: empty ");
                 iy07a.requestFocus();
                 return false;
             } else {
@@ -682,7 +702,8 @@ public class ChildHealthActivity extends Activity {
 
                 if (iy07aa.getText().toString().isEmpty() || iy07aa.getText().toString() == null) {
                     iy07aa.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07a), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy07a), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy07aa: empty ");
                     iy07aa.requestFocus();
                     return false;
                 } else {
@@ -692,7 +713,8 @@ public class ChildHealthActivity extends Activity {
 
                 if (iy08.getCheckedRadioButtonId() == -1) {
                     iy08a.setError(getString(R.string.rdoerr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy08a: this data is required ");
                     iy08a.requestFocus();
                     return false;
                 } else {
@@ -703,7 +725,8 @@ public class ChildHealthActivity extends Activity {
 
                     if (iy08x.getText().toString().isEmpty() || iy08x.getText().toString() == null) {
                         iy08x.setError(getString(R.string.txterr));
-                        Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                        Log.d(TAG, "iy08x: empty ");
                         iy08x.requestFocus();
                         return false;
                     } else {
@@ -718,7 +741,8 @@ public class ChildHealthActivity extends Activity {
 
         if (iy09.getCheckedRadioButtonId() == -1) {
             iy09a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy09), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy09), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy09: this data is required");
             iy09a.requestFocus();
             return false;
         } else {
@@ -736,7 +760,8 @@ public class ChildHealthActivity extends Activity {
                     && !iy010f.isChecked()
                     && !iy01088.isChecked()) {
                 iy010a.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy010), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy010), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy010: this data is required ");
                 iy010a.requestFocus();
                 return false;
             } else {
@@ -748,7 +773,8 @@ public class ChildHealthActivity extends Activity {
 
                 if (iy010x.getText().toString().isEmpty() || iy010x.getText().toString() == null) {
                     iy010x.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy010x: empty ");
                     iy010x.requestFocus();
                     return false;
                 } else {
@@ -759,7 +785,8 @@ public class ChildHealthActivity extends Activity {
 
             if (iy011d.getText().toString().isEmpty() || iy011d.getText().toString() == null) {
                 iy011d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy011d), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy011d), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy011d: empty ");
                 iy011d.requestFocus();
                 return false;
             } else {
@@ -768,7 +795,8 @@ public class ChildHealthActivity extends Activity {
 
             if (iy011w.getText().toString().isEmpty() || iy011w.getText().toString() == null) {
                 iy011w.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy011w), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy011w), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy011w: empty ");
                 iy011w.requestFocus();
                 return false;
             } else {
@@ -808,7 +836,8 @@ public class ChildHealthActivity extends Activity {
 
             if (iy012h.getText().toString().isEmpty()) {
                 iy012h.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy012h), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy012h), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy012h: empty ");
                 iy012h.requestFocus();
                 return false;
             } else {
@@ -817,7 +846,8 @@ public class ChildHealthActivity extends Activity {
 
             if (iy012d.getText().toString().isEmpty() || iy012d.getText().toString() == null) {
                 iy012d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy012d), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy012d), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy012d: empty ");
                 iy012d.requestFocus();
                 return false;
             } else {
@@ -855,7 +885,8 @@ public class ChildHealthActivity extends Activity {
 
         if (iy013.getCheckedRadioButtonId() == -1) {
             iy013a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy013), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy013), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy013a: this data is required ");
             iy013a.requestFocus();
             return false;
         } else {
@@ -865,7 +896,8 @@ public class ChildHealthActivity extends Activity {
 
         if (iy014.getCheckedRadioButtonId() == -1) {
             iy014a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy014), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy014), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy014: this data is required");
             iy014a.requestFocus();
             return false;
         } else {
@@ -886,7 +918,8 @@ public class ChildHealthActivity extends Activity {
                     && !iy015i.isChecked()
                     && !iy01588.isChecked()) {
                 iy015a.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy015), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy015), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy015: this data is required");
                 iy015a.requestFocus();
                 return false;
             } else {
@@ -896,7 +929,8 @@ public class ChildHealthActivity extends Activity {
             if (iy01588.isChecked()) {
                 if (iy015x.getText().toString().isEmpty() || iy015x.getText().toString() == null) {
                     iy015x.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy015x: empty ");
                     iy015x.requestFocus();
                     return false;
                 } else {
@@ -910,7 +944,8 @@ public class ChildHealthActivity extends Activity {
         if (!iy01677.isChecked()) {
             if (iy016m.getText().toString().isEmpty() || iy016m.getText().toString() == null) {
                 iy016m.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy016m), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy016m), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy016m: empty ");
                 iy016m.requestFocus();
                 return false;
             } else {
