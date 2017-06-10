@@ -42,8 +42,8 @@ public class ChildHealthActivity extends Activity {
     RadioButton iy04a;
     @BindView(R.id.iy04b)
     RadioButton iy04b;
-    @BindView(R.id.iy04c)
-    RadioButton iy04c;
+    @BindView(R.id.iy0499)
+    RadioButton iy0499;
     @BindView(R.id.iy05a)
     CheckBox iy05a;
     @BindView(R.id.iy05b)
@@ -76,8 +76,8 @@ public class ChildHealthActivity extends Activity {
     RadioButton iy07a;
     @BindView(R.id.iy07b)
     RadioButton iy07b;
-    @BindView(R.id.iy07c)
-    RadioButton iy07c;
+    @BindView(R.id.iy0799)
+    RadioButton iy0799;
     @BindView(R.id.iy07aa)
     EditText iy07aa;
     @BindView(R.id.iy07bb)
@@ -138,16 +138,16 @@ public class ChildHealthActivity extends Activity {
     RadioButton iy013a;
     @BindView(R.id.iy013b)
     RadioButton iy013b;
-    @BindView(R.id.iy013c)
-    RadioButton iy013c;
+    @BindView(R.id.iy01399)
+    RadioButton iy01399;
     @BindView(R.id.iy014)
     RadioGroup iy014;
     @BindView(R.id.iy014a)
     RadioButton iy014a;
     @BindView(R.id.iy014b)
     RadioButton iy014b;
-    @BindView(R.id.iy014c)
-    RadioButton iy014c;
+    @BindView(R.id.iy01499)
+    RadioButton iy01499;
     @BindView(R.id.iy015a)
     CheckBox iy015a;
     @BindView(R.id.iy015b)
@@ -1111,37 +1111,10 @@ public class ChildHealthActivity extends Activity {
         JSONObject js = new JSONObject();
 
         js.put("iy01", iy01.getText().toString());
-        js.put("iy01", iy01.getText().toString());
-        rdo_iy02 = iy02.getCheckedRadioButtonId();
-
-        switch (rdo_iy02) {
-            case R.id.iy02a:
-                var_iy02 = "1";
-                break;
-            case R.id.iy02b:
-                var_iy02 = "2";
-                break;
-        }
-
-        js.put("iy02", var_iy02);
+        js.put("iy02", iy02a.isChecked() ? "1" : iy02b.isChecked() ? "2" : "0");
         js.put("iy03m", iy03m.getText().toString());
         js.put("iy03d", iy03d.getText().toString());
-
-        rdo_iy04 = iy04.getCheckedRadioButtonId();
-
-        switch (rdo_iy04) {
-            case R.id.iy04a:
-                var_iy04 = "1";
-                break;
-            case R.id.iy04b:
-                var_iy04 = "2";
-                break;
-            case R.id.iy04c:
-                var_iy04 = "88";
-                break;
-        }
-
-        js.put("iy04", var_iy04);
+        js.put("iy04", iy04a.isChecked() ? "1" : iy04b.isChecked() ? "2" : iy0499.isChecked() ? "99" : "0");
 
         js.put("iy05a", iy05a.isChecked() ? "1" : "2");
         js.put("iy05b", iy05b.isChecked() ? "1" : "2");
@@ -1154,55 +1127,21 @@ public class ChildHealthActivity extends Activity {
         js.put("iy05i", iy05i.isChecked() ? "1" : "2");
         js.put("iy05j", iy05j.isChecked() ? "1" : "2");
         js.put("iy0588", iy0588.isChecked() ? "1" : "2");
-
-
         js.put("iy05x", iy05x.getText().toString());
 
         js.put("iy06d", iy06d.getText().toString());
 
-        rdo_iy07 = iy07.getCheckedRadioButtonId();
-
-        switch (rdo_iy07) {
-            case R.id.iy07a:
-                var_iy07 = "1";
-                break;
-            case R.id.iy07b:
-                var_iy07 = "2";
-                break;
-            case R.id.iy07c:
-                var_iy07 = "88";
-                break;
-        }
-
-        js.put("iy07", var_iy07);
+        js.put("iy07", iy07a.isChecked() ? "1" : iy07b.isChecked() ? "2" : iy0799.isChecked() ? "99" : "0");
 
         js.put("iy07aa", iy07aa.getText().toString());
         js.put("iy07bb", iy07bb.getText().toString());
         js.put("iy07cc", iy07cc.getText().toString());
 
 
-        js.put("iy08a", iy08a.isChecked() ? "1" : "2");
-        js.put("iy08b", iy08b.isChecked() ? "1" : "2");
-        js.put("iy08c", iy08c.isChecked() ? "1" : "2");
-        js.put("iy08d", iy08d.isChecked() ? "1" : "2");
-        js.put("iy08e", iy08e.isChecked() ? "1" : "2");
-        js.put("iy0888", iy0888.isChecked() ? "1" : "2");
-
-
+        js.put("iy08a", iy08a.isChecked() ? "1" : iy08b.isChecked() ? "2" : iy08c.isChecked() ? "3" : iy08d.isChecked() ? "4" : iy08e.isChecked() ? "5" : iy0888.isChecked() ? "88" : "0");
         js.put("iy08x", iy08x.getText().toString());
 
-        rdo_iy09 = iy09.getCheckedRadioButtonId();
-
-        switch (rdo_iy09) {
-            case R.id.iy09a:
-                var_iy09 = "1";
-                break;
-            case R.id.iy09b:
-                var_iy09 = "2";
-                break;
-        }
-
-        js.put("iy09", var_iy09);
+        js.put("iy09", iy09a.isChecked() ? "1" : iy09b.isChecked() ? "2" : "0");
 
         js.put("iy010a", iy010a.isChecked() ? "1" : "2");
         js.put("iy010b", iy010b.isChecked() ? "1" : "2");
@@ -1211,7 +1150,6 @@ public class ChildHealthActivity extends Activity {
         js.put("iy010e", iy010e.isChecked() ? "1" : "2");
         js.put("iy010f", iy010f.isChecked() ? "1" : "2");
         js.put("iy01088", iy01088.isChecked() ? "1" : "2");
-
         js.put("iy010x", iy010x.getText().toString());
 
 
@@ -1219,40 +1157,10 @@ public class ChildHealthActivity extends Activity {
         js.put("iy011w", iy011w.getText().toString());
         js.put("iy012h", iy012h.getText().toString());
         js.put("iy012d", iy012d.getText().toString());
-        js.put("iy01299", iy01299.isChecked() ? "88" : "");
+        js.put("iy01299", iy01299.isChecked() ? "1" : "2");
 
-        rdo_iy013 = iy013.getCheckedRadioButtonId();
-
-        switch (rdo_iy013) {
-            case R.id.iy013a:
-                var_iy013 = "1";
-                break;
-            case R.id.iy013b:
-                var_iy013 = "2";
-                break;
-            case R.id.iy013c:
-                var_iy013 = "88";
-                break;
-        }
-
-        js.put("iy013", var_iy013);
-
-
-        rdo_iy014 = iy014.getCheckedRadioButtonId();
-
-        switch (rdo_iy014) {
-            case R.id.iy014a:
-                var_iy014 = "1";
-                break;
-            case R.id.iy014b:
-                var_iy014 = "2";
-                break;
-            case R.id.iy014c:
-                var_iy014 = "88";
-                break;
-        }
-
-        js.put("iy014", var_iy014);
+        js.put("iy013", iy013a.isChecked() ? "a" : iy013b.isChecked() ? "b" : iy01399.isChecked() ? "99" : "0");
+        js.put("iy014", iy014a.isChecked() ? "a" : iy014b.isChecked() ? "b" : iy01499.isChecked() ? "99" : "0");
 
         js.put("iy015a", iy015a.isChecked() ? "1" : "2");
         js.put("iy015b", iy015b.isChecked() ? "1" : "2");
@@ -1264,20 +1172,18 @@ public class ChildHealthActivity extends Activity {
         js.put("iy015h", iy015h.isChecked() ? "1" : "2");
         js.put("iy015i", iy015i.isChecked() ? "1" : "2");
         js.put("iy01588", iy01588.isChecked() ? "1" : "2");
-
-
         js.put("iy015x", iy015x.getText().toString());
 
         js.put("iy016m", iy016m.getText().toString());
-        js.put("iy01677", iy01677.getText().toString());
+        js.put("iy01677", iy01677.isChecked() ? "1" : "2");
 
         js.put("iy017d", iy017d.getText().toString());
         js.put("iy017m", iy017m.getText().toString());
-        js.put("iy01788", iy01788.isChecked() ? "88" : "");
+        js.put("iy01788", iy01788.isChecked() ? "1" : "2");
 
         js.put("iy018d", iy018d.getText().toString());
         js.put("iy018m", iy018m.getText().toString());
-        js.put("iy01888", iy01888.isChecked() ? "88" : "");
+        js.put("iy01888", iy01888.isChecked() ? "1" : "2");
 
         return true;
     }

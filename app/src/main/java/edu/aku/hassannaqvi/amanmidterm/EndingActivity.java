@@ -10,6 +10,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,10 +54,13 @@ public class EndingActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
             if (UpdateDB()) {
+                finish();
+
                 Toast.makeText(this, "Closing Form!", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, MainActivity.class);
-                AppMain.childName = "TEST";
+                //  AppMain.childName = "TEST";
                 startActivity(endSec);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -67,41 +71,18 @@ public class EndingActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateEnd();
 
-        if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+        //db.updateSD();
+
+        return true;
     }
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
-        switch (mna7.getCheckedRadioButtonId()) {
-            case R.id.mna7a:
-                AppMain.fc.setiStatus("1");
-                break;
-            case R.id.mna7b:
-                AppMain.fc.setiStatus("2");
-                break;
-            case R.id.mna7c:
-                AppMain.fc.setiStatus("3");
-                break;
-            case R.id.mna7d:
-                AppMain.fc.setiStatus("4");
-                break;
-            case R.id.mna7e:
-                AppMain.fc.setiStatus("5");
-                break;
+        JSONObject sa = new JSONObject();
 
-            default:
-                AppMain.fc.setiStatus("default");
-                break;
-        }
+        sa.put("mna7", mna7a.isChecked() ? "1" : mna7b.isChecked() ? "2" : mna7c.isChecked() ? "3" : mna7d.isChecked() ? "4" : mna7e.isChecked() ? "5" : "0");
 
     }
 
@@ -111,7 +92,7 @@ public class EndingActivity extends Activity {
         if (mna7.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(not selected): " + getResources().getResourceTypeName(R.string.iStatus), Toast.LENGTH_LONG).show();
             mna7d.setError("This data is Required!");
-            Log.i(TAG, "mnd9: This data is Required!");
+            Log.i(TAG, "mna7: This data is Required!");
             return false;
         } else {
             mna7d.setError(null);

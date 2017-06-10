@@ -481,136 +481,6 @@ public class AntenatalCareActivity extends Activity {
 
     }
 
-    private void getRadioButtonValues() {
-        rdo_anc01 = anc01.getCheckedRadioButtonId();
-
-        switch (rdo_anc01) {
-            case R.id.anc01a:
-                var_anc01 = "1";
-                break;
-            case R.id.anc01b:
-                var_anc01 = "2";
-                break;
-        }
-
-
-        rdo_anc04 = anc04.getCheckedRadioButtonId();
-
-        switch (rdo_anc04) {
-            case R.id.anc04a:
-                var_anc04 = "1";
-                break;
-            case R.id.anc04b:
-                var_anc04 = "2";
-                break;
-        }
-
-
-        rdo_anc06 = anc06.getCheckedRadioButtonId();
-
-        switch (rdo_anc06) {
-            case R.id.anc06a:
-                var_anc06 = "1";
-                break;
-            case R.id.anc06b:
-                var_anc06 = "2";
-                break;
-            case R.id.anc0699:
-                var_anc06 = "99";
-                break;
-        }
-
-
-        rdo_anc07 = anc07.getCheckedRadioButtonId();
-
-        switch (rdo_anc07) {
-            case R.id.anc07a:
-                var_anc07 = "1";
-                break;
-            case R.id.anc07b:
-                var_anc07 = "2";
-                break;
-            case R.id.anc07c:
-                var_anc07 = "3";
-                break;
-            case R.id.anc07d:
-                var_anc07 = "4";
-                break;
-            case R.id.anc0788:
-                var_anc07 = "88";
-                break;
-            case R.id.anc0799:
-                var_anc07 = "99";
-                break;
-        }
-
-
-        rdo_anc08 = anc08.getCheckedRadioButtonId();
-
-        switch (rdo_anc08) {
-            case R.id.anc08a:
-                var_anc08 = "1";
-                break;
-            case R.id.anc08b:
-                var_anc08 = "2";
-                break;
-        }
-
-
-        rdo_anc012 = anc012.getCheckedRadioButtonId();
-
-        switch (rdo_anc012) {
-            case R.id.anc012a:
-                var_anc012 = "1";
-                break;
-            case R.id.anc012b:
-                var_anc012 = "2";
-                break;
-            case R.id.anc01299:
-                var_anc012 = "99";
-                break;
-        }
-
-
-        rdo_anc014 = anc014.getCheckedRadioButtonId();
-
-        switch (rdo_anc014) {
-            case R.id.anc014a:
-                var_anc014 = "1";
-                break;
-            case R.id.anc014b:
-                var_anc014 = "2";
-                break;
-        }
-
-
-        rdo_anc015 = anc015.getCheckedRadioButtonId();
-
-        switch (rdo_anc015) {
-            case R.id.anc015a:
-                var_anc015 = "1";
-                break;
-            case R.id.anc015b:
-                var_anc015 = "2";
-                break;
-            case R.id.anc015c:
-                var_anc015 = "3";
-                break;
-            case R.id.anc015d:
-                var_anc015 = "4";
-                break;
-            case R.id.anc015e:
-                var_anc015 = "5";
-                break;
-            case R.id.anc015f:
-                var_anc015 = "6";
-                break;
-            case R.id.anc01588:
-                var_anc015 = "88";
-                break;
-        }
-    }
-
 
     private boolean SaveDraft() throws JSONException {
 
@@ -618,10 +488,10 @@ public class AntenatalCareActivity extends Activity {
 
         JSONObject js = new JSONObject();
 
-        getRadioButtonValues();
+        //getRadioButtonValues();
 
 
-        js.put("anc01", var_anc01);
+        js.put("anc01", anc01a.isChecked() ? "1" : anc01b.isChecked() ? "2" : "0");
         js.put("anc01aa", anc01aa.getText().toString());
         js.put("anc02", anc02.getText().toString());
 
@@ -636,16 +506,17 @@ public class AntenatalCareActivity extends Activity {
         js.put("anc03x", anc03x.getText().toString());
 
 
-        js.put("anc04", var_anc04);
+        js.put("anc04", anc04a.isChecked() ? "1" : anc04b.isChecked() ? "2" : "0");
 
         js.put("anc05d", anc05d.getText().toString());
-        js.put("anc0599", anc0599.getText().toString());
+        js.put("anc0599", anc0599.isChecked() ? "1" : "2");
 
-        js.put("anc06", var_anc06);
+        js.put("anc06", anc06a.isChecked() ? "1" : anc06b.isChecked() ? "2" : anc0699.isChecked() ? "99" : "0");
 
-        js.put("anc07", var_anc07);
+        js.put("anc07", anc07a.isChecked() ? "1" : anc07b.isChecked() ? "2" : anc07c.isChecked() ? "3" : anc07d.isChecked() ? "4" : anc0788.isChecked() ? "88" : anc0699.isChecked() ? "99" : "0");
         js.put("anc07x", anc07x.getText().toString());
-        js.put("anc08", var_anc08);
+        js.put("anc08", anc08a.isChecked() ? "1" : anc08b.isChecked() ? "2" : "0");
+
 
         js.put("anc09", anc09.getText().toString());
         js.put("anc011a", anc011a.isChecked() ? "1" : "2");
@@ -658,30 +529,23 @@ public class AntenatalCareActivity extends Activity {
         js.put("anc011x", anc011x.getText().toString());
 
 
-        js.put("anc012", var_anc012);
+        js.put("anc012", anc012a.isChecked() ? "1" : anc012b.isChecked() ? "2" : anc01299.isChecked() ? "99" : "0");
 
         js.put("anc013", anc013.getText().toString());
         js.put("anc01399", anc01399.isChecked() ? "1" : "2");
 
 
-        js.put("anc014", var_anc014);
-        js.put("anc015", var_anc015);
-
-        js.put("anc015a", anc015a.getText().toString());
-        js.put("anc015b", anc015b.getText().toString());
-        js.put("anc015c", anc015c.getText().toString());
-        js.put("anc015d", anc015d.getText().toString());
-        js.put("anc015e", anc015e.getText().toString());
-        js.put("anc015f", anc015f.getText().toString());
-        js.put("anc01588", anc01588.getText().toString());
+        js.put("anc014", anc014a.isChecked() ? "1" : anc014b.isChecked() ? "2" : "0");
+        js.put("anc015", anc015a.isChecked() ? "1" : anc015b.isChecked() ? "2" : anc015c.isChecked() ? "3" : anc015d.isChecked() ? "4" : anc015e.isChecked() ? "5" : anc015f.isChecked() ? "6" : anc01588.isChecked() ? "88" : "0");
         js.put("anc015x", anc015x.getText().toString());
+
 
         return true;
     }
 
     private boolean ValidateForm() {
 
-        getRadioButtonValues();
+        //  getRadioButtonValues();
 
         if (rdo_anc01 == -1) {
             anc01a.setError(getString(R.string.rdoerr));
