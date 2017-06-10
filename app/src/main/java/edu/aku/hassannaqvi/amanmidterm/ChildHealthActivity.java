@@ -663,7 +663,6 @@ public class ChildHealthActivity extends Activity {
                 }
             }
 
-
             if (iy06d.getText().toString().isEmpty() || iy06d.getText().toString() == null) {
                 iy06d.setError(getString(R.string.txterr));
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
@@ -694,7 +693,6 @@ public class ChildHealthActivity extends Activity {
             } else {
                 iy07a.setError(null);
             }
-
 
             if (iy07b.isChecked()) {
 
@@ -976,6 +974,19 @@ public class ChildHealthActivity extends Activity {
                     iy017m.setError(null);
                 }
 
+                if (Integer.valueOf(iy017d.getText().toString().isEmpty() ? "0" : iy017d.getText().toString()) == 0
+                        && Integer.valueOf(iy017m.getText().toString().isEmpty() ? "0" : iy017m.getText().toString()) == 0) {
+                    Toast.makeText(this, "ERROR(invalid)" + getString(R.string.iy017) + " - " + getString(R.string.iy017m), Toast.LENGTH_SHORT).show();
+                    iy017d.setError("Days and months can not be zero..");
+                    iy017m.setError("Days and months can not be zero..");
+
+                    Log.i(TAG, "iy017: Both can not be zero");
+                    return false;
+                } else {
+                    iy017d.setError(null);
+                    iy017m.setError(null);
+                }
+
                 if (!iy017d.getText().toString().isEmpty() && iy017d.getText().toString() != null) {
 
                     if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
@@ -1032,6 +1043,19 @@ public class ChildHealthActivity extends Activity {
                             iy018m.requestFocus();
                             return false;
                         } else {
+                            iy018m.setError(null);
+                        }
+
+                        if (Integer.valueOf(iy018d.getText().toString().isEmpty() ? "0" : iy018d.getText().toString()) == 0
+                                && Integer.valueOf(iy018m.getText().toString().isEmpty() ? "0" : iy018m.getText().toString()) == 0) {
+                            Toast.makeText(this, "ERROR(invalid)" + getString(R.string.iy018) + " - " + getString(R.string.iy03m), Toast.LENGTH_SHORT).show();
+                            iy018d.setError("Days and months can not be zero..");
+                            iy018m.setError("Days and months can not be zero..");
+
+                            Log.i(TAG, "iy018: Both can not be zero");
+                            return false;
+                        } else {
+                            iy018d.setError(null);
                             iy018m.setError(null);
                         }
 

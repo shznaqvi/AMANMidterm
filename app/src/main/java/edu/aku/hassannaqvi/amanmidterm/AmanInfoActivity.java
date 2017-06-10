@@ -484,11 +484,24 @@ public class AmanInfoActivity extends Activity {
             }
 
             if (bib1602.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib12) + " - " + getString(R.string.year), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib16) + " - " + getString(R.string.months), Toast.LENGTH_LONG).show();
                 bib1602.setError("This data is Required!");
                 Log.i(TAG, "bib1602: This data is Required!");
                 return false;
             } else {
+                bib1602.setError(null);
+            }
+
+            if (Integer.valueOf(bib1601.getText().toString().isEmpty() ? "0" : bib1601.getText().toString()) == 0
+                    && Integer.valueOf(bib1602.getText().toString().isEmpty() ? "0" : bib1602.getText().toString()) == 0) {
+                Toast.makeText(this, "ERROR(invalid)" + getString(R.string.bib16) + " - " + getString(R.string.iy03m), Toast.LENGTH_SHORT).show();
+                bib1601.setError("Days and months can not be zero..");
+                bib1602.setError("Days and months can not be zero..");
+
+                Log.i(TAG, "bib16: Both can not be zero");
+                return false;
+            } else {
+                bib1601.setError(null);
                 bib1602.setError(null);
             }
 
@@ -518,6 +531,7 @@ public class AmanInfoActivity extends Activity {
             } else {
                 bic03.setError(null);
             }
+
             if (bic04.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bic04), Toast.LENGTH_LONG).show();
                 bic04.setError("This data is Required!");
