@@ -328,18 +328,8 @@ public class MaternalMentalHealthActivity extends Activity {
 
     private boolean ValidateForm() {
 
-        rdo_mn01 = ms01.getCheckedRadioButtonId();
 
-        switch (rdo_mn01) {
-            case R.id.ms01a:
-                var_mn01 = "1";
-                break;
-            case R.id.ms01b:
-                var_mn01 = "2";
-                break;
-        }
-
-        if (rdo_mn01 == -1) {
+        if (ms01.getCheckedRadioButtonId() == -1) {
             ms01a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms01), Toast.LENGTH_LONG).show();
             ms01a.requestFocus();
@@ -349,18 +339,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn02 = ms02.getCheckedRadioButtonId();
-
-        switch (rdo_mn02) {
-            case R.id.ms02a:
-                var_mn02 = "1";
-                break;
-            case R.id.ms02b:
-                var_mn02 = "2";
-                break;
-        }
-
-        if (rdo_mn02 == -1) {
+        if (ms02.getCheckedRadioButtonId() == -1) {
             ms02a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms02), Toast.LENGTH_LONG).show();
             ms02a.requestFocus();
@@ -369,19 +348,7 @@ public class MaternalMentalHealthActivity extends Activity {
             ms02a.setError(null);
         }
 
-
-        rdo_mn03 = ms03.getCheckedRadioButtonId();
-
-        switch (rdo_mn03) {
-            case R.id.ms03a:
-                var_mn03 = "1";
-                break;
-            case R.id.ms03b:
-                var_mn03 = "2";
-                break;
-        }
-
-        if (rdo_mn03 == -1) {
+        if (ms03.getCheckedRadioButtonId() == -1) {
             ms03a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms03), Toast.LENGTH_LONG).show();
             ms03a.requestFocus();
@@ -390,19 +357,7 @@ public class MaternalMentalHealthActivity extends Activity {
             ms03a.setError(null);
         }
 
-
-        rdo_mn04 = ms04.getCheckedRadioButtonId();
-
-        switch (rdo_mn04) {
-            case R.id.ms04a:
-                var_mn04 = "1";
-                break;
-            case R.id.ms04b:
-                var_mn04 = "2";
-                break;
-        }
-
-        if (rdo_mn04 == -1) {
+        if (ms04.getCheckedRadioButtonId() == -1) {
             ms04a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms04), Toast.LENGTH_LONG).show();
             ms04a.requestFocus();
@@ -412,18 +367,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn05 = ms05.getCheckedRadioButtonId();
-
-        switch (rdo_mn05) {
-            case R.id.ms05a:
-                var_mn05 = "1";
-                break;
-            case R.id.ms05b:
-                var_mn05 = "2";
-                break;
-        }
-
-        if (rdo_mn05 == -1) {
+        if (ms05.getCheckedRadioButtonId() == -1) {
             ms05a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms05), Toast.LENGTH_LONG).show();
             ms05a.requestFocus();
@@ -433,18 +377,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn06 = ms06.getCheckedRadioButtonId();
-
-        switch (rdo_mn06) {
-            case R.id.ms06a:
-                var_mn06 = "1";
-                break;
-            case R.id.ms06b:
-                var_mn06 = "2";
-                break;
-        }
-
-        if (rdo_mn06 == -1) {
+        if (ms06.getCheckedRadioButtonId() == -1) {
             ms06a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms06), Toast.LENGTH_LONG).show();
             ms06a.requestFocus();
@@ -454,18 +387,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn07 = ms07.getCheckedRadioButtonId();
-
-        switch (rdo_mn07) {
-            case R.id.ms07a:
-                var_mn07 = "1";
-                break;
-            case R.id.ms07b:
-                var_mn07 = "2";
-                break;
-        }
-
-        if (rdo_mn07 == -1) {
+        if (ms07.getCheckedRadioButtonId() == -1) {
             ms07a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms07), Toast.LENGTH_LONG).show();
             ms07a.requestFocus();
@@ -475,18 +397,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn08 = ms08.getCheckedRadioButtonId();
-
-        switch (rdo_mn08) {
-            case R.id.ms08a:
-                var_mn08 = "1";
-                break;
-            case R.id.ms08b:
-                var_mn08 = "2";
-                break;
-        }
-
-        if (rdo_mn08 == -1) {
+        if (ms08.getCheckedRadioButtonId() == -1) {
             ms08a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms08), Toast.LENGTH_LONG).show();
             ms08a.requestFocus();
@@ -496,18 +407,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn09 = ms09.getCheckedRadioButtonId();
-
-        switch (rdo_mn09) {
-            case R.id.ms09a:
-                var_mn09 = "1";
-                break;
-            case R.id.ms09b:
-                var_mn09 = "2";
-                break;
-        }
-
-        if (rdo_mn09 == -1) {
+        if (ms09.getCheckedRadioButtonId() == -1) {
             ms09a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms09), Toast.LENGTH_LONG).show();
             ms09a.requestFocus();
@@ -517,18 +417,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn010 = ms10.getCheckedRadioButtonId();
-
-        switch (rdo_mn010) {
-            case R.id.ms10a:
-                var_mn010 = "1";
-                break;
-            case R.id.ms10b:
-                var_mn010 = "2";
-                break;
-        }
-
-        if (rdo_mn010 == -1) {
+        if (ms10.getCheckedRadioButtonId() == -1) {
             ms10a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms10), Toast.LENGTH_LONG).show();
             ms10a.requestFocus();
@@ -537,19 +426,7 @@ public class MaternalMentalHealthActivity extends Activity {
             ms10a.setError(null);
         }
 
-
-        rdo_mn011 = ms11.getCheckedRadioButtonId();
-
-        switch (rdo_mn011) {
-            case R.id.ms11a:
-                var_mn011 = "1";
-                break;
-            case R.id.ms11b:
-                var_mn011 = "2";
-                break;
-        }
-
-        if (rdo_mn011 == -1) {
+        if (ms11.getCheckedRadioButtonId() == -1) {
             ms11a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms11), Toast.LENGTH_LONG).show();
             ms11a.requestFocus();
@@ -559,18 +436,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn012 = ms12.getCheckedRadioButtonId();
-
-        switch (rdo_mn012) {
-            case R.id.ms12a:
-                var_mn012 = "1";
-                break;
-            case R.id.ms12b:
-                var_mn012 = "2";
-                break;
-        }
-
-        if (rdo_mn012 == -1) {
+        if (ms12.getCheckedRadioButtonId() == -1) {
             ms12a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms12), Toast.LENGTH_LONG).show();
             ms12a.requestFocus();
@@ -580,18 +446,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn013 = ms13.getCheckedRadioButtonId();
-
-        switch (rdo_mn013) {
-            case R.id.ms13a:
-                var_mn013 = "1";
-                break;
-            case R.id.ms13b:
-                var_mn013 = "2";
-                break;
-        }
-
-        if (rdo_mn013 == -1) {
+        if (ms13.getCheckedRadioButtonId() == -1) {
             ms13a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms13), Toast.LENGTH_LONG).show();
             ms13a.requestFocus();
@@ -601,18 +456,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn014 = ms14.getCheckedRadioButtonId();
-
-        switch (rdo_mn014) {
-            case R.id.ms14a:
-                var_mn014 = "1";
-                break;
-            case R.id.ms14b:
-                var_mn014 = "2";
-                break;
-        }
-
-        if (rdo_mn014 == -1) {
+        if (ms14.getCheckedRadioButtonId() == -1) {
             ms14a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms14), Toast.LENGTH_LONG).show();
             ms14a.requestFocus();
@@ -622,18 +466,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn015 = ms15.getCheckedRadioButtonId();
-
-        switch (rdo_mn015) {
-            case R.id.ms15a:
-                var_mn015 = "1";
-                break;
-            case R.id.ms15b:
-                var_mn015 = "2";
-                break;
-        }
-
-        if (rdo_mn015 == -1) {
+        if (ms15.getCheckedRadioButtonId() == -1) {
             ms15a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms15), Toast.LENGTH_LONG).show();
             ms15a.requestFocus();
@@ -643,18 +476,7 @@ public class MaternalMentalHealthActivity extends Activity {
         }
 
 
-        rdo_mn016 = ms16.getCheckedRadioButtonId();
-
-        switch (rdo_mn016) {
-            case R.id.ms16a:
-                var_mn016 = "1";
-                break;
-            case R.id.ms16b:
-                var_mn016 = "2";
-                break;
-        }
-
-        if (rdo_mn016 == -1) {
+        if (ms16.getCheckedRadioButtonId() == -1) {
             ms16a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms16), Toast.LENGTH_LONG).show();
             ms16a.requestFocus();
@@ -663,19 +485,7 @@ public class MaternalMentalHealthActivity extends Activity {
             ms16a.setError(null);
         }
 
-
-        rdo_mn017 = ms17.getCheckedRadioButtonId();
-
-        switch (rdo_mn017) {
-            case R.id.ms17a:
-                var_mn017 = "1";
-                break;
-            case R.id.ms17b:
-                var_mn017 = "2";
-                break;
-        }
-
-        if (rdo_mn017 == -1) {
+        if (ms17.getCheckedRadioButtonId() == -1) {
             ms17a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms17), Toast.LENGTH_LONG).show();
             ms17a.requestFocus();
@@ -684,19 +494,7 @@ public class MaternalMentalHealthActivity extends Activity {
             ms17a.setError(null);
         }
 
-
-        rdo_mn018 = ms18.getCheckedRadioButtonId();
-
-        switch (rdo_mn018) {
-            case R.id.ms18a:
-                var_mn018 = "1";
-                break;
-            case R.id.ms18b:
-                var_mn018 = "2";
-                break;
-        }
-
-        if (rdo_mn018 == -1) {
+        if (ms18.getCheckedRadioButtonId() == -1) {
             ms18a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms18), Toast.LENGTH_LONG).show();
             ms18a.requestFocus();
@@ -705,19 +503,7 @@ public class MaternalMentalHealthActivity extends Activity {
             ms18a.setError(null);
         }
 
-
-        rdo_mn019 = ms19.getCheckedRadioButtonId();
-
-        switch (rdo_mn019) {
-            case R.id.ms19a:
-                var_mn019 = "1";
-                break;
-            case R.id.ms19b:
-                var_mn019 = "2";
-                break;
-        }
-
-        if (rdo_mn019 == -1) {
+        if (ms19.getCheckedRadioButtonId() == -1) {
             ms19a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms19), Toast.LENGTH_LONG).show();
             ms19a.requestFocus();
@@ -726,19 +512,7 @@ public class MaternalMentalHealthActivity extends Activity {
             ms19a.setError(null);
         }
 
-
-        rdo_mn020 = ms20.getCheckedRadioButtonId();
-
-        switch (rdo_mn020) {
-            case R.id.ms20a:
-                var_mn020 = "1";
-                break;
-            case R.id.ms20b:
-                var_mn020 = "2";
-                break;
-        }
-
-        if (rdo_mn020 == -1) {
+        if (ms20.getCheckedRadioButtonId() == -1) {
             ms20a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.ms20), Toast.LENGTH_LONG).show();
             ms20a.requestFocus();

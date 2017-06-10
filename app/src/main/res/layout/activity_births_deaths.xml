@@ -93,7 +93,7 @@
                 android:focusable="false"
                 android:hint="@string/bdd"
                 android:textColor="@android:color/black"
-                app:dateFormat="dd/MM/yyyy" />
+                app:dateFormat="dd-MM-yyyy" />
 
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
@@ -104,8 +104,7 @@
                 android:focusable="false"
                 android:hint="@string/bdd"
                 android:textColor="@android:color/black"
-
-                app:dateFormat="dd/MM/yyyy" />
+                app:dateFormat="dd-MM-yyyy" />
 
         </LinearLayout>
 
@@ -161,7 +160,7 @@
                 android:focusable="false"
                 android:hint="@string/bdd"
                 android:textColor="@android:color/black"
-                app:dateFormat="dd/MM/yyyy" />
+                app:dateFormat="dd-MM-yyyy" />
 
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
@@ -172,7 +171,7 @@
                 android:focusable="false"
                 android:hint="@string/bdd"
                 android:textColor="@android:color/black"
-                app:dateFormat="dd/MM/yyyy" />
+                app:dateFormat="dd-MM-yyyy" />
 
         </LinearLayout>
 
@@ -229,7 +228,7 @@
                 android:focusable="false"
                 android:hint="@string/bdc"
                 android:textColor="@android:color/black"
-                app:dateFormat="dd/MM/yyyy" />
+                app:dateFormat="dd-MM-yyyy" />
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/bd03dob2"
@@ -239,8 +238,7 @@
                 android:focusable="false"
                 android:hint="@string/bdc"
                 android:textColor="@android:color/black"
-
-                app:dateFormat="dd/MM/yyyy" />
+                app:dateFormat="dd-MM-yyyy" />
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/bd03dob3"
@@ -250,8 +248,7 @@
                 android:focusable="false"
                 android:hint="@string/bdc"
                 android:textColor="@android:color/black"
-
-                app:dateFormat="dd/MM/yyyy" />
+                app:dateFormat="dd-MM-yyyy" />
 
         </LinearLayout>
 
@@ -337,7 +334,7 @@
                     android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <View
                     android:layout_width="3dp"
@@ -354,7 +351,7 @@
                     android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
             </LinearLayout>
 
@@ -373,7 +370,7 @@
                     android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <View
                     android:layout_width="3dp"
@@ -389,7 +386,7 @@
                     android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
             </LinearLayout>
 
         </LinearLayout>
@@ -476,7 +473,7 @@
                     android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <View
                     android:layout_width="3dp"
@@ -492,7 +489,7 @@
                     android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
             </LinearLayout>
 
@@ -511,7 +508,7 @@
                     android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <View
                     android:layout_width="3dp"
@@ -527,7 +524,7 @@
                     android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
             </LinearLayout>
 
@@ -614,7 +611,7 @@
                     android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <View
                     android:layout_width="3dp"
@@ -630,7 +627,7 @@
                     android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
             </LinearLayout>
 
@@ -650,7 +647,7 @@
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     android:visibility="visible"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <View
                     android:layout_width="3dp"
@@ -667,7 +664,7 @@
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     android:visibility="visible"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
             </LinearLayout>
 
@@ -752,7 +749,7 @@
                     android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <View
                     android:layout_width="3dp"
@@ -769,7 +766,7 @@
                     android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
 
             </LinearLayout>
@@ -789,7 +786,7 @@
                     android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <View
                     android:layout_width="3dp"
@@ -806,7 +803,7 @@
                     android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
 
             </LinearLayout>
@@ -900,7 +897,7 @@
                     android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <View
                     android:layout_width="3dp"
@@ -916,7 +913,7 @@
                     android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
 
             </LinearLayout>
@@ -936,7 +933,7 @@
                     android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
 
                 <View
@@ -954,7 +951,7 @@
                     android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
-                    app:dateFormat="dd/MM/yyyy" />
+                    app:dateFormat="dd-MM-yyyy" />
 
 
             </LinearLayout>
