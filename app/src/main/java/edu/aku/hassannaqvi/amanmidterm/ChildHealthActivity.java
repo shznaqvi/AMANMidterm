@@ -487,6 +487,68 @@ public class ChildHealthActivity extends Activity {
             }
         });
 
+        iy01299.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    iy012d.setVisibility(View.GONE);
+                    iy012d.setText(null);
+                    iy012h.setVisibility(View.GONE);
+                    iy012h.setText(null);
+                } else {
+                    iy012d.setVisibility(View.VISIBLE);
+                    iy012h.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        iy01677.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    iy016m.setVisibility(View.GONE);
+                    iy016m.setText(null);
+                } else {
+                    iy016m.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        iy01788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    iy017d.setVisibility(View.GONE);
+                    iy017m.setVisibility(View.GONE);
+                    iy017d.setText(null);
+                    iy017m.setText(null);
+
+                } else {
+                    iy017d.setVisibility(View.VISIBLE);
+                    iy017m.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        iy01888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    iy018d.setVisibility(View.GONE);
+                    iy018m.setVisibility(View.GONE);
+                    iy018d.setText(null);
+                    iy018m.setText(null);
+
+                } else {
+                    iy018d.setVisibility(View.VISIBLE);
+                    iy018m.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+
+
 
     }
 
@@ -1011,6 +1073,8 @@ public class ChildHealthActivity extends Activity {
                 iy03m.setError("Age in months must be between 0 - 11");
                 iy03m.requestFocus();
                 return false;
+            } else {
+                iy03m.setError(null);
             }
 
         }
@@ -1022,6 +1086,8 @@ public class ChildHealthActivity extends Activity {
                 iy03d.setError("Age in days must be between 0 - 30");
                 iy03d.requestFocus();
                 return false;
+            } else {
+                iy03d.setError(null);
             }
 
         }
@@ -1031,8 +1097,9 @@ public class ChildHealthActivity extends Activity {
 
             if (Integer.parseInt(iy06d.getText().toString()) < 0 || Integer.parseInt(iy06d.getText().toString()) > 28) {
                 iy06d.setError("Must be between 0 - 28");
-                iy06d.requestFocus();
                 return false;
+            } else {
+                iy06d.setError(null);
             }
 
         }
@@ -1045,6 +1112,8 @@ public class ChildHealthActivity extends Activity {
                 iy011d.setError("Must be between 0 - 30");
                 iy011d.requestFocus();
                 return false;
+            } else {
+                iy011d.setError(null);
             }
 
         }
@@ -1057,6 +1126,8 @@ public class ChildHealthActivity extends Activity {
                 iy011w.setError("Must be between 0 - 4");
                 iy011w.requestFocus();
                 return false;
+            } else {
+                iy011w.setError(null);
             }
 
         }
@@ -1068,6 +1139,8 @@ public class ChildHealthActivity extends Activity {
                 iy012d.setError("Must be between 0 - 30");
                 iy012d.requestFocus();
                 return false;
+            } else {
+                iy012d.setError(null);
             }
 
         }
@@ -1079,6 +1152,8 @@ public class ChildHealthActivity extends Activity {
                 iy012h.setError("Must be between 0 - 24");
                 iy012h.requestFocus();
                 return false;
+            } else {
+                iy012h.setError(null);
             }
 
         }
@@ -1090,17 +1165,21 @@ public class ChildHealthActivity extends Activity {
                 iy016m.setError("Must be between 0 - 11");
                 iy016m.requestFocus();
                 return false;
+            } else {
+                iy016m.setError(null);
             }
 
         }
 
 
-        if (iy017d.getText().toString() != "" && iy017d.getText().toString() != null) {
+        if (!iy017d.getText().toString().isEmpty() && iy017d.getText().toString() != null) {
 
             if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
                 iy017d.setError("Must be between 0 - 30");
                 iy017d.requestFocus();
                 return false;
+            } else {
+                iy017d.setError(null);
             }
 
         }
@@ -1112,6 +1191,8 @@ public class ChildHealthActivity extends Activity {
                 iy017m.setError("Must be between 0 - 11");
                 iy017m.requestFocus();
                 return false;
+            } else {
+                iy017m.setError(null);
             }
 
         }
@@ -1123,6 +1204,8 @@ public class ChildHealthActivity extends Activity {
                 iy018d.setError("Must be between 0 - 30");
                 iy018d.requestFocus();
                 return false;
+            } else {
+                iy018d.setError(null);
             }
 
         }
@@ -1134,6 +1217,8 @@ public class ChildHealthActivity extends Activity {
                 iy018m.setError("Must be between 0 - 11");
                 iy018m.requestFocus();
                 return false;
+            } else {
+                iy018m.setError(null);
             }
 
         }
