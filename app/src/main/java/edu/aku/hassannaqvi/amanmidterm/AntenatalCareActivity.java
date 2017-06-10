@@ -144,64 +144,28 @@ public class AntenatalCareActivity extends Activity {
     RadioButton anc01588;
     @BindView(R.id.anc015x)
     EditText anc015x;
-
-    int rdo_anc01;
-    String var_anc01;
-
-    int rdo_anc04;
-    String var_anc04;
-
-    int rdo_anc06;
-    String var_anc06;
-
-    int rdo_anc07;
-    String var_anc07;
-
-    int rdo_anc08;
-    String var_anc08;
-
-    int rdo_anc012;
-    String var_anc012;
-
-    int rdo_anc014;
-    String var_anc014;
-
-    int rdo_anc015;
-    String var_anc015;
-
     @BindView(R.id.fldGrpanc01)
     LinearLayout fldGrpanc01;
-
     @BindView(R.id.fldGrpanc03x)
     LinearLayout fldGrpanc03x;
-
     @BindView(R.id.fldGrpanc04)
     LinearLayout fldGrpanc04;
-
     @BindView(R.id.fldGrp06)
     LinearLayout fldGrp06;
-
     @BindView(R.id.fldGrpanc07)
     LinearLayout fldGrpanc07;
-
     @BindView(R.id.fldGrpanc09)
     LinearLayout fldGrpanc09;
-
     @BindView(R.id.fldGrpanc011x)
     LinearLayout fldGrpanc011x;
-
     @BindView(R.id.fldGrp012)
     LinearLayout fldGrp012;
-
     @BindView(R.id.fldGrp014)
     LinearLayout fldGrp014;
-
     @BindView(R.id.fldGrpanc015x)
     LinearLayout fldGrpanc015x;
-
     @BindView(R.id.fldGrpanc09a)
     LinearLayout fldGrpanc09a;
-
     @BindView(R.id.fldGrpanc03)
     LinearLayout fldGrpanc03;
 
@@ -417,8 +381,6 @@ public class AntenatalCareActivity extends Activity {
         });
 
 
-
-
     }
 
 
@@ -551,7 +513,7 @@ public class AntenatalCareActivity extends Activity {
 
         //  getRadioButtonValues();
 
-        if (rdo_anc01 == -1) {
+        if (anc01.getCheckedRadioButtonId() == -1) {
             anc01a.setError(getString(R.string.rdoerr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc01), Toast.LENGTH_LONG).show();
             Log.d(TAG, "anc01: this data is required ");
@@ -562,7 +524,7 @@ public class AntenatalCareActivity extends Activity {
         }
 
 
-        if (var_anc01 == "2") {
+        if (anc01b.isChecked()) {
             if (anc01aa.getText().toString().isEmpty() || anc01aa.getText().toString() == null) {
                 anc01aa.setError(getString(R.string.txterr));
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc01a), Toast.LENGTH_LONG).show();
@@ -574,9 +536,7 @@ public class AntenatalCareActivity extends Activity {
             }
 
 
-
-
-        } else if (var_anc01 == "1") {
+        } else if (anc01a.isChecked()) {
 
             if (anc02.getText().toString().isEmpty() || anc02.getText().toString() == null) {
                 anc02.setError(getString(R.string.txterr));
@@ -604,25 +564,24 @@ public class AntenatalCareActivity extends Activity {
                 anc03a.setError(null);
             }
 
-        }
+            if (anc0388.isChecked()) {
 
+                if (anc03x.getText().toString().isEmpty() || anc03x.getText().toString() == null) {
+                    anc03x.setError(getString(R.string.txterr));
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "anc03x: empty ");
+                    anc03x.requestFocus();
+                    return false;
+                } else {
+                    anc03x.setError(null);
+                }
 
-        if (anc0388.isChecked()) {
-
-            if (anc03x.getText().toString().isEmpty() || anc03x.getText().toString() == null) {
-                anc03x.setError(getString(R.string.txterr));
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                Log.d(TAG, "anc03x: empty ");
-                anc03x.requestFocus();
-                return false;
-            } else {
-                anc03x.setError(null);
             }
 
         }
 
 
-        if (rdo_anc04 == -1) {
+        if (anc04.getCheckedRadioButtonId() == -1) {
             anc04a.setError(getString(R.string.rdoerr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc04), Toast.LENGTH_LONG).show();
             Log.d(TAG, "anc04: this data is required ");
@@ -633,10 +592,9 @@ public class AntenatalCareActivity extends Activity {
         }
 
 
-        if (var_anc04 == "1") {
+        if (anc04a.isChecked()) {
 
-            if (!anc0599.isChecked()) {
-                if (anc05d.getText().toString().isEmpty() || anc05d.getText().toString() == null) {
+            if (anc05d.getText().toString().isEmpty() || anc05d.getText().toString() == null && !anc0599.isChecked()) {
                     anc05d.setError(getString(R.string.txterr));
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc05), Toast.LENGTH_LONG).show();
                     Log.d(TAG, "anc05d: empty");
@@ -645,12 +603,23 @@ public class AntenatalCareActivity extends Activity {
                 } else {
                     anc05d.setError(null);
                 }
-            }
 
+            if (!anc0599.isChecked()) {
+                if (Integer.valueOf(anc05d.getText().toString().isEmpty() ? "" : anc05d.getText().toString()) < 1
+                        || Integer.valueOf(anc05d.getText().toString().isEmpty() ? "" : anc05d.getText().toString()) > 29) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.anc05), Toast.LENGTH_LONG).show();
+                    anc05d.setError("Range is 1 to 29 days");
+                    Log.d(TAG, "anc05d: Range is 1 to 29 days");
+                    anc05d.requestFocus();
+                } else {
+                    anc05d.setError(null);
+                }
+
+            }
         }
 
 
-        if (rdo_anc06 == -1) {
+        if (anc06.getCheckedRadioButtonId() == -1) {
             anc06a.setError(getString(R.string.rdoerr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc06), Toast.LENGTH_LONG).show();
             Log.d(TAG, "anc06a: this data is required ");
@@ -661,9 +630,9 @@ public class AntenatalCareActivity extends Activity {
         }
 
 
-        if (var_anc06 == "1") {
+        if (anc06a.isChecked()) {
 
-            if (rdo_anc07 == -1) {
+            if (anc07.getCheckedRadioButtonId() == -1) {
                 anc07a.setError(getString(R.string.rdoerr));
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc07), Toast.LENGTH_LONG).show();
                 Log.d(TAG, "anc07a: this data is required ");
@@ -674,8 +643,7 @@ public class AntenatalCareActivity extends Activity {
             }
 
 
-            if (var_anc07 == "88") {
-
+            if (anc0788.isChecked()) {
                 if (anc07x.getText().toString().isEmpty() || anc07x.getText().toString() == null) {
                     anc07x.setError(getString(R.string.txterr));
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
@@ -685,11 +653,10 @@ public class AntenatalCareActivity extends Activity {
                 } else {
                     anc07x.setError(null);
                 }
-
             }
 
 
-            if (rdo_anc08 == -1) {
+            if (anc08.getCheckedRadioButtonId() == -1) {
                 anc08a.setError(getString(R.string.rdoerr));
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc08), Toast.LENGTH_LONG).show();
                 Log.d(TAG, "anc08a: this data is required ");
@@ -700,7 +667,7 @@ public class AntenatalCareActivity extends Activity {
             }
 
 
-            if (var_anc08 == "2") {
+            if (anc08b.isChecked()) {
 
                 if (anc09.getText().toString().isEmpty() || anc09.getText().toString() == null) {
                     anc09.setError(getString(R.string.txterr));
@@ -712,7 +679,7 @@ public class AntenatalCareActivity extends Activity {
                     anc09.setError(null);
                 }
 
-            } else if (var_anc08 == "1") {
+            } else if (anc08a.isChecked()) {
                 if (!anc011a.isChecked()
                         && !anc011b.isChecked()
                         && !anc011c.isChecked()
@@ -728,26 +695,24 @@ public class AntenatalCareActivity extends Activity {
                 } else {
                     anc011a.setError(null);
                 }
-            }
 
+                if (anc01188.isChecked()) {
 
-            if (anc01188.isChecked()) {
-
-                if (anc011x.getText().toString().isEmpty() || anc011x.getText().toString() == null) {
-                    anc011x.setError(getString(R.string.txterr));
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                    Log.d(TAG, "anc011x: empty ");
-                    anc011x.requestFocus();
-                    return false;
-                } else {
-                    anc011x.setError(null);
+                    if (anc011x.getText().toString().isEmpty() || anc011x.getText().toString() == null) {
+                        anc011x.setError(getString(R.string.txterr));
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                        Log.d(TAG, "anc011x: empty ");
+                        anc011x.requestFocus();
+                        return false;
+                    } else {
+                        anc011x.setError(null);
+                    }
                 }
-
             }
         }
 
 
-        if (rdo_anc012 == -1) {
+        if (anc012.getCheckedRadioButtonId() == -1) {
             anc012a.setError(getString(R.string.rdoerr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc012), Toast.LENGTH_LONG).show();
             Log.d(TAG, "anc012a: this data is required ");
@@ -758,10 +723,9 @@ public class AntenatalCareActivity extends Activity {
         }
 
 
-        if (var_anc012 == "1") {
+        if (anc012a.isChecked()) {
 
-            if (!anc01399.isChecked()) {
-                if (anc013.getText().toString().isEmpty() || anc013.getText().toString() == null) {
+            if (anc013.getText().toString().isEmpty() || anc013.getText().toString() == null && !anc01399.isChecked()) {
                     anc013.setError(getString(R.string.txterr));
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
                     Log.d(TAG, "anc013: empty");
@@ -771,14 +735,22 @@ public class AntenatalCareActivity extends Activity {
                     anc013.setError(null);
                 }
 
-            } else {
-                anc013.setText(null);
+            if (!anc01399.isChecked()) {
+                if (Integer.valueOf(anc013.getText().toString().isEmpty() ? "" : anc013.getText().toString()) < 1
+                        || Integer.valueOf(anc013.getText().toString().isEmpty() ? "" : anc013.getText().toString()) > 9) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
+                    anc013.setError("Range is 1 to 9 times");
+                    Log.d(TAG, "anc013: Range is 1 to 9 times");
+                    anc013.requestFocus();
+                } else {
+                    anc013.setError(null);
+                }
             }
 
         }
 
 
-        if (rdo_anc014 == -1) {
+        if (anc014.getCheckedRadioButtonId() == -1) {
             anc014a.setError(getString(R.string.rdoerr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc014), Toast.LENGTH_LONG).show();
             Log.d(TAG, "anc014a: this data is required ");
@@ -789,9 +761,9 @@ public class AntenatalCareActivity extends Activity {
         }
 
 
-        if (var_anc014 == "1") {
+        if (anc014a.isChecked()) {
 
-            if (rdo_anc015 == -1) {
+            if (anc015.getCheckedRadioButtonId() == -1) {
                 anc015a.setError(getString(R.string.rdoerr));
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc015), Toast.LENGTH_LONG).show();
                 Log.d(TAG, "anc015a: this data is required ");
@@ -801,20 +773,20 @@ public class AntenatalCareActivity extends Activity {
                 anc015a.setError(null);
             }
 
-        }
+            if (anc01588.isChecked()) {
 
+                if (anc015x.getText().toString().isEmpty() || anc015x.getText().toString() == null) {
+                    anc015x.setError(getString(R.string.txterr));
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "anc015x : empty ");
+                    anc015x.requestFocus();
+                    return false;
+                } else {
+                    anc015x.setError(null);
+                }
 
-        if (var_anc015 == "88") {
-
-            if (anc015x.getText().toString().isEmpty() || anc015x.getText().toString() == null) {
-                anc015x.setError(getString(R.string.txterr));
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                Log.d(TAG, "anc015x : empty ");
-                anc015x.requestFocus();
-                return false;
-            } else {
-                anc015x.setError(null);
             }
+
 
         }
 
