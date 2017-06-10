@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.amanmidterm;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -18,6 +19,8 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static android.content.ContentValues.TAG;
 
 public class AntenatalCareActivity extends Activity {
     @BindView(R.id.anc01)
@@ -549,7 +552,8 @@ public class AntenatalCareActivity extends Activity {
 
         if (rdo_anc01 == -1) {
             anc01a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc01), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc01), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "anc01: this data is required ");
             anc01a.requestFocus();
             return false;
         } else {
@@ -560,7 +564,8 @@ public class AntenatalCareActivity extends Activity {
         if (var_anc01 == "2") {
             if (anc01aa.getText().toString().isEmpty() || anc01aa.getText().toString() == null) {
                 anc01aa.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc01a), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc01a), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc01aa: empty");
                 anc01aa.requestFocus();
                 return false;
             } else {
@@ -574,7 +579,8 @@ public class AntenatalCareActivity extends Activity {
 
             if (anc02.getText().toString().isEmpty() || anc02.getText().toString() == null) {
                 anc02.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc02), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc02), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc01: empty ");
                 anc02.requestFocus();
                 return false;
             } else {
@@ -589,7 +595,8 @@ public class AntenatalCareActivity extends Activity {
                     && !anc03f.isChecked()
                     && !anc0388.isChecked()) {
                 anc03a.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc03), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc03), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc03: this data is required ");
                 anc03a.requestFocus();
                 return false;
             } else {
@@ -603,7 +610,8 @@ public class AntenatalCareActivity extends Activity {
 
             if (anc03x.getText().toString().isEmpty() || anc03x.getText().toString() == null) {
                 anc03x.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc03x: empty ");
                 anc03x.requestFocus();
                 return false;
             } else {
@@ -615,7 +623,8 @@ public class AntenatalCareActivity extends Activity {
 
         if (rdo_anc04 == -1) {
             anc04a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc04), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc04), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "anc04: this data is required ");
             anc04a.requestFocus();
             return false;
         } else {
@@ -628,7 +637,8 @@ public class AntenatalCareActivity extends Activity {
             if (!anc0599.isChecked()) {
                 if (anc05d.getText().toString().isEmpty() || anc05d.getText().toString() == null) {
                     anc05d.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc05), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc05), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "anc05d: empty");
                     anc05d.requestFocus();
                     return false;
                 } else {
@@ -641,7 +651,8 @@ public class AntenatalCareActivity extends Activity {
 
         if (rdo_anc06 == -1) {
             anc06a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc06), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc06), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "anc06a: this data is required ");
             anc06a.requestFocus();
             return false;
         } else {
@@ -653,7 +664,8 @@ public class AntenatalCareActivity extends Activity {
 
             if (rdo_anc07 == -1) {
                 anc07a.setError(getString(R.string.rdoerr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc07), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc07), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc07a: this data is required ");
                 anc07a.requestFocus();
                 return false;
             } else {
@@ -665,7 +677,8 @@ public class AntenatalCareActivity extends Activity {
 
                 if (anc07x.getText().toString().isEmpty() || anc07x.getText().toString() == null) {
                     anc07x.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "anc07x: empty ");
                     anc07x.requestFocus();
                     return false;
                 } else {
@@ -677,7 +690,8 @@ public class AntenatalCareActivity extends Activity {
 
             if (rdo_anc08 == -1) {
                 anc08a.setError(getString(R.string.rdoerr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc08), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc08), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc08a: this data is required ");
                 anc08a.requestFocus();
                 return false;
             } else {
@@ -689,7 +703,8 @@ public class AntenatalCareActivity extends Activity {
 
                 if (anc09.getText().toString().isEmpty() || anc09.getText().toString() == null) {
                     anc09.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc09), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc09), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "anc09: empty");
                     anc09.requestFocus();
                     return false;
                 } else {
@@ -705,7 +720,8 @@ public class AntenatalCareActivity extends Activity {
                         && !anc011f.isChecked()
                         && !anc01188.isChecked()) {
                     anc011a.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc011), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc011), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "anc011: this data is required ");
                     anc011a.requestFocus();
                     return false;
                 } else {
@@ -718,7 +734,8 @@ public class AntenatalCareActivity extends Activity {
 
                 if (anc011x.getText().toString().isEmpty() || anc011x.getText().toString() == null) {
                     anc011x.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "anc011x: empty ");
                     anc011x.requestFocus();
                     return false;
                 } else {
@@ -731,7 +748,8 @@ public class AntenatalCareActivity extends Activity {
 
         if (rdo_anc012 == -1) {
             anc012a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc012), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc012), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "anc012a: this data is required ");
             anc012a.requestFocus();
             return false;
         } else {
@@ -744,7 +762,8 @@ public class AntenatalCareActivity extends Activity {
             if (!anc01399.isChecked()) {
                 if (anc013.getText().toString().isEmpty() || anc013.getText().toString() == null) {
                     anc013.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "anc013: empty");
                     anc013.requestFocus();
                     return false;
                 } else {
@@ -760,7 +779,8 @@ public class AntenatalCareActivity extends Activity {
 
         if (rdo_anc014 == -1) {
             anc014a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc014), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc014), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "anc014a: this data is required ");
             anc014a.requestFocus();
             return false;
         } else {
@@ -772,7 +792,8 @@ public class AntenatalCareActivity extends Activity {
 
             if (rdo_anc015 == -1) {
                 anc015a.setError(getString(R.string.rdoerr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.anc015), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc015), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc015a: this data is required ");
                 anc015a.requestFocus();
                 return false;
             } else {
@@ -786,7 +807,8 @@ public class AntenatalCareActivity extends Activity {
 
             if (anc015x.getText().toString().isEmpty() || anc015x.getText().toString() == null) {
                 anc015x.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc015x : empty ");
                 anc015x.requestFocus();
                 return false;
             } else {
