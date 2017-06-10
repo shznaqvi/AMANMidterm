@@ -455,6 +455,8 @@ public class ChildHealthActivity extends Activity {
                     iy01888.setChecked(false);
                 } else {
                     fldGrpiy016.setVisibility(View.VISIBLE);
+                    iy016m.setVisibility(View.VISIBLE);
+
                 }
             }
         });
@@ -473,6 +475,8 @@ public class ChildHealthActivity extends Activity {
                     iy01888.setChecked(false);
                 } else {
                     fldGrpiy017.setVisibility(View.VISIBLE);
+                    iy017d.setVisibility(View.VISIBLE);
+                    iy017m.setVisibility(View.VISIBLE);
                 }
             }
         });
