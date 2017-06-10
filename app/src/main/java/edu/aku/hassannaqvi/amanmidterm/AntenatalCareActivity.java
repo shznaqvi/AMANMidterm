@@ -20,9 +20,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static android.content.ContentValues.TAG;
+
 
 public class AntenatalCareActivity extends Activity {
+    private static final String TAG = AntenatalCareActivity.class.getSimpleName();
     @BindView(R.id.anc01)
     RadioGroup anc01;
     @BindView(R.id.anc01a)

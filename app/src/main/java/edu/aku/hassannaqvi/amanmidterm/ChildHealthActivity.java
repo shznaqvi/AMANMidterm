@@ -22,10 +22,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static android.content.ContentValues.TAG;
 
 public class ChildHealthActivity extends Activity {
 
+    private static final String TAG = ChildHealthActivity.class.getSimpleName();
     @BindView(R.id.activity_section_d)
     ScrollView activitySectionD;
     @BindView(R.id.iy01)
