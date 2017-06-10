@@ -152,7 +152,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_births_deaths);
         ButterKnife.bind(this);
 
-        //dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
         maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_YEAR));
         maxDate5Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_5Years));
         maxDate49Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_49Years));
@@ -556,6 +556,300 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bd08dod2.onFocusChange(v, true);
+            }
+        });
+
+//======================== Q1 Skip Pattern
+        bd01s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(bd01s.getText().toString().isEmpty() ? "0" : bd01s.getText().toString()) == 0) {
+                    fldGrpbd01.setVisibility(View.GONE);
+                    bd01dod1.setText(null);
+                    bd01dod2.setText(null);
+                } else {
+                    fldGrpbd01.setVisibility(View.VISIBLE);
+
+                }
+
+                if (Integer.parseInt(bd01s.getText().toString().isEmpty() ? "0" : bd01s.getText().toString()) == 1) {
+                    fldGrpbd01.setVisibility(View.VISIBLE);
+                    bd01dod2.setVisibility(View.GONE);
+                    bd01dod2.setText(null);
+                } else {
+                    bd01dod2.setVisibility(View.VISIBLE);
+                }
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //======================== Q2 Skip Pattern
+        bd02s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(bd02s.getText().toString().isEmpty() ? "0" : bd02s.getText().toString()) == 0) {
+                    fldGrpbd02.setVisibility(View.GONE);
+                    bd02dod1.setText(null);
+                    bd02dod2.setText(null);
+                } else {
+                    fldGrpbd02.setVisibility(View.VISIBLE);
+
+                }
+
+                if (Integer.parseInt(bd02s.getText().toString().isEmpty() ? "0" : bd02s.getText().toString()) == 1) {
+                    fldGrpbd02.setVisibility(View.VISIBLE);
+                    bd02dod2.setVisibility(View.GONE);
+                    bd02dod2.setText(null);
+                } else {
+                    bd02dod2.setVisibility(View.VISIBLE);
+                }
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //======================== Q3 Skip Pattern
+        bd03s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 0) {
+                    fldGrpbd03.setVisibility(View.GONE);
+                    bd03dob1.setText(null);
+                    bd03dob2.setText(null);
+                    bd03dob3.setText(null);
+                } else {
+                    fldGrpbd03.setVisibility(View.VISIBLE);
+
+                }
+
+                if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 1) {
+                    fldGrpbd03.setVisibility(View.VISIBLE);
+                    bd03dob2.setVisibility(View.GONE);
+                    bd03dob3.setVisibility(View.GONE);
+                    bd03dob2.setText(null);
+                    bd03dob3.setText(null);
+                } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 2) {
+                    fldGrpbd03.setVisibility(View.VISIBLE);
+                    bd03dob2.setVisibility(View.VISIBLE);
+                    bd03dob3.setVisibility(View.GONE);
+                    bd03dob3.setText(null);
+                } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 3) {
+                    fldGrpbd03.setVisibility(View.VISIBLE);
+                    bd03dob3.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        //=================== Q4 Skip Pattern
+
+        bd04s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(bd04s.getText().toString().isEmpty() ? "0" : bd04s.getText().toString()) == 0) {
+                    fldGrpbd04.setVisibility(View.GONE);
+                    bd04dob2.setText(null);
+                    bd04dod2.setText(null);
+                    bd04dob1.setText(null);
+                    bd04dod1.setText(null);
+                } else if (Integer.parseInt(bd04s.getText().toString().isEmpty() ? "0" : bd04s.getText().toString()) == 1) {
+                    fldGrpbd04.setVisibility(View.VISIBLE);
+                    fldGrpbd04dob2.setVisibility(View.GONE);
+                    bd04dob2.setText(null);
+                    bd04dod2.setText(null);
+                } else if (Integer.parseInt(bd04s.getText().toString().isEmpty() ? "0" : bd04s.getText().toString()) == 2) {
+                    fldGrpbd04.setVisibility(View.VISIBLE);
+                    fldGrpbd04dob2.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        //=================== Q5 Skip Pattern
+
+        bd05s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(bd05s.getText().toString().isEmpty() ? "0" : bd05s.getText().toString()) == 0) {
+                    fldGrpbd05.setVisibility(View.GONE);
+                    bd05dob2.setText(null);
+                    bd05dod2.setText(null);
+                    bd05dob1.setText(null);
+                    bd05dod1.setText(null);
+                } else if (Integer.parseInt(bd05s.getText().toString().isEmpty() ? "0" : bd05s.getText().toString()) == 1) {
+                    fldGrpbd05.setVisibility(View.VISIBLE);
+                    fldGrpbd05dob2.setVisibility(View.GONE);
+                    bd05dob2.setText(null);
+                    bd05dod2.setText(null);
+                } else if (Integer.parseInt(bd05s.getText().toString().isEmpty() ? "0" : bd05s.getText().toString()) == 2) {
+                    fldGrpbd05.setVisibility(View.VISIBLE);
+                    fldGrpbd05dob2.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        //=================== Q6 Skip Pattern
+
+        bd06s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(bd06s.getText().toString().isEmpty() ? "0" : bd06s.getText().toString()) == 0) {
+                    fldGrpbd06.setVisibility(View.GONE);
+                    bd06dob2.setText(null);
+                    bd06dod2.setText(null);
+                    bd06dob1.setText(null);
+                    bd06dod1.setText(null);
+                } else if (Integer.parseInt(bd06s.getText().toString().isEmpty() ? "0" : bd06s.getText().toString()) == 1) {
+                    fldGrpbd06.setVisibility(View.VISIBLE);
+                    fldGrpbd06dob2.setVisibility(View.GONE);
+                    bd06dob2.setText(null);
+                    bd06dod2.setText(null);
+                } else if (Integer.parseInt(bd06s.getText().toString().isEmpty() ? "0" : bd06s.getText().toString()) == 2) {
+                    fldGrpbd06.setVisibility(View.VISIBLE);
+                    fldGrpbd06dob2.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //=================== Q7 Skip Pattern
+
+        bd07s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(bd07s.getText().toString().isEmpty() ? "0" : bd07s.getText().toString()) == 0) {
+                    fldGrpbd07.setVisibility(View.GONE);
+                    bd07dob2.setText(null);
+                    bd07dod2.setText(null);
+                    bd07dob1.setText(null);
+                    bd07dod1.setText(null);
+                } else if (Integer.parseInt(bd07s.getText().toString().isEmpty() ? "0" : bd07s.getText().toString()) == 1) {
+                    fldGrpbd07.setVisibility(View.VISIBLE);
+                    fldGrpbd07dob2.setVisibility(View.GONE);
+                    bd07dob2.setText(null);
+                    bd07dod2.setText(null);
+                } else if (Integer.parseInt(bd07s.getText().toString().isEmpty() ? "0" : bd07s.getText().toString()) == 2) {
+                    fldGrpbd07.setVisibility(View.VISIBLE);
+                    fldGrpbd07dob2.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //=================== Q8 Skip Pattern
+
+        bd08s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(bd08s.getText().toString().isEmpty() ? "0" : bd08s.getText().toString()) == 0) {
+                    fldGrpbd08.setVisibility(View.GONE);
+                    bd08dob2.setText(null);
+                    bd08dod2.setText(null);
+                    bd08dob1.setText(null);
+                    bd08dod1.setText(null);
+                } else if (Integer.parseInt(bd08s.getText().toString().isEmpty() ? "0" : bd08s.getText().toString()) == 1) {
+                    fldGrpbd08.setVisibility(View.VISIBLE);
+                    fldGrpbd08dob2.setVisibility(View.GONE);
+                    bd08dob2.setText(null);
+                    bd08dod2.setText(null);
+                } else if (Integer.parseInt(bd08s.getText().toString().isEmpty() ? "0" : bd08s.getText().toString()) == 2) {
+                    fldGrpbd08.setVisibility(View.VISIBLE);
+                    fldGrpbd08dob2.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
@@ -1056,7 +1350,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
     // }
 
     public Calendar getCalendarDate(String value) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar calendar = Calendar.getInstance();
         try {
             Date date = sdf.parse(value);

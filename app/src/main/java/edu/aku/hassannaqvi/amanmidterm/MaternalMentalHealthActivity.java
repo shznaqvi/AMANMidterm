@@ -171,67 +171,6 @@ public class MaternalMentalHealthActivity extends Activity {
     @BindView(R.id.ms20b)
     RadioButton ms20b;
 
-    int rdo_mn01;
-    String var_mn01;
-
-    int rdo_mn02;
-    String var_mn02;
-
-    int rdo_mn03;
-    String var_mn03;
-
-    int rdo_mn04;
-    String var_mn04;
-
-    int rdo_mn05;
-    String var_mn05;
-
-    int rdo_mn06;
-    String var_mn06;
-
-    int rdo_mn07;
-    String var_mn07;
-
-    int rdo_mn08;
-    String var_mn08;
-
-    int rdo_mn09;
-    String var_mn09;
-
-    int rdo_mn010;
-    String var_mn010;
-
-    int rdo_mn011;
-    String var_mn011;
-
-    int rdo_mn012;
-    String var_mn012;
-
-    int rdo_mn013;
-    String var_mn013;
-
-    int rdo_mn014;
-    String var_mn014;
-
-    int rdo_mn015;
-    String var_mn015;
-
-    int rdo_mn016;
-    String var_mn016;
-
-    int rdo_mn017;
-    String var_mn017;
-
-    int rdo_mn018;
-    String var_mn018;
-
-    int rdo_mn019;
-    String var_mn019;
-
-    int rdo_mn020;
-    String var_mn020;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

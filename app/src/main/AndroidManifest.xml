@@ -39,6 +39,9 @@
         <activity android:name=".SocioEconomicActivity" />
         <activity android:name=".LabInfoActivity" />
         <activity
+            android:name=".MaternalMentalHealthActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".FormsList"
             android:theme="@android:style/Theme.Holo.Light" />
         <activity

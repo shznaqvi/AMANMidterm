@@ -40,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:background="@color/colorYellowlight"
             android:text="@string/se01a"
             android:textAppearance="?android:attr/textAppearanceLarge" />
         <RadioGroup
@@ -88,6 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:background="@color/colorYellowlight"
             android:text="@string/se01b"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -160,6 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:background="@color/colorYellowlight"
             android:text="@string/se01c"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 

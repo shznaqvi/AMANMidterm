@@ -235,7 +235,7 @@ public class ChildHealthActivity extends Activity {
                 if (iy04a.isChecked()) {
                     fldGrpiy04.setVisibility(View.VISIBLE);
                 } else {
-
+                    fldGrpiy04.setVisibility(View.GONE);
                     iy05a.setChecked(false);
                     iy05b.setChecked(false);
                     iy05c.setChecked(false);
@@ -247,21 +247,15 @@ public class ChildHealthActivity extends Activity {
                     iy05i.setChecked(false);
                     iy05j.setChecked(false);
                     iy0588.setChecked(false);
+                    iy06d.setText(null);
+                    iy07.clearCheck();
+                    iy07aa.setText(null);
+                    iy07bb.setText(null);
+                    iy07cc.setText(null);
+                    iy08.clearCheck();
+                    iy08x.setText(null);
 
-                    iy015x.setText(null);
 
-                    iy016m.setText(null);
-                    iy01677.setChecked(false);
-
-                    iy017d.setText(null);
-                    iy017m.setText(null);
-                    iy01788.setChecked(false);
-
-                    iy018d.setText(null);
-                    iy018m.setText(null);
-                    iy01888.setChecked(false);
-
-                    fldGrpiy04.setVisibility(View.GONE);
                 }
             }
         });
@@ -588,7 +582,7 @@ public class ChildHealthActivity extends Activity {
         }
 
 
-        if (iy03d.getText().toString().isEmpty() || iy03d.getText().toString() == null) {
+        /*if (iy03d.getText().toString().isEmpty() || iy03d.getText().toString() == null) {
             iy03d.setError(getString(R.string.txterr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
             Log.d(TAG, "iy03d: empty ");
@@ -596,7 +590,7 @@ public class ChildHealthActivity extends Activity {
             return false;
         } else {
             iy03d.setError(null);
-        }
+        }*/
 
         if (!iy03m.getText().toString().isEmpty() && iy03m.getText().toString() != null) {
 
@@ -610,7 +604,7 @@ public class ChildHealthActivity extends Activity {
 
         }
 
-        if (!iy03d.getText().toString().isEmpty() && iy03d.getText().toString() != null) {
+        /*if (!iy03d.getText().toString().isEmpty() && iy03d.getText().toString() != null) {
 
             if (Integer.parseInt(iy03d.getText().toString()) < 0 || Integer.parseInt(iy03d.getText().toString()) > 30) {
                 iy03d.setError("Age in days must be between 0 - 30");
@@ -621,7 +615,7 @@ public class ChildHealthActivity extends Activity {
             }
 
         }
-
+*/
 
         if (iy04.getCheckedRadioButtonId() == -1) {
             iy04a.setError(getString(R.string.rdoerr));
@@ -740,7 +734,7 @@ public class ChildHealthActivity extends Activity {
                 }
             }
 
-            }
+        }
 
 
         if (iy09.getCheckedRadioButtonId() == -1) {

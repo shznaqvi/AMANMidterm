@@ -725,7 +725,7 @@ public class AntenatalCareActivity extends Activity {
 
         if (anc012a.isChecked()) {
 
-            if (anc013.getText().toString().isEmpty() || anc013.getText().toString() == null && !anc01399.isChecked()) {
+            if ((anc013.getText().toString().isEmpty() || anc013.getText().toString() == null) && !anc01399.isChecked()) {
                     anc013.setError(getString(R.string.txterr));
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
                     Log.d(TAG, "anc013: empty");

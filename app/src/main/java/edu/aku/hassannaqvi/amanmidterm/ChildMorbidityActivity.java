@@ -163,8 +163,8 @@ public class ChildMorbidityActivity extends Activity {
 
     }
 
-    @OnClick(R.id.btnNext)
-    void onBtnNextClick() {
+    @OnClick(R.id.btn_Continue)
+    void onBtnContinueClick() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (ValidateForm()) {
@@ -265,8 +265,8 @@ public class ChildMorbidityActivity extends Activity {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (!(cm01a.isChecked() && cm01b.isChecked() && cm01c.isChecked() && cm01d.isChecked() && cm01e.isChecked()
-                && cm01f.isChecked() && cm01g.isChecked() && cm01h.isChecked() && cm0177.isChecked() && cm0188.isChecked())) {
+        if (!(cm01a.isChecked() || cm01b.isChecked() || cm01c.isChecked() || cm01d.isChecked() || cm01e.isChecked()
+                || cm01f.isChecked() || cm01g.isChecked() || cm01h.isChecked() || cm0177.isChecked() || cm0188.isChecked())) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm01), Toast.LENGTH_LONG).show();
             cm0188.setError("This data is Required!");    // Set Error on last radio button
 
@@ -297,8 +297,8 @@ public class ChildMorbidityActivity extends Activity {
             }
 
             if (cm02a.isChecked()) {
-                if (!(cm03a.isChecked() && cm03b.isChecked() && cm03c.isChecked() && cm03d.isChecked() && cm03e.isChecked()
-                        && cm03f.isChecked() && cm03g.isChecked() && cm03h.isChecked() && cm0388.isChecked())) {
+                if (!(cm03a.isChecked() || cm03b.isChecked() || cm03c.isChecked() || cm03d.isChecked() || cm03e.isChecked()
+                        || cm03f.isChecked() || cm03g.isChecked() || cm03h.isChecked() || cm0388.isChecked())) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm03), Toast.LENGTH_LONG).show();
                     cm0388.setError("This data is Required!");    // Set Error on last radio button
 
