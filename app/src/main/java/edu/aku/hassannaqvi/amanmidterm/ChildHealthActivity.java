@@ -622,6 +622,18 @@ public class ChildHealthActivity extends Activity {
 
         }
 
+        if (Integer.valueOf(iy03d.getText().toString().isEmpty() ? "0" : iy03d.getText().toString()) == 0
+                && Integer.valueOf(iy03m.getText().toString().isEmpty() ? "0" : iy03m.getText().toString()) == 0) {
+            Toast.makeText(this, "ERROR(invalid)" + getString(R.string.iy03) + " - " + getString(R.string.iy03m), Toast.LENGTH_SHORT).show();
+            iy03d.setError("Days and months can not be zero..");
+            iy03m.setError("Days and months can not be zero..");
+
+            Log.i(TAG, "iy03: Both can not be zero");
+            return false;
+        } else {
+            iy03d.setError(null);
+            iy03m.setError(null);
+        }
 
         if (iy04.getCheckedRadioButtonId() == -1) {
             iy04a.setError(getString(R.string.rdoerr));
@@ -669,7 +681,6 @@ public class ChildHealthActivity extends Activity {
                 }
             }
 
-
             if (iy06d.getText().toString().isEmpty() || iy06d.getText().toString() == null) {
                 iy06d.setError(getString(R.string.txterr));
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
@@ -700,7 +711,6 @@ public class ChildHealthActivity extends Activity {
             } else {
                 iy07a.setError(null);
             }
-
 
             if (iy07b.isChecked()) {
 
@@ -742,7 +752,6 @@ public class ChildHealthActivity extends Activity {
 
             }
 
-
         if (iy09.getCheckedRadioButtonId() == -1) {
             iy09a.setError(getString(R.string.rdoerr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy09), Toast.LENGTH_LONG).show();
@@ -752,7 +761,6 @@ public class ChildHealthActivity extends Activity {
         } else {
             iy09a.setError(null);
         }
-
 
         if (iy09a.isChecked()) {
 
@@ -771,7 +779,6 @@ public class ChildHealthActivity extends Activity {
             } else {
                 iy010a.setError(null);
             }
-
 
             if (iy01088.isChecked()) {
 
@@ -820,7 +827,6 @@ public class ChildHealthActivity extends Activity {
 
             }
 
-
             if (!iy011w.getText().toString().isEmpty() && iy011w.getText().toString() != null) {
 
 
@@ -833,7 +839,6 @@ public class ChildHealthActivity extends Activity {
                 }
 
             }
-
         }
 
         if (!iy01299.isChecked()) {
@@ -874,7 +879,6 @@ public class ChildHealthActivity extends Activity {
 
         }
 
-
         if (!iy012h.getText().toString().isEmpty() && iy012h.getText().toString() != null) {
 
             if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 24) {
@@ -897,7 +901,6 @@ public class ChildHealthActivity extends Activity {
             iy013a.setError(null);
         }
 
-
         if (iy014.getCheckedRadioButtonId() == -1) {
             iy014a.setError(getString(R.string.rdoerr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy014), Toast.LENGTH_LONG).show();
@@ -907,7 +910,6 @@ public class ChildHealthActivity extends Activity {
         } else {
             iy014a.setError(null);
         }
-
 
         if (iy014a.isChecked()) {
 
@@ -982,6 +984,19 @@ public class ChildHealthActivity extends Activity {
                     iy017m.setError(null);
                 }
 
+                if (Integer.valueOf(iy017d.getText().toString().isEmpty() ? "0" : iy017d.getText().toString()) == 0
+                        && Integer.valueOf(iy017m.getText().toString().isEmpty() ? "0" : iy017m.getText().toString()) == 0) {
+                    Toast.makeText(this, "ERROR(invalid)" + getString(R.string.iy017) + " - " + getString(R.string.iy017m), Toast.LENGTH_SHORT).show();
+                    iy017d.setError("Days and months can not be zero..");
+                    iy017m.setError("Days and months can not be zero..");
+
+                    Log.i(TAG, "iy017: Both can not be zero");
+                    return false;
+                } else {
+                    iy017d.setError(null);
+                    iy017m.setError(null);
+                }
+
                 if (!iy017d.getText().toString().isEmpty() && iy017d.getText().toString() != null) {
 
                     if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
@@ -1038,6 +1053,19 @@ public class ChildHealthActivity extends Activity {
                             iy018m.requestFocus();
                             return false;
                         } else {
+                            iy018m.setError(null);
+                        }
+
+                        if (Integer.valueOf(iy018d.getText().toString().isEmpty() ? "0" : iy018d.getText().toString()) == 0
+                                && Integer.valueOf(iy018m.getText().toString().isEmpty() ? "0" : iy018m.getText().toString()) == 0) {
+                            Toast.makeText(this, "ERROR(invalid)" + getString(R.string.iy018) + " - " + getString(R.string.iy03m), Toast.LENGTH_SHORT).show();
+                            iy018d.setError("Days and months can not be zero..");
+                            iy018m.setError("Days and months can not be zero..");
+
+                            Log.i(TAG, "iy018: Both can not be zero");
+                            return false;
+                        } else {
+                            iy018d.setError(null);
                             iy018m.setError(null);
                         }
 

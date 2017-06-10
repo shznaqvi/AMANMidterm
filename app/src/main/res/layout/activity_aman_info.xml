@@ -93,9 +93,9 @@
             android:id="@+id/biHH"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="1234567890--qwertyuiopasdfghjklzxcvbnm"
             android:hint="@string/biHH"
-            android:maxLength="5" />
+            android:inputType="number"
+            android:maxLength="11" />
 
         <TextView
             android:layout_width="match_parent"
