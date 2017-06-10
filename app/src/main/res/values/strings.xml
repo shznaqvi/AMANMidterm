@@ -5,7 +5,7 @@
 
 
     <string name="app_name">Mid-term assessment of AMAN Community Health Program</string>
-    <string name="section_A"> سیکشن \'اے\': گھر کی شناخت </string>
+    <string name="section_A">  گھر کی شناخت </string>
     <string name="delivery">Delivery</string>
     <string name="postPartumCare">زچگی کے بعد کی نگھداشت</string>
     <string name="childMorbidity">بچے کی بیماریاں اور ان کا علاج</string>
@@ -118,7 +118,7 @@
     <string name="bi12g"> Religious Education دینی تعلیم </string>
     <string name="bi13"> پانچ سال سے کم عمر بچوں کی تعداد (بشمول منتخب بچےکے) </string>
 
-    <string name="section_B">سیکشن بی: منتخب بچے کی تفصیلات</string>
+    <string name="section_B"> منتخب بچے کی تفصیلات</string>
 
     <string name="mnb1"> بچے کا نام </string>
     <string name="mnb2"> والد کا نام/ولدیت </string>
@@ -182,7 +182,7 @@
     <string name="mnc13"> کیا (بچے کا نام) نے کبھی بھی سفر کے دوران چیک پوائنٹ پر پولیو کے قطرے پئیے؟ </string>
     <string name="mnc13c"> سفر نہیں کیا </string>
 
-    <string name="section_E">سیکشن ڈی : بچے کی صحت کی معلومات</string>
+    <string name="section_E">  بچے کی صحت کی معلومات</string>
 
     <string name="iy01">بچے کا نام</string>
     <string name="iy02">بچے کی جنس</string>
@@ -256,7 +256,7 @@
     <string name="iy018m">مہینے</string>
     <string name="iy01888">ابھی شروع نہیں کروایا۔</string>
 
-    <string name="section_F"> سیکشن ڈی۔ مائوں میں زہنی دبائو سے متعلق سوالنامہ </string>
+    <string name="section_F">  مائوں میں زہنی دبائو سے متعلق سوالنامہ </string>
     <string name="ms01"> سر درد </string>
     <string name="ms02"> بھوک کی کمی </string>
     <string name="ms03"> نیند کی کمی </string>
