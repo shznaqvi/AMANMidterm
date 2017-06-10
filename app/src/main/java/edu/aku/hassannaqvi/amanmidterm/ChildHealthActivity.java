@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.amanmidterm;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -186,53 +187,29 @@ public class ChildHealthActivity extends Activity {
     EditText iy018m;
     @BindView(R.id.iy01888)
     CheckBox iy01888;
-
     @BindView(R.id.fldGrpiy04)
     LinearLayout fldGrpiy04;
-
     @BindView(R.id.fldGrpiy05koth)
     LinearLayout fldGrpiy05koth;
-
     @BindView(R.id.fldGrpiy07)
     LinearLayout fldGrpiy07;
-
     @BindView(R.id.fldGrpiy08foth)
     LinearLayout fldGrpiy08foth;
-
     @BindView(R.id.fldGrpiy09)
     LinearLayout fldGrpiy09;
-
     @BindView(R.id.fldGrpiy010goth)
     LinearLayout fldGrpiy010goth;
-
     @BindView(R.id.fldGrpiy015joth)
     LinearLayout fldGrpiy015joth;
-
     @BindView(R.id.fldGrpiy014)
     LinearLayout fldGrpiy014;
+    @BindView(R.id.fldGrpiy016)
+    LinearLayout fldGrpiy016;
+    @BindView(R.id.fldGrpiy017)
+    LinearLayout fldGrpiy017;
+    @BindView(R.id.fldGrpiy08)
+    LinearLayout fldGrpiy08;
 
-
-    int rdo_iy02;
-    String var_iy02 = "";
-
-    int rdo_iy04;
-    String var_iy04 = "";
-
-    int rdo_iy07;
-    String var_iy07;
-
-    int rdo_iy08;
-    String var_iy08;
-
-    int rdo_iy09;
-    String var_iy09;
-
-
-    int rdo_iy013;
-    String var_iy013;
-
-    int rdo_iy014;
-    String var_iy014;
 
 
     @Override
@@ -292,24 +269,20 @@ public class ChildHealthActivity extends Activity {
             }
         });
 
-
         iy07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (iy07b.isChecked()) {
-                    fldGrpiy07.setVisibility(View.VISIBLE);
-                    fldGrpiy08foth.setVisibility(View.GONE);
-                    iy07aa.requestFocus();
-                } else {
-
-                    iy08.clearCheck();
-
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (iy07a.isChecked()) {
+                    fldGrpiy08.setVisibility(View.VISIBLE);
+                    fldGrpiy07.setVisibility(View.GONE);
                     iy07aa.setText(null);
                     iy07bb.setText(null);
                     iy07cc.setText(null);
-
-                    fldGrpiy07.setVisibility(View.GONE);
-                    fldGrpiy08foth.setVisibility(View.GONE);
+                } else {
+                    fldGrpiy08.setVisibility(View.GONE);
+                    iy08.clearCheck();
+                    iy08x.setText(null);
+                    fldGrpiy07.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -440,53 +413,6 @@ public class ChildHealthActivity extends Activity {
         });
 
 
-        iy01677.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy01677.isChecked()) {
-                    iy016m.setText(null);
-                    iy016m.setEnabled(false);
-                } else {
-                    iy016m.setEnabled(true);
-                    iy016m.requestFocus();
-                }
-            }
-        });
-
-
-        iy01788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy01788.isChecked()) {
-                    iy017d.setText(null);
-                    iy017m.setText(null);
-
-                    iy017d.setEnabled(false);
-                    iy017m.setEnabled(false);
-                } else {
-                    iy017d.setEnabled(true);
-                    iy017m.setEnabled(true);
-                }
-            }
-        });
-
-
-        iy01888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy01888.isChecked()) {
-                    iy018d.setText(null);
-                    iy018m.setText(null);
-
-                    iy018d.setEnabled(false);
-                    iy018m.setEnabled(false);
-                } else {
-                    iy018d.setEnabled(true);
-                    iy018m.setEnabled(true);
-                }
-            }
-        });
-
         iy01299.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -502,14 +428,22 @@ public class ChildHealthActivity extends Activity {
             }
         });
 
+
         iy01677.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     iy016m.setVisibility(View.GONE);
                     iy016m.setText(null);
+                    fldGrpiy016.setVisibility(View.GONE);
+                    iy017d.setText(null);
+                    iy017m.setText(null);
+                    iy01788.setChecked(false);
+                    iy018d.setText(null);
+                    iy018m.setText(null);
+                    iy01888.setChecked(false);
                 } else {
-                    iy016m.setVisibility(View.VISIBLE);
+                    fldGrpiy016.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -518,14 +452,16 @@ public class ChildHealthActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
+                    fldGrpiy017.setVisibility(View.GONE);
                     iy017d.setVisibility(View.GONE);
-                    iy017m.setVisibility(View.GONE);
                     iy017d.setText(null);
                     iy017m.setText(null);
-
+                    iy017m.setVisibility(View.GONE);
+                    iy018m.setText(null);
+                    iy018d.setText(null);
+                    iy01888.setChecked(false);
                 } else {
-                    iy017d.setVisibility(View.VISIBLE);
-                    iy017m.setVisibility(View.VISIBLE);
+                    fldGrpiy017.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -534,20 +470,16 @@ public class ChildHealthActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    iy018d.setVisibility(View.GONE);
                     iy018m.setVisibility(View.GONE);
-                    iy018d.setText(null);
+                    iy018d.setVisibility(View.GONE);
                     iy018m.setText(null);
-
+                    iy018d.setText(null);
                 } else {
-                    iy018d.setVisibility(View.VISIBLE);
                     iy018m.setVisibility(View.VISIBLE);
+                    iy018d.setVisibility(View.VISIBLE);
                 }
             }
         });
-
-
-
 
 
     }
@@ -999,105 +931,82 @@ public class ChildHealthActivity extends Activity {
 
             if (!iy01788.isChecked()) {
 
-                if (iy017d.getText().toString().isEmpty() || iy017d.getText().toString() == null) {
+                if (iy017d.getText().toString().isEmpty() || iy017d.getText().toString() == null
+                        && iy017m.getText().toString().isEmpty() || iy017m.getText().toString() == null) {
                     iy017d.setError(getString(R.string.txterr));
+                    iy017m.setError(getString(R.string.txterr));
                     Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017d), Toast.LENGTH_LONG).show();
                     iy017d.requestFocus();
                     return false;
                 } else {
                     iy017d.setError(null);
-                }
-
-                if (iy017m.getText().toString().isEmpty() || iy017m.getText().toString() == null) {
-                    iy017m.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017m), Toast.LENGTH_LONG).show();
-                    iy017m.requestFocus();
-                    return false;
-                } else {
                     iy017m.setError(null);
                 }
 
-            } else {
-                iy017d.setText(null);
-                iy017m.setText(null);
-            }
+                if (!iy017d.getText().toString().isEmpty() && iy017d.getText().toString() != null) {
 
-            if (!iy017d.getText().toString().isEmpty() && iy017d.getText().toString() != null) {
+                    if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
+                        iy017d.setError("Must be between 0 - 30");
+                        iy017d.requestFocus();
+                        return false;
+                    } else {
+                        iy017d.setError(null);
+                    }
 
-                if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
-                    iy017d.setError("Must be between 0 - 30");
-                    iy017d.requestFocus();
-                    return false;
-                } else {
-                    iy017d.setError(null);
                 }
 
-            }
+                if (!iy017m.getText().toString().isEmpty() && iy017m.getText().toString() != null) {
 
+                    if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 11) {
+                        iy017m.setError("Must be between 0 - 11");
+                        iy017m.requestFocus();
+                        return false;
+                    } else {
+                        iy017m.setError(null);
+                    }
 
-            if (!iy017m.getText().toString().isEmpty() && iy017m.getText().toString() != null) {
-
-                if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 11) {
-                    iy017m.setError("Must be between 0 - 11");
-                    iy017m.requestFocus();
-                    return false;
-                } else {
-                    iy017m.setError(null);
                 }
 
-            }
+                if (!iy01888.isChecked()) {
+                    if (iy018d.getText().toString().isEmpty() || iy018d.getText().toString() == null
+                            && iy018m.getText().toString().isEmpty() || iy018m.getText().toString() == null) {
+                        iy018d.setError(getString(R.string.txterr));
+                        iy018m.setError(getString(R.string.txterr));
+                        Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018d), Toast.LENGTH_LONG).show();
+                        iy018d.requestFocus();
+                        return false;
+                    } else {
+                        iy018d.setError(null);
+                        iy018m.setError(null);
+                    }
+
+                    if (!iy018d.getText().toString().isEmpty() && iy018d.getText().toString() != null) {
+
+                        if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 30) {
+                            iy018d.setError("Must be between 0 - 30");
+                            iy018d.requestFocus();
+                            return false;
+                        } else {
+                            iy018d.setError(null);
+                        }
+
+                    }
+
+                    if (!iy018m.getText().toString().isEmpty() && iy018m.getText().toString() != null) {
+
+                        if (Integer.parseInt(iy018m.getText().toString()) < 0 || Integer.parseInt(iy018m.getText().toString()) > 11) {
+                            iy018m.setError("Must be between 0 - 11");
+                            iy018m.requestFocus();
+                            return false;
+                        } else {
+                            iy018m.setError(null);
+                        }
+
+                    }
 
 
-            if (!iy01888.isChecked()) {
-                if (iy018d.getText().toString().isEmpty() || iy018d.getText().toString() == null) {
-                    iy018d.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018d), Toast.LENGTH_LONG).show();
-                    iy018d.requestFocus();
-                    return false;
-                } else {
-                    iy018d.setError(null);
                 }
-
-                if (iy018m.getText().toString().isEmpty() || iy018m.getText().toString() == null) {
-                    iy018m.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018m), Toast.LENGTH_LONG).show();
-                    iy018m.requestFocus();
-                    return false;
-                } else {
-                    iy018m.setError(null);
-                }
-            } else {
-                iy018d.setText(null);
-                iy018m.setText(null);
             }
-
-            if (!iy018d.getText().toString().isEmpty() && iy018d.getText().toString() != null) {
-
-                if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 30) {
-                    iy018d.setError("Must be between 0 - 30");
-                    iy018d.requestFocus();
-                    return false;
-                } else {
-                    iy018d.setError(null);
-                }
-
-            }
-
-
-            if (!iy018m.getText().toString().isEmpty() && iy018m.getText().toString() != null) {
-
-                if (Integer.parseInt(iy018m.getText().toString()) < 0 || Integer.parseInt(iy018m.getText().toString()) > 11) {
-                    iy018m.setError("Must be between 0 - 11");
-                    iy018m.requestFocus();
-                    return false;
-                } else {
-                    iy018m.setError(null);
-                }
-
-            }
-
-
-
         }
 
         return true;
