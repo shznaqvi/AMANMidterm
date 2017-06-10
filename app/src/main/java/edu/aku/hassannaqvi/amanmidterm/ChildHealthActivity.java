@@ -618,18 +618,7 @@ public class ChildHealthActivity extends Activity {
             iy01.setError(null);
         }
 
-        rdo_iy02 = iy02.getCheckedRadioButtonId();
-
-        switch (rdo_iy02) {
-            case R.id.iy02a:
-                var_iy02 = "1";
-                break;
-            case R.id.iy02b:
-                var_iy02 = "2";
-                break;
-        }
-
-        if (rdo_iy02 == -1) {
+        if (iy02.getCheckedRadioButtonId() == -1) {
             iy02a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy02), Toast.LENGTH_LONG).show();
             iy02a.requestFocus();
@@ -658,23 +647,32 @@ public class ChildHealthActivity extends Activity {
             iy03d.setError(null);
         }
 
+        if (!iy03m.getText().toString().isEmpty() && iy03m.getText().toString() != null) {
 
-        rdo_iy04 = iy04.getCheckedRadioButtonId();
+            if (Integer.parseInt(iy03m.getText().toString()) < 0 || Integer.parseInt(iy03m.getText().toString()) > 11) {
+                iy03m.setError("Age in months must be between 0 - 11");
+                iy03m.requestFocus();
+                return false;
+            } else {
+                iy03m.setError(null);
+            }
 
-        switch (rdo_iy04) {
-            case R.id.iy04a:
-                var_iy04 = "1";
-                break;
-            case R.id.iy04b:
-                var_iy04 = "2";
-                break;
-            case R.id.iy04c:
-                var_iy04 = "88";
-                break;
+        }
+
+        if (!iy03d.getText().toString().isEmpty() && iy03d.getText().toString() != null) {
+
+            if (Integer.parseInt(iy03d.getText().toString()) < 0 || Integer.parseInt(iy03d.getText().toString()) > 30) {
+                iy03d.setError("Age in days must be between 0 - 30");
+                iy03d.requestFocus();
+                return false;
+            } else {
+                iy03d.setError(null);
+            }
+
         }
 
 
-        if (rdo_iy04 == -1) {
+        if (iy04.getCheckedRadioButtonId() == -1) {
             iy04a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy04), Toast.LENGTH_LONG).show();
             iy04a.requestFocus();
@@ -684,7 +682,7 @@ public class ChildHealthActivity extends Activity {
         }
 
 
-        if (var_iy04 == "1") {
+        if (iy04a.isChecked()) {
 
             if (!iy05a.isChecked()
                     && !iy05b.isChecked()
@@ -727,19 +725,18 @@ public class ChildHealthActivity extends Activity {
                 iy06d.setError(null);
             }
 
+            if (!iy06d.getText().toString().isEmpty() && iy06d.getText().toString() != null) {
 
-            rdo_iy07 = iy07.getCheckedRadioButtonId();
+                if (Integer.parseInt(iy06d.getText().toString()) < 0 || Integer.parseInt(iy06d.getText().toString()) > 28) {
+                    iy06d.setError("Must be between 0 - 28");
+                    return false;
+                } else {
+                    iy06d.setError(null);
+                }
 
-            switch (rdo_iy07) {
-                case R.id.iy07a:
-                    var_iy07 = "1";
-                    break;
-                case R.id.iy07b:
-                    var_iy07 = "2";
-                    break;
             }
 
-            if (rdo_iy07 == -1) {
+            if (iy07.getCheckedRadioButtonId() == -1) {
                 iy07a.setError(getString(R.string.rdoerr));
                 Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07), Toast.LENGTH_LONG).show();
                 iy07a.requestFocus();
@@ -749,7 +746,7 @@ public class ChildHealthActivity extends Activity {
             }
 
 
-            if (var_iy07 == "2") {
+            if (iy07b.isChecked()) {
 
                 if (iy07aa.getText().toString().isEmpty() || iy07aa.getText().toString() == null) {
                     iy07aa.setError(getString(R.string.txterr));
@@ -759,32 +756,9 @@ public class ChildHealthActivity extends Activity {
                 } else {
                     iy07aa.setError(null);
                 }
+            } else {
 
-
-                rdo_iy08 = iy08.getCheckedRadioButtonId();
-
-                switch (rdo_iy08) {
-                    case R.id.iy08a:
-                        var_iy08 = "1";
-                        break;
-                    case R.id.iy08b:
-                        var_iy08 = "2";
-                        break;
-                    case R.id.iy08c:
-                        var_iy08 = "3";
-                        break;
-                    case R.id.iy08d:
-                        var_iy08 = "4";
-                        break;
-                    case R.id.iy08e:
-                        var_iy08 = "5";
-                        break;
-                    case R.id.iy0888:
-                        var_iy08 = "6";
-                        break;
-                }
-
-                if (rdo_iy08 == -1) {
+                if (iy08.getCheckedRadioButtonId() == -1) {
                     iy08a.setError(getString(R.string.rdoerr));
                     Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
                     iy08a.requestFocus();
@@ -793,8 +767,7 @@ public class ChildHealthActivity extends Activity {
                     iy08a.setError(null);
                 }
 
-
-                if (var_iy08 == "6") {
+                if (iy0888.isChecked()) {
 
                     if (iy08x.getText().toString().isEmpty() || iy08x.getText().toString() == null) {
                         iy08x.setError(getString(R.string.txterr));
@@ -806,26 +779,12 @@ public class ChildHealthActivity extends Activity {
                     }
 
                 }
-
+            }
 
             }
 
 
-        }
-
-
-        rdo_iy09 = iy09.getCheckedRadioButtonId();
-
-        switch (rdo_iy09) {
-            case R.id.iy09a:
-                var_iy09 = "1";
-                break;
-            case R.id.iy09b:
-                var_iy09 = "2";
-                break;
-        }
-
-        if (rdo_iy09 == -1) {
+        if (iy09.getCheckedRadioButtonId() == -1) {
             iy09a.setError(getString(R.string.rdoerr));
             Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy09), Toast.LENGTH_LONG).show();
             iy09a.requestFocus();
@@ -835,7 +794,7 @@ public class ChildHealthActivity extends Activity {
         }
 
 
-        if (var_iy09 == "1") {
+        if (iy09a.isChecked()) {
 
             if (!iy010a.isChecked()
                     && !iy010b.isChecked()
@@ -866,11 +825,6 @@ public class ChildHealthActivity extends Activity {
 
             }
 
-        }
-
-
-        if (var_iy09 == "1") {
-
             if (iy011d.getText().toString().isEmpty() || iy011d.getText().toString() == null) {
                 iy011d.setError(getString(R.string.txterr));
                 Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy011d), Toast.LENGTH_LONG).show();
@@ -889,12 +843,38 @@ public class ChildHealthActivity extends Activity {
                 iy011w.setError(null);
             }
 
+            if (!iy011d.getText().toString().isEmpty() && iy011d.getText().toString() != null) {
+
+
+                if (Integer.parseInt(iy011d.getText().toString()) < 0 || Integer.parseInt(iy011d.getText().toString()) > 30) {
+                    iy011d.setError("Must be between 0 - 30");
+                    iy011d.requestFocus();
+                    return false;
+                } else {
+                    iy011d.setError(null);
+                }
+
+            }
+
+
+            if (!iy011w.getText().toString().isEmpty() && iy011w.getText().toString() != null) {
+
+
+                if (Integer.parseInt(iy011w.getText().toString()) < 0 || Integer.parseInt(iy011w.getText().toString()) > 4) {
+                    iy011w.setError("Must be between 0 - 4");
+                    iy011w.requestFocus();
+                    return false;
+                } else {
+                    iy011w.setError(null);
+                }
+
+            }
+
         }
 
+        if (!iy01299.isChecked()) {
 
-        if (iy01299.isChecked() == false) {
-
-            if (iy012h.getText().toString().isEmpty() || iy012h.getText().toString() == null) {
+            if (iy012h.getText().toString().isEmpty()) {
                 iy012h.setError(getString(R.string.txterr));
                 Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy012h), Toast.LENGTH_LONG).show();
                 iy012h.requestFocus();
@@ -915,223 +895,6 @@ public class ChildHealthActivity extends Activity {
             iy012h.setText(null);
             iy012d.setText(null);
         }
-
-
-        rdo_iy013 = iy013.getCheckedRadioButtonId();
-
-        switch (rdo_iy013) {
-            case R.id.iy013a:
-                var_iy013 = "1";
-                break;
-            case R.id.iy013b:
-                var_iy013 = "2";
-                break;
-            case R.id.iy013c:
-                var_iy013 = "88";
-                break;
-        }
-
-        if (rdo_iy013 == -1) {
-            iy013a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy013), Toast.LENGTH_LONG).show();
-            iy013a.requestFocus();
-            return false;
-        } else {
-            iy013a.setError(null);
-        }
-
-
-        rdo_iy014 = iy014.getCheckedRadioButtonId();
-
-        if (rdo_iy014 == -1) {
-            iy014a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy014), Toast.LENGTH_LONG).show();
-            iy014a.requestFocus();
-            return false;
-        } else {
-            iy014a.setError(null);
-        }
-
-        switch (rdo_iy014) {
-            case R.id.iy014a:
-                var_iy014 = "1";
-                break;
-            case R.id.iy014b:
-                var_iy014 = "2";
-                break;
-            case R.id.iy014c:
-                var_iy014 = "88";
-                break;
-        }
-
-        if (var_iy014 == "1") {
-
-            if (!iy015a.isChecked()
-                    && !iy015b.isChecked()
-                    && !iy015c.isChecked()
-                    && !iy015d.isChecked()
-                    && !iy015e.isChecked()
-                    && !iy015f.isChecked()
-                    && !iy015g.isChecked()
-                    && !iy015h.isChecked()
-                    && !iy015i.isChecked()
-                    && !iy01588.isChecked()) {
-                iy015a.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy015), Toast.LENGTH_LONG).show();
-                iy015a.requestFocus();
-                return false;
-            } else {
-                iy015a.setError(null);
-            }
-
-        }
-
-
-        if (iy01588.isChecked()) {
-            if (iy015x.getText().toString().isEmpty() || iy015x.getText().toString() == null) {
-                iy015x.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                iy015x.requestFocus();
-                return false;
-            } else {
-                iy015x.setError(null);
-            }
-
-        }
-
-
-        if (iy016m.getText().toString().isEmpty() || iy016m.getText().toString() == null) {
-            iy016m.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy016m), Toast.LENGTH_LONG).show();
-            iy016m.requestFocus();
-            return false;
-        } else {
-            iy016m.setError(null);
-        }
-
-        if (iy01677.getText().toString().isEmpty() || iy01677.getText().toString() == null) {
-            iy01677.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy01677), Toast.LENGTH_LONG).show();
-            iy01677.requestFocus();
-            return false;
-        } else {
-            iy01677.setError(null);
-        }
-
-        if (!iy01788.isChecked()) {
-
-            if (iy017d.getText().toString().isEmpty() || iy017d.getText().toString() == null) {
-                iy017d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017d), Toast.LENGTH_LONG).show();
-                iy017d.requestFocus();
-                return false;
-            } else {
-                iy017d.setError(null);
-            }
-
-            if (iy017m.getText().toString().isEmpty() || iy017m.getText().toString() == null) {
-                iy017m.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017m), Toast.LENGTH_LONG).show();
-                iy017m.requestFocus();
-                return false;
-            } else {
-                iy017m.setError(null);
-            }
-
-        } else {
-            iy017d.setText(null);
-            iy017m.setText(null);
-        }
-
-
-        if (!iy01888.isChecked()) {
-            if (iy018d.getText().toString().isEmpty() || iy018d.getText().toString() == null) {
-                iy018d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018d), Toast.LENGTH_LONG).show();
-                iy018d.requestFocus();
-                return false;
-            } else {
-                iy018d.setError(null);
-            }
-
-            if (iy018m.getText().toString().isEmpty() || iy018m.getText().toString() == null) {
-                iy018m.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018m), Toast.LENGTH_LONG).show();
-                iy018m.requestFocus();
-                return false;
-            } else {
-                iy018m.setError(null);
-            }
-        } else {
-            iy018d.setText(null);
-            iy018m.setText(null);
-        }
-
-        if (!iy03m.getText().toString().isEmpty() && iy03m.getText().toString() != null) {
-
-            if (Integer.parseInt(iy03m.getText().toString()) < 0 || Integer.parseInt(iy03m.getText().toString()) > 11) {
-                iy03m.setError("Age in months must be between 0 - 11");
-                iy03m.requestFocus();
-                return false;
-            } else {
-                iy03m.setError(null);
-            }
-
-        }
-
-
-        if (!iy03d.getText().toString().isEmpty() && iy03d.getText().toString() != null) {
-
-            if (Integer.parseInt(iy03d.getText().toString()) < 0 || Integer.parseInt(iy03d.getText().toString()) > 30) {
-                iy03d.setError("Age in days must be between 0 - 30");
-                iy03d.requestFocus();
-                return false;
-            } else {
-                iy03d.setError(null);
-            }
-
-        }
-
-
-        if (!iy06d.getText().toString().isEmpty() && iy06d.getText().toString() != null) {
-
-            if (Integer.parseInt(iy06d.getText().toString()) < 0 || Integer.parseInt(iy06d.getText().toString()) > 28) {
-                iy06d.setError("Must be between 0 - 28");
-                return false;
-            } else {
-                iy06d.setError(null);
-            }
-
-        }
-
-
-        if (!iy011d.getText().toString().isEmpty() && iy011d.getText().toString() != null) {
-
-
-            if (Integer.parseInt(iy011d.getText().toString()) < 0 || Integer.parseInt(iy011d.getText().toString()) > 30) {
-                iy011d.setError("Must be between 0 - 30");
-                iy011d.requestFocus();
-                return false;
-            } else {
-                iy011d.setError(null);
-            }
-
-        }
-
-
-        if (!iy011w.getText().toString().isEmpty() && iy011w.getText().toString() != null) {
-
-
-            if (Integer.parseInt(iy011w.getText().toString()) < 0 || Integer.parseInt(iy011w.getText().toString()) > 4) {
-                iy011w.setError("Must be between 0 - 4");
-                iy011w.requestFocus();
-                return false;
-            } else {
-                iy011w.setError(null);
-            }
-
-        }
-
 
         if (!iy012d.getText().toString().isEmpty() && iy012d.getText().toString() != null) {
 
@@ -1158,68 +921,182 @@ public class ChildHealthActivity extends Activity {
 
         }
 
+        if (iy013.getCheckedRadioButtonId() == -1) {
+            iy013a.setError(getString(R.string.rdoerr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy013), Toast.LENGTH_LONG).show();
+            iy013a.requestFocus();
+            return false;
+        } else {
+            iy013a.setError(null);
+        }
 
-        if (!iy016m.getText().toString().isEmpty() && iy016m.getText().toString() != null) {
 
-            if (Integer.parseInt(iy016m.getText().toString()) < 0 || Integer.parseInt(iy016m.getText().toString()) > 11) {
-                iy016m.setError("Must be between 0 - 11");
+        if (iy014.getCheckedRadioButtonId() == -1) {
+            iy014a.setError(getString(R.string.rdoerr));
+            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy014), Toast.LENGTH_LONG).show();
+            iy014a.requestFocus();
+            return false;
+        } else {
+            iy014a.setError(null);
+        }
+
+
+        if (iy014a.isChecked()) {
+
+            if (!iy015a.isChecked()
+                    && !iy015b.isChecked()
+                    && !iy015c.isChecked()
+                    && !iy015d.isChecked()
+                    && !iy015e.isChecked()
+                    && !iy015f.isChecked()
+                    && !iy015g.isChecked()
+                    && !iy015h.isChecked()
+                    && !iy015i.isChecked()
+                    && !iy01588.isChecked()) {
+                iy015a.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy015), Toast.LENGTH_LONG).show();
+                iy015a.requestFocus();
+                return false;
+            } else {
+                iy015a.setError(null);
+            }
+
+            if (iy01588.isChecked()) {
+                if (iy015x.getText().toString().isEmpty() || iy015x.getText().toString() == null) {
+                    iy015x.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    iy015x.requestFocus();
+                    return false;
+                } else {
+                    iy015x.setError(null);
+                }
+
+            }
+
+        }
+
+        if (!iy01677.isChecked()) {
+            if (iy016m.getText().toString().isEmpty() || iy016m.getText().toString() == null) {
+                iy016m.setError(getString(R.string.txterr));
+                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy016m), Toast.LENGTH_LONG).show();
                 iy016m.requestFocus();
                 return false;
             } else {
                 iy016m.setError(null);
             }
 
-        }
+            if (!iy016m.getText().toString().isEmpty() && iy016m.getText().toString() != null) {
 
+                if (Integer.parseInt(iy016m.getText().toString()) < 0 || Integer.parseInt(iy016m.getText().toString()) > 11) {
+                    iy016m.setError("Must be between 0 - 11");
+                    iy016m.requestFocus();
+                    return false;
+                } else {
+                    iy016m.setError(null);
+                }
 
-        if (!iy017d.getText().toString().isEmpty() && iy017d.getText().toString() != null) {
-
-            if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
-                iy017d.setError("Must be between 0 - 30");
-                iy017d.requestFocus();
-                return false;
-            } else {
-                iy017d.setError(null);
             }
 
-        }
+            if (!iy01788.isChecked()) {
 
+                if (iy017d.getText().toString().isEmpty() || iy017d.getText().toString() == null) {
+                    iy017d.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017d), Toast.LENGTH_LONG).show();
+                    iy017d.requestFocus();
+                    return false;
+                } else {
+                    iy017d.setError(null);
+                }
 
-        if (iy017m.getText().toString() != "" && iy017m.getText().toString() != null) {
+                if (iy017m.getText().toString().isEmpty() || iy017m.getText().toString() == null) {
+                    iy017m.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017m), Toast.LENGTH_LONG).show();
+                    iy017m.requestFocus();
+                    return false;
+                } else {
+                    iy017m.setError(null);
+                }
 
-            if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 11) {
-                iy017m.setError("Must be between 0 - 11");
-                iy017m.requestFocus();
-                return false;
             } else {
-                iy017m.setError(null);
+                iy017d.setText(null);
+                iy017m.setText(null);
             }
 
-        }
+            if (!iy017d.getText().toString().isEmpty() && iy017d.getText().toString() != null) {
 
+                if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
+                    iy017d.setError("Must be between 0 - 30");
+                    iy017d.requestFocus();
+                    return false;
+                } else {
+                    iy017d.setError(null);
+                }
 
-        if (iy018d.getText().toString() != "" && iy018d.getText().toString() != null) {
-
-            if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 30) {
-                iy018d.setError("Must be between 0 - 30");
-                iy018d.requestFocus();
-                return false;
-            } else {
-                iy018d.setError(null);
             }
 
-        }
 
+            if (!iy017m.getText().toString().isEmpty() && iy017m.getText().toString() != null) {
 
-        if (iy018m.getText().toString() != "" && iy018m.getText().toString() != null) {
+                if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 11) {
+                    iy017m.setError("Must be between 0 - 11");
+                    iy017m.requestFocus();
+                    return false;
+                } else {
+                    iy017m.setError(null);
+                }
 
-            if (Integer.parseInt(iy018m.getText().toString()) < 0 || Integer.parseInt(iy018m.getText().toString()) > 11) {
-                iy018m.setError("Must be between 0 - 11");
-                iy018m.requestFocus();
-                return false;
-            } else {
-                iy018m.setError(null);
             }
+
+
+            if (!iy01888.isChecked()) {
+                if (iy018d.getText().toString().isEmpty() || iy018d.getText().toString() == null) {
+                    iy018d.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018d), Toast.LENGTH_LONG).show();
+                    iy018d.requestFocus();
+                    return false;
+                } else {
+                    iy018d.setError(null);
+                }
+
+                if (iy018m.getText().toString().isEmpty() || iy018m.getText().toString() == null) {
+                    iy018m.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018m), Toast.LENGTH_LONG).show();
+                    iy018m.requestFocus();
+                    return false;
+                } else {
+                    iy018m.setError(null);
+                }
+            } else {
+                iy018d.setText(null);
+                iy018m.setText(null);
+            }
+
+            if (!iy018d.getText().toString().isEmpty() && iy018d.getText().toString() != null) {
+
+                if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 30) {
+                    iy018d.setError("Must be between 0 - 30");
+                    iy018d.requestFocus();
+                    return false;
+                } else {
+                    iy018d.setError(null);
+                }
+
+            }
+
+
+            if (!iy018m.getText().toString().isEmpty() && iy018m.getText().toString() != null) {
+
+                if (Integer.parseInt(iy018m.getText().toString()) < 0 || Integer.parseInt(iy018m.getText().toString()) > 11) {
+                    iy018m.setError("Must be between 0 - 11");
+                    iy018m.requestFocus();
+                    return false;
+                } else {
+                    iy018m.setError(null);
+                }
+
+            }
+
+
 
         }
 
