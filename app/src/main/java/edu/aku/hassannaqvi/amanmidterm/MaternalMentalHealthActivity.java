@@ -181,21 +181,21 @@ public class MaternalMentalHealthActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (formValidation()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {*/
+            if (UpdateDB()) {
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("check", false);
         startActivity(endSec);
-           /* } else {
+            } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        } */
+        }
 
     }
 
@@ -226,8 +226,16 @@ public class MaternalMentalHealthActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        //db.updateSD();
+        /*int updcount = db.updateMaternalMentalHealth();
 
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+        return true;
+        }
+*/
         return true;
     }
 
@@ -260,6 +268,8 @@ public class MaternalMentalHealthActivity extends Activity {
         js.put("ms18", ms18a.isChecked() ? "1" : ms18b.isChecked() ? "2" : "0");
         js.put("ms19", ms19a.isChecked() ? "1" : ms19b.isChecked() ? "2" : "0");
         js.put("ms20", ms20a.isChecked() ? "1" : ms20b.isChecked() ? "2" : "0");
+
+        AppMain.fc.setMaternalMentalHealth(String.valueOf(js));
 
         return true;
     }

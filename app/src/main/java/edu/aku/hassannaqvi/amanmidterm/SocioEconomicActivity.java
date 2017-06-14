@@ -430,21 +430,21 @@ public class SocioEconomicActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {*/
+            if (UpdateDB()) {
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("check", false);
         startActivity(endSec);
-           /* } else {
+            } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        } */
+        }
 
     }
 
@@ -484,9 +484,10 @@ public class SocioEconomicActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
-*/
+        }*/
+
         return true;
+
     }
 
     private boolean SaveDraft() throws JSONException {
@@ -531,7 +532,7 @@ public class SocioEconomicActivity extends Activity {
         socioeco.put("se11", se1101.getText().toString());
 
 
-        //AppMain.fc.setSocioEconomic(String.valueOf(socioeco));
+        AppMain.fc.setSocioEconomic(String.valueOf(socioeco));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

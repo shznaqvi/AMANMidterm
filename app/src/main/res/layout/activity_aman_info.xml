@@ -511,7 +511,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:onClick="endForm"
             android:text="@string/endForm"
             android:textColor="#000" />
     </LinearLayout>

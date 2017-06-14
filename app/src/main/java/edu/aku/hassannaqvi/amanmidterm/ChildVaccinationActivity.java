@@ -457,21 +457,21 @@ public class ChildVaccinationActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (formValidation()) {
+        if (formValidation()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {*/
+            if (UpdateDB()) {
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("check", false);
         startActivity(endSec);
-           /* } else {
+            } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        } */
+        }
 
     }
 
@@ -514,6 +514,7 @@ public class ChildVaccinationActivity extends Activity {
         }*/
 
         return true;
+
     }
 
     private void SaveDraft() throws JSONException {
@@ -554,7 +555,7 @@ public class ChildVaccinationActivity extends Activity {
         sc.put("measles2C", measles2Ca.isChecked() ? "1" : measles2Cb.isChecked() ? "2" : "0");
         sc.put("measles2M", measles2Ma.isChecked() ? "1" : measles2Mb.isChecked() ? "2" : "0");
 
-        //AppMain.fc.setChildVaccination(String.valueOf(sc));
+        AppMain.fc.setChildVaccination(String.valueOf(sc));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

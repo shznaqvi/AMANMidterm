@@ -387,21 +387,21 @@ public class AntenatalCareActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {*/
+            if (UpdateDB()) {
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("check", false);
         startActivity(endSec);
-           /* } else {
+            } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        } */
+        }
 
     }
 
@@ -445,6 +445,7 @@ public class AntenatalCareActivity extends Activity {
 
         return true;
 
+
     }
 
 
@@ -453,9 +454,6 @@ public class AntenatalCareActivity extends Activity {
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
         JSONObject js = new JSONObject();
-
-        //getRadioButtonValues();
-
 
         js.put("anc01", anc01a.isChecked() ? "1" : anc01b.isChecked() ? "2" : "0");
         js.put("anc01aa", anc01aa.getText().toString());
@@ -504,6 +502,8 @@ public class AntenatalCareActivity extends Activity {
         js.put("anc014", anc014a.isChecked() ? "1" : anc014b.isChecked() ? "2" : "0");
         js.put("anc015", anc015a.isChecked() ? "1" : anc015b.isChecked() ? "2" : anc015c.isChecked() ? "3" : anc015d.isChecked() ? "4" : anc015e.isChecked() ? "5" : anc015f.isChecked() ? "6" : anc01588.isChecked() ? "88" : "0");
         js.put("anc015x", anc015x.getText().toString());
+
+        AppMain.fc.setChildHealth(String.valueOf(js));
 
 
         return true;
@@ -594,7 +594,7 @@ public class AntenatalCareActivity extends Activity {
 
         if (anc04a.isChecked()) {
 
-            if (anc05d.getText().toString().isEmpty() || anc05d.getText().toString() == null && !anc0599.isChecked()) {
+            if ((anc05d.getText().toString().isEmpty() || anc05d.getText().toString() == null) && !anc0599.isChecked()) {
                     anc05d.setError(getString(R.string.txterr));
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc05), Toast.LENGTH_LONG).show();
                     Log.d(TAG, "anc05d: empty");

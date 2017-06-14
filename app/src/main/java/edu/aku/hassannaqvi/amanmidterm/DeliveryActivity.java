@@ -110,21 +110,21 @@ public class DeliveryActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {*/
+            if (UpdateDB()) {
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
         startActivity(endSec);
-           /* } else {
+            } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        } */
+        }
     }
 
     @OnClick(R.id.btn_Continue)
@@ -161,8 +161,8 @@ public class DeliveryActivity extends Activity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
 
         return false;
-        }*/
-
+        }
+*/
         return true;
 
     }
@@ -189,7 +189,7 @@ public class DeliveryActivity extends Activity {
         // Radio Group
         s5b.put("d04", d04a.isChecked() ? "1" : d04b.isChecked() ? "2" : d04c.isChecked() ? "3" : "0");
 
-        //AppMain.fc.setROW_S5b(String.valueOf(s5b));
+        AppMain.fc.setDelivery(String.valueOf(s5b));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

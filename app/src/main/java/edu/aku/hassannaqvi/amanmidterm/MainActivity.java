@@ -115,7 +115,7 @@ public class MainActivity extends Activity {
     }
 
     public void openForm(View v) {
-        Intent oF = new Intent(this, BirthsDeathsActivity.class);
+        Intent oF = new Intent(this, AmanInfoActivity.class);
         startActivity(oF);
     }
 
@@ -130,35 +130,45 @@ public class MainActivity extends Activity {
     }
 
     public void openC(View v) {
-        Intent iC = new Intent(this, ChildVaccinationActivity.class);
+        Intent iC = new Intent(this, AntenatalCareActivity.class);
         startActivity(iC);
     }
 
     public void openD(View v) {
-        Intent iD = new Intent(this, ChildHealthActivity.class);
+        Intent iD = new Intent(this, DeliveryActivity.class);
         startActivity(iD);
     }
 
     public void openE(View v) {
         //Intent iD = new Intent(this, KAPActivity.class);
-        Intent iD = new Intent(this, MaternalMentalHealthActivity.class);
+        Intent iD = new Intent(this, PostpartumCareActivity.class);
         startActivity(iD);
     }
 
     public void openF(View v) {
         //Intent iD = new Intent(this, SocioEconomicActivity.class);
-        Intent iD = new Intent(this, AntenatalCareActivity.class);
+        Intent iD = new Intent(this, ChildHealthActivity.class);
         startActivity(iD);
     }
 
     public void openIM(View v) {
-        Intent iIM = new Intent(this, ImmunizationActivity.class);
+        Intent iIM = new Intent(this, ChildVaccinationActivity.class);
         startActivity(iIM);
     }
 
     public void openG(View v) {
-        Intent iG = new Intent(this, LabInfoActivity.class);
+        Intent iG = new Intent(this, ChildMorbidityActivity.class);
         startActivity(iG);
+    }
+
+    public void openH(View v) {
+        Intent iH = new Intent(this, MaternalMentalHealthActivity.class);
+        startActivity(iH);
+    }
+
+    public void openI(View v) {
+        Intent iI = new Intent(this, BirthsDeathsActivity.class);
+        startActivity(iI);
     }
 
     public void openEnd(View v) {

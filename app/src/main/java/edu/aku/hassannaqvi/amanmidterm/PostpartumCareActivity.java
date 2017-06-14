@@ -370,36 +370,37 @@ public class PostpartumCareActivity extends Activity {
     void onBtnEndClick() {
 
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-       /* if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {*/
+            if (UpdateDB()) {
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
         startActivity(endSec);
-           /* } else {
+            } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        } */
+        }
     }
 
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateS5b();
+        /*int updcount = db.updatePostpartumCare();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-        */
+        return false;
+        }*/
+
         return true;
-        //}
 
     }
 
@@ -447,7 +448,7 @@ public class PostpartumCareActivity extends Activity {
         spc.put("pc1288", pc1288.isChecked() ? "88" : "0");
         spc.put("pc1288x", pc1288x.getText().toString());
 
-        //AppMain.fc.setROW_S5b(String.valueOf(s5b));
+        AppMain.fc.setPostpartumCare(String.valueOf(spc));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

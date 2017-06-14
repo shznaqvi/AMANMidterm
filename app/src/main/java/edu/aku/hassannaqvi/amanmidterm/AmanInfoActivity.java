@@ -175,23 +175,32 @@ public class AmanInfoActivity extends Activity {
         }
     }
 
-    public void endForm(View v) throws JSONException {
-        Toast.makeText(this, "Processing Basic Information", Toast.LENGTH_SHORT).show();
-
-        // SaveDraft();
-        if (UpdateDB()) {
-            Toast.makeText(this, "Starting Closing Section", Toast.LENGTH_SHORT).show();
-            Intent endSec = new Intent(this, EndingActivity.class);
-            endSec.putExtra("complete", false);
-            startActivity(endSec);
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+    @OnClick(R.id.btnEnd)
+    void onBtnEndClick() {
+        Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+                Intent endSec = new Intent(this, EndingActivity.class);
+                endSec.putExtra("check", false);
+                startActivity(endSec);
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
         }
 
     }
 
+
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+
+        AppMain.fc = new FormsContract();
 
         JSONObject sa = new JSONObject();
 
@@ -223,12 +232,11 @@ public class AmanInfoActivity extends Activity {
         sa.put("bic04", bic04.getText().toString());
         sa.put("bic05", bic05.getText().toString());
 
-        //    AppMain.fc.setBasicInfo(String.valueOf(sA));
-        //  setGPS();
+        AppMain.fc.setBasicInfo(String.valueOf(sa));
+        setGPS();
 
         Toast.makeText(this, "Saving Draft... Successful!", Toast.LENGTH_SHORT).show();
 
-        //Toast.makeText(sA.this, "Saving Draft... Successful!", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -412,6 +420,15 @@ public class AmanInfoActivity extends Activity {
                 bib09.setError(null);
             }
 
+            if (Integer.valueOf(bib09.getText().toString()) < 0 || Integer.valueOf(bib09.getText().toString()) > 16) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.bib09), Toast.LENGTH_SHORT).show();
+                bib09.setError("Invalid: Range is 0 - 16");
+                Log.i(TAG, "bib09: Range is 0 - 16 ");
+                return false;
+            } else {
+                bib09.setError(null);
+            }
+
             if (bib10.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib10), Toast.LENGTH_LONG).show();
                 bib10.setError("This data is Required!");
@@ -460,6 +477,15 @@ public class AmanInfoActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib14), Toast.LENGTH_LONG).show();
                 bib14.setError("This data is Required!");
                 Log.i(TAG, "bib14: This data is Required!");
+                return false;
+            } else {
+                bib14.setError(null);
+            }
+
+            if (Integer.valueOf(bib14.getText().toString()) < 0 || Integer.valueOf(bib14.getText().toString()) > 16) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.bib14), Toast.LENGTH_SHORT).show();
+                bib14.setError("Invalid: Range is 0 - 16");
+                Log.i(TAG, "bib14: Range is 0 - 16 ");
                 return false;
             } else {
                 bib14.setError(null);
@@ -541,6 +567,17 @@ public class AmanInfoActivity extends Activity {
                 bic04.setError(null);
             }
 
+            if ((Integer.valueOf(bic04.getText().toString()))
+                    > Integer.valueOf(bic03.getText().toString())) {
+                Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.bic04), Toast.LENGTH_SHORT).show();
+                bic03.setError("Can not be greater than total women!");
+
+                Log.i(TAG, "bic03: Can not be greater than total women");
+                return false;
+            } else {
+                bic03.setError(null);
+            }
+
             if (bic05.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bic05), Toast.LENGTH_LONG).show();
                 bic05.setError("This data is Required!");
@@ -549,6 +586,19 @@ public class AmanInfoActivity extends Activity {
             } else {
                 bic05.setError(null);
             }
+
+            if ((Integer.valueOf(bic02.getText().toString()) + Integer.valueOf(bic03.getText().toString()))
+                    > Integer.valueOf(bic01.getText().toString())) {
+                Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.bic01), Toast.LENGTH_SHORT).show();
+                bic01.setError("Can not be greater than total members!");
+
+                Log.i(TAG, "bic01: Can not be greater than total members");
+                return false;
+            } else {
+                bic01.setError(null);
+            }
+
+
 
         }
         return true;

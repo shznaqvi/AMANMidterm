@@ -193,7 +193,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                bd04dod1.setMinDate(bd04dob1.getText().toString());
+                bd04dod1.setMinDate(convertDateFormat(bd04dob1.getText().toString()));
                 Calendar cal = getCalendarDate(bd04dob1.getText().toString());
                 cal.add(Calendar.DAY_OF_MONTH, 7);
                 bd04dod1.setMaxDate(sdf.format(cal.getTime()));
@@ -217,7 +217,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                bd04dod2.setMinDate(bd04dob2.getText().toString());
+                bd04dod2.setMinDate(convertDateFormat(bd04dob2.getText().toString()));
                 Calendar cal = getCalendarDate(bd04dob2.getText().toString());
                 cal.add(Calendar.DAY_OF_MONTH, 7);
                 bd04dod2.setMaxDate(sdf.format(cal.getTime()));
@@ -365,197 +365,6 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 bd07dod1.setMinDate(maxDateyear);
                 bd07dod1.setEnabled(true);
 
-            }
-        });
-
-        bd01dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd01dod1.onFocusChange(v, true);
-            }
-        });
-
-        bd01dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd01dod2.onFocusChange(v, true);
-            }
-        });
-
-        bd02dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd02dod1.onFocusChange(v, true);
-            }
-        });
-
-        bd02dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd02dod2.onFocusChange(v, true);
-            }
-        });
-
-        bd03dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd03dob1.onFocusChange(v, true);
-            }
-        });
-
-        bd03dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd03dob2.onFocusChange(v, true);
-            }
-        });
-
-        bd03dob3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd03dob3.onFocusChange(v, true);
-            }
-        });
-
-        bd04dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd04dob1.onFocusChange(v, true);
-            }
-        });
-
-
-        bd04dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd04dob2.onFocusChange(v, true);
-            }
-        });
-
-        bd04dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd04dod1.onFocusChange(v, true);
-
-            }
-        });
-
-        bd04dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd04dod2.onFocusChange(v, true);
-            }
-        });
-
-        bd05dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd05dob1.onFocusChange(v, true);
-            }
-        });
-
-        bd05dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd05dob2.onFocusChange(v, true);
-            }
-        });
-
-        bd05dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd05dod1.onFocusChange(v, true);
-            }
-        });
-
-        bd05dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd05dod2.onFocusChange(v, true);
-            }
-        });
-
-        bd06dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd06dob1.onFocusChange(v, true);
-            }
-        });
-
-        bd06dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd06dob2.onFocusChange(v, true);
-            }
-        });
-
-        bd06dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd06dod1.onFocusChange(v, true);
-            }
-        });
-
-        bd06dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd06dod2.onFocusChange(v, true);
-            }
-        });
-
-        bd07dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd07dob1.onFocusChange(v, true);
-            }
-        });
-
-        bd07dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd07dob2.onFocusChange(v, true);
-            }
-        });
-
-        bd07dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd07dod1.onFocusChange(v, true);
-            }
-        });
-
-        bd07dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd07dod2.onFocusChange(v, true);
-            }
-        });
-
-        bd08dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd08dob1.onFocusChange(v, true);
-            }
-        });
-
-        bd08dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd08dob2.onFocusChange(v, true);
-            }
-        });
-
-        bd08dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd08dod1.onFocusChange(v, true);
-            }
-        });
-
-        bd08dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd08dod2.onFocusChange(v, true);
             }
         });
 
@@ -886,30 +695,29 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-*/
+
         finish();
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
         startActivity(endSec);
-            /*} else {
+            } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
     }
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        JSONObject sm = new JSONObject();
         JSONObject sn = new JSONObject();
 
         sn.put("bd01s", bd01s.getText().toString());
@@ -953,7 +761,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         sn.put("bd08dod2", bd08dod2.getText().toString());
 
 
-        //AppMain.fc.setsN(String.valueOf(sn));
+        AppMain.fc.setBirthsDeaths(String.valueOf(sn));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -1334,20 +1142,17 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
-/*
-//        int updcount = db.updateSM();
-        int updcount = db.updateSM() == 1 ?
-                (db.updateSN() == 1 ? 1 : db.updateSN()) : db.updateSM();
 
+        /*int updcount = db.updateBirthsDeaths();
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-         */
+        return false;
+    }*/
         return true;
     }
-    // }
 
     public Calendar getCalendarDate(String value) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
@@ -1361,6 +1166,18 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return calendar;
+    }
+
+    public String convertDateFormat(String dateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            Date d = sdf.parse(dateStr);
+            return new SimpleDateFormat("dd/MM/yyyy").format(d);
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        return "";
     }
 
 
