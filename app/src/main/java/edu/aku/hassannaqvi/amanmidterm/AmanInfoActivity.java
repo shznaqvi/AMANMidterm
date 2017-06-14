@@ -366,6 +366,16 @@ public class AmanInfoActivity extends Activity {
                 bib04.setError(null);
             }
 
+            if ((Integer.valueOf(bib04.getText().toString()) < 0)
+                    || (Integer.valueOf(bib04.getText().toString()) > 16)) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.bib04), Toast.LENGTH_LONG).show();
+                bib04.setError("Range is 1-16");
+                Log.i(TAG, "bib04: Range is 1-16");
+                return false;
+            } else {
+                bib04.setError(null);
+            }
+
             if (bib05.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib05), Toast.LENGTH_LONG).show();
                 bib05.setError("This data is Required!");
@@ -528,6 +538,16 @@ public class AmanInfoActivity extends Activity {
                 return false;
             } else {
                 bib1601.setError(null);
+                bib1602.setError(null);
+            }
+
+            if ((Integer.valueOf(bib1602.getText().toString()) < 1)
+                    || (Integer.valueOf(bib1602.getText().toString()) > 11)) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.months), Toast.LENGTH_LONG).show();
+                bib1602.setError("Range is 1-11");
+                Log.i(TAG, "b09: Range is 1-11");
+                return false;
+            } else {
                 bib1602.setError(null);
             }
 

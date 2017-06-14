@@ -19,6 +19,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static edu.aku.hassannaqvi.amanmidterm.R.string.d03;
+
 public class DeliveryActivity extends Activity {
 
     private static final String TAG = DeliveryActivity.class.getSimpleName();
@@ -38,12 +40,6 @@ public class DeliveryActivity extends Activity {
     RadioButton d02a;
     @BindView(R.id.d02b)
     RadioButton d02b;
-    @BindView(R.id.d02c)
-    RadioButton d02c;
-    @BindView(R.id.d02d)
-    RadioButton d02d;
-    @BindView(R.id.d02e)
-    RadioButton d02e;
     @BindView(R.id.d02f)
     RadioButton d02f;
     @BindView(R.id.d0288)
@@ -60,6 +56,8 @@ public class DeliveryActivity extends Activity {
     CheckBox d03d;
     @BindView(R.id.d03e)
     CheckBox d03e;
+    @BindView(R.id.d03f)
+    CheckBox d03f;
     @BindView(R.id.d0388)
     CheckBox d0388;
     @BindView(R.id.d0388x)
@@ -100,6 +98,36 @@ public class DeliveryActivity extends Activity {
                 } else {
                     d0388x.setVisibility(View.GONE);
                     d0388x.setText(null);
+                }
+            }
+        });
+
+        d03f.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (d03f.isChecked()) {
+                    d0388x.setText(null);
+                    d03a.setEnabled(false);
+                    d03a.setChecked(false);
+                    d03b.setEnabled(false);
+                    d03b.setChecked(false);
+                    d03c.setEnabled(false);
+                    d03c.setChecked(false);
+                    d03d.setEnabled(false);
+                    d03d.setChecked(false);
+                    d03e.setEnabled(false);
+                    d03e.setChecked(false);
+                    d0388.setEnabled(false);
+                    d0388.setChecked(false);
+                    d0388x.setText(null);
+                } else {
+                    d03a.setEnabled(true);
+                    d03b.setEnabled(true);
+                    d03c.setEnabled(true);
+                    d03d.setEnabled(true);
+                    d03e.setEnabled(true);
+                    d0388.setEnabled(true);
+
                 }
             }
         });
@@ -175,8 +203,7 @@ public class DeliveryActivity extends Activity {
         s5b.put("d01", d01a.isChecked() ? "1" : d01b.isChecked() ? "2" : d01c.isChecked() ? "3" : "0");
 
         // Radio Group
-        s5b.put("d02", d02a.isChecked() ? "1" : d02b.isChecked() ? "2" : d02c.isChecked() ? "3"
-                : d02d.isChecked() ? "4" : d02f.isChecked() ? "5" : d0288.isChecked() ? "88" : "0");
+        s5b.put("d02", d02a.isChecked() ? "1" : d02b.isChecked() ? "2" : d02f.isChecked() ? "5" : d0288.isChecked() ? "88" : "0");
         // Edit Text
         s5b.put("d0288x", d0288x.getText().toString());
 
@@ -233,7 +260,7 @@ public class DeliveryActivity extends Activity {
 
         if (!(d03a.isChecked() || d03b.isChecked() || d03c.isChecked() || d03d.isChecked()
                 || d03e.isChecked() || d0388.isChecked())) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.d03), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(d03), Toast.LENGTH_LONG).show();
             d0388.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "d0388: This data is Required!");
             return false;
@@ -242,7 +269,7 @@ public class DeliveryActivity extends Activity {
         }
 
         if (d0388.isChecked() && d0388x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.d03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(d03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
             d0388x.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "d0388: This data is Required!");
             return false;

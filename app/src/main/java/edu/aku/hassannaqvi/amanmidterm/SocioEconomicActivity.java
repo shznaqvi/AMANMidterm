@@ -198,6 +198,42 @@ public class SocioEconomicActivity extends Activity {
     EditText se1088x;
     @BindView(R.id.se1101)
     EditText se1101;
+    @BindView(R.id.se1201)
+    EditText se1201;
+    @BindView(R.id.se1202)
+    EditText se1202;
+    @BindView(R.id.se1203)
+    EditText se1203;
+    @BindView(R.id.se1204)
+    EditText se1204;
+    @BindView(R.id.se1205)
+    EditText se1205;
+    @BindView(R.id.se1206)
+    EditText se1206;
+    @BindView(R.id.se1207)
+    EditText se1207;
+    @BindView(R.id.se1208)
+    EditText se1208;
+    @BindView(R.id.se1209)
+    EditText se1209;
+    @BindView(R.id.se1210)
+    EditText se1210;
+    @BindView(R.id.se1211)
+    EditText se1211;
+    @BindView(R.id.se1212)
+    EditText se1212;
+    @BindView(R.id.se1213)
+    EditText se1213;
+    @BindView(R.id.se1214)
+    EditText se1214;
+    @BindView(R.id.se1215)
+    EditText se1215;
+    @BindView(R.id.se1216)
+    EditText se1216;
+    @BindView(R.id.se1217)
+    EditText se1217;
+    @BindView(R.id.se1288)
+    EditText se1288;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -530,6 +566,25 @@ public class SocioEconomicActivity extends Activity {
                 : se1088.isChecked() ? "88" : "0");
         socioeco.put("se1088x", se1088x.getText().toString());
         socioeco.put("se11", se1101.getText().toString());
+        socioeco.put("se1201", se1201.getText().toString());
+        socioeco.put("se1202", se1202.getText().toString());
+        socioeco.put("se1203", se1203.getText().toString());
+        socioeco.put("se1204", se1204.getText().toString());
+        socioeco.put("se1205", se1205.getText().toString());
+        socioeco.put("se1206", se1206.getText().toString());
+        socioeco.put("se1207", se1207.getText().toString());
+        socioeco.put("se1208", se1208.getText().toString());
+        socioeco.put("se1209", se1209.getText().toString());
+        socioeco.put("se1210", se1210.getText().toString());
+        socioeco.put("se1211", se1211.getText().toString());
+        socioeco.put("se1212", se1212.getText().toString());
+        socioeco.put("se1213", se1213.getText().toString());
+        socioeco.put("se1214", se1214.getText().toString());
+        socioeco.put("se1215", se1215.getText().toString());
+        socioeco.put("se1216", se1216.getText().toString());
+        socioeco.put("se1217", se1217.getText().toString());
+        socioeco.put("se1288", se1288.getText().toString());
+
 
 
         AppMain.fc.setSocioEconomic(String.valueOf(socioeco));
@@ -815,7 +870,187 @@ public class SocioEconomicActivity extends Activity {
             se1101.setError(null);
         }
 
+        // ======================  Q 12 =================
 
+        if (se1201.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1201), Toast.LENGTH_LONG).show();
+            se1201.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1201: This data is Required!");
+            return false;
+        } else {
+            se1201.setError(null);
+        }
+
+        if (se1202.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1202), Toast.LENGTH_LONG).show();
+            se1202.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1202: This data is Required!");
+            return false;
+        } else {
+            se1202.setError(null);
+        }
+
+        if (se1203.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1203), Toast.LENGTH_LONG).show();
+            se1203.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1203: This data is Required!");
+            return false;
+        } else {
+            se1203.setError(null);
+        }
+
+        if (se1204.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1204), Toast.LENGTH_LONG).show();
+            se1204.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1204: This data is Required!");
+            return false;
+        } else {
+            se1204.setError(null);
+        }
+
+        if (se1205.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1205), Toast.LENGTH_LONG).show();
+            se1205.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1205: This data is Required!");
+            return false;
+        } else {
+            se1205.setError(null);
+        }
+
+        if (se1206.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1206), Toast.LENGTH_LONG).show();
+            se1206.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1206: This data is Required!");
+            return false;
+        } else {
+            se1206.setError(null);
+        }
+
+        if (se1207.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1207), Toast.LENGTH_LONG).show();
+            se1207.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1207: This data is Required!");
+            return false;
+        } else {
+            se1207.setError(null);
+        }
+
+        if (se1208.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1208), Toast.LENGTH_LONG).show();
+            se1208.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1208: This data is Required!");
+            return false;
+        } else {
+            se1208.setError(null);
+        }
+
+        if (se1209.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1209), Toast.LENGTH_LONG).show();
+            se1209.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1209: This data is Required!");
+            return false;
+        } else {
+            se1209.setError(null);
+        }
+
+        if (se1210.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1210), Toast.LENGTH_LONG).show();
+            se1210.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1210: This data is Required!");
+            return false;
+        } else {
+            se1210.setError(null);
+        }
+
+        if (se1211.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1211), Toast.LENGTH_LONG).show();
+            se1211.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1211: This data is Required!");
+            return false;
+        } else {
+            se1211.setError(null);
+        }
+
+        if (se1212.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1212), Toast.LENGTH_LONG).show();
+            se1212.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1212: This data is Required!");
+            return false;
+        } else {
+            se1212.setError(null);
+        }
+
+        if (se1213.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1213), Toast.LENGTH_LONG).show();
+            se1213.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1213: This data is Required!");
+            return false;
+        } else {
+            se1213.setError(null);
+        }
+
+        if (se1214.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1214), Toast.LENGTH_LONG).show();
+            se1214.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1214: This data is Required!");
+            return false;
+        } else {
+            se1214.setError(null);
+        }
+
+        if (se1215.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1215), Toast.LENGTH_LONG).show();
+            se1215.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1215: This data is Required!");
+            return false;
+        } else {
+            se1215.setError(null);
+        }
+
+        if (se1216.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1216), Toast.LENGTH_LONG).show();
+            se1216.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1216: This data is Required!");
+            return false;
+        } else {
+            se1216.setError(null);
+        }
+
+        if (se1217.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1217), Toast.LENGTH_LONG).show();
+            se1217.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1217: This data is Required!");
+            return false;
+        } else {
+            se1217.setError(null);
+        }
+
+        if (se1288.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+            se1288.setError("This data is Required! Or Place 0");    // Set Error on last radio button
+
+            Log.i(TAG, "se1288: This data is Required!");
+            return false;
+        } else {
+            se1288.setError(null);
+        }
 
         return true;
     }

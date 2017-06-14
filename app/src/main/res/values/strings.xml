@@ -186,7 +186,7 @@
 
     <string name="iy01">بچے کا نام</string>
     <string name="iy02">بچے کی جنس</string>
-    <string name="iy03">بچے کی عمر</string>
+    <string name="iy03">(بچے کی عمر مکمل شدہ مہینوں میں، اگر ایک ماہ سے کم ہو تو00  ڈالیں</string>
     <string name="iy03m">مہینے</string>
     <string name="iy03d">دن</string>
     <string name="iy04">کیا بچے کو پیدائش کے پہلے آٹھائیس دنوں میں کوئی طبعی مسئلہ/بیماری ہوئی تھی</string>
@@ -614,12 +614,13 @@
     <string name="d02d">بنیادی مرکز صحت میں  </string>
     <string name="d02e">پرائیوٹ مرکز صحت</string>
     <string name="d02f">گھر میں  </string>
-    <string name="d03">زچگی کہاں ہوئی تھی؟ </string>
-    <string name="d03a">لیڈی ڈاکٹر  </string>
-    <string name="d03b">نرس/ایل ایچ وی  </string>
-    <string name="d03c">دائی   </string>
-    <string name="d03d">خاندان کے کسی فرد نے  </string>
-    <string name="d03e">کوئی نہیں</string>
+    <string name="d03">زچگی کس نے کروائی تھی؟   </string>
+    <string name="d03a">گورنمنٹ ڈاکٹر  </string>
+    <string name="d03b">پرائیوٹ ڈاکٹر </string>
+    <string name="d03c">ایل ایچ وی/ نرس    </string>
+    <string name="d03d">دائی/ٹی بی اے   </string>
+    <string name="d03e">خاندان کے کسی فرد نے</string>
+    <string name="d03f">کوئی نہیں  </string>
     <string name="d04">زچگی کی نوعیت کیا تھی؟</string>
     <string name="d04a">نارمل زچگی</string>
     <string name="d04b">اوزار کے زریعے زچگی</string>
@@ -633,6 +634,7 @@
     <string name="pc02c">جھٹکے/دورے </string>
     <string name="pc02d">سو سے زیادہ بخار</string>
     <string name="pc02e">دھندلاپن</string>
+    <string name="pc02f">ہائی بلڈ پریشر</string>
     <string name="pc03">اگر ہاں تو کیا آپ نے ان علامات کے لئے علاج کروایا تھا؟</string>
     <string name="pc04">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
     <string name="pc05">اگر ہاں تو آپ نے اپنا  معائنہ کہاں سے کروایا تھا؟</string>
@@ -724,6 +726,8 @@
     <string name="se0201"> اپنا ہے </string>
     <string name="se0202"> کرائے کا ہے </string>
     <string name="se0203"> کرائے کے بغیر / مشترکہ خاندان / تحفے میں ملا ہے </string>
+    <string name="se0204">ادارے کی طرف سے ملا ہے</string>
+    <string name="se03">اگر گھر کرائے کا ہے تو گھر کا ماہانہ کرایہ کتنا ہے؟</string>
     <string name="se04"> آپ کے گھر میں سونے کے لیے کتنے کمرے استعمال ہوتے ہیں؟ </string>
     <string name="se0401"> کمروں کی تعداد </string>
     <string name="se08"> آپ کے گھر میں روشنی کا کیا ذریعہ ہے؟ </string>
@@ -758,7 +762,24 @@
     <string name="se0605">  گڑھے والا لیٹرین سلیب کے بغیر </string>
     <string name="se0606"> کھلی جگہ / جھاڑیاں / کھیت </string>
     <string name="se11">تمام ذرائع سے آپ کے گھر کی ماہانہ آمدنی کتنی ہے؟ </string>
-    <string name="se03">اگر گھر کرائے کا ہے تو گھر کا ماہانہ کرایہ کتنا ہے؟</string>
+    <string name="se12">کیا اس گھر میں مندرجہ ذیل اثاثہ جات موجود ہیں؟  </string>
+    <string name="se1201">مویشی،بھینس، اور گائیں </string>
+    <string name="se1202">بھیڑ اور بکریاں </string>
+    <string name="se1203">گوڑھے اور گدھے </string>
+    <string name="se1204">بائیسکل   </string>
+    <string name="se1205">موٹر سائیکل </string>
+    <string name="se1206">کار/ٹیکسی/ٹرک/ٹریکٹر  </string>
+    <string name="se1207">پانی کا پمپ   </string>
+    <string name="se1208">بجلی کے پنکھے </string>
+    <string name="se1209">کمپیوٹر </string>
+    <string name="se1210">صوفہ سیٹ   </string>
+    <string name="se1211">سلائی مشین </string>
+    <string name="se1212">کپڑے دھونے والی مشین </string>
+    <string name="se1213">ٹیلی فون/موبائل </string>
+    <string name="se1214">ریفریجریٹر </string>
+    <string name="se1215">گیزر </string>
+    <string name="se1216">ٹی وی/وی سی آر/ڈی وی ڈی </string>
+    <string name="se1217">اے سی/ائیرکو لر </string>
 
 
     <!-- Strings related to login -->

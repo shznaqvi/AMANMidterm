@@ -556,6 +556,16 @@ public class PostpartumCareActivity extends Activity {
                 pc07e.setError(null);
             }
 
+            if ((Integer.valueOf(pc06a.getText().toString()) < 0)
+                    || (Integer.valueOf(pc06a.getText().toString()) > 29)) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.days), Toast.LENGTH_LONG).show();
+                pc06a.setError("Range is 0-29");
+                Log.i(TAG, "pc06a: Range is 0-29");
+                return false;
+            } else {
+                pc06a.setError(null);
+            }
+
         }
 
         if (pc08.getCheckedRadioButtonId() == -1) {

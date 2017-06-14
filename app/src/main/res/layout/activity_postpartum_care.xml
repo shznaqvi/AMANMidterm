@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/colorAccent" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,6 +108,13 @@
                 android:text="@string/pc02e" />
 
             <CheckBox
+                android:id="@+id/pc02f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/pc02f" />
+
+            <CheckBox
                 android:id="@+id/pc0288"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -168,21 +176,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:hint="@string/pc04" />
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
+                    android:hint="@string/pc04"
+                    android:inputType="textCapWords" />
 
                 <EditText
                     android:id="@+id/pc04b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:hint="@string/pc04" />
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
+                    android:hint="@string/pc04"
+                    android:inputType="textCapWords" />
 
                 <EditText
                     android:id="@+id/pc04c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:hint="@string/pc04" />
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
+                    android:hint="@string/pc04"
+                    android:inputType="textCapWords" />
 
             </LinearLayout>
 

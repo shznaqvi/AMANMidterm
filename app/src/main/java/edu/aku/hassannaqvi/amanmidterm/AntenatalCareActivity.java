@@ -548,6 +548,16 @@ public class AntenatalCareActivity extends Activity {
                 anc02.setError(null);
             }
 
+            if ((Integer.valueOf(anc02.getText().toString()) < 1)
+                    || (Integer.valueOf(anc02.getText().toString()) > 10)) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.anc02), Toast.LENGTH_LONG).show();
+                anc02.setError("Range is 1-10");
+                Log.i(TAG, "anc02: Range is 1-10");
+                return false;
+            } else {
+                anc02.setError(null);
+            }
+
             if (!anc03a.isChecked()
                     && !anc03b.isChecked()
                     && !anc03c.isChecked()
