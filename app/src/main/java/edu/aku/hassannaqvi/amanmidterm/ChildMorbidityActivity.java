@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -25,58 +26,96 @@ public class ChildMorbidityActivity extends Activity {
 
     private static final String TAG = ChildMorbidityActivity.class.getSimpleName();
 
-    @BindView(R.id.cm01a)
-    CheckBox cm01a;
-    @BindView(R.id.cm01b)
-    CheckBox cm01b;
-    @BindView(R.id.cm01c)
-    CheckBox cm01c;
-    @BindView(R.id.cm01d)
-    CheckBox cm01d;
-    @BindView(R.id.cm01e)
-    CheckBox cm01e;
-    @BindView(R.id.cm01f)
-    CheckBox cm01f;
-    @BindView(R.id.cm01g)
-    CheckBox cm01g;
-    @BindView(R.id.cm01h)
-    CheckBox cm01h;
-    @BindView(R.id.cm0177)
-    CheckBox cm0177;
-    @BindView(R.id.cm0188)
-    CheckBox cm0188;
-    @BindView(R.id.cm0188x)
-    EditText cm0188x;
-    @BindView(R.id.fldGrpcm02)
-    LinearLayout fldGrpcm02;
+    @BindView(R.id.app_header)
+    TextView appHeader;
+    @BindView(R.id.cm01)
+    EditText cm01;
     @BindView(R.id.cm02)
-    RadioGroup cm02;
-    @BindView(R.id.cm02a)
-    RadioButton cm02a;
-    @BindView(R.id.cm02b)
-    RadioButton cm02b;
-    @BindView(R.id.fldGrpcm03)
-    LinearLayout fldGrpcm03;
+    EditText cm02;
+    @BindView(R.id.cm03)
+    RadioGroup cm03;
     @BindView(R.id.cm03a)
-    CheckBox cm03a;
+    RadioButton cm03a;
     @BindView(R.id.cm03b)
-    CheckBox cm03b;
-    @BindView(R.id.cm03c)
-    CheckBox cm03c;
-    @BindView(R.id.cm03d)
-    CheckBox cm03d;
-    @BindView(R.id.cm03e)
-    CheckBox cm03e;
-    @BindView(R.id.cm03f)
-    CheckBox cm03f;
-    @BindView(R.id.cm03g)
-    CheckBox cm03g;
-    @BindView(R.id.cm03h)
-    CheckBox cm03h;
-    @BindView(R.id.cm0388)
-    CheckBox cm0388;
-    @BindView(R.id.cm0388x)
-    EditText cm0388x;
+    RadioButton cm03b;
+    @BindView(R.id.cm04)
+    EditText cm04;
+    @BindView(R.id.cm05a)
+    CheckBox cm05a;
+    @BindView(R.id.cm05b)
+    CheckBox cm05b;
+    @BindView(R.id.cm05c)
+    CheckBox cm05c;
+    @BindView(R.id.cm05d)
+    CheckBox cm05d;
+    @BindView(R.id.cm05e)
+    CheckBox cm05e;
+    @BindView(R.id.cm05f)
+    CheckBox cm05f;
+    @BindView(R.id.cm05g)
+    CheckBox cm05g;
+    @BindView(R.id.cm05h)
+    CheckBox cm05h;
+    @BindView(R.id.cm0577)
+    CheckBox cm0577;
+    @BindView(R.id.cm0588)
+    CheckBox cm0588;
+    @BindView(R.id.cm0588x)
+    EditText cm0588x;
+    @BindView(R.id.fldGrpcm06)
+    LinearLayout fldGrpcm06;
+    @BindView(R.id.cm06)
+    RadioGroup cm06;
+    @BindView(R.id.cm06a)
+    RadioButton cm06a;
+    @BindView(R.id.cm06b)
+    RadioButton cm06b;
+    @BindView(R.id.fldGrpcm07)
+    LinearLayout fldGrpcm07;
+    @BindView(R.id.cm07a)
+    CheckBox cm07a;
+    @BindView(R.id.cm07b)
+    CheckBox cm07b;
+    @BindView(R.id.cm07c)
+    CheckBox cm07c;
+    @BindView(R.id.cm07d)
+    CheckBox cm07d;
+    @BindView(R.id.cm07e)
+    CheckBox cm07e;
+    @BindView(R.id.cm07f)
+    CheckBox cm07f;
+    @BindView(R.id.cm07g)
+    CheckBox cm07g;
+    @BindView(R.id.cm07h)
+    CheckBox cm07h;
+    @BindView(R.id.cm0788)
+    CheckBox cm0788;
+    @BindView(R.id.cm0788x)
+    EditText cm0788x;
+    @BindView(R.id.cm08)
+    RadioGroup cm08;
+    @BindView(R.id.cm08a)
+    RadioButton cm08a;
+    @BindView(R.id.cm08b)
+    RadioButton cm08b;
+    @BindView(R.id.cm08c)
+    RadioButton cm08c;
+    @BindView(R.id.cm08d)
+    RadioButton cm08d;
+    @BindView(R.id.cm08e)
+    RadioButton cm08e;
+    @BindView(R.id.cm0888)
+    RadioButton cm0888;
+    @BindView(R.id.cm0888x)
+    EditText cm0888x;
+    @BindView(R.id.cm09)
+    RadioGroup cm09;
+    @BindView(R.id.cm09a)
+    RadioButton cm09a;
+    @BindView(R.id.cm09b)
+    RadioButton cm09b;
+    @BindView(R.id.cm0977)
+    RadioButton cm0977;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,81 +123,98 @@ public class ChildMorbidityActivity extends Activity {
         setContentView(R.layout.activity_child_morbidity);
         ButterKnife.bind(this);
 
-        cm0177.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        cm0577.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpcm02.setVisibility(View.GONE);
-                    cm01a.setChecked(false);
-                    cm01b.setChecked(false);
-                    cm01c.setChecked(false);
-                    cm01d.setChecked(false);
-                    cm01e.setChecked(false);
-                    cm01f.setChecked(false);
-                    cm01g.setChecked(false);
-                    cm01h.setChecked(false);
-                    cm0188.setChecked(false);
-                    cm0188x.setText(null);
-                    cm02.clearCheck();
-                    cm03a.setChecked(false);
-                    cm03b.setChecked(false);
-                    cm03c.setChecked(false);
-                    cm03d.setChecked(false);
-                    cm03e.setChecked(false);
-                    cm03f.setChecked(false);
-                    cm03g.setChecked(false);
-                    cm03h.setChecked(false);
-                    cm0388.setChecked(false);
+                    fldGrpcm06.setVisibility(View.GONE);
+                    cm05a.setChecked(false);
+                    cm05b.setChecked(false);
+                    cm05c.setChecked(false);
+                    cm05d.setChecked(false);
+                    cm05e.setChecked(false);
+                    cm05f.setChecked(false);
+                    cm05g.setChecked(false);
+                    cm05h.setChecked(false);
+                    cm0588.setChecked(false);
+                    cm0588x.setText(null);
+                    cm06.clearCheck();
+                    cm07a.setChecked(false);
+                    cm07b.setChecked(false);
+                    cm07c.setChecked(false);
+                    cm07d.setChecked(false);
+                    cm07e.setChecked(false);
+                    cm07f.setChecked(false);
+                    cm07g.setChecked(false);
+                    cm07h.setChecked(false);
+                    cm0788.setChecked(false);
+                    cm08.clearCheck();
+                    cm0888x.setText(null);
+                    cm09.clearCheck();
                 } else {
-                    fldGrpcm02.setVisibility(View.VISIBLE);
+                    fldGrpcm06.setVisibility(View.VISIBLE);
                 }
             }
         });
 
-        cm0188.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        cm0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    cm0188x.setVisibility(View.VISIBLE);
+                    cm0588x.setVisibility(View.VISIBLE);
                 } else {
-                    cm0188x.setVisibility(View.GONE);
-                    cm0188x.setText(null);
+                    cm0588x.setVisibility(View.GONE);
+                    cm0588x.setText(null);
                 }
             }
         });
 
-        cm02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        cm06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (cm02a.isChecked()) {
-                    fldGrpcm03.setVisibility(View.VISIBLE);
+                if (cm06a.isChecked()) {
+                    fldGrpcm07.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpcm03.setVisibility(View.GONE);
-                    cm03a.setChecked(false);
-                    cm03b.setChecked(false);
-                    cm03c.setChecked(false);
-                    cm03d.setChecked(false);
-                    cm03e.setChecked(false);
-                    cm03f.setChecked(false);
-                    cm03g.setChecked(false);
-                    cm03h.setChecked(false);
-                    cm0388.setChecked(false);
+                    fldGrpcm07.setVisibility(View.GONE);
+                    cm07a.setChecked(false);
+                    cm07b.setChecked(false);
+                    cm07c.setChecked(false);
+                    cm07d.setChecked(false);
+                    cm07e.setChecked(false);
+                    cm07f.setChecked(false);
+                    cm07g.setChecked(false);
+                    cm07h.setChecked(false);
+                    cm0788.setChecked(false);
+                    cm08.clearCheck();
+                    cm0888x.setText(null);
+                    cm09.clearCheck();
                 }
             }
         });
 
-        cm0388.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        cm0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    cm0388x.setVisibility(View.VISIBLE);
+                    cm0788x.setVisibility(View.VISIBLE);
                 } else {
-                    cm0388x.setVisibility(View.GONE);
-                    cm0388x.setText(null);
+                    cm0788x.setVisibility(View.GONE);
+                    cm0788x.setText(null);
                 }
             }
         });
 
+        cm0888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cm0888x.setVisibility(View.VISIBLE);
+                } else {
+                    cm0888x.setVisibility(View.GONE);
+                    cm0888x.setText(null);
+                }
+            }
+        });
 
 
     }
@@ -232,29 +288,36 @@ public class ChildMorbidityActivity extends Activity {
 
         JSONObject scm = new JSONObject();
 
-        scm.put("cm01a", cm01a.isChecked() ? "1" : "0");
-        scm.put("cm01b", cm01b.isChecked() ? "1" : "0");
-        scm.put("cm01c", cm01c.isChecked() ? "1" : "0");
-        scm.put("cm01d", cm01d.isChecked() ? "1" : "0");
-        scm.put("cm01e", cm01e.isChecked() ? "1" : "0");
-        scm.put("cm01f", cm01f.isChecked() ? "1" : "0");
-        scm.put("cm01g", cm01g.isChecked() ? "1" : "0");
-        scm.put("cm01h", cm01h.isChecked() ? "1" : "0");
-        scm.put("cm0177", cm0177.isChecked() ? "77" : "0");
-        scm.put("cm0188", cm0188.isChecked() ? "88" : "0");
-        scm.put("cm0188x", cm0188x.getText().toString());
-        scm.put("cm02", cm02a.isChecked() ? "1" : cm02b.isChecked() ? "2" : "0");
-        scm.put("cm03a", cm03a.isChecked() ? "1" : "0");
-        scm.put("cm03b", cm03b.isChecked() ? "1" : "0");
-        scm.put("cm03c", cm03c.isChecked() ? "1" : "0");
-        scm.put("cm03d", cm03d.isChecked() ? "1" : "0");
-        scm.put("cm03e", cm03e.isChecked() ? "1" : "0");
-        scm.put("cm03f", cm03f.isChecked() ? "1" : "0");
-        scm.put("cm03g", cm03g.isChecked() ? "1" : "0");
-        scm.put("cm03h", cm03h.isChecked() ? "1" : "0");
-        scm.put("cm0388", cm0388.isChecked() ? "88" : "0");
-        scm.put("cm0388x", cm0388x.getText().toString());
-
+        scm.put("cm01", cm01.getText().toString());
+        scm.put("cm02", cm02.getText().toString());
+        scm.put("cm03", cm03a.isChecked() ? "1" : cm03b.isChecked() ? "2" : "0");
+        scm.put("cm04", cm04.getText().toString());
+        scm.put("cm05a", cm05a.isChecked() ? "1" : "0");
+        scm.put("cm05b", cm05b.isChecked() ? "1" : "0");
+        scm.put("cm05c", cm05c.isChecked() ? "1" : "0");
+        scm.put("cm05d", cm05d.isChecked() ? "1" : "0");
+        scm.put("cm05e", cm05e.isChecked() ? "1" : "0");
+        scm.put("cm05f", cm05f.isChecked() ? "1" : "0");
+        scm.put("cm05g", cm05g.isChecked() ? "1" : "0");
+        scm.put("cm05h", cm05h.isChecked() ? "1" : "0");
+        scm.put("cm0577", cm0577.isChecked() ? "77" : "0");
+        scm.put("cm0588", cm0588.isChecked() ? "88" : "0");
+        scm.put("cm0588x", cm0588x.getText().toString());
+        scm.put("cm06", cm06a.isChecked() ? "1" : cm06b.isChecked() ? "2" : "0");
+        scm.put("cm07a", cm07a.isChecked() ? "1" : "0");
+        scm.put("cm07b", cm07b.isChecked() ? "1" : "0");
+        scm.put("cm07c", cm07c.isChecked() ? "1" : "0");
+        scm.put("cm07d", cm07d.isChecked() ? "1" : "0");
+        scm.put("cm07e", cm07e.isChecked() ? "1" : "0");
+        scm.put("cm07f", cm07f.isChecked() ? "1" : "0");
+        scm.put("cm07g", cm07g.isChecked() ? "1" : "0");
+        scm.put("cm07h", cm07h.isChecked() ? "1" : "0");
+        scm.put("cm0788", cm0788.isChecked() ? "88" : "0");
+        scm.put("cm0788x", cm0788x.getText().toString());
+        scm.put("cm08", cm08a.isChecked() ? "1" : cm08b.isChecked() ? "2" : cm08c.isChecked() ? "3"
+                : cm08d.isChecked() ? "4" : cm08e.isChecked() ? "2" : cm0888.isChecked() ? "88" : "0");
+        scm.put("cm0888x", cm0888x.getText().toString());
+        scm.put("cm09", cm09a.isChecked() ? "1" : cm09b.isChecked() ? "2" : cm0977.isChecked() ? "3" : "0");
 
         AppMain.fc.setChildMorbidity(String.valueOf(scm));
 
@@ -267,57 +330,137 @@ public class ChildMorbidityActivity extends Activity {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (!(cm01a.isChecked() || cm01b.isChecked() || cm01c.isChecked() || cm01d.isChecked() || cm01e.isChecked()
-                || cm01f.isChecked() || cm01g.isChecked() || cm01h.isChecked() || cm0177.isChecked() || cm0188.isChecked())) {
+        if (cm01.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm01), Toast.LENGTH_LONG).show();
-            cm0188.setError("This data is Required!");    // Set Error on last radio button
+            cm01.setError("This data is Required!");    // Set Error on last radio button
 
             Log.i(TAG, "cm01: This data is Required!");
             return false;
         } else {
-            cm0188.setError(null);
+            cm01.setError(null);
         }
 
-        if (cm0188.isChecked() && cm0188x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm01) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
-            cm0188x.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "cm0188x: This data is Required!");
+        if (cm02.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm02), Toast.LENGTH_LONG).show();
+            cm02.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "cm02: This data is Required!");
             return false;
         } else {
-            cm0188x.setError(null);
+            cm02.setError(null);
         }
 
-        if (!cm0177.isChecked()) {
-            if (cm02.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm02), Toast.LENGTH_LONG).show();
-                cm02b.setError("This data is Required!");    // Set Error on last radio button
+        if (cm03.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm03), Toast.LENGTH_LONG).show();
+            cm03b.setError("This data is Required!");    // Set Error on last radio button
 
-                Log.i(TAG, "cm02: This data is Required!");
+            Log.i(TAG, "cm03: This data is Required!");
+            return false;
+        } else {
+            cm03b.setError(null);
+        }
+
+        if (cm04.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm04), Toast.LENGTH_LONG).show();
+            cm04.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "cm04: This data is Required!");
+            return false;
+        } else {
+            cm04.setError(null);
+        }
+
+        if (Integer.valueOf(cm04.getText().toString()) < 0 || Integer.valueOf(cm04.getText().toString()) > 59) {
+            Toast.makeText(this, "ERROR(range): " + getString(R.string.cm04), Toast.LENGTH_LONG).show();
+            cm04.setError("Range is 0 to 59 months");    // Set Error on last radio button
+
+            Log.i(TAG, "cm04: Range is 0 to 59 months");
+            return false;
+        } else {
+            cm04.setError(null);
+        }
+
+
+        if (!(cm05a.isChecked() || cm05b.isChecked() || cm05c.isChecked() || cm05d.isChecked() || cm05e.isChecked()
+                || cm05f.isChecked() || cm05g.isChecked() || cm05h.isChecked() || cm0577.isChecked() || cm0588.isChecked())) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm05), Toast.LENGTH_LONG).show();
+            cm0588.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "cm05: This data is Required!");
+            return false;
+        } else {
+            cm0588.setError(null);
+        }
+
+        if (cm0588.isChecked() && cm0588x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm05) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+            cm0588x.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "cm0588x: This data is Required!");
+            return false;
+        } else {
+            cm0588x.setError(null);
+        }
+
+        if (!cm0577.isChecked()) {
+            if (cm06.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm06), Toast.LENGTH_LONG).show();
+                cm06b.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "cm06: This data is Required!");
                 return false;
             } else {
-                cm02b.setError(null);
+                cm06b.setError(null);
             }
 
-            if (cm02a.isChecked()) {
-                if (!(cm03a.isChecked() || cm03b.isChecked() || cm03c.isChecked() || cm03d.isChecked() || cm03e.isChecked()
-                        || cm03f.isChecked() || cm03g.isChecked() || cm03h.isChecked() || cm0388.isChecked())) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm03), Toast.LENGTH_LONG).show();
-                    cm0388.setError("This data is Required!");    // Set Error on last radio button
+            if (cm06a.isChecked()) {
+                if (!(cm07a.isChecked() || cm07b.isChecked() || cm07c.isChecked() || cm07d.isChecked() || cm07e.isChecked()
+                        || cm07f.isChecked() || cm07g.isChecked() || cm07h.isChecked() || cm0788.isChecked())) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm07), Toast.LENGTH_LONG).show();
+                    cm0788.setError("This data is Required!");    // Set Error on last radio button
 
-                    Log.i(TAG, "cm03: This data is Required!");
+                    Log.i(TAG, "cm07: This data is Required!");
                     return false;
                 } else {
-                    cm0388.setError(null);
+                    cm0788.setError(null);
                 }
 
-                if (cm0388.isChecked() && cm0388x.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                    cm0388x.setError("This data is Required!");    // Set Error on last radio button
-                    Log.i(TAG, "cm0388x: This data is Required!");
+                if (cm0788.isChecked() && cm0788x.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm07) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    cm0788x.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "cm0788x: This data is Required!");
                     return false;
                 } else {
-                    cm0388x.setError(null);
+                    cm0788x.setError(null);
                 }
+
+                if (cm08.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm08), Toast.LENGTH_LONG).show();
+                    cm0888.setError("This data is Required!");    // Set Error on last radio button
+
+                    Log.i(TAG, "cm08: This data is Required!");
+                    return false;
+                } else {
+                    cm0888.setError(null);
+                }
+
+                if (cm0888.isChecked() && cm0888x.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm08) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    cm0888x.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "cm0888x: This data is Required!");
+                    return false;
+                } else {
+                    cm0888x.setError(null);
+                }
+                if (cm09.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm09), Toast.LENGTH_LONG).show();
+                    cm0977.setError("This data is Required!");    // Set Error on last radio button
+
+                    Log.i(TAG, "cm09: This data is Required!");
+                    return false;
+                } else {
+                    cm0977.setError(null);
+                }
+                
             }
         }
 

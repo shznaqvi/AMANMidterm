@@ -356,9 +356,15 @@ public class PostpartumCareActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, ChildHealthActivity.class);
-                secNext.putExtra("check", false);
-                startActivity(secNext);
+                if (AppMain.outcome == 1) {
+                    Intent secNext = new Intent(this, ChildHealthActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, ChildMorbidityActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

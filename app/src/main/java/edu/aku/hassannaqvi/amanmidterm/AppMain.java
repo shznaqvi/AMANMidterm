@@ -62,6 +62,7 @@ public class AppMain extends Application {
     public static FormsContract fc;
     public static IMsContract im;
     public static String mna06a = "";
+    public static int outcome = 0;
     protected LocationManager locationManager;
     Location location;
 

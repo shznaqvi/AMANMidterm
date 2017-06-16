@@ -216,6 +216,7 @@ public class DeliveryActivity extends Activity {
         // Radio Group
         s5b.put("d04", d04a.isChecked() ? "1" : d04b.isChecked() ? "2" : d04c.isChecked() ? "3" : "0");
 
+        AppMain.outcome = d01.indexOfChild(findViewById(d01.getCheckedRadioButtonId())) + 1;
         AppMain.fc.setDelivery(String.valueOf(s5b));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

@@ -47,8 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="1234567890--qwertyuiopasdfghjklzxcvbnm"
-            android:hint="@string/biuc"
-            android:maxLength="5" />
+            android:hint="@string/biuc" />
 
         <TextView
             android:layout_width="match_parent"
@@ -79,8 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="1234567890--qwertyuiopasdfghjklzxcvbnm"
-            android:hint="@string/biACHW"
-            android:maxLength="5" />
+            android:hint="@string/biACHW" />
 
         <TextView
             android:layout_width="match_parent"

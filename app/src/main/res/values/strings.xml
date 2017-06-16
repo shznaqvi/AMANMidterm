@@ -23,8 +23,9 @@
     <string name="dnk">معلوم نہیں</string>
     <string name="none">کوئی نہیں</string>
     <string name="year">سال</string>
-
+    <string name="month">سال</string>
     <string name="other">کوئی اور (وضاحت کریں)۔</string>
+    <string name="na">قابل اطلاق نہیں</string>
 
     <string name="end_interview"> اختتام </string>
     <string name="start_interview"> انٹرویو شروع کریں </string>
@@ -671,25 +672,38 @@
     <string name="pc12e">دائی/ٹی بی اے  </string>
 
     <!-- String related to Part 7.. Child Morbidity & care seeking-->
-    <string name="cm01">کیا بچہ پچھلے دو ہفتوں کے دوران ان میں سے کسی بیماری میں مبتلہ رہا ہے ؟(اس کے علاوہ کوئی اور؟)</string>
-    <string name="cm01a">شدید بخار</string>
-    <string name="cm01b">دست</string>
-    <string name="cm01c">کھانسی /زکام</string>
-    <string name="cm01d">سانس میں دشواری</string>
-    <string name="cm01e">سینے کی تکلیف</string>
-    <string name="cm01f">جلد کی بیماری</string>
-    <string name="cm01g">پاخانے میں کیڑے</string>
-    <string name="cm01h">داخ دھبے اور خارش</string>
-    <string name="cm02">کیا آپ نےپچھلے دو ہفتوں میں کسی بیماری کا علاج کروایا؟</string>
-    <string name="cm03">پچھلےدو ہفتوںمیں ان میں سے کسی بیماری کا علاج کس سے کروایا؟ ہر شخص کے بارے میں پوچھیں اور تمام بتائے ہوئے لوگوں کا اندراج کریں۔</string>
-    <string name="cm03a">ڈاکٹر</string>
-    <string name="cm03b">نرس /دائی/لیڈی ہیلتھ وسیٹر</string>
-    <string name="cm03c">کمیونٹی مڈ وائف</string>
-    <string name="cm03d">دائی/ ٹی بی اے</string>
-    <string name="cm03e"> لیڈی ہیلتھ ورکر</string>
-    <string name="cm03f">ہمیوپیھتک</string>
-    <string name="cm03g">حکیم</string>
-    <string name="cm03h">کمپوڈر/ڈسپنسر </string>
+
+    <string name="cm01">منتخب شدہ عورت کے پانچ سال سے کم عمر کے بچوں کی تعداد</string>
+    <string name="cm01a"> تعداد</string>
+    <string name="cm02">بچے کا نام</string>
+    <string name="cm03">بچے کی جنس</string>
+    <string name="cm04">مکمل شدہ مہینوں میں بچے کی عمر (اگر ایک ماہ سے چھوٹا ہو تو 00 ڈالیں) </string>
+    <string name="cm05">کیا بچہ پچھلے دو ہفتوں کے دوران ان میں سے کسی بیماری میں مبتلہ رہا ہے ؟(اس کے علاوہ کوئی اور؟)</string>
+    <string name="cm05a">شدید بخار</string>
+    <string name="cm05b">دست</string>
+    <string name="cm05c">کھانسی /زکام</string>
+    <string name="cm05d">سانس میں دشواری</string>
+    <string name="cm05e">سینے کی تکلیف</string>
+    <string name="cm05f">جلد کی بیماری</string>
+    <string name="cm05g">پاخانے میں کیڑے</string>
+    <string name="cm05h">داخ دھبے اور خارش</string>
+    <string name="cm06">کیا آپ نےپچھلے دو ہفتوں میں کسی بیماری کا علاج کروایا؟</string>
+    <string name="cm07">پچھلےدو ہفتوںمیں ان میں سے کسی بیماری کا علاج کس سے کروایا؟ ہر شخص کے بارے میں پوچھیں اور تمام بتائے ہوئے لوگوں کا اندراج کریں۔</string>
+    <string name="cm07a">ڈاکٹر</string>
+    <string name="cm07b">نرس /دائی/لیڈی ہیلتھ وسیٹر</string>
+    <string name="cm07c">کمیونٹی مڈ وائف</string>
+    <string name="cm07d">دائی/ ٹی بی اے</string>
+    <string name="cm07e"> لیڈی ہیلتھ ورکر</string>
+    <string name="cm07f">ہمیوپیھتک</string>
+    <string name="cm07g">حکیم</string>
+    <string name="cm07h">کمپوڈر/ڈسپنسر </string>
+    <string name="cm08">اگر ہاں تو آپ نے کہاں سے علاج کروایا تھا؟</string>
+    <string name="cm08a">گورنمنٹ کے مرکز صحت میں</string>
+    <string name="cm08b">پرائیوٹ مرکز صحت </string>
+    <string name="cm08c">ایل ایچ وی / مڈوائف کے گھر آنا جانا</string>
+    <string name="cm08d">ایل ایچ وی کے گھر آنا جانا</string>
+    <string name="cm08e">دائی / ٹی بی اے</string>
+    <string name="cm09">کیا دست کے علاج کے لیے بچے نے او آر ایس استعمال کیا تھا؟</string>
 
     <!--SOCIO-ECONOMIC STATUS-->
 
