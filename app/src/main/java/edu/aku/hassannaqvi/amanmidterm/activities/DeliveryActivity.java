@@ -141,21 +141,21 @@ public class DeliveryActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-        if (ValidateForm()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
+//        if (ValidateForm()) {
+//            try {
+//                SaveDraft();
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//            if (UpdateDB()) {
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
         startActivity(endSec);
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
-        }
+//            } else {
+//                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+//            }
+//        }
     }
 
     @OnClick(R.id.btn_Continue)
@@ -183,7 +183,7 @@ public class DeliveryActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateDelivery();
+        int updcount = db.updateDelivery();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -193,9 +193,6 @@ public class DeliveryActivity extends Activity {
 
         return false;
         }
-*/
-        return true;
-
     }
 
     private void SaveDraft() throws JSONException {
@@ -220,6 +217,7 @@ public class DeliveryActivity extends Activity {
         s5b.put("d04", d04a.isChecked() ? "1" : d04b.isChecked() ? "2" : d04c.isChecked() ? "3" : "0");
 
         AppMain.outcome = d01.indexOfChild(findViewById(d01.getCheckedRadioButtonId())) + 1;
+
         AppMain.fc.setDelivery(String.valueOf(s5b));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

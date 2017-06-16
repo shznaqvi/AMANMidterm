@@ -696,25 +696,25 @@ public class BirthsDeathsActivity extends AppCompatActivity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
 
-        if (ValidateForm()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
+//        if (ValidateForm()) {
+//            try {
+//                SaveDraft();
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//            if (UpdateDB()) {
 
-        finish();
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, EndingActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
-        }
+                finish();
+                Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+                Intent endSec = new Intent(this, EndingActivity.class);
+                endSec.putExtra("complete", false);
+                startActivity(endSec);
+//            } else {
+//                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+//            }
+//        }
 
     }
 
@@ -762,7 +762,6 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         sn.put("bd08dob2", bd08dob2.getText().toString());
         sn.put("bd08dod1", bd08dod1.getText().toString());
         sn.put("bd08dod2", bd08dod2.getText().toString());
-
 
         AppMain.fc.setBirthsDeaths(String.valueOf(sn));
 
@@ -1146,15 +1145,14 @@ public class BirthsDeathsActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateBirthsDeaths();
+        int updcount = db.updateBirthsDeaths();
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-        return false;
-    }*/
-        return true;
+            return false;
+        }
     }
 
     public Calendar getCalendarDate(String value) {
@@ -1182,8 +1180,6 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
         return "";
     }
-
-
 
 
 }

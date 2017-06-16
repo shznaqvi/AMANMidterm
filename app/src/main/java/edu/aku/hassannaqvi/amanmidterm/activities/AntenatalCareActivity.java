@@ -389,21 +389,21 @@ public class AntenatalCareActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-        if (ValidateForm()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
+//        if (ValidateForm()) {
+//            try {
+//                SaveDraft();
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//            if (UpdateDB()) {
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("check", false);
         startActivity(endSec);
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
-        }
+//            } else {
+//                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+//            }
+//        }
 
     }
 
@@ -435,7 +435,7 @@ public class AntenatalCareActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateAntenatalCare();
+        int updcount = db.updateAntenatalCare();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -443,11 +443,7 @@ public class AntenatalCareActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
-
-
+        }
     }
 
 
@@ -505,7 +501,7 @@ public class AntenatalCareActivity extends Activity {
         js.put("anc015", anc015a.isChecked() ? "1" : anc015b.isChecked() ? "2" : anc015c.isChecked() ? "3" : anc015d.isChecked() ? "4" : anc015e.isChecked() ? "5" : anc015f.isChecked() ? "6" : anc01588.isChecked() ? "88" : "0");
         js.put("anc015x", anc015x.getText().toString());
 
-        AppMain.fc.setChildHealth(String.valueOf(js));
+        AppMain.fc.setAntenatalCare(String.valueOf(js));
 
 
         return true;

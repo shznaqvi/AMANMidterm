@@ -548,13 +548,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_SOCIOECONOMIC, AppMain.fc.getSocioEconomic());
 
 // Which row to update, based on the ID
-        String selection = " id = " + AppMain.fc.getID();
+        String selection = FormsContract.FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
 
@@ -566,13 +566,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_CHILDVACCINATION, AppMain.fc.getChildVaccination());
 
 // Which row to update, based on the ID
-        String selection = " id = " + AppMain.fc.getID();
+        String selection = FormsContract.FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
 
@@ -584,13 +584,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_ANTENATALCARE, AppMain.fc.getAntenatalCare());
 
 // Which row to update, based on the ID
-        String selection = " id = " + AppMain.fc.getID();
+        String selection = FormsContract.FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
 
@@ -602,13 +602,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_DELIVERY, AppMain.fc.getDelivery());
 
 // Which row to update, based on the ID
-        String selection = " id = " + AppMain.fc.getID();
+        String selection = FormsContract.FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
 
@@ -620,13 +620,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_POSTPARTUMCARE, AppMain.fc.getPostpartumCare());
 
 // Which row to update, based on the ID
-        String selection = " id = " + AppMain.fc.getID();
+        String selection = FormsContract.FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
 
@@ -638,13 +638,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_NEONATALHEALTH, AppMain.fc.getNeonatalHealth());
 
 // Which row to update, based on the ID
-        String selection = " id = " + AppMain.fc.getID();
+        String selection = FormsContract.FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
 
@@ -656,13 +656,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, AppMain.fc.getChildMorbidity());
 
 // Which row to update, based on the ID
-        String selection = " id = " + AppMain.fc.getID();
+        String selection = FormsContract.FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
     public int updateMaternalMentalHealth() {
@@ -673,13 +673,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH, AppMain.fc.getMaternalMentalHealth());
 
 // Which row to update, based on the ID
-        String selection = " id = " + AppMain.fc.getID();
+        String selection = FormsContract.FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
 
@@ -691,13 +691,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_BIRTHSDEATHS, AppMain.fc.getBirthsDeaths());
 
 // Which row to update, based on the ID
-        String selection = " id = " + AppMain.fc.getID();
+        String selection = FormsContract.FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
-                null);
+                selectionArgs);
         return count;
     }
 

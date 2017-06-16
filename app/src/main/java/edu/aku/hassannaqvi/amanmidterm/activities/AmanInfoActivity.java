@@ -245,20 +245,24 @@ public class AmanInfoActivity extends Activity {
     }
 
     private boolean UpdateDB() {
-        //Long rowId;
+        Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-       /* rowId = null;
         rowId = db.addForm(AppMain.fc);
 
         AppMain.fc.setID(String.valueOf(rowId));
 
         if (rowId != null) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            /*AppMain.fc.setFUID(
+            AppMain.fc.setUID(
                     (AppMain.fc.getDeviceID() + AppMain.fc.getID()));
-            Toast.makeText(this, "Current Form No: " + AppMain.fc.getFUID(), Toast.LENGTH_SHORT).show();*/
-        return true;
+            db.updateFormID();
+            Toast.makeText(this, "Current Form No: " + AppMain.fc.getUID(), Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 
