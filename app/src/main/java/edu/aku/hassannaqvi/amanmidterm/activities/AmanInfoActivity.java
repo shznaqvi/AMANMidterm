@@ -23,10 +23,10 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
+import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 import static android.content.ContentValues.TAG;
 
@@ -211,7 +211,7 @@ public class AmanInfoActivity extends Activity {
         sa.put("biuc", biuc.getText().toString());
         sa.put("biPara", biPara.getText().toString());
         sa.put("biACHW", biACHW.getText().toString());
-        sa.put("biuc", biHH.getText().toString());
+        sa.put("biHH", biHH.getText().toString());
         sa.put("bi01", bi0101.isChecked() ? "1" : bi0102.isChecked() ? "2" : "0");
         sa.put("bib01", bib01.getText().toString());
         sa.put("bib02", bib0201.isChecked() ? "1" : bib0202.isChecked() ? "2" : "0");
@@ -429,6 +429,7 @@ public class AmanInfoActivity extends Activity {
             } else {
                 bib08.setError(null);
             }
+
             if (bib09.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib09), Toast.LENGTH_LONG).show();
                 bib09.setError("This data is Required!");
