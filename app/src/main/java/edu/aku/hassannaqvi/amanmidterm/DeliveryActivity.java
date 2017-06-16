@@ -106,7 +106,7 @@ public class DeliveryActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (d03f.isChecked()) {
-                    d0388x.setText(null);
+
                     d03a.setEnabled(false);
                     d03a.setChecked(false);
                     d03b.setEnabled(false);
@@ -259,8 +259,8 @@ public class DeliveryActivity extends Activity {
             d0288x.setError(null);
         }
 
-        if (!(d03a.isChecked() || d03b.isChecked() || d03c.isChecked() || d03d.isChecked()
-                || d03e.isChecked() || d0388.isChecked())) {
+        if (!(d03a.isChecked() || d03b.isChecked() || d03c.isChecked() || d03d.isChecked() || d03e.isChecked()
+                || d03f.isChecked() || d0388.isChecked())) {
             Toast.makeText(this, "ERROR(empty): " + getString(d03), Toast.LENGTH_LONG).show();
             d0388.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "d0388: This data is Required!");
@@ -269,16 +269,17 @@ public class DeliveryActivity extends Activity {
             d0388.setError(null);
         }
 
-        if (d0388.isChecked() && d0388x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(d03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
-            d0388x.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "d0388: This data is Required!");
-            return false;
-        } else {
-            d0288x.setError(null);
+        if (d0388.isChecked()) {
+            if (d0388.isChecked() && d0388x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(d03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                d0388x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "d0388: This data is Required!");
+                return false;
+            } else {
+                d0388x.setError(null);
+            }
+
         }
-
-
         // ===================== Q 5.38 ===========================
         // RadioGroup
         if (d04.getCheckedRadioButtonId() == -1) {
@@ -290,7 +291,6 @@ public class DeliveryActivity extends Activity {
         } else {
             d04c.setError(null);
         }
-
 
         return true;
     }

@@ -448,6 +448,19 @@ public class SocioEconomicActivity extends Activity {
             }
         });
 
+
+        se0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    se0588x.setVisibility(View.VISIBLE);
+                } else {
+                    se0588x.setVisibility(View.GONE);
+                    se0588x.setText(null);
+                }
+            }
+        });
+
         se0288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

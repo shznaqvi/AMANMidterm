@@ -551,6 +551,16 @@ public class PostpartumCareActivity extends Activity {
             pc0699.setError(null);
         }
 
+        if ((Integer.valueOf(pc06a.getText().toString()) < 0)
+                || (Integer.valueOf(pc06a.getText().toString()) > 29)) {
+            Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.days), Toast.LENGTH_LONG).show();
+            pc06a.setError("Range is 0-29");
+            Log.i(TAG, "pc06a: Range is 0-29");
+            return false;
+        } else {
+            pc06a.setError(null);
+        }
+
         if (!pc0699.isChecked()) {
             if (!(pc07a.isChecked() || pc07b.isChecked() || pc07c.isChecked() || pc07d.isChecked() || pc07e.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc07), Toast.LENGTH_LONG).show();
@@ -560,16 +570,6 @@ public class PostpartumCareActivity extends Activity {
                 return false;
             } else {
                 pc07e.setError(null);
-            }
-
-            if ((Integer.valueOf(pc06a.getText().toString()) < 0)
-                    || (Integer.valueOf(pc06a.getText().toString()) > 29)) {
-                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.days), Toast.LENGTH_LONG).show();
-                pc06a.setError("Range is 0-29");
-                Log.i(TAG, "pc06a: Range is 0-29");
-                return false;
-            } else {
-                pc06a.setError(null);
             }
 
         }
@@ -614,6 +614,17 @@ public class PostpartumCareActivity extends Activity {
                 pc10b.setError(null);
             }
 
+            if (pc11a.getText().toString().isEmpty() && pc11b.getText().toString().isEmpty()
+                    && pc11c.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc11), Toast.LENGTH_LONG).show();
+                pc11a.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "pc11: This data is Required!");
+            } else {
+                pc11a.setError(null);
+            }
+
+
             if (pc10a.isChecked()) {
                 if (!(pc12a.isChecked() || pc12b.isChecked() || pc12c.isChecked() || pc12d.isChecked() || pc12e.isChecked()
                         || pc1288.isChecked())) {
@@ -636,19 +647,9 @@ public class PostpartumCareActivity extends Activity {
                 }
             }
 
-            if (pc11a.getText().toString().isEmpty() && pc11b.getText().toString().isEmpty()
-                    && pc11c.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc11), Toast.LENGTH_LONG).show();
-                pc11a.setError("This data is Required!");    // Set Error on last radio button
 
-                Log.i(TAG, "pc11: This data is Required!");
-            } else {
-                pc11a.setError(null);
-            }
 
         }
-
-
         return true;
     }
 
