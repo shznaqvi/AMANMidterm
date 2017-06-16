@@ -10,7 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="72dp"
-    tools:context="edu.aku.hassannaqvi.amanmidterm.AmanInfoActivity">
+    tools:context="edu.aku.hassannaqvi.amanmidterm.activities.AmanInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

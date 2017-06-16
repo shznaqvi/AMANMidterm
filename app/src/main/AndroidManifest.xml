@@ -14,13 +14,13 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
-        android:name=".AppMain"
+        android:name=".core.AppMain"
         android:allowBackup="true"
         android:icon="@drawable/healthy_mothers_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/FullscreenTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
 
             <!--
             <intent-filter>
@@ -30,36 +30,36 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".AmanInfoActivity" />
-        <activity android:name=".BasicInfoActivity" />
-        <activity android:name=".IndexChildActivity" />
-        <activity android:name=".ChildVaccinationActivity" />
-        <activity android:name=".ChildHealthActivity" />
-        <activity android:name=".KAPActivity" />
-        <activity android:name=".SocioEconomicActivity" />
-        <activity android:name=".LabInfoActivity" />
+        <activity android:name=".activities.AmanInfoActivity" />
+        <activity android:name=".activities.BasicInfoActivity" />
+        <activity android:name=".activities.IndexChildActivity" />
+        <activity android:name=".activities.ChildVaccinationActivity" />
+        <activity android:name=".activities.ChildHealthActivity" />
+        <activity android:name=".activities.KAPActivity" />
+        <activity android:name=".activities.SocioEconomicActivity" />
+        <activity android:name=".activities.LabInfoActivity" />
         <activity
-            android:name=".MaternalMentalHealthActivity"
+            android:name=".activities.MaternalMentalHealthActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".FormsList"
+            android:name=".activities.FormsList"
             android:theme="@android:style/Theme.Holo.Light" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"
             tools:replace="screenOrientation" />
         <activity
-            android:name=".EndingActivity"
+            android:name=".activities.EndingActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ImmunizationActivity"
+            android:name=".activities.ImmunizationActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".activities.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme">
@@ -70,25 +70,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AndroidDatabaseManager"
+            android:name=".core.AndroidDatabaseManager"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".AntenatalCareActivity"
+            android:name=".activities.AntenatalCareActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".DeliveryActivity"
+            android:name=".activities.DeliveryActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".PostpartumCareActivity"
+            android:name=".activities.PostpartumCareActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".NeonatalHealthActivity"
+            android:name=".activities.NeonatalHealthActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ChildMorbidityActivity"
+            android:name=".activities.ChildMorbidityActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".BirthsDeathsActivity"
+            android:name=".activities.BirthsDeathsActivity"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
 
