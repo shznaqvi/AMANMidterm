@@ -20,6 +20,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -31,6 +34,8 @@ import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 import static android.content.ContentValues.TAG;
 
 public class AmanInfoActivity extends Activity {
+
+    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
@@ -206,6 +211,11 @@ public class AmanInfoActivity extends Activity {
 
         AppMain.fc = new FormsContract();
 
+        AppMain.fc.setDeviceID(AppMain.deviceId);
+        AppMain.fc.setUserName(AppMain.username);
+        AppMain.fc.setFormDate(dtToday);
+//        AppMain.fc.setMajorArea(String.valueOf(AppMain.majorArea));
+
         JSONObject sa = new JSONObject();
 
         sa.put("biuc", biuc.getText().toString());
@@ -252,7 +262,7 @@ public class AmanInfoActivity extends Activity {
 
         AppMain.fc.setID(String.valueOf(rowId));
 
-        if (rowId != null) {
+        if (rowId > -1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             AppMain.fc.setUID(
                     (AppMain.fc.getDeviceID() + AppMain.fc.getID()));
