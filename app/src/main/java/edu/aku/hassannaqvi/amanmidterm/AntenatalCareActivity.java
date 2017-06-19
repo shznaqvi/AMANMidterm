@@ -433,7 +433,7 @@ public class AntenatalCareActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateAntenatalCare();
+        int updcount = db.updateAntenatalCare();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -441,9 +441,7 @@ public class AntenatalCareActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
 
 
     }

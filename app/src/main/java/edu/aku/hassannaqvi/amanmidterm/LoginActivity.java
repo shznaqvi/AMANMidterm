@@ -27,15 +27,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,7 +44,6 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -84,8 +80,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     TextView txtinstalldate;
     @BindView(R.id.email_sign_in_button)
     Button mEmailSignInButton;
-    @BindView(R.id.spUC)
-    Spinner spUC;
+    /* @BindView(R.id.spUC)
+     Spinner spUC;*/
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
     String DirectoryName;
@@ -153,11 +149,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
             }
         });
+/*
 
         // District Spinner
         // Populate from District Table
-       /* ArrayList<UCContract> ucList = new ArrayList<UCContract>();
-        ucList = db.getAllUC();*/
+       */
+/* ArrayList<UCContract> ucList = new ArrayList<UCContract>();
+        ucList = db.getAllUC();*//*
+
 
         // Spinner Drop down elements
         lables = new ArrayList<String>();
@@ -195,21 +194,25 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         // Polulating 'labels' and 'values' from ucList
         // ==>> OPTIMIZED
-       /* for (UCContract uc : ucList) {
+       */
+/* for (UCContract uc : ucList) {
             labels.add(uc.getUCName);
         }
         for (UCContract uc : ucList) {
             values.add(uc.getID);
-        }*/
+        }*//*
+
 
         // ==>> OLD
-        /*for (int i = 0; i < ucList.size(); i++) {
+        */
+/*for (int i = 0; i < ucList.size(); i++) {
             labels.add(ucList.get(i).getUCName());
             values.add(String.valueOf(ucList.get(i).getID()));
 
             Log.i("Key - Value:", ucList.get(i).getTownId() + " - " + ucList.get(i).getUCId() + " - " + ucList.get(i).getUCName() + " - " + ucList.get(i).getID());
 
-        }*/
+        }*//*
+
         valuesnlabels = new HashMap<String, String>();
         valuesnlabels.put("11", "K. Abdullah");
         valuesnlabels.put("12", "Quetta");
@@ -253,6 +256,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }
         });
 
+*/
 
     }
 

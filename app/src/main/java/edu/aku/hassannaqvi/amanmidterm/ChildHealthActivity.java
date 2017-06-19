@@ -542,16 +542,18 @@ public class ChildHealthActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateNeonatalHealth();
+        int updcount = db.updateNeonatalHealth();
+
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
 
-        return true;
+            return false;
+        }
+
+
     }
 
 
@@ -741,7 +743,6 @@ public class ChildHealthActivity extends Activity {
 
         }
 
-
         if (iy09.getCheckedRadioButtonId() == -1) {
             iy09a.setError(getString(R.string.rdoerr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy09), Toast.LENGTH_LONG).show();
@@ -751,7 +752,6 @@ public class ChildHealthActivity extends Activity {
         } else {
             iy09a.setError(null);
         }
-
 
         if (iy09a.isChecked()) {
 
@@ -770,7 +770,6 @@ public class ChildHealthActivity extends Activity {
             } else {
                 iy010a.setError(null);
             }
-
 
             if (iy01088.isChecked()) {
 
@@ -819,7 +818,6 @@ public class ChildHealthActivity extends Activity {
 
             }
 
-
             if (!iy011w.getText().toString().isEmpty() && iy011w.getText().toString() != null) {
 
 
@@ -832,7 +830,6 @@ public class ChildHealthActivity extends Activity {
                 }
 
             }
-
         }
 
         if (!iy01299.isChecked()) {
@@ -873,7 +870,6 @@ public class ChildHealthActivity extends Activity {
 
         }
 
-
         if (!iy012h.getText().toString().isEmpty() && iy012h.getText().toString() != null) {
 
             if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 24) {
@@ -896,7 +892,6 @@ public class ChildHealthActivity extends Activity {
             iy013a.setError(null);
         }
 
-
         if (iy014.getCheckedRadioButtonId() == -1) {
             iy014a.setError(getString(R.string.rdoerr));
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy014), Toast.LENGTH_LONG).show();
@@ -906,7 +901,6 @@ public class ChildHealthActivity extends Activity {
         } else {
             iy014a.setError(null);
         }
-
 
         if (iy014a.isChecked()) {
 

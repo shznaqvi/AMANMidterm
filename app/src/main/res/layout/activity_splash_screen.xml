@@ -20,7 +20,7 @@
             android:layout_gravity="center_horizontal"
             android:contentDescription="TVI LOGO"
             android:paddingTop="72dp"
-            android:src="@drawable/agakhan" />
+            android:src="@drawable/amanlogo" />
 
         <TextView
             android:id="@+id/fullscreen_content"

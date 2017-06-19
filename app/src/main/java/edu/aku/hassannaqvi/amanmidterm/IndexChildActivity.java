@@ -3,8 +3,6 @@ package edu.aku.hassannaqvi.amanmidterm;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -77,38 +75,6 @@ public class IndexChildActivity extends Activity {
                     fldGrpmnb4x96.setVisibility(View.VISIBLE);
 
                 }
-            }
-        });
-        mnb4.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //Toast.makeText(IndexChildActivity.this, s+"|"+start+"|"+before+"|"+count, Toast.LENGTH_SHORT).show();
-                if (s.length() == 15) {
-                    String[] cp = s.toString().split("-");
-                    if (cp.length != 3 || cp[0].length() != 5 || cp[1].length() != 7 || cp[2].length() != 1) {
-                        Toast.makeText(getApplicationContext(), "Incorrect CNIC!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        mnb4.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.check_mark), null, null, null);
-                        Toast.makeText(getApplicationContext(), "Correct CNIC!", Toast.LENGTH_SHORT).show();
-
-                    }
-                } else {
-                    mnb4.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
-                    if (before == 0 && (s.length() == 5 || s.length() == 13)) {
-                        mnb4.append("-");
-                    }
-
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
             }
         });
 

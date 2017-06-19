@@ -19,8 +19,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static edu.aku.hassannaqvi.amanmidterm.R.string.d03;
-
 public class DeliveryActivity extends Activity {
 
     private static final String TAG = DeliveryActivity.class.getSimpleName();
@@ -40,6 +38,12 @@ public class DeliveryActivity extends Activity {
     RadioButton d02a;
     @BindView(R.id.d02b)
     RadioButton d02b;
+    @BindView(R.id.d02c)
+    RadioButton d02c;
+    @BindView(R.id.d02d)
+    RadioButton d02d;
+    @BindView(R.id.d02e)
+    RadioButton d02e;
     @BindView(R.id.d02f)
     RadioButton d02f;
     @BindView(R.id.d0288)
@@ -180,7 +184,7 @@ public class DeliveryActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateDelivery();
+        int updcount = db.updateDelivery();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -190,8 +194,7 @@ public class DeliveryActivity extends Activity {
 
         return false;
         }
-*/
-        return true;
+
 
     }
 
@@ -261,7 +264,7 @@ public class DeliveryActivity extends Activity {
 
         if (!(d03a.isChecked() || d03b.isChecked() || d03c.isChecked() || d03d.isChecked() || d03e.isChecked()
                 || d03f.isChecked() || d0388.isChecked())) {
-            Toast.makeText(this, "ERROR(empty): " + getString(d03), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.d03), Toast.LENGTH_LONG).show();
             d0388.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "d0388: This data is Required!");
             return false;
@@ -271,7 +274,7 @@ public class DeliveryActivity extends Activity {
 
         if (d0388.isChecked()) {
             if (d0388.isChecked() && d0388x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(d03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.d03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 d0388x.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "d0388: This data is Required!");
                 return false;

@@ -448,19 +448,6 @@ public class SocioEconomicActivity extends Activity {
             }
         });
 
-
-        se0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    se0588x.setVisibility(View.VISIBLE);
-                } else {
-                    se0588x.setVisibility(View.GONE);
-                    se0588x.setText(null);
-                }
-            }
-        });
-
         se0288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -525,7 +512,7 @@ public class SocioEconomicActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSocioEco();
+        int updcount = db.updateSocioEco();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -533,10 +520,7 @@ public class SocioEconomicActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
-
+        }
     }
 
     private boolean SaveDraft() throws JSONException {
@@ -597,7 +581,6 @@ public class SocioEconomicActivity extends Activity {
         socioeco.put("se1216", se1216.getText().toString());
         socioeco.put("se1217", se1217.getText().toString());
         socioeco.put("se1288", se1288.getText().toString());
-
 
 
         AppMain.fc.setSocioEconomic(String.valueOf(socioeco));
