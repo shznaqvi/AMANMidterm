@@ -647,6 +647,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    public int updateIycf() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_NAME_IYCF, AppMain.fc.getIycf());
+
+// Which row to update, based on the ID
+        String selection = FormsContract.FormsTable.ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+
     public int updateChildMorbidity() {
         SQLiteDatabase db = this.getReadableDatabase();
 
