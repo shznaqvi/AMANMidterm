@@ -214,7 +214,9 @@
                 android:id="@+id/bib05"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bib05" />
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/bib05"
+                android:inputType="text" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -301,7 +303,9 @@
                 android:id="@+id/bib10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bib10" />
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/bib10"
+                android:inputType="text" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -387,7 +391,9 @@
                 android:id="@+id/bib15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bib15" />
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/bib15"
+                android:inputType="text" />
 
 
             <TextView

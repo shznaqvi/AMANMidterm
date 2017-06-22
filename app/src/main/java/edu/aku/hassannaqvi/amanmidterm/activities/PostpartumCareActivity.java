@@ -20,9 +20,9 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 public class PostpartumCareActivity extends Activity {
 
@@ -360,7 +360,7 @@ public class PostpartumCareActivity extends Activity {
                 finish();
 
                 if (AppMain.outcome == 1) {
-                    Intent secNext = new Intent(this, ChildHealthActivity.class);
+                    Intent secNext = new Intent(this, IYCFActivity.class);
                     secNext.putExtra("check", false);
                     startActivity(secNext);
                 } else {
@@ -540,30 +540,9 @@ public class PostpartumCareActivity extends Activity {
         }
         // ===================== Q 5.38 ===========================
         // RadioGroup
-        if (pc06a.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc06), Toast.LENGTH_LONG).show();
-            pc06a.setError("This data is Required!");    // Set Error on last radio button
-
-            Log.i(TAG, "pc06: This data is Required!");
-            return false;
-        } else {
-            pc06a.setError(null);
-        }
-
-        if ((Integer.valueOf(pc06a.getText().toString()) < 0)
-                || (Integer.valueOf(pc06a.getText().toString()) > 29)) {
-            Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.days), Toast.LENGTH_LONG).show();
-            pc06a.setError("Range is 0-29");
-            Log.i(TAG, "pc06a: Range is 0-29");
-            return false;
-        } else {
-            pc06a.setError(null);
-        }
-
-        if ((pc06b.getText().toString().isEmpty())
-                && !pc0699.isChecked()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc06), Toast.LENGTH_LONG).show();
-            pc0699.setError("This data is Required!");    // Set Error on last radio button
+        if ((pc06a.getText().toString().isEmpty() || pc06b.getText().toString().isEmpty()) && !pc0699.isChecked()) {
+            Toast.makeText(this, "ERROR(empty)" + getString(R.string.pc06), Toast.LENGTH_SHORT).show();
+            pc0699.setError("This data is Required!");
 
             Log.i(TAG, "pc06: This data is Required!");
             return false;
@@ -571,8 +550,29 @@ public class PostpartumCareActivity extends Activity {
             pc0699.setError(null);
         }
 
-
         if (!pc0699.isChecked()) {
+            if (Integer.valueOf(pc06a.getText().toString().isEmpty() ? "0" : pc06a.getText().toString()) < 0
+                    || Integer.valueOf(pc06a.getText().toString().isEmpty() ? "0" : pc06a.getText().toString()) > 6) {
+                Toast.makeText(this, "ERROR(invalid)" + getString(R.string.pc06) + " - " + getString(R.string.days), Toast.LENGTH_SHORT).show();
+                pc06a.setError("Range is 0 to 6 days");
+
+                Log.i(TAG, "pc06a: Range is 0 to 6 days");
+                return false;
+            } else {
+                pc06a.setError(null);
+            }
+
+            if (Integer.valueOf(pc06b.getText().toString().isEmpty() ? "0" : pc06b.getText().toString()) < 0
+                    || Integer.valueOf(pc06b.getText().toString().isEmpty() ? "0" : pc06b.getText().toString()) > 44) {
+                Toast.makeText(this, "ERROR(invalid)" + getString(R.string.pc06) + " - " + getString(R.string.month), Toast.LENGTH_SHORT).show();
+                pc06b.setError("Range is 0 to 44 weeks");
+
+                Log.i(TAG, "pc06b: Range is 0 to 44 weeks");
+                return false;
+            } else {
+                pc06b.setError(null);
+            }
+
             if (!(pc07a.isChecked() || pc07b.isChecked() || pc07c.isChecked() || pc07d.isChecked() || pc07e.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc07), Toast.LENGTH_LONG).show();
                 pc07e.setError("This data is Required!");    // Set Error on last radio button

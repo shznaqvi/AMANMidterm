@@ -19,9 +19,9 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 
 public class AntenatalCareActivity extends Activity {
@@ -614,10 +614,10 @@ public class AntenatalCareActivity extends Activity {
 
             if (!anc0599.isChecked()) {
                 if (Integer.valueOf(anc05d.getText().toString().isEmpty() ? "" : anc05d.getText().toString()) < 1
-                        || Integer.valueOf(anc05d.getText().toString().isEmpty() ? "" : anc05d.getText().toString()) > 29) {
+                        || Integer.valueOf(anc05d.getText().toString().isEmpty() ? "" : anc05d.getText().toString()) > 308) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.anc05), Toast.LENGTH_LONG).show();
-                    anc05d.setError("Range is 1 to 29 days");
-                    Log.d(TAG, "anc05d: Range is 1 to 29 days");
+                    anc05d.setError("Range is 1 to 308 days");
+                    Log.d(TAG, "anc05d: Range is 1 to 308 days");
                     anc05d.requestFocus();
                 } else {
                     anc05d.setError(null);

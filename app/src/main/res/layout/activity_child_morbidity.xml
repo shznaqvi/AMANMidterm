@@ -44,7 +44,10 @@
             android:layout_height="wrap_content"
             android:hint="@string/cm01a"
             android:inputType="number"
-            android:maxLength="2" />
+            android:maxLength="2">
+
+            <requestFocus></requestFocus>
+        </EditText>
 
         <TextView
             android:layout_width="match_parent"
@@ -186,7 +189,9 @@
             android:id="@+id/cm0588x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
         <LinearLayout
@@ -304,7 +309,9 @@
                     android:id="@+id/cm0788x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
+                    android:inputType="textCapWords"
                     android:visibility="gone" />
 
 

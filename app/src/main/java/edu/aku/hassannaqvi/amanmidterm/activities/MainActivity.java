@@ -21,10 +21,10 @@ import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.get.GetUsers;
-import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.sync.SyncForms;
 import edu.aku.hassannaqvi.amanmidterm.sync.SyncIMs;
 
@@ -153,7 +153,7 @@ public class MainActivity extends Activity {
 
     public void openF(View v) {
         //Intent iD = new Intent(this, SocioEconomicActivity.class);
-        Intent iD = new Intent(this, ChildHealthActivity.class);
+        Intent iD = new Intent(this, IYCFActivity.class);
         startActivity(iD);
     }
 

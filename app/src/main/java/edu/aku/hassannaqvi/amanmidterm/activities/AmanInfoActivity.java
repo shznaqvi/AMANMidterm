@@ -560,11 +560,11 @@ public class AmanInfoActivity extends Activity {
                 bib1602.setError(null);
             }
 
-            if ((Integer.valueOf(bib1602.getText().toString()) < 1)
+            if ((Integer.valueOf(bib1602.getText().toString()) < 0)
                     || (Integer.valueOf(bib1602.getText().toString()) > 11)) {
                 Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.months), Toast.LENGTH_LONG).show();
-                bib1602.setError("Range is 1-11");
-                Log.i(TAG, "b09: Range is 1-11");
+                bib1602.setError("Range is 0-11");
+                Log.i(TAG, "b09: Range is 0-11");
                 return false;
             } else {
                 bib1602.setError(null);

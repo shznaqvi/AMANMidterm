@@ -23,7 +23,7 @@
     <string name="dnk">معلوم نہیں</string>
     <string name="none">کوئی نہیں</string>
     <string name="year">سال</string>
-    <string name="month">سال</string>
+    <string name="month">مہینے</string>
     <string name="other">کوئی اور (وضاحت کریں)۔</string>
     <string name="na">قابل اطلاق نہیں</string>
 
@@ -281,38 +281,38 @@
 
 
     <string name="ancheading"> حمل کے دوران نگہداشت </string>
-    <string name="anc01"> کیا آپ نے گزشتہ حمل کے دوران اپنا معائنہ کروائی تھی؟ </string>
+    <string name="anc01"> کیا آپ نے گزشتہ حمل کے دوران اپنا معائنہ کروایا تھا؟ </string>
     <string name="anc01a"> اگر نہیں تو معائنہ نہ کروانے کی وجوہات بتائے۔ </string>
     <string name="anc01b"> اگر نہیں تو معائنہ نہ کروانے کی وجوہات بتائے۔ </string>
-    <string name="anc02"> آپ نےگزشتہ حمل کے دوران کتنی مرتبہ اپنا معائنہ کروائی تھی ؟ </string>
-    <string name="anc03">اگر ہاں تو گزشتہ حمل کے دوران کس سے معائنہ کروا ئی تھی ؟ (ایک سےزیادہ جوابات دینے کی اجازت ہے) </string>
+    <string name="anc02"> آپ نےگزشتہ حمل کے دوران کتنی مرتبہ اپنا معائنہ کروایا تھا ؟ </string>
+    <string name="anc03">اگر ہاں تو گزشتہ حمل کے دوران کس سے معائنہ کروا یا تھا ؟ (ایک سےزیادہ جوابات دینے کی اجازت ہے) </string>
     <string name="anc03a"> گورنمنٹ ڈاکٹر </string>
     <string name="anc03b"> پرائیوٹ ڈاکٹر </string>
     <string name="anc03c"> ایل ایچ وی/ نرس </string>
     <string name="anc03d"> ایل ایچ وی/مڈوائف کے گھر آنا/جانا </string>
     <string name="anc03e"> ایل ایچ وی کے گھر آنا /جانا </string>
     <string name="anc03f"> دائی/ٹی بی اے </string>
-    <string name="anc04"> کیا آپ نے گزشتہ حمل کے دوران فولاد کا طاقت کی دوائی لی یا خریدی تھی؟ </string>
+    <string name="anc04"> کیا آپ نے گزشتہ حمل کے دوران فولاد / طاقت کی دوائی لی یا خریدی تھی؟ </string>
     <string name="anc05"> اگر ہاں تو آپ نے کتنے دن یہ دوائی استعمال کی تھی؟ </string>
     <string name="anc05dnk"> اگر ہاں تو آپ نے کتنے دن یہ دوائی استعمال کی تھی؟ </string>
     <string name="anc05d"> دنوں کی تعداد </string>
-    <string name="anc06"> کیا آپ کو گزشتہ حمل کے دوران کسی خطرناک علامت کا سامنا ہوا تھا؟ </string>
-    <string name="anc07"> اگر ہاں تو یہ خطرناک علامت کیا تھی؟ </string>
+    <string name="anc06"> کیا آپ کو گزشتہ حمل کے دوران کوئی پیچیدگیاں پیش آئی تھیں؟ </string>
+    <string name="anc07"> اگر ہاں تو کونسی پیچیدگیاں پیش آئی تھیں؟ </string>
     <string name="anc07a"> 100 سےزیادہ بخار </string>
     <string name="anc07b"> دھندلاپن </string>
     <string name="anc07c"> خون آنا </string>
     <string name="anc07d"> جسم ، ہاتھوں اور چہرے پر سوجن </string>
-    <string name="anc08"> کیا آپ نے ان علامات کے لئے اپنا علاج کروائی تھی؟ </string>
+    <string name="anc08"> کیا آپ نے ان پیچیدگیوں کے لئے اپنا علاج کروایا تھا؟ </string>
     <string name="anc09"> اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟ </string>
     <string name="anc010"> اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟ </string>
-    <string name="anc011"> اگر ہاں تو گزشتہ حمل کے دوران کسی نے علاج فراہم کی تھی؟ </string>
+    <string name="anc011"> اگر ہاں تو آپ نے کہاں سے علاج کروایا تھا؟ </string>
     <string name="anc011a"> گورنمنٹ ڈاکٹر </string>
     <string name="anc011b"> پرائیوٹ ڈاکٹر </string>
     <string name="anc011c"> ایل ایچ وی/ نرس </string>
     <string name="anc011d"> ایل ایچ وی/مڈوائف کے گھر آنا/جانا </string>
     <string name="anc011e"> ایل ایچ وی کے گھر آنا /جانا </string>
     <string name="anc011f"> دائی/ٹی بی اے </string>
-    <string name="anc012"> کیا آپ نے اپنے بچے کی پیدائش سے پہلے اپنے بازو میں ٹی ٹی کا انجکشن لگوائی تھی جو کہ بچے کو بعد میں جھٹکے لگنے سے بچاتا ہے؟ </string>
+    <string name="anc012"> کیا آپ نے اپنے بچے کی پیدائش سے پہلے اپنے بازو میں ٹی ٹی کا انجکشن لگوایا تھا جو کہ بچے کو بعد میں جھٹکے لگنے سے بچاتا ہے؟ </string>
     <string name="anc013"> اگر ہاں تو کتنی مرتبہ؟ </string>
     <string name="anc014"> کیا اس وقت آپ فیملی پلاننگ کے لئے کوئی طریقہ استعمال کرتی ہیں؟ </string>
     <string name="anc015"> اگر ہاں تو آپ اس وقت کونسا طریقہ استعمال کرتی ہیں؟ </string>
@@ -492,7 +492,7 @@
     <string name="mnf3b"> کرائے کا </string>
     <string name="mnf3c"> رہائش کرائے کے بغیر </string>
     <string name="mnf4"> اس گھر میں سونے کے لیے کتنے کمرے استعمال ہوتے ہیں؟ </string>
-    <string name="mnf5"> گھر میں عام طور پر کھانا پکانے کے لیے کونسا اینڈھن استعمال کرتے ہیں؟ </string>
+    <string name="mnf5"> گھر میں عام طور پر کھانا پکانے کے لیے کونسا ایندھن استعمال کرتے ہیں؟ </string>
     <string name="mnf5a"> بجلی </string>
     <string name="mnf5b"> ایل –پی-جی سیلنڈر </string>
     <string name="mnf5c"> (سوئی گیس کنکشن(قدرتی گیس </string>
@@ -524,7 +524,7 @@
     <string name="mnf8j"> ٹینکر کا پانی </string>
     <string name="mnf8k"> فلٹر پلانٹ کا پانی </string>
     <string name="mnf8l"> سوزکی یا گدھا گاڑی </string>
-    <string name="mnf8m"> (سطح والا پانی(دریا،جھیل ،ڈیم،تالاب/ ندی/نہر/ابپاشی کا پانی </string>
+    <string name="mnf8m"> (سطح والا پانی(دریا،جھیل ،ڈیم،تالاب/ ندی/نہر/آبپاشی کا پانی </string>
     <string name="mnf8n"> (پانی  کی بوتل (منرل واٹر </string>
     <string name="mnf9"> جواہندہ سے پوچھیں کہ ان میں سے کون سے اثاثے کے مالک ہیں اگر ان میں سے کوئی چیز نہیں تو (0) لکھیں </string>
     <string name="mnf9a"> مویشی سرمایہ، بیھنسیں اور گائیں </string>
@@ -556,7 +556,7 @@
     <string name="title_activity_login">Log in</string>
 
     <string name="bdheading"> Section N : Births and Deaths in the Last One Year </string>
-    <string name="bdheadingsub"> پہچلے سال جنوری سے دسمبر 2016 تک آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
+    <string name="bdheadingsub"> پہچلے سال آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
     <string name="bda"> Indicators </string>
     <string name="bdb"> Statistics None = 0 </string>
     <string name="bdba"> Number </string>

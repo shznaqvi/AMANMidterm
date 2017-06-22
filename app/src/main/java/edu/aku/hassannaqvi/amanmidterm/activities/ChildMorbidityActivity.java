@@ -21,9 +21,9 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 public class ChildMorbidityActivity extends Activity {
 
@@ -215,6 +215,33 @@ public class ChildMorbidityActivity extends Activity {
                 } else {
                     cm0888x.setVisibility(View.GONE);
                     cm0888x.setText(null);
+                }
+            }
+        });
+
+        cm0577.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cm05a.setEnabled(false);
+                    cm05a.setChecked(false);
+                    cm05b.setEnabled(false);
+                    cm05b.setChecked(false);
+                    cm05c.setEnabled(false);
+                    cm05c.setChecked(false);
+                    cm05d.setEnabled(false);
+                    cm05d.setChecked(false);
+                    cm05e.setEnabled(false);
+                    cm05e.setChecked(false);
+                    cm05f.setEnabled(false);
+                    cm05f.setChecked(false);
+                    cm05g.setEnabled(false);
+                    cm05g.setChecked(false);
+                    cm05h.setEnabled(false);
+                    cm05h.setChecked(false);
+                    cm0588.setEnabled(false);
+                    cm0588.setChecked(false);
+                    cm0588x.setText(null);
                 }
             }
         });
