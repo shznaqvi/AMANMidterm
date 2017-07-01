@@ -735,8 +735,8 @@ public class SocioEconomicActivity extends Activity {
         }
 
         if ((Integer.parseInt(se04.getText().toString()) < 1) || (Integer.parseInt(se04.getText().toString()) > 20)) {
-            Toast.makeText(this, "Range is 0 - 20 Rooms", Toast.LENGTH_LONG).show();
-            se04.setError("Range is 0 - 20 Rooms.. Check Again");// Set Error on last radio button
+            Toast.makeText(this, "Range is 1 - 20 Rooms", Toast.LENGTH_LONG).show();
+            se04.setError("Range is 1 - 20 Rooms.. Check Again");// Set Error on last radio button
             return false;
 
         } else {

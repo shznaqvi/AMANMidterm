@@ -579,6 +579,16 @@ public class AmanInfoActivity extends Activity {
                 bic01.setError(null);
             }
 
+            if (Integer.valueOf(bic01.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.bic01), Toast.LENGTH_LONG).show();
+                bic01.setError("Zero not allowed..");
+                Log.i(TAG, "bic01: Zero is not allowed");
+                return false;
+            } else {
+                bic01.setError(null);
+            }
+
+
             if (bic02.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.male), Toast.LENGTH_LONG).show();
                 bic02.setError("This data is Required!");

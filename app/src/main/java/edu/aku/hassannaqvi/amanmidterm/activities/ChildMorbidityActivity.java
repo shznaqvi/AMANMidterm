@@ -126,40 +126,6 @@ public class ChildMorbidityActivity extends Activity {
         setContentView(R.layout.activity_child_morbidity);
         ButterKnife.bind(this);
 
-        cm0577.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    fldGrpcm06.setVisibility(View.GONE);
-                    cm05a.setChecked(false);
-                    cm05b.setChecked(false);
-                    cm05c.setChecked(false);
-                    cm05d.setChecked(false);
-                    cm05e.setChecked(false);
-                    cm05f.setChecked(false);
-                    cm05g.setChecked(false);
-                    cm05h.setChecked(false);
-                    cm0588.setChecked(false);
-                    cm0588x.setText(null);
-                    cm06.clearCheck();
-                    cm07a.setChecked(false);
-                    cm07b.setChecked(false);
-                    cm07c.setChecked(false);
-                    cm07d.setChecked(false);
-                    cm07e.setChecked(false);
-                    cm07f.setChecked(false);
-                    cm07g.setChecked(false);
-                    cm07h.setChecked(false);
-                    cm0788.setChecked(false);
-                    cm08.clearCheck();
-                    cm0888x.setText(null);
-                    cm09.clearCheck();
-                } else {
-                    fldGrpcm06.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
         cm0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -223,6 +189,7 @@ public class ChildMorbidityActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
+                    fldGrpcm06.setVisibility(View.GONE);
                     cm05a.setEnabled(false);
                     cm05a.setChecked(false);
                     cm05b.setEnabled(false);
@@ -242,6 +209,32 @@ public class ChildMorbidityActivity extends Activity {
                     cm0588.setEnabled(false);
                     cm0588.setChecked(false);
                     cm0588x.setText(null);
+                    cm06.clearCheck();
+                    cm07a.setChecked(false);
+                    cm07b.setChecked(false);
+                    cm07c.setChecked(false);
+                    cm07d.setChecked(false);
+                    cm07e.setChecked(false);
+                    cm07f.setChecked(false);
+                    cm07g.setChecked(false);
+                    cm07h.setChecked(false);
+                    cm0788.setChecked(false);
+                    cm0788x.setText(null);
+                    cm08.clearCheck();
+                    cm0888x.setText(null);
+                    cm09.clearCheck();
+                } else {
+                    fldGrpcm06.setVisibility(View.VISIBLE);
+                    cm05a.setEnabled(true);
+                    cm05b.setEnabled(true);
+                    cm05c.setEnabled(true);
+                    cm05d.setEnabled(true);
+                    cm05e.setEnabled(true);
+                    cm05f.setEnabled(true);
+                    cm05g.setEnabled(true);
+                    cm05h.setEnabled(true);
+                    cm0588.setEnabled(true);
+
                 }
             }
         });

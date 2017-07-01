@@ -46,6 +46,8 @@ public class PostpartumCareActivity extends Activity {
     CheckBox pc02d;
     @BindView(R.id.pc02e)
     CheckBox pc02e;
+    @BindView(R.id.pc02f)
+    CheckBox pc02f;
     @BindView(R.id.pc0288)
     CheckBox pc0288;
     @BindView(R.id.pc0288x)
@@ -419,7 +421,7 @@ public class PostpartumCareActivity extends Activity {
 
         // Radio Group
         spc.put("pc02", pc02a.isChecked() ? "1" : pc02b.isChecked() ? "2" : pc02c.isChecked() ? "3"
-                : pc02d.isChecked() ? "4" : pc02e.isChecked() ? "5" : pc0288.isChecked() ? "88" : "0");
+                : pc02d.isChecked() ? "4" : pc02e.isChecked() ? "5" : pc02f.isChecked() ? "6" : pc0288.isChecked() ? "88" : "0");
         // Edit Text
         spc.put("pc0288x", pc0288x.getText().toString());
 
@@ -478,7 +480,7 @@ public class PostpartumCareActivity extends Activity {
         if (pc01a.isChecked()) {
             // RadioGroup
             if (!(pc02a.isChecked() || pc02b.isChecked() || pc02c.isChecked() || pc02d.isChecked()
-                    || pc02e.isChecked() || pc0288.isChecked())) {
+                    || pc02e.isChecked() || pc02f.isChecked() || pc0288.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc02), Toast.LENGTH_LONG).show();
                 pc0288.setError("This data is Required!");    // Set Error on last radio button
 
@@ -631,6 +633,7 @@ public class PostpartumCareActivity extends Activity {
                 pc11a.setError("This data is Required!");    // Set Error on last radio button
 
                 Log.i(TAG, "pc11: This data is Required!");
+                return false;
             } else {
                 pc11a.setError(null);
             }
