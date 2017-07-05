@@ -73,7 +73,6 @@
                 android:maxLines="1"
                 android:padding="4px"
                 android:singleLine="true"
-                android:text="dmu@aku"
                 android:textAlignment="center"
                 android:textColor="#efefef" />
 
@@ -89,7 +88,6 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="aku?dmu"
                 android:textAlignment="center" />
 
             <Spinner

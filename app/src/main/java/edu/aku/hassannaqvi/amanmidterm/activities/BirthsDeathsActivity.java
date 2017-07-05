@@ -155,11 +155,13 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_births_deaths);
         ButterKnife.bind(this);
 
+
         dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
         maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_YEAR) + AppMain.MILLISECONDS_IN_DAY));
         maxDate5Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_5Years) + AppMain.MILLISECONDS_IN_DAY));
         maxDate49Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_49Years));
         maxDate15Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_15Years));
+
 
         for (DatePickerInputEditText de : bddates) {
             de.setManager(getSupportFragmentManager());
@@ -168,7 +170,10 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
         }
 
-
+        bd05dob1.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_8Days)));
+        bd05dob2.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_8Days)));
+        bd06dob1.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_DAY) * 29));
+        bd06dob2.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_DAY) * 29));
         bd07dob1.setMinDate(maxDate5Years);
         bd07dob1.setMaxDate(maxDateyear);
         bd07dob2.setMinDate(maxDate5Years);
@@ -196,11 +201,17 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+                final Calendar todayCal = Calendar.getInstance();
+                todayCal.add(Calendar.DAY_OF_MONTH, -7);
+                Calendar selectedDate = getCalendarDate(bd04dob1.getText().toString());
                 bd04dod1.setMinDate(convertDateFormat(bd04dob1.getText().toString()));
-                Calendar cal = getCalendarDate(bd04dob1.getText().toString());
-                cal.add(Calendar.DAY_OF_MONTH, 7);
-                bd04dod1.setMaxDate(sdf.format(cal.getTime()));
-                bd04dod1.setEnabled(true);
+                if (selectedDate.after(todayCal)) {
+                    bd04dod1.setMaxDate(dateToday);
+                } else {
+                    selectedDate.add(Calendar.DAY_OF_MONTH, 7);
+                    bd04dod1.setMaxDate(sdf.format(selectedDate.getTime()));
+                    bd04dod1.setEnabled(true);
+                }
 
 
             }
@@ -220,11 +231,17 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+                final Calendar todayCal = Calendar.getInstance();
+                todayCal.add(Calendar.DAY_OF_MONTH, -7);
+                Calendar selectedDate = getCalendarDate(bd04dob2.getText().toString());
                 bd04dod2.setMinDate(convertDateFormat(bd04dob2.getText().toString()));
-                Calendar cal = getCalendarDate(bd04dob2.getText().toString());
-                cal.add(Calendar.DAY_OF_MONTH, 7);
-                bd04dod2.setMaxDate(sdf.format(cal.getTime()));
-                bd04dod2.setEnabled(true);
+                if (selectedDate.after(todayCal)) {
+                    bd04dod2.setMaxDate(dateToday);
+                } else {
+                    selectedDate.add(Calendar.DAY_OF_MONTH, 7);
+                    bd04dod2.setMaxDate(sdf.format(selectedDate.getTime()));
+                    bd04dod2.setEnabled(true);
+                }
 
 
             }
@@ -244,12 +261,21 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                Calendar cal = getCalendarDate(bd05dob1.getText().toString());
-                cal.add(Calendar.DAY_OF_MONTH, 8);
-                bd05dod1.setMinDate(sdf.format(cal.getTime()));
-                cal.add(Calendar.DAY_OF_MONTH, 20);
-                bd05dod1.setMaxDate(sdf.format(cal.getTime()));
-                bd05dod1.setEnabled(true);
+
+                final Calendar todayCal = Calendar.getInstance();
+                todayCal.add(Calendar.DAY_OF_MONTH, -8);
+                Calendar selectedDate = getCalendarDate(bd05dob1.getText().toString());
+                selectedDate.add(Calendar.DAY_OF_MONTH, 8);
+                bd05dod1.setMinDate(sdf.format(selectedDate.getTime()));
+
+                if (selectedDate.after(todayCal)) {
+                    bd05dod1.setMaxDate(dateToday);
+                } else {
+                    selectedDate.add(Calendar.DAY_OF_MONTH, 20);
+                    bd05dod1.setMaxDate(sdf.format(selectedDate.getTime()));
+                    bd05dod1.setEnabled(true);
+                }
+
 
             }
         });
@@ -268,12 +294,19 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                Calendar cal = getCalendarDate(bd05dob2.getText().toString());
-                cal.add(Calendar.DAY_OF_MONTH, 8);
-                bd05dod2.setMinDate(sdf.format(cal.getTime()));
-                cal.add(Calendar.DAY_OF_MONTH, 20);
-                bd05dod2.setMaxDate(sdf.format(cal.getTime()));
-                bd05dod2.setEnabled(true);
+                final Calendar todayCal = Calendar.getInstance();
+                todayCal.add(Calendar.DAY_OF_MONTH, -8);
+                Calendar selectedDate = getCalendarDate(bd05dob2.getText().toString());
+                selectedDate.add(Calendar.DAY_OF_MONTH, 8);
+                bd05dod2.setMinDate(sdf.format(selectedDate.getTime()));
+                if (selectedDate.after(todayCal)) {
+                    bd05dod2.setMaxDate(dateToday);
+                } else {
+                    selectedDate.add(Calendar.DAY_OF_MONTH, 20);
+                    bd05dod2.setMaxDate(sdf.format(selectedDate.getTime()));
+                    bd05dod2.setEnabled(true);
+                }
+
 
             }
         });
@@ -292,40 +325,28 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                Calendar cal = getCalendarDate(bd06dob1.getText().toString());
-                cal.add(Calendar.DAY_OF_MONTH, 29);
-                bd06dod1.setMinDate(sdf.format(cal.getTime()));
-                cal.add(Calendar.DAY_OF_MONTH, 335);
-                bd06dod1.setMaxDate(sdf.format(cal.getTime()));
-                bd06dod1.setEnabled(true);
+                String birthDateStr = bd06dob1.getText().toString();
+
+                Calendar minDeathCal = getCalendarDate(birthDateStr);
+                minDeathCal.add(Calendar.DAY_OF_MONTH, 29);
+                bd06dod1.setMinDate(sdf.format(minDeathCal.getTime()));
+                Calendar maxDeathCal = getCalendarDate(birthDateStr);
+                maxDeathCal.add(Calendar.DAY_OF_YEAR, 334);
+
+                // If today is less than max, set maximum to today
+                Calendar todayCal = Calendar.getInstance();
+                if (todayCal.before(maxDeathCal)) {
+                    bd06dod1.setMaxDate(sdf.format(todayCal.getTime()));
+                } else {
+                    // If today is greater than max
+                    bd06dod1.setMaxDate(sdf.format(maxDeathCal.getTime()));
+                }
+
 
             }
         });
 
 
-        bd06dob1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-                Calendar cal = getCalendarDate(bd06dob1.getText().toString());
-                cal.add(Calendar.DAY_OF_MONTH, 29);
-                bd06dod1.setMinDate(sdf.format(cal.getTime()));
-                cal.add(Calendar.DAY_OF_MONTH, 335);
-                bd06dod1.setMaxDate(sdf.format(cal.getTime()));
-                bd06dod1.setEnabled(true);
-
-            }
-        });
 
         bd06dob2.addTextChangedListener(new TextWatcher() {
             @Override
@@ -341,12 +362,23 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                Calendar cal = getCalendarDate(bd06dob2.getText().toString());
-                cal.add(Calendar.DAY_OF_MONTH, 29);
-                bd06dod2.setMinDate(sdf.format(cal.getTime()));
-                cal.add(Calendar.DAY_OF_MONTH, 335);
-                bd06dod2.setMaxDate(sdf.format(cal.getTime()));
-                bd06dod2.setEnabled(true);
+
+                String birthDateStr = bd06dob2.getText().toString();
+
+                Calendar minDeathCal = getCalendarDate(birthDateStr);
+                minDeathCal.add(Calendar.DAY_OF_MONTH, 29);
+                bd06dod2.setMinDate(sdf.format(minDeathCal.getTime()));
+                Calendar maxDeathCal = getCalendarDate(birthDateStr);
+                maxDeathCal.add(Calendar.DAY_OF_YEAR, 334);
+
+                // If today is less than max, set maximum to today
+                Calendar todayCal = Calendar.getInstance();
+                if (todayCal.before(maxDeathCal)) {
+                    bd06dod2.setMaxDate(sdf.format(todayCal.getTime()));
+                } else {
+                    // If today is greater than max
+                    bd06dod2.setMaxDate(sdf.format(maxDeathCal.getTime()));
+                }
 
             }
         });
@@ -910,6 +942,8 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             } else {
                 bd04dod1.setError(null);
             }
+
+
         }
 
         if (Integer.valueOf(bd04s.getText().toString()) == 2) {

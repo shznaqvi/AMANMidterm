@@ -90,20 +90,18 @@ public class IYCFActivity extends Activity {
     EditText iy07bb;
     @BindView(R.id.iy07cc)
     EditText iy07cc;
-    @BindView(R.id.iy08)
-    RadioGroup iy08;
     @BindView(R.id.iy08a)
-    RadioButton iy08a;
+    CheckBox iy08a;
     @BindView(R.id.iy08b)
-    RadioButton iy08b;
+    CheckBox iy08b;
     @BindView(R.id.iy08c)
-    RadioButton iy08c;
+    CheckBox iy08c;
     @BindView(R.id.iy08d)
-    RadioButton iy08d;
+    CheckBox iy08d;
     @BindView(R.id.iy08e)
-    RadioButton iy08e;
+    CheckBox iy08e;
     @BindView(R.id.iy0888)
-    RadioButton iy0888;
+    CheckBox iy0888;
     @BindView(R.id.iy08x)
     EditText iy08x;
     @BindView(R.id.iy09)
@@ -253,7 +251,12 @@ public class IYCFActivity extends Activity {
                     iy07aa.setText(null);
                     iy07bb.setText(null);
                     iy07cc.setText(null);
-                    iy08.clearCheck();
+                    iy08a.setChecked(false);
+                    iy08b.setChecked(false);
+                    iy08c.setChecked(false);
+                    iy08d.setChecked(false);
+                    iy08e.setChecked(false);
+                    iy0888.setChecked(false);
                     iy08x.setText(null);
 
 
@@ -286,18 +289,22 @@ public class IYCFActivity extends Activity {
                     iy07cc.setText(null);
                 } else {
                     fldGrpiy08.setVisibility(View.GONE);
-                    iy08.clearCheck();
+                    iy08a.setChecked(false);
+                    iy08b.setChecked(false);
+                    iy08c.setChecked(false);
+                    iy08d.setChecked(false);
+                    iy08e.setChecked(false);
+                    iy0888.setChecked(false);
                     iy08x.setText(null);
                     fldGrpiy07.setVisibility(View.VISIBLE);
                 }
             }
         });
 
-
-        iy08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        iy0888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (iy0888.isChecked()) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
                     fldGrpiy08foth.setVisibility(View.VISIBLE);
                     iy08x.requestFocus();
                 } else {
@@ -306,7 +313,6 @@ public class IYCFActivity extends Activity {
                 }
             }
         });
-
 
         iy09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -714,7 +720,7 @@ public class IYCFActivity extends Activity {
                 }
             } else {
 
-                if (iy08.getCheckedRadioButtonId() == -1) {
+                if (!(iy08a.isChecked() || iy08b.isChecked() || iy08c.isChecked() || iy08d.isChecked() || iy0888.isChecked())) {
                     iy08a.setError(getString(R.string.rdoerr));
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
                     Log.d(TAG, "iy08a: this data is required ");

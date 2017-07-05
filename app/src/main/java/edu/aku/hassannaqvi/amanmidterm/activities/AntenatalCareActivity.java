@@ -42,6 +42,8 @@ public class AntenatalCareActivity extends Activity {
     LinearLayout fldGrpanc01;
     @BindView(R.id.anc01aa)
     EditText anc01aa;
+    @BindView(R.id.anc01ab)
+    EditText anc01ab;
     @BindView(R.id.fldGrpanc03)
     LinearLayout fldGrpanc03;
     @BindView(R.id.anc02)
@@ -86,20 +88,18 @@ public class AntenatalCareActivity extends Activity {
     RadioButton anc0699;
     @BindView(R.id.fldGrp06)
     LinearLayout fldGrp06;
-    @BindView(R.id.anc07)
-    RadioGroup anc07;
     @BindView(R.id.anc07a)
-    RadioButton anc07a;
+    CheckBox anc07a;
     @BindView(R.id.anc07b)
-    RadioButton anc07b;
+    CheckBox anc07b;
     @BindView(R.id.anc07c)
-    RadioButton anc07c;
+    CheckBox anc07c;
     @BindView(R.id.anc07d)
-    RadioButton anc07d;
+    CheckBox anc07d;
     @BindView(R.id.anc0788)
-    RadioButton anc0788;
+    CheckBox anc0788;
     @BindView(R.id.anc0799)
-    RadioButton anc0799;
+    CheckBox anc0799;
     @BindView(R.id.fldGrpanc07)
     LinearLayout fldGrpanc07;
     @BindView(R.id.anc07x)
@@ -215,6 +215,7 @@ public class AntenatalCareActivity extends Activity {
 
                 } else {
                     anc01aa.setText(null);
+                    anc01ab.setText(null);
                     fldGrpanc01.setVisibility(View.GONE);
                     fldGrpanc03.setVisibility(View.VISIBLE);
 
@@ -271,18 +272,23 @@ public class AntenatalCareActivity extends Activity {
                 if (anc06a.isChecked()) {
                     fldGrp06.setVisibility(View.VISIBLE);
                 } else {
-                    anc07.clearCheck();
+                    anc07a.setChecked(false);
+                    anc07b.setChecked(false);
+                    anc07c.setChecked(false);
+                    anc07d.setChecked(false);
+                    anc0788.setChecked(false);
+                    anc0799.setChecked(false);
+                    anc07x.setText(null);
                     fldGrp06.setVisibility(View.GONE);
                     //fldGrpanc07.setVisibility(View.GONE);
                 }
             }
         });
 
-
-        anc07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        anc0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (anc0788.isChecked()) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
                     fldGrpanc07.setVisibility(View.VISIBLE);
                     anc07x.requestFocus();
                 } else {
@@ -487,15 +493,16 @@ public class AntenatalCareActivity extends Activity {
 
         js.put("anc01", anc01a.isChecked() ? "1" : anc01b.isChecked() ? "2" : "0");
         js.put("anc01aa", anc01aa.getText().toString());
+        js.put("anc01ab", anc01ab.getText().toString());
         js.put("anc02", anc02.getText().toString());
 
-        js.put("anc03a", anc03a.isChecked() ? "1" : "2");
-        js.put("anc03b", anc03b.isChecked() ? "1" : "2");
-        js.put("anc03c", anc03c.isChecked() ? "1" : "2");
-        js.put("anc03d", anc03d.isChecked() ? "1" : "2");
-        js.put("anc03e", anc03e.isChecked() ? "1" : "2");
-        js.put("anc03f", anc03f.isChecked() ? "1" : "2");
-        js.put("anc0388", anc0388.isChecked() ? "1" : "2");
+        js.put("anc03a", anc03a.isChecked() ? "1" : "0");
+        js.put("anc03b", anc03b.isChecked() ? "2" : "0");
+        js.put("anc03c", anc03c.isChecked() ? "3" : "0");
+        js.put("anc03d", anc03d.isChecked() ? "4" : "0");
+        js.put("anc03e", anc03e.isChecked() ? "5" : "0");
+        js.put("anc03f", anc03f.isChecked() ? "6" : "0");
+        js.put("anc0388", anc0388.isChecked() ? "88" : "0");
 
         js.put("anc03x", anc03x.getText().toString());
 
@@ -507,7 +514,12 @@ public class AntenatalCareActivity extends Activity {
 
         js.put("anc06", anc06a.isChecked() ? "1" : anc06b.isChecked() ? "2" : anc0699.isChecked() ? "99" : "0");
 
-        js.put("anc07", anc07a.isChecked() ? "1" : anc07b.isChecked() ? "2" : anc07c.isChecked() ? "3" : anc07d.isChecked() ? "4" : anc0788.isChecked() ? "88" : anc0699.isChecked() ? "99" : "0");
+        js.put("anc07a", anc07a.isChecked() ? "1" : "0");
+        js.put("anc07b", anc07b.isChecked() ? "2" : "0");
+        js.put("anc07c", anc07c.isChecked() ? "3" : "0");
+        js.put("anc07d", anc07d.isChecked() ? "4" : "0");
+        js.put("anc0788", anc0788.isChecked() ? "88" : "0");
+        js.put("anc0799", anc0799.isChecked() ? "99" : "0");
         js.put("anc07x", anc07x.getText().toString());
         js.put("anc08", anc08a.isChecked() ? "1" : anc08b.isChecked() ? "2" : "0");
 
@@ -587,10 +599,10 @@ public class AntenatalCareActivity extends Activity {
             }
 
             if ((Integer.valueOf(anc02.getText().toString()) < 1)
-                    || (Integer.valueOf(anc02.getText().toString()) > 10)) {
+                    || (Integer.valueOf(anc02.getText().toString()) > 20)) {
                 Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.anc02), Toast.LENGTH_LONG).show();
-                anc02.setError("Range is 1-10");
-                Log.i(TAG, "anc02: Range is 1-10");
+                anc02.setError("Range is 1- 20");
+                Log.i(TAG, "anc02: Range is 1- 20");
                 return false;
             } else {
                 anc02.setError(null);
@@ -681,7 +693,8 @@ public class AntenatalCareActivity extends Activity {
 
         if (anc06a.isChecked()) {
 
-            if (anc07.getCheckedRadioButtonId() == -1) {
+            if (!(anc07a.isChecked() || anc07b.isChecked() || anc07c.isChecked() || anc07d.isChecked()
+                    || anc0788.isChecked() || anc0799.isChecked())) {
                 anc07a.setError(getString(R.string.rdoerr));
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc07), Toast.LENGTH_LONG).show();
                 Log.d(TAG, "anc07a: this data is required ");
@@ -814,10 +827,10 @@ public class AntenatalCareActivity extends Activity {
 
             if (!anc01499.isChecked()) {
                 if (Integer.valueOf(anc014.getText().toString().isEmpty() ? "" : anc014.getText().toString()) < 1
-                        || Integer.valueOf(anc014.getText().toString().isEmpty() ? "" : anc014.getText().toString()) > 9) {
+                        || Integer.valueOf(anc014.getText().toString().isEmpty() ? "" : anc014.getText().toString()) > 5) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.anc014), Toast.LENGTH_LONG).show();
-                    anc014.setError("Range is 1 to 9 times");
-                    Log.d(TAG, "anc014: Range is 1 to 9 times");
+                    anc014.setError("Range is 1 to 5 times");
+                    Log.d(TAG, "anc014: Range is 1 to 5 times");
                     anc014.requestFocus();
                     return false;
                 } else {
