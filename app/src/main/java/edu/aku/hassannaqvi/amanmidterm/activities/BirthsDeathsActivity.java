@@ -1030,7 +1030,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bd06s.getText().toString()) == 1) {
-            if (bd04dob1.getText().toString().isEmpty()) {
+            if (bd06dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd06), Toast.LENGTH_SHORT).show();
                 bd06dob1.setError("This data is Required!");
                 Log.i(TAG, "bd06dob1: This data is Required!");
