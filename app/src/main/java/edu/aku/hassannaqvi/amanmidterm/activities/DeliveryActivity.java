@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -18,11 +17,9 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
-
-import static edu.aku.hassannaqvi.amanmidterm.R.string.d03;
 
 public class DeliveryActivity extends Activity {
 
@@ -49,20 +46,22 @@ public class DeliveryActivity extends Activity {
     RadioButton d0288;
     @BindView(R.id.d0288x)
     EditText d0288x;
+    @BindView(R.id.d03)
+    RadioGroup d03;
     @BindView(R.id.d03a)
-    CheckBox d03a;
+    RadioButton d03a;
     @BindView(R.id.d03b)
-    CheckBox d03b;
+    RadioButton d03b;
     @BindView(R.id.d03c)
-    CheckBox d03c;
+    RadioButton d03c;
     @BindView(R.id.d03d)
-    CheckBox d03d;
+    RadioButton d03d;
     @BindView(R.id.d03e)
-    CheckBox d03e;
+    RadioButton d03e;
     @BindView(R.id.d03f)
-    CheckBox d03f;
+    RadioButton d03f;
     @BindView(R.id.d0388)
-    CheckBox d0388;
+    RadioButton d0388;
     @BindView(R.id.d0388x)
     EditText d0388x;
     @BindView(R.id.d04)
@@ -260,9 +259,8 @@ public class DeliveryActivity extends Activity {
             d0288x.setError(null);
         }
 
-        if (!(d03a.isChecked() || d03b.isChecked() || d03c.isChecked() || d03d.isChecked() || d03e.isChecked()
-                || d03f.isChecked() || d0388.isChecked())) {
-            Toast.makeText(this, "ERROR(empty): " + getString(d03), Toast.LENGTH_LONG).show();
+        if (d03.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.d03), Toast.LENGTH_LONG).show();
             d0388.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "d0388: This data is Required!");
             return false;
@@ -272,7 +270,7 @@ public class DeliveryActivity extends Activity {
 
         if (d0388.isChecked()) {
             if (d0388.isChecked() && d0388x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(d03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.d03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 d0388x.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "d0388: This data is Required!");
                 return false;

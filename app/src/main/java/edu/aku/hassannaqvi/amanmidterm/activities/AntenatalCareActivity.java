@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -19,21 +21,31 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 
 public class AntenatalCareActivity extends Activity {
     private static final String TAG = AntenatalCareActivity.class.getSimpleName();
+    @BindView(R.id.activity_section_d)
+    ScrollView activitySectionD;
+    @BindView(R.id.app_header)
+    TextView appHeader;
     @BindView(R.id.anc01)
     RadioGroup anc01;
     @BindView(R.id.anc01a)
     RadioButton anc01a;
     @BindView(R.id.anc01b)
     RadioButton anc01b;
+    @BindView(R.id.fldGrpanc01)
+    LinearLayout fldGrpanc01;
     @BindView(R.id.anc01aa)
     EditText anc01aa;
+    @BindView(R.id.anc01ab)
+    EditText anc01ab;
+    @BindView(R.id.fldGrpanc03)
+    LinearLayout fldGrpanc03;
     @BindView(R.id.anc02)
     EditText anc02;
     @BindView(R.id.anc03a)
@@ -50,6 +62,8 @@ public class AntenatalCareActivity extends Activity {
     CheckBox anc03f;
     @BindView(R.id.anc0388)
     CheckBox anc0388;
+    @BindView(R.id.fldGrpanc03x)
+    LinearLayout fldGrpanc03x;
     @BindView(R.id.anc03x)
     EditText anc03x;
     @BindView(R.id.anc04)
@@ -58,6 +72,8 @@ public class AntenatalCareActivity extends Activity {
     RadioButton anc04a;
     @BindView(R.id.anc04b)
     RadioButton anc04b;
+    @BindView(R.id.fldGrpanc04)
+    LinearLayout fldGrpanc04;
     @BindView(R.id.anc05d)
     EditText anc05d;
     @BindView(R.id.anc0599)
@@ -70,20 +86,22 @@ public class AntenatalCareActivity extends Activity {
     RadioButton anc06b;
     @BindView(R.id.anc0699)
     RadioButton anc0699;
-    @BindView(R.id.anc07)
-    RadioGroup anc07;
+    @BindView(R.id.fldGrp06)
+    LinearLayout fldGrp06;
     @BindView(R.id.anc07a)
-    RadioButton anc07a;
+    CheckBox anc07a;
     @BindView(R.id.anc07b)
-    RadioButton anc07b;
+    CheckBox anc07b;
     @BindView(R.id.anc07c)
-    RadioButton anc07c;
+    CheckBox anc07c;
     @BindView(R.id.anc07d)
-    RadioButton anc07d;
+    CheckBox anc07d;
     @BindView(R.id.anc0788)
-    RadioButton anc0788;
+    CheckBox anc0788;
     @BindView(R.id.anc0799)
-    RadioButton anc0799;
+    CheckBox anc0799;
+    @BindView(R.id.fldGrpanc07)
+    LinearLayout fldGrpanc07;
     @BindView(R.id.anc07x)
     EditText anc07x;
     @BindView(R.id.anc08)
@@ -92,8 +110,12 @@ public class AntenatalCareActivity extends Activity {
     RadioButton anc08a;
     @BindView(R.id.anc08b)
     RadioButton anc08b;
+    @BindView(R.id.fldGrpanc09)
+    LinearLayout fldGrpanc09;
     @BindView(R.id.anc09)
     EditText anc09;
+    @BindView(R.id.fldGrpanc09a)
+    LinearLayout fldGrpanc09a;
     @BindView(R.id.anc011a)
     CheckBox anc011a;
     @BindView(R.id.anc011b)
@@ -108,68 +130,66 @@ public class AntenatalCareActivity extends Activity {
     CheckBox anc011f;
     @BindView(R.id.anc01188)
     CheckBox anc01188;
-    @BindView(R.id.anc011x)
-    EditText anc011x;
-    @BindView(R.id.anc012)
-    RadioGroup anc012;
+    @BindView(R.id.anc01188x)
+    EditText anc01188x;
     @BindView(R.id.anc012a)
-    RadioButton anc012a;
+    CheckBox anc012a;
     @BindView(R.id.anc012b)
-    RadioButton anc012b;
-    @BindView(R.id.anc01299)
-    RadioButton anc01299;
+    CheckBox anc012b;
+    @BindView(R.id.anc012c)
+    CheckBox anc012c;
+    @BindView(R.id.anc012d)
+    CheckBox anc012d;
+    @BindView(R.id.anc012e)
+    CheckBox anc012e;
+    @BindView(R.id.anc01288)
+    CheckBox anc01288;
+    @BindView(R.id.fldGrpanc012x)
+    LinearLayout fldGrpanc012x;
+    @BindView(R.id.anc012x)
+    EditText anc012x;
     @BindView(R.id.anc013)
-    EditText anc013;
+    RadioGroup anc013;
+    @BindView(R.id.anc013a)
+    RadioButton anc013a;
+    @BindView(R.id.anc013b)
+    RadioButton anc013b;
     @BindView(R.id.anc01399)
-    CheckBox anc01399;
+    RadioButton anc01399;
+    @BindView(R.id.fldGrp012)
+    LinearLayout fldGrp012;
     @BindView(R.id.anc014)
-    RadioGroup anc014;
-    @BindView(R.id.anc014a)
-    RadioButton anc014a;
-    @BindView(R.id.anc014b)
-    RadioButton anc014b;
+    EditText anc014;
+    @BindView(R.id.anc01499)
+    CheckBox anc01499;
     @BindView(R.id.anc015)
     RadioGroup anc015;
     @BindView(R.id.anc015a)
     RadioButton anc015a;
     @BindView(R.id.anc015b)
     RadioButton anc015b;
-    @BindView(R.id.anc015c)
-    RadioButton anc015c;
-    @BindView(R.id.anc015d)
-    RadioButton anc015d;
-    @BindView(R.id.anc015e)
-    RadioButton anc015e;
-    @BindView(R.id.anc015f)
-    RadioButton anc015f;
-    @BindView(R.id.anc01588)
-    RadioButton anc01588;
-    @BindView(R.id.anc015x)
-    EditText anc015x;
-    @BindView(R.id.fldGrpanc01)
-    LinearLayout fldGrpanc01;
-    @BindView(R.id.fldGrpanc03x)
-    LinearLayout fldGrpanc03x;
-    @BindView(R.id.fldGrpanc04)
-    LinearLayout fldGrpanc04;
-    @BindView(R.id.fldGrp06)
-    LinearLayout fldGrp06;
-    @BindView(R.id.fldGrpanc07)
-    LinearLayout fldGrpanc07;
-    @BindView(R.id.fldGrpanc09)
-    LinearLayout fldGrpanc09;
-    @BindView(R.id.fldGrpanc011x)
-    LinearLayout fldGrpanc011x;
-    @BindView(R.id.fldGrp012)
-    LinearLayout fldGrp012;
     @BindView(R.id.fldGrp014)
     LinearLayout fldGrp014;
-    @BindView(R.id.fldGrpanc015x)
-    LinearLayout fldGrpanc015x;
-    @BindView(R.id.fldGrpanc09a)
-    LinearLayout fldGrpanc09a;
-    @BindView(R.id.fldGrpanc03)
-    LinearLayout fldGrpanc03;
+    @BindView(R.id.anc016)
+    RadioGroup anc016;
+    @BindView(R.id.anc016a)
+    RadioButton anc016a;
+    @BindView(R.id.anc016b)
+    RadioButton anc016b;
+    @BindView(R.id.anc016c)
+    RadioButton anc016c;
+    @BindView(R.id.anc016d)
+    RadioButton anc016d;
+    @BindView(R.id.anc016e)
+    RadioButton anc016e;
+    @BindView(R.id.anc016f)
+    RadioButton anc016f;
+    @BindView(R.id.anc01688)
+    RadioButton anc01688;
+    @BindView(R.id.fldGrpanc016x)
+    LinearLayout fldGrpanc016x;
+    @BindView(R.id.anc016x)
+    EditText anc016x;
 
 
     @Override
@@ -195,6 +215,7 @@ public class AntenatalCareActivity extends Activity {
 
                 } else {
                     anc01aa.setText(null);
+                    anc01ab.setText(null);
                     fldGrpanc01.setVisibility(View.GONE);
                     fldGrpanc03.setVisibility(View.VISIBLE);
 
@@ -251,18 +272,23 @@ public class AntenatalCareActivity extends Activity {
                 if (anc06a.isChecked()) {
                     fldGrp06.setVisibility(View.VISIBLE);
                 } else {
-                    anc07.clearCheck();
+                    anc07a.setChecked(false);
+                    anc07b.setChecked(false);
+                    anc07c.setChecked(false);
+                    anc07d.setChecked(false);
+                    anc0788.setChecked(false);
+                    anc0799.setChecked(false);
+                    anc07x.setText(null);
                     fldGrp06.setVisibility(View.GONE);
                     //fldGrpanc07.setVisibility(View.GONE);
                 }
             }
         });
 
-
-        anc07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        anc0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (anc0788.isChecked()) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
                     fldGrpanc07.setVisibility(View.VISIBLE);
                     anc07x.requestFocus();
                 } else {
@@ -289,57 +315,43 @@ public class AntenatalCareActivity extends Activity {
         });
 
 
-        anc01188.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        anc01288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (anc01188.isChecked()) {
-                    fldGrpanc011x.setVisibility(View.VISIBLE);
-                    anc011x.requestFocus();
+                if (anc01288.isChecked()) {
+                    fldGrpanc012x.setVisibility(View.VISIBLE);
+                    anc012x.requestFocus();
                 } else {
-                    anc011x.setText(null);
-                    fldGrpanc011x.setVisibility(View.GONE);
+                    anc012x.setText(null);
+                    fldGrpanc012x.setVisibility(View.GONE);
                 }
             }
         });
 
 
-        anc012.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        anc013.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (anc012a.isChecked()) {
+                if (anc013a.isChecked()) {
                     fldGrp012.setVisibility(View.VISIBLE);
-                    anc013.requestFocus();
+                    anc014.requestFocus();
                 } else {
-                    anc013.setText(null);
+                    anc014.setText(null);
                     fldGrp012.setVisibility(View.GONE);
                 }
             }
         });
 
 
-        anc01399.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        anc01499.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (anc01399.isChecked()) {
-                    anc013.setEnabled(true);
-                    anc013.requestFocus();
+                if (anc01499.isChecked()) {
+                    anc014.setEnabled(true);
+                    anc014.requestFocus();
                 } else {
-                    anc013.setText(null);
-                    anc013.setEnabled(false);
-                }
-            }
-        });
-
-
-        anc014.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (anc014a.isChecked()) {
-                    fldGrp014.setVisibility(View.VISIBLE);
-                    anc015a.requestFocus();
-                } else {
-                    anc015.clearCheck();
-                    fldGrp014.setVisibility(View.GONE);
+                    anc014.setText(null);
+                    anc014.setEnabled(false);
                 }
             }
         });
@@ -348,12 +360,26 @@ public class AntenatalCareActivity extends Activity {
         anc015.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (anc01588.isChecked()) {
-                    fldGrpanc015x.setVisibility(View.VISIBLE);
-                    anc015x.requestFocus();
+                if (anc015a.isChecked()) {
+                    fldGrp014.setVisibility(View.VISIBLE);
+                    anc016a.requestFocus();
                 } else {
-                    anc015x.setText(null);
-                    fldGrpanc015x.setVisibility(View.GONE);
+                    anc016.clearCheck();
+                    fldGrp014.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        anc016.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (anc01688.isChecked()) {
+                    fldGrpanc016x.setVisibility(View.VISIBLE);
+                    anc016x.requestFocus();
+                } else {
+                    anc016x.setText(null);
+                    fldGrpanc016x.setVisibility(View.GONE);
                 }
             }
         });
@@ -370,14 +396,26 @@ public class AntenatalCareActivity extends Activity {
             }
         });
 
-        anc01399.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        anc01499.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    anc013.setVisibility(View.GONE);
-                    anc013.setText(null);
+                    anc014.setVisibility(View.GONE);
+                    anc014.setText(null);
                 } else {
-                    anc013.setVisibility(View.VISIBLE);
+                    anc014.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        anc01188.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    anc01188x.setVisibility(View.VISIBLE);
+                } else {
+                    anc01188x.setVisibility(View.GONE);
+                    anc01188x.setText(null);
                 }
             }
         });
@@ -455,15 +493,16 @@ public class AntenatalCareActivity extends Activity {
 
         js.put("anc01", anc01a.isChecked() ? "1" : anc01b.isChecked() ? "2" : "0");
         js.put("anc01aa", anc01aa.getText().toString());
+        js.put("anc01ab", anc01ab.getText().toString());
         js.put("anc02", anc02.getText().toString());
 
-        js.put("anc03a", anc03a.isChecked() ? "1" : "2");
-        js.put("anc03b", anc03b.isChecked() ? "1" : "2");
-        js.put("anc03c", anc03c.isChecked() ? "1" : "2");
-        js.put("anc03d", anc03d.isChecked() ? "1" : "2");
-        js.put("anc03e", anc03e.isChecked() ? "1" : "2");
-        js.put("anc03f", anc03f.isChecked() ? "1" : "2");
-        js.put("anc0388", anc0388.isChecked() ? "1" : "2");
+        js.put("anc03a", anc03a.isChecked() ? "1" : "0");
+        js.put("anc03b", anc03b.isChecked() ? "2" : "0");
+        js.put("anc03c", anc03c.isChecked() ? "3" : "0");
+        js.put("anc03d", anc03d.isChecked() ? "4" : "0");
+        js.put("anc03e", anc03e.isChecked() ? "5" : "0");
+        js.put("anc03f", anc03f.isChecked() ? "6" : "0");
+        js.put("anc0388", anc0388.isChecked() ? "88" : "0");
 
         js.put("anc03x", anc03x.getText().toString());
 
@@ -475,7 +514,12 @@ public class AntenatalCareActivity extends Activity {
 
         js.put("anc06", anc06a.isChecked() ? "1" : anc06b.isChecked() ? "2" : anc0699.isChecked() ? "99" : "0");
 
-        js.put("anc07", anc07a.isChecked() ? "1" : anc07b.isChecked() ? "2" : anc07c.isChecked() ? "3" : anc07d.isChecked() ? "4" : anc0788.isChecked() ? "88" : anc0699.isChecked() ? "99" : "0");
+        js.put("anc07a", anc07a.isChecked() ? "1" : "0");
+        js.put("anc07b", anc07b.isChecked() ? "2" : "0");
+        js.put("anc07c", anc07c.isChecked() ? "3" : "0");
+        js.put("anc07d", anc07d.isChecked() ? "4" : "0");
+        js.put("anc0788", anc0788.isChecked() ? "88" : "0");
+        js.put("anc0799", anc0799.isChecked() ? "99" : "0");
         js.put("anc07x", anc07x.getText().toString());
         js.put("anc08", anc08a.isChecked() ? "1" : anc08b.isChecked() ? "2" : "0");
 
@@ -487,19 +531,27 @@ public class AntenatalCareActivity extends Activity {
         js.put("anc011d", anc011d.isChecked() ? "1" : "2");
         js.put("anc011e", anc011e.isChecked() ? "1" : "2");
         js.put("anc011f", anc011f.isChecked() ? "1" : "2");
-        js.put("anc01188", anc01188.isChecked() ? "1" : "2");
-        js.put("anc011x", anc011x.getText().toString());
+        js.put("anc01288", anc01188.isChecked() ? "1" : "2");
+        js.put("anc012x", anc01188x.getText().toString());
+
+        js.put("anc012a", anc012a.isChecked() ? "1" : "2");
+        js.put("anc012b", anc012b.isChecked() ? "1" : "2");
+        js.put("anc012c", anc012c.isChecked() ? "1" : "2");
+        js.put("anc012d", anc012d.isChecked() ? "1" : "2");
+        js.put("anc012e", anc012e.isChecked() ? "1" : "2");
+        js.put("anc01288", anc01288.isChecked() ? "1" : "2");
+        js.put("anc012x", anc012x.getText().toString());
 
 
-        js.put("anc012", anc012a.isChecked() ? "1" : anc012b.isChecked() ? "2" : anc01299.isChecked() ? "99" : "0");
+        js.put("anc013", anc013a.isChecked() ? "1" : anc013b.isChecked() ? "2" : anc01399.isChecked() ? "99" : "0");
 
-        js.put("anc013", anc013.getText().toString());
-        js.put("anc01399", anc01399.isChecked() ? "1" : "2");
+        js.put("anc014", anc014.getText().toString());
+        js.put("anc01499", anc01499.isChecked() ? "1" : "2");
 
 
-        js.put("anc014", anc014a.isChecked() ? "1" : anc014b.isChecked() ? "2" : "0");
-        js.put("anc015", anc015a.isChecked() ? "1" : anc015b.isChecked() ? "2" : anc015c.isChecked() ? "3" : anc015d.isChecked() ? "4" : anc015e.isChecked() ? "5" : anc015f.isChecked() ? "6" : anc01588.isChecked() ? "88" : "0");
-        js.put("anc015x", anc015x.getText().toString());
+        js.put("anc015", anc015a.isChecked() ? "1" : anc015b.isChecked() ? "2" : "0");
+        js.put("anc016", anc016a.isChecked() ? "1" : anc016b.isChecked() ? "2" : anc016c.isChecked() ? "3" : anc016d.isChecked() ? "4" : anc016e.isChecked() ? "5" : anc016f.isChecked() ? "6" : anc01688.isChecked() ? "88" : "0");
+        js.put("anc016x", anc016x.getText().toString());
 
         AppMain.fc.setAntenatalCare(String.valueOf(js));
 
@@ -547,10 +599,10 @@ public class AntenatalCareActivity extends Activity {
             }
 
             if ((Integer.valueOf(anc02.getText().toString()) < 1)
-                    || (Integer.valueOf(anc02.getText().toString()) > 10)) {
+                    || (Integer.valueOf(anc02.getText().toString()) > 20)) {
                 Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.anc02), Toast.LENGTH_LONG).show();
-                anc02.setError("Range is 1-10");
-                Log.i(TAG, "anc02: Range is 1-10");
+                anc02.setError("Range is 1- 20");
+                Log.i(TAG, "anc02: Range is 1- 20");
                 return false;
             } else {
                 anc02.setError(null);
@@ -614,11 +666,12 @@ public class AntenatalCareActivity extends Activity {
 
             if (!anc0599.isChecked()) {
                 if (Integer.valueOf(anc05d.getText().toString().isEmpty() ? "" : anc05d.getText().toString()) < 1
-                        || Integer.valueOf(anc05d.getText().toString().isEmpty() ? "" : anc05d.getText().toString()) > 29) {
+                        || Integer.valueOf(anc05d.getText().toString().isEmpty() ? "" : anc05d.getText().toString()) > 308) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.anc05), Toast.LENGTH_LONG).show();
-                    anc05d.setError("Range is 1 to 29 days");
-                    Log.d(TAG, "anc05d: Range is 1 to 29 days");
+                    anc05d.setError("Range is 1 to 308 days");
+                    Log.d(TAG, "anc05d: Range is 1 to 308 days");
                     anc05d.requestFocus();
+                    return false;
                 } else {
                     anc05d.setError(null);
                 }
@@ -640,7 +693,8 @@ public class AntenatalCareActivity extends Activity {
 
         if (anc06a.isChecked()) {
 
-            if (anc07.getCheckedRadioButtonId() == -1) {
+            if (!(anc07a.isChecked() || anc07b.isChecked() || anc07c.isChecked() || anc07d.isChecked()
+                    || anc0788.isChecked() || anc0799.isChecked())) {
                 anc07a.setError(getString(R.string.rdoerr));
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc07), Toast.LENGTH_LONG).show();
                 Log.d(TAG, "anc07a: this data is required ");
@@ -688,6 +742,7 @@ public class AntenatalCareActivity extends Activity {
                 }
 
             } else if (anc08a.isChecked()) {
+
                 if (!anc011a.isChecked()
                         && !anc011b.isChecked()
                         && !anc011c.isChecked()
@@ -706,91 +761,119 @@ public class AntenatalCareActivity extends Activity {
 
                 if (anc01188.isChecked()) {
 
-                    if (anc011x.getText().toString().isEmpty() || anc011x.getText().toString() == null) {
-                        anc011x.setError(getString(R.string.txterr));
+                    if (anc01188x.getText().toString().isEmpty() || anc01188x.getText().toString() == null) {
+                        anc01188x.setError(getString(R.string.txterr));
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                        Log.d(TAG, "anc011x: empty ");
-                        anc011x.requestFocus();
+                        Log.d(TAG, "anc01188x: empty ");
+                        anc01188x.requestFocus();
                         return false;
                     } else {
-                        anc011x.setError(null);
+                        anc01188x.setError(null);
+                    }
+                }
+                if (!anc012a.isChecked()
+                        && !anc012b.isChecked()
+                        && !anc012c.isChecked()
+                        && !anc012d.isChecked()
+                        && !anc012e.isChecked()
+                        && !anc01288.isChecked()) {
+                    anc012a.setError(getString(R.string.txterr));
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc012), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "anc012: this data is required ");
+                    anc012a.requestFocus();
+                    return false;
+                } else {
+                    anc012a.setError(null);
+                }
+
+                if (anc01288.isChecked()) {
+
+                    if (anc012x.getText().toString().isEmpty() || anc012x.getText().toString() == null) {
+                        anc012x.setError(getString(R.string.txterr));
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                        Log.d(TAG, "anc012x: empty ");
+                        anc012x.requestFocus();
+                        return false;
+                    } else {
+                        anc012x.setError(null);
                     }
                 }
             }
         }
 
 
-        if (anc012.getCheckedRadioButtonId() == -1) {
-            anc012a.setError(getString(R.string.rdoerr));
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc012), Toast.LENGTH_LONG).show();
-            Log.d(TAG, "anc012a: this data is required ");
-            anc012a.requestFocus();
+        if (anc013.getCheckedRadioButtonId() == -1) {
+            anc013a.setError(getString(R.string.rdoerr));
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "anc013a: this data is required ");
+            anc013a.requestFocus();
             return false;
         } else {
-            anc012a.setError(null);
+            anc013a.setError(null);
         }
 
 
-        if (anc012a.isChecked()) {
+        if (anc013a.isChecked()) {
 
-            if ((anc013.getText().toString().isEmpty() || anc013.getText().toString() == null) && !anc01399.isChecked()) {
-                    anc013.setError(getString(R.string.txterr));
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
-                    Log.d(TAG, "anc013: empty");
-                    anc013.requestFocus();
+            if ((anc014.getText().toString().isEmpty() || anc014.getText().toString() == null) && !anc01499.isChecked()) {
+                anc014.setError(getString(R.string.txterr));
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc014), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc014: empty");
+                anc014.requestFocus();
                     return false;
                 } else {
-                    anc013.setError(null);
+                anc014.setError(null);
                 }
 
-            if (!anc01399.isChecked()) {
-                if (Integer.valueOf(anc013.getText().toString().isEmpty() ? "" : anc013.getText().toString()) < 1
-                        || Integer.valueOf(anc013.getText().toString().isEmpty() ? "" : anc013.getText().toString()) > 9) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.anc013), Toast.LENGTH_LONG).show();
-                    anc013.setError("Range is 1 to 9 times");
-                    Log.d(TAG, "anc013: Range is 1 to 9 times");
-                    anc013.requestFocus();
+            if (!anc01499.isChecked()) {
+                if (Integer.valueOf(anc014.getText().toString().isEmpty() ? "" : anc014.getText().toString()) < 1
+                        || Integer.valueOf(anc014.getText().toString().isEmpty() ? "" : anc014.getText().toString()) > 5) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.anc014), Toast.LENGTH_LONG).show();
+                    anc014.setError("Range is 1 to 5 times");
+                    Log.d(TAG, "anc014: Range is 1 to 5 times");
+                    anc014.requestFocus();
+                    return false;
                 } else {
-                    anc013.setError(null);
+                    anc014.setError(null);
                 }
             }
 
         }
 
 
-        if (anc014.getCheckedRadioButtonId() == -1) {
-            anc014a.setError(getString(R.string.rdoerr));
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc014), Toast.LENGTH_LONG).show();
-            Log.d(TAG, "anc014a: this data is required ");
-            anc014a.requestFocus();
+        if (anc015.getCheckedRadioButtonId() == -1) {
+            anc015a.setError(getString(R.string.rdoerr));
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc015), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "anc015a: this data is required ");
+            anc015a.requestFocus();
             return false;
         } else {
-            anc014a.setError(null);
+            anc015a.setError(null);
         }
 
 
-        if (anc014a.isChecked()) {
+        if (anc015a.isChecked()) {
 
-            if (anc015.getCheckedRadioButtonId() == -1) {
-                anc015a.setError(getString(R.string.rdoerr));
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc015), Toast.LENGTH_LONG).show();
-                Log.d(TAG, "anc015a: this data is required ");
-                anc015a.requestFocus();
+            if (anc016.getCheckedRadioButtonId() == -1) {
+                anc016a.setError(getString(R.string.rdoerr));
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc016), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "anc016a: this data is required ");
+                anc016a.requestFocus();
                 return false;
             } else {
-                anc015a.setError(null);
+                anc016a.setError(null);
             }
 
-            if (anc01588.isChecked()) {
+            if (anc01688.isChecked()) {
 
-                if (anc015x.getText().toString().isEmpty() || anc015x.getText().toString() == null) {
-                    anc015x.setError(getString(R.string.txterr));
+                if (anc016x.getText().toString().isEmpty() || anc016x.getText().toString() == null) {
+                    anc016x.setError(getString(R.string.txterr));
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                    Log.d(TAG, "anc015x : empty ");
-                    anc015x.requestFocus();
+                    Log.d(TAG, "anc016x : empty ");
+                    anc016x.requestFocus();
                     return false;
                 } else {
-                    anc015x.setError(null);
+                    anc016x.setError(null);
                 }
 
             }

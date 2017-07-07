@@ -40,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_NAME_PROJECTNAME + " TEXT,"
             + FormsTable.COLUMN_NAME_SURVEYTYPE + " TEXT,"
             + FormsTable.COLUMN_NAME_USERNAME + " TEXT,"
-            + FormsTable.ID + " TEXT,"
+            + FormsTable.ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FormsTable.COLUMN_NAME_UID + " TEXT,"
             + FormsTable.COLUMN_NAME_FORMDATE + " TEXT,"
             + FormsTable.COLUMN_NAME_MAJORAREA + " TEXT,"
@@ -117,7 +117,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_PROJECTNAME, fc.getProjectName());
         values.put(FormsTable.COLUMN_NAME_SURVEYTYPE, fc.getSurveyType());
         values.put(FormsTable.COLUMN_NAME_USERNAME, fc.getUserName());
-        values.put(FormsTable.ID, fc.getID());
         values.put(FormsTable.COLUMN_NAME_UID, fc.getUID());
         values.put(FormsTable.COLUMN_NAME_FORMDATE, fc.getFormDate());
         values.put(FormsTable.COLUMN_NAME_MAJORAREA, fc.getMajorArea());
@@ -548,7 +547,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_SOCIOECONOMIC, AppMain.fc.getSocioEconomic());
 
 // Which row to update, based on the ID
-        String selection = FormsContract.FormsTable.ID + " = ?";
+        String selection = FormsTable.ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
@@ -647,6 +646,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
+
+    public int updateIycf() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_NAME_IYCF, AppMain.fc.getIycf());
+
+// Which row to update, based on the ID
+        String selection = FormsContract.FormsTable.ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
 
     public int updateChildMorbidity() {
         SQLiteDatabase db = this.getReadableDatabase();

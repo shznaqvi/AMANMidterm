@@ -314,6 +314,10 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/other"
                 android:visibility="gone" />
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/bib05"
+                android:inputType="text" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -357,6 +361,7 @@
                     android:layout_marginBottom="1dp"
                     android:text="@string/female"
                     android:visibility="gone" />
+                    android:text="@string/female" />
 
             </RadioGroup>
 
@@ -400,107 +405,10 @@
             <RadioGroup
                 android:id="@+id/bib10"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/bib1001"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation01" />
-
-                <RadioButton
-                    android:id="@+id/bib1002"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation02" />
-
-                <RadioButton
-                    android:id="@+id/bib1003"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation03" />
-
-                <RadioButton
-                    android:id="@+id/bib1004"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation04" />
-
-                <RadioButton
-                    android:id="@+id/bib1005"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation05" />
-
-                <RadioButton
-                    android:id="@+id/bib1006"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation06" />
-
-                <RadioButton
-                    android:id="@+id/bib1007"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation07" />
-
-                <RadioButton
-                    android:id="@+id/bib1008"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation08" />
-
-                <RadioButton
-                    android:id="@+id/bib1009"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation09" />
-
-                <RadioButton
-                    android:id="@+id/bib1010"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation10" />
-
-                <RadioButton
-                    android:id="@+id/bib1011"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation11" />
-
-                <RadioButton
-                    android:id="@+id/bib1012"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/occupation12" />
-
-                <RadioButton
-                    android:id="@+id/bib1096"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/other" />
-
-            </RadioGroup>
-
-            <EditText
-                android:id="@+id/bib1096x"
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/other"
-                android:visibility="gone" />
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/bib10"
+                android:inputType="text" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -593,6 +501,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/occupation01" />
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/bib15"
+                android:inputType="text" />
 
                 <RadioButton
                     android:id="@+id/bib1502"

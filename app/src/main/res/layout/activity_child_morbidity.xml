@@ -44,7 +44,10 @@
             android:layout_height="wrap_content"
             android:hint="@string/cm01a"
             android:inputType="number"
-            android:maxLength="2" />
+            android:maxLength="2">
+
+            <requestFocus></requestFocus>
+        </EditText>
 
         <TextView
             android:layout_width="match_parent"
@@ -186,7 +189,9 @@
             android:id="@+id/cm0588x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
         <LinearLayout
@@ -304,7 +309,9 @@
                     android:id="@+id/cm0788x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
+                    android:inputType="textCapWords"
                     android:visibility="gone" />
 
 
@@ -315,55 +322,49 @@
                     android:text="@string/cm08"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
-                <RadioGroup
-                    android:id="@+id/cm08"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <RadioButton
+                <CheckBox
                         android:id="@+id/cm08a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/cm08a" />
 
-                    <RadioButton
+                <CheckBox
                         android:id="@+id/cm08b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/cm08b" />
 
-                    <RadioButton
+                <CheckBox
                         android:id="@+id/cm08c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/cm08c" />
 
-                    <RadioButton
+                <CheckBox
                         android:id="@+id/cm08d"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/cm08d" />
 
-                    <RadioButton
+                <CheckBox
                         android:id="@+id/cm08e"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/cm08e" />
 
-                    <RadioButton
+                <CheckBox
                         android:id="@+id/cm0888"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/other" />
 
-
-                </RadioGroup>
 
                 <EditText
                     android:id="@+id/cm0888x"
@@ -374,7 +375,14 @@
                     android:inputType="textCapWords"
                     android:visibility="gone" />
 
-                <TextView
+
+                <LinearLayout
+                    android:id="@+id/fldGrpcm09"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -408,6 +416,8 @@
                         android:text="@string/na" />
 
                 </RadioGroup>
+
+                </LinearLayout>
 
             </LinearLayout>
 

@@ -21,6 +21,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -32,6 +35,8 @@ import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 import static android.content.ContentValues.TAG;
 
 public class AmanInfoActivity extends Activity {
+
+    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
@@ -330,6 +335,11 @@ public class AmanInfoActivity extends Activity {
 
         AppMain.fc = new FormsContract();
 
+        AppMain.fc.setDeviceID(AppMain.deviceId);
+        AppMain.fc.setUserName(AppMain.username);
+        AppMain.fc.setFormDate(dtToday);
+//        AppMain.fc.setMajorArea(String.valueOf(AppMain.majorArea));
+
         JSONObject sa = new JSONObject();
 
         sa.put("biuc", biuc.getText().toString());
@@ -379,7 +389,7 @@ public class AmanInfoActivity extends Activity {
 
         AppMain.fc.setID(String.valueOf(rowId));
 
-        if (rowId != null) {
+        if (rowId > -1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             AppMain.fc.setUID(
                     (AppMain.fc.getDeviceID() + AppMain.fc.getID()));
@@ -703,11 +713,11 @@ public class AmanInfoActivity extends Activity {
                 bib1602.setError(null);
             }
 
-            if ((Integer.valueOf(bib1602.getText().toString()) < 1)
+            if ((Integer.valueOf(bib1602.getText().toString()) < 0)
                     || (Integer.valueOf(bib1602.getText().toString()) > 11)) {
                 Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.months), Toast.LENGTH_LONG).show();
-                bib1602.setError("Range is 1-11");
-                Log.i(TAG, "b09: Range is 1-11");
+                bib1602.setError("Range is 0-11");
+                Log.i(TAG, "b09: Range is 0-11");
                 return false;
             } else {
                 bib1602.setError(null);
@@ -721,6 +731,16 @@ public class AmanInfoActivity extends Activity {
             } else {
                 bic01.setError(null);
             }
+
+            if (Integer.valueOf(bic01.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.bic01), Toast.LENGTH_LONG).show();
+                bic01.setError("Zero not allowed..");
+                Log.i(TAG, "bic01: Zero is not allowed");
+                return false;
+            } else {
+                bic01.setError(null);
+            }
+
 
             if (bic02.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.male), Toast.LENGTH_LONG).show();

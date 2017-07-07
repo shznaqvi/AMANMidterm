@@ -22,9 +22,9 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 
 public class SocioEconomicActivity extends Activity {
@@ -201,7 +201,8 @@ public class SocioEconomicActivity extends Activity {
     EditText se1088x;
     @BindView(R.id.se1101)
     EditText se1101;
-    @BindView(R.id.se1201)
+
+    /*@BindView(R.id.se1201)
     EditText se1201;
     @BindView(R.id.se1202)
     EditText se1202;
@@ -237,7 +238,7 @@ public class SocioEconomicActivity extends Activity {
     EditText se1217;
     @BindView(R.id.se1288)
     EditText se1288;
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -580,7 +581,7 @@ public class SocioEconomicActivity extends Activity {
                 : se1088.isChecked() ? "88" : "0");
         socioeco.put("se1088x", se1088x.getText().toString());
         socioeco.put("se11", se1101.getText().toString());
-        socioeco.put("se1201", se1201.getText().toString());
+        /*socioeco.put("se1201", se1201.getText().toString());
         socioeco.put("se1202", se1202.getText().toString());
         socioeco.put("se1203", se1203.getText().toString());
         socioeco.put("se1204", se1204.getText().toString());
@@ -598,7 +599,7 @@ public class SocioEconomicActivity extends Activity {
         socioeco.put("se1216", se1216.getText().toString());
         socioeco.put("se1217", se1217.getText().toString());
         socioeco.put("se1288", se1288.getText().toString());
-
+*/
         AppMain.fc.setSocioEconomic(String.valueOf(socioeco));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
@@ -734,8 +735,8 @@ public class SocioEconomicActivity extends Activity {
         }
 
         if ((Integer.parseInt(se04.getText().toString()) < 1) || (Integer.parseInt(se04.getText().toString()) > 20)) {
-            Toast.makeText(this, "Range is 0 - 20 Rooms", Toast.LENGTH_LONG).show();
-            se04.setError("Range is 0 - 20 Rooms.. Check Again");// Set Error on last radio button
+            Toast.makeText(this, "Range is 1 - 20 Rooms", Toast.LENGTH_LONG).show();
+            se04.setError("Range is 1 - 20 Rooms.. Check Again");// Set Error on last radio button
             return false;
 
         } else {
@@ -884,7 +885,7 @@ public class SocioEconomicActivity extends Activity {
 
         // ======================  Q 12 =================
 
-        if (se1201.getText().toString().isEmpty()) {
+       /* if (se1201.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.se1201), Toast.LENGTH_LONG).show();
             se1201.setError("This data is Required! Or Place 0");    // Set Error on last radio button
 
@@ -1063,7 +1064,7 @@ public class SocioEconomicActivity extends Activity {
         } else {
             se1288.setError(null);
         }
-
+*/
         return true;
     }
 

@@ -21,9 +21,9 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 public class ChildMorbidityActivity extends Activity {
 
@@ -95,20 +95,18 @@ public class ChildMorbidityActivity extends Activity {
     CheckBox cm0788;
     @BindView(R.id.cm0788x)
     EditText cm0788x;
-    @BindView(R.id.cm08)
-    RadioGroup cm08;
     @BindView(R.id.cm08a)
-    RadioButton cm08a;
+    CheckBox cm08a;
     @BindView(R.id.cm08b)
-    RadioButton cm08b;
+    CheckBox cm08b;
     @BindView(R.id.cm08c)
-    RadioButton cm08c;
+    CheckBox cm08c;
     @BindView(R.id.cm08d)
-    RadioButton cm08d;
+    CheckBox cm08d;
     @BindView(R.id.cm08e)
-    RadioButton cm08e;
+    CheckBox cm08e;
     @BindView(R.id.cm0888)
-    RadioButton cm0888;
+    CheckBox cm0888;
     @BindView(R.id.cm0888x)
     EditText cm0888x;
     @BindView(R.id.cm09)
@@ -119,46 +117,14 @@ public class ChildMorbidityActivity extends Activity {
     RadioButton cm09b;
     @BindView(R.id.cm0977)
     RadioButton cm0977;
+    @BindView(R.id.fldGrpcm09)
+    LinearLayout fldGrpcm09;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_morbidity);
         ButterKnife.bind(this);
-
-        cm0577.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    fldGrpcm06.setVisibility(View.GONE);
-                    cm05a.setChecked(false);
-                    cm05b.setChecked(false);
-                    cm05c.setChecked(false);
-                    cm05d.setChecked(false);
-                    cm05e.setChecked(false);
-                    cm05f.setChecked(false);
-                    cm05g.setChecked(false);
-                    cm05h.setChecked(false);
-                    cm0588.setChecked(false);
-                    cm0588x.setText(null);
-                    cm06.clearCheck();
-                    cm07a.setChecked(false);
-                    cm07b.setChecked(false);
-                    cm07c.setChecked(false);
-                    cm07d.setChecked(false);
-                    cm07e.setChecked(false);
-                    cm07f.setChecked(false);
-                    cm07g.setChecked(false);
-                    cm07h.setChecked(false);
-                    cm0788.setChecked(false);
-                    cm08.clearCheck();
-                    cm0888x.setText(null);
-                    cm09.clearCheck();
-                } else {
-                    fldGrpcm06.setVisibility(View.VISIBLE);
-                }
-            }
-        });
 
         cm0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -188,7 +154,11 @@ public class ChildMorbidityActivity extends Activity {
                     cm07g.setChecked(false);
                     cm07h.setChecked(false);
                     cm0788.setChecked(false);
-                    cm08.clearCheck();
+                    cm08a.setChecked(false);
+                    cm08b.setChecked(false);
+                    cm08c.setChecked(false);
+                    cm08d.setChecked(false);
+                    cm08e.setChecked(false);
                     cm0888x.setText(null);
                     cm09.clearCheck();
                 }
@@ -215,6 +185,76 @@ public class ChildMorbidityActivity extends Activity {
                 } else {
                     cm0888x.setVisibility(View.GONE);
                     cm0888x.setText(null);
+                }
+            }
+        });
+
+        cm0577.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpcm06.setVisibility(View.GONE);
+                    cm05a.setEnabled(false);
+                    cm05a.setChecked(false);
+                    cm05b.setEnabled(false);
+                    cm05b.setChecked(false);
+                    cm05c.setEnabled(false);
+                    cm05c.setChecked(false);
+                    cm05d.setEnabled(false);
+                    cm05d.setChecked(false);
+                    cm05e.setEnabled(false);
+                    cm05e.setChecked(false);
+                    cm05f.setEnabled(false);
+                    cm05f.setChecked(false);
+                    cm05g.setEnabled(false);
+                    cm05g.setChecked(false);
+                    cm05h.setEnabled(false);
+                    cm05h.setChecked(false);
+                    cm0588.setEnabled(false);
+                    cm0588.setChecked(false);
+                    cm0588x.setText(null);
+                    cm06.clearCheck();
+                    cm07a.setChecked(false);
+                    cm07b.setChecked(false);
+                    cm07c.setChecked(false);
+                    cm07d.setChecked(false);
+                    cm07e.setChecked(false);
+                    cm07f.setChecked(false);
+                    cm07g.setChecked(false);
+                    cm07h.setChecked(false);
+                    cm0788.setChecked(false);
+                    cm0788x.setText(null);
+                    cm08a.setChecked(false);
+                    cm08b.setChecked(false);
+                    cm08c.setChecked(false);
+                    cm08d.setChecked(false);
+                    cm08e.setChecked(false);
+                    cm0888x.setText(null);
+                    cm09.clearCheck();
+                } else {
+                    fldGrpcm06.setVisibility(View.VISIBLE);
+                    cm05a.setEnabled(true);
+                    cm05b.setEnabled(true);
+                    cm05c.setEnabled(true);
+                    cm05d.setEnabled(true);
+                    cm05e.setEnabled(true);
+                    cm05f.setEnabled(true);
+                    cm05g.setEnabled(true);
+                    cm05h.setEnabled(true);
+                    cm0588.setEnabled(true);
+
+                }
+            }
+        });
+
+        cm05b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpcm09.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcm09.setVisibility(View.GONE);
+                    cm09.clearCheck();
                 }
             }
         });
@@ -314,8 +354,12 @@ public class ChildMorbidityActivity extends Activity {
         scm.put("cm07h", cm07h.isChecked() ? "1" : "0");
         scm.put("cm0788", cm0788.isChecked() ? "88" : "0");
         scm.put("cm0788x", cm0788x.getText().toString());
-        scm.put("cm08", cm08a.isChecked() ? "1" : cm08b.isChecked() ? "2" : cm08c.isChecked() ? "3"
-                : cm08d.isChecked() ? "4" : cm08e.isChecked() ? "2" : cm0888.isChecked() ? "88" : "0");
+        scm.put("cm08a", cm08a.isChecked() ? "1" : "0");
+        scm.put("cm08b", cm08b.isChecked() ? "2" : "0");
+        scm.put("cm08c", cm08c.isChecked() ? "3" : "0");
+        scm.put("cm08d", cm08d.isChecked() ? "4" : "0");
+        scm.put("cm08e", cm08e.isChecked() ? "5" : "0");
+        scm.put("cm0888", cm0888.isChecked() ? "88" : "0");
         scm.put("cm0888x", cm0888x.getText().toString());
         scm.put("cm09", cm09a.isChecked() ? "1" : cm09b.isChecked() ? "2" : cm0977.isChecked() ? "3" : "0");
 
@@ -433,7 +477,8 @@ public class ChildMorbidityActivity extends Activity {
                     cm0788x.setError(null);
                 }
 
-                if (cm08.getCheckedRadioButtonId() == -1) {
+                if (!(cm08a.isChecked() || cm08b.isChecked() || cm08c.isChecked() || cm08d.isChecked() || cm08e.isChecked()
+                        || cm0888.isChecked())) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm08), Toast.LENGTH_LONG).show();
                     cm0888.setError("This data is Required!");    // Set Error on last radio button
 
@@ -451,14 +496,17 @@ public class ChildMorbidityActivity extends Activity {
                 } else {
                     cm0888x.setError(null);
                 }
-                if (cm09.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm09), Toast.LENGTH_LONG).show();
-                    cm0977.setError("This data is Required!");    // Set Error on last radio button
 
-                    Log.i(TAG, "cm09: This data is Required!");
-                    return false;
-                } else {
-                    cm0977.setError(null);
+                if (cm05b.isChecked()) {
+                    if (cm09.getCheckedRadioButtonId() == -1) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm09), Toast.LENGTH_LONG).show();
+                        cm0977.setError("This data is Required!");    // Set Error on last radio button
+
+                        Log.i(TAG, "cm09: This data is Required!");
+                        return false;
+                    } else {
+                        cm0977.setError(null);
+                    }
                 }
                 
             }

@@ -23,7 +23,7 @@
     <string name="dnk">معلوم نہیں</string>
     <string name="none">کوئی نہیں</string>
     <string name="year">سال</string>
-    <string name="month">سال</string>
+    <string name="month">مہینے</string>
     <string name="other">کوئی اور (وضاحت کریں)۔</string>
     <string name="na">قابل اطلاق نہیں</string>
 
@@ -199,10 +199,10 @@
 
     <string name="iy01">بچے کا نام</string>
     <string name="iy02">بچے کی جنس</string>
-    <string name="iy03">(بچے کی عمر مکمل شدہ مہینوں میں، اگر ایک ماہ سے کم ہو تو00  ڈالیں</string>
+    <string name="iy03">بچے کی عمر مکمل شدہ مہینوں میں، اگر ایک ماہ سے کم ہو تو00  ڈالیں</string>
     <string name="iy03m">مہینے</string>
     <string name="iy03d">دن</string>
-    <string name="iy04">کیا بچے کو پیدائش کے پہلے آٹھائیس دنوں میں کوئی طبعی مسئلہ/بیماری ہوئی تھی</string>
+    <string name="iy04">کیا بچے کو پیدائش کے پہلے اٹھائیس دنوں میں کوئی طبعی مسئلہ/بیماری ہوئی تھی</string>
     <string name="iy05">اگر ہاں تو بچے کو کیا طبعی مسائل / پیچیدگیاں ہوئی تھیں؟</string>
     <string name="iy05a">بچہ دودھ نہیں پی سکت تھا/تھی </string>
     <string name="iy05b">بچے کو بہت ٹھنڈ لگی تھی</string>
@@ -214,9 +214,9 @@
     <string name="iy05h">چڑچڑاپن</string>
     <string name="iy05i">بیہوشی</string>
     <string name="iy05j">جھٹکے</string>
-    <string name="iy06">اگر ہاں تو بچہ پیدائش کے کتنی دیر بعد ان پیچیدگیوں میں مبتلا ہوا تھا۔ (جوابات صفر سے آٹھائیس دن کے درمیان آنا چاہئیے اور اگر جواب اسی دن کا آئے تو دنوں کے کالم میں صفر لکیھں۔ </string>
+    <string name="iy06">اگر ہاں تو بچہ پیدائش کے کتنی دیر بعد ان پیچیدگیوں میں مبتلا ہوا تھا۔ (جوابات صفر سے اٹھائیس دن کے درمیان آنا چاہئیے اور اگر جواب اسی دن کا آئے تو دنوں کے کالم میں صفر لکیھں۔ </string>
     <string name="iy06d">دن</string>
-    <string name="iy07">اگر ہاں تو آپ نے بیماری کے دوران علاج کروائی تھی؟</string>
+    <string name="iy07">اگر ہاں تو آپ نے بیماری کے دوران علاج کروایا تھا؟</string>
     <string name="iy07a">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
     <string name="iy07b">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
     <string name="iy07c">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
@@ -240,12 +240,12 @@
     <string name="iy011">آپ نے زچگی کے کتنے دن یا ہفتے بعد بچے کا پہلا معائنہ کروایا تھا؟ (اگر پیدائش کے دن ہی معائنہ کروایا ہو تو 00 لکھ دیں)</string>
     <string name="iy011d">دن</string>
     <string name="iy011w">ہفتے</string>
-    <string name="iy012">آپ نے بچے کو پیدائش کے کتنی دیر بعد اپنا دودھ پلائی تھی؟ (اگر ایک گھنٹے سے پہلے اپنا دودھ پلائی ہو تو اے سیکشن میں 00 لکھیں اور اگر 24 گھنٹے کے اندر پلائی ہو تو گھنٹے لکھ ورنہ بی سیکشن میں دن لکھ دیں)</string>
+    <string name="iy012">آپ نے بچے کو پیدائش کے کتنی دیر بعد اپنا دودھ پلایا تھا؟ (اگر ایک گھنٹے سے پہلے اپنا دودھ پلایا ہو تو اے سیکشن میں 00 لکھیں اور اگر 24 گھنٹے کے اندر پلائی ہو تو گھنٹے لکھیں ورنہ بی سیکشن میں دن لکھ دیں)</string>
     <string name="iy012h">گھنٹے</string>
     <string name="iy012d">دن</string>
     <string name="iy012n">ماں کا دودھ نہیں پلایا</string>
-    <string name="iy013">کیا آپ نے بچے کو زچگی کے بعد 3 دن تک آنے والا اپنا پہلا دودھ پلائی تھی؟</string>
-    <string name="iy014">کیا آپ نے بچے کو پیدائش کے پہلے 3 دنوں میں اپنے دودھ کے علاوہ کچھ اور  پینے کے لئے دی تھی ؟</string>
+    <string name="iy013">کیا آپ نے بچے کو زچگی کے بعد 3 دن تک آنے والا اپنا پہلا دودھ پلایا تھا؟</string>
+    <string name="iy014">کیا آپ نے بچے کو پیدائش کے پہلے 3 دنوں میں اپنے دودھ کے علاوہ کچھ اور  پینے کے لئے دیا تھا ؟</string>
     <string name="iy015">اگر ہاں تو پینے کے لئے کیا دی تھی؟ (دی گئ لسٹ مت پرھیں) ایک سے زیادہ جوابات کی اجازت ہے۔ اسکے علاوہ کچھ اور؟</string>
     <string name="iy015a">ماں کے دودھ کے علاوہ کوئی اور دودھ</string>
     <string name="iy015b">عام پانی</string>
@@ -257,7 +257,7 @@
     <string name="iy015h">چائے/کہوا</string>
     <string name="iy015i">شہد</string>
     <string name="iy015j">کوئی اور (وضاحت کریں)</string>
-    <string name="iy016"> ">آپ نے کتنے مہینے تک بچے کو اپنا دودھ پلائی تھی؟ اپنے دودھ کے علاوہ کچھ اور پینے کے لئےنہیں دی ہو (اگر ایک مہینے سے کم ہو تو 00 لکھیں)</string>
+    <string name="iy016"> ">آپ نے کتنے مہینے تک بچے کو اپنا دودھ پلایا تھا؟ اپنے دودھ کے علاوہ کچھ اور پینے کے لئےنہیں دی ہو (اگر ایک مہینے سے کم ہو تو 00 لکھیں)</string>
     <string name="iy016m">مہینے</string>
     <string name="iy01677">بچہ ابھی تک ماں کا دودھ پی رہا ہے۔</string>
     <string name="iy017">آپ نے پہلی دفعہ بچے کو اپنے دودھ کے علاوہ کوئی اور چیز مثلاً جوس یا چائے وغیرہ  کب دی تھی؟</string>
@@ -269,7 +269,7 @@
     <string name="iy018m">مہینے</string>
     <string name="iy01888">ابھی شروع نہیں کروایا۔</string>
 
-    <string name="section_F">  مائوں میں زہنی دبائو سے متعلق سوالنامہ </string>
+    <string name="section_F">  مائوں میں زہنی دبائو (گزشتہ 30 دنوں میں) سے متعلق سوالنامہ </string>
     <string name="ms01"> سر درد </string>
     <string name="ms02"> بھوک کی کمی </string>
     <string name="ms03"> نیند کی کمی </string>
@@ -293,48 +293,54 @@
 
 
     <string name="ancheading"> حمل کے دوران نگہداشت </string>
-    <string name="anc01"> کیا آپ نے گزشتہ حمل کے دوران اپنا معائنہ کروائی تھی؟ </string>
+    <string name="anc01"> کیا آپ نے گزشتہ حمل کے دوران اپنا معائنہ کروایا تھا؟ </string>
     <string name="anc01a"> اگر نہیں تو معائنہ نہ کروانے کی وجوہات بتائے۔ </string>
     <string name="anc01b"> اگر نہیں تو معائنہ نہ کروانے کی وجوہات بتائے۔ </string>
-    <string name="anc02"> آپ نےگزشتہ حمل کے دوران کتنی مرتبہ اپنا معائنہ کروائی تھی ؟ </string>
-    <string name="anc03">اگر ہاں تو گزشتہ حمل کے دوران کس سے معائنہ کروا ئی تھی ؟ (ایک سےزیادہ جوابات دینے کی اجازت ہے) </string>
+    <string name="anc02"> آپ نےگزشتہ حمل کے دوران کتنی مرتبہ اپنا معائنہ کروایا تھا ؟ </string>
+    <string name="anc03">اگر ہاں تو گزشتہ حمل کے دوران کس سے معائنہ کروا یا تھا ؟ (ایک سےزیادہ جوابات دینے کی اجازت ہے) </string>
     <string name="anc03a"> گورنمنٹ ڈاکٹر </string>
     <string name="anc03b"> پرائیوٹ ڈاکٹر </string>
     <string name="anc03c"> ایل ایچ وی/ نرس </string>
     <string name="anc03d"> ایل ایچ وی/مڈوائف کے گھر آنا/جانا </string>
     <string name="anc03e"> ایل ایچ وی کے گھر آنا /جانا </string>
     <string name="anc03f"> دائی/ٹی بی اے </string>
-    <string name="anc04"> کیا آپ نے گزشتہ حمل کے دوران فولاد کا طاقت کی دوائی لی یا خریدی تھی؟ </string>
+    <string name="anc04"> کیا آپ نے گزشتہ حمل کے دوران فولاد / طاقت کی دوائی لی یا خریدی تھی؟ </string>
     <string name="anc05"> اگر ہاں تو آپ نے کتنے دن یہ دوائی استعمال کی تھی؟ </string>
     <string name="anc05dnk"> اگر ہاں تو آپ نے کتنے دن یہ دوائی استعمال کی تھی؟ </string>
     <string name="anc05d"> دنوں کی تعداد </string>
-    <string name="anc06"> کیا آپ کو گزشتہ حمل کے دوران کسی خطرناک علامت کا سامنا ہوا تھا؟ </string>
-    <string name="anc07"> اگر ہاں تو یہ خطرناک علامت کیا تھی؟ </string>
+    <string name="anc06"> کیا آپ کو گزشتہ حمل کے دوران کوئی پیچیدگیاں پیش آئی تھیں؟ </string>
+    <string name="anc07"> اگر ہاں تو کونسی پیچیدگیاں پیش آئی تھیں؟ </string>
     <string name="anc07a"> 100 سےزیادہ بخار </string>
     <string name="anc07b"> دھندلاپن </string>
     <string name="anc07c"> خون آنا </string>
     <string name="anc07d"> جسم ، ہاتھوں اور چہرے پر سوجن </string>
-    <string name="anc08"> کیا آپ نے ان علامات کے لئے اپنا علاج کروائی تھی؟ </string>
+    <string name="anc08"> کیا آپ نے ان پیچیدگیوں کے لئے اپنا علاج کروایا تھا؟ </string>
     <string name="anc09"> اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟ </string>
     <string name="anc010"> اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟ </string>
-    <string name="anc011"> اگر ہاں تو گزشتہ حمل کے دوران کسی نے علاج فراہم کی تھی؟ </string>
+    <string name="anc011"> اگر ہاں تو موجودہ حمل کے دوران کس نے علاج فراہم کیا تھا؟ (ایک سے زیادہ جوابات آسکتے ہیں) </string>
+    <string name="anc012a"> گورنمنٹ کے مرکز صحت میں </string>
+    <string name="anc012b"> پرائیوٹ مرکز صحت  </string>
+    <string name="anc012c"> ایل ایچ وی/مڈوائف کے گھر آنا/جانا </string>
+    <string name="anc012d"> ایل ایچ وی کے گھر آنا /جانا </string>
+    <string name="anc012e"> دائی/ٹی بی اے </string>
+    <string name="anc012"> اگر ہاں تو آپ نے کہاں سے علاج کروایا تھا؟ </string>
     <string name="anc011a"> گورنمنٹ ڈاکٹر </string>
     <string name="anc011b"> پرائیوٹ ڈاکٹر </string>
     <string name="anc011c"> ایل ایچ وی/ نرس </string>
     <string name="anc011d"> ایل ایچ وی/مڈوائف کے گھر آنا/جانا </string>
     <string name="anc011e"> ایل ایچ وی کے گھر آنا /جانا </string>
     <string name="anc011f"> دائی/ٹی بی اے </string>
-    <string name="anc012"> کیا آپ نے اپنے بچے کی پیدائش سے پہلے اپنے بازو میں ٹی ٹی کا انجکشن لگوائی تھی جو کہ بچے کو بعد میں جھٹکے لگنے سے بچاتا ہے؟ </string>
-    <string name="anc013"> اگر ہاں تو کتنی مرتبہ؟ </string>
-    <string name="anc014"> کیا اس وقت آپ فیملی پلاننگ کے لئے کوئی طریقہ استعمال کرتی ہیں؟ </string>
-    <string name="anc015"> اگر ہاں تو آپ اس وقت کونسا طریقہ استعمال کرتی ہیں؟ </string>
-    <string name="anc015a"> گولیاں </string>
-    <string name="anc015b"> انجکشن </string>
-    <string name="anc015c"> کنڈم/ساتھی </string>
-    <string name="anc015d"> آئی یو ڈی </string>
-    <string name="anc015e"> نس بندی </string>
-    <string name="anc015f"> ازل </string>
-    <string name="anc015g"> دیگر وضاحت کریں </string>
+    <string name="anc013"> کیا آپ نے اپنے بچے کی پیدائش سے پہلے اپنے بازو میں ٹی ٹی کا انجکشن لگوایا تھا جو کہ بچے کو بعد میں جھٹکے لگنے سے بچاتا ہے؟ </string>
+    <string name="anc014"> اگر ہاں تو کتنی مرتبہ؟ </string>
+    <string name="anc015"> کیا اس وقت آپ فیملی پلاننگ کے لئے کوئی طریقہ استعمال کرتی ہیں؟ </string>
+    <string name="anc016"> اگر ہاں تو آپ اس وقت کونسا طریقہ استعمال کرتی ہیں؟ </string>
+    <string name="anc016a"> گولیاں </string>
+    <string name="anc016b"> انجکشن </string>
+    <string name="anc016c"> کنڈم/ساتھی </string>
+    <string name="anc016d"> آئی یو ڈی </string>
+    <string name="anc016e"> نس بندی </string>
+    <string name="anc016f"> ازل </string>
+    <string name="anc016g"> دیگر وضاحت کریں </string>
 
 
     <!--    RWIC: Relation With Index Child    -->
@@ -504,7 +510,7 @@
     <string name="mnf3b"> کرائے کا </string>
     <string name="mnf3c"> رہائش کرائے کے بغیر </string>
     <string name="mnf4"> اس گھر میں سونے کے لیے کتنے کمرے استعمال ہوتے ہیں؟ </string>
-    <string name="mnf5"> گھر میں عام طور پر کھانا پکانے کے لیے کونسا اینڈھن استعمال کرتے ہیں؟ </string>
+    <string name="mnf5"> گھر میں عام طور پر کھانا پکانے کے لیے کونسا ایندھن استعمال کرتے ہیں؟ </string>
     <string name="mnf5a"> بجلی </string>
     <string name="mnf5b"> ایل –پی-جی سیلنڈر </string>
     <string name="mnf5c"> (سوئی گیس کنکشن(قدرتی گیس </string>
@@ -536,7 +542,7 @@
     <string name="mnf8j"> ٹینکر کا پانی </string>
     <string name="mnf8k"> فلٹر پلانٹ کا پانی </string>
     <string name="mnf8l"> سوزکی یا گدھا گاڑی </string>
-    <string name="mnf8m"> (سطح والا پانی(دریا،جھیل ،ڈیم،تالاب/ ندی/نہر/ابپاشی کا پانی </string>
+    <string name="mnf8m"> (سطح والا پانی(دریا،جھیل ،ڈیم،تالاب/ ندی/نہر/آبپاشی کا پانی </string>
     <string name="mnf8n"> (پانی  کی بوتل (منرل واٹر </string>
     <string name="mnf9"> جواہندہ سے پوچھیں کہ ان میں سے کون سے اثاثے کے مالک ہیں اگر ان میں سے کوئی چیز نہیں تو (0) لکھیں </string>
     <string name="mnf9a"> مویشی سرمایہ، بیھنسیں اور گائیں </string>
@@ -568,7 +574,7 @@
     <string name="title_activity_login">Log in</string>
 
     <string name="bdheading"> Section N : Births and Deaths in the Last One Year </string>
-    <string name="bdheadingsub"> پہچلے سال جنوری سے دسمبر 2016 تک آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
+    <string name="bdheadingsub"> پہچلے سال آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
     <string name="bda"> Indicators </string>
     <string name="bdb"> Statistics None = 0 </string>
     <string name="bdba"> Number </string>

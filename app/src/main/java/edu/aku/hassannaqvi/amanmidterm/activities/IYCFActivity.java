@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.amanmidterm.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -10,6 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -18,11 +21,15 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 import edu.aku.hassannaqvi.amanmidterm.R;
+import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
+import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
 public class IYCFActivity extends Activity {
 
+    private static final String TAG = IYCFActivity.class.getSimpleName();
+    @BindView(R.id.activity_section_d)
+    ScrollView activitySectionD;
     @BindView(R.id.iy01)
     EditText iy01;
     @BindView(R.id.iy02)
@@ -41,8 +48,8 @@ public class IYCFActivity extends Activity {
     RadioButton iy04a;
     @BindView(R.id.iy04b)
     RadioButton iy04b;
-    @BindView(R.id.iy04c)
-    RadioButton iy04c;
+    @BindView(R.id.iy0499)
+    RadioButton iy0499;
     @BindView(R.id.iy05a)
     CheckBox iy05a;
     @BindView(R.id.iy05b)
@@ -75,28 +82,26 @@ public class IYCFActivity extends Activity {
     RadioButton iy07a;
     @BindView(R.id.iy07b)
     RadioButton iy07b;
-    @BindView(R.id.iy07c)
-    RadioButton iy07c;
+    @BindView(R.id.iy0799)
+    RadioButton iy0799;
     @BindView(R.id.iy07aa)
     EditText iy07aa;
     @BindView(R.id.iy07bb)
     EditText iy07bb;
     @BindView(R.id.iy07cc)
     EditText iy07cc;
-    @BindView(R.id.iy08)
-    RadioGroup iy08;
     @BindView(R.id.iy08a)
-    RadioButton iy08a;
+    CheckBox iy08a;
     @BindView(R.id.iy08b)
-    RadioButton iy08b;
+    CheckBox iy08b;
     @BindView(R.id.iy08c)
-    RadioButton iy08c;
+    CheckBox iy08c;
     @BindView(R.id.iy08d)
-    RadioButton iy08d;
+    CheckBox iy08d;
     @BindView(R.id.iy08e)
-    RadioButton iy08e;
+    CheckBox iy08e;
     @BindView(R.id.iy0888)
-    RadioButton iy0888;
+    CheckBox iy0888;
     @BindView(R.id.iy08x)
     EditText iy08x;
     @BindView(R.id.iy09)
@@ -137,16 +142,16 @@ public class IYCFActivity extends Activity {
     RadioButton iy013a;
     @BindView(R.id.iy013b)
     RadioButton iy013b;
-    @BindView(R.id.iy013c)
-    RadioButton iy013c;
+    @BindView(R.id.iy01399)
+    RadioButton iy01399;
     @BindView(R.id.iy014)
     RadioGroup iy014;
     @BindView(R.id.iy014a)
     RadioButton iy014a;
     @BindView(R.id.iy014b)
     RadioButton iy014b;
-    @BindView(R.id.iy014c)
-    RadioButton iy014c;
+    @BindView(R.id.iy01499)
+    RadioButton iy01499;
     @BindView(R.id.iy015a)
     CheckBox iy015a;
     @BindView(R.id.iy015b)
@@ -209,29 +214,12 @@ public class IYCFActivity extends Activity {
 
     @BindView(R.id.fldGrpiy014)
     LinearLayout fldGrpiy014;
-
-
-    int rdo_iy02;
-    String var_iy02 = "";
-
-    int rdo_iy04;
-    String var_iy04 = "";
-
-    int rdo_iy07;
-    String var_iy07;
-
-    int rdo_iy08;
-    String var_iy08;
-
-    int rdo_iy09;
-    String var_iy09;
-
-
-    int rdo_iy013;
-    String var_iy013;
-
-    int rdo_iy014;
-    String var_iy014;
+    @BindView(R.id.fldGrpiy016)
+    LinearLayout fldGrpiy016;
+    @BindView(R.id.fldGrpiy017)
+    LinearLayout fldGrpiy017;
+    @BindView(R.id.fldGrpiy08)
+    LinearLayout fldGrpiy08;
 
 
     @Override
@@ -246,7 +234,7 @@ public class IYCFActivity extends Activity {
                 if (iy04a.isChecked()) {
                     fldGrpiy04.setVisibility(View.VISIBLE);
                 } else {
-
+                    fldGrpiy04.setVisibility(View.GONE);
                     iy05a.setChecked(false);
                     iy05b.setChecked(false);
                     iy05c.setChecked(false);
@@ -258,21 +246,20 @@ public class IYCFActivity extends Activity {
                     iy05i.setChecked(false);
                     iy05j.setChecked(false);
                     iy0588.setChecked(false);
+                    iy06d.setText(null);
+                    iy07.clearCheck();
+                    iy07aa.setText(null);
+                    iy07bb.setText(null);
+                    iy07cc.setText(null);
+                    iy08a.setChecked(false);
+                    iy08b.setChecked(false);
+                    iy08c.setChecked(false);
+                    iy08d.setChecked(false);
+                    iy08e.setChecked(false);
+                    iy0888.setChecked(false);
+                    iy08x.setText(null);
 
-                    iy015x.setText(null);
 
-                    iy016m.setText(null);
-                    iy01677.setChecked(false);
-
-                    iy017d.setText(null);
-                    iy017m.setText(null);
-                    iy01788.setChecked(false);
-
-                    iy018d.setText(null);
-                    iy018m.setText(null);
-                    iy01888.setChecked(false);
-
-                    fldGrpiy04.setVisibility(View.GONE);
                 }
             }
         });
@@ -291,33 +278,33 @@ public class IYCFActivity extends Activity {
             }
         });
 
-
         iy07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (iy07b.isChecked()) {
-                    fldGrpiy07.setVisibility(View.VISIBLE);
-                    fldGrpiy08foth.setVisibility(View.GONE);
-                    iy07aa.requestFocus();
-                } else {
-
-                    iy08.clearCheck();
-
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (iy07a.isChecked()) {
+                    fldGrpiy08.setVisibility(View.VISIBLE);
+                    fldGrpiy07.setVisibility(View.GONE);
                     iy07aa.setText(null);
                     iy07bb.setText(null);
                     iy07cc.setText(null);
-
-                    fldGrpiy07.setVisibility(View.GONE);
-                    fldGrpiy08foth.setVisibility(View.GONE);
+                } else {
+                    fldGrpiy08.setVisibility(View.GONE);
+                    iy08a.setChecked(false);
+                    iy08b.setChecked(false);
+                    iy08c.setChecked(false);
+                    iy08d.setChecked(false);
+                    iy08e.setChecked(false);
+                    iy0888.setChecked(false);
+                    iy08x.setText(null);
+                    fldGrpiy07.setVisibility(View.VISIBLE);
                 }
             }
         });
 
-
-        iy08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        iy0888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (iy0888.isChecked()) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
                     fldGrpiy08foth.setVisibility(View.VISIBLE);
                     iy08x.requestFocus();
                 } else {
@@ -326,7 +313,6 @@ public class IYCFActivity extends Activity {
                 }
             }
         });
-
 
         iy09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -439,57 +425,83 @@ public class IYCFActivity extends Activity {
         });
 
 
-        iy01677.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        iy01299.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy01677.isChecked()) {
-                    iy016m.setText(null);
-                    iy016m.setEnabled(false);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    iy012d.setVisibility(View.GONE);
+                    iy012d.setText(null);
+                    iy012h.setVisibility(View.GONE);
+                    iy012h.setText(null);
                 } else {
-                    iy016m.setEnabled(true);
-                    iy016m.requestFocus();
+                    iy012d.setVisibility(View.VISIBLE);
+                    iy012h.setVisibility(View.VISIBLE);
                 }
             }
         });
 
+
+        iy01677.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    iy016m.setVisibility(View.GONE);
+                    iy016m.setText(null);
+                    fldGrpiy016.setVisibility(View.GONE);
+                    iy017d.setText(null);
+                    iy017m.setText(null);
+                    iy01788.setChecked(false);
+                    iy018d.setText(null);
+                    iy018m.setText(null);
+                    iy01888.setChecked(false);
+                } else {
+                    fldGrpiy016.setVisibility(View.VISIBLE);
+                    iy016m.setVisibility(View.VISIBLE);
+
+                }
+            }
+        });
 
         iy01788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy01788.isChecked()) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpiy017.setVisibility(View.GONE);
+                    iy017d.setVisibility(View.GONE);
                     iy017d.setText(null);
                     iy017m.setText(null);
-
-                    iy017d.setEnabled(false);
-                    iy017m.setEnabled(false);
+                    iy017m.setVisibility(View.GONE);
+                    iy018m.setText(null);
+                    iy018d.setText(null);
+                    iy01888.setChecked(false);
                 } else {
-                    iy017d.setEnabled(true);
-                    iy017m.setEnabled(true);
+                    fldGrpiy017.setVisibility(View.VISIBLE);
+                    iy017d.setVisibility(View.VISIBLE);
+                    iy017m.setVisibility(View.VISIBLE);
                 }
             }
         });
-
 
         iy01888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (iy01888.isChecked()) {
-                    iy018d.setText(null);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    iy018m.setVisibility(View.GONE);
+                    iy018d.setVisibility(View.GONE);
                     iy018m.setText(null);
-
-                    iy018d.setEnabled(false);
-                    iy018m.setEnabled(false);
+                    iy018d.setText(null);
                 } else {
-                    iy018d.setEnabled(true);
-                    iy018m.setEnabled(true);
+                    iy018m.setVisibility(View.VISIBLE);
+                    iy018d.setVisibility(View.VISIBLE);
                 }
             }
         });
+
 
 
     }
 
-    @OnClick(R.id.btn_End)
+    @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
        /* if (ValidateForm()) {
@@ -523,7 +535,7 @@ public class IYCFActivity extends Activity {
 
                         finish();
 
-                        startActivity(new Intent(this, AntenatalCareActivity.class));
+                        startActivity(new Intent(this, ChildVaccinationActivity.class));
                     } else {
                         Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
                     }
@@ -537,9 +549,15 @@ public class IYCFActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        //db.updateSD();
+        int updcount = db.updateIycf();
 
-        return true;
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 
@@ -547,28 +565,19 @@ public class IYCFActivity extends Activity {
 
         if (iy01.getText().toString().isEmpty() || iy01.getText().toString() == null) {
             iy01.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy01), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy01), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy01 : empty");
             iy01.requestFocus();
             return false;
         } else {
             iy01.setError(null);
         }
 
-        rdo_iy02 = iy02.getCheckedRadioButtonId();
-
-        switch (rdo_iy02) {
-            case R.id.iy02a:
-                var_iy02 = "1";
-                break;
-            case R.id.iy02b:
-                var_iy02 = "2";
-                break;
-        }
-
-        if (rdo_iy02 == -1) {
+        if (iy02.getCheckedRadioButtonId() == -1) {
             iy02a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy02), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy02), Toast.LENGTH_LONG).show();
             iy02a.requestFocus();
+            Log.d(TAG, "iy02a: empty ");
             return false;
         } else {
             iy02a.setError(null);
@@ -577,7 +586,8 @@ public class IYCFActivity extends Activity {
 
         if (iy03m.getText().toString().isEmpty() || iy03m.getText().toString() == null) {
             iy03m.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy03m: empty ");
             iy03m.requestFocus();
             return false;
         } else {
@@ -585,34 +595,45 @@ public class IYCFActivity extends Activity {
         }
 
 
-        if (iy03d.getText().toString().isEmpty() || iy03d.getText().toString() == null) {
+        /*if (iy03d.getText().toString().isEmpty() || iy03d.getText().toString() == null) {
             iy03d.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy03d: empty ");
             iy03d.requestFocus();
             return false;
         } else {
             iy03d.setError(null);
+        }*/
+
+        if (!iy03m.getText().toString().isEmpty() && iy03m.getText().toString() != null) {
+
+            if (Integer.parseInt(iy03m.getText().toString()) < 0 || Integer.parseInt(iy03m.getText().toString()) > 11) {
+                iy03m.setError("Age in months must be between 0 - 11");
+                iy03m.requestFocus();
+                return false;
+            } else {
+                iy03m.setError(null);
+            }
+
         }
 
+        /*if (!iy03d.getText().toString().isEmpty() && iy03d.getText().toString() != null) {
 
-        rdo_iy04 = iy04.getCheckedRadioButtonId();
+            if (Integer.parseInt(iy03d.getText().toString()) < 0 || Integer.parseInt(iy03d.getText().toString()) > 30) {
+                iy03d.setError("Age in days must be between 0 - 30");
+                iy03d.requestFocus();
+                return false;
+            } else {
+                iy03d.setError(null);
+            }
 
-        switch (rdo_iy04) {
-            case R.id.iy04a:
-                var_iy04 = "1";
-                break;
-            case R.id.iy04b:
-                var_iy04 = "2";
-                break;
-            case R.id.iy04c:
-                var_iy04 = "88";
-                break;
         }
+*/
 
-
-        if (rdo_iy04 == -1) {
+        if (iy04.getCheckedRadioButtonId() == -1) {
             iy04a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy04), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy04), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy04: this data is required ");
             iy04a.requestFocus();
             return false;
         } else {
@@ -620,7 +641,7 @@ public class IYCFActivity extends Activity {
         }
 
 
-        if (var_iy04 == "1") {
+        if (iy04a.isChecked()) {
 
             if (!iy05a.isChecked()
                     && !iy05b.isChecked()
@@ -635,6 +656,7 @@ public class IYCFActivity extends Activity {
                     && !iy0588.isChecked()) {
                 iy05a.setError(getString(R.string.rdoerr));
                 Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy05), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy05: empty ");
                 iy05a.requestFocus();
                 return false;
             } else {
@@ -645,7 +667,8 @@ public class IYCFActivity extends Activity {
             if (iy0588.isChecked()) {
                 if (iy05x.getText().toString().isEmpty() || iy05x.getText().toString() == null) {
                     iy05x.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy05x: empty ");
                     iy05x.requestFocus();
                     return false;
                 } else {
@@ -653,88 +676,66 @@ public class IYCFActivity extends Activity {
                 }
             }
 
-
             if (iy06d.getText().toString().isEmpty() || iy06d.getText().toString() == null) {
                 iy06d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy06d: empty ");
                 iy06d.requestFocus();
                 return false;
             } else {
                 iy06d.setError(null);
             }
 
+            if (!iy06d.getText().toString().isEmpty() && iy06d.getText().toString() != null) {
 
-            rdo_iy07 = iy07.getCheckedRadioButtonId();
+                if (Integer.parseInt(iy06d.getText().toString()) < 0 || Integer.parseInt(iy06d.getText().toString()) > 28) {
+                    iy06d.setError("Must be between 0 - 28");
+                    return false;
+                } else {
+                    iy06d.setError(null);
+                }
 
-            switch (rdo_iy07) {
-                case R.id.iy07a:
-                    var_iy07 = "1";
-                    break;
-                case R.id.iy07b:
-                    var_iy07 = "2";
-                    break;
             }
 
-            if (rdo_iy07 == -1) {
+            if (iy07.getCheckedRadioButtonId() == -1) {
                 iy07a.setError(getString(R.string.rdoerr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy07), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy07a: empty ");
                 iy07a.requestFocus();
                 return false;
             } else {
                 iy07a.setError(null);
             }
 
-
-            if (var_iy07 == "2") {
+            if (iy07b.isChecked()) {
 
                 if (iy07aa.getText().toString().isEmpty() || iy07aa.getText().toString() == null) {
                     iy07aa.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy07a), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy07a), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy07aa: empty ");
                     iy07aa.requestFocus();
                     return false;
                 } else {
                     iy07aa.setError(null);
                 }
+            } else {
 
-
-                rdo_iy08 = iy08.getCheckedRadioButtonId();
-
-                switch (rdo_iy08) {
-                    case R.id.iy08a:
-                        var_iy08 = "1";
-                        break;
-                    case R.id.iy08b:
-                        var_iy08 = "2";
-                        break;
-                    case R.id.iy08c:
-                        var_iy08 = "3";
-                        break;
-                    case R.id.iy08d:
-                        var_iy08 = "4";
-                        break;
-                    case R.id.iy08e:
-                        var_iy08 = "5";
-                        break;
-                    case R.id.iy0888:
-                        var_iy08 = "6";
-                        break;
-                }
-
-                if (rdo_iy08 == -1) {
+                if (!(iy08a.isChecked() || iy08b.isChecked() || iy08c.isChecked() || iy08d.isChecked() || iy0888.isChecked())) {
                     iy08a.setError(getString(R.string.rdoerr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy08a: this data is required ");
                     iy08a.requestFocus();
                     return false;
                 } else {
                     iy08a.setError(null);
                 }
 
-
-                if (var_iy08 == "6") {
+                if (iy0888.isChecked()) {
 
                     if (iy08x.getText().toString().isEmpty() || iy08x.getText().toString() == null) {
                         iy08x.setError(getString(R.string.txterr));
-                        Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                        Log.d(TAG, "iy08x: empty ");
                         iy08x.requestFocus();
                         return false;
                     } else {
@@ -742,28 +743,15 @@ public class IYCFActivity extends Activity {
                     }
 
                 }
-
-
             }
 
-
         }
 
 
-        rdo_iy09 = iy09.getCheckedRadioButtonId();
-
-        switch (rdo_iy09) {
-            case R.id.iy09a:
-                var_iy09 = "1";
-                break;
-            case R.id.iy09b:
-                var_iy09 = "2";
-                break;
-        }
-
-        if (rdo_iy09 == -1) {
+        if (iy09.getCheckedRadioButtonId() == -1) {
             iy09a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy09), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy09), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy09: this data is required");
             iy09a.requestFocus();
             return false;
         } else {
@@ -771,7 +759,7 @@ public class IYCFActivity extends Activity {
         }
 
 
-        if (var_iy09 == "1") {
+        if (iy09a.isChecked()) {
 
             if (!iy010a.isChecked()
                     && !iy010b.isChecked()
@@ -781,7 +769,8 @@ public class IYCFActivity extends Activity {
                     && !iy010f.isChecked()
                     && !iy01088.isChecked()) {
                 iy010a.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy010), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy010), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy010: this data is required ");
                 iy010a.requestFocus();
                 return false;
             } else {
@@ -793,7 +782,8 @@ public class IYCFActivity extends Activity {
 
                 if (iy010x.getText().toString().isEmpty() || iy010x.getText().toString() == null) {
                     iy010x.setError(getString(R.string.txterr));
-                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy010x: empty ");
                     iy010x.requestFocus();
                     return false;
                 } else {
@@ -802,14 +792,10 @@ public class IYCFActivity extends Activity {
 
             }
 
-        }
-
-
-        if (var_iy09 == "1") {
-
             if (iy011d.getText().toString().isEmpty() || iy011d.getText().toString() == null) {
                 iy011d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy011d), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy011d), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy011d: empty ");
                 iy011d.requestFocus();
                 return false;
             } else {
@@ -818,21 +804,49 @@ public class IYCFActivity extends Activity {
 
             if (iy011w.getText().toString().isEmpty() || iy011w.getText().toString() == null) {
                 iy011w.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy011w), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy011w), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy011w: empty ");
                 iy011w.requestFocus();
                 return false;
             } else {
                 iy011w.setError(null);
             }
 
+            if (!iy011d.getText().toString().isEmpty() && iy011d.getText().toString() != null) {
+
+
+                if (Integer.parseInt(iy011d.getText().toString()) < 0 || Integer.parseInt(iy011d.getText().toString()) > 30) {
+                    iy011d.setError("Must be between 0 - 30");
+                    iy011d.requestFocus();
+                    return false;
+                } else {
+                    iy011d.setError(null);
+                }
+
+            }
+
+
+            if (!iy011w.getText().toString().isEmpty() && iy011w.getText().toString() != null) {
+
+
+                if (Integer.parseInt(iy011w.getText().toString()) < 0 || Integer.parseInt(iy011w.getText().toString()) > 4) {
+                    iy011w.setError("Must be between 0 - 4");
+                    iy011w.requestFocus();
+                    return false;
+                } else {
+                    iy011w.setError(null);
+                }
+
+            }
+
         }
 
+        if (!iy01299.isChecked()) {
 
-        if (iy01299.isChecked() == false) {
-
-            if (iy012h.getText().toString().isEmpty() || iy012h.getText().toString() == null) {
+            if (iy012h.getText().toString().isEmpty()) {
                 iy012h.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy012h), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy012h), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy012h: empty ");
                 iy012h.requestFocus();
                 return false;
             } else {
@@ -841,7 +855,8 @@ public class IYCFActivity extends Activity {
 
             if (iy012d.getText().toString().isEmpty() || iy012d.getText().toString() == null) {
                 iy012d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy012d), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy012d), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy012d: empty ");
                 iy012d.requestFocus();
                 return false;
             } else {
@@ -852,24 +867,35 @@ public class IYCFActivity extends Activity {
             iy012d.setText(null);
         }
 
+        if (!iy012d.getText().toString().isEmpty() && iy012d.getText().toString() != null) {
 
-        rdo_iy013 = iy013.getCheckedRadioButtonId();
+            if (Integer.parseInt(iy012d.getText().toString()) < 0 || Integer.parseInt(iy012d.getText().toString()) > 29) {
+                iy012d.setError("Must be between 0 - 29");
+                iy012d.requestFocus();
+                return false;
+            } else {
+                iy012d.setError(null);
+            }
 
-        switch (rdo_iy013) {
-            case R.id.iy013a:
-                var_iy013 = "1";
-                break;
-            case R.id.iy013b:
-                var_iy013 = "2";
-                break;
-            case R.id.iy013c:
-                var_iy013 = "88";
-                break;
         }
 
-        if (rdo_iy013 == -1) {
+
+        if (!iy012h.getText().toString().isEmpty() && iy012h.getText().toString() != null) {
+
+            if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 23) {
+                iy012h.setError("Must be between 0 - 23");
+                iy012h.requestFocus();
+                return false;
+            } else {
+                iy012h.setError(null);
+            }
+
+        }
+
+        if (iy013.getCheckedRadioButtonId() == -1) {
             iy013a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy013), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy013), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy013a: this data is required ");
             iy013a.requestFocus();
             return false;
         } else {
@@ -877,30 +903,18 @@ public class IYCFActivity extends Activity {
         }
 
 
-        rdo_iy014 = iy014.getCheckedRadioButtonId();
-
-        if (rdo_iy014 == -1) {
+        if (iy014.getCheckedRadioButtonId() == -1) {
             iy014a.setError(getString(R.string.rdoerr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy014), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy014), Toast.LENGTH_LONG).show();
+            Log.d(TAG, "iy014: this data is required");
             iy014a.requestFocus();
             return false;
         } else {
             iy014a.setError(null);
         }
 
-        switch (rdo_iy014) {
-            case R.id.iy014a:
-                var_iy014 = "1";
-                break;
-            case R.id.iy014b:
-                var_iy014 = "2";
-                break;
-            case R.id.iy014c:
-                var_iy014 = "88";
-                break;
-        }
 
-        if (var_iy014 == "1") {
+        if (iy014a.isChecked()) {
 
             if (!iy015a.isChecked()
                     && !iy015b.isChecked()
@@ -913,227 +927,156 @@ public class IYCFActivity extends Activity {
                     && !iy015i.isChecked()
                     && !iy01588.isChecked()) {
                 iy015a.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy015), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy015), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy015: this data is required");
                 iy015a.requestFocus();
                 return false;
             } else {
                 iy015a.setError(null);
             }
 
-        }
+            if (iy01588.isChecked()) {
+                if (iy015x.getText().toString().isEmpty() || iy015x.getText().toString() == null) {
+                    iy015x.setError(getString(R.string.txterr));
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy015x: empty ");
+                    iy015x.requestFocus();
+                    return false;
+                } else {
+                    iy015x.setError(null);
+                }
 
-
-        if (iy01588.isChecked()) {
-            if (iy015x.getText().toString().isEmpty() || iy015x.getText().toString() == null) {
-                iy015x.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                iy015x.requestFocus();
-                return false;
-            } else {
-                iy015x.setError(null);
             }
 
         }
 
-
-        if (iy016m.getText().toString().isEmpty() || iy016m.getText().toString() == null) {
-            iy016m.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy016m), Toast.LENGTH_LONG).show();
-            iy016m.requestFocus();
-            return false;
-        } else {
-            iy016m.setError(null);
-        }
-
-        if (iy01677.getText().toString().isEmpty() || iy01677.getText().toString() == null) {
-            iy01677.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy01677), Toast.LENGTH_LONG).show();
-            iy01677.requestFocus();
-            return false;
-        } else {
-            iy01677.setError(null);
-        }
-
-        if (!iy01788.isChecked()) {
-
-            if (iy017d.getText().toString().isEmpty() || iy017d.getText().toString() == null) {
-                iy017d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017d), Toast.LENGTH_LONG).show();
-                iy017d.requestFocus();
-                return false;
-            } else {
-                iy017d.setError(null);
-            }
-
-            if (iy017m.getText().toString().isEmpty() || iy017m.getText().toString() == null) {
-                iy017m.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017m), Toast.LENGTH_LONG).show();
-                iy017m.requestFocus();
-                return false;
-            } else {
-                iy017m.setError(null);
-            }
-
-        } else {
-            iy017d.setText(null);
-            iy017m.setText(null);
-        }
-
-
-        if (!iy01888.isChecked()) {
-            if (iy018d.getText().toString().isEmpty() || iy018d.getText().toString() == null) {
-                iy018d.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018d), Toast.LENGTH_LONG).show();
-                iy018d.requestFocus();
-                return false;
-            } else {
-                iy018d.setError(null);
-            }
-
-            if (iy018m.getText().toString().isEmpty() || iy018m.getText().toString() == null) {
-                iy018m.setError(getString(R.string.txterr));
-                Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018m), Toast.LENGTH_LONG).show();
-                iy018m.requestFocus();
-                return false;
-            } else {
-                iy018m.setError(null);
-            }
-        } else {
-            iy018d.setText(null);
-            iy018m.setText(null);
-        }
-
-        if (!iy03m.getText().toString().isEmpty() && iy03m.getText().toString() != null) {
-
-            if (Integer.parseInt(iy03m.getText().toString()) < 0 || Integer.parseInt(iy03m.getText().toString()) > 11) {
-                iy03m.setError("Age in months must be between 0 - 11");
-                iy03m.requestFocus();
-                return false;
-            }
-
-        }
-
-
-        if (!iy03d.getText().toString().isEmpty() && iy03d.getText().toString() != null) {
-
-            if (Integer.parseInt(iy03d.getText().toString()) < 0 || Integer.parseInt(iy03d.getText().toString()) > 30) {
-                iy03d.setError("Age in days must be between 0 - 30");
-                iy03d.requestFocus();
-                return false;
-            }
-
-        }
-
-
-        if (!iy06d.getText().toString().isEmpty() && iy06d.getText().toString() != null) {
-
-            if (Integer.parseInt(iy06d.getText().toString()) < 0 || Integer.parseInt(iy06d.getText().toString()) > 28) {
-                iy06d.setError("Must be between 0 - 28");
-                iy06d.requestFocus();
-                return false;
-            }
-
-        }
-
-
-        if (!iy011d.getText().toString().isEmpty() && iy011d.getText().toString() != null) {
-
-
-            if (Integer.parseInt(iy011d.getText().toString()) < 0 || Integer.parseInt(iy011d.getText().toString()) > 30) {
-                iy011d.setError("Must be between 0 - 30");
-                iy011d.requestFocus();
-                return false;
-            }
-
-        }
-
-
-        if (!iy011w.getText().toString().isEmpty() && iy011w.getText().toString() != null) {
-
-
-            if (Integer.parseInt(iy011w.getText().toString()) < 0 || Integer.parseInt(iy011w.getText().toString()) > 4) {
-                iy011w.setError("Must be between 0 - 4");
-                iy011w.requestFocus();
-                return false;
-            }
-
-        }
-
-
-        if (!iy012d.getText().toString().isEmpty() && iy012d.getText().toString() != null) {
-
-            if (Integer.parseInt(iy012d.getText().toString()) < 0 || Integer.parseInt(iy012d.getText().toString()) > 30) {
-                iy012d.setError("Must be between 0 - 30");
-                iy012d.requestFocus();
-                return false;
-            }
-
-        }
-
-
-        if (!iy012h.getText().toString().isEmpty() && iy012h.getText().toString() != null) {
-
-            if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 24) {
-                iy012h.setError("Must be between 0 - 24");
-                iy012h.requestFocus();
-                return false;
-            }
-
-        }
-
-
-        if (!iy016m.getText().toString().isEmpty() && iy016m.getText().toString() != null) {
-
-            if (Integer.parseInt(iy016m.getText().toString()) < 0 || Integer.parseInt(iy016m.getText().toString()) > 11) {
-                iy016m.setError("Must be between 0 - 11");
+        if (!iy01677.isChecked()) {
+            if (iy016m.getText().toString().isEmpty() || iy016m.getText().toString() == null) {
+                iy016m.setError(getString(R.string.txterr));
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy016m), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy016m: empty ");
                 iy016m.requestFocus();
                 return false;
+            } else {
+                iy016m.setError(null);
             }
 
-        }
+            if (!iy016m.getText().toString().isEmpty() && iy016m.getText().toString() != null) {
 
+                if (Integer.parseInt(iy016m.getText().toString()) < 0 || Integer.parseInt(iy016m.getText().toString()) > 11) {
+                    iy016m.setError("Must be between 0 - 11");
+                    iy016m.requestFocus();
+                    return false;
+                } else {
+                    iy016m.setError(null);
+                }
 
-        if (iy017d.getText().toString() != "" && iy017d.getText().toString() != null) {
-
-            if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
-                iy017d.setError("Must be between 0 - 30");
-                iy017d.requestFocus();
-                return false;
             }
 
-        }
+            if (!iy01788.isChecked()) {
+
+                if (iy017d.getText().toString().isEmpty() || iy017d.getText().toString() == null
+                        && iy017m.getText().toString().isEmpty() || iy017m.getText().toString() == null) {
+                    iy017d.setError(getString(R.string.txterr));
+                    iy017m.setError(getString(R.string.txterr));
+                    Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy017d), Toast.LENGTH_LONG).show();
+                    iy017d.requestFocus();
+                    return false;
+                } else {
+                    iy017d.setError(null);
+                    iy017m.setError(null);
+                }
+
+                if (Integer.valueOf(iy017d.getText().toString().isEmpty() ? "0" : iy017d.getText().toString()) == 0
+                        && Integer.valueOf(iy017m.getText().toString().isEmpty() ? "0" : iy017m.getText().toString()) == 0) {
+                    Toast.makeText(this, "ERROR(invalid)" + getString(R.string.iy017) + " - " + getString(R.string.iy017m), Toast.LENGTH_SHORT).show();
+                    iy017d.setError("Days and months can not be zero..");
+                    iy017m.setError("Days and months can not be zero..");
+
+                    Log.i(TAG, "iy017: Both can not be zero");
+                    return false;
+                } else {
+                    iy017d.setError(null);
+                    iy017m.setError(null);
+                }
+
+                if (!iy017d.getText().toString().isEmpty() && iy017d.getText().toString() != null) {
+
+                    if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
+                        iy017d.setError("Must be between 0 - 30");
+                        iy017d.requestFocus();
+                        return false;
+                    } else {
+                        iy017d.setError(null);
+                    }
+
+                }
+
+                if (!iy017m.getText().toString().isEmpty() && iy017m.getText().toString() != null) {
+
+                    if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 11) {
+                        iy017m.setError("Must be between 0 - 11");
+                        iy017m.requestFocus();
+                        return false;
+                    } else {
+                        iy017m.setError(null);
+                    }
+
+                }
+
+                if (!iy01888.isChecked()) {
+                    if (iy018d.getText().toString().isEmpty() || iy018d.getText().toString() == null
+                            && iy018m.getText().toString().isEmpty() || iy018m.getText().toString() == null) {
+                        iy018d.setError(getString(R.string.txterr));
+                        iy018m.setError(getString(R.string.txterr));
+                        Toast.makeText(getApplicationContext(), "ERROR(empty): " + getString(R.string.iy018d), Toast.LENGTH_LONG).show();
+                        iy018d.requestFocus();
+                        return false;
+                    } else {
+                        iy018d.setError(null);
+                        iy018m.setError(null);
+                    }
+
+                    if (!iy018d.getText().toString().isEmpty() && iy018d.getText().toString() != null) {
+
+                        if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 30) {
+                            iy018d.setError("Must be between 0 - 30");
+                            iy018d.requestFocus();
+                            return false;
+                        } else {
+                            iy018d.setError(null);
+                        }
+
+                    }
+
+                    if (!iy018m.getText().toString().isEmpty() && iy018m.getText().toString() != null) {
+
+                        if (Integer.parseInt(iy018m.getText().toString()) < 0 || Integer.parseInt(iy018m.getText().toString()) > 11) {
+                            iy018m.setError("Must be between 0 - 11");
+                            iy018m.requestFocus();
+                            return false;
+                        } else {
+                            iy018m.setError(null);
+                        }
+
+                        if (Integer.valueOf(iy018d.getText().toString().isEmpty() ? "0" : iy018d.getText().toString()) == 0
+                                && Integer.valueOf(iy018m.getText().toString().isEmpty() ? "0" : iy018m.getText().toString()) == 0) {
+                            Toast.makeText(this, "ERROR(invalid)" + getString(R.string.iy018) + " - " + getString(R.string.iy03m), Toast.LENGTH_SHORT).show();
+                            iy018d.setError("Days and months can not be zero..");
+                            iy018m.setError("Days and months can not be zero..");
+
+                            Log.i(TAG, "iy018: Both can not be zero");
+                            return false;
+                        } else {
+                            iy018d.setError(null);
+                            iy018m.setError(null);
+                        }
+
+                    }
 
 
-        if (iy017m.getText().toString() != "" && iy017m.getText().toString() != null) {
-
-            if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 11) {
-                iy017m.setError("Must be between 0 - 11");
-                iy017m.requestFocus();
-                return false;
+                }
             }
-
-        }
-
-
-        if (iy018d.getText().toString() != "" && iy018d.getText().toString() != null) {
-
-            if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 30) {
-                iy018d.setError("Must be between 0 - 30");
-                iy018d.requestFocus();
-                return false;
-            }
-
-        }
-
-
-        if (iy018m.getText().toString() != "" && iy018m.getText().toString() != null) {
-
-            if (Integer.parseInt(iy018m.getText().toString()) < 0 || Integer.parseInt(iy018m.getText().toString()) > 11) {
-                iy018m.setError("Must be between 0 - 11");
-                iy018m.requestFocus();
-                return false;
-            }
-
         }
 
         return true;
@@ -1147,37 +1090,10 @@ public class IYCFActivity extends Activity {
         JSONObject js = new JSONObject();
 
         js.put("iy01", iy01.getText().toString());
-        js.put("iy01", iy01.getText().toString());
-        rdo_iy02 = iy02.getCheckedRadioButtonId();
-
-        switch (rdo_iy02) {
-            case R.id.iy02a:
-                var_iy02 = "1";
-                break;
-            case R.id.iy02b:
-                var_iy02 = "2";
-                break;
-        }
-
-        js.put("iy02", var_iy02);
+        js.put("iy02", iy02a.isChecked() ? "1" : iy02b.isChecked() ? "2" : "0");
         js.put("iy03m", iy03m.getText().toString());
         js.put("iy03d", iy03d.getText().toString());
-
-        rdo_iy04 = iy04.getCheckedRadioButtonId();
-
-        switch (rdo_iy04) {
-            case R.id.iy04a:
-                var_iy04 = "1";
-                break;
-            case R.id.iy04b:
-                var_iy04 = "2";
-                break;
-            case R.id.iy04c:
-                var_iy04 = "88";
-                break;
-        }
-
-        js.put("iy04", var_iy04);
+        js.put("iy04", iy04a.isChecked() ? "1" : iy04b.isChecked() ? "2" : iy0499.isChecked() ? "99" : "0");
 
         js.put("iy05a", iy05a.isChecked() ? "1" : "2");
         js.put("iy05b", iy05b.isChecked() ? "1" : "2");
@@ -1190,55 +1106,21 @@ public class IYCFActivity extends Activity {
         js.put("iy05i", iy05i.isChecked() ? "1" : "2");
         js.put("iy05j", iy05j.isChecked() ? "1" : "2");
         js.put("iy0588", iy0588.isChecked() ? "1" : "2");
-
-
         js.put("iy05x", iy05x.getText().toString());
 
         js.put("iy06d", iy06d.getText().toString());
 
-        rdo_iy07 = iy07.getCheckedRadioButtonId();
-
-        switch (rdo_iy07) {
-            case R.id.iy07a:
-                var_iy07 = "1";
-                break;
-            case R.id.iy07b:
-                var_iy07 = "2";
-                break;
-            case R.id.iy07c:
-                var_iy07 = "88";
-                break;
-        }
-
-        js.put("iy07", var_iy07);
+        js.put("iy07", iy07a.isChecked() ? "1" : iy07b.isChecked() ? "2" : iy0799.isChecked() ? "99" : "0");
 
         js.put("iy07aa", iy07aa.getText().toString());
         js.put("iy07bb", iy07bb.getText().toString());
         js.put("iy07cc", iy07cc.getText().toString());
 
 
-        js.put("iy08a", iy08a.isChecked() ? "1" : "2");
-        js.put("iy08b", iy08b.isChecked() ? "1" : "2");
-        js.put("iy08c", iy08c.isChecked() ? "1" : "2");
-        js.put("iy08d", iy08d.isChecked() ? "1" : "2");
-        js.put("iy08e", iy08e.isChecked() ? "1" : "2");
-        js.put("iy0888", iy0888.isChecked() ? "1" : "2");
-
-
+        js.put("iy08a", iy08a.isChecked() ? "1" : iy08b.isChecked() ? "2" : iy08c.isChecked() ? "3" : iy08d.isChecked() ? "4" : iy08e.isChecked() ? "5" : iy0888.isChecked() ? "88" : "0");
         js.put("iy08x", iy08x.getText().toString());
 
-        rdo_iy09 = iy09.getCheckedRadioButtonId();
-
-        switch (rdo_iy09) {
-            case R.id.iy09a:
-                var_iy09 = "1";
-                break;
-            case R.id.iy09b:
-                var_iy09 = "2";
-                break;
-        }
-
-        js.put("iy09", var_iy09);
+        js.put("iy09", iy09a.isChecked() ? "1" : iy09b.isChecked() ? "2" : "0");
 
         js.put("iy010a", iy010a.isChecked() ? "1" : "2");
         js.put("iy010b", iy010b.isChecked() ? "1" : "2");
@@ -1247,7 +1129,6 @@ public class IYCFActivity extends Activity {
         js.put("iy010e", iy010e.isChecked() ? "1" : "2");
         js.put("iy010f", iy010f.isChecked() ? "1" : "2");
         js.put("iy01088", iy01088.isChecked() ? "1" : "2");
-
         js.put("iy010x", iy010x.getText().toString());
 
 
@@ -1255,40 +1136,10 @@ public class IYCFActivity extends Activity {
         js.put("iy011w", iy011w.getText().toString());
         js.put("iy012h", iy012h.getText().toString());
         js.put("iy012d", iy012d.getText().toString());
-        js.put("iy01299", iy01299.isChecked() ? "88" : "");
+        js.put("iy01299", iy01299.isChecked() ? "1" : "2");
 
-        rdo_iy013 = iy013.getCheckedRadioButtonId();
-
-        switch (rdo_iy013) {
-            case R.id.iy013a:
-                var_iy013 = "1";
-                break;
-            case R.id.iy013b:
-                var_iy013 = "2";
-                break;
-            case R.id.iy013c:
-                var_iy013 = "88";
-                break;
-        }
-
-        js.put("iy013", var_iy013);
-
-
-        rdo_iy014 = iy014.getCheckedRadioButtonId();
-
-        switch (rdo_iy014) {
-            case R.id.iy014a:
-                var_iy014 = "1";
-                break;
-            case R.id.iy014b:
-                var_iy014 = "2";
-                break;
-            case R.id.iy014c:
-                var_iy014 = "88";
-                break;
-        }
-
-        js.put("iy014", var_iy014);
+        js.put("iy013", iy013a.isChecked() ? "a" : iy013b.isChecked() ? "b" : iy01399.isChecked() ? "99" : "0");
+        js.put("iy014", iy014a.isChecked() ? "a" : iy014b.isChecked() ? "b" : iy01499.isChecked() ? "99" : "0");
 
         js.put("iy015a", iy015a.isChecked() ? "1" : "2");
         js.put("iy015b", iy015b.isChecked() ? "1" : "2");
@@ -1300,20 +1151,20 @@ public class IYCFActivity extends Activity {
         js.put("iy015h", iy015h.isChecked() ? "1" : "2");
         js.put("iy015i", iy015i.isChecked() ? "1" : "2");
         js.put("iy01588", iy01588.isChecked() ? "1" : "2");
-
-
         js.put("iy015x", iy015x.getText().toString());
 
         js.put("iy016m", iy016m.getText().toString());
-        js.put("iy01677", iy01677.getText().toString());
+        js.put("iy01677", iy01677.isChecked() ? "1" : "2");
 
         js.put("iy017d", iy017d.getText().toString());
         js.put("iy017m", iy017m.getText().toString());
-        js.put("iy01788", iy01788.isChecked() ? "88" : "");
+        js.put("iy01788", iy01788.isChecked() ? "1" : "2");
 
         js.put("iy018d", iy018d.getText().toString());
         js.put("iy018m", iy018m.getText().toString());
-        js.put("iy01888", iy01888.isChecked() ? "88" : "");
+        js.put("iy01888", iy01888.isChecked() ? "1" : "2");
+
+        AppMain.fc.setIycf(String.valueOf(js));
 
         return true;
     }
