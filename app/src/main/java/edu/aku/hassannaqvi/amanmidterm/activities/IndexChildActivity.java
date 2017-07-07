@@ -24,9 +24,9 @@ import java.text.SimpleDateFormat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 public class IndexChildActivity extends Activity {
 
@@ -282,9 +282,9 @@ public class IndexChildActivity extends Activity {
         return true;
     }
 
-    /*@Override
+    @Override
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "Back Button NOT Allowed!", Toast.LENGTH_SHORT).show();
 
-    }*/
+    }
 }

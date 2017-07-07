@@ -806,6 +806,11 @@ public class AmanInfoActivity extends Activity {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
+
 
 }
 
