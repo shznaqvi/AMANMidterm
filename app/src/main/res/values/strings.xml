@@ -33,6 +33,18 @@
     <string name="endForm">اختتام</string>
     <string name="digits">1234567890.,+=-qwertyuiopasdfghjklzxcvbnm ?%#@!&amp;QWERTYUIOPASDFGHJKLZXCVBNM</string>
 
+    <string name="occupation01"> ڈاکٹر، انجینیئر، اکائونٹنٹ، مینیجر </string>
+    <string name="occupation02">کلرک  </string>
+    <string name="occupation03"> سیلزمین </string>
+    <string name="occupation04"> تربیت یافتہ مزدور </string>
+    <string name="occupation05"> غیر تربیت یافتہ مزدور </string>
+    <string name="occupation06"> زمین کی ملکیت کے بغیر کاشتکار </string>
+    <string name="occupation07"> زمیندار </string>
+    <string name="occupation08"> کاروبار </string>
+    <string name="occupation09"> دکان </string>
+    <string name="occupation10"> بے روزگار </string>
+    <string name="occupation11"> ریٹائرڈ </string>
+    <string name="occupation12"> گھریلو خاتون </string>
 
     <string name="mnfrmno"> ڈی ایم یو سیریل نمبر </string>
     <string name="mnsid"> تحقیقی شناخت نمبر </string>

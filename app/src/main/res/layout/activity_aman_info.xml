@@ -210,11 +210,110 @@
                 android:text="@string/bib05"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <EditText
+            <RadioGroup
                 android:id="@+id/bib05"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/bib0501"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation01" />
+
+                <RadioButton
+                    android:id="@+id/bib0502"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation02" />
+
+                <RadioButton
+                    android:id="@+id/bib0503"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation03" />
+
+                <RadioButton
+                    android:id="@+id/bib0504"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation04" />
+
+                <RadioButton
+                    android:id="@+id/bib0505"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation05" />
+
+                <RadioButton
+                    android:id="@+id/bib0506"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation06" />
+
+                <RadioButton
+                    android:id="@+id/bib0507"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation07" />
+
+                <RadioButton
+                    android:id="@+id/bib0508"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation08" />
+
+                <RadioButton
+                    android:id="@+id/bib0509"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation09" />
+
+                <RadioButton
+                    android:id="@+id/bib0510"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation10" />
+
+                <RadioButton
+                    android:id="@+id/bib0511"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation11" />
+
+                <RadioButton
+                    android:id="@+id/bib0512"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation12" />
+
+                <RadioButton
+                    android:id="@+id/bib0596"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/other" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/bib0596x"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bib05" />
+                android:hint="@string/other"
+                android:visibility="gone" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -257,7 +356,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/female"
-                    android:visibility="invisible" />
+                    android:visibility="gone" />
 
             </RadioGroup>
 
@@ -298,11 +397,110 @@
                 android:text="@string/bib10"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <EditText
+            <RadioGroup
                 android:id="@+id/bib10"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/bib1001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation01" />
+
+                <RadioButton
+                    android:id="@+id/bib1002"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation02" />
+
+                <RadioButton
+                    android:id="@+id/bib1003"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation03" />
+
+                <RadioButton
+                    android:id="@+id/bib1004"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation04" />
+
+                <RadioButton
+                    android:id="@+id/bib1005"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation05" />
+
+                <RadioButton
+                    android:id="@+id/bib1006"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation06" />
+
+                <RadioButton
+                    android:id="@+id/bib1007"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation07" />
+
+                <RadioButton
+                    android:id="@+id/bib1008"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation08" />
+
+                <RadioButton
+                    android:id="@+id/bib1009"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation09" />
+
+                <RadioButton
+                    android:id="@+id/bib1010"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation10" />
+
+                <RadioButton
+                    android:id="@+id/bib1011"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation11" />
+
+                <RadioButton
+                    android:id="@+id/bib1012"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation12" />
+
+                <RadioButton
+                    android:id="@+id/bib1096"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/other" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/bib1096x"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bib10" />
+                android:hint="@string/other"
+                android:visibility="gone" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -384,12 +582,110 @@
                 android:text="@string/bib15"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <EditText
+            <RadioGroup
                 android:id="@+id/bib15"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/bib15" />
+                android:layout_height="wrap_content">
 
+                <RadioButton
+                    android:id="@+id/bib1501"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation01" />
+
+                <RadioButton
+                    android:id="@+id/bib1502"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation02" />
+
+                <RadioButton
+                    android:id="@+id/bib1503"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation03" />
+
+                <RadioButton
+                    android:id="@+id/bib1504"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation04" />
+
+                <RadioButton
+                    android:id="@+id/bib1505"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation05" />
+
+                <RadioButton
+                    android:id="@+id/bib1506"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation06" />
+
+                <RadioButton
+                    android:id="@+id/bib1507"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation07" />
+
+                <RadioButton
+                    android:id="@+id/bib1508"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation08" />
+
+                <RadioButton
+                    android:id="@+id/bib1509"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation09" />
+
+                <RadioButton
+                    android:id="@+id/bib1510"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation10" />
+
+                <RadioButton
+                    android:id="@+id/bib1511"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation11" />
+
+                <RadioButton
+                    android:id="@+id/bib1512"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/occupation12" />
+
+                <RadioButton
+                    android:id="@+id/bib1596"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/other" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/bib1596x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/other"
+                android:visibility="gone" />
 
             <TextView
                 android:layout_width="match_parent"
