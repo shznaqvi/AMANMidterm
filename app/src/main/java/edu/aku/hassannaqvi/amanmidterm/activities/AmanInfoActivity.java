@@ -10,6 +10,7 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -68,7 +69,35 @@ public class AmanInfoActivity extends Activity {
     @BindView(R.id.bib04)
     EditText bib04;
     @BindView(R.id.bib05)
-    EditText bib05;
+    RadioGroup bib05;
+    @BindView(R.id.bib0501)
+    RadioButton bib0501;
+    @BindView(R.id.bib0502)
+    RadioButton bib0502;
+    @BindView(R.id.bib0503)
+    RadioButton bib0503;
+    @BindView(R.id.bib0504)
+    RadioButton bib0504;
+    @BindView(R.id.bib0505)
+    RadioButton bib0505;
+    @BindView(R.id.bib0506)
+    RadioButton bib0506;
+    @BindView(R.id.bib0507)
+    RadioButton bib0507;
+    @BindView(R.id.bib0508)
+    RadioButton bib0508;
+    @BindView(R.id.bib0509)
+    RadioButton bib0509;
+    @BindView(R.id.bib0510)
+    RadioButton bib0510;
+    @BindView(R.id.bib0511)
+    RadioButton bib0511;
+    @BindView(R.id.bib0512)
+    RadioButton bib0512;
+    @BindView(R.id.bib0596)
+    RadioButton bib0596;
+    @BindView(R.id.bib0596x)
+    EditText bib0596x;
     @BindView(R.id.bib06)
     EditText bib06;
     @BindView(R.id.bib07)
@@ -82,7 +111,35 @@ public class AmanInfoActivity extends Activity {
     @BindView(R.id.bib09)
     EditText bib09;
     @BindView(R.id.bib10)
-    EditText bib10;
+    RadioGroup bib10;
+    @BindView(R.id.bib1001)
+    RadioButton bib1001;
+    @BindView(R.id.bib1002)
+    RadioButton bib1002;
+    @BindView(R.id.bib1003)
+    RadioButton bib1003;
+    @BindView(R.id.bib1004)
+    RadioButton bib1004;
+    @BindView(R.id.bib1005)
+    RadioButton bib1005;
+    @BindView(R.id.bib1006)
+    RadioButton bib1006;
+    @BindView(R.id.bib1007)
+    RadioButton bib1007;
+    @BindView(R.id.bib1008)
+    RadioButton bib1008;
+    @BindView(R.id.bib1009)
+    RadioButton bib1009;
+    @BindView(R.id.bib1010)
+    RadioButton bib1010;
+    @BindView(R.id.bib1011)
+    RadioButton bib1011;
+    @BindView(R.id.bib1012)
+    RadioButton bib1012;
+    @BindView(R.id.bib1096)
+    RadioButton bib1096;
+    @BindView(R.id.bib1096x)
+    EditText bib1096x;
     @BindView(R.id.bib11)
     EditText bib11;
     @BindView(R.id.bib12)
@@ -96,7 +153,35 @@ public class AmanInfoActivity extends Activity {
     @BindView(R.id.bib14)
     EditText bib14;
     @BindView(R.id.bib15)
-    EditText bib15;
+    RadioGroup bib15;
+    @BindView(R.id.bib1501)
+    RadioButton bib1501;
+    @BindView(R.id.bib1502)
+    RadioButton bib1502;
+    @BindView(R.id.bib1503)
+    RadioButton bib1503;
+    @BindView(R.id.bib1504)
+    RadioButton bib1504;
+    @BindView(R.id.bib1505)
+    RadioButton bib1505;
+    @BindView(R.id.bib1506)
+    RadioButton bib1506;
+    @BindView(R.id.bib1507)
+    RadioButton bib1507;
+    @BindView(R.id.bib1508)
+    RadioButton bib1508;
+    @BindView(R.id.bib1509)
+    RadioButton bib1509;
+    @BindView(R.id.bib1510)
+    RadioButton bib1510;
+    @BindView(R.id.bib1511)
+    RadioButton bib1511;
+    @BindView(R.id.bib1512)
+    RadioButton bib1512;
+    @BindView(R.id.bib1596)
+    RadioButton bib1596;
+    @BindView(R.id.bib1596x)
+    EditText bib1596x;
     @BindView(R.id.bib1601)
     EditText bib1601;
     @BindView(R.id.bib1602)
@@ -136,17 +221,20 @@ public class AmanInfoActivity extends Activity {
                     bib02.clearCheck();
                     bib03.setText(null);
                     bib04.setText(null);
-                    bib05.setText(null);
+                    bib05.clearCheck();
+                    bib0596x.setText(null);
                     bib06.setText(null);
                     bib07.clearCheck();
                     bib08.setText(null);
                     bib09.setText(null);
-                    bib10.setText(null);
+                    bib10.clearCheck();
+                    bib1096x.setText(null);
                     bib11.setText(null);
                     bib12.clearCheck();
                     bib13.setText(null);
                     bib14.setText(null);
-                    bib15.setText(null);
+                    bib15.clearCheck();
+                    bib1596x.setText(null);
                     bib1601.setText(null);
                     bib1602.setText(null);
                     bic01.setText(null);
@@ -154,6 +242,42 @@ public class AmanInfoActivity extends Activity {
                     bic03.setText(null);
                     bic04.setText(null);
                     bic05.setText(null);
+                }
+            }
+        });
+
+        bib0596.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib0596x.setVisibility(View.VISIBLE);
+                } else {
+                    bib0596x.setVisibility(View.GONE);
+                    bib0596x.setText(null);
+                }
+            }
+        });
+
+        bib1096.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib1096x.setVisibility(View.VISIBLE);
+                } else {
+                    bib1096x.setVisibility(View.GONE);
+                    bib1096x.setText(null);
+                }
+            }
+        });
+
+        bib1596.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib1596x.setVisibility(View.VISIBLE);
+                } else {
+                    bib1596x.setVisibility(View.GONE);
+                    bib1596x.setText(null);
                 }
             }
         });
@@ -227,17 +351,20 @@ public class AmanInfoActivity extends Activity {
         sa.put("bib02", bib0201.isChecked() ? "1" : bib0202.isChecked() ? "2" : "0");
         sa.put("bib03", bib03.getText().toString());
         sa.put("bib04", bib04.getText().toString());
-        sa.put("bib05", bib05.getText().toString());
+        sa.put("bib05", bib0501.isChecked() ? "1" : bib0502.isChecked() ? "2" : bib0503.isChecked() ? "3" : bib0504.isChecked() ? "4" : bib0505.isChecked() ? "5" : bib0506.isChecked() ? "6" : bib0507.isChecked() ? "7" : bib0508.isChecked() ? "8" : bib0509.isChecked() ? "9" : bib0510.isChecked() ? "10" : bib0511.isChecked() ? "11" : bib0512.isChecked() ? "12" : bib0596.isChecked() ? "96" : "0");
+        sa.put("bib0596x", bib0596x.getText().toString());
         sa.put("bib06", bib06.getText().toString());
         sa.put("bib07", bib0701.isChecked() ? "1" : bib0702.isChecked() ? "2" : "0");
         sa.put("bib08", bib08.getText().toString());
         sa.put("bib09", bib09.getText().toString());
-        sa.put("bib10", bib10.getText().toString());
+        sa.put("bib10", bib1001.isChecked() ? "1" : bib1002.isChecked() ? "2" : bib1003.isChecked() ? "3" : bib0504.isChecked() ? "4" : bib1005.isChecked() ? "5" : bib1006.isChecked() ? "6" : bib1007.isChecked() ? "7" : bib1008.isChecked() ? "8" : bib1009.isChecked() ? "9" : bib1010.isChecked() ? "10" : bib1011.isChecked() ? "11" : bib1012.isChecked() ? "12" : bib1096.isChecked() ? "96" : "0");
+        sa.put("bib1096x", bib1096x.getText().toString());
         sa.put("bib11", bib11.getText().toString());
         sa.put("bib12", bib1201.isChecked() ? "1" : bib1202.isChecked() ? "2" : "0");
         sa.put("bib13", bib13.getText().toString());
         sa.put("bib14", bib14.getText().toString());
-        sa.put("bib15", bib15.getText().toString());
+        sa.put("bib15", bib1501.isChecked() ? "1" : bib1502.isChecked() ? "2" : bib1503.isChecked() ? "3" : bib1504.isChecked() ? "4" : bib1505.isChecked() ? "5" : bib1506.isChecked() ? "6" : bib1507.isChecked() ? "7" : bib1508.isChecked() ? "8" : bib1509.isChecked() ? "9" : bib1510.isChecked() ? "10" : bib1511.isChecked() ? "11" : bib1512.isChecked() ? "12" : bib1596.isChecked() ? "96" : "0");
+        sa.put("bib15", bib1596x.getText().toString());
         sa.put("bib1601", bib1601.getText().toString());
         sa.put("bib1602", bib1602.getText().toString());
         sa.put("bic01", bic01.getText().toString());
@@ -394,15 +521,23 @@ public class AmanInfoActivity extends Activity {
                 bib04.setError(null);
             }
 
-            if (bib05.getText().toString().isEmpty()) {
+            if (bib05.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib05), Toast.LENGTH_LONG).show();
-                bib05.setError("This data is Required!");
+                bib0596.setError("This data is Required!");
                 Log.i(TAG, "bib05: This data is Required!");
                 return false;
             } else {
-                bib05.setError(null);
+                bib0596.setError(null);
             }
 
+            if (bib0596x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib05) + getString(R.string.other), Toast.LENGTH_LONG).show();
+                bib0596x.setError("This data is Required!");
+                Log.i(TAG, "bib0596x: This data is Required!");
+                return false;
+            } else {
+                bib0596x.setError(null);
+            }
 
             if (bib06.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib06), Toast.LENGTH_LONG).show();
@@ -458,13 +593,22 @@ public class AmanInfoActivity extends Activity {
                 bib09.setError(null);
             }
 
-            if (bib10.getText().toString().isEmpty()) {
+            if (bib10.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib10), Toast.LENGTH_LONG).show();
-                bib10.setError("This data is Required!");
+                bib1096.setError("This data is Required!");
                 Log.i(TAG, "bib10: This data is Required!");
                 return false;
             } else {
-                bib10.setError(null);
+                bib1096.setError(null);
+            }
+
+            if (bib1096x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib10) + getString(R.string.other), Toast.LENGTH_LONG).show();
+                bib1096x.setError("This data is Required!");
+                Log.i(TAG, "bib1096x: This data is Required!");
+                return false;
+            } else {
+                bib1096x.setError(null);
             }
 
             if (bib11.getText().toString().isEmpty()) {
@@ -520,13 +664,22 @@ public class AmanInfoActivity extends Activity {
                 bib14.setError(null);
             }
 
-            if (bib15.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib16), Toast.LENGTH_LONG).show();
-                bib15.setError("This data is Required!");
+            if (bib15.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib15), Toast.LENGTH_LONG).show();
+                bib1596.setError("This data is Required!");
                 Log.i(TAG, "bib15: This data is Required!");
                 return false;
             } else {
-                bib15.setError(null);
+                bib1596.setError(null);
+            }
+
+            if (bib1596x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib15) + getString(R.string.other), Toast.LENGTH_LONG).show();
+                bib1596x.setError("This data is Required!");
+                Log.i(TAG, "bib1596x: This data is Required!");
+                return false;
+            } else {
+                bib1596x.setError(null);
             }
 
             if (bib1601.getText().toString().isEmpty()) {

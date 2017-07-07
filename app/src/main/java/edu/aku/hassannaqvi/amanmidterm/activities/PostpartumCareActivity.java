@@ -518,7 +518,9 @@ public class PostpartumCareActivity extends Activity {
                 } else {
                     pc04a.setError(null);
                 }
+
             } else {
+
                 if (!(pc05a.isChecked() || pc05b.isChecked() || pc05c.isChecked() || pc05d.isChecked() || pc05e.isChecked()
                         || pc0288.isChecked())) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05), Toast.LENGTH_LONG).show();
