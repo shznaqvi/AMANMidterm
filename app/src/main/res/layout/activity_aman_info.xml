@@ -163,7 +163,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/male" />
+                    android:text="@string/male"
+                    android:visibility="gone" />
 
                 <RadioButton
                     android:id="@+id/bib0202"

@@ -530,7 +530,7 @@ public class AmanInfoActivity extends Activity {
                 bib0596.setError(null);
             }
 
-            if (bib0596x.getText().toString().isEmpty()) {
+            if (bib0596.isChecked() && bib1096x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib05) + getString(R.string.other), Toast.LENGTH_LONG).show();
                 bib0596x.setError("This data is Required!");
                 Log.i(TAG, "bib0596x: This data is Required!");
@@ -593,23 +593,28 @@ public class AmanInfoActivity extends Activity {
                 bib09.setError(null);
             }
 
+            //=================== Q10==============
             if (bib10.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib10), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.bib10), Toast.LENGTH_SHORT).show();
                 bib1096.setError("This data is Required!");
-                Log.i(TAG, "bib10: This data is Required!");
+
+                Log.i(TAG, "bib10: This Data is Required!");
                 return false;
             } else {
                 bib1096.setError(null);
             }
 
-            if (bib1096x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib10) + getString(R.string.other), Toast.LENGTH_LONG).show();
+            //=================== Q10 Others ==============
+            if (bib1096.isChecked() && bib1096x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.bib10) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 bib1096x.setError("This data is Required!");
-                Log.i(TAG, "bib1096x: This data is Required!");
+
+                Log.i(TAG, "bib1096x: This Data is Required!");
                 return false;
             } else {
                 bib1096x.setError(null);
             }
+
 
             if (bib11.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib11), Toast.LENGTH_LONG).show();
@@ -673,7 +678,7 @@ public class AmanInfoActivity extends Activity {
                 bib1596.setError(null);
             }
 
-            if (bib1596x.getText().toString().isEmpty()) {
+            if (bib1596.isChecked() && bib1596x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib15) + getString(R.string.other), Toast.LENGTH_LONG).show();
                 bib1596x.setError("This data is Required!");
                 Log.i(TAG, "bib1596x: This data is Required!");

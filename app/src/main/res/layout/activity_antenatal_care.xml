@@ -504,7 +504,8 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
                 android:hint="@string/other"
-                android:inputType="text" />
+                android:inputType="text"
+                android:visibility="gone" />
 
 
             <TextView

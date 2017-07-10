@@ -509,28 +509,31 @@ public class PostpartumCareActivity extends Activity {
                 pc03b.setError(null);
             }
 
-            if (!(pc05a.isChecked() || pc05b.isChecked() || pc05c.isChecked() || pc05d.isChecked() || pc05e.isChecked()
-                    || pc0288.isChecked())) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05), Toast.LENGTH_LONG).show();
-                pc0588.setError("This data is Required!");    // Set Error on last radio button
-
-                Log.i(TAG, "pc05: This data is Required!");
-                return false;
-            } else {
-                pc0588.setError(null);
-            }
-
-            if (pc0588.isChecked() && pc0588x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                pc0588x.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "pc0588x: This data is Required!");
-                return false;
-            } else {
-                pc0588x.setError(null);
-            }
-
-
         } else {
+            if (pc03a.isChecked()) {
+                if (!(pc05a.isChecked() || pc05b.isChecked() || pc05c.isChecked() || pc05d.isChecked() || pc05e.isChecked()
+                        || pc0588.isChecked())) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05), Toast.LENGTH_LONG).show();
+                    pc0588.setError("This data is Required!");    // Set Error on last radio button
+
+                    Log.i(TAG, "pc05: This data is Required!");
+                    return false;
+                } else {
+                    pc0588.setError(null);
+                }
+
+
+                if (pc0588.isChecked() && pc0588x.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    pc0588x.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "pc0588x: This data is Required!");
+                    return false;
+                } else {
+                    pc0588x.setError(null);
+                }
+
+            }
+        }
 
             if (pc03b.isChecked()) {
                 if (pc04a.getText().toString().isEmpty() && pc04b.getText().toString().isEmpty() && pc04c.getText().toString().isEmpty()) {
@@ -543,7 +546,7 @@ public class PostpartumCareActivity extends Activity {
                 }
 
             }
-        }
+
         // ===================== Q 5.38 ===========================
         // RadioGroup
         if ((pc06a.getText().toString().isEmpty() || pc06b.getText().toString().isEmpty()) && !pc0699.isChecked()) {
