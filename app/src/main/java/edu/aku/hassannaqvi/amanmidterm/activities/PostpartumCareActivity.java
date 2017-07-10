@@ -509,6 +509,29 @@ public class PostpartumCareActivity extends Activity {
                 pc03b.setError(null);
             }
 
+            if (!(pc05a.isChecked() || pc05b.isChecked() || pc05c.isChecked() || pc05d.isChecked() || pc05e.isChecked()
+                    || pc0288.isChecked())) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05), Toast.LENGTH_LONG).show();
+                pc0588.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "pc05: This data is Required!");
+                return false;
+            } else {
+                pc0588.setError(null);
+            }
+
+            if (pc0588.isChecked() && pc0588x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                pc0588x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "pc0588x: This data is Required!");
+                return false;
+            } else {
+                pc0588x.setError(null);
+            }
+
+
+        } else {
+
             if (pc03b.isChecked()) {
                 if (pc04a.getText().toString().isEmpty() && pc04b.getText().toString().isEmpty() && pc04c.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc04), Toast.LENGTH_LONG).show();
@@ -519,27 +542,6 @@ public class PostpartumCareActivity extends Activity {
                     pc04a.setError(null);
                 }
 
-            } else {
-
-                if (!(pc05a.isChecked() || pc05b.isChecked() || pc05c.isChecked() || pc05d.isChecked() || pc05e.isChecked()
-                        || pc0288.isChecked())) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05), Toast.LENGTH_LONG).show();
-                    pc0588.setError("This data is Required!");    // Set Error on last radio button
-
-                    Log.i(TAG, "pc05: This data is Required!");
-                    return false;
-                } else {
-                    pc0588.setError(null);
-                }
-
-                if (pc0588.isChecked() && pc0588x.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc05) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                    pc0588x.setError("This data is Required!");    // Set Error on last radio button
-                    Log.i(TAG, "pc0588x: This data is Required!");
-                    return false;
-                } else {
-                    pc0588x.setError(null);
-                }
             }
         }
         // ===================== Q 5.38 ===========================
@@ -629,16 +631,6 @@ public class PostpartumCareActivity extends Activity {
                 pc10b.setError(null);
             }
 
-            if (pc11a.getText().toString().isEmpty() && pc11b.getText().toString().isEmpty()
-                    && pc11c.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc11), Toast.LENGTH_LONG).show();
-                pc11a.setError("This data is Required!");    // Set Error on last radio button
-
-                Log.i(TAG, "pc11: This data is Required!");
-                return false;
-            } else {
-                pc11a.setError(null);
-            }
 
 
             if (pc10a.isChecked()) {
@@ -661,12 +653,28 @@ public class PostpartumCareActivity extends Activity {
                 } else {
                     pc1288x.setError(null);
                 }
+            } else {
+                if (pc11a.getText().toString().isEmpty() && pc11b.getText().toString().isEmpty()
+                        && pc11c.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc11), Toast.LENGTH_LONG).show();
+                    pc11a.setError("This data is Required!");    // Set Error on last radio button
+
+                    Log.i(TAG, "pc11: This data is Required!");
+                    return false;
+                } else {
+                    pc11a.setError(null);
+                }
             }
 
 
 
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
 

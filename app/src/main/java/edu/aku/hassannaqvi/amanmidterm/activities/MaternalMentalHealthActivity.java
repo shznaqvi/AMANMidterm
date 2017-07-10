@@ -14,9 +14,9 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 
 public class MaternalMentalHealthActivity extends Activity {
@@ -471,5 +471,10 @@ public class MaternalMentalHealthActivity extends Activity {
 
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }
