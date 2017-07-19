@@ -21,6 +21,8 @@ import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract.UsersTable;
+import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract.*;
 
 /**
  * Created by hassan.naqvi on 10/29/2016.
@@ -28,6 +30,14 @@ import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract.UsersTable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    public static final String SQL_CREATE_CHWS = "CREATE TABLE " + communityWorker.TABLE_NAME + "("
+            + communityWorker.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + communityWorker.COLUMN_ACHWCODE + " TEXT,"
+            + communityWorker.COLUMN_ACHWNAME + " TEXT,"
+            + communityWorker.COLUMN_PARACODE + " TEXT,"
+            + communityWorker.COLUMN_PARANAME + " TEXT,"
+            + communityWorker.COLUMN_HHTO + " TEXT,"
+            + communityWorker.COLUMN_HHFROM + " TEXT );";
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersTable.TABLE_NAME + "("
             + UsersTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + UsersTable.COLUMN_NAME_USERNAME + " TEXT,"
@@ -79,6 +89,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " );";
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsContract.FormsTable.TABLE_NAME;
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
+    private static final String SQL_DELETE_CHWS = "DROP TABLE IF EXISTS " + communityWorker.TABLE_NAME;
 
     public static String DB_FORM_ID;
     public static String DB_IMS_ID;
@@ -96,14 +107,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_FORMS);
         db.execSQL(SQL_CREATE_USERS);
-
+        db.execSQL(SQL_CREATE_CHWS);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(SQL_DELETE_FORMS);
         db.execSQL(SQL_DELETE_USERS);
-
+        db.execSQL(SQL_DELETE_CHWS);
         onCreate(db);
     }
 
@@ -401,6 +412,96 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return formList;
     }
 
+    public Collection<CommunityWorkerContract> getAllParas() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                communityWorker.COLUMN_PARACODE,
+                communityWorker.COLUMN_PARANAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = null;
+
+        Collection<CommunityWorkerContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    true,
+                    communityWorker.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    communityWorker.COLUMN_PARACODE,
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                CommunityWorkerContract dc = new CommunityWorkerContract();
+                allDC.add(dc.HydratePara(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+    public Collection<CommunityWorkerContract> getAllACHWS(String paraCode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                communityWorker.COLUMN_ID,
+                communityWorker.COLUMN_ACHWCODE,
+                communityWorker.COLUMN_ACHWNAME,
+                communityWorker.COLUMN_PARACODE,
+                communityWorker.COLUMN_PARANAME,
+                communityWorker.COLUMN_HHTO,
+                communityWorker.COLUMN_HHFROM
+        };
+
+        String whereClause = communityWorker.COLUMN_PARACODE + " = ?";
+        String[] whereArgs = {paraCode};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                communityWorker.COLUMN_ID + " ASC";
+
+        Collection<CommunityWorkerContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    communityWorker.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                CommunityWorkerContract dc = new CommunityWorkerContract();
+                allDC.add(dc.HydrateACHW(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
     public int updateEnd() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -479,6 +580,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } catch (Exception e) {
         }
         return userList;
+    }
+
+    public void syncCHWS(JSONArray CHWSlist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(communityWorker.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = CHWSlist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                CommunityWorkerContract fp = new CommunityWorkerContract();
+                fp.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(communityWorker.COLUMN_ACHWCODE, fp.getAchwcode());
+                values.put(communityWorker.COLUMN_ACHWNAME, fp.getAchwname());
+                values.put(communityWorker.COLUMN_PARACODE, fp.getParacode());
+                values.put(communityWorker.COLUMN_PARANAME, fp.getParaname());
+                values.put(communityWorker.COLUMN_HHTO, fp.getHhto());
+                values.put(communityWorker.COLUMN_HHFROM, fp.getHhfrom());
+
+                db.insert(communityWorker.TABLE_NAME, null, values);
+            }
+
+
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
     }
 
     public boolean Login(String username, String password) throws SQLException {
@@ -683,6 +814,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
+
     public int updateMaternalMentalHealth() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -718,7 +850,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
-
 
 
 }

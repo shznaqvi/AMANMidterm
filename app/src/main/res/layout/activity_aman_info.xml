@@ -34,7 +34,7 @@
             android:background="@color/colorAccent" />
 
 
-        <TextView
+<!--        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -46,8 +46,8 @@
             android:id="@+id/biuc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="1234567890--qwertyuiopasdfghjklzxcvbnm"
-            android:hint="@string/biuc" />
+            android:digits="1234567890&#45;&#45;qwertyuiopasdfghjklzxcvbnm"
+            android:hint="@string/biuc" />-->
 
         <TextView
             android:layout_width="match_parent"
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/biHH"
             android:inputType="number"
-            android:maxLength="11" />
+            android:maxLength="4" />
 
         <TextView
             android:layout_width="match_parent"
@@ -814,6 +814,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:text="@string/endForm"
+            android:visibility="gone"
             android:textColor="#000" />
     </LinearLayout>
 

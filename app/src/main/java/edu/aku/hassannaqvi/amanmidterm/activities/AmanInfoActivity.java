@@ -40,8 +40,8 @@ public class AmanInfoActivity extends Activity {
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
-    @BindView(R.id.biuc)
-    EditText biuc;
+    /*    @BindView(R.id.biuc)
+        EditText biuc;*/
     @BindView(R.id.biPara)
     EditText biPara;
     @BindView(R.id.biACHW)
@@ -198,6 +198,8 @@ public class AmanInfoActivity extends Activity {
     EditText bic05;
     @BindView(R.id.btnNext)
     Button btnNext;
+    @BindView(R.id.btnEnd)
+    Button btnEnd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -205,6 +207,11 @@ public class AmanInfoActivity extends Activity {
         setContentView(R.layout.activity_aman_info);
         ButterKnife.bind(this);
 
+        biPara.setText(AppMain.selectedCHW.getParaname());
+        biACHW.setText(AppMain.selectedCHW.getAchwname());
+
+        biPara.setEnabled(false);
+        biACHW.setEnabled(false);
 
         ///================ Q3 Skip pattern================
 
@@ -214,9 +221,11 @@ public class AmanInfoActivity extends Activity {
                 if (bi0101.isChecked()) {
                     fldGrpbi01.setVisibility(View.VISIBLE);
                     btnNext.setVisibility(View.VISIBLE);
+                    btnEnd.setVisibility(View.GONE);
                 } else {
                     fldGrpbi01.setVisibility(View.GONE);
                     btnNext.setVisibility(View.GONE);
+                    btnEnd.setVisibility(View.VISIBLE);
                     bib01.setText(null);
                     bib02.clearCheck();
                     bib03.setText(null);
@@ -342,7 +351,7 @@ public class AmanInfoActivity extends Activity {
 
         JSONObject sa = new JSONObject();
 
-        sa.put("biuc", biuc.getText().toString());
+//        sa.put("biuc", AppMain.selectedCHW.getParacode());
         sa.put("biPara", biPara.getText().toString());
         sa.put("biACHW", biACHW.getText().toString());
         sa.put("biHH", biHH.getText().toString());
@@ -420,14 +429,14 @@ public class AmanInfoActivity extends Activity {
     private boolean formValidation() {
         Toast.makeText(this, "Validating Section A", Toast.LENGTH_SHORT).show();
 
-        if (biuc.getText().toString().isEmpty()) {
+/*        if (biuc.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.biuc), Toast.LENGTH_LONG).show();
             biuc.setError("This data is Required!");
             Log.i(TAG, "biuc: This data is Required!");
             return false;
         } else {
             biuc.setError(null);
-        }
+        }*/
 
         if (biPara.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.biPara), Toast.LENGTH_LONG).show();
@@ -451,6 +460,15 @@ public class AmanInfoActivity extends Activity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.biHH), Toast.LENGTH_LONG).show();
             biHH.setError("This data is Required!");
             Log.i(TAG, "biHH: This data is Required!");
+            return false;
+        } else {
+            biHH.setError(null);
+        }
+
+        if (Integer.valueOf(biHH.getText().toString()) < Integer.parseInt(AppMain.selectedCHW.getHhfrom()) || Integer.valueOf(biHH.getText().toString()) > Integer.parseInt(AppMain.selectedCHW.getHhto())) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.biHH), Toast.LENGTH_SHORT).show();
+            biHH.setError("Invalid: Out of Range!");
+            Log.i(TAG, "biHH: Out of Range!");
             return false;
         } else {
             biHH.setError(null);
@@ -806,16 +824,9 @@ public class AmanInfoActivity extends Activity {
             }
 
 
-
         }
         return true;
     }
-
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
-    }
-
-
 }
+
 

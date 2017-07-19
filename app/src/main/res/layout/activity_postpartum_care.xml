@@ -350,6 +350,13 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/pc07e" />
 
+            <CheckBox
+                android:id="@+id/pc07f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/none" />
+
         </LinearLayout>
 
         <TextView
