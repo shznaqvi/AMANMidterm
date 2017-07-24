@@ -17,8 +17,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract.communityWorker;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract.singleIm;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract.UsersTable;
 
@@ -28,6 +32,14 @@ import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract.UsersTable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    public static final String SQL_CREATE_CHWS = "CREATE TABLE " + communityWorker.TABLE_NAME + "("
+            + communityWorker.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + communityWorker.COLUMN_ACHWCODE + " TEXT,"
+            + communityWorker.COLUMN_ACHWNAME + " TEXT,"
+            + communityWorker.COLUMN_PARACODE + " TEXT,"
+            + communityWorker.COLUMN_PARANAME + " TEXT,"
+            + communityWorker.COLUMN_HHTO + " TEXT,"
+            + communityWorker.COLUMN_HHFROM + " TEXT );";
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersTable.TABLE_NAME + "("
             + UsersTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + UsersTable.COLUMN_NAME_USERNAME + " TEXT,"
@@ -77,8 +89,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_NAME_SYNCED + " TEXT,"
             + FormsTable.COLUMN_NAME_SYNCED_DATE + " TEXT"
             + " );";
+    private static final String SQL_CREATE_IMS = "CREATE TABLE " + singleIm.TABLE_NAME + "("
+            + singleIm.COLUMN_PROJECTNAME + " TEXT," +
+            singleIm.ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            singleIm.COLUMN__ID + " TEXT," +
+            singleIm.COLUMN__UID + " TEXT," +
+            singleIm.COLUMN_USER + " TEXT," +
+            singleIm.COLUMN_CHILDNAME + " TEXT," +
+            singleIm.COLUMN_SCM + " TEXT," +
+            singleIm.COLUMN_GPSLAT + " TEXT," +
+            singleIm.COLUMN_GPSLNG + " TEXT," +
+            singleIm.COLUMN_GPSDT + " TEXT," +
+            singleIm.COLUMN_GPSACC + " TEXT," +
+            singleIm.COLUMN_DEVICEID + " TEXT," +
+            singleIm.COLUMN_DEVICETAGID + " TEXT," +
+            singleIm.COLUMN_SYNCED + " TEXT," +
+            singleIm.COLUMN_SYNCED_DATE + " TEXT" + " );";
+
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsContract.FormsTable.TABLE_NAME;
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
+    private static final String SQL_DELETE_CHWS = "DROP TABLE IF EXISTS " + communityWorker.TABLE_NAME;
+    private static final String SQL_DELETE_IMS = "DROP TABLE IF EXISTS " + singleIm.TABLE_NAME;
 
     public static String DB_FORM_ID;
     public static String DB_IMS_ID;
@@ -96,14 +127,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_FORMS);
         db.execSQL(SQL_CREATE_USERS);
-
+        db.execSQL(SQL_CREATE_CHWS);
+        db.execSQL(SQL_CREATE_IMS);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(SQL_DELETE_FORMS);
         db.execSQL(SQL_DELETE_USERS);
-
+        db.execSQL(SQL_DELETE_CHWS);
+        db.execSQL(SQL_DELETE_IMS);
         onCreate(db);
     }
 
@@ -161,6 +194,56 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+
+    public Long addIM(IMsContract imc) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(singleIm.COLUMN_PROJECTNAME, imc.getProjectName());
+        values.put(singleIm.COLUMN__ID, imc.get_ID());
+        values.put(singleIm.COLUMN__UID, imc.get_UID());
+        values.put(singleIm.COLUMN_USER, imc.getUser());
+        values.put(singleIm.COLUMN_CHILDNAME, imc.getChildName());
+        values.put(singleIm.COLUMN_SCM, imc.getsCM());
+        values.put(singleIm.COLUMN_GPSLAT, imc.getGpsLat());
+        values.put(singleIm.COLUMN_GPSLNG, imc.getGpsLng());
+        values.put(singleIm.COLUMN_GPSDT, imc.getGpsDT());
+        values.put(singleIm.COLUMN_GPSACC, imc.getGpsAcc());
+        values.put(singleIm.COLUMN_DEVICEID, imc.getDeviceID());
+        values.put(singleIm.COLUMN_DEVICETAGID, imc.getDevicetagID());
+        values.put(singleIm.COLUMN_SYNCED, imc.getSynced());
+        values.put(singleIm.COLUMN_SYNCED_DATE, imc.getSynced_date());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                singleIm.TABLE_NAME,
+                singleIm.COLUMN_NAME_NULLABLE,
+                values);
+        DB_FORM_ID = String.valueOf(newRowId);
+        return newRowId;
+    }
+
+    public int updateChildID() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleIm.COLUMN__UID, AppMain.im.get_UID());
+
+// Which row to update, based on the ID
+        String selection = singleIm.COLUMN__ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.im.get_ID())};
+
+        int count = db.update(singleIm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
     public int updateFormID() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -401,6 +484,96 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return formList;
     }
 
+    public Collection<CommunityWorkerContract> getAllParas() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                communityWorker.COLUMN_PARACODE,
+                communityWorker.COLUMN_PARANAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = null;
+
+        Collection<CommunityWorkerContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    true,
+                    communityWorker.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    communityWorker.COLUMN_PARACODE,
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                CommunityWorkerContract dc = new CommunityWorkerContract();
+                allDC.add(dc.HydratePara(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+    public Collection<CommunityWorkerContract> getAllACHWS(String paraCode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                communityWorker.COLUMN_ID,
+                communityWorker.COLUMN_ACHWCODE,
+                communityWorker.COLUMN_ACHWNAME,
+                communityWorker.COLUMN_PARACODE,
+                communityWorker.COLUMN_PARANAME,
+                communityWorker.COLUMN_HHTO,
+                communityWorker.COLUMN_HHFROM
+        };
+
+        String whereClause = communityWorker.COLUMN_PARACODE + " = ?";
+        String[] whereArgs = {paraCode};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                communityWorker.COLUMN_ID + " ASC";
+
+        Collection<CommunityWorkerContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    communityWorker.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                CommunityWorkerContract dc = new CommunityWorkerContract();
+                allDC.add(dc.HydrateACHW(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
     public int updateEnd() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -479,6 +652,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } catch (Exception e) {
         }
         return userList;
+    }
+
+    public void syncCHWS(JSONArray CHWSlist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(communityWorker.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = CHWSlist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                CommunityWorkerContract fp = new CommunityWorkerContract();
+                fp.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(communityWorker.COLUMN_ACHWCODE, fp.getAchwcode());
+                values.put(communityWorker.COLUMN_ACHWNAME, fp.getAchwname());
+                values.put(communityWorker.COLUMN_PARACODE, fp.getParacode());
+                values.put(communityWorker.COLUMN_PARANAME, fp.getParaname());
+                values.put(communityWorker.COLUMN_HHTO, fp.getHhto());
+                values.put(communityWorker.COLUMN_HHFROM, fp.getHhfrom());
+
+                db.insert(communityWorker.TABLE_NAME, null, values);
+            }
+
+
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
     }
 
     public boolean Login(String username, String password) throws SQLException {
@@ -671,18 +874,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, AppMain.fc.getChildMorbidity());
+        values.put(singleIm.COLUMN_SCM, AppMain.im.getsCM());
 
 // Which row to update, based on the ID
-        String selection = FormsContract.FormsTable.ID + " = ?";
-        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+        String selection = IMsContract.singleIm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.im.get_ID())};
 
-        int count = db.update(FormsTable.TABLE_NAME,
+        int count = db.update(singleIm.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
         return count;
     }
+
     public int updateMaternalMentalHealth() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -718,7 +922,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
-
 
 
 }

@@ -76,7 +76,8 @@
         <activity
             android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login"
-            android:windowSoftInputMode="adjustResize" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustPan"/>
         <activity
             android:name=".activities.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

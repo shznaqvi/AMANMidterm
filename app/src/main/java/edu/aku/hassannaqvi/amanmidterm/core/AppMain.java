@@ -11,6 +11,7 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
+import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract;
 
@@ -24,6 +25,14 @@ public class AppMain extends Application {
     //public static final String _IP = "192.168.1.10"; // Test NODE server
     public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
+
+    public static final String _PROJECT_FOLDER = "aman/api/";
+
+    //    public static final String _HOST_URL = "http://" + AppMain._IP + ":" + AppMain._PORT + "/";
+    public static final String _HOST_URL =
+            "http://" + _IP
+                    + ":" + _PORT
+                    + "/" + _PROJECT_FOLDER;
     public static final String _HOST_URL = "http://" + AppMain._IP + ":" + AppMain._PORT + "/Aman/Api";
 
     /*
@@ -59,15 +68,18 @@ public class AppMain extends Application {
     public static int minorArea = -1;
     public static int subArea = -1;
     public static String childName = "TEST";
-    public static int chCount = 0;
+    public static int chCount = 1;
     public static int chTotal = 0;
     public static boolean scanned = false;
     public static FormsContract fc;
     public static IMsContract im;
     public static String mna06a = "";
     public static int outcome = 0;
+    public static CommunityWorkerContract selectedCHW;
     protected LocationManager locationManager;
-    Location location;
+
+//    ALI
+Location location;
 
     @Override
     public void onCreate() {
@@ -149,13 +161,13 @@ public class AppMain extends Application {
 
         // Determine location quality using a combination of timeliness and accuracy
         if (isMoreAccurate) {
-            Toast.makeText(this, "More Accurate Location", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "More Accurate Location", Toast.LENGTH_SHORT).show();
             return true;
         } else if (isNewer && !isLessAccurate) {
-            Toast.makeText(this, "Newer Less Accurate Location", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Newer Less Accurate Location", Toast.LENGTH_SHORT).show();
             return true;
         } else if (isNewer && !isSignificantlyLessAccurate && isFromSameProvider) {
-            Toast.makeText(this, "Newer Significantly Less Accurate Location", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Newer Significantly Less Accurate Location", Toast.LENGTH_SHORT).show();
             return true;
         }
         return false;

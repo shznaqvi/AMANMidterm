@@ -14,14 +14,19 @@ import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.PorterDuff;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -44,8 +49,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.CookieHandler;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -53,9 +60,12 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 import edu.aku.hassannaqvi.amanmidterm.R;
+import edu.aku.hassannaqvi.amanmidterm.get.GetCHWS;
 
 
 /**
@@ -71,27 +81,35 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             "test1234:test1234", "testS12345:testS12345", "bar@example.com:world"
     };
     // District Spinner
-    public ArrayList<String> lables;
-    public ArrayList<String> values;
-    public Map<String, String> valuesnlabels;
+    public ArrayList<String> lablesPara;
+    public ArrayList<String> lablesCHW;
+    public Map<String, String> paraMap;
+    ArrayAdapter<String> dataAdapter;
+    Collection<CommunityWorkerContract> chwList;
+
+
     // UI references.
     @BindView(R.id.login_progress)
     ProgressBar mProgressView;
     @BindView(R.id.login_form)
     ScrollView mLoginFormView;
     @BindView(R.id.email)
-    AutoCompleteTextView mEmailView;
+    EditText mEmailView;
     @BindView(R.id.password)
     EditText mPasswordView;
     @BindView(R.id.txtinstalldate)
     TextView txtinstalldate;
     @BindView(R.id.email_sign_in_button)
     Button mEmailSignInButton;
-    @BindView(R.id.spUC)
-    Spinner spUC;
+    @BindView(R.id.spPara)
+    Spinner spPara;
+    @BindView(R.id.spCHWs)
+    Spinner spCHWs;
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
     String DirectoryName;
+
+    DatabaseHelper db;
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -122,7 +140,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
 
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        mEmailView = (EditText) findViewById(R.id.email);
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -144,110 +162,68 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
 
-                if (!sharedPref.getBoolean("flag", false)) {
-                    editor.putBoolean("flag", true);
-                    editor.commit();
-
-                    dbBackup();
-
+                if (!spPara.getSelectedItem().equals("Select Para!")){
+                    attemptLogin();
+                }else {
+                    Toast.makeText(getApplicationContext(), "Please Sync Data!!", Toast.LENGTH_LONG).show();
                 }
 
             }
         });
 
-        // District Spinner
-        // Populate from District Table
-       /* ArrayList<UCContract> ucList = new ArrayList<UCContract>();
-        ucList = db.getAllUC();*/
+        db =new DatabaseHelper(this);
 
-        // Spinner Drop down elements
-        lables = new ArrayList<String>();
-        lables.add("K. Abdullah");
-        lables.add("Quetta");
-        lables.add("Pishin");
-        lables.add("Mardan/Swabi");
-        lables.add("Town 1 & 2");
-        lables.add("Town 3 & 4");
-        lables.add("K Zone 1");
-        lables.add("K Zone 2");
-        lables.add("K Zone 3");
-        lables.add("Sukkur");
-        lables.add("Larkhana");
-        lables.add("Rawalpindi");
-        lables.add("Lahore");
-        lables.add("Multan");
+        // Populate Para list
+        Collection<CommunityWorkerContract> paraList = db.getAllParas();
 
-        values = new ArrayList<String>();
-        values.add("11");
-        values.add("12");
-        values.add("13");
-        values.add("21");
-        values.add("22");
-        values.add("23");
-        values.add("31");
-        values.add("32");
-        values.add("33");
-        values.add("41");
-        values.add("42");
-        values.add("91");
-        values.add("92");
-        values.add("93");
+        lablesPara = new ArrayList<>();
+        paraMap = new HashMap<>();
 
-
-        // Polulating 'labels' and 'values' from ucList
-        // ==>> OPTIMIZED
-       /* for (UCContract uc : ucList) {
-            labels.add(uc.getUCName);
+         for (CommunityWorkerContract para : paraList) {
+            lablesPara.add(para.getParaname());
+             paraMap.put(para.getParaname(),para.getParacode());
         }
-        for (UCContract uc : ucList) {
-            values.add(uc.getID);
-        }*/
 
-        // ==>> OLD
-        /*for (int i = 0; i < ucList.size(); i++) {
-            labels.add(ucList.get(i).getUCName());
-            values.add(String.valueOf(ucList.get(i).getID()));
+        if(lablesPara.size()==0){
+            lablesPara.add("Select Para!");
+        }
 
-            Log.i("Key - Value:", ucList.get(i).getTownId() + " - " + ucList.get(i).getUCId() + " - " + ucList.get(i).getUCName() + " - " + ucList.get(i).getID());
+        dataAdapter = new ArrayAdapter<>(getApplicationContext(),
+                android.R.layout.simple_spinner_item, lablesPara);
 
-        }*/
-        valuesnlabels = new HashMap<String, String>();
-        valuesnlabels.put("11", "K. Abdullah");
-        valuesnlabels.put("12", "Quetta");
-        valuesnlabels.put("13", "Pishin");
-        valuesnlabels.put("21", "Mardan/Swabi");
-        valuesnlabels.put("22", "Town 1 & 2");
-        valuesnlabels.put("23", "Town 3 & 4");
-        valuesnlabels.put("31", "K Zone 1");
-        valuesnlabels.put("32", "K Zone 2");
-        valuesnlabels.put("33", "K Zone 3");
-        valuesnlabels.put("41", "Sukkur");
-        valuesnlabels.put("42", "Larkhana");
-        valuesnlabels.put("91", "Rawalpindi");
-        valuesnlabels.put("92", "Lahore");
-        valuesnlabels.put("93", "Multan");
-
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, lables);
-
-        // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // attaching data adapter to spinner
-        spUC.setAdapter(dataAdapter);
-        spUC.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-        //spUC.setOnItemSelectedListener(this);
-        spUC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spPara.setAdapter(dataAdapter);
+
+        spPara.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                AppMain.majorArea = Integer.valueOf(values.get(position));
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-                Toast.makeText(LoginActivity.this, values.get(position), Toast.LENGTH_SHORT).show();
+
+                // Populate from CHWS Table
+//                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(android.R.color.holo_orange_dark));
+
+                if(!lablesPara.get(0).contains("Select Para!")) {
+                    chwList = db.getAllACHWS(paraMap.get(spPara.getSelectedItem()));
+
+                    lablesCHW = new ArrayList<>();
+
+                    for (CommunityWorkerContract chw : chwList) {
+                        lablesCHW.add(chw.getAchwname());
+                    }
+                }
+                else {
+                    lablesCHW = new ArrayList<>();
+                    lablesCHW.add("Select ACHW's!");
+                }
+
+                dataAdapter = new ArrayAdapter<>(getApplicationContext(),
+                        android.R.layout.simple_spinner_item, lablesCHW);
+
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                spCHWs.setAdapter(dataAdapter);
+
             }
 
             @Override
@@ -256,12 +232,48 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }
         });
 
+        spCHWs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
+                if(!lablesPara.get(0).contains("Select Para!")) {
+                    List<CommunityWorkerContract> list = new ArrayList(chwList);
+
+                    AppMain.selectedCHW = new CommunityWorkerContract(list, position);
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
     }
 
+
+    @OnClick(R.id.syncData)
+    void onSyncDataClick() {
+        //TODO implement
+
+        // Require permissions INTERNET & ACCESS_NETWORK_STATE
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            new syncData(this).execute();
+
+        } else {
+            Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
     public void dbBackup() {
 
-        sharedPref = getSharedPreferences("psspdatacollection", MODE_PRIVATE);
+        sharedPref = getSharedPreferences("amandatacollection", MODE_PRIVATE);
         editor = sharedPref.edit();
 
         if (sharedPref.getBoolean("flag", false)) {
@@ -274,7 +286,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 editor.commit();
             }
 
-            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "DMU-PSSPDATACOLLECTION");
+            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "DMU-AMANDATACOLLECTION");
             boolean success = true;
             if (!folder.exists()) {
                 success = folder.mkdirs();
@@ -450,7 +462,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             cursor.moveToNext();
         }
 
-        addEmailsToAutoComplete(emails);
+//        addEmailsToAutoComplete(emails);
     }
 
     @Override
@@ -458,13 +470,25 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     }
 
-    private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
-        //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(LoginActivity.this,
-                        android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
+//    private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
+//        //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
+//        ArrayAdapter<String> adapter =
+//                new ArrayAdapter<>(LoginActivity.this,
+//                        android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
+//
+//        mEmailView.setAdapter(adapter);
+//    }
 
-        mEmailView.setAdapter(adapter);
+    @OnClick(R.id.showPassword)
+    void onShowPasswordClick() {
+        //TODO implement
+        if (mPasswordView.getTransformationMethod() == null) {
+            mPasswordView.setTransformationMethod(new PasswordTransformationMethod());
+            mPasswordView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_black_24dp,0,0,0);
+        } else {
+            mPasswordView.setTransformationMethod(null);
+            mPasswordView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_open_black_24dp,0,0,0);
+        }
     }
 
     public void gotoMain(View v) {
@@ -573,5 +597,124 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             showProgress(false);
         }
     }
+
+
+
+    public class syncData extends AsyncTask<String, String, String> {
+
+        private Context mContext;
+
+        public syncData(Context mContext) {
+            this.mContext = mContext;
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(), "Getting ACHWS", Toast.LENGTH_SHORT).show();
+                    new GetCHWS(mContext).execute();
+                    /*Toast.makeText(getApplicationContext(), "Getting Users", Toast.LENGTH_SHORT).show();
+                    new GetUsers(mContext).execute();*/
+                }
+            });
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    // Populate Para list
+                    Collection<CommunityWorkerContract> paraList = db.getAllParas();
+
+                    lablesPara = new ArrayList<>();
+                    paraMap = new HashMap<>();
+
+                    for (CommunityWorkerContract para : paraList) {
+                        lablesPara.add(para.getParaname());
+                        paraMap.put(para.getParaname(),para.getParacode());
+                    }
+
+                    if(lablesPara.size()==0){
+                        lablesPara.add("Select Para!");
+                    }
+
+                    dataAdapter = new ArrayAdapter<>(getApplicationContext(),
+                            android.R.layout.simple_spinner_item, lablesPara);
+
+                    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                    spPara.setAdapter(dataAdapter);
+
+                    spPara.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                            // Populate from CHWS Table
+                            if(!lablesPara.get(0).contains("Select Para!")) {
+                                chwList = db.getAllACHWS(paraMap.get(spPara.getSelectedItem()));
+
+                                lablesCHW = new ArrayList<>();
+
+                                for (CommunityWorkerContract chw : chwList) {
+                                    lablesCHW.add(chw.getAchwname());
+                                }
+                            }
+                            else {
+                                lablesCHW = new ArrayList<>();
+                                lablesCHW.add("Select ACHW's!");
+                            }
+
+                            dataAdapter = new ArrayAdapter<>(getApplicationContext(),
+                                    android.R.layout.simple_spinner_item, lablesCHW);
+
+                            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                            spCHWs.setAdapter(dataAdapter);
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+                    spCHWs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
+                            if(!lablesPara.get(0).contains("Select Para!")) {
+                                List<CommunityWorkerContract> list = new ArrayList(chwList);
+
+                                AppMain.selectedCHW = new CommunityWorkerContract(list, position);
+                            }
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+
+                    editor.putBoolean("flag", true);
+                    editor.commit();
+
+                    dbBackup();
+
+
+                }
+            },1200);
+        }
+    }
+
 }
 
