@@ -83,6 +83,7 @@ public class IMsContract {
     public static abstract class singleIms implements BaseColumns {
 
         public static final String TABLE_NAME = "Ims";
+        public static final String URI = "/syncforms.php";
         public static final String _ID = "id";
         public static final String COLUMN_CHID = "CHID";
         public static final String COLUMN_UID = "UID";
