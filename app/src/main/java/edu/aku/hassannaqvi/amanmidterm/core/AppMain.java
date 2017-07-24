@@ -67,20 +67,18 @@ public class AppMain extends Application {
     public static int minorArea = -1;
     public static int subArea = -1;
     public static String childName = "TEST";
-    public static int chCount = 0;
+    public static int chCount = 1;
     public static int chTotal = 0;
     public static boolean scanned = false;
     public static FormsContract fc;
     public static IMsContract im;
     public static String mna06a = "";
     public static int outcome = 0;
+    public static CommunityWorkerContract selectedCHW;
     protected LocationManager locationManager;
-    Location location;
 
 //    ALI
-
-    public static CommunityWorkerContract selectedCHW;
-
+Location location;
 
     @Override
     public void onCreate() {

@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 
         // Reset working variables
         AppMain.childName = "Test";
-        AppMain.chCount = 0;
+        //AppMain.chCount = 0;
         AppMain.chTotal = 0;
 
         if (AppMain.admin) {

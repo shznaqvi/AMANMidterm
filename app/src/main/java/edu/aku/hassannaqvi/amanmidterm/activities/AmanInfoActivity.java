@@ -308,6 +308,7 @@ public class AmanInfoActivity extends Activity {
 
                 finish();
 
+                //Intent secNext = new Intent(this, ChildMorbidityActivity.class);
                 Intent secNext = new Intent(this, SocioEconomicActivity.class);
                 secNext.putExtra("check", false);
                 startActivity(secNext);
@@ -381,6 +382,8 @@ public class AmanInfoActivity extends Activity {
         sa.put("bic03", bic03.getText().toString());
         sa.put("bic04", bic04.getText().toString());
         sa.put("bic05", bic05.getText().toString());
+
+        AppMain.chTotal = Integer.valueOf(bic05.getText().toString());
 
         AppMain.fc.setBasicInfo(String.valueOf(sa));
         setGPS();

@@ -17,12 +17,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract.communityWorker;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract.singleIm;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract.UsersTable;
-import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract;
-import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract.*;
 
 /**
  * Created by hassan.naqvi on 10/29/2016.
@@ -87,9 +89,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_NAME_SYNCED + " TEXT,"
             + FormsTable.COLUMN_NAME_SYNCED_DATE + " TEXT"
             + " );";
+    private static final String SQL_CREATE_IMS = "CREATE TABLE " + singleIm.TABLE_NAME + "("
+            + singleIm.COLUMN_PROJECTNAME + " TEXT," +
+            singleIm.ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            singleIm.COLUMN__ID + " TEXT," +
+            singleIm.COLUMN__UID + " TEXT," +
+            singleIm.COLUMN_USER + " TEXT," +
+            singleIm.COLUMN_CHILDNAME + " TEXT," +
+            singleIm.COLUMN_SCM + " TEXT," +
+            singleIm.COLUMN_GPSLAT + " TEXT," +
+            singleIm.COLUMN_GPSLNG + " TEXT," +
+            singleIm.COLUMN_GPSDT + " TEXT," +
+            singleIm.COLUMN_GPSACC + " TEXT," +
+            singleIm.COLUMN_DEVICEID + " TEXT," +
+            singleIm.COLUMN_DEVICETAGID + " TEXT," +
+            singleIm.COLUMN_SYNCED + " TEXT," +
+            singleIm.COLUMN_SYNCED_DATE + " TEXT" + " );";
+
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsContract.FormsTable.TABLE_NAME;
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
     private static final String SQL_DELETE_CHWS = "DROP TABLE IF EXISTS " + communityWorker.TABLE_NAME;
+    private static final String SQL_DELETE_IMS = "DROP TABLE IF EXISTS " + singleIm.TABLE_NAME;
 
     public static String DB_FORM_ID;
     public static String DB_IMS_ID;
@@ -108,6 +128,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_FORMS);
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_CHWS);
+        db.execSQL(SQL_CREATE_IMS);
     }
 
     @Override
@@ -115,6 +136,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_FORMS);
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_CHWS);
+        db.execSQL(SQL_DELETE_IMS);
         onCreate(db);
     }
 
@@ -172,6 +194,56 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+
+    public Long addIM(IMsContract imc) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(singleIm.COLUMN_PROJECTNAME, imc.getProjectName());
+        values.put(singleIm.COLUMN__ID, imc.get_ID());
+        values.put(singleIm.COLUMN__UID, imc.get_UID());
+        values.put(singleIm.COLUMN_USER, imc.getUser());
+        values.put(singleIm.COLUMN_CHILDNAME, imc.getChildName());
+        values.put(singleIm.COLUMN_SCM, imc.getsCM());
+        values.put(singleIm.COLUMN_GPSLAT, imc.getGpsLat());
+        values.put(singleIm.COLUMN_GPSLNG, imc.getGpsLng());
+        values.put(singleIm.COLUMN_GPSDT, imc.getGpsDT());
+        values.put(singleIm.COLUMN_GPSACC, imc.getGpsAcc());
+        values.put(singleIm.COLUMN_DEVICEID, imc.getDeviceID());
+        values.put(singleIm.COLUMN_DEVICETAGID, imc.getDevicetagID());
+        values.put(singleIm.COLUMN_SYNCED, imc.getSynced());
+        values.put(singleIm.COLUMN_SYNCED_DATE, imc.getSynced_date());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                singleIm.TABLE_NAME,
+                singleIm.COLUMN_NAME_NULLABLE,
+                values);
+        DB_FORM_ID = String.valueOf(newRowId);
+        return newRowId;
+    }
+
+    public int updateChildID() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleIm.COLUMN__UID, AppMain.im.get_UID());
+
+// Which row to update, based on the ID
+        String selection = singleIm.COLUMN__ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.im.get_ID())};
+
+        int count = db.update(singleIm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
     public int updateFormID() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -802,13 +874,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, AppMain.fc.getChildMorbidity());
+        values.put(singleIm.COLUMN_SCM, AppMain.im.getsCM());
 
 // Which row to update, based on the ID
-        String selection = FormsContract.FormsTable.ID + " = ?";
-        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+        String selection = IMsContract.singleIm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.im.get_ID())};
 
-        int count = db.update(FormsTable.TABLE_NAME,
+        int count = db.update(singleIm.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

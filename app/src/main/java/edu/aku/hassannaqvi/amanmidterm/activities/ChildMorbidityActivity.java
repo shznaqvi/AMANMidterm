@@ -1,9 +1,13 @@
 package edu.aku.hassannaqvi.amanmidterm.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.IdRes;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -22,6 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.amanmidterm.R;
+import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
@@ -31,8 +36,8 @@ public class ChildMorbidityActivity extends Activity {
 
     @BindView(R.id.app_header)
     TextView appHeader;
-    @BindView(R.id.cm01)
-    EditText cm01;
+    @BindView(R.id.count)
+    TextView count;
     @BindView(R.id.cm02)
     EditText cm02;
     @BindView(R.id.cm03)
@@ -125,6 +130,8 @@ public class ChildMorbidityActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_morbidity);
         ButterKnife.bind(this);
+
+        count.setText("Child: " + AppMain.chCount + " out of " + AppMain.chTotal);
 
         cm0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -275,11 +282,20 @@ public class ChildMorbidityActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                finish();
+                if (AppMain.chCount < AppMain.chTotal) {
+                    Intent intent = new Intent(this, ChildMorbidityActivity.class);
+                    AppMain.chCount++;
+                    startActivity(intent);
+                    //count.setText("Child: " + MainApp.mm + "out of " + MainApp.totalChild);
+                } else {
+                    finish();
 
-                Intent secNext = new Intent(this, MaternalMentalHealthActivity.class);
-                secNext.putExtra("check", false);
-                startActivity(secNext);
+                    Intent secNext = new Intent(this, MaternalMentalHealthActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                }
+
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -309,27 +325,44 @@ public class ChildMorbidityActivity extends Activity {
 
 
     private boolean UpdateDB() {
+        Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateChildMorbidity();
+        rowId = db.addIM(AppMain.im);
 
-        if (updcount == 1) {
+        AppMain.im.set_ID(String.valueOf(rowId));
+
+        if (rowId > -1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            AppMain.im.set_UID(
+                    (AppMain.im.getDeviceID() + AppMain.im.get_ID()));
+            db.updateChildID();
+            //Toast.makeText(this, "Current Form No: " + AppMain.fc.getUID(), Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-
-        return false;
+            return false;
         }
     }
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+
+        AppMain.im = new IMsContract();
+
+        AppMain.im.setDevicetagID(sharedPref.getString("tagName", null));
+        AppMain.im.setUser(AppMain.username);
+        AppMain.im.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                Settings.Secure.ANDROID_ID));
+
+        AppMain.im.setChildName(cm02.getText().toString());
+
         JSONObject scm = new JSONObject();
 
-        scm.put("cm01", cm01.getText().toString());
-        scm.put("cm02", cm02.getText().toString());
+        //scm.put("cm01", AppMain.chTotal);
+        //scm.put("cm02", cm02.getText().toString());
         scm.put("cm03", cm03a.isChecked() ? "1" : cm03b.isChecked() ? "2" : "0");
         scm.put("cm04", cm04.getText().toString());
         scm.put("cm05a", cm05a.isChecked() ? "1" : "0");
@@ -363,9 +396,11 @@ public class ChildMorbidityActivity extends Activity {
         scm.put("cm0888x", cm0888x.getText().toString());
         scm.put("cm09", cm09a.isChecked() ? "1" : cm09b.isChecked() ? "2" : cm0977.isChecked() ? "3" : "0");
 
-        AppMain.fc.setChildMorbidity(String.valueOf(scm));
+        AppMain.im.setsCM(String.valueOf(scm));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+
+        setGPS();
 
     }
 
@@ -374,7 +409,7 @@ public class ChildMorbidityActivity extends Activity {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (cm01.getText().toString().isEmpty()) {
+        /*if (cm01.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm01), Toast.LENGTH_LONG).show();
             cm01.setError("This data is Required!");    // Set Error on last radio button
 
@@ -382,7 +417,7 @@ public class ChildMorbidityActivity extends Activity {
             return false;
         } else {
             cm01.setError(null);
-        }
+        }*/
 
         if (cm02.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.cm02), Toast.LENGTH_LONG).show();
@@ -518,6 +553,20 @@ public class ChildMorbidityActivity extends Activity {
     @Override
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
+
+    public void setGPS() {
+        SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+
+        // CONVERTING GPS TIMESTAMP TO DATETIME FORMAT
+        String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+        AppMain.fc.setGpsLat(GPSPref.getString("Latitude", "0"));
+        AppMain.fc.setGpsLng(GPSPref.getString("Longitude", "0"));
+        AppMain.fc.setGpsAcc(GPSPref.getString("Accuracy", "0"));
+        AppMain.fc.setGpsTime(date); // Timestamp is converted to date above
+
+        Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
     }
 
 
