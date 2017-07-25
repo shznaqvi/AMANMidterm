@@ -238,7 +238,6 @@ public class IMsContract {
         public static final String COLUMN_DEVICETAGID = "devicetagid ";
         public static final String COLUMN_SYNCED = "synced ";
         public static final String COLUMN_SYNCED_DATE = "synced_date ";
-        public static final String TABLE_NAME = "Ims";
         public static final String URI = "/syncforms.php";
         public static final String _ID = "id";
         public static final String COLUMN_CHID = "CHID";

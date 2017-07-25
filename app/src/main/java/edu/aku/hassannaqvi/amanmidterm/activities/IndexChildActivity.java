@@ -184,7 +184,7 @@ public class IndexChildActivity extends Activity {
         sb.put("mnb6m", mnb6m.getText().toString());
         sb.put("mnb7", mnb7m.isChecked() ? "1" : "2");
 
-        AppMain.fc.setIndexChild(String.valueOf(sb));
+        //AppMain.fc.setIndexChild(String.valueOf(sb));
 
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

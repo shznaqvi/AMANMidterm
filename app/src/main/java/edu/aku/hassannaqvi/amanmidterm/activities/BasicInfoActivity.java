@@ -27,10 +27,10 @@ import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.amanmidterm.R;
+import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
-import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.TypefaceUtil;
 
 public class BasicInfoActivity extends Activity {
@@ -268,7 +268,7 @@ public class BasicInfoActivity extends Activity {
         AppMain.fc.setMajorArea(String.valueOf(AppMain.majorArea));
         AppMain.fc.setPrimaryUnit(bi4.getText().toString());
         AppMain.fc.setHouseHold(bi5.getText().toString());
-        AppMain.fc.setchildName(childName.isChecked() ? "1" : "2");
+        //AppMain.fc.setchildName(childName.isChecked() ? "1" : "2");
 
         JSONObject sA = new JSONObject();
 

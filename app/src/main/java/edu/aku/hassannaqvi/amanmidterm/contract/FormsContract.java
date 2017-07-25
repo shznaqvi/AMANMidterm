@@ -21,31 +21,37 @@ public class FormsContract {
     private String UID = "";
     private String formDate = ""; // Date
     private String majorArea = "0000"; // Region or District
-    private String hFacility = ""; // HF
-    private String minorArea = ""; // District or Tehsil
+    //private String hFacility = ""; // HF
+    //private String minorArea = ""; // District or Tehsil
     private String primaryUnit = ""; // Cluster - Block - PSU
-    private String secondaryUnit = ""; // LHW - CHW
+    //private String secondaryUnit = ""; // LHW - CHW
     private String houseHold = ""; // HH no.
-    private String childId = ""; // Index Child ID
-    private String childName = ""; // Child Name
+    //private String childId = ""; // Index Child ID
+    //private String childName = ""; // Child Name
     private String iStatus = ""; // Form Status
     private String deviceTag = "";
-    private String antenatalCare = "";
     private String basicInfo = "";
-    private String birthsDeaths = "";
-    private String childHealth = "";
-    private String childMorbidity = "";
-    private String childVaccination = "";
-    private String delivery = "";
-    private String immunization = "";
-    private String indexChild = "";
-    private String kap = "";
-    private String labInfo = "";
-    private String iycf = "";
-    private String maternalMentalHealth = "";
-    private String neonatalHealth = "";
-    private String postpartumCare = "";
     private String socioEconomic = "";
+    private String antenatalCare = "";
+    private String delivery = "";
+    private String postpartumCare = "";
+    private String iycf = "";
+    private String childVaccination = "";
+    private String maternalMentalHealth = "";
+    private String birthsDeaths = "";
+    //private String childHealth = "";
+    //private String childMorbidity = "";
+
+
+    //private String immunization = "";
+    //private String indexChild = "";
+    //private String kap = "";
+    //private String labInfo = "";
+
+
+    //private String neonatalHealth = "";
+
+
     private String gpsLat = "";
     private String gpsLng = "";
     private String gpsTime = "";
@@ -64,29 +70,29 @@ public class FormsContract {
         this.UID = jsonObject.getString(FormsTable.COLUMN_NAME_UID);
         this.formDate = jsonObject.getString(FormsTable.COLUMN_NAME_FORMDATE);
         this.majorArea = jsonObject.getString(FormsTable.COLUMN_NAME_MAJORAREA);
-        this.hFacility = jsonObject.getString(FormsTable.COLUMN_NAME_HFACILITY);
-        this.minorArea = jsonObject.getString(FormsTable.COLUMN_NAME_MINORAREA);
+        //this.hFacility = jsonObject.getString(FormsTable.COLUMN_NAME_HFACILITY);
+        //this.minorArea = jsonObject.getString(FormsTable.COLUMN_NAME_MINORAREA);
         this.primaryUnit = jsonObject.getString(FormsTable.COLUMN_NAME_PRIMARYUNIT);
-        this.secondaryUnit = jsonObject.getString(FormsTable.COLUMN_NAME_SECONDARYUNIT);
+        //this.secondaryUnit = jsonObject.getString(FormsTable.COLUMN_NAME_SECONDARYUNIT);
         this.houseHold = jsonObject.getString(FormsTable.COLUMN_NAME_HOUSEHOLD);
-        this.childId = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDID);
-        this.childName = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDNAME);
+        //this.childId = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDID);
+        //this.childName = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDNAME);
         this.iStatus = jsonObject.getString(FormsTable.COLUMN_NAME_ISTATUS);
         this.deviceTag = jsonObject.getString(FormsTable.COLUMN_NAME_DEVICETAG);
         this.antenatalCare = jsonObject.getString(FormsTable.COLUMN_NAME_ANTENATALCARE);
         this.basicInfo = jsonObject.getString(FormsTable.COLUMN_NAME_BASICINFO);
         this.birthsDeaths = jsonObject.getString(FormsTable.COLUMN_NAME_BIRTHSDEATHS);
-        this.childHealth = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDHEALTH);
-        this.childMorbidity = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDMORBIDITY);
+        //this.childHealth = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDHEALTH);
+        //this.childMorbidity = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDMORBIDITY);
         this.childVaccination = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDVACCINATION);
         this.delivery = jsonObject.getString(FormsTable.COLUMN_NAME_DELIVERY);
-        this.immunization = jsonObject.getString(FormsTable.COLUMN_NAME_IMMUNIZATION);
-        this.indexChild = jsonObject.getString(FormsTable.COLUMN_NAME_INDEXCHILD);
-        this.kap = jsonObject.getString(FormsTable.COLUMN_NAME_KAP);
-        this.labInfo = jsonObject.getString(FormsTable.COLUMN_NAME_LABINFO);
+        //this.immunization = jsonObject.getString(FormsTable.COLUMN_NAME_IMMUNIZATION);
+        //this.indexChild = jsonObject.getString(FormsTable.COLUMN_NAME_INDEXCHILD);
+        //this.kap = jsonObject.getString(FormsTable.COLUMN_NAME_KAP);
+        //this.labInfo = jsonObject.getString(FormsTable.COLUMN_NAME_LABINFO);
         this.iycf = jsonObject.getString(FormsTable.COLUMN_NAME_IYCF);
         this.maternalMentalHealth = jsonObject.getString(FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH);
-        this.neonatalHealth = jsonObject.getString(FormsTable.COLUMN_NAME_NEONATALHEALTH);
+        //this.neonatalHealth = jsonObject.getString(FormsTable.COLUMN_NAME_NEONATALHEALTH);
         this.postpartumCare = jsonObject.getString(FormsTable.COLUMN_NAME_POSTPARTUMCARE);
         this.socioEconomic = jsonObject.getString(FormsTable.COLUMN_NAME_SOCIOECONOMIC);
         this.gpsLat = jsonObject.getString(FormsTable.COLUMN_NAME_GPSLAT);
@@ -147,7 +153,7 @@ public class FormsContract {
         this.majorArea = majorArea;
     }
 
-    public String gethFacility() {
+    /*public String gethFacility() {
         return hFacility;
     }
 
@@ -161,7 +167,7 @@ public class FormsContract {
 
     public void setMinorArea(String minorArea) {
         this.minorArea = minorArea;
-    }
+    }*/
 
     public String getPrimaryUnit() {
         return primaryUnit;
@@ -171,14 +177,14 @@ public class FormsContract {
         this.primaryUnit = primaryUnit;
     }
 
-    public String getSecondaryUnit() {
+    /*public String getSecondaryUnit() {
         return secondaryUnit;
     }
 
     public void setSecondaryUnit(String secondaryUnit) {
         this.secondaryUnit = secondaryUnit;
     }
-
+*/
     public String getHouseHold() {
         return houseHold;
     }
@@ -187,7 +193,7 @@ public class FormsContract {
         this.houseHold = houseHold;
     }
 
-    public String getChildId() {
+    /*public String getChildId() {
         return childId;
     }
 
@@ -201,7 +207,7 @@ public class FormsContract {
 
     public void setchildName(String childName) {
         this.childName = childName;
-    }
+    }*/
 
     public String getiStatus() {
         return iStatus;
@@ -243,7 +249,7 @@ public class FormsContract {
         this.birthsDeaths = birthsDeaths;
     }
 
-    public String getChildHealth() {
+    /*public String getChildHealth() {
         return childHealth;
     }
 
@@ -258,7 +264,7 @@ public class FormsContract {
     public void setChildMorbidity(String childMorbidity) {
         this.childMorbidity = childMorbidity;
     }
-
+*/
     public String getChildVaccination() {
         return childVaccination;
     }
@@ -275,7 +281,7 @@ public class FormsContract {
         this.delivery = delivery;
     }
 
-    public String getImmunization() {
+    /*public String getImmunization() {
         return immunization;
     }
 
@@ -306,7 +312,7 @@ public class FormsContract {
     public void setLabInfo(String labInfo) {
         this.labInfo = labInfo;
     }
-
+*/
     public String getIycf() {
         return iycf;
     }
@@ -323,14 +329,14 @@ public class FormsContract {
         this.maternalMentalHealth = maternalMentalHealth;
     }
 
-    public String getNeonatalHealth() {
+    /*public String getNeonatalHealth() {
         return neonatalHealth;
     }
 
     public void setNeonatalHealth(String neonatalHealth) {
         this.neonatalHealth = neonatalHealth;
     }
-
+*/
     public String getPostpartumCare() {
         return postpartumCare;
     }
@@ -417,29 +423,29 @@ public class FormsContract {
         this.UID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_UID));
         this.formDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_FORMDATE));
         this.majorArea = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_MAJORAREA));
-        this.hFacility = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_HFACILITY));
-        this.minorArea = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_MINORAREA));
+        //this.hFacility = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_HFACILITY));
+        //this.minorArea = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_MINORAREA));
         this.primaryUnit = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_PRIMARYUNIT));
-        this.secondaryUnit = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_SECONDARYUNIT));
+        //this.secondaryUnit = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_SECONDARYUNIT));
         this.houseHold = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_HOUSEHOLD));
-        this.childId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDID));
-        this.childName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDNAME));
+        //this.childId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDID));
+        //this.childName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDNAME));
         this.iStatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_ISTATUS));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_DEVICETAG));
         this.antenatalCare = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_ANTENATALCARE));
         this.basicInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_BASICINFO));
         this.birthsDeaths = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_BIRTHSDEATHS));
-        this.childHealth = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDHEALTH));
-        this.childMorbidity = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDMORBIDITY));
+        //this.childHealth = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDHEALTH));
+        //this.childMorbidity = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDMORBIDITY));
         this.childVaccination = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDVACCINATION));
         this.delivery = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_DELIVERY));
-        this.immunization = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_IMMUNIZATION));
-        this.indexChild = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_INDEXCHILD));
-        this.kap = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_KAP));
-        this.labInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_LABINFO));
+        //this.immunization = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_IMMUNIZATION));
+        //this.indexChild = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_INDEXCHILD));
+        //this.kap = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_KAP));
+        //this.labInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_LABINFO));
         this.iycf = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_IYCF));
         this.maternalMentalHealth = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH));
-        this.neonatalHealth = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_NEONATALHEALTH));
+        //this.neonatalHealth = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_NEONATALHEALTH));
         this.postpartumCare = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_POSTPARTUMCARE));
         this.socioEconomic = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_SOCIOECONOMIC));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_GPSLAT));
@@ -463,30 +469,30 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_NAME_UID, this.UID == null ? JSONObject.NULL : this.UID);
         json.put(FormsTable.COLUMN_NAME_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(FormsTable.COLUMN_NAME_MAJORAREA, this.majorArea == null ? JSONObject.NULL : this.majorArea);
-        json.put(FormsTable.COLUMN_NAME_HFACILITY, this.hFacility == null ? JSONObject.NULL : this.hFacility);
-        json.put(FormsTable.COLUMN_NAME_MINORAREA, this.minorArea == null ? JSONObject.NULL : this.minorArea);
+        //json.put(FormsTable.COLUMN_NAME_HFACILITY, this.hFacility == null ? JSONObject.NULL : this.hFacility);
+        //json.put(FormsTable.COLUMN_NAME_MINORAREA, this.minorArea == null ? JSONObject.NULL : this.minorArea);
         json.put(FormsTable.COLUMN_NAME_PRIMARYUNIT, this.primaryUnit == null ? JSONObject.NULL : this.primaryUnit);
-        json.put(FormsTable.COLUMN_NAME_SECONDARYUNIT, this.secondaryUnit == null ? JSONObject.NULL : this.secondaryUnit);
+        //json.put(FormsTable.COLUMN_NAME_SECONDARYUNIT, this.secondaryUnit == null ? JSONObject.NULL : this.secondaryUnit);
         json.put(FormsTable.COLUMN_NAME_HOUSEHOLD, this.houseHold == null ? JSONObject.NULL : this.houseHold);
-        json.put(FormsTable.COLUMN_NAME_CHILDID, this.childId == null ? JSONObject.NULL : this.childId);
-        json.put(FormsTable.COLUMN_NAME_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
+        //json.put(FormsTable.COLUMN_NAME_CHILDID, this.childId == null ? JSONObject.NULL : this.childId);
+        //json.put(FormsTable.COLUMN_NAME_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
         json.put(FormsTable.COLUMN_NAME_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
         json.put(FormsTable.COLUMN_NAME_DEVICETAG, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
 
         json.put(FormsTable.COLUMN_NAME_ANTENATALCARE, this.antenatalCare == null ? JSONObject.NULL : new JSONObject(this.antenatalCare));
         json.put(FormsTable.COLUMN_NAME_BASICINFO, this.basicInfo == null ? JSONObject.NULL : new JSONObject(this.basicInfo));
         json.put(FormsTable.COLUMN_NAME_BIRTHSDEATHS, this.birthsDeaths == null ? JSONObject.NULL : new JSONObject(this.birthsDeaths));
-        json.put(FormsTable.COLUMN_NAME_CHILDHEALTH, this.childHealth == null ? JSONObject.NULL : new JSONObject(this.childHealth));
-        json.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, this.childMorbidity == null ? JSONObject.NULL : new JSONObject(this.childMorbidity));
+        //json.put(FormsTable.COLUMN_NAME_CHILDHEALTH, this.childHealth == null ? JSONObject.NULL : new JSONObject(this.childHealth));
+        //json.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, this.childMorbidity == null ? JSONObject.NULL : new JSONObject(this.childMorbidity));
         json.put(FormsTable.COLUMN_NAME_CHILDVACCINATION, this.childVaccination == null ? JSONObject.NULL : new JSONObject(this.childVaccination));
         json.put(FormsTable.COLUMN_NAME_DELIVERY, this.delivery == null ? JSONObject.NULL : new JSONObject(this.delivery));
-        json.put(FormsTable.COLUMN_NAME_IMMUNIZATION, this.immunization == null ? JSONObject.NULL : new JSONObject(this.immunization));
-        json.put(FormsTable.COLUMN_NAME_INDEXCHILD, this.indexChild == null ? JSONObject.NULL : new JSONObject(this.indexChild));
-        json.put(FormsTable.COLUMN_NAME_KAP, this.kap == null ? JSONObject.NULL : new JSONObject(this.kap));
-        json.put(FormsTable.COLUMN_NAME_LABINFO, this.labInfo == null ? JSONObject.NULL : new JSONObject(this.labInfo));
+        //json.put(FormsTable.COLUMN_NAME_IMMUNIZATION, this.immunization == null ? JSONObject.NULL : new JSONObject(this.immunization));
+        //json.put(FormsTable.COLUMN_NAME_INDEXCHILD, this.indexChild == null ? JSONObject.NULL : new JSONObject(this.indexChild));
+        //json.put(FormsTable.COLUMN_NAME_KAP, this.kap == null ? JSONObject.NULL : new JSONObject(this.kap));
+        //json.put(FormsTable.COLUMN_NAME_LABINFO, this.labInfo == null ? JSONObject.NULL : new JSONObject(this.labInfo));
         json.put(FormsTable.COLUMN_NAME_IYCF, this.iycf == null ? JSONObject.NULL : new JSONObject(this.iycf));
         json.put(FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH, this.maternalMentalHealth == null ? JSONObject.NULL : new JSONObject(this.maternalMentalHealth));
-        json.put(FormsTable.COLUMN_NAME_NEONATALHEALTH, this.neonatalHealth == null ? JSONObject.NULL : new JSONObject(this.neonatalHealth));
+        //json.put(FormsTable.COLUMN_NAME_NEONATALHEALTH, this.neonatalHealth == null ? JSONObject.NULL : new JSONObject(this.neonatalHealth));
         json.put(FormsTable.COLUMN_NAME_POSTPARTUMCARE, this.postpartumCare == null ? JSONObject.NULL : new JSONObject(this.postpartumCare));
         json.put(FormsTable.COLUMN_NAME_SOCIOECONOMIC, this.socioEconomic == null ? JSONObject.NULL : new JSONObject(this.socioEconomic));
         json.put(FormsTable.COLUMN_NAME_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
@@ -538,31 +544,33 @@ public class FormsContract {
         public static final String COLUMN_NAME_UID = "uid";
         public static final String COLUMN_NAME_FORMDATE = "formdate";
         public static final String COLUMN_NAME_MAJORAREA = "majorarea";
-        public static final String COLUMN_NAME_HFACILITY = "hfacility";
-        public static final String COLUMN_NAME_MINORAREA = "minorarea";
+        //public static final String COLUMN_NAME_HFACILITY = "hfacility";
+        //public static final String COLUMN_NAME_MINORAREA = "minorarea";
         public static final String COLUMN_NAME_PRIMARYUNIT = "primaryunit";
-        public static final String COLUMN_NAME_SECONDARYUNIT = "secondaryunit";
+        //public static final String COLUMN_NAME_SECONDARYUNIT = "secondaryunit";
         public static final String COLUMN_NAME_HOUSEHOLD = "household";
-        public static final String COLUMN_NAME_CHILDID = "childid";
-        public static final String COLUMN_NAME_CHILDNAME = "childname";
+        //public static final String COLUMN_NAME_CHILDID = "childid";
+        //public static final String COLUMN_NAME_CHILDNAME = "childname";
         public static final String COLUMN_NAME_ISTATUS = "istatus";
         public static final String COLUMN_NAME_DEVICETAG = "tagid";
-        public static final String COLUMN_NAME_ANTENATALCARE = "antenatalcare";
         public static final String COLUMN_NAME_BASICINFO = "basicinfo";
-        public static final String COLUMN_NAME_BIRTHSDEATHS = "birthsdeaths";
-        public static final String COLUMN_NAME_CHILDHEALTH = "childhealth";
-        public static final String COLUMN_NAME_CHILDMORBIDITY = "childmorbidity";
-        public static final String COLUMN_NAME_CHILDVACCINATION = "childvaccination";
-        public static final String COLUMN_NAME_DELIVERY = "delivery";
-        public static final String COLUMN_NAME_IMMUNIZATION = "immunization";
-        public static final String COLUMN_NAME_INDEXCHILD = "indexchild";
-        public static final String COLUMN_NAME_KAP = "kap";
-        public static final String COLUMN_NAME_LABINFO = "labinfo";
-        public static final String COLUMN_NAME_IYCF = "iycf";
-        public static final String COLUMN_NAME_MATERNALMENTALHEALTH = "maternalmentalhealth";
-        public static final String COLUMN_NAME_NEONATALHEALTH = "neonatalhealth";
-        public static final String COLUMN_NAME_POSTPARTUMCARE = "postpartumcare";
         public static final String COLUMN_NAME_SOCIOECONOMIC = "socioeconomic";
+        public static final String COLUMN_NAME_ANTENATALCARE = "antenatalcare";
+        public static final String COLUMN_NAME_DELIVERY = "delivery";
+        public static final String COLUMN_NAME_POSTPARTUMCARE = "postpartumcare";
+        public static final String COLUMN_NAME_IYCF = "iycf";
+        public static final String COLUMN_NAME_CHILDVACCINATION = "childvaccination";
+        public static final String COLUMN_NAME_MATERNALMENTALHEALTH = "maternalmentalhealth";
+        public static final String COLUMN_NAME_BIRTHSDEATHS = "birthsdeaths";
+        //public static final String COLUMN_NAME_CHILDHEALTH = "childhealth";
+        //public static final String COLUMN_NAME_CHILDMORBIDITY = "childmorbidity";
+        //public static final String COLUMN_NAME_IMMUNIZATION = "immunization";
+        //public static final String COLUMN_NAME_INDEXCHILD = "indexchild";
+        //public static final String COLUMN_NAME_KAP = "kap";
+        //public static final String COLUMN_NAME_LABINFO = "labinfo";
+        //public static final String COLUMN_NAME_NEONATALHEALTH = "neonatalhealth";
+
+
         public static final String COLUMN_NAME_GPSLAT = "gpslat";
         public static final String COLUMN_NAME_GPSLNG = "gpslng";
         public static final String COLUMN_NAME_GPSTIME = "gpstime";

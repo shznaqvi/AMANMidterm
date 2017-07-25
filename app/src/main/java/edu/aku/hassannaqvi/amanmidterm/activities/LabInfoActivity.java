@@ -20,9 +20,9 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 public class LabInfoActivity extends Activity {
 
@@ -118,7 +118,7 @@ public class LabInfoActivity extends Activity {
         } else {
             sg.put("mngsticker", mngsticker.getText().toString());
         }
-        AppMain.fc.setLabInfo(String.valueOf(sg));
+        //AppMain.fc.setLabInfo(String.valueOf(sg));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

@@ -61,7 +61,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
 
         try {
-            String url = AppMain._HOST_URL + IMsContract.singleIms.URI;
+            String url = AppMain._HOST_URL + IMsContract.singleIm.URI;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {

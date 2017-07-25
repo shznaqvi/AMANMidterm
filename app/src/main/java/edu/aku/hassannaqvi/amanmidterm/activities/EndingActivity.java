@@ -15,8 +15,9 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 import edu.aku.hassannaqvi.amanmidterm.R;
+import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
+import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
 public class EndingActivity extends Activity {
 
@@ -43,7 +44,28 @@ public class EndingActivity extends Activity {
         setContentView(R.layout.activity_ending);
         ButterKnife.bind(this);
 
-        mna7a.setEnabled(getIntent().getBooleanExtra("complete", true));
+        Boolean check = getIntent().getExtras().getBoolean("complete");
+        if (check) {
+            mna7a.setEnabled(true);
+            mna7b.setEnabled(false);
+            mna7c.setEnabled(false);
+            mna7d.setEnabled(false);
+            mna7e.setEnabled(false);
+
+
+        } else {
+            //fldGrpmn0823Reason.setVisibility(View.GONE);
+            mna7a.setEnabled(false);
+            mna7b.setEnabled(true);
+            mna7c.setEnabled(true);
+            mna7d.setEnabled(true);
+            mna7e.setEnabled(true);
+
+
+        }
+
+
+
 
     }
 
@@ -74,9 +96,16 @@ public class EndingActivity extends Activity {
         DatabaseHelper db = new DatabaseHelper(this);
 
 
-        //db.updateSD();
+        int updcount = db.updateEnd();
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
-        return true;
+
     }
 
     private void SaveDraft() throws JSONException {
@@ -85,6 +114,8 @@ public class EndingActivity extends Activity {
         JSONObject sa = new JSONObject();
 
         sa.put("mna7", mna7a.isChecked() ? "1" : mna7b.isChecked() ? "2" : mna7c.isChecked() ? "3" : mna7d.isChecked() ? "4" : mna7e.isChecked() ? "5" : "0");
+
+        AppMain.fc.setiStatus(String.valueOf(sa));
 
     }
 

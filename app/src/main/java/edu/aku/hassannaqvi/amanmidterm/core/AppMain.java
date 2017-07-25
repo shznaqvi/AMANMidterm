@@ -33,7 +33,7 @@ public class AppMain extends Application {
             "http://" + _IP
                     + ":" + _PORT
                     + "/" + _PROJECT_FOLDER;
-    public static final String _HOST_URL = "http://" + AppMain._IP + ":" + AppMain._PORT + "/Aman/Api";
+
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server

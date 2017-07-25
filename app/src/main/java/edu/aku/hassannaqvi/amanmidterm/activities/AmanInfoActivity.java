@@ -343,11 +343,14 @@ public class AmanInfoActivity extends Activity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         AppMain.fc = new FormsContract();
 
         AppMain.fc.setDeviceID(AppMain.deviceId);
         AppMain.fc.setUserName(AppMain.username);
         AppMain.fc.setFormDate(dtToday);
+        AppMain.fc.setHouseHold(biHH.getText().toString());
+        AppMain.fc.setDeviceTag(sharedPref.getString("tagName", null));
 //        AppMain.fc.setMajorArea(String.valueOf(AppMain.majorArea));
 
         JSONObject sa = new JSONObject();

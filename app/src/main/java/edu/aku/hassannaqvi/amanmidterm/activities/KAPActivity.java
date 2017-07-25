@@ -19,9 +19,8 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
-import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 import edu.aku.hassannaqvi.amanmidterm.R;
+import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
 public class KAPActivity extends Activity {
 
@@ -785,7 +784,7 @@ public class KAPActivity extends Activity {
         }
         se.put("mne18x96", mne18x96.getText().toString());
 
-        AppMain.fc.setKap(String.valueOf(se));
+        //AppMain.fc.setKap(String.valueOf(se));
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 

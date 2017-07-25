@@ -56,31 +56,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_NAME_UID + " TEXT,"
             + FormsTable.COLUMN_NAME_FORMDATE + " TEXT,"
             + FormsTable.COLUMN_NAME_MAJORAREA + " TEXT,"
-            + FormsTable.COLUMN_NAME_HFACILITY + " TEXT,"
-            + FormsTable.COLUMN_NAME_MINORAREA + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_HFACILITY + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_MINORAREA + " TEXT,"
             + FormsTable.COLUMN_NAME_PRIMARYUNIT + " TEXT,"
-            + FormsTable.COLUMN_NAME_SECONDARYUNIT + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_SECONDARYUNIT + " TEXT,"
             + FormsTable.COLUMN_NAME_HOUSEHOLD + " TEXT,"
-            + FormsTable.COLUMN_NAME_CHILDID + " TEXT,"
-            + FormsTable.COLUMN_NAME_CHILDNAME + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_CHILDID + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_CHILDNAME + " TEXT,"
             + FormsTable.COLUMN_NAME_ISTATUS + " TEXT,"
             + FormsTable.COLUMN_NAME_DEVICETAG + " TEXT,"
-            + FormsTable.COLUMN_NAME_ANTENATALCARE + " TEXT,"
             + FormsTable.COLUMN_NAME_BASICINFO + " TEXT,"
-            + FormsTable.COLUMN_NAME_BIRTHSDEATHS + " TEXT,"
-            + FormsTable.COLUMN_NAME_CHILDHEALTH + " TEXT,"
-            + FormsTable.COLUMN_NAME_CHILDMORBIDITY + " TEXT,"
-            + FormsTable.COLUMN_NAME_CHILDVACCINATION + " TEXT,"
-            + FormsTable.COLUMN_NAME_DELIVERY + " TEXT,"
-            + FormsTable.COLUMN_NAME_IMMUNIZATION + " TEXT,"
-            + FormsTable.COLUMN_NAME_INDEXCHILD + " TEXT,"
-            + FormsTable.COLUMN_NAME_KAP + " TEXT,"
-            + FormsTable.COLUMN_NAME_LABINFO + " TEXT,"
-            + FormsTable.COLUMN_NAME_IYCF + " TEXT,"
-            + FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH + " TEXT,"
-            + FormsTable.COLUMN_NAME_NEONATALHEALTH + " TEXT,"
-            + FormsTable.COLUMN_NAME_POSTPARTUMCARE + " TEXT,"
             + FormsTable.COLUMN_NAME_SOCIOECONOMIC + " TEXT,"
+            + FormsTable.COLUMN_NAME_ANTENATALCARE + " TEXT,"
+            + FormsTable.COLUMN_NAME_DELIVERY + " TEXT,"
+            + FormsTable.COLUMN_NAME_POSTPARTUMCARE + " TEXT,"
+            + FormsTable.COLUMN_NAME_IYCF + " TEXT,"
+            + FormsTable.COLUMN_NAME_CHILDVACCINATION + " TEXT,"
+            + FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH + " TEXT,"
+            + FormsTable.COLUMN_NAME_BIRTHSDEATHS + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_CHILDHEALTH + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_CHILDMORBIDITY + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_IMMUNIZATION + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_INDEXCHILD + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_KAP + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_LABINFO + " TEXT,"
+            //+ FormsTable.COLUMN_NAME_NEONATALHEALTH + " TEXT,"
+
             + FormsTable.COLUMN_NAME_GPSLAT + " TEXT,"
             + FormsTable.COLUMN_NAME_GPSLNG + " TEXT,"
             + FormsTable.COLUMN_NAME_GPSTIME + " TEXT,"
@@ -153,29 +154,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_UID, fc.getUID());
         values.put(FormsTable.COLUMN_NAME_FORMDATE, fc.getFormDate());
         values.put(FormsTable.COLUMN_NAME_MAJORAREA, fc.getMajorArea());
-        values.put(FormsTable.COLUMN_NAME_HFACILITY, fc.gethFacility());
-        values.put(FormsTable.COLUMN_NAME_MINORAREA, fc.getMinorArea());
+        //values.put(FormsTable.COLUMN_NAME_HFACILITY, fc.gethFacility());
+        //values.put(FormsTable.COLUMN_NAME_MINORAREA, fc.getMinorArea());
         values.put(FormsTable.COLUMN_NAME_PRIMARYUNIT, fc.getProjectName());
-        values.put(FormsTable.COLUMN_NAME_SECONDARYUNIT, fc.getSecondaryUnit());
+        //values.put(FormsTable.COLUMN_NAME_SECONDARYUNIT, fc.getSecondaryUnit());
         values.put(FormsTable.COLUMN_NAME_HOUSEHOLD, fc.getHouseHold());
-        values.put(FormsTable.COLUMN_NAME_CHILDID, fc.getChildId());
-        values.put(FormsTable.COLUMN_NAME_CHILDNAME, fc.getchildName());
+        //values.put(FormsTable.COLUMN_NAME_CHILDID, fc.getChildId());
+        //values.put(FormsTable.COLUMN_NAME_CHILDNAME, fc.getchildName());
         values.put(FormsTable.COLUMN_NAME_ISTATUS, fc.getiStatus());
         values.put(FormsTable.COLUMN_NAME_DEVICETAG, fc.getDeviceTag());
         values.put(FormsTable.COLUMN_NAME_ANTENATALCARE, fc.getAntenatalCare());
         values.put(FormsTable.COLUMN_NAME_BASICINFO, fc.getBasicInfo());
         values.put(FormsTable.COLUMN_NAME_BIRTHSDEATHS, fc.getBirthsDeaths());
-        values.put(FormsTable.COLUMN_NAME_CHILDHEALTH, fc.getChildHealth());
-        values.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, fc.getChildMorbidity());
+        //values.put(FormsTable.COLUMN_NAME_CHILDHEALTH, fc.getChildHealth());
+        //values.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, fc.getChildMorbidity());
         values.put(FormsTable.COLUMN_NAME_CHILDVACCINATION, fc.getChildVaccination());
         values.put(FormsTable.COLUMN_NAME_DELIVERY, fc.getDelivery());
-        values.put(FormsTable.COLUMN_NAME_IMMUNIZATION, fc.getImmunization());
-        values.put(FormsTable.COLUMN_NAME_INDEXCHILD, fc.getIndexChild());
-        values.put(FormsTable.COLUMN_NAME_KAP, fc.getKap());
-        values.put(FormsTable.COLUMN_NAME_LABINFO, fc.getLabInfo());
+        //values.put(FormsTable.COLUMN_NAME_IMMUNIZATION, fc.getImmunization());
+        //values.put(FormsTable.COLUMN_NAME_INDEXCHILD, fc.getIndexChild());
+        //values.put(FormsTable.COLUMN_NAME_KAP, fc.getKap());
+        //values.put(FormsTable.COLUMN_NAME_LABINFO, fc.getLabInfo());
         values.put(FormsTable.COLUMN_NAME_IYCF, fc.getIycf());
         values.put(FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH, fc.getMaternalMentalHealth());
-        values.put(FormsTable.COLUMN_NAME_NEONATALHEALTH, fc.getNeonatalHealth());
+        //values.put(FormsTable.COLUMN_NAME_NEONATALHEALTH, fc.getNeonatalHealth());
         values.put(FormsTable.COLUMN_NAME_POSTPARTUMCARE, fc.getPostpartumCare());
         values.put(FormsTable.COLUMN_NAME_SOCIOECONOMIC, fc.getSocioEconomic());
         values.put(FormsTable.COLUMN_NAME_GPSLAT, fc.getGpsLat());
@@ -293,29 +294,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_NAME_UID,
                 FormsTable.COLUMN_NAME_FORMDATE,
                 FormsTable.COLUMN_NAME_MAJORAREA,
-                FormsTable.COLUMN_NAME_HFACILITY,
-                FormsTable.COLUMN_NAME_MINORAREA,
+                //FormsTable.COLUMN_NAME_HFACILITY,
+                //FormsTable.COLUMN_NAME_MINORAREA,
                 FormsTable.COLUMN_NAME_PRIMARYUNIT,
-                FormsTable.COLUMN_NAME_SECONDARYUNIT,
+                //FormsTable.COLUMN_NAME_SECONDARYUNIT,
                 FormsTable.COLUMN_NAME_HOUSEHOLD,
-                FormsTable.COLUMN_NAME_CHILDID,
-                FormsTable.COLUMN_NAME_CHILDNAME,
+                //FormsTable.COLUMN_NAME_CHILDID,
+                //FormsTable.COLUMN_NAME_CHILDNAME,
                 FormsTable.COLUMN_NAME_ISTATUS,
                 FormsTable.COLUMN_NAME_DEVICETAG,
                 FormsTable.COLUMN_NAME_ANTENATALCARE,
                 FormsTable.COLUMN_NAME_BASICINFO,
                 FormsTable.COLUMN_NAME_BIRTHSDEATHS,
-                FormsTable.COLUMN_NAME_CHILDHEALTH,
-                FormsTable.COLUMN_NAME_CHILDMORBIDITY,
+                //FormsTable.COLUMN_NAME_CHILDHEALTH,
+                //FormsTable.COLUMN_NAME_CHILDMORBIDITY,
                 FormsTable.COLUMN_NAME_CHILDVACCINATION,
                 FormsTable.COLUMN_NAME_DELIVERY,
-                FormsTable.COLUMN_NAME_IMMUNIZATION,
-                FormsTable.COLUMN_NAME_INDEXCHILD,
-                FormsTable.COLUMN_NAME_KAP,
-                FormsTable.COLUMN_NAME_LABINFO,
+                //FormsTable.COLUMN_NAME_IMMUNIZATION,
+                //FormsTable.COLUMN_NAME_INDEXCHILD,
+                //FormsTable.COLUMN_NAME_KAP,
+                //FormsTable.COLUMN_NAME_LABINFO,
                 FormsTable.COLUMN_NAME_IYCF,
                 FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH,
-                FormsTable.COLUMN_NAME_NEONATALHEALTH,
+                //FormsTable.COLUMN_NAME_NEONATALHEALTH,
                 FormsTable.COLUMN_NAME_POSTPARTUMCARE,
                 FormsTable.COLUMN_NAME_SOCIOECONOMIC,
                 FormsTable.COLUMN_NAME_GPSLAT,
@@ -372,29 +373,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_NAME_UID,
                 FormsTable.COLUMN_NAME_FORMDATE,
                 FormsTable.COLUMN_NAME_MAJORAREA,
-                FormsTable.COLUMN_NAME_HFACILITY,
-                FormsTable.COLUMN_NAME_MINORAREA,
+                //FormsTable.COLUMN_NAME_HFACILITY,
+                //FormsTable.COLUMN_NAME_MINORAREA,
                 FormsTable.COLUMN_NAME_PRIMARYUNIT,
-                FormsTable.COLUMN_NAME_SECONDARYUNIT,
+                //FormsTable.COLUMN_NAME_SECONDARYUNIT,
                 FormsTable.COLUMN_NAME_HOUSEHOLD,
-                FormsTable.COLUMN_NAME_CHILDID,
-                FormsTable.COLUMN_NAME_CHILDNAME,
+                //FormsTable.COLUMN_NAME_CHILDID,
+                //FormsTable.COLUMN_NAME_CHILDNAME,
                 FormsTable.COLUMN_NAME_ISTATUS,
                 FormsTable.COLUMN_NAME_DEVICETAG,
                 FormsTable.COLUMN_NAME_ANTENATALCARE,
                 FormsTable.COLUMN_NAME_BASICINFO,
                 FormsTable.COLUMN_NAME_BIRTHSDEATHS,
-                FormsTable.COLUMN_NAME_CHILDHEALTH,
-                FormsTable.COLUMN_NAME_CHILDMORBIDITY,
+                //FormsTable.COLUMN_NAME_CHILDHEALTH,
+                //FormsTable.COLUMN_NAME_CHILDMORBIDITY,
                 FormsTable.COLUMN_NAME_CHILDVACCINATION,
                 FormsTable.COLUMN_NAME_DELIVERY,
-                FormsTable.COLUMN_NAME_IMMUNIZATION,
-                FormsTable.COLUMN_NAME_INDEXCHILD,
-                FormsTable.COLUMN_NAME_KAP,
-                FormsTable.COLUMN_NAME_LABINFO,
+                //FormsTable.COLUMN_NAME_IMMUNIZATION,
+                //FormsTable.COLUMN_NAME_INDEXCHILD,
+                //FormsTable.COLUMN_NAME_KAP,
+                //FormsTable.COLUMN_NAME_LABINFO,
                 FormsTable.COLUMN_NAME_IYCF,
                 FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH,
-                FormsTable.COLUMN_NAME_NEONATALHEALTH,
+                //FormsTable.COLUMN_NAME_NEONATALHEALTH,
                 FormsTable.COLUMN_NAME_POSTPARTUMCARE,
                 FormsTable.COLUMN_NAME_SOCIOECONOMIC,
                 FormsTable.COLUMN_NAME_GPSLAT,
@@ -579,7 +580,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-//        values.put(FormsTable.COLUMN_MNA7, AppMain.fc.getiStatus());
+        values.put(FormsTable.COLUMN_NAME_ISTATUS, AppMain.fc.getiStatus());
 
 
         // Which row to update, based on the ID
@@ -832,7 +833,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public int updateNeonatalHealth() {
+    /*public int updateNeonatalHealth() {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -849,7 +850,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
-
+*/
     public int updateIycf() {
         SQLiteDatabase db = this.getReadableDatabase();
 
