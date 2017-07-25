@@ -91,9 +91,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " );";
     private static final String SQL_CREATE_IMS = "CREATE TABLE " + singleIm.TABLE_NAME + "("
             + singleIm.COLUMN_PROJECTNAME + " TEXT," +
-            singleIm.ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            singleIm.COLUMN__ID + " TEXT," +
+            singleIm.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             singleIm.COLUMN__UID + " TEXT," +
+            singleIm.COLUMN_UUID + " TEXT," +
             singleIm.COLUMN_USER + " TEXT," +
             singleIm.COLUMN_CHILDNAME + " TEXT," +
             singleIm.COLUMN_SCM + " TEXT," +
@@ -203,8 +203,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put(singleIm.COLUMN_PROJECTNAME, imc.getProjectName());
-        values.put(singleIm.COLUMN__ID, imc.get_ID());
         values.put(singleIm.COLUMN__UID, imc.get_UID());
+        values.put(singleIm.COLUMN_UUID, imc.getUUID());
         values.put(singleIm.COLUMN_USER, imc.getUser());
         values.put(singleIm.COLUMN_CHILDNAME, imc.getChildName());
         values.put(singleIm.COLUMN_SCM, imc.getsCM());

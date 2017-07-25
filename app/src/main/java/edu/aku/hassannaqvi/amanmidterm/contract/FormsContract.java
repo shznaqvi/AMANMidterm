@@ -94,7 +94,7 @@ public class FormsContract {
         this.gpsTime = jsonObject.getString(FormsTable.COLUMN_NAME_GPSTIME);
         this.gpsAcc = jsonObject.getString(FormsTable.COLUMN_NAME_GPSACC);
         this.deviceID = jsonObject.getString(FormsTable.COLUMN_NAME_DEVICEID);
-        this.appVer = jsonObject.getString(FormsTable.COLUMN_NAME_APPVERSION);
+        //this.appVer = jsonObject.getString(FormsTable.COLUMN_NAME_APPVERSION);
 
         return this;
     }
@@ -447,7 +447,7 @@ public class FormsContract {
         this.gpsTime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_GPSTIME));
         this.gpsAcc = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_GPSACC));
         this.deviceID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_DEVICEID));
-        this.appVer = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_APPVERSION));
+        //this.appVer = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_APPVERSION));
 
         return this;
     }
@@ -494,7 +494,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_NAME_GPSTIME, this.gpsTime == null ? JSONObject.NULL : this.gpsTime);
         json.put(FormsTable.COLUMN_NAME_GPSACC, this.gpsAcc == null ? JSONObject.NULL : this.gpsAcc);
         json.put(FormsTable.COLUMN_NAME_DEVICEID, this.deviceID == null ? JSONObject.NULL : this.deviceID);
-        json.put(FormsTable.COLUMN_NAME_APPVERSION, this.appVer == null ? JSONObject.NULL : this.appVer);
+        //json.put(FormsTable.COLUMN_NAME_APPVERSION, this.appVer == null ? JSONObject.NULL : this.appVer);
         json.put(FormsTable.COLUMN_NAME_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
         json.put(FormsTable.COLUMN_NAME_SYNCED_DATE, this.synced_date == null ? JSONObject.NULL : this.synced_date);
 
@@ -568,7 +568,7 @@ public class FormsContract {
         public static final String COLUMN_NAME_GPSTIME = "gpstime";
         public static final String COLUMN_NAME_GPSACC = "gpsacc";
         public static final String COLUMN_NAME_DEVICEID = "deviceid";
-        public static final String COLUMN_NAME_APPVERSION = "appver";
+        //public static final String COLUMN_NAME_APPVERSION = "appver";
         public static final String COLUMN_NAME_SYNCED = "synced";
         public static final String COLUMN_NAME_SYNCED_DATE = "synced_date";
 

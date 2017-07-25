@@ -23,9 +23,9 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
-import edu.aku.hassannaqvi.amanmidterm.R;
 
 public class ChildVaccinationActivity extends Activity {
     private static final String TAG = ChildVaccinationActivity.class.getSimpleName();
@@ -493,9 +493,16 @@ public class ChildVaccinationActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, ChildMorbidityActivity.class);
-                secNext.putExtra("check", false);
-                startActivity(secNext);
+                if (AppMain.chTotal > 0) {
+
+                    Intent secNext = new Intent(this, ChildMorbidityActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, MaternalMentalHealthActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

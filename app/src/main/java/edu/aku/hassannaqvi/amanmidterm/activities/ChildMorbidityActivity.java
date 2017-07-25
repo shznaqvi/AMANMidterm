@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.IdRes;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -335,7 +334,7 @@ public class ChildMorbidityActivity extends Activity {
         if (rowId > -1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             AppMain.im.set_UID(
-                    (AppMain.im.getDeviceID() + AppMain.im.get_ID()));
+                    (AppMain.fc.getDeviceID() + AppMain.im.get_ID()));
             db.updateChildID();
             //Toast.makeText(this, "Current Form No: " + AppMain.fc.getUID(), Toast.LENGTH_SHORT).show();
             return true;
@@ -353,15 +352,15 @@ public class ChildMorbidityActivity extends Activity {
         AppMain.im = new IMsContract();
 
         AppMain.im.setDevicetagID(sharedPref.getString("tagName", null));
-        AppMain.im.setUser(AppMain.username);
-        AppMain.im.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
-                Settings.Secure.ANDROID_ID));
+        AppMain.im.setUser(AppMain.fc.getUserName());
+        AppMain.im.setUUID(AppMain.fc.getUID());
+        AppMain.im.setDeviceID(AppMain.fc.getDeviceID());
 
         AppMain.im.setChildName(cm02.getText().toString());
 
         JSONObject scm = new JSONObject();
 
-        //scm.put("cm01", AppMain.chTotal);
+        scm.put("cm01", AppMain.chTotal);
         //scm.put("cm02", cm02.getText().toString());
         scm.put("cm03", cm03a.isChecked() ? "1" : cm03b.isChecked() ? "2" : "0");
         scm.put("cm04", cm04.getText().toString());

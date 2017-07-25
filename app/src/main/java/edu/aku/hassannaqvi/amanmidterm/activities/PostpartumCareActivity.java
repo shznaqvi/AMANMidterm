@@ -381,8 +381,12 @@ public class PostpartumCareActivity extends Activity {
                     Intent secNext = new Intent(this, IYCFActivity.class);
                     secNext.putExtra("check", false);
                     startActivity(secNext);
-                } else {
+                } else if (AppMain.chTotal > 0) {
                     Intent secNext = new Intent(this, ChildMorbidityActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, MaternalMentalHealthActivity.class);
                     secNext.putExtra("check", false);
                     startActivity(secNext);
                 }
