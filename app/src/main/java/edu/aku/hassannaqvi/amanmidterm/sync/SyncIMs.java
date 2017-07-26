@@ -20,7 +20,7 @@ import java.net.URL;
 import java.util.Collection;
 
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
-import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
@@ -61,7 +61,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
 
         try {
-            String url = AppMain._HOST_URL + IMsContract.singleIm.URI;
+            String url = AppMain._HOST_URL + Section7Contract.Section7Table.URI;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {

@@ -25,7 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.amanmidterm.R;
-import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
@@ -349,7 +349,7 @@ public class ChildMorbidityActivity extends Activity {
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
-        AppMain.im = new IMsContract();
+        AppMain.im = new Section7Contract();
 
         AppMain.im.setDevicetagID(sharedPref.getString("tagName", null));
         AppMain.im.setUser(AppMain.fc.getUserName());
@@ -395,7 +395,7 @@ public class ChildMorbidityActivity extends Activity {
         scm.put("cm0888x", cm0888x.getText().toString());
         scm.put("cm09", cm09a.isChecked() ? "1" : cm09b.isChecked() ? "2" : cm0977.isChecked() ? "3" : "0");
 
-        AppMain.im.setsCM(String.valueOf(scm));
+        AppMain.im.setS7(String.valueOf(scm));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
