@@ -247,9 +247,9 @@ public class BasicInfoActivity extends Activity {
 
         if (rowId != null) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            /*AppMain.fc.setFUID(
+            AppMain.fc.setID(
                     (AppMain.fc.getDeviceID() + AppMain.fc.getID()));
-            Toast.makeText(this, "Current Form No: " + AppMain.fc.getFUID(), Toast.LENGTH_SHORT).show();*/
+            Toast.makeText(this, "Current Form No: " + AppMain.fc.getID(), Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

@@ -41,8 +41,8 @@ public class IMsContract {
 
     public IMsContract sync(JSONObject jsonObject) throws JSONException {
 
-        this._ID = jsonObject.getString(singleIm.COLUMN__ID);
-        this._UID = jsonObject.getString(singleIm.COLUMN__UID);
+        this._ID = jsonObject.getString(singleIm._ID);
+        this._UID = jsonObject.getString(singleIm.COLUMN_UID);
         this.UUID = jsonObject.getString(singleIm.COLUMN_UUID);
         this.user = jsonObject.getString(singleIm.COLUMN_USER);
         this.childName = jsonObject.getString(singleIm.COLUMN_CHILDNAME);
@@ -62,8 +62,8 @@ public class IMsContract {
 
     public IMsContract hydrate(Cursor cursor) {
 
-        this._ID = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN__ID));
-        this._UID = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN__UID));
+        this._ID = cursor.getString(cursor.getColumnIndex(singleIm._ID));
+        this._UID = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_UID));
         this.UUID = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_UUID));
         this.user = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_USER));
         this.childName = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_CHILDNAME));
@@ -200,8 +200,8 @@ public class IMsContract {
         JSONObject json = new JSONObject();
 
         json.put(singleIm.COLUMN_PROJECTNAME, this.projectName == null ? JSONObject.NULL : this.projectName);
-        json.put(singleIm.COLUMN__ID, this._ID == null ? JSONObject.NULL : this._ID);
-        json.put(singleIm.COLUMN__UID, this._UID == null ? JSONObject.NULL : this._UID);
+        json.put(singleIm._ID, this._ID == null ? JSONObject.NULL : this._ID);
+        json.put(singleIm.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
         json.put(singleIm.COLUMN_UUID, this.UUID == null ? JSONObject.NULL : this.UUID);
         json.put(singleIm.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
         json.put(singleIm.COLUMN_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
@@ -220,29 +220,24 @@ public class IMsContract {
 
     public static abstract class singleIm implements BaseColumns {
 
-        public static final String TABLE_NAME = "ims";
-        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-
-        public static final String COLUMN_PROJECTNAME = "projectname";
-        public static final String COLUMN__ID = "_id ";
-        public static final String COLUMN__UID = "_uid ";
-        public static final String COLUMN_UUID = "uuid ";
-        public static final String COLUMN_USER = "user";
-        public static final String COLUMN_CHILDNAME = "childname ";
-        public static final String COLUMN_SCM = "scm ";
-        public static final String COLUMN_GPSLAT = "gpslat ";
-        public static final String COLUMN_GPSLNG = "gpslng ";
-        public static final String COLUMN_GPSDT = "gpsdt ";
-        public static final String COLUMN_GPSACC = "gpsacc ";
-        public static final String COLUMN_DEVICEID = "deviceid ";
-        public static final String COLUMN_DEVICETAGID = "devicetagid ";
-        public static final String COLUMN_SYNCED = "synced ";
-        public static final String COLUMN_SYNCED_DATE = "synced_date ";
         public static final String URI = "/syncforms.php";
-        public static final String _ID = "id";
-        public static final String COLUMN_CHID = "CHID";
-        public static final String COLUMN_UID = "UID";
-        public static final String COLUMN_IM = "IM";
+        public static final String TABLE_NAME = "ims";
+
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECTNAME = "projectname";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "uuid";
+        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_CHILDNAME = "childname";
+        public static final String COLUMN_SCM = "scm";
+        public static final String COLUMN_GPSLAT = "gpslat";
+        public static final String COLUMN_GPSLNG = "gpslng";
+        public static final String COLUMN_GPSDT = "gpsdt";
+        public static final String COLUMN_GPSACC = "gpsacc";
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
 
     }
 
