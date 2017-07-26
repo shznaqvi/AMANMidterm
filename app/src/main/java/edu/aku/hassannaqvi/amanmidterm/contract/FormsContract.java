@@ -478,23 +478,40 @@ public class FormsContract {
         //json.put(FormsTable.COLUMN_NAME_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
         json.put(FormsTable.COLUMN_NAME_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
         json.put(FormsTable.COLUMN_NAME_DEVICETAG, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
-
-        json.put(FormsTable.COLUMN_NAME_ANTENATALCARE, this.antenatalCare == null ? JSONObject.NULL : new JSONObject(this.antenatalCare));
-        json.put(FormsTable.COLUMN_NAME_BASICINFO, this.basicInfo == null ? JSONObject.NULL : new JSONObject(this.basicInfo));
-        json.put(FormsTable.COLUMN_NAME_BIRTHSDEATHS, this.birthsDeaths == null ? JSONObject.NULL : new JSONObject(this.birthsDeaths));
+        if (!this.antenatalCare.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_ANTENATALCARE, this.antenatalCare == null ? JSONObject.NULL : new JSONObject(this.antenatalCare));
+        }
+        if (!this.basicInfo.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_BASICINFO, this.basicInfo == null ? JSONObject.NULL : new JSONObject(this.basicInfo));
+        }
+        if (!this.birthsDeaths.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_BIRTHSDEATHS, this.birthsDeaths == null ? JSONObject.NULL : new JSONObject(this.birthsDeaths));
         //json.put(FormsTable.COLUMN_NAME_CHILDHEALTH, this.childHealth == null ? JSONObject.NULL : new JSONObject(this.childHealth));
         //json.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, this.childMorbidity == null ? JSONObject.NULL : new JSONObject(this.childMorbidity));
-        json.put(FormsTable.COLUMN_NAME_CHILDVACCINATION, this.childVaccination == null ? JSONObject.NULL : new JSONObject(this.childVaccination));
-        json.put(FormsTable.COLUMN_NAME_DELIVERY, this.delivery == null ? JSONObject.NULL : new JSONObject(this.delivery));
+        }
+        if (!this.childVaccination.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_CHILDVACCINATION, this.childVaccination == null ? JSONObject.NULL : new JSONObject(this.childVaccination));
+        }
+        if (!this.delivery.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_DELIVERY, this.delivery == null ? JSONObject.NULL : new JSONObject(this.delivery));
         //json.put(FormsTable.COLUMN_NAME_IMMUNIZATION, this.immunization == null ? JSONObject.NULL : new JSONObject(this.immunization));
         //json.put(FormsTable.COLUMN_NAME_INDEXCHILD, this.indexChild == null ? JSONObject.NULL : new JSONObject(this.indexChild));
         //json.put(FormsTable.COLUMN_NAME_KAP, this.kap == null ? JSONObject.NULL : new JSONObject(this.kap));
         //json.put(FormsTable.COLUMN_NAME_LABINFO, this.labInfo == null ? JSONObject.NULL : new JSONObject(this.labInfo));
-        json.put(FormsTable.COLUMN_NAME_IYCF, this.iycf == null ? JSONObject.NULL : new JSONObject(this.iycf));
-        json.put(FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH, this.maternalMentalHealth == null ? JSONObject.NULL : new JSONObject(this.maternalMentalHealth));
+        }
+        if (!this.iycf.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_IYCF, this.iycf == null ? JSONObject.NULL : new JSONObject(this.iycf));
+        }
+        if (!this.maternalMentalHealth.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH, this.maternalMentalHealth == null ? JSONObject.NULL : new JSONObject(this.maternalMentalHealth));
         //json.put(FormsTable.COLUMN_NAME_NEONATALHEALTH, this.neonatalHealth == null ? JSONObject.NULL : new JSONObject(this.neonatalHealth));
-        json.put(FormsTable.COLUMN_NAME_POSTPARTUMCARE, this.postpartumCare == null ? JSONObject.NULL : new JSONObject(this.postpartumCare));
-        json.put(FormsTable.COLUMN_NAME_SOCIOECONOMIC, this.socioEconomic == null ? JSONObject.NULL : new JSONObject(this.socioEconomic));
+        }
+        if (!this.postpartumCare.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_POSTPARTUMCARE, this.postpartumCare == null ? JSONObject.NULL : new JSONObject(this.postpartumCare));
+        }
+        if (!this.socioEconomic.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_SOCIOECONOMIC, this.socioEconomic == null ? JSONObject.NULL : new JSONObject(this.socioEconomic));
+        }
         json.put(FormsTable.COLUMN_NAME_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(FormsTable.COLUMN_NAME_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(FormsTable.COLUMN_NAME_GPSTIME, this.gpsTime == null ? JSONObject.NULL : this.gpsTime);

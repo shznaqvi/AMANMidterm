@@ -27,14 +27,14 @@ import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncIMs extends AsyncTask<Void, Void, String> {
+public class SyncSec7 extends AsyncTask<Void, Void, String> {
 
     private static final String TAG = "SyncIms";
     private Context mContext;
     private ProgressDialog pd;
 
 
-    public SyncIMs(Context context) {
+    public SyncSec7(Context context) {
         mContext = context;
     }
 
