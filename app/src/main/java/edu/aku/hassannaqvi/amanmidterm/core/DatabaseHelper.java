@@ -263,7 +263,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public void updateForms(String id) {
+    public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -277,6 +277,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         int count = db.update(
                 FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedSec7s(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(Section7Table.COLUMN_SYNCED, true);
+        values.put(Section7Table.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = Section7Contract.Section7Table._ID + " LIKE ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                Section7Table.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -427,6 +446,57 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
+                allFC.add(fc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Collection<Section7Contract> getUnsyncedSec7s() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                Section7Table._ID,
+                Section7Table.COLUMN_UID,
+                Section7Table.COLUMN_UUID,
+                Section7Table.COLUMN_USER,
+                Section7Table.COLUMN_CHILDNAME,
+                Section7Table.COLUMN_S7,
+                Section7Table.COLUMN_GPSLAT,
+                Section7Table.COLUMN_GPSLNG,
+                Section7Table.COLUMN_GPSDT,
+                Section7Table.COLUMN_GPSACC,
+                Section7Table.COLUMN_DEVICEID,
+                Section7Table.COLUMN_DEVICETAGID,
+        };
+        String whereClause = Section7Table.COLUMN_SYNCED + " is null OR " + Section7Table.COLUMN_SYNCED + " = ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormsTable.ID + " ASC";
+
+        Collection<Section7Contract> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    Section7Table.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Section7Contract fc = new Section7Contract();
                 allFC.add(fc.hydrate(c));
             }
         } finally {
