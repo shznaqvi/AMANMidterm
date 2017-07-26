@@ -10,7 +10,6 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -111,11 +110,7 @@ public class EndingActivity extends Activity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
-        JSONObject sa = new JSONObject();
-
-        sa.put("mna7", mna7a.isChecked() ? "1" : mna7b.isChecked() ? "2" : mna7c.isChecked() ? "3" : mna7d.isChecked() ? "4" : mna7e.isChecked() ? "5" : "0");
-
-        AppMain.fc.setiStatus(String.valueOf(sa));
+        AppMain.fc.setiStatus(mna7a.isChecked() ? "1" : mna7b.isChecked() ? "2" : mna7c.isChecked() ? "3" : mna7d.isChecked() ? "4" : mna7e.isChecked() ? "5" : "0");
 
     }
 
