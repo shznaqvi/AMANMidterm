@@ -97,6 +97,7 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.DeliveryActivity"
+            android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.PostpartumCareActivity"
