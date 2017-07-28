@@ -19,22 +19,22 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 
-import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
-import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract;
+import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract.Section7Table;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncIMs extends AsyncTask<Void, Void, String> {
+public class SyncSec7 extends AsyncTask<Void, Void, String> {
 
-    private static final String TAG = "SyncIms";
+    private static final String TAG = "SyncSec7";
     private Context mContext;
     private ProgressDialog pd;
 
 
-    public SyncIMs(Context context) {
+    public SyncSec7(Context context) {
         mContext = context;
     }
 
@@ -51,7 +51,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing IMs");
+        pd.setTitle("Please wait... Processing Sec7s");
         pd.show();
 
     }
@@ -61,7 +61,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
 
         try {
-            String url = AppMain._HOST_URL + IMsContract.singleIm.URI;
+            String url = AppMain._HOST_URL + Section7Table.URI;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {
@@ -82,7 +82,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
 
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                    db.updateForms(jsonObject.getString("id"));
+                    db.updateSyncedSec7s(jsonObject.getString("id"));
                     sSynced++;
                 } else {
                     sSyncedError += jsonObject.getString("message").toString() + "\n";
@@ -108,7 +108,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
         String line = "No Response";
 
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FormsContract> Forms = db.getUnsyncedForms();
+        Collection<Section7Contract> Forms = db.getUnsyncedSec7s();
         Log.d(TAG, String.valueOf(Forms.size()));
 
         if (Forms.size() > 0) {
@@ -140,7 +140,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
 
 //            pd.setMessage("Total Forms: " );
 
-                    for (FormsContract fc : Forms) {
+                    for (Section7Contract fc : Forms) {
                         //if (fc.getIstatus().equals("1")) {
                         jsonSync.put(fc.toJSONObject());
                         //}

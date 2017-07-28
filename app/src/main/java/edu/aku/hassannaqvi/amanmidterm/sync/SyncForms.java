@@ -20,6 +20,7 @@ import java.net.URL;
 import java.util.Collection;
 
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
@@ -59,7 +60,9 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            return downloadUrl(AppMain._HOST_URL + "pssp/api/forms.php");
+            String url = AppMain._HOST_URL + FormsTable.URI;
+            Log.d(TAG, "doInBackground: URL " + url);
+            return downloadUrl(url);
         } catch (IOException e) {
             return "Unable to upload data. Server may be down.";
         }
@@ -77,7 +80,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1")) {
-                    db.updateForms(jsonObject.getString("id"));
+                    db.updateSyncedForms(jsonObject.getString("id"));
                     sSynced++;
                 }
             }

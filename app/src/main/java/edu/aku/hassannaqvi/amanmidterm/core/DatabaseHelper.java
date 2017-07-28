@@ -21,8 +21,8 @@ import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract.communityWorker;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract;
-import edu.aku.hassannaqvi.amanmidterm.contract.IMsContract.singleIm;
+import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract;
+import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract.Section7Table;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract.UsersTable;
 
@@ -90,27 +90,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_NAME_SYNCED + " TEXT,"
             + FormsTable.COLUMN_NAME_SYNCED_DATE + " TEXT"
             + " );";
-    private static final String SQL_CREATE_IMS = "CREATE TABLE " + singleIm.TABLE_NAME + "("
-            + singleIm.COLUMN_PROJECTNAME + " TEXT," +
-            singleIm.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            singleIm.COLUMN__UID + " TEXT," +
-            singleIm.COLUMN_UUID + " TEXT," +
-            singleIm.COLUMN_USER + " TEXT," +
-            singleIm.COLUMN_CHILDNAME + " TEXT," +
-            singleIm.COLUMN_SCM + " TEXT," +
-            singleIm.COLUMN_GPSLAT + " TEXT," +
-            singleIm.COLUMN_GPSLNG + " TEXT," +
-            singleIm.COLUMN_GPSDT + " TEXT," +
-            singleIm.COLUMN_GPSACC + " TEXT," +
-            singleIm.COLUMN_DEVICEID + " TEXT," +
-            singleIm.COLUMN_DEVICETAGID + " TEXT," +
-            singleIm.COLUMN_SYNCED + " TEXT," +
-            singleIm.COLUMN_SYNCED_DATE + " TEXT" + " );";
+    private static final String SQL_CREATE_IMS = "CREATE TABLE " + Section7Table.TABLE_NAME + "("
+            + Section7Table.COLUMN_PROJECTNAME + " TEXT," +
+            Section7Table._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            Section7Table.COLUMN_UID + " TEXT," +
+            Section7Table.COLUMN_UUID + " TEXT," +
+            Section7Table.COLUMN_USER + " TEXT," +
+            Section7Table.COLUMN_CHILDNAME + " TEXT," +
+            Section7Table.COLUMN_S7 + " TEXT," +
+            Section7Table.COLUMN_GPSLAT + " TEXT," +
+            Section7Table.COLUMN_GPSLNG + " TEXT," +
+            Section7Table.COLUMN_GPSDT + " TEXT," +
+            Section7Table.COLUMN_GPSACC + " TEXT," +
+            Section7Table.COLUMN_DEVICEID + " TEXT," +
+            Section7Table.COLUMN_DEVICETAGID + " TEXT," +
+            Section7Table.COLUMN_SYNCED + " TEXT," +
+            Section7Table.COLUMN_SYNCED_DATE + " TEXT" + " );";
 
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsContract.FormsTable.TABLE_NAME;
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
     private static final String SQL_DELETE_CHWS = "DROP TABLE IF EXISTS " + communityWorker.TABLE_NAME;
-    private static final String SQL_DELETE_IMS = "DROP TABLE IF EXISTS " + singleIm.TABLE_NAME;
+    private static final String SQL_DELETE_IMS = "DROP TABLE IF EXISTS " + Section7Table.TABLE_NAME;
 
     public static String DB_FORM_ID;
     public static String DB_IMS_ID;
@@ -196,33 +196,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Long addIM(IMsContract imc) {
+    public Long addIM(Section7Contract imc) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(singleIm.COLUMN_PROJECTNAME, imc.getProjectName());
-        values.put(singleIm.COLUMN__UID, imc.get_UID());
-        values.put(singleIm.COLUMN_UUID, imc.getUUID());
-        values.put(singleIm.COLUMN_USER, imc.getUser());
-        values.put(singleIm.COLUMN_CHILDNAME, imc.getChildName());
-        values.put(singleIm.COLUMN_SCM, imc.getsCM());
-        values.put(singleIm.COLUMN_GPSLAT, imc.getGpsLat());
-        values.put(singleIm.COLUMN_GPSLNG, imc.getGpsLng());
-        values.put(singleIm.COLUMN_GPSDT, imc.getGpsDT());
-        values.put(singleIm.COLUMN_GPSACC, imc.getGpsAcc());
-        values.put(singleIm.COLUMN_DEVICEID, imc.getDeviceID());
-        values.put(singleIm.COLUMN_DEVICETAGID, imc.getDevicetagID());
-        values.put(singleIm.COLUMN_SYNCED, imc.getSynced());
-        values.put(singleIm.COLUMN_SYNCED_DATE, imc.getSynced_date());
+        values.put(Section7Table.COLUMN_PROJECTNAME, imc.getProjectName());
+        values.put(Section7Table.COLUMN_UID, imc.get_UID());
+        values.put(Section7Table.COLUMN_UUID, imc.getUUID());
+        values.put(Section7Table.COLUMN_USER, imc.getUser());
+        values.put(Section7Table.COLUMN_CHILDNAME, imc.getChildName());
+        values.put(Section7Table.COLUMN_S7, imc.getS7());
+        values.put(Section7Table.COLUMN_GPSLAT, imc.getGpsLat());
+        values.put(Section7Table.COLUMN_GPSLNG, imc.getGpsLng());
+        values.put(Section7Table.COLUMN_GPSDT, imc.getGpsDT());
+        values.put(Section7Table.COLUMN_GPSACC, imc.getGpsAcc());
+        values.put(Section7Table.COLUMN_DEVICEID, imc.getDeviceID());
+        values.put(Section7Table.COLUMN_DEVICETAGID, imc.getDevicetagID());
+        values.put(Section7Table.COLUMN_SYNCED, imc.getSynced());
+        values.put(Section7Table.COLUMN_SYNCED_DATE, imc.getSynced_date());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                singleIm.TABLE_NAME,
-                singleIm.COLUMN_NAME_NULLABLE,
+                Section7Table.TABLE_NAME,
+                Section7Table.COLUMN_NAME_NULLABLE,
                 values);
         DB_FORM_ID = String.valueOf(newRowId);
         return newRowId;
@@ -233,13 +233,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(singleIm.COLUMN__UID, AppMain.im.get_UID());
+        values.put(Section7Table.COLUMN_UID, AppMain.im.get_UID());
 
 // Which row to update, based on the ID
-        String selection = singleIm.COLUMN__ID + " = ?";
+        String selection = Section7Table._ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.im.get_ID())};
 
-        int count = db.update(singleIm.TABLE_NAME,
+        int count = db.update(Section7Table.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -263,7 +263,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public void updateForms(String id) {
+    public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -277,6 +277,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         int count = db.update(
                 FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedSec7s(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(Section7Table.COLUMN_SYNCED, true);
+        values.put(Section7Table.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = Section7Contract.Section7Table._ID + " LIKE ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                Section7Table.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -427,6 +446,57 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
+                allFC.add(fc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Collection<Section7Contract> getUnsyncedSec7s() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                Section7Table._ID,
+                Section7Table.COLUMN_UID,
+                Section7Table.COLUMN_UUID,
+                Section7Table.COLUMN_USER,
+                Section7Table.COLUMN_CHILDNAME,
+                Section7Table.COLUMN_S7,
+                Section7Table.COLUMN_GPSLAT,
+                Section7Table.COLUMN_GPSLNG,
+                Section7Table.COLUMN_GPSDT,
+                Section7Table.COLUMN_GPSACC,
+                Section7Table.COLUMN_DEVICEID,
+                Section7Table.COLUMN_DEVICETAGID,
+        };
+        String whereClause = Section7Table.COLUMN_SYNCED + " is null OR " + Section7Table.COLUMN_SYNCED + " = ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormsTable.ID + " ASC";
+
+        Collection<Section7Contract> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    Section7Table.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Section7Contract fc = new Section7Contract();
                 allFC.add(fc.hydrate(c));
             }
         } finally {
@@ -875,13 +945,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(singleIm.COLUMN_SCM, AppMain.im.getsCM());
+        values.put(Section7Table.COLUMN_S7, AppMain.im.getS7());
 
 // Which row to update, based on the ID
-        String selection = IMsContract.singleIm._ID + " = ?";
+        String selection = Section7Table._ID + " = ?";
         String[] selectionArgs = {String.valueOf(AppMain.im.get_ID())};
 
-        int count = db.update(singleIm.TABLE_NAME,
+        int count = db.update(Section7Table.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
