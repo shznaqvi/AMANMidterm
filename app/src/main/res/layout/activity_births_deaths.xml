@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="Births and Deaths in Last One Year"
+            android:text="Births and Deaths in Last One Year (August 01, 2016 – July 31, 2017)"
             android:textColor="@color/colorAccent"
             android:textSize="30sp" />
 

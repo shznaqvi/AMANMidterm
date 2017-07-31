@@ -32,11 +32,30 @@
             android:background="@color/colorAccent" />
 
         <TextView
+            android:id="@+id/count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorYellowlight"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp" />
+
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/cm01"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <CheckBox
+            android:id="@+id/cm01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
 
         <!--<EditText
             android:id="@+id/cm01"
@@ -49,17 +68,6 @@
             <requestFocus></requestFocus>
         </EditText>-->
 
-        <TextView
-            android:id="@+id/count"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorYellowlight"
-            android:gravity="center"
-            android:text=""
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp" />
 
 
         <TextView

@@ -93,6 +93,7 @@
     <string name="mna7c">انکار کردیا </string>
     <string name="mna7d">واب دہندہ گھر پر موجود نہیں </string>
     <string name="mna7e">ملتوی </string>
+    <string name="mna7f">No outcome during Last two years</string>
     <string name="mna8"> گھر کے سربراہ کا نام </string>
     <string name="mna9"> جواب دینے والے کا نام </string>
     <string name="mna10"> جواب دینے والے کا منتخب بچے سے رشتہ </string>
@@ -692,7 +693,7 @@
 
     <!-- String related to Part 7.. Child Morbidity & care seeking-->
 
-    <string name="cm01">منتخب شدہ عورت کے پانچ سال سے کم عمر کے بچوں کی تعداد</string>
+    <string name="cm01">کیا جواب دہندہ اس بچے کی ماں ہے؟</string>
     <string name="cm01a"> تعداد</string>
     <string name="cm02">بچے کا نام</string>
     <string name="cm03">بچے کی جنس</string>

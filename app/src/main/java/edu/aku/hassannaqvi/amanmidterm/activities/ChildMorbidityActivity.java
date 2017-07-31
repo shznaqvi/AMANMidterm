@@ -123,6 +123,8 @@ public class ChildMorbidityActivity extends Activity {
     RadioButton cm0977;
     @BindView(R.id.fldGrpcm09)
     LinearLayout fldGrpcm09;
+    @BindView(R.id.cm01)
+    CheckBox cm01;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -360,8 +362,9 @@ public class ChildMorbidityActivity extends Activity {
 
         JSONObject scm = new JSONObject();
 
-        scm.put("cm01", AppMain.chTotal);
-        //scm.put("cm02", cm02.getText().toString());
+        scm.put("totalChild", AppMain.chTotal);
+        scm.put("cm01", cm01.isChecked() ? "1" : "2");
+        scm.put("cm02", cm02.getText().toString());
         scm.put("cm03", cm03a.isChecked() ? "1" : cm03b.isChecked() ? "2" : "0");
         scm.put("cm04", cm04.getText().toString());
         scm.put("cm05a", cm05a.isChecked() ? "1" : "0");
