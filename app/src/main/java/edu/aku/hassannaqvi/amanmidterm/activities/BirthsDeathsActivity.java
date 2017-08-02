@@ -60,6 +60,10 @@ public class BirthsDeathsActivity extends AppCompatActivity {
     DatePickerInputEditText bd03dob2;
     @BindView(R.id.bd03dob3)
     DatePickerInputEditText bd03dob3;
+    @BindView(R.id.bd03dob4)
+    DatePickerInputEditText bd03dob4;
+    @BindView(R.id.bd03dob5)
+    DatePickerInputEditText bd03dob5;
     @BindView(R.id.bd04s)
     EditText bd04s;
     @BindView(R.id.fldGrpbd04)
@@ -137,9 +141,9 @@ public class BirthsDeathsActivity extends AppCompatActivity {
     String maxDate15Years;
     Calendar now = Calendar.getInstance();
     @BindViews({R.id.bd01dod1, R.id.bd01dod2, R.id.bd02dod1, R.id.bd02dod2, R.id.bd03dob1, R.id.bd03dob2, R.id.bd03dob3,
-            R.id.bd04dob1, R.id.bd04dob2, R.id.bd04dod1, R.id.bd04dod2, R.id.bd05dob1, R.id.bd05dob2, R.id.bd05dod1,
-            R.id.bd05dod2, R.id.bd06dob1, R.id.bd06dob2, R.id.bd06dod1, R.id.bd06dod2, R.id.bd07dob1, R.id.bd07dob2,
-            R.id.bd07dod1, R.id.bd07dod2, R.id.bd08dob1, R.id.bd08dob2, R.id.bd08dod1, R.id.bd08dod2})
+            R.id.bd03dob4, R.id.bd03dob5, R.id.bd04dob1, R.id.bd04dob2, R.id.bd04dod1, R.id.bd04dod2, R.id.bd05dob1,
+            R.id.bd05dob2, R.id.bd05dod1, R.id.bd05dod2, R.id.bd06dob1, R.id.bd06dob2, R.id.bd06dod1, R.id.bd06dod2,
+            R.id.bd07dob1, R.id.bd07dob2, R.id.bd07dod1, R.id.bd07dod2, R.id.bd08dob1, R.id.bd08dob2, R.id.bd08dod1, R.id.bd08dod2})
     List<DatePickerInputEditText> bddates;
 
     @BindViews({R.id.bd01dod1, R.id.bd01dod2, R.id.bd02dod1, R.id.bd02dod2,
@@ -509,6 +513,12 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 3) {
                     fldGrpbd03.setVisibility(View.VISIBLE);
                     bd03dob3.setVisibility(View.VISIBLE);
+                } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 4) {
+                    fldGrpbd03.setVisibility(View.VISIBLE);
+                    bd03dob4.setVisibility(View.VISIBLE);
+                } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 5) {
+                    fldGrpbd03.setVisibility(View.VISIBLE);
+                    bd03dob5.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -766,6 +776,8 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         sn.put("bd03dob1", bd03dob1.getText().toString());
         sn.put("bd03dob2", bd03dob2.getText().toString());
         sn.put("bd03dob3", bd03dob3.getText().toString());
+        sn.put("bd03dob4", bd03dob4.getText().toString());
+        sn.put("bd03dob5", bd03dob5.getText().toString());
 
         sn.put("bd04s", bd04s.getText().toString());
         sn.put("bd04dob1", bd04dob1.getText().toString());
@@ -911,6 +923,31 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             } else {
                 bd03dob3.setError(null);
             }
+
+            if (Integer.valueOf(bd03s.getText().toString()) == 4) {
+                if (bd03dob4.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
+                    bd03dob4.setError("This data is Required!");
+                    Log.i(TAG, "bd03dob4: This data is Required!");
+                    return false;
+                } else {
+                    bd03dob4.setError(null);
+                }
+            }
+
+            if (Integer.valueOf(bd03s.getText().toString()) == 5) {
+                if (bd03dob5.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
+                    bd03dob5.setError("This data is Required!");
+                    Log.i(TAG, "bd03dob5: This data is Required!");
+                    return false;
+                } else {
+                    bd03dob5.setError(null);
+                }
+
+            }
+
+
         }
 
         //================ Q4============

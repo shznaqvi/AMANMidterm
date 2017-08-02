@@ -439,7 +439,7 @@ public class SocioEconomicActivity extends Activity {
             }
         });
 
-        se05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        /*se05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (se0501.isChecked() || se0502.isChecked()) {
@@ -450,7 +450,7 @@ public class SocioEconomicActivity extends Activity {
                     fldGrpse06.setVisibility(View.VISIBLE);
                 }
             }
-        });
+        });*/
 
 
         se0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -765,7 +765,7 @@ public class SocioEconomicActivity extends Activity {
         }
 
 
-        if (!(se0501.isChecked() || se0502.isChecked())) {
+        //if (!(se0501.isChecked() || se0502.isChecked())) {
             // ============ Q 8.06 =======================
             // RadioGroup
             if (se06.getCheckedRadioButtonId() == -1) {
@@ -787,7 +787,7 @@ public class SocioEconomicActivity extends Activity {
             } else {
                 se0688x.setError(null);
             }
-        }
+        //}
         if (se07.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.se07), Toast.LENGTH_LONG).show();
             se0788.setError("This data is Required!");    // Set Error on last radio button
