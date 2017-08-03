@@ -386,7 +386,9 @@ public class AmanInfoActivity extends Activity {
         sa.put("bic04", bic04.getText().toString());
         sa.put("bic05", bic05.getText().toString());
 
-        AppMain.chTotal = Integer.valueOf(bic05.getText().toString());
+        if (!bic05.getText().toString().isEmpty()) {
+            AppMain.chTotal = Integer.valueOf(bic05.getText().toString());
+        }
 
         AppMain.fc.setBasicInfo(String.valueOf(sa));
         setGPS();
@@ -471,14 +473,38 @@ public class AmanInfoActivity extends Activity {
             biHH.setError(null);
         }
 
-        if (Integer.valueOf(biHH.getText().toString()) < Integer.parseInt(AppMain.selectedCHW.getHhfrom()) || Integer.valueOf(biHH.getText().toString()) > Integer.parseInt(AppMain.selectedCHW.getHhto())) {
+        if(biHH.getText().toString().contains(".")) {
+
+            int hh = biHH.getText().toString().indexOf('.');
+
+            if(hh != (biHH.getText().toString().length() - 1)) {
+
+                String match = biHH.getText().toString().substring(hh + 1,biHH.getText().toString().length());
+
+                if (Integer.valueOf(match) == 0) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.biHH), Toast.LENGTH_SHORT).show();
+                    biHH.setError("Invalid: Out of Range!");
+                    Log.i(TAG, "biHH: Out of Range!");
+                    return false;
+                } else {
+                    biHH.setError(null);
+                }
+            }else {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.biHH), Toast.LENGTH_SHORT).show();
+                biHH.setError("Invalid: data input!");
+                Log.i(TAG, "biHH: Invalid data input!");
+                return false;
+            }
+        }
+
+/*        if (Integer.valueOf(biHH.getText().toString()) < Integer.parseInt(AppMain.selectedCHW.getHhfrom()) || Integer.valueOf(biHH.getText().toString()) > Integer.parseInt(AppMain.selectedCHW.getHhto())) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.biHH), Toast.LENGTH_SHORT).show();
             biHH.setError("Invalid: Out of Range!");
             Log.i(TAG, "biHH: Out of Range!");
             return false;
         } else {
             biHH.setError(null);
-        }
+        }*/
 
         if (bi01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.bi01), Toast.LENGTH_LONG).show();
