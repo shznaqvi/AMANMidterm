@@ -74,6 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_NAME_CHILDVACCINATION + " TEXT,"
             + FormsTable.COLUMN_NAME_MATERNALMENTALHEALTH + " TEXT,"
             + FormsTable.COLUMN_NAME_BIRTHSDEATHS + " TEXT,"
+            + FormsTable.COLUMN_NAME_COUNSELLINGSESION + " TEXT,"
             //+ FormsTable.COLUMN_NAME_CHILDHEALTH + " TEXT,"
             //+ FormsTable.COLUMN_NAME_CHILDMORBIDITY + " TEXT,"
             //+ FormsTable.COLUMN_NAME_IMMUNIZATION + " TEXT,"
@@ -167,6 +168,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_BASICINFO, fc.getBasicInfo());
         values.put(FormsTable.COLUMN_NAME_BIRTHSDEATHS, fc.getBirthsDeaths());
         //values.put(FormsTable.COLUMN_NAME_CHILDHEALTH, fc.getChildHealth());
+        values.put(FormsTable.COLUMN_NAME_COUNSELLINGSESION, fc.getCounsellingSession());
         //values.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, fc.getChildMorbidity());
         values.put(FormsTable.COLUMN_NAME_CHILDVACCINATION, fc.getChildVaccination());
         values.put(FormsTable.COLUMN_NAME_DELIVERY, fc.getDelivery());
@@ -325,6 +327,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_NAME_ANTENATALCARE,
                 FormsTable.COLUMN_NAME_BASICINFO,
                 FormsTable.COLUMN_NAME_BIRTHSDEATHS,
+                FormsTable.COLUMN_NAME_COUNSELLINGSESION,
                 //FormsTable.COLUMN_NAME_CHILDHEALTH,
                 //FormsTable.COLUMN_NAME_CHILDMORBIDITY,
                 FormsTable.COLUMN_NAME_CHILDVACCINATION,
@@ -404,6 +407,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_NAME_ANTENATALCARE,
                 FormsTable.COLUMN_NAME_BASICINFO,
                 FormsTable.COLUMN_NAME_BIRTHSDEATHS,
+                FormsTable.COLUMN_NAME_COUNSELLINGSESION,
                 //FormsTable.COLUMN_NAME_CHILDHEALTH,
                 //FormsTable.COLUMN_NAME_CHILDMORBIDITY,
                 FormsTable.COLUMN_NAME_CHILDVACCINATION,
@@ -475,6 +479,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Section7Table.COLUMN_GPSACC,
                 Section7Table.COLUMN_DEVICEID,
                 Section7Table.COLUMN_DEVICETAGID,
+                Section7Table.COLUMN_SYNCED,
+                Section7Table.COLUMN_SYNCED_DATE,
         };
         String whereClause = Section7Table.COLUMN_SYNCED + " is null OR " + Section7Table.COLUMN_SYNCED + " = ''";
         String[] whereArgs = null;
@@ -482,7 +488,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                FormsTable.ID + " ASC";
+                Section7Table._ID + " ASC";
 
         Collection<Section7Contract> allFC = new ArrayList<>();
         try {
@@ -994,5 +1000,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    public int updateCounsellingSession() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_NAME_COUNSELLINGSESION, AppMain.fc.getCounsellingSession());
+
+// Which row to update, based on the ID
+        String selection = FormsContract.FormsTable.ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
 
 }

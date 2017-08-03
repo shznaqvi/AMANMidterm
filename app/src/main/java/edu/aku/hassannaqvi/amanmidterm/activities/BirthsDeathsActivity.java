@@ -723,9 +723,9 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
                 finish();
 
-                Intent endSec = new Intent(this, EndingActivity.class);
-                endSec.putExtra("complete", true);
-                startActivity(endSec);
+                Intent secNext = new Intent(this, CounselingSessionsActivity.class);
+                secNext.putExtra("check", false);
+                startActivity(secNext);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

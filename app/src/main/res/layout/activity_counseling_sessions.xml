@@ -69,26 +69,40 @@
             android:text="@string/cs02"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <EditText
+        <LinearLayout
+            android:id="@+id/fldGrpcs02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
             android:id="@+id/cs02a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:hint="@string/cs02a" />
+                android:hint="@string/cs02a"
+                android:inputType="number"
+                android:maxLength="2" />
 
         <EditText
             android:id="@+id/cs02b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:hint="@string/cs02b" />
+            android:hint="@string/cs02b"
+            android:inputType="number"
+            android:maxLength="2" />
 
         <EditText
             android:id="@+id/cs02c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:hint="@string/cs02c" />
+            android:hint="@string/cs02c"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        </LinearLayout>
 
         <CheckBox
             android:id="@+id/cs0288"
@@ -145,7 +159,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:text="@string/other"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
         <TextView
@@ -251,9 +267,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:text="@string/other"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
+        <Button
+            android:id="@+id/btn_Continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="@string/next_section"
+            android:textColor="#00ef00" />
+
+        <Button
+            android:id="@+id/btnEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="@string/endForm"
+            android:textColor="#000" />
 
     </LinearLayout>
 

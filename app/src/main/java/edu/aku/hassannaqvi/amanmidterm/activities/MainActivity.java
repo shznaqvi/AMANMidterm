@@ -254,6 +254,11 @@ public class MainActivity extends Activity {
         startActivity(iI);
     }
 
+    public void openJ(View v) {
+        Intent iI = new Intent(this, CounselingSessionsActivity.class);
+        startActivity(iI);
+    }
+
     public void openEnd(View v) {
         Intent iEnd = new Intent(this, EndingActivity.class);
         startActivity(iEnd);

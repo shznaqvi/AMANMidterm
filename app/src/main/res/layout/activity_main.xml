@@ -185,6 +185,14 @@
                 android:onClick="openI"
                 android:text="Section I" />
 
+            <Button
+                android:id="@+id/openJ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openJ"
+                android:text="Section J" />
 
             <Button
                 android:id="@+id/openEnd"

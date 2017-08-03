@@ -104,6 +104,7 @@ Location location;
 
     }
 
+
     protected void showCurrentLocation() {
 
         location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);

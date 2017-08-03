@@ -31,6 +31,7 @@ public class FormsContract {
     private String iStatus = ""; // Form Status
     private String deviceTag = "";
     private String basicInfo = "";
+    private String counsellingSession = "";
     private String socioEconomic = "";
     private String antenatalCare = "";
     private String delivery = "";
@@ -82,6 +83,7 @@ public class FormsContract {
         this.antenatalCare = jsonObject.getString(FormsTable.COLUMN_NAME_ANTENATALCARE);
         this.basicInfo = jsonObject.getString(FormsTable.COLUMN_NAME_BASICINFO);
         this.birthsDeaths = jsonObject.getString(FormsTable.COLUMN_NAME_BIRTHSDEATHS);
+        this.counsellingSession = jsonObject.getString(FormsTable.COLUMN_NAME_COUNSELLINGSESION);
         //this.childHealth = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDHEALTH);
         //this.childMorbidity = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDMORBIDITY);
         this.childVaccination = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDVACCINATION);
@@ -249,22 +251,30 @@ public class FormsContract {
         this.birthsDeaths = birthsDeaths;
     }
 
+    public String getCounsellingSession() {
+        return counsellingSession;
+    }
+
+    public void setCounsellingSession(String counsellingSession) {
+        this.counsellingSession = counsellingSession;
+    }
+
     /*public String getChildHealth() {
-        return childHealth;
-    }
+            return childHealth;
+        }
 
-    public void setChildHealth(String childHealth) {
-        this.childHealth = childHealth;
-    }
+        public void setChildHealth(String childHealth) {
+            this.childHealth = childHealth;
+        }
 
-    public String getChildMorbidity() {
-        return childMorbidity;
-    }
+        public String getChildMorbidity() {
+            return childMorbidity;
+        }
 
-    public void setChildMorbidity(String childMorbidity) {
-        this.childMorbidity = childMorbidity;
-    }
-*/
+        public void setChildMorbidity(String childMorbidity) {
+            this.childMorbidity = childMorbidity;
+        }
+    */
     public String getChildVaccination() {
         return childVaccination;
     }
@@ -435,6 +445,7 @@ public class FormsContract {
         this.antenatalCare = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_ANTENATALCARE));
         this.basicInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_BASICINFO));
         this.birthsDeaths = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_BIRTHSDEATHS));
+        this.counsellingSession = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_COUNSELLINGSESION));
         //this.childHealth = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDHEALTH));
         //this.childMorbidity = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDMORBIDITY));
         this.childVaccination = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDVACCINATION));
@@ -489,6 +500,12 @@ public class FormsContract {
         //json.put(FormsTable.COLUMN_NAME_CHILDHEALTH, this.childHealth == null ? JSONObject.NULL : new JSONObject(this.childHealth));
         //json.put(FormsTable.COLUMN_NAME_CHILDMORBIDITY, this.childMorbidity == null ? JSONObject.NULL : new JSONObject(this.childMorbidity));
         }
+
+        if (!this.counsellingSession.equals("")) {
+            json.put(FormsTable.COLUMN_NAME_COUNSELLINGSESION, this.counsellingSession == null ? JSONObject.NULL : new JSONObject(this.counsellingSession));
+        }
+
+
         if (!this.childVaccination.equals("")) {
             json.put(FormsTable.COLUMN_NAME_CHILDVACCINATION, this.childVaccination == null ? JSONObject.NULL : new JSONObject(this.childVaccination));
         }
@@ -579,6 +596,7 @@ public class FormsContract {
         public static final String COLUMN_NAME_CHILDVACCINATION = "childvaccination";
         public static final String COLUMN_NAME_MATERNALMENTALHEALTH = "maternalmentalhealth";
         public static final String COLUMN_NAME_BIRTHSDEATHS = "birthsdeaths";
+        public static final String COLUMN_NAME_COUNSELLINGSESION = "counsellingsession";
         //public static final String COLUMN_NAME_CHILDHEALTH = "childhealth";
         //public static final String COLUMN_NAME_CHILDMORBIDITY = "childmorbidity";
         //public static final String COLUMN_NAME_IMMUNIZATION = "immunization";
