@@ -227,7 +227,7 @@ public class SectionIMsContract {
 
     public static abstract class Section7Table implements BaseColumns {
 
-        public static final String URI = "/syncims.php";
+        public static final String URI = "syncims.php";
         public static final String TABLE_NAME = "ims";
 
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
