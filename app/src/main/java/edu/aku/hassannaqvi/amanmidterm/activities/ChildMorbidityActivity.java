@@ -25,7 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.amanmidterm.R;
-import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract;
+import edu.aku.hassannaqvi.amanmidterm.contract.SectionIMsContract;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
@@ -351,7 +351,7 @@ public class ChildMorbidityActivity extends Activity {
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
-        AppMain.im = new Section7Contract();
+        AppMain.im = new SectionIMsContract();
 
         AppMain.im.setDevicetagID(sharedPref.getString("tagName", null));
         AppMain.im.setUser(AppMain.fc.getUserName());

@@ -21,8 +21,8 @@ import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract.communityWorker;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract;
-import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract.Section7Table;
+import edu.aku.hassannaqvi.amanmidterm.contract.SectionIMsContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.SectionIMsContract.Section7Table;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract.UsersTable;
 
@@ -198,7 +198,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Long addIM(Section7Contract imc) {
+    public Long addIM(SectionIMsContract imc) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
@@ -284,7 +284,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedSec7s(String id) {
+    public void updateSyncedIMs(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -293,7 +293,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Section7Table.COLUMN_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = Section7Contract.Section7Table._ID + " LIKE ?";
+        String where = SectionIMsContract.Section7Table._ID + " LIKE ?";
         String[] whereArgs = {id};
 
         int count = db.update(
@@ -463,7 +463,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<Section7Contract> getUnsyncedSec7s() {
+    public Collection<SectionIMsContract> getUnsyncedIMs() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -490,7 +490,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 Section7Table._ID + " ASC";
 
-        Collection<Section7Contract> allFC = new ArrayList<>();
+        Collection<SectionIMsContract> allFC = new ArrayList<>();
         try {
             c = db.query(
                     Section7Table.TABLE_NAME,  // The table to query
@@ -502,7 +502,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                Section7Contract fc = new Section7Contract();
+                SectionIMsContract fc = new SectionIMsContract();
                 allFC.add(fc.hydrate(c));
             }
         } finally {

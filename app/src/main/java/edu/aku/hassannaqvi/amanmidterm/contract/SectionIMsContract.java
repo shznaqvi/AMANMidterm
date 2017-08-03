@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Section7Contract {
+public class SectionIMsContract {
 
     private static final String TAG = "Section7_CONTRACT";
 
@@ -32,14 +32,14 @@ public class Section7Contract {
     private String synced_date = "";
 
 
-    public Section7Contract() {
+    public SectionIMsContract() {
     }
 
     public static String getTAG() {
         return TAG;
     }
 
-    public Section7Contract sync(JSONObject jsonObject) throws JSONException {
+    public SectionIMsContract sync(JSONObject jsonObject) throws JSONException {
 
         this._ID = jsonObject.getString(Section7Table._ID);
         this._UID = jsonObject.getString(Section7Table.COLUMN_UID);
@@ -60,7 +60,7 @@ public class Section7Contract {
         return this;
     }
 
-    public Section7Contract hydrate(Cursor cursor) {
+    public SectionIMsContract hydrate(Cursor cursor) {
 
         this._ID = cursor.getString(cursor.getColumnIndex(Section7Table._ID));
         this._UID = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_UID));
@@ -205,7 +205,12 @@ public class Section7Contract {
         json.put(Section7Table.COLUMN_UUID, this.UUID == null ? JSONObject.NULL : this.UUID);
         json.put(Section7Table.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
         json.put(Section7Table.COLUMN_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
-        json.put(Section7Table.COLUMN_S7, this.s7 == null ? JSONObject.NULL : this.s7);
+//        json.put(Section7Table.COLUMN_S7, this.s7 == null ? JSONObject.NULL : this.s7);
+
+        if (!this.s7.equals("")) {
+            json.put(Section7Table.COLUMN_S7, new JSONObject(this.s7));
+        }
+
         json.put(Section7Table.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(Section7Table.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(Section7Table.COLUMN_GPSDT, this.gpsDT == null ? JSONObject.NULL : this.gpsDT);
@@ -220,7 +225,7 @@ public class Section7Contract {
 
     public static abstract class Section7Table implements BaseColumns {
 
-        public static final String URI = "/syncforms.php";
+        public static final String URI = "/syncims.php";
         public static final String TABLE_NAME = "ims";
 
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";

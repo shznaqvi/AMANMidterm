@@ -30,7 +30,7 @@ import edu.aku.hassannaqvi.amanmidterm.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.get.GetUsers;
 import edu.aku.hassannaqvi.amanmidterm.sync.SyncForms;
-import edu.aku.hassannaqvi.amanmidterm.sync.SyncSec7;
+import edu.aku.hassannaqvi.amanmidterm.sync.SyncIMs;
 
 public class MainActivity extends Activity {
 
@@ -289,7 +289,7 @@ public class MainActivity extends Activity {
             new SyncForms(this).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
-            new SyncSec7(this).execute();
+            new SyncIMs(this).execute();
             Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);

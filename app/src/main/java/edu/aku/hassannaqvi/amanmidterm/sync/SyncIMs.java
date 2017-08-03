@@ -19,22 +19,22 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 
-import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract;
-import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract.Section7Table;
+import edu.aku.hassannaqvi.amanmidterm.contract.SectionIMsContract;
+import edu.aku.hassannaqvi.amanmidterm.contract.SectionIMsContract.Section7Table;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncSec7 extends AsyncTask<Void, Void, String> {
+public class SyncIMs extends AsyncTask<Void, Void, String> {
 
-    private static final String TAG = "SyncSec7";
+    private static final String TAG = "SyncIMs";
     private Context mContext;
     private ProgressDialog pd;
 
 
-    public SyncSec7(Context context) {
+    public SyncIMs(Context context) {
         mContext = context;
     }
 
@@ -51,7 +51,7 @@ public class SyncSec7 extends AsyncTask<Void, Void, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Sec7s");
+        pd.setTitle("Please wait... Processing IMss");
         pd.show();
 
     }
@@ -82,24 +82,24 @@ public class SyncSec7 extends AsyncTask<Void, Void, String> {
 
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                    db.updateSyncedSec7s(jsonObject.getString("id"));
+                    db.updateSyncedIMs(jsonObject.getString("id"));
                     sSynced++;
                 } else {
                     sSyncedError += jsonObject.getString("message").toString() + "\n";
                 }
             }
 
-            Toast.makeText(mContext, sSynced + " Forms synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, sSynced + " IMs synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Forms synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
-            pd.setTitle("Done uploading Forms data");
+            pd.setMessage(sSynced + " IMs synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading IMs data");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Forms Sync Failed");
+            pd.setTitle("IMs Sync Failed");
             pd.show();
         }
     }
@@ -108,15 +108,15 @@ public class SyncSec7 extends AsyncTask<Void, Void, String> {
         String line = "No Response";
 
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<Section7Contract> Forms = db.getUnsyncedSec7s();
-        Log.d(TAG, String.valueOf(Forms.size()));
+        Collection<SectionIMsContract> IMs = db.getUnsyncedIMs();
+        Log.d(TAG, String.valueOf(IMs.size()));
 
-        if (Forms.size() > 0) {
+        if (IMs.size() > 0) {
 
             HttpURLConnection connection = null;
             try {
                 String request = myurl;
-                //String request = "http://10.1.42.30:3000/Forms";
+                //String request = "http://10.1.42.30:3000/IMs";
 
                 URL url = new URL(request);
                 connection = (HttpURLConnection) url.openConnection();
@@ -138,9 +138,9 @@ public class SyncSec7 extends AsyncTask<Void, Void, String> {
 
                     DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
 
-//            pd.setMessage("Total Forms: " );
+//            pd.setMessage("Total IMs: " );
 
-                    for (Section7Contract fc : Forms) {
+                    for (SectionIMsContract fc : IMs) {
                         //if (fc.getIstatus().equals("1")) {
                         jsonSync.put(fc.toJSONObject());
                         //}

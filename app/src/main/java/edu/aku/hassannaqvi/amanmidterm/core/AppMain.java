@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import edu.aku.hassannaqvi.amanmidterm.contract.CommunityWorkerContract;
 import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
-import edu.aku.hassannaqvi.amanmidterm.contract.Section7Contract;
+import edu.aku.hassannaqvi.amanmidterm.contract.SectionIMsContract;
 
 
 /**
@@ -72,7 +72,7 @@ public class AppMain extends Application {
     public static int chTotal = 0;
     public static boolean scanned = false;
     public static FormsContract fc;
-    public static Section7Contract im;
+    public static SectionIMsContract im;
     public static String mna06a = "";
     public static int outcome = 0;
     public static CommunityWorkerContract selectedCHW;
