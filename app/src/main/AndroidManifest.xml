@@ -77,7 +77,7 @@
             android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:windowSoftInputMode="stateVisible|adjustPan"/>
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".activities.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -116,6 +116,8 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="94cb8c069a72601814e9bc2b46807153a93bbd23" />
+
+        <activity android:name=".activities.CounselingSessionsActivity"></activity>
     </application>
 
 </manifest>
