@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -68,7 +69,10 @@ public class MainActivity extends Activity {
         editor = sharedPref.edit();
 
         builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Tag Name");
+        ImageView img = new ImageView(getApplicationContext());
+        img.setImageResource(R.drawable.tagimg);
+        img.setPadding(0,15,0,15);
+        builder.setCustomTitle(img);
 
         final EditText input = new EditText(MainActivity.this);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
@@ -165,7 +169,10 @@ public class MainActivity extends Activity {
         } else {
 
             builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("Tag Name");
+            ImageView img = new ImageView(getApplicationContext());
+            img.setImageResource(R.drawable.tagimg);
+            img.setPadding(0,15,0,15);
+            builder.setCustomTitle(img);
 
             final EditText input = new EditText(MainActivity.this);
             input.setInputType(InputType.TYPE_CLASS_TEXT);
