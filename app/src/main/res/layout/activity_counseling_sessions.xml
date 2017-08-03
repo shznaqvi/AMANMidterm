@@ -62,7 +62,14 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/fldGrpcs01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
         <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -271,6 +278,8 @@
             android:hint="@string/other"
             android:inputType="textCapWords"
             android:visibility="gone" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_Continue"

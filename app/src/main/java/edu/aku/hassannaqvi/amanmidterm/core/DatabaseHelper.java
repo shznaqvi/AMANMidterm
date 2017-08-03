@@ -95,7 +95,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + Section7Table.COLUMN_PROJECTNAME + " TEXT," +
             Section7Table._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             Section7Table.COLUMN_UID + " TEXT," +
-            Section7Table.COLUMN_UUID + " TEXT," +
+            //   Section7Table.COLUMN_UUID + " TEXT," +
             Section7Table.COLUMN_USER + " TEXT," +
             Section7Table.COLUMN_CHILDNAME + " TEXT," +
             Section7Table.COLUMN_S7 + " TEXT," +
@@ -207,7 +207,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(Section7Table.COLUMN_PROJECTNAME, imc.getProjectName());
         values.put(Section7Table.COLUMN_UID, imc.get_UID());
-        values.put(Section7Table.COLUMN_UUID, imc.getUUID());
+        //   values.put(Section7Table.COLUMN_UUID, imc.getUUID());
         values.put(Section7Table.COLUMN_USER, imc.getUser());
         values.put(Section7Table.COLUMN_CHILDNAME, imc.getChildName());
         values.put(Section7Table.COLUMN_S7, imc.getS7());
@@ -469,7 +469,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 Section7Table._ID,
                 Section7Table.COLUMN_UID,
-                Section7Table.COLUMN_UUID,
+                //   Section7Table.COLUMN_UUID,
                 Section7Table.COLUMN_USER,
                 Section7Table.COLUMN_CHILDNAME,
                 Section7Table.COLUMN_S7,

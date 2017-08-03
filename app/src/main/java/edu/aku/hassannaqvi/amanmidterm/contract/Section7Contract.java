@@ -15,7 +15,7 @@ public class Section7Contract {
     //private final String surveyType = "Eligibility";
     private String _ID = "";
     private String _UID = "";
-    private String UUID = "";
+    //   private String UUID = "";
     private String childName = "";
     private String user = ""; // Interviewer
 
@@ -43,7 +43,7 @@ public class Section7Contract {
 
         this._ID = jsonObject.getString(Section7Table._ID);
         this._UID = jsonObject.getString(Section7Table.COLUMN_UID);
-        this.UUID = jsonObject.getString(Section7Table.COLUMN_UUID);
+        //  this.UUID = jsonObject.getString(Section7Table.COLUMN_UUID);
         this.user = jsonObject.getString(Section7Table.COLUMN_USER);
         this.childName = jsonObject.getString(Section7Table.COLUMN_CHILDNAME);
         this.s7 = jsonObject.getString(Section7Table.COLUMN_S7);
@@ -64,7 +64,7 @@ public class Section7Contract {
 
         this._ID = cursor.getString(cursor.getColumnIndex(Section7Table._ID));
         this._UID = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_UID));
-        this.UUID = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_UUID));
+        //   this.UUID = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_UUID));
         this.user = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_USER));
         this.childName = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_CHILDNAME));
         this.s7 = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_S7));
@@ -92,6 +92,7 @@ public class Section7Contract {
         this._ID = _ID;
     }
 
+/*
     public String getUUID() {
         return UUID;
     }
@@ -99,6 +100,7 @@ public class Section7Contract {
     public void setUUID(String UUID) {
         this.UUID = UUID;
     }
+*/
 
     public String get_UID() {
         return _UID;
@@ -202,7 +204,7 @@ public class Section7Contract {
         json.put(Section7Table.COLUMN_PROJECTNAME, this.projectName == null ? JSONObject.NULL : this.projectName);
         json.put(Section7Table._ID, this._ID == null ? JSONObject.NULL : this._ID);
         json.put(Section7Table.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
-        json.put(Section7Table.COLUMN_UUID, this.UUID == null ? JSONObject.NULL : this.UUID);
+        //  json.put(Section7Table.COLUMN_UUID, this.UUID == null ? JSONObject.NULL : this.UUID);
         json.put(Section7Table.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
         json.put(Section7Table.COLUMN_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
         json.put(Section7Table.COLUMN_S7, this.s7 == null ? JSONObject.NULL : this.s7);
@@ -226,7 +228,7 @@ public class Section7Contract {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECTNAME = "projectname";
         public static final String COLUMN_UID = "_uid";
-        public static final String COLUMN_UUID = "uuid";
+        //   public static final String COLUMN_UUID = "uuid";
         public static final String COLUMN_USER = "user";
         public static final String COLUMN_CHILDNAME = "childname";
         public static final String COLUMN_S7 = "s7";
