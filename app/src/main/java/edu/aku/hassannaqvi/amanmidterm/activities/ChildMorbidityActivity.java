@@ -355,7 +355,7 @@ public class ChildMorbidityActivity extends Activity {
 
         AppMain.im.setDevicetagID(sharedPref.getString("tagName", null));
         AppMain.im.setUser(AppMain.fc.getUserName());
-        AppMain.im.setUUID(AppMain.fc.getUID());
+        // AppMain.im.setUUID(AppMain.fc.getUID());
         AppMain.im.setDeviceID(AppMain.fc.getDeviceID());
 
         AppMain.im.setChildName(cm02.getText().toString());
