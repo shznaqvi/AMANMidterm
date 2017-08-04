@@ -256,7 +256,7 @@ public class PostpartumCareActivity extends Activity {
                     pc07c.setChecked(false);
                     pc07d.setChecked(false);
                     pc07e.setChecked(false);
-                    pc07f.setChecked(false);
+                    //pc07f.setChecked(false);
                 } else {
                     pc06a.setVisibility(View.VISIBLE);
                     pc06b.setVisibility(View.VISIBLE);
@@ -265,7 +265,7 @@ public class PostpartumCareActivity extends Activity {
             }
         });
 
-        pc07f.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*pc07f.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
@@ -276,7 +276,7 @@ public class PostpartumCareActivity extends Activity {
                     pc07e.setChecked(false);
                 }
             }
-        });
+        });*/
 
         pc08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -460,7 +460,7 @@ public class PostpartumCareActivity extends Activity {
         spc.put("pc06b", pc06b.getText().toString());
         spc.put("pc0699", pc0699.isChecked() ? "99" : "0");
         spc.put("pc07", pc07a.isChecked() ? "1" : pc07b.isChecked() ? "2" : pc07c.isChecked() ? "3" : pc07d.isChecked() ? "4"
-                : pc07e.isChecked() ? "5": pc07f.isChecked() ? "00" : "0");
+                : pc07e.isChecked() ? "5" : "0");
         spc.put("pc08", pc08a.isChecked() ? "1" : pc08b.isChecked() ? "2" : "0");
         spc.put("pc09", pc09a.isChecked() ? "1" : pc09b.isChecked() ? "2" : pc09c.isChecked() ? "3" : pc09d.isChecked() ? "4"
                 : pc09e.isChecked() ? "5" : pc09f.isChecked() ? "6" : pc09g.isChecked() ? "7" : pc09h.isChecked() ? "8" : "0");

@@ -315,7 +315,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/other"
                 android:visibility="gone" />
-            />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -359,7 +359,7 @@
                     android:layout_marginBottom="1dp"
                     android:text="@string/female"
                     android:visibility="gone" />
-                />
+
 
             </RadioGroup>
 
@@ -412,7 +412,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/occupation01" />
-                />
+
 
                 <RadioButton
                     android:id="@+id/bib1002"
@@ -814,8 +814,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:text="@string/endForm"
-            android:visibility="gone"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:visibility="gone" />
     </LinearLayout>
 
 
