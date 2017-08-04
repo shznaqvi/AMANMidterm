@@ -510,17 +510,31 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                     bd03dob3.setVisibility(View.GONE);
                     bd03dob2.setText(null);
                     bd03dob3.setText(null);
+                    bd03dob4.setVisibility(View.GONE);
+                    bd03dob4.setText(null);
+                    bd03dob5.setVisibility(View.GONE);
+                    bd03dob5.setText(null);
                 } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 2) {
                     fldGrpbd03.setVisibility(View.VISIBLE);
                     bd03dob2.setVisibility(View.VISIBLE);
                     bd03dob3.setVisibility(View.GONE);
                     bd03dob3.setText(null);
+                    bd03dob4.setVisibility(View.GONE);
+                    bd03dob4.setText(null);
+                    bd03dob5.setVisibility(View.GONE);
+                    bd03dob5.setText(null);
                 } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 3) {
                     fldGrpbd03.setVisibility(View.VISIBLE);
                     bd03dob3.setVisibility(View.VISIBLE);
+                    bd03dob4.setVisibility(View.GONE);
+                    bd03dob4.setText(null);
+                    bd03dob5.setVisibility(View.GONE);
+                    bd03dob5.setText(null);
                 } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 4) {
                     fldGrpbd03.setVisibility(View.VISIBLE);
                     bd03dob4.setVisibility(View.VISIBLE);
+                    bd03dob5.setVisibility(View.GONE);
+                    bd03dob5.setText(null);
                 } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 5) {
                     fldGrpbd03.setVisibility(View.VISIBLE);
                     bd03dob5.setVisibility(View.VISIBLE);
