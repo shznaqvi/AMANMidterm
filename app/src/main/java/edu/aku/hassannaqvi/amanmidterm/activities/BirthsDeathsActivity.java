@@ -140,6 +140,8 @@ public class BirthsDeathsActivity extends AppCompatActivity {
     String maxDate49Years;
     String maxDate15Years;
     Calendar now = Calendar.getInstance();
+
+
     @BindViews({R.id.bd01dod1, R.id.bd01dod2, R.id.bd02dod1, R.id.bd02dod2, R.id.bd03dob1, R.id.bd03dob2, R.id.bd03dob3,
             R.id.bd03dob4, R.id.bd03dob5, R.id.bd04dob1, R.id.bd04dob2, R.id.bd04dod1, R.id.bd04dod2, R.id.bd05dob1,
             R.id.bd05dob2, R.id.bd05dod1, R.id.bd05dod2, R.id.bd06dob1, R.id.bd06dob2, R.id.bd06dod1, R.id.bd06dod2,
@@ -161,7 +163,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
 
         dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
-        maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_YEAR) * AppMain.MILLISECONDS_IN_DAY));
+        maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_YEAR) + AppMain.MILLISECONDS_IN_DAY));
         maxDate5Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_5Years) + AppMain.MILLISECONDS_IN_DAY));
         maxDate49Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_49Years));
         maxDate15Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_15Years));
@@ -173,6 +175,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             de.setMinDate(maxDateyear);
 
         }
+
 
         bd05dob1.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_8Days)));
         bd05dob2.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_8Days)));
@@ -494,6 +497,8 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                     bd03dob1.setText(null);
                     bd03dob2.setText(null);
                     bd03dob3.setText(null);
+                    bd03dob4.setText(null);
+                    bd03dob5.setText(null);
                 } else {
                     fldGrpbd03.setVisibility(View.VISIBLE);
 
