@@ -122,6 +122,8 @@ public class PostpartumCareActivity extends Activity {
     CheckBox pc09g;
     @BindView(R.id.pc09h)
     CheckBox pc09h;
+    @BindView(R.id.pc09i)
+    CheckBox pc09i;
     @BindView(R.id.pc0988)
     CheckBox pc0988;
     @BindView(R.id.pc0988x)
@@ -294,6 +296,7 @@ public class PostpartumCareActivity extends Activity {
                     pc09f.setChecked(false);
                     pc09g.setChecked(false);
                     pc09h.setChecked(false);
+                    pc09i.setChecked(false);
                     pc0988.setChecked(false);
                     pc0988x.setText(null);
                     pc10.clearCheck();
@@ -470,6 +473,7 @@ public class PostpartumCareActivity extends Activity {
         spc.put("pc09f", pc09f.isChecked() ? "6" : "0");
         spc.put("pc09g", pc09g.isChecked() ? "7" : "0");
         spc.put("pc09h", pc09h.isChecked() ? "8" : "0");
+        spc.put("pc09i", pc09i.isChecked() ? "9" : "0");
         spc.put("pc0988", pc0988.isChecked() ? "88" : "0");
         spc.put("pc0988x", pc0988x.getText().toString());
         spc.put("pc10", pc10a.isChecked() ? "1" : pc10b.isChecked() ? "2" : "0");
@@ -633,7 +637,7 @@ public class PostpartumCareActivity extends Activity {
 
         if (pc08a.isChecked()) {
             if (!(pc09a.isChecked() || pc09b.isChecked() || pc09c.isChecked() || pc09d.isChecked() || pc09e.isChecked()
-                    || pc09f.isChecked() || pc09g.isChecked() || pc09h.isChecked() || pc0988.isChecked())) {
+                    || pc09f.isChecked() || pc09g.isChecked() || pc09h.isChecked() || pc09i.isChecked() || pc0988.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc09), Toast.LENGTH_LONG).show();
                 pc0988.setError("This data is Required!");    // Set Error on last radio button
 
