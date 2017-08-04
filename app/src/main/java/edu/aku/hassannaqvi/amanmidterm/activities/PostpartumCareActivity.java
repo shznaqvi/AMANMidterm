@@ -462,8 +462,16 @@ public class PostpartumCareActivity extends Activity {
         spc.put("pc07", pc07a.isChecked() ? "1" : pc07b.isChecked() ? "2" : pc07c.isChecked() ? "3" : pc07d.isChecked() ? "4"
                 : pc07e.isChecked() ? "5" : "0");
         spc.put("pc08", pc08a.isChecked() ? "1" : pc08b.isChecked() ? "2" : "0");
-        spc.put("pc09", pc09a.isChecked() ? "1" : pc09b.isChecked() ? "2" : pc09c.isChecked() ? "3" : pc09d.isChecked() ? "4"
-                : pc09e.isChecked() ? "5" : pc09f.isChecked() ? "6" : pc09g.isChecked() ? "7" : pc09h.isChecked() ? "8" : "0");
+        spc.put("pc09a", pc09a.isChecked() ? "1" : "0");
+        spc.put("pc09b", pc09b.isChecked() ? "2" : "0");
+        spc.put("pc09c", pc09c.isChecked() ? "3" : "0");
+        spc.put("pc09d", pc09d.isChecked() ? "4" : "0");
+        spc.put("pc09e", pc09e.isChecked() ? "5" : "0");
+        spc.put("pc09f", pc09f.isChecked() ? "6" : "0");
+        spc.put("pc09g", pc09g.isChecked() ? "7" : "0");
+        spc.put("pc09h", pc09h.isChecked() ? "8" : "0");
+        spc.put("pc0988", pc0988.isChecked() ? "88" : "0");
+        spc.put("pc0988x", pc0988x.getText().toString());
         spc.put("pc10", pc10a.isChecked() ? "1" : pc10b.isChecked() ? "2" : "0");
         spc.put("pc11a", pc11a.getText().toString());
         spc.put("pc11b", pc11b.getText().toString());
