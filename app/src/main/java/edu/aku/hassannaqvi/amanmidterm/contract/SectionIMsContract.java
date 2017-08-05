@@ -234,8 +234,12 @@ public class SectionIMsContract {
         json.put(Section7Table.COLUMN_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
 //        json.put(Section7Table.COLUMN_S7, this.s7 == null ? JSONObject.NULL : this.s7);
 
+        try {
         if (!this.s7.equals("")) {
             json.put(Section7Table.COLUMN_S7, new JSONObject(this.s7));
+        }
+        } catch (Exception e) {
+
         }
 
         /*json.put(Section7Table.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
