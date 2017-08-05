@@ -314,14 +314,16 @@ public class ChildMorbidityActivity extends Activity {
 //                e.printStackTrace();
 //            }
 //            if (UpdateDB()) {
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
-        startActivity(endSec);
+        startActivity(endSec);*/
 //            } else {
 //                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
 //            }
 //        }
+
+        AppMain.endActivity(this, this);
     }
 
 
@@ -355,7 +357,9 @@ public class ChildMorbidityActivity extends Activity {
 
         AppMain.im.setDevicetagID(sharedPref.getString("tagName", null));
         AppMain.im.setUser(AppMain.fc.getUserName());
-        // AppMain.im.setUUID(AppMain.fc.getUID());
+        AppMain.im.setUUID(AppMain.fc.getUID());
+        AppMain.im.setHouseHold(AppMain.fc.getHouseHold());
+        AppMain.im.setACHWCode(AppMain.fc.getACHWCode());
         AppMain.im.setDeviceID(AppMain.fc.getDeviceID());
 
         AppMain.im.setChildName(cm02.getText().toString());

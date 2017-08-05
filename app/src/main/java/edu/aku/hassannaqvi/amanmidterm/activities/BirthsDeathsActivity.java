@@ -767,15 +767,17 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 //            }
 //            if (UpdateDB()) {
 
-                finish();
+                /*finish();
                 Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, EndingActivity.class);
                 endSec.putExtra("complete", false);
-                startActivity(endSec);
+                startActivity(endSec);*/
 //            } else {
 //                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
 //            }
 //        }
+
+        AppMain.endActivity(this, this);
 
     }
 

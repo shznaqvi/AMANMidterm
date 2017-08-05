@@ -26,6 +26,7 @@ public class FormsContract {
     private String primaryUnit = ""; // Cluster - Block - PSU
     //private String secondaryUnit = ""; // LHW - CHW
     private String houseHold = ""; // HH no.
+    private String ACHWCode = "";
     //private String childId = ""; // Index Child ID
     //private String childName = ""; // Child Name
     private String iStatus = ""; // Form Status
@@ -65,6 +66,15 @@ public class FormsContract {
     public FormsContract() {
     }
 
+    public String getACHWCode() {
+
+        return ACHWCode;
+    }
+
+    public void setACHWCode(String ACHWCode) {
+        this.ACHWCode = ACHWCode;
+    }
+
     public FormsContract sync(JSONObject jsonObject) throws JSONException {
         this.userName = jsonObject.getString(FormsTable.COLUMN_NAME_USERNAME);
         this.ID = jsonObject.getString(FormsTable.ID);
@@ -76,6 +86,7 @@ public class FormsContract {
         this.primaryUnit = jsonObject.getString(FormsTable.COLUMN_NAME_PRIMARYUNIT);
         //this.secondaryUnit = jsonObject.getString(FormsTable.COLUMN_NAME_SECONDARYUNIT);
         this.houseHold = jsonObject.getString(FormsTable.COLUMN_NAME_HOUSEHOLD);
+        this.ACHWCode = jsonObject.getString(FormsTable.COLUMN_NAME_ACHWCODE);
         //this.childId = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDID);
         //this.childName = jsonObject.getString(FormsTable.COLUMN_NAME_CHILDNAME);
         this.iStatus = jsonObject.getString(FormsTable.COLUMN_NAME_ISTATUS);
@@ -438,6 +449,7 @@ public class FormsContract {
         this.primaryUnit = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_PRIMARYUNIT));
         //this.secondaryUnit = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_SECONDARYUNIT));
         this.houseHold = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_HOUSEHOLD));
+        this.ACHWCode = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_ACHWCODE));
         //this.childId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDID));
         //this.childName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_CHILDNAME));
         this.iStatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_NAME_ISTATUS));
@@ -485,6 +497,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_NAME_PRIMARYUNIT, this.primaryUnit == null ? JSONObject.NULL : this.primaryUnit);
         //json.put(FormsTable.COLUMN_NAME_SECONDARYUNIT, this.secondaryUnit == null ? JSONObject.NULL : this.secondaryUnit);
         json.put(FormsTable.COLUMN_NAME_HOUSEHOLD, this.houseHold == null ? JSONObject.NULL : this.houseHold);
+        json.put(FormsTable.COLUMN_NAME_ACHWCODE, this.ACHWCode == null ? JSONObject.NULL : this.ACHWCode);
         //json.put(FormsTable.COLUMN_NAME_CHILDID, this.childId == null ? JSONObject.NULL : this.childId);
         //json.put(FormsTable.COLUMN_NAME_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
         json.put(FormsTable.COLUMN_NAME_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
@@ -583,6 +596,7 @@ public class FormsContract {
         public static final String COLUMN_NAME_PRIMARYUNIT = "primaryunit";
         //public static final String COLUMN_NAME_SECONDARYUNIT = "secondaryunit";
         public static final String COLUMN_NAME_HOUSEHOLD = "household";
+        public static final String COLUMN_NAME_ACHWCODE = "achwcode";
         //public static final String COLUMN_NAME_CHILDID = "childid";
         //public static final String COLUMN_NAME_CHILDNAME = "childname";
         public static final String COLUMN_NAME_ISTATUS = "istatus";

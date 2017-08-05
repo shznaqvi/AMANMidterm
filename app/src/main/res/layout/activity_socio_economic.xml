@@ -84,6 +84,7 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
 
@@ -158,6 +159,7 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
 
@@ -233,7 +235,9 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
+
 
         <TextView
             android:layout_width="match_parent"
@@ -291,6 +295,7 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
         <LinearLayout
@@ -412,6 +417,7 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
         <LinearLayout
@@ -491,6 +497,7 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
         </LinearLayout>
@@ -553,6 +560,7 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
 
@@ -603,6 +611,7 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
         <TextView
@@ -667,6 +676,7 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
 
@@ -748,6 +758,13 @@
                 android:text="@string/se1009" />
 
             <RadioButton
+                android:id="@+id/se1010"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/se1010" />
+
+            <RadioButton
                 android:id="@+id/se1088"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -762,6 +779,7 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
         <TextView

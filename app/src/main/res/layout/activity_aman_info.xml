@@ -62,8 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="1234567890--qwertyuiopasdfghjklzxcvbnm"
-            android:hint="@string/biPara"
-            android:maxLength="5" />
+            android:hint="@string/biPara" />
 
         <TextView
             android:layout_width="match_parent"
@@ -313,7 +312,9 @@
                 android:id="@+id/bib0596x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:hint="@string/other"
+                android:inputType="textCapWords"
                 android:visibility="gone" />
 
 
@@ -504,8 +505,11 @@
                 android:id="@+id/bib1096x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:hint="@string/other"
+                android:inputType="textCapWords"
                 android:visibility="gone" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -597,7 +601,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/occupation01" />
-                />
 
                 <RadioButton
                     android:id="@+id/bib1502"
@@ -689,7 +692,9 @@
                 android:id="@+id/bib1596x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:hint="@string/other"
+                android:inputType="textCapWords"
                 android:visibility="gone" />
 
             <TextView

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -28,6 +29,8 @@ public class PostpartumCareActivity extends Activity {
 
     private static final String TAG = PostpartumCareActivity.class.getSimpleName();
 
+    @BindView(R.id.app_header)
+    TextView appHeader;
     @BindView(R.id.pc01)
     RadioGroup pc01;
     @BindView(R.id.pc01a)
@@ -66,6 +69,8 @@ public class PostpartumCareActivity extends Activity {
     EditText pc04b;
     @BindView(R.id.pc04c)
     EditText pc04c;
+    @BindView(R.id.fldGrppc05)
+    LinearLayout fldGrppc05;
     @BindView(R.id.pc05a)
     CheckBox pc05a;
     @BindView(R.id.pc05b)
@@ -86,18 +91,38 @@ public class PostpartumCareActivity extends Activity {
     EditText pc06b;
     @BindView(R.id.pc0699)
     CheckBox pc0699;
+    @BindView(R.id.fldGrppc07)
+    LinearLayout fldGrppc07;
     @BindView(R.id.pc07a)
-    CheckBox pc07a;
+    RadioGroup pc07a;
+    @BindView(R.id.pc07a01)
+    RadioButton pc07a01;
+    @BindView(R.id.pc07a02)
+    RadioButton pc07a02;
     @BindView(R.id.pc07b)
-    CheckBox pc07b;
+    RadioGroup pc07b;
+    @BindView(R.id.pc07b01)
+    RadioButton pc07b01;
+    @BindView(R.id.pc07b02)
+    RadioButton pc07b02;
     @BindView(R.id.pc07c)
-    CheckBox pc07c;
+    RadioGroup pc07c;
+    @BindView(R.id.pc07c01)
+    RadioButton pc07c01;
+    @BindView(R.id.pc07c02)
+    RadioButton pc07c02;
     @BindView(R.id.pc07d)
-    CheckBox pc07d;
+    RadioGroup pc07d;
+    @BindView(R.id.pc07d01)
+    RadioButton pc07d01;
+    @BindView(R.id.pc07d02)
+    RadioButton pc07d02;
     @BindView(R.id.pc07e)
-    CheckBox pc07e;
-    @BindView(R.id.pc07f)
-    CheckBox pc07f;
+    RadioGroup pc07e;
+    @BindView(R.id.pc07e01)
+    RadioButton pc07e01;
+    @BindView(R.id.pc07e02)
+    RadioButton pc07e02;
     @BindView(R.id.pc08)
     RadioGroup pc08;
     @BindView(R.id.pc08a)
@@ -142,6 +167,8 @@ public class PostpartumCareActivity extends Activity {
     EditText pc11b;
     @BindView(R.id.pc11c)
     EditText pc11c;
+    @BindView(R.id.fldGrppc12)
+    LinearLayout fldGrppc12;
     @BindView(R.id.pc12a)
     CheckBox pc12a;
     @BindView(R.id.pc12b)
@@ -156,12 +183,6 @@ public class PostpartumCareActivity extends Activity {
     CheckBox pc1288;
     @BindView(R.id.pc1288x)
     EditText pc1288x;
-    @BindView(R.id.fldGrppc05)
-    LinearLayout fldGrppc05;
-    @BindView(R.id.fldGrppc07)
-    LinearLayout fldGrppc07;
-    @BindView(R.id.fldGrppc12)
-    LinearLayout fldGrppc12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -253,11 +274,11 @@ public class PostpartumCareActivity extends Activity {
                     pc06a.setText(null);
                     pc06b.setText(null);
                     fldGrppc07.setVisibility(View.GONE);
-                    pc07a.setChecked(false);
-                    pc07b.setChecked(false);
-                    pc07c.setChecked(false);
-                    pc07d.setChecked(false);
-                    pc07e.setChecked(false);
+                    pc07a.clearCheck();
+                    pc07b.clearCheck();
+                    pc07c.clearCheck();
+                    pc07d.clearCheck();
+                    pc07e.clearCheck();
                     //pc07f.setChecked(false);
                 } else {
                     pc06a.setVisibility(View.VISIBLE);
@@ -411,14 +432,16 @@ public class PostpartumCareActivity extends Activity {
 //                e.printStackTrace();
 //            }
 //            if (UpdateDB()) {
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
-        startActivity(endSec);
+        startActivity(endSec);*/
 //            } else {
 //                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
 //            }
 //        }
+
+        AppMain.endActivity(this, this);
     }
 
     private boolean UpdateDB() {
@@ -462,8 +485,11 @@ public class PostpartumCareActivity extends Activity {
         spc.put("pc06a", pc06a.getText().toString());
         spc.put("pc06b", pc06b.getText().toString());
         spc.put("pc0699", pc0699.isChecked() ? "99" : "0");
-        spc.put("pc07", pc07a.isChecked() ? "1" : pc07b.isChecked() ? "2" : pc07c.isChecked() ? "3" : pc07d.isChecked() ? "4"
-                : pc07e.isChecked() ? "5" : "0");
+        spc.put("pc07a", pc07a01.isChecked() ? "1" : pc07a02.isChecked() ? "2" : "0");
+        spc.put("pc07b", pc07b01.isChecked() ? "1" : pc07b02.isChecked() ? "2" : "0");
+        spc.put("pc07c", pc07c01.isChecked() ? "1" : pc07c02.isChecked() ? "2" : "0");
+        spc.put("pc07d", pc07d01.isChecked() ? "1" : pc07d02.isChecked() ? "2" : "0");
+        spc.put("pc07e", pc07e01.isChecked() ? "1" : pc07e02.isChecked() ? "2" : "0");
         spc.put("pc08", pc08a.isChecked() ? "1" : pc08b.isChecked() ? "2" : "0");
         spc.put("pc09a", pc09a.isChecked() ? "1" : "0");
         spc.put("pc09b", pc09b.isChecked() ? "2" : "0");
@@ -541,7 +567,7 @@ public class PostpartumCareActivity extends Activity {
                 pc03b.setError(null);
             }
 
-        } else {
+
             if (pc03a.isChecked()) {
                 if (!(pc05a.isChecked() || pc05b.isChecked() || pc05c.isChecked() || pc05d.isChecked() || pc05e.isChecked()
                         || pc0588.isChecked())) {
@@ -565,7 +591,7 @@ public class PostpartumCareActivity extends Activity {
                 }
 
             }
-        }
+            //}
 
             if (pc03b.isChecked()) {
                 if (pc04a.getText().toString().isEmpty() && pc04b.getText().toString().isEmpty() && pc04c.getText().toString().isEmpty()) {
@@ -578,6 +604,9 @@ public class PostpartumCareActivity extends Activity {
                 }
 
             }
+        }
+
+
 
         // ===================== Q 5.38 ===========================
         // RadioGroup
@@ -614,14 +643,54 @@ public class PostpartumCareActivity extends Activity {
                 pc06b.setError(null);
             }
 
-            if (!(pc07a.isChecked() || pc07b.isChecked() || pc07c.isChecked() || pc07d.isChecked() || pc07e.isChecked())) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc07), Toast.LENGTH_LONG).show();
-                pc07e.setError("This data is Required!");    // Set Error on last radio button
+            if (pc07a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc07a), Toast.LENGTH_LONG).show();
+                pc07a01.setError("This data is Required!");    // Set Error on last radio button
 
-                Log.i(TAG, "pc07: This data is Required!");
+                Log.i(TAG, "pc07a: This data is Required!");
                 return false;
             } else {
-                pc07e.setError(null);
+                pc07a01.setError(null);
+            }
+
+            if (pc07b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc07b), Toast.LENGTH_LONG).show();
+                pc07b01.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "pc07b: This data is Required!");
+                return false;
+            } else {
+                pc07b01.setError(null);
+            }
+
+            if (pc07c.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc07c), Toast.LENGTH_LONG).show();
+                pc07c01.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "pc07c: This data is Required!");
+                return false;
+            } else {
+                pc07c01.setError(null);
+            }
+
+            if (pc07d.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc07d), Toast.LENGTH_LONG).show();
+                pc07d01.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "pc07d: This data is Required!");
+                return false;
+            } else {
+                pc07d01.setError(null);
+            }
+
+            if (pc07e.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc07e), Toast.LENGTH_LONG).show();
+                pc07e01.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "pc07e: This data is Required!");
+                return false;
+            } else {
+                pc07e01.setError(null);
             }
 
         }

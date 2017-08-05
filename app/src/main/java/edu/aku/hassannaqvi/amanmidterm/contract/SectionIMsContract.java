@@ -15,7 +15,9 @@ public class SectionIMsContract {
     //private final String surveyType = "Eligibility";
     private String _ID = "";
     private String _UID = "";
-    //   private String UUID = "";
+    private String UUID = "";
+    private String houseHold = ""; // HH no.
+    private String ACHWCode = "";
     private String childName = "";
     private String user = ""; // Interviewer
 
@@ -43,14 +45,16 @@ public class SectionIMsContract {
 
         this._ID = jsonObject.getString(Section7Table._ID);
         this._UID = jsonObject.getString(Section7Table.COLUMN_UID);
-        //  this.UUID = jsonObject.getString(Section7Table.COLUMN_UUID);
+        this.UUID = jsonObject.getString(Section7Table.COLUMN_UUID);
+        this.houseHold = jsonObject.getString(Section7Table.COLUMN_HOUSEHOLD);
+        this.ACHWCode = jsonObject.getString(Section7Table.COLUMN_ACHWCODE);
         this.user = jsonObject.getString(Section7Table.COLUMN_USER);
         this.childName = jsonObject.getString(Section7Table.COLUMN_CHILDNAME);
         this.s7 = jsonObject.getString(Section7Table.COLUMN_S7);
-        this.gpsLat = jsonObject.getString(Section7Table.COLUMN_GPSLAT);
+        /*this.gpsLat = jsonObject.getString(Section7Table.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(Section7Table.COLUMN_GPSLNG);
         this.gpsDT = jsonObject.getString(Section7Table.COLUMN_GPSDT);
-        this.gpsAcc = jsonObject.getString(Section7Table.COLUMN_GPSACC);
+        this.gpsAcc = jsonObject.getString(Section7Table.COLUMN_GPSACC);*/
         this.deviceID = jsonObject.getString(Section7Table.COLUMN_DEVICEID);
         this.devicetagID = jsonObject.getString(Section7Table.COLUMN_DEVICETAGID);
         this.synced = jsonObject.getString(Section7Table.COLUMN_SYNCED);
@@ -64,14 +68,16 @@ public class SectionIMsContract {
 
         this._ID = cursor.getString(cursor.getColumnIndex(Section7Table._ID));
         this._UID = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_UID));
-        //   this.UUID = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_UUID));
+        this.UUID = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_UUID));
+        this.houseHold = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_HOUSEHOLD));
+        this.ACHWCode = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_ACHWCODE));
         this.user = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_USER));
         this.childName = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_CHILDNAME));
         this.s7 = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_S7));
-        this.gpsLat = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_GPSLAT));
+        /*this.gpsLat = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_GPSLNG));
         this.gpsDT = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_GPSDT));
-        this.gpsAcc = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_GPSACC));
+        this.gpsAcc = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_GPSACC));*/
         this.deviceID = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_DEVICEID));
         this.devicetagID = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_DEVICETAGID));
         this.synced = cursor.getString(cursor.getColumnIndex(Section7Table.COLUMN_SYNCED));
@@ -92,7 +98,7 @@ public class SectionIMsContract {
         this._ID = _ID;
     }
 
-/*
+
     public String getUUID() {
         return UUID;
     }
@@ -100,7 +106,7 @@ public class SectionIMsContract {
     public void setUUID(String UUID) {
         this.UUID = UUID;
     }
-*/
+
 
     public String get_UID() {
         return _UID;
@@ -158,6 +164,23 @@ public class SectionIMsContract {
         this.gpsDT = gpsDT;
     }
 
+    public String getHouseHold() {
+
+        return houseHold;
+    }
+
+    public void setHouseHold(String houseHold) {
+        this.houseHold = houseHold;
+    }
+
+    public String getACHWCode() {
+        return ACHWCode;
+    }
+
+    public void setACHWCode(String ACHWCode) {
+        this.ACHWCode = ACHWCode;
+    }
+
     public String getGpsAcc() {
         return gpsAcc;
     }
@@ -204,7 +227,9 @@ public class SectionIMsContract {
         json.put(Section7Table.COLUMN_PROJECTNAME, this.projectName == null ? JSONObject.NULL : this.projectName);
         json.put(Section7Table._ID, this._ID == null ? JSONObject.NULL : this._ID);
         json.put(Section7Table.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
-        //  json.put(Section7Table.COLUMN_UUID, this.UUID == null ? JSONObject.NULL : this.UUID);
+        json.put(Section7Table.COLUMN_UUID, this.UUID == null ? JSONObject.NULL : this.UUID);
+        json.put(Section7Table.COLUMN_HOUSEHOLD, this.houseHold == null ? JSONObject.NULL : this.houseHold);
+        json.put(Section7Table.COLUMN_ACHWCODE, this.ACHWCode == null ? JSONObject.NULL : this.ACHWCode);
         json.put(Section7Table.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
         json.put(Section7Table.COLUMN_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
 //        json.put(Section7Table.COLUMN_S7, this.s7 == null ? JSONObject.NULL : this.s7);
@@ -213,10 +238,10 @@ public class SectionIMsContract {
             json.put(Section7Table.COLUMN_S7, new JSONObject(this.s7));
         }
 
-        json.put(Section7Table.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
+        /*json.put(Section7Table.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(Section7Table.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(Section7Table.COLUMN_GPSDT, this.gpsDT == null ? JSONObject.NULL : this.gpsDT);
-        json.put(Section7Table.COLUMN_GPSACC, this.gpsAcc == null ? JSONObject.NULL : this.gpsAcc);
+        json.put(Section7Table.COLUMN_GPSACC, this.gpsAcc == null ? JSONObject.NULL : this.gpsAcc);*/
         json.put(Section7Table.COLUMN_DEVICEID, this.deviceID == null ? JSONObject.NULL : this.deviceID);
         json.put(Section7Table.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
         json.put(Section7Table.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
@@ -233,14 +258,16 @@ public class SectionIMsContract {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECTNAME = "projectname";
         public static final String COLUMN_UID = "_uid";
-        //   public static final String COLUMN_UUID = "uuid";
+        public static final String COLUMN_UUID = "uuid";
+        public static final String COLUMN_HOUSEHOLD = "household";
+        public static final String COLUMN_ACHWCODE = "achwcode";
         public static final String COLUMN_USER = "user";
         public static final String COLUMN_CHILDNAME = "childname";
         public static final String COLUMN_S7 = "s7";
-        public static final String COLUMN_GPSLAT = "gpslat";
+        /*public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";
         public static final String COLUMN_GPSDT = "gpsdt";
-        public static final String COLUMN_GPSACC = "gpsacc";
+        public static final String COLUMN_GPSACC = "gpsacc";*/
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";

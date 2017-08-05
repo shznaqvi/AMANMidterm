@@ -195,6 +195,14 @@ public class SocioEconomicActivity extends Activity {
     RadioButton se1005;
     @BindView(R.id.se1006)
     RadioButton se1006;
+    @BindView(R.id.se1007)
+    RadioButton se1007;
+    @BindView(R.id.se1008)
+    RadioButton se1008;
+    @BindView(R.id.se1009)
+    RadioButton se1009;
+    @BindView(R.id.se1010)
+    RadioButton se1010;
     @BindView(R.id.se1088)
     RadioButton se1088;
     @BindView(R.id.se1088x)
@@ -397,22 +405,7 @@ public class SocioEconomicActivity extends Activity {
             }
         });
 
-        //  ============================= Q 8.14 Others ==============================
-        se10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == se1088.getId()) {
 
-                    se1088x.setVisibility(View.VISIBLE);
-                    se1088x.requestFocus();
-
-                } else {
-
-                    se1088x.setVisibility(View.GONE);
-                    se1088x.setText(null);
-                }
-            }
-        });
 
         se02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -439,18 +432,7 @@ public class SocioEconomicActivity extends Activity {
             }
         });
 
-        /*se05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (se0501.isChecked() || se0502.isChecked()) {
-                    fldGrpse06.setVisibility(View.GONE);
-                    se06.clearCheck();
-                    se0688x.setText(null);
-                } else {
-                    fldGrpse06.setVisibility(View.VISIBLE);
-                }
-            }
-        });*/
+
 
 
         se0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -490,14 +472,16 @@ public class SocioEconomicActivity extends Activity {
 //                e.printStackTrace();
 //            }
 //            if (UpdateDB()) {
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("check", false);
-        startActivity(endSec);
+        startActivity(endSec);*/
 //            } else {
 //                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
 //            }
 //        }
+
+        AppMain.endActivity(this, this);
 
     }
 
@@ -578,7 +562,8 @@ public class SocioEconomicActivity extends Activity {
         socioeco.put("se0988x", se0988x.getText().toString());
         socioeco.put("se10", se1001.isChecked() ? "1" : se1002.isChecked() ? "2" : se1003.isChecked() ? "3"
                 : se1004.isChecked() ? "4" : se1005.isChecked() ? "5" : se1006.isChecked() ? "6"
-                : se1088.isChecked() ? "88" : "0");
+                : se1007.isChecked() ? "7" : se1008.isChecked() ? "8" : se1009.isChecked() ? "9"
+                : se1010.isChecked() ? "10" : se1088.isChecked() ? "88" : "0");
         socioeco.put("se1088x", se1088x.getText().toString());
         socioeco.put("se11", se1101.getText().toString());
         /*socioeco.put("se1201", se1201.getText().toString());
@@ -713,11 +698,11 @@ public class SocioEconomicActivity extends Activity {
             }
 
             if (!se0399.isChecked()) {
-                if (Integer.valueOf(se03.getText().toString().isEmpty() ? "0" : se03.getText().toString()) == 0) {
+                if (Integer.valueOf(se03.getText().toString().isEmpty() ? "0" : se03.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.se03), Toast.LENGTH_LONG).show();
-                    se03.setError("Zero is not allowed!");    // Set Error on last radio button
+                    se03.setError("Can not be zero");    // Set Error on last radio button
 
-                    Log.i(TAG, "se03: Zero is not allowed!");
+                    Log.i(TAG, "se03: Can not be zero");
                     return false;
                 } else {
                     se03.setError(null);
@@ -878,6 +863,16 @@ public class SocioEconomicActivity extends Activity {
             se1101.setError("This data is Required!");    // Set Error on last radio button
 
             Log.i(TAG, "se11: This data is Required!");
+            return false;
+        } else {
+            se1101.setError(null);
+        }
+
+        if (Integer.valueOf(se1101.getText().toString()) < 1) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.se11), Toast.LENGTH_LONG).show();
+            se1101.setError("Can not be zero");    // Set Error on last radio button
+
+            Log.i(TAG, "se11: Can not be zero");
             return false;
         } else {
             se1101.setError(null);

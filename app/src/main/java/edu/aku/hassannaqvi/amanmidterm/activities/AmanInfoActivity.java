@@ -291,6 +291,17 @@ public class AmanInfoActivity extends Activity {
             }
         });
 
+        bib0701.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib1012.setEnabled(false);
+                } else {
+                    bib1012.setEnabled(true);
+                }
+            }
+        });
+
     }
 
 
@@ -321,7 +332,7 @@ public class AmanInfoActivity extends Activity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        /*if (formValidation()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -335,7 +346,9 @@ public class AmanInfoActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
+
+        AppMain.endActivity(this, this);
 
     }
 
@@ -350,6 +363,7 @@ public class AmanInfoActivity extends Activity {
         AppMain.fc.setUserName(AppMain.username);
         AppMain.fc.setFormDate(dtToday);
         AppMain.fc.setHouseHold(biHH.getText().toString());
+        AppMain.fc.setACHWCode(AppMain.selectedCHW.getAchwcode());
         AppMain.fc.setDeviceTag(sharedPref.getString("tagName", null));
 //        AppMain.fc.setMajorArea(String.valueOf(AppMain.majorArea));
 
@@ -358,7 +372,7 @@ public class AmanInfoActivity extends Activity {
 //        sa.put("biuc", AppMain.selectedCHW.getParacode());
         sa.put("biPara", biPara.getText().toString());
         sa.put("biACHW", biACHW.getText().toString());
-        sa.put("biHH", biHH.getText().toString());
+        //sa.put("biHH", biHH.getText().toString());
         sa.put("bi01", bi0101.isChecked() ? "1" : bi0102.isChecked() ? "2" : "0");
         sa.put("bib01", bib01.getText().toString());
         sa.put("bib02", bib0201.isChecked() ? "1" : bib0202.isChecked() ? "2" : "0");
@@ -544,10 +558,10 @@ public class AmanInfoActivity extends Activity {
                 bib03.setError(null);
             }
 
-            if (Integer.valueOf(bib03.getText().toString()) < 15 || Integer.valueOf(bib03.getText().toString()) > 99) {
+            if (Integer.valueOf(bib03.getText().toString()) < 15 || Integer.valueOf(bib03.getText().toString()) > 49) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.age), Toast.LENGTH_SHORT).show();
-                bib03.setError("Invalid: Range is 15 - 99 years");
-                Log.i(TAG, "bib03: Range is 15 - 99 years");
+                bib03.setError("Invalid: Range is 15 - 49 years");
+                Log.i(TAG, "bib03: Range is 15 - 4900 years");
                 return false;
             } else {
                 bib03.setError(null);
@@ -580,7 +594,7 @@ public class AmanInfoActivity extends Activity {
                 bib0596.setError(null);
             }
 
-            if (bib0596.isChecked() && bib1096x.getText().toString().isEmpty()) {
+            if (bib0596.isChecked() && bib0596x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib05) + getString(R.string.other), Toast.LENGTH_LONG).show();
                 bib0596x.setError("This data is Required!");
                 Log.i(TAG, "bib0596x: This data is Required!");
@@ -824,6 +838,7 @@ public class AmanInfoActivity extends Activity {
                 bic04.setError(null);
             }
 
+
             if ((Integer.valueOf(bic04.getText().toString()))
                     > Integer.valueOf(bic03.getText().toString())) {
                 Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.bic04), Toast.LENGTH_SHORT).show();
@@ -835,8 +850,8 @@ public class AmanInfoActivity extends Activity {
                 bic03.setError(null);
             }
 
-            if (Integer.valueOf(bic03.getText().toString().isEmpty() ? "0" : bic03.getText().toString()) == 0
-                    && Integer.valueOf(bic04.getText().toString().isEmpty() ? "0" : bic04.getText().toString()) == 0) {
+            if (Integer.valueOf(bic03.getText().toString().isEmpty() ? "0" : bic03.getText().toString()) < 1
+                    && Integer.valueOf(bic04.getText().toString().isEmpty() ? "0" : bic04.getText().toString()) < 1) {
                 Toast.makeText(this, "ERROR(invalid)" + getString(R.string.cs02), Toast.LENGTH_SHORT).show();
                 bic03.setError("female and women cannot be zero");
                 bic04.setError("female and women cannot be zero");

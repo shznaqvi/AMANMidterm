@@ -336,7 +336,7 @@
                     android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                     android:ems="10"
                     android:hint="@string/iy07a"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
 
                 <EditText
@@ -348,7 +348,7 @@
                     android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                     android:ems="10"
                     android:hint="@string/iy07a"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
 
                 <EditText
@@ -360,7 +360,7 @@
                     android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                     android:ems="10"
                     android:hint="@string/iy07a"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
             </LinearLayout>
 

@@ -80,7 +80,7 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
                 android:hint="@string/anc01a"
-                android:inputType="text" />
+                android:inputType="textCapWords" />
 
             <EditText
                 android:id="@+id/anc01ab"
@@ -90,7 +90,7 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
                 android:hint="@string/anc01a"
-                android:inputType="text" />
+                android:inputType="textCapWords" />
 
 
         </LinearLayout>
@@ -380,7 +380,7 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
                 android:hint="@string/other"
-                android:inputType="text" />
+                android:inputType="textCapWords" />
 
         </LinearLayout>
 
@@ -435,7 +435,7 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
                 android:hint="@string/anc09"
-                android:inputType="text" />
+                android:inputType="textCapWords" />
 
         </LinearLayout>
 
@@ -512,7 +512,7 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
                 android:hint="@string/other"
-                android:inputType="text"
+                android:inputType="textCapWords"
                 android:visibility="gone" />
 
 
@@ -583,7 +583,7 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
                 android:hint="@string/other"
-                android:inputType="text" />
+                android:inputType="textCapWords" />
 
         </LinearLayout>
 
@@ -778,7 +778,7 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:ems="10"
                 android:hint="@string/other"
-                android:inputType="text" />
+                android:inputType="textCapWords" />
 
         </LinearLayout>
 

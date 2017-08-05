@@ -61,6 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_NAME_PRIMARYUNIT + " TEXT,"
             //+ FormsTable.COLUMN_NAME_SECONDARYUNIT + " TEXT,"
             + FormsTable.COLUMN_NAME_HOUSEHOLD + " TEXT,"
+            + FormsTable.COLUMN_NAME_ACHWCODE + " TEXT,"
             //+ FormsTable.COLUMN_NAME_CHILDID + " TEXT,"
             //+ FormsTable.COLUMN_NAME_CHILDNAME + " TEXT,"
             + FormsTable.COLUMN_NAME_ISTATUS + " TEXT,"
@@ -95,15 +96,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + Section7Table.COLUMN_PROJECTNAME + " TEXT," +
             Section7Table._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             Section7Table.COLUMN_UID + " TEXT," +
-            //   Section7Table.COLUMN_UUID + " TEXT," +
+            Section7Table.COLUMN_UUID + " TEXT," +
+            Section7Table.COLUMN_HOUSEHOLD + " TEXT," +
+            Section7Table.COLUMN_ACHWCODE + " TEXT," +
             Section7Table.COLUMN_USER + " TEXT," +
             Section7Table.COLUMN_CHILDNAME + " TEXT," +
             Section7Table.COLUMN_S7 + " TEXT," +
-            Section7Table.COLUMN_GPSLAT + " TEXT," +
+            /*Section7Table.COLUMN_GPSLAT + " TEXT," +
             Section7Table.COLUMN_GPSLNG + " TEXT," +
             Section7Table.COLUMN_GPSDT + " TEXT," +
             Section7Table.COLUMN_GPSACC + " TEXT," +
-            Section7Table.COLUMN_DEVICEID + " TEXT," +
+            */Section7Table.COLUMN_DEVICEID + " TEXT," +
             Section7Table.COLUMN_DEVICETAGID + " TEXT," +
             Section7Table.COLUMN_SYNCED + " TEXT," +
             Section7Table.COLUMN_SYNCED_DATE + " TEXT" + " );";
@@ -160,6 +163,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_NAME_PRIMARYUNIT, fc.getProjectName());
         //values.put(FormsTable.COLUMN_NAME_SECONDARYUNIT, fc.getSecondaryUnit());
         values.put(FormsTable.COLUMN_NAME_HOUSEHOLD, fc.getHouseHold());
+        values.put(FormsTable.COLUMN_NAME_ACHWCODE, fc.getACHWCode());
         //values.put(FormsTable.COLUMN_NAME_CHILDID, fc.getChildId());
         //values.put(FormsTable.COLUMN_NAME_CHILDNAME, fc.getchildName());
         values.put(FormsTable.COLUMN_NAME_ISTATUS, fc.getiStatus());
@@ -207,14 +211,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(Section7Table.COLUMN_PROJECTNAME, imc.getProjectName());
         values.put(Section7Table.COLUMN_UID, imc.get_UID());
-        //   values.put(Section7Table.COLUMN_UUID, imc.getUUID());
+        values.put(Section7Table.COLUMN_UUID, imc.getUUID());
+        values.put(Section7Table.COLUMN_HOUSEHOLD, imc.getHouseHold());
+        values.put(Section7Table.COLUMN_ACHWCODE, imc.getACHWCode());
         values.put(Section7Table.COLUMN_USER, imc.getUser());
         values.put(Section7Table.COLUMN_CHILDNAME, imc.getChildName());
         values.put(Section7Table.COLUMN_S7, imc.getS7());
-        values.put(Section7Table.COLUMN_GPSLAT, imc.getGpsLat());
+        /*values.put(Section7Table.COLUMN_GPSLAT, imc.getGpsLat());
         values.put(Section7Table.COLUMN_GPSLNG, imc.getGpsLng());
         values.put(Section7Table.COLUMN_GPSDT, imc.getGpsDT());
-        values.put(Section7Table.COLUMN_GPSACC, imc.getGpsAcc());
+        values.put(Section7Table.COLUMN_GPSACC, imc.getGpsAcc());*/
         values.put(Section7Table.COLUMN_DEVICEID, imc.getDeviceID());
         values.put(Section7Table.COLUMN_DEVICETAGID, imc.getDevicetagID());
         values.put(Section7Table.COLUMN_SYNCED, imc.getSynced());
@@ -320,6 +326,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_NAME_PRIMARYUNIT,
                 //FormsTable.COLUMN_NAME_SECONDARYUNIT,
                 FormsTable.COLUMN_NAME_HOUSEHOLD,
+                FormsTable.COLUMN_NAME_ACHWCODE,
                 //FormsTable.COLUMN_NAME_CHILDID,
                 //FormsTable.COLUMN_NAME_CHILDNAME,
                 FormsTable.COLUMN_NAME_ISTATUS,
@@ -400,6 +407,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_NAME_PRIMARYUNIT,
                 //FormsTable.COLUMN_NAME_SECONDARYUNIT,
                 FormsTable.COLUMN_NAME_HOUSEHOLD,
+                FormsTable.COLUMN_NAME_ACHWCODE,
                 //FormsTable.COLUMN_NAME_CHILDID,
                 //FormsTable.COLUMN_NAME_CHILDNAME,
                 FormsTable.COLUMN_NAME_ISTATUS,
@@ -469,14 +477,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 Section7Table._ID,
                 Section7Table.COLUMN_UID,
-                //   Section7Table.COLUMN_UUID,
+                Section7Table.COLUMN_UUID,
+                Section7Table.COLUMN_HOUSEHOLD,
+                Section7Table.COLUMN_ACHWCODE,
                 Section7Table.COLUMN_USER,
                 Section7Table.COLUMN_CHILDNAME,
                 Section7Table.COLUMN_S7,
-                Section7Table.COLUMN_GPSLAT,
+                /*Section7Table.COLUMN_GPSLAT,
                 Section7Table.COLUMN_GPSLNG,
                 Section7Table.COLUMN_GPSDT,
-                Section7Table.COLUMN_GPSACC,
+                Section7Table.COLUMN_GPSACC,*/
                 Section7Table.COLUMN_DEVICEID,
                 Section7Table.COLUMN_DEVICETAGID,
                 Section7Table.COLUMN_SYNCED,

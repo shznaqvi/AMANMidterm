@@ -110,20 +110,22 @@ public class IYCFActivity extends Activity {
     RadioButton iy09a;
     @BindView(R.id.iy09b)
     RadioButton iy09b;
+    @BindView(R.id.iy010)
+    RadioGroup iy010;
     @BindView(R.id.iy010a)
-    CheckBox iy010a;
+    RadioButton iy010a;
     @BindView(R.id.iy010b)
-    CheckBox iy010b;
+    RadioButton iy010b;
     @BindView(R.id.iy010c)
-    CheckBox iy010c;
+    RadioButton iy010c;
     @BindView(R.id.iy010d)
-    CheckBox iy010d;
+    RadioButton iy010d;
     @BindView(R.id.iy010e)
-    CheckBox iy010e;
+    RadioButton iy010e;
     @BindView(R.id.iy010f)
-    CheckBox iy010f;
+    RadioButton iy010f;
     @BindView(R.id.iy01088)
-    CheckBox iy01088;
+    RadioButton iy01088;
     @BindView(R.id.iy010x)
     EditText iy010x;
     @BindView(R.id.iy011d)
@@ -511,14 +513,16 @@ public class IYCFActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {*/
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("check", false);
-        startActivity(endSec);
+        startActivity(endSec);*/
            /* } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         } */
+
+        AppMain.endActivity(this, this);
 
     }
 
@@ -761,13 +765,7 @@ public class IYCFActivity extends Activity {
 
         if (iy09a.isChecked()) {
 
-            if (!iy010a.isChecked()
-                    && !iy010b.isChecked()
-                    && !iy010c.isChecked()
-                    && !iy010d.isChecked()
-                    && !iy010e.isChecked()
-                    && !iy010f.isChecked()
-                    && !iy01088.isChecked()) {
+            if (iy010.getCheckedRadioButtonId() == -1) {
                 iy010a.setError(getString(R.string.txterr));
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy010), Toast.LENGTH_LONG).show();
                 Log.d(TAG, "iy010: this data is required ");
@@ -815,8 +813,8 @@ public class IYCFActivity extends Activity {
             if (!iy011d.getText().toString().isEmpty() && iy011d.getText().toString() != null) {
 
 
-                if (Integer.parseInt(iy011d.getText().toString()) < 0 || Integer.parseInt(iy011d.getText().toString()) > 30) {
-                    iy011d.setError("Must be between 0 - 30");
+                if (Integer.parseInt(iy011d.getText().toString()) < 0 || Integer.parseInt(iy011d.getText().toString()) > 6) {
+                    iy011d.setError("Must be between 0 - 6");
                     iy011d.requestFocus();
                     return false;
                 } else {
@@ -882,8 +880,8 @@ public class IYCFActivity extends Activity {
 
         if (!iy012h.getText().toString().isEmpty() && iy012h.getText().toString() != null) {
 
-            if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 23) {
-                iy012h.setError("Must be between 0 - 23");
+            if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 11) {
+                iy012h.setError("Must be between 0 - 11");
                 iy012h.requestFocus();
                 return false;
             } else {
@@ -1002,8 +1000,8 @@ public class IYCFActivity extends Activity {
 
                 if (!iy017d.getText().toString().isEmpty() && iy017d.getText().toString() != null) {
 
-                    if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 30) {
-                        iy017d.setError("Must be between 0 - 30");
+                    if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 29) {
+                        iy017d.setError("Must be between 0 - 29");
                         iy017d.requestFocus();
                         return false;
                     } else {
@@ -1014,8 +1012,8 @@ public class IYCFActivity extends Activity {
 
                 if (!iy017m.getText().toString().isEmpty() && iy017m.getText().toString() != null) {
 
-                    if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 11) {
-                        iy017m.setError("Must be between 0 - 11");
+                    if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 23) {
+                        iy017m.setError("Must be between 0 - 23");
                         iy017m.requestFocus();
                         return false;
                     } else {
@@ -1122,13 +1120,8 @@ public class IYCFActivity extends Activity {
 
         js.put("iy09", iy09a.isChecked() ? "1" : iy09b.isChecked() ? "2" : "0");
 
-        js.put("iy010a", iy010a.isChecked() ? "1" : "2");
-        js.put("iy010b", iy010b.isChecked() ? "1" : "2");
-        js.put("iy010c", iy010c.isChecked() ? "1" : "2");
-        js.put("iy010d", iy010d.isChecked() ? "1" : "2");
-        js.put("iy010e", iy010e.isChecked() ? "1" : "2");
-        js.put("iy010f", iy010f.isChecked() ? "1" : "2");
-        js.put("iy01088", iy01088.isChecked() ? "1" : "2");
+        js.put("iy010", iy010a.isChecked() ? "1" : iy010b.isChecked() ? "2" : iy010c.isChecked() ? "3" : iy010d.isChecked() ? "4"
+                : iy010e.isChecked() ? "5" : iy010f.isChecked() ? "6" : iy01088.isChecked() ? "88" : "0");
         js.put("iy010x", iy010x.getText().toString());
 
 

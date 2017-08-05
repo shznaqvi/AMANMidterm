@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -52,22 +53,22 @@ public class DeliveryActivity extends AppCompatActivity {
     RadioButton d0388;
     @BindView(R.id.d0388x)
     EditText d0388x;
-    @BindView(R.id.d04)
-    RadioGroup d04;
+    /*@BindView(R.id.d04)
+    RadioGroup d04;*/
     @BindView(R.id.d04a)
-    RadioButton d04a;
+    CheckBox d04a;
     @BindView(R.id.d04b)
-    RadioButton d04b;
+    CheckBox d04b;
     @BindView(R.id.d04c)
-    RadioButton d04c;
+    CheckBox d04c;
     @BindView(R.id.d04d)
-    RadioButton d04d;
+    CheckBox d04d;
     @BindView(R.id.d04e)
-    RadioButton d04e;
+    CheckBox d04e;
     @BindView(R.id.d04f)
-    RadioButton d04f;
+    CheckBox d04f;
     @BindView(R.id.d0488)
-    RadioButton d0488;
+    CheckBox d0488;
     @BindView(R.id.d0488x)
     EditText d0488x;
     @BindView(R.id.d05)
@@ -165,10 +166,10 @@ public class DeliveryActivity extends AppCompatActivity {
 //                e.printStackTrace();
 //            }
 //            if (UpdateDB()) {
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
-        startActivity(endSec);
+        startActivity(endSec);*/
 //            } else {
 //                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
 //            }
@@ -225,8 +226,13 @@ public class DeliveryActivity extends AppCompatActivity {
         // Edit Text
         s5b.put("d0388x", d0388x.getText().toString());
 
-        s5b.put("d04", d04a.isChecked() ? "1" : d04b.isChecked() ? "2" : d04c.isChecked() ? "3"
-                : d04d.isChecked() ? "4" : d04e.isChecked() ? "5" : d0488.isChecked() ? "88" : "0");
+        s5b.put("d04a", d04a.isChecked() ? "1" : "0");
+        s5b.put("d04b", d04b.isChecked() ? "2" : "0");
+        s5b.put("d04c", d04c.isChecked() ? "3" : "0");
+        s5b.put("d04d", d04d.isChecked() ? "4" : "0");
+        s5b.put("d04e", d04e.isChecked() ? "5" : "0");
+        s5b.put("d04f", d04f.isChecked() ? "6" : "0");
+        s5b.put("d0488", d0488.isChecked() ? "88" : "0");
 
         //Edit Text
         s5b.put("d0488x", d0488x.getText().toString());
@@ -288,16 +294,17 @@ public class DeliveryActivity extends AppCompatActivity {
             d0388x.setError(null);
         }
 
-        if (d04.getCheckedRadioButtonId() == -1) {
+        if (!(d04a.isChecked() || d04b.isChecked() || d04c.isChecked() || d04d.isChecked() || d04e.isChecked()
+                || d04f.isChecked() || d0488.isChecked())) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.d04), Toast.LENGTH_LONG).show();
             d0488.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "d0488: This data is Required!");
+            Log.i(TAG, "d04: This data is Required!");
             return false;
         } else {
             d0488.setError(null);
         }
 
-        if (d0488.isChecked()) {
+        //if (d0488.isChecked()) {
             if (d0488.isChecked() && d0488x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.d04) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 d0488x.setError("This data is Required!");    // Set Error on last radio button
@@ -307,7 +314,7 @@ public class DeliveryActivity extends AppCompatActivity {
                 d0488x.setError(null);
             }
 
-        }
+        //}
         // ===================== Q 5.38 ===========================
         // RadioGroup
         if (d05.getCheckedRadioButtonId() == -1) {

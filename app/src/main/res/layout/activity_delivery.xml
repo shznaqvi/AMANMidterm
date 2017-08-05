@@ -145,48 +145,48 @@
             android:text="@string/d04"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <RadioGroup
+        <!--<RadioGroup
             android:id="@+id/d04"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content">-->
 
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/d04a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
                 android:text="@string/d04a" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/d04b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
                 android:text="@string/d04b" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/d04c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
                 android:text="@string/d04c" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/d04d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
                 android:text="@string/d04d" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/d04e"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
                 android:text="@string/d04e" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/d04f"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -194,15 +194,15 @@
                 android:text="@string/d04f" />
 
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/d0488"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:text="@string/other" />
 
-        </RadioGroup>
-
+        <!--</RadioGroup>
+-->
 
         <EditText
             android:id="@+id/d0488x"
