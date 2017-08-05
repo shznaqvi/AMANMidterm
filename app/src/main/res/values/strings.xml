@@ -657,7 +657,7 @@
     <string name="pc02e">دھندلاپن</string>
     <string name="pc02f">ہائی بلڈ پریشر</string>
     <string name="pc03">اگر ہاں تو کیا آپ نے ان علامات کے لئے علاج کروایا تھا؟</string>
-    <string name="pc04">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیn؟</string>
+    <string name="pc04">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیں؟</string>
     <string name="pc05">اگر ہاں تو آپ نے اپنا  معائنہ کہاں سے کروایا تھا؟</string>
     <string name="pc05a">گورنمنٹ کے مرکز صحت میں</string>
     <string name="pc05b">پرائیوٹ مرکز صحت</string>
@@ -682,6 +682,7 @@
     <string name="pc09f">چھاتی کا کھچاؤ</string>
     <string name="pc09g">مایوسی </string>
     <string name="pc09h">نیام سے پانی کا اخراج </string>
+    <string name="pc09i">ہائی بلڈ پریشر </string>
     <string name="pc10">کیا آپ نے ان پیچیدگیوں کے لئے اپنا علاج کروایا تھا؟</string>
     <string name="pc11">اگر نہیں تو علاج نہ کروانے کی وجوہات بتائیے؟</string>
     <string name="pc12">اگر ہاں تو آپ نے کہاں سے علاج کروایا تھا؟</string>

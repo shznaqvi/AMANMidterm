@@ -251,7 +251,7 @@
                 android:ems="10"
                 android:hint="@string/anc05d"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
             <CheckBox
                 android:id="@+id/anc0599"
@@ -311,6 +311,12 @@
                 android:text="@string/anc07"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
+            <LinearLayout
+                android:id="@+id/fldGrp07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:visibility="visible">
 
             <CheckBox
                     android:id="@+id/anc07a"
@@ -346,6 +352,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/other" />
+
+            </LinearLayout>
 
             <CheckBox
                     android:id="@+id/anc0799"

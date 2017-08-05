@@ -122,6 +122,8 @@ public class PostpartumCareActivity extends Activity {
     CheckBox pc09g;
     @BindView(R.id.pc09h)
     CheckBox pc09h;
+    @BindView(R.id.pc09i)
+    CheckBox pc09i;
     @BindView(R.id.pc0988)
     CheckBox pc0988;
     @BindView(R.id.pc0988x)
@@ -256,7 +258,7 @@ public class PostpartumCareActivity extends Activity {
                     pc07c.setChecked(false);
                     pc07d.setChecked(false);
                     pc07e.setChecked(false);
-                    pc07f.setChecked(false);
+                    //pc07f.setChecked(false);
                 } else {
                     pc06a.setVisibility(View.VISIBLE);
                     pc06b.setVisibility(View.VISIBLE);
@@ -265,7 +267,7 @@ public class PostpartumCareActivity extends Activity {
             }
         });
 
-        pc07f.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*pc07f.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
@@ -276,7 +278,7 @@ public class PostpartumCareActivity extends Activity {
                     pc07e.setChecked(false);
                 }
             }
-        });
+        });*/
 
         pc08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -294,6 +296,7 @@ public class PostpartumCareActivity extends Activity {
                     pc09f.setChecked(false);
                     pc09g.setChecked(false);
                     pc09h.setChecked(false);
+                    pc09i.setChecked(false);
                     pc0988.setChecked(false);
                     pc0988x.setText(null);
                     pc10.clearCheck();
@@ -460,10 +463,19 @@ public class PostpartumCareActivity extends Activity {
         spc.put("pc06b", pc06b.getText().toString());
         spc.put("pc0699", pc0699.isChecked() ? "99" : "0");
         spc.put("pc07", pc07a.isChecked() ? "1" : pc07b.isChecked() ? "2" : pc07c.isChecked() ? "3" : pc07d.isChecked() ? "4"
-                : pc07e.isChecked() ? "5": pc07f.isChecked() ? "00" : "0");
+                : pc07e.isChecked() ? "5" : "0");
         spc.put("pc08", pc08a.isChecked() ? "1" : pc08b.isChecked() ? "2" : "0");
-        spc.put("pc09", pc09a.isChecked() ? "1" : pc09b.isChecked() ? "2" : pc09c.isChecked() ? "3" : pc09d.isChecked() ? "4"
-                : pc09e.isChecked() ? "5" : pc09f.isChecked() ? "6" : pc09g.isChecked() ? "7" : pc09h.isChecked() ? "8" : "0");
+        spc.put("pc09a", pc09a.isChecked() ? "1" : "0");
+        spc.put("pc09b", pc09b.isChecked() ? "2" : "0");
+        spc.put("pc09c", pc09c.isChecked() ? "3" : "0");
+        spc.put("pc09d", pc09d.isChecked() ? "4" : "0");
+        spc.put("pc09e", pc09e.isChecked() ? "5" : "0");
+        spc.put("pc09f", pc09f.isChecked() ? "6" : "0");
+        spc.put("pc09g", pc09g.isChecked() ? "7" : "0");
+        spc.put("pc09h", pc09h.isChecked() ? "8" : "0");
+        spc.put("pc09i", pc09i.isChecked() ? "9" : "0");
+        spc.put("pc0988", pc0988.isChecked() ? "88" : "0");
+        spc.put("pc0988x", pc0988x.getText().toString());
         spc.put("pc10", pc10a.isChecked() ? "1" : pc10b.isChecked() ? "2" : "0");
         spc.put("pc11a", pc11a.getText().toString());
         spc.put("pc11b", pc11b.getText().toString());
@@ -625,7 +637,7 @@ public class PostpartumCareActivity extends Activity {
 
         if (pc08a.isChecked()) {
             if (!(pc09a.isChecked() || pc09b.isChecked() || pc09c.isChecked() || pc09d.isChecked() || pc09e.isChecked()
-                    || pc09f.isChecked() || pc09g.isChecked() || pc09h.isChecked() || pc0988.isChecked())) {
+                    || pc09f.isChecked() || pc09g.isChecked() || pc09h.isChecked() || pc09i.isChecked() || pc0988.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.pc09), Toast.LENGTH_LONG).show();
                 pc0988.setError("This data is Required!");    // Set Error on last radio button
 

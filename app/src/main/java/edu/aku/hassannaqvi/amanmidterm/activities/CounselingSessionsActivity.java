@@ -252,22 +252,22 @@ public class CounselingSessionsActivity extends Activity {
         sCs.put("cs02a", cs02a.getText().toString());
         sCs.put("cs02b", cs02b.getText().toString());
         sCs.put("cs02c", cs02c.getText().toString());
-        sCs.put("cs0288", cs0288.isChecked() ? "1" : "0");
+        sCs.put("cs0288", cs0288.isChecked() ? "88" : "0");
         sCs.put("cs03", cs03a.isChecked() ? "1" : cs03b.isChecked() ? "2" : cs03c.isChecked() ? "3" : cs0388.isChecked() ? "88" : "0");
         sCs.put("cs0388x", cs0388x.getText().toString());
         sCs.put("cs04a", cs04a.isChecked() ? "1" : "0");
-        sCs.put("cs04b", cs04b.isChecked() ? "1" : "0");
-        sCs.put("cs04c", cs04c.isChecked() ? "1" : "0");
-        sCs.put("cs04d", cs04d.isChecked() ? "1" : "0");
-        sCs.put("cs04e", cs04e.isChecked() ? "1" : "0");
-        sCs.put("cs04f", cs04f.isChecked() ? "1" : "0");
-        sCs.put("cs04g", cs04g.isChecked() ? "1" : "0");
-        sCs.put("cs04h", cs04h.isChecked() ? "1" : "0");
-        sCs.put("cs04i", cs04i.isChecked() ? "1" : "0");
-        sCs.put("cs04j", cs04j.isChecked() ? "1" : "0");
-        sCs.put("cs04k", cs04k.isChecked() ? "1" : "0");
-        sCs.put("cs04l", cs04l.isChecked() ? "1" : "0");
-        sCs.put("cs0488", cs0488.isChecked() ? "1" : "0");
+        sCs.put("cs04b", cs04b.isChecked() ? "2" : "0");
+        sCs.put("cs04c", cs04c.isChecked() ? "3" : "0");
+        sCs.put("cs04d", cs04d.isChecked() ? "4" : "0");
+        sCs.put("cs04e", cs04e.isChecked() ? "5" : "0");
+        sCs.put("cs04f", cs04f.isChecked() ? "6" : "0");
+        sCs.put("cs04g", cs04g.isChecked() ? "7" : "0");
+        sCs.put("cs04h", cs04h.isChecked() ? "8" : "0");
+        sCs.put("cs04i", cs04i.isChecked() ? "9" : "0");
+        sCs.put("cs04j", cs04j.isChecked() ? "10" : "0");
+        sCs.put("cs04k", cs04k.isChecked() ? "11" : "0");
+        sCs.put("cs04l", cs04l.isChecked() ? "12" : "0");
+        sCs.put("cs0488", cs0488.isChecked() ? "88" : "0");
         sCs.put("cs0488x", cs0488x.getText().toString());
 
         AppMain.fc.setCounsellingSession(String.valueOf(sCs));
@@ -330,7 +330,7 @@ public class CounselingSessionsActivity extends Activity {
                         && Integer.valueOf(cs02c.getText().toString().isEmpty() ? "0" : cs02c.getText().toString()) == 0) {
                     Toast.makeText(this, "ERROR(invalid)" + getString(R.string.cs02), Toast.LENGTH_SHORT).show();
                     cs02a.setError("Days, months and year can not be zero..");
-                    cs02b.setError("Days, months and yearcan not be zero..");
+                    cs02b.setError("Days, months and year can not be zero..");
                     cs02c.setError("Days, months and year can not be zero..");
 
                     Log.i(TAG, "bib16: can not be zero");
@@ -341,6 +341,7 @@ public class CounselingSessionsActivity extends Activity {
                     cs02c.setError(null);
                 }
             }
+
             //=================== cs03==============
             if (cs03.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cs03), Toast.LENGTH_SHORT).show();

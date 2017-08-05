@@ -25,6 +25,8 @@ import edu.aku.hassannaqvi.amanmidterm.R;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
 import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 
+import static edu.aku.hassannaqvi.amanmidterm.R.string.anc07;
+
 
 public class AntenatalCareActivity extends Activity {
     private static final String TAG = AntenatalCareActivity.class.getSimpleName();
@@ -88,6 +90,9 @@ public class AntenatalCareActivity extends Activity {
     RadioButton anc0699;
     @BindView(R.id.fldGrp06)
     LinearLayout fldGrp06;
+
+    @BindView(R.id.fldGrpanc07)
+    LinearLayout fldGrpanc07;
     @BindView(R.id.anc07a)
     CheckBox anc07a;
     @BindView(R.id.anc07b)
@@ -100,8 +105,8 @@ public class AntenatalCareActivity extends Activity {
     CheckBox anc0788;
     @BindView(R.id.anc0799)
     CheckBox anc0799;
-    @BindView(R.id.fldGrpanc07)
-    LinearLayout fldGrpanc07;
+    @BindView(R.id.fldGrp07)
+    LinearLayout fldGrp07;
     @BindView(R.id.anc07x)
     EditText anc07x;
     @BindView(R.id.anc08)
@@ -281,6 +286,33 @@ public class AntenatalCareActivity extends Activity {
                     anc07x.setText(null);
                     fldGrp06.setVisibility(View.GONE);
                     //fldGrpanc07.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        anc0799.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (anc0799.isChecked()) {
+                    fldGrp07.setVisibility(View.GONE);
+                    anc07a.setChecked(false);
+                    anc07a.setEnabled(false);
+                    anc07b.setChecked(false);
+                    anc07b.setEnabled(false);
+                    anc07c.setChecked(false);
+                    anc07c.setEnabled(false);
+                    anc07d.setChecked(false);
+                    anc07d.setEnabled(false);
+                    anc0788.setEnabled(false);
+                    anc0788.setChecked(false);
+                    anc07x.setText(null);
+                } else {
+                    fldGrp07.setVisibility(View.VISIBLE);
+                    anc07a.setEnabled(true);
+                    anc07b.setEnabled(true);
+                    anc07c.setEnabled(true);
+                    anc07d.setEnabled(true);
+                    anc0788.setEnabled(true);
                 }
             }
         });
@@ -696,7 +728,7 @@ public class AntenatalCareActivity extends Activity {
             if (!(anc07a.isChecked() || anc07b.isChecked() || anc07c.isChecked() || anc07d.isChecked()
                     || anc0788.isChecked() || anc0799.isChecked())) {
                 anc07a.setError(getString(R.string.rdoerr));
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.anc07), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(anc07), Toast.LENGTH_LONG).show();
                 Log.d(TAG, "anc07a: this data is required ");
                 anc07a.requestFocus();
                 return false;
