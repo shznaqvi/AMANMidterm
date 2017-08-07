@@ -30,11 +30,14 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -102,6 +105,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     Spinner spPara;
     @BindView(R.id.spCHWs)
     Spinner spCHWs;
+    @BindView(R.id.loginLayout)
+    LinearLayout loginLayout;
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
     String DirectoryName;
@@ -558,6 +563,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     mPasswordView.setError(getString(R.string.error_incorrect_password));
                     mPasswordView.requestFocus();
                     Toast.makeText(LoginActivity.this, mEmail + " " + mPassword, Toast.LENGTH_SHORT).show();
+
+                    Animation shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+
+                    loginLayout.startAnimation(shake);
+
                 }
             } else {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
