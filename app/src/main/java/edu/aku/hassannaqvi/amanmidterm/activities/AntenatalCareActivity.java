@@ -538,13 +538,13 @@ public class AntenatalCareActivity extends Activity {
         js.put("anc03f", anc03f.isChecked() ? "6" : "0");
         js.put("anc0388", anc0388.isChecked() ? "88" : "0");
 
-        js.put("anc03x", anc03x.getText().toString());
+        js.put("anc0388x", anc03x.getText().toString());
 
 
         js.put("anc04", anc04a.isChecked() ? "1" : anc04b.isChecked() ? "2" : "0");
 
         js.put("anc05d", anc05d.getText().toString());
-        js.put("anc0599", anc0599.isChecked() ? "1" : "2");
+        js.put("anc0599", anc0599.isChecked() ? "99" : "0");
 
         js.put("anc06", anc06a.isChecked() ? "1" : anc06b.isChecked() ? "2" : anc0699.isChecked() ? "99" : "0");
 
@@ -554,27 +554,27 @@ public class AntenatalCareActivity extends Activity {
         js.put("anc07d", anc07d.isChecked() ? "4" : "0");
         js.put("anc0788", anc0788.isChecked() ? "88" : "0");
         js.put("anc0799", anc0799.isChecked() ? "99" : "0");
-        js.put("anc07x", anc07x.getText().toString());
+        js.put("anc0788x", anc07x.getText().toString());
         js.put("anc08", anc08a.isChecked() ? "1" : anc08b.isChecked() ? "2" : "0");
 
 
         js.put("anc09", anc09.getText().toString());
-        js.put("anc011a", anc011a.isChecked() ? "1" : "2");
-        js.put("anc011b", anc011b.isChecked() ? "1" : "2");
-        js.put("anc011c", anc011c.isChecked() ? "1" : "2");
-        js.put("anc011d", anc011d.isChecked() ? "1" : "2");
-        js.put("anc011e", anc011e.isChecked() ? "1" : "2");
-        js.put("anc011f", anc011f.isChecked() ? "1" : "2");
-        js.put("anc01288", anc01188.isChecked() ? "1" : "2");
-        js.put("anc012x", anc01188x.getText().toString());
+        js.put("anc011a", anc011a.isChecked() ? "1" : "0");
+        js.put("anc011b", anc011b.isChecked() ? "2" : "0");
+        js.put("anc011c", anc011c.isChecked() ? "3" : "0");
+        js.put("anc011d", anc011d.isChecked() ? "4" : "0");
+        js.put("anc011e", anc011e.isChecked() ? "5" : "0");
+        js.put("anc011f", anc011f.isChecked() ? "6" : "0");
+        js.put("anc01188", anc01188.isChecked() ? "88" : "0");
+        js.put("anc01188x", anc01188x.getText().toString());
 
-        js.put("anc012a", anc012a.isChecked() ? "1" : "2");
-        js.put("anc012b", anc012b.isChecked() ? "1" : "2");
-        js.put("anc012c", anc012c.isChecked() ? "1" : "2");
-        js.put("anc012d", anc012d.isChecked() ? "1" : "2");
-        js.put("anc012e", anc012e.isChecked() ? "1" : "2");
-        js.put("anc01288", anc01288.isChecked() ? "1" : "2");
-        js.put("anc012x", anc012x.getText().toString());
+        js.put("anc012a", anc012a.isChecked() ? "1" : "0");
+        js.put("anc012b", anc012b.isChecked() ? "2" : "0");
+        js.put("anc012c", anc012c.isChecked() ? "3" : "0");
+        js.put("anc012d", anc012d.isChecked() ? "4" : "0");
+        js.put("anc012e", anc012e.isChecked() ? "5" : "0");
+        js.put("anc01288", anc01288.isChecked() ? "88" : "0");
+        js.put("anc01288x", anc012x.getText().toString());
 
 
         js.put("anc013", anc013a.isChecked() ? "1" : anc013b.isChecked() ? "2" : anc01399.isChecked() ? "99" : "0");
@@ -584,8 +584,10 @@ public class AntenatalCareActivity extends Activity {
 
 
         js.put("anc015", anc015a.isChecked() ? "1" : anc015b.isChecked() ? "2" : "0");
-        js.put("anc016", anc016a.isChecked() ? "1" : anc016b.isChecked() ? "2" : anc016c.isChecked() ? "3" : anc016d.isChecked() ? "4" : anc016e.isChecked() ? "5" : anc016f.isChecked() ? "6" : anc01688.isChecked() ? "88" : "0");
-        js.put("anc016x", anc016x.getText().toString());
+        js.put("anc016", anc016a.isChecked() ? "1" : anc016b.isChecked() ? "2" : anc016c.isChecked() ? "3"
+                : anc016d.isChecked() ? "4" : anc016e.isChecked() ? "5" : anc016f.isChecked() ? "6"
+                : anc01688.isChecked() ? "88" : "0");
+        js.put("anc01688x", anc016x.getText().toString());
 
         AppMain.fc.setAntenatalCare(String.valueOf(js));
 

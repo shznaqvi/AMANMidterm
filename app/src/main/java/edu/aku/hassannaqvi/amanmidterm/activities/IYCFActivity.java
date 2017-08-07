@@ -611,8 +611,8 @@ public class IYCFActivity extends Activity {
 
         if (!iy03m.getText().toString().isEmpty() && iy03m.getText().toString() != null) {
 
-            if (Integer.parseInt(iy03m.getText().toString()) < 0 || Integer.parseInt(iy03m.getText().toString()) > 11) {
-                iy03m.setError("Age in months must be between 0 - 11");
+            if (Integer.parseInt(iy03m.getText().toString()) < 0 || Integer.parseInt(iy03m.getText().toString()) > 23) {
+                iy03m.setError("Age in months must be between 0 - 23");
                 iy03m.requestFocus();
                 return false;
             } else {
@@ -880,8 +880,8 @@ public class IYCFActivity extends Activity {
 
         if (!iy012h.getText().toString().isEmpty() && iy012h.getText().toString() != null) {
 
-            if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 11) {
-                iy012h.setError("Must be between 0 - 11");
+            if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 23) {
+                iy012h.setError("Must be between 0 - 23");
                 iy012h.requestFocus();
                 return false;
             } else {
@@ -961,8 +961,8 @@ public class IYCFActivity extends Activity {
 
             if (!iy016m.getText().toString().isEmpty() && iy016m.getText().toString() != null) {
 
-                if (Integer.parseInt(iy016m.getText().toString()) < 0 || Integer.parseInt(iy016m.getText().toString()) > 11) {
-                    iy016m.setError("Must be between 0 - 11");
+                if (Integer.parseInt(iy016m.getText().toString()) < 0 || Integer.parseInt(iy016m.getText().toString()) > 23) {
+                    iy016m.setError("Must be between 0 - 23");
                     iy016m.requestFocus();
                     return false;
                 } else {
@@ -1037,8 +1037,8 @@ public class IYCFActivity extends Activity {
 
                     if (!iy018d.getText().toString().isEmpty() && iy018d.getText().toString() != null) {
 
-                        if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 30) {
-                            iy018d.setError("Must be between 0 - 30");
+                        if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 29) {
+                            iy018d.setError("Must be between 0 - 29");
                             iy018d.requestFocus();
                             return false;
                         } else {
@@ -1093,18 +1093,18 @@ public class IYCFActivity extends Activity {
         js.put("iy03d", iy03d.getText().toString());
         js.put("iy04", iy04a.isChecked() ? "1" : iy04b.isChecked() ? "2" : iy0499.isChecked() ? "99" : "0");
 
-        js.put("iy05a", iy05a.isChecked() ? "1" : "2");
-        js.put("iy05b", iy05b.isChecked() ? "1" : "2");
-        js.put("iy05c", iy05c.isChecked() ? "1" : "2");
-        js.put("iy05d", iy05d.isChecked() ? "1" : "2");
-        js.put("iy05e", iy05e.isChecked() ? "1" : "2");
-        js.put("iy05f", iy05f.isChecked() ? "1" : "2");
-        js.put("iy05g", iy05g.isChecked() ? "1" : "2");
-        js.put("iy05h", iy05h.isChecked() ? "1" : "2");
-        js.put("iy05i", iy05i.isChecked() ? "1" : "2");
-        js.put("iy05j", iy05j.isChecked() ? "1" : "2");
-        js.put("iy0588", iy0588.isChecked() ? "1" : "2");
-        js.put("iy05x", iy05x.getText().toString());
+        js.put("iy05a", iy05a.isChecked() ? "1" : "0");
+        js.put("iy05b", iy05b.isChecked() ? "2" : "0");
+        js.put("iy05c", iy05c.isChecked() ? "3" : "0");
+        js.put("iy05d", iy05d.isChecked() ? "4" : "0");
+        js.put("iy05e", iy05e.isChecked() ? "5" : "0");
+        js.put("iy05f", iy05f.isChecked() ? "6" : "0");
+        js.put("iy05g", iy05g.isChecked() ? "7" : "0");
+        js.put("iy05h", iy05h.isChecked() ? "8" : "0");
+        js.put("iy05i", iy05i.isChecked() ? "9" : "0");
+        js.put("iy05j", iy05j.isChecked() ? "10" : "0");
+        js.put("iy0588", iy0588.isChecked() ? "88" : "0");
+        js.put("iy0588x", iy05x.getText().toString());
 
         js.put("iy06d", iy06d.getText().toString());
 
@@ -1115,47 +1115,49 @@ public class IYCFActivity extends Activity {
         js.put("iy07cc", iy07cc.getText().toString());
 
 
-        js.put("iy08a", iy08a.isChecked() ? "1" : iy08b.isChecked() ? "2" : iy08c.isChecked() ? "3" : iy08d.isChecked() ? "4" : iy08e.isChecked() ? "5" : iy0888.isChecked() ? "88" : "0");
-        js.put("iy08x", iy08x.getText().toString());
+        js.put("iy08", iy08a.isChecked() ? "1" : iy08b.isChecked() ? "2" : iy08c.isChecked() ? "3"
+                : iy08d.isChecked() ? "4" : iy08e.isChecked() ? "5" : iy0888.isChecked() ? "88" : "0");
+        js.put("iy0888x", iy08x.getText().toString());
 
         js.put("iy09", iy09a.isChecked() ? "1" : iy09b.isChecked() ? "2" : "0");
 
         js.put("iy010", iy010a.isChecked() ? "1" : iy010b.isChecked() ? "2" : iy010c.isChecked() ? "3" : iy010d.isChecked() ? "4"
                 : iy010e.isChecked() ? "5" : iy010f.isChecked() ? "6" : iy01088.isChecked() ? "88" : "0");
-        js.put("iy010x", iy010x.getText().toString());
-
+        js.put("iy01088x", iy010x.getText().toString());
 
         js.put("iy011d", iy011d.getText().toString());
         js.put("iy011w", iy011w.getText().toString());
         js.put("iy012h", iy012h.getText().toString());
         js.put("iy012d", iy012d.getText().toString());
-        js.put("iy01299", iy01299.isChecked() ? "1" : "2");
+        js.put("iy01299", iy01299.isChecked() ? "99" : "0");
 
-        js.put("iy013", iy013a.isChecked() ? "a" : iy013b.isChecked() ? "b" : iy01399.isChecked() ? "99" : "0");
-        js.put("iy014", iy014a.isChecked() ? "a" : iy014b.isChecked() ? "b" : iy01499.isChecked() ? "99" : "0");
+        js.put("iy013", iy013a.isChecked() ? "1" : iy013b.isChecked() ? "2" : iy01399.isChecked() ? "99" : "0");
 
-        js.put("iy015a", iy015a.isChecked() ? "1" : "2");
-        js.put("iy015b", iy015b.isChecked() ? "1" : "2");
-        js.put("iy015c", iy015c.isChecked() ? "1" : "2");
-        js.put("iy015d", iy015d.isChecked() ? "1" : "2");
-        js.put("iy015e", iy015e.isChecked() ? "1" : "2");
-        js.put("iy015f", iy015f.isChecked() ? "1" : "2");
-        js.put("iy015g", iy015g.isChecked() ? "1" : "2");
-        js.put("iy015h", iy015h.isChecked() ? "1" : "2");
-        js.put("iy015i", iy015i.isChecked() ? "1" : "2");
-        js.put("iy01588", iy01588.isChecked() ? "1" : "2");
-        js.put("iy015x", iy015x.getText().toString());
+        js.put("iy014", iy014a.isChecked() ? "1" : iy014b.isChecked() ? "2" : iy01499.isChecked() ? "99" : "0");
+
+        js.put("iy015a", iy015a.isChecked() ? "1" : "0");
+        js.put("iy015b", iy015b.isChecked() ? "2" : "0");
+        js.put("iy015c", iy015c.isChecked() ? "3" : "0");
+        js.put("iy015d", iy015d.isChecked() ? "4" : "0");
+        js.put("iy015e", iy015e.isChecked() ? "5" : "0");
+        js.put("iy015f", iy015f.isChecked() ? "6" : "0");
+        js.put("iy015g", iy015g.isChecked() ? "7" : "0");
+        js.put("iy015h", iy015h.isChecked() ? "8" : "0");
+        js.put("iy015i", iy015i.isChecked() ? "9" : "0");
+        js.put("iy01588", iy01588.isChecked() ? "88" : "0");
+        js.put("iy01588x", iy015x.getText().toString());
 
         js.put("iy016m", iy016m.getText().toString());
-        js.put("iy01677", iy01677.isChecked() ? "1" : "2");
+        js.put("iy01677", iy01677.isChecked() ? "77" : "0");
 
         js.put("iy017d", iy017d.getText().toString());
         js.put("iy017m", iy017m.getText().toString());
-        js.put("iy01788", iy01788.isChecked() ? "1" : "2");
+        js.put("iy01766", iy01788.isChecked() ? "66" : "0");
 
         js.put("iy018d", iy018d.getText().toString());
         js.put("iy018m", iy018m.getText().toString());
-        js.put("iy01888", iy01888.isChecked() ? "1" : "2");
+        js.put("iy01866", iy01888.isChecked() ? "66" : "0");
+
 
         AppMain.fc.setIycf(String.valueOf(js));
 

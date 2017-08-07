@@ -365,20 +365,20 @@ public class AmanInfoActivity extends Activity {
         AppMain.fc.setHouseHold(biHH.getText().toString());
         AppMain.fc.setACHWCode(AppMain.selectedCHW.getAchwcode());
         AppMain.fc.setDeviceTag(sharedPref.getString("tagName", null));
-//        AppMain.fc.setMajorArea(String.valueOf(AppMain.majorArea));
+
 
         JSONObject sa = new JSONObject();
 
-//        sa.put("biuc", AppMain.selectedCHW.getParacode());
+
         sa.put("biPara", biPara.getText().toString());
         sa.put("biACHW", biACHW.getText().toString());
-        //sa.put("biHH", biHH.getText().toString());
         sa.put("bi01", bi0101.isChecked() ? "1" : bi0102.isChecked() ? "2" : "0");
         sa.put("bib01", bib01.getText().toString());
         sa.put("bib02", bib0201.isChecked() ? "1" : bib0202.isChecked() ? "2" : "0");
         sa.put("bib03", bib03.getText().toString());
         sa.put("bib04", bib04.getText().toString());
         sa.put("bib05", bib0501.isChecked() ? "1" : bib0502.isChecked() ? "2" : bib0503.isChecked() ? "3" : bib0504.isChecked() ? "4" : bib0505.isChecked() ? "5" : bib0506.isChecked() ? "6" : bib0507.isChecked() ? "7" : bib0508.isChecked() ? "8" : bib0509.isChecked() ? "9" : bib0510.isChecked() ? "10" : bib0511.isChecked() ? "11" : bib0512.isChecked() ? "12" : bib0596.isChecked() ? "88" : "0");
+        // Others code used in form is 88
         sa.put("bib0588x", bib0596x.getText().toString());
         sa.put("bib06", bib06.getText().toString());
         sa.put("bib07", bib0701.isChecked() ? "1" : bib0702.isChecked() ? "2" : "0");
