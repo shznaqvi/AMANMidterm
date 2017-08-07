@@ -628,7 +628,7 @@ public class FormsContract {
     public static abstract class FormsTable implements BaseColumns {
 
         public static final String TABLE_NAME = "forms";
-        public static final String URI = "/syncforms.php";
+        public static final String URI = "syncforms.php";
 
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
 
