@@ -516,6 +516,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                     bd03dob5.setText(null);
                 } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 2) {
                     fldGrpbd03.setVisibility(View.VISIBLE);
+                    bd03dob1.setVisibility(View.VISIBLE);
                     bd03dob2.setVisibility(View.VISIBLE);
                     bd03dob3.setVisibility(View.GONE);
                     bd03dob3.setText(null);
@@ -525,6 +526,8 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                     bd03dob5.setText(null);
                 } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 3) {
                     fldGrpbd03.setVisibility(View.VISIBLE);
+                    bd03dob1.setVisibility(View.VISIBLE);
+                    bd03dob2.setVisibility(View.VISIBLE);
                     bd03dob3.setVisibility(View.VISIBLE);
                     bd03dob4.setVisibility(View.GONE);
                     bd03dob4.setText(null);
@@ -532,11 +535,18 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                     bd03dob5.setText(null);
                 } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 4) {
                     fldGrpbd03.setVisibility(View.VISIBLE);
+                    bd03dob1.setVisibility(View.VISIBLE);
+                    bd03dob2.setVisibility(View.VISIBLE);
+                    bd03dob3.setVisibility(View.VISIBLE);
                     bd03dob4.setVisibility(View.VISIBLE);
                     bd03dob5.setVisibility(View.GONE);
                     bd03dob5.setText(null);
                 } else if (Integer.parseInt(bd03s.getText().toString().isEmpty() ? "0" : bd03s.getText().toString()) == 5) {
                     fldGrpbd03.setVisibility(View.VISIBLE);
+                    bd03dob1.setVisibility(View.VISIBLE);
+                    bd03dob2.setVisibility(View.VISIBLE);
+                    bd03dob3.setVisibility(View.VISIBLE);
+                    bd03dob4.setVisibility(View.VISIBLE);
                     bd03dob5.setVisibility(View.VISIBLE);
                 }
 
@@ -860,7 +870,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.parseInt(bd01s.getText().toString().isEmpty() ? "0" : bd01s.getText().toString()) == 2) {
-            if (bd01dod2.getText().toString().isEmpty()) {
+            if (bd01dod2.getText().toString().isEmpty() || bd01dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd01), Toast.LENGTH_SHORT).show();
                 bd01dod2.setError("This data is Required!");
                 Log.i(TAG, "bd01dod2: This data is Required!");
@@ -892,7 +902,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bd02s.getText().toString()) == 2) {
-            if (bd02dod2.getText().toString().isEmpty()) {
+            if (bd02dod2.getText().toString().isEmpty() || bd02dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd02), Toast.LENGTH_SHORT).show();
                 bd02dod2.setError("This data is Required!");
                 Log.i(TAG, "bd02dod2: This data is Required!");
@@ -925,7 +935,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bd03s.getText().toString()) == 2) {
-            if (bd03dob2.getText().toString().isEmpty()) {
+            if (bd03dob2.getText().toString().isEmpty() || bd03dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
                 bd03dob2.setError("This data is Required!");
                 Log.i(TAG, "bd03dob2: This data is Required!");
@@ -936,7 +946,8 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bd03s.getText().toString()) == 3) {
-            if (bd03dob3.getText().toString().isEmpty()) {
+            if (bd03dob3.getText().toString().isEmpty() || bd03dob1.getText().toString().isEmpty()
+                    || bd03dob2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
                 bd03dob3.setError("This data is Required!");
                 Log.i(TAG, "bd03dob3: This data is Required!");
@@ -944,9 +955,12 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             } else {
                 bd03dob3.setError(null);
             }
+        }
 
             if (Integer.valueOf(bd03s.getText().toString()) == 4) {
-                if (bd03dob4.getText().toString().isEmpty()) {
+                if (bd03dob4.getText().toString().isEmpty() || bd03dob3.getText().toString().isEmpty()
+                        || bd03dob1.getText().toString().isEmpty()
+                        || bd03dob2.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
                     bd03dob4.setError("This data is Required!");
                     Log.i(TAG, "bd03dob4: This data is Required!");
@@ -957,7 +971,10 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             }
 
             if (Integer.valueOf(bd03s.getText().toString()) == 5) {
-                if (bd03dob5.getText().toString().isEmpty()) {
+                if (bd03dob5.getText().toString().isEmpty() || bd03dob4.getText().toString().isEmpty()
+                        || bd03dob3.getText().toString().isEmpty()
+                        || bd03dob1.getText().toString().isEmpty()
+                        || bd03dob2.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
                     bd03dob5.setError("This data is Required!");
                     Log.i(TAG, "bd03dob5: This data is Required!");
@@ -968,8 +985,6 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
             }
 
-
-        }
 
         //================ Q4============
 
@@ -1005,7 +1020,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bd04s.getText().toString()) == 2) {
-            if (bd04dob2.getText().toString().isEmpty()) {
+            if (bd04dob2.getText().toString().isEmpty() || bd04dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd04), Toast.LENGTH_SHORT).show();
                 bd04dob2.setError("This data is Required!");
                 Log.i(TAG, "bd04dob2: This data is Required!");
@@ -1014,7 +1029,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 bd04dob2.setError(null);
             }
 
-            if (bd04dod2.getText().toString().isEmpty()) {
+            if (bd04dod2.getText().toString().isEmpty() || bd04dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd04), Toast.LENGTH_SHORT).show();
                 bd04dod2.setError("This data is Required!");
                 Log.i(TAG, "bd04dod2: This data is Required!");
@@ -1057,7 +1072,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bd05s.getText().toString()) == 2) {
-            if (bd05dob2.getText().toString().isEmpty()) {
+            if (bd05dob2.getText().toString().isEmpty() || bd05dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd05), Toast.LENGTH_SHORT).show();
                 bd05dob2.setError("This data is Required!");
                 Log.i(TAG, "bd05dob2: This data is Required!");
@@ -1066,7 +1081,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 bd05dob2.setError(null);
             }
 
-            if (bd05dod2.getText().toString().isEmpty()) {
+            if (bd05dod2.getText().toString().isEmpty() || bd05dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd05), Toast.LENGTH_SHORT).show();
                 bd05dod2.setError("This data is Required!");
                 Log.i(TAG, "bd05dod2: This data is Required!");
@@ -1108,7 +1123,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bd06s.getText().toString()) == 2) {
-            if (bd06dob2.getText().toString().isEmpty()) {
+            if (bd06dob2.getText().toString().isEmpty() || bd06dob2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd06), Toast.LENGTH_SHORT).show();
                 bd06dob2.setError("This data is Required!");
                 Log.i(TAG, "bd06dob2: This data is Required!");
@@ -1117,7 +1132,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 bd06dob2.setError(null);
             }
 
-            if (bd06dod2.getText().toString().isEmpty()) {
+            if (bd06dod2.getText().toString().isEmpty() || bd06dod2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd06), Toast.LENGTH_SHORT).show();
                 bd06dod2.setError("This data is Required!");
                 Log.i(TAG, "bd06dod2: This data is Required!");
@@ -1159,7 +1174,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bd07s.getText().toString()) == 2) {
-            if (bd07dob2.getText().toString().isEmpty()) {
+            if (bd07dob2.getText().toString().isEmpty() || bd07dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd07), Toast.LENGTH_SHORT).show();
                 bd07dob2.setError("This data is Required!");
                 Log.i(TAG, "bd07dob2: This data is Required!");
@@ -1168,7 +1183,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 bd07dob2.setError(null);
             }
 
-            if (bd07dod2.getText().toString().isEmpty()) {
+            if (bd07dod2.getText().toString().isEmpty() || bd07dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd07), Toast.LENGTH_SHORT).show();
                 bd07dod2.setError("This data is Required!");
                 Log.i(TAG, "bd07dod2: This data is Required!");
@@ -1210,7 +1225,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bd08s.getText().toString()) == 2) {
-            if (bd08dob2.getText().toString().isEmpty()) {
+            if (bd08dob2.getText().toString().isEmpty() || bd08dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd08), Toast.LENGTH_SHORT).show();
                 bd08dob2.setError("This data is Required!");
                 Log.i(TAG, "bd08dob2: This data is Required!");
@@ -1219,7 +1234,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 bd08dob2.setError(null);
             }
 
-            if (bd08dod2.getText().toString().isEmpty()) {
+            if (bd08dod2.getText().toString().isEmpty() || bd08dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd08), Toast.LENGTH_SHORT).show();
                 bd08dod2.setError("This data is Required!");
                 Log.i(TAG, "bd08dod2: This data is Required!");

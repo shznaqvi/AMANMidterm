@@ -613,6 +613,8 @@ public class IYCFActivity extends Activity {
 
             if (Integer.parseInt(iy03m.getText().toString()) < 0 || Integer.parseInt(iy03m.getText().toString()) > 23) {
                 iy03m.setError("Age in months must be between 0 - 23");
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy03), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy03m: invalid ");
                 iy03m.requestFocus();
                 return false;
             } else {
@@ -694,6 +696,8 @@ public class IYCFActivity extends Activity {
 
                 if (Integer.parseInt(iy06d.getText().toString()) < 0 || Integer.parseInt(iy06d.getText().toString()) > 28) {
                     iy06d.setError("Must be between 0 - 28");
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy06d), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy06d: invalid ");
                     return false;
                 } else {
                     iy06d.setError(null);
@@ -815,6 +819,8 @@ public class IYCFActivity extends Activity {
 
                 if (Integer.parseInt(iy011d.getText().toString()) < 0 || Integer.parseInt(iy011d.getText().toString()) > 6) {
                     iy011d.setError("Must be between 0 - 6");
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy011d), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy011d: invalid ");
                     iy011d.requestFocus();
                     return false;
                 } else {
@@ -829,6 +835,8 @@ public class IYCFActivity extends Activity {
 
                 if (Integer.parseInt(iy011w.getText().toString()) < 0 || Integer.parseInt(iy011w.getText().toString()) > 4) {
                     iy011w.setError("Must be between 0 - 4");
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy011w), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy011w: invalid ");
                     iy011w.requestFocus();
                     return false;
                 } else {
@@ -869,6 +877,8 @@ public class IYCFActivity extends Activity {
 
             if (Integer.parseInt(iy012d.getText().toString()) < 0 || Integer.parseInt(iy012d.getText().toString()) > 29) {
                 iy012d.setError("Must be between 0 - 29");
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy012d), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy012d: invalid ");
                 iy012d.requestFocus();
                 return false;
             } else {
@@ -882,6 +892,8 @@ public class IYCFActivity extends Activity {
 
             if (Integer.parseInt(iy012h.getText().toString()) < 0 || Integer.parseInt(iy012h.getText().toString()) > 23) {
                 iy012h.setError("Must be between 0 - 23");
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy012h), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "iy012h: invalid ");
                 iy012h.requestFocus();
                 return false;
             } else {
@@ -963,6 +975,8 @@ public class IYCFActivity extends Activity {
 
                 if (Integer.parseInt(iy016m.getText().toString()) < 0 || Integer.parseInt(iy016m.getText().toString()) > 23) {
                     iy016m.setError("Must be between 0 - 23");
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy016m), Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "iy016m: invalid ");
                     iy016m.requestFocus();
                     return false;
                 } else {
@@ -1002,6 +1016,8 @@ public class IYCFActivity extends Activity {
 
                     if (Integer.parseInt(iy017d.getText().toString()) < 0 || Integer.parseInt(iy017d.getText().toString()) > 29) {
                         iy017d.setError("Must be between 0 - 29");
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy017d), Toast.LENGTH_LONG).show();
+                        Log.d(TAG, "iy017d: invalid ");
                         iy017d.requestFocus();
                         return false;
                     } else {
@@ -1014,6 +1030,8 @@ public class IYCFActivity extends Activity {
 
                     if (Integer.parseInt(iy017m.getText().toString()) < 0 || Integer.parseInt(iy017m.getText().toString()) > 23) {
                         iy017m.setError("Must be between 0 - 23");
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy017m), Toast.LENGTH_LONG).show();
+                        Log.d(TAG, "iy017m: invalid ");
                         iy017m.requestFocus();
                         return false;
                     } else {
@@ -1039,6 +1057,8 @@ public class IYCFActivity extends Activity {
 
                         if (Integer.parseInt(iy018d.getText().toString()) < 0 || Integer.parseInt(iy018d.getText().toString()) > 29) {
                             iy018d.setError("Must be between 0 - 29");
+                            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy018d), Toast.LENGTH_LONG).show();
+                            Log.d(TAG, "iy018d: invalid ");
                             iy018d.requestFocus();
                             return false;
                         } else {
@@ -1051,6 +1071,8 @@ public class IYCFActivity extends Activity {
 
                         if (Integer.parseInt(iy018m.getText().toString()) < 0 || Integer.parseInt(iy018m.getText().toString()) > 11) {
                             iy018m.setError("Must be between 0 - 11");
+                            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.iy018m), Toast.LENGTH_LONG).show();
+                            Log.d(TAG, "iy018m: invalid ");
                             iy018m.requestFocus();
                             return false;
                         } else {
