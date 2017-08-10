@@ -65,6 +65,15 @@
     <string name="bi0102">جوابدہندہ انٹرویو دینے کے لئے رضامند نہیں ہوئی  </string>
     <string name="bib01">جواب دہندہ کا نام </string>
     <string name="bib04">تعلیم </string>
+    <string name="edu01">غیر تعلیم یافتہ </string>
+    <string name="edu02">صرف قرآن کی تعلیم </string>
+    <string name="edu03">پرائمری اسکول (5-1) </string>
+    <string name="edu04">سیکنڈری اسکول (10-6)</string>
+    <string name="edu05">ہائی اسکول (12-11) </string>
+    <string name="edu06">بیچلرز </string>
+    <string name="edu07">ماسٹرز </string>
+    <string name="edu08">پی ۔ ایچ ۔ ڈی</string>
+    <string name="edu09">ٹیکنیکل ایجوکیشن</string>
     <string name="bib05">پیشہ </string>
     <string name="bib06">شوہر کا نام </string>
     <string name="bib07">جنس</string>

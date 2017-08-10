@@ -195,13 +195,93 @@
                 android:text="@string/bib04"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <EditText
+            <RadioGroup
                 android:id="@+id/bib04"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/bib0401"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu01" />
+
+                <RadioButton
+                    android:id="@+id/bib0402"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu02" />
+
+                <RadioButton
+                    android:id="@+id/bib0403"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu03" />
+
+                <RadioButton
+                    android:id="@+id/bib0404"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu04" />
+
+                <RadioButton
+                    android:id="@+id/bib0405"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu05" />
+
+                <RadioButton
+                    android:id="@+id/bib0406"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu06" />
+
+                <RadioButton
+                    android:id="@+id/bib0407"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu07" />
+
+                <RadioButton
+                    android:id="@+id/bib0408"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu08" />
+
+                <RadioButton
+                    android:id="@+id/bib0409"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu09" />
+
+                <RadioButton
+                    android:id="@+id/bib0488"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/other" />
+
+            </RadioGroup>
+
+
+            <EditText
+                android:id="@+id/bib0488x"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bib04"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                android:hint="@string/other"
+                android:inputType="textCapWords"
+                android:visibility="gone" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -386,13 +466,92 @@
                 android:text="@string/bib09"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <EditText
+            <RadioGroup
                 android:id="@+id/bib09"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/bib0901"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu01" />
+
+                <RadioButton
+                    android:id="@+id/bib0902"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu02" />
+
+                <RadioButton
+                    android:id="@+id/bib0903"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu03" />
+
+                <RadioButton
+                    android:id="@+id/bib0904"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu04" />
+
+                <RadioButton
+                    android:id="@+id/bib0905"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu05" />
+
+                <RadioButton
+                    android:id="@+id/bib0906"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu06" />
+
+                <RadioButton
+                    android:id="@+id/bib0907"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu07" />
+
+                <RadioButton
+                    android:id="@+id/bib0908"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu08" />
+
+                <RadioButton
+                    android:id="@+id/bib0909"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu09" />
+
+                <RadioButton
+                    android:id="@+id/bib0988"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/other" />
+
+            </RadioGroup>
+
+
+            <EditText
+                android:id="@+id/bib0988x"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bib09"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                android:hint="@string/other"
+                android:inputType="textCapWords"
+                android:visibility="gone" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -575,13 +734,93 @@
                 android:text="@string/bib14"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <EditText
+            <RadioGroup
                 android:id="@+id/bib14"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/bib1401"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu01" />
+
+                <RadioButton
+                    android:id="@+id/bib1402"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu02" />
+
+                <RadioButton
+                    android:id="@+id/bib1403"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu03" />
+
+                <RadioButton
+                    android:id="@+id/bib1404"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu04" />
+
+                <RadioButton
+                    android:id="@+id/bib1405"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu05" />
+
+                <RadioButton
+                    android:id="@+id/bib1406"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu06" />
+
+                <RadioButton
+                    android:id="@+id/bib1407"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu07" />
+
+                <RadioButton
+                    android:id="@+id/bib1408"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu08" />
+
+                <RadioButton
+                    android:id="@+id/bib1409"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/edu09" />
+
+                <RadioButton
+                    android:id="@+id/bib1488"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/other" />
+
+            </RadioGroup>
+
+
+            <EditText
+                android:id="@+id/bib1488x"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bib14"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                android:hint="@string/other"
+                android:inputType="textCapWords"
+                android:visibility="gone" />
+
 
             <TextView
                 android:layout_width="match_parent"
