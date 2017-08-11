@@ -410,6 +410,42 @@ public class AmanInfoActivity extends Activity {
             }
         });
 
+        bib0488.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib0488x.setVisibility(View.VISIBLE);
+                } else {
+                    bib0488x.setVisibility(View.GONE);
+                    bib0488x.setText(null);
+                }
+            }
+        });
+
+        bib0988.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib0988x.setVisibility(View.VISIBLE);
+                } else {
+                    bib0988x.setVisibility(View.GONE);
+                    bib0988x.setText(null);
+                }
+            }
+        });
+
+        bib1488.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib1488x.setVisibility(View.VISIBLE);
+                } else {
+                    bib1488x.setVisibility(View.GONE);
+                    bib1488x.setText(null);
+                }
+            }
+        });
+
     }
 
 

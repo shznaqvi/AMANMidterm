@@ -1137,8 +1137,12 @@ public class IYCFActivity extends Activity {
         js.put("iy07cc", iy07cc.getText().toString());
 
 
-        js.put("iy08", iy08a.isChecked() ? "1" : iy08b.isChecked() ? "2" : iy08c.isChecked() ? "3"
-                : iy08d.isChecked() ? "4" : iy08e.isChecked() ? "5" : iy0888.isChecked() ? "88" : "0");
+        js.put("iy08a", iy08a.isChecked() ? "1" : "0");
+        js.put("iy08b", iy08b.isChecked() ? "2" : "0");
+        js.put("iy08c", iy08c.isChecked() ? "3" : "0");
+        js.put("iy08d", iy08d.isChecked() ? "4" : "0");
+        js.put("iy08e", iy08e.isChecked() ? "5" : "0");
+        js.put("iy0888", iy0888.isChecked() ? "8" : "0");
         js.put("iy0888x", iy08x.getText().toString());
 
         js.put("iy09", iy09a.isChecked() ? "1" : iy09b.isChecked() ? "2" : "0");
