@@ -524,7 +524,11 @@ public class AmanInfoActivity extends Activity {
                 : bib0404.isChecked() ? "4" : bib0405.isChecked() ? "5" : bib0406.isChecked() ? "6" : bib0407.isChecked() ? "7"
                 : bib0408.isChecked() ? "8" : bib0409.isChecked() ? "9" : bib0488.isChecked() ? "88" : "0");
         sa.put("bib0488x", bib0488x.getText().toString());
-        sa.put("bib05", bib0501.isChecked() ? "1" : bib0502.isChecked() ? "2" : bib0503.isChecked() ? "3" : bib0504.isChecked() ? "4" : bib0505.isChecked() ? "5" : bib0506.isChecked() ? "6" : bib0507.isChecked() ? "7" : bib0508.isChecked() ? "8" : bib0509.isChecked() ? "9" : bib0510.isChecked() ? "10" : bib0511.isChecked() ? "11" : bib0512.isChecked() ? "12" : bib0596.isChecked() ? "88" : "0");
+        sa.put("bib05", bib0501.isChecked() ? "1" : bib0502.isChecked() ? "2" :
+                bib0503.isChecked() ? "3" : bib0504.isChecked() ? "4" : bib0505.isChecked() ? "5"
+                        : bib0506.isChecked() ? "6" : bib0507.isChecked() ? "7" : bib0508.isChecked() ? "8"
+                        : bib0509.isChecked() ? "9" : bib0510.isChecked() ? "10" : bib0511.isChecked() ? "11"
+                        : bib0512.isChecked() ? "12" : bib0596.isChecked() ? "88" : "0");
         // Others code used in form is 88
         sa.put("bib0588x", bib0596x.getText().toString());
         sa.put("bib06", bib06.getText().toString());
@@ -534,7 +538,11 @@ public class AmanInfoActivity extends Activity {
                 : bib0904.isChecked() ? "4" : bib0905.isChecked() ? "5" : bib0906.isChecked() ? "6" : bib0907.isChecked() ? "7"
                 : bib0908.isChecked() ? "8" : bib0909.isChecked() ? "9" : bib0988.isChecked() ? "88" : "0");
         sa.put("bib0988x", bib0988x.getText().toString());
-        sa.put("bib10", bib1001.isChecked() ? "1" : bib1002.isChecked() ? "2" : bib1003.isChecked() ? "3" : bib0504.isChecked() ? "4" : bib1005.isChecked() ? "5" : bib1006.isChecked() ? "6" : bib1007.isChecked() ? "7" : bib1008.isChecked() ? "8" : bib1009.isChecked() ? "9" : bib1010.isChecked() ? "10" : bib1011.isChecked() ? "11" : bib1012.isChecked() ? "12" : bib1096.isChecked() ? "88" : "0");
+        sa.put("bib10", bib1001.isChecked() ? "1" : bib1002.isChecked() ? "2" :
+                bib1003.isChecked() ? "3" : bib1004.isChecked() ? "4" :
+                        bib1005.isChecked() ? "5" : bib1006.isChecked() ? "6" : bib1007.isChecked() ? "7"
+                                : bib1008.isChecked() ? "8" : bib1009.isChecked() ? "9" : bib1010.isChecked() ? "10"
+                                : bib1011.isChecked() ? "11" : bib1012.isChecked() ? "12" : bib1096.isChecked() ? "88" : "0");
         sa.put("bib1088x", bib1096x.getText().toString());
         sa.put("bib11", bib11.getText().toString());
         sa.put("bib12", bib1201.isChecked() ? "1" : bib1202.isChecked() ? "2" : "0");
@@ -543,7 +551,11 @@ public class AmanInfoActivity extends Activity {
                 : bib1404.isChecked() ? "4" : bib1405.isChecked() ? "5" : bib1406.isChecked() ? "6" : bib1407.isChecked() ? "7"
                 : bib1408.isChecked() ? "8" : bib1409.isChecked() ? "9" : bib1488.isChecked() ? "88" : "0");
         sa.put("bib1488x", bib0988x.getText().toString());
-        sa.put("bib15", bib1501.isChecked() ? "1" : bib1502.isChecked() ? "2" : bib1503.isChecked() ? "3" : bib1504.isChecked() ? "4" : bib1505.isChecked() ? "5" : bib1506.isChecked() ? "6" : bib1507.isChecked() ? "7" : bib1508.isChecked() ? "8" : bib1509.isChecked() ? "9" : bib1510.isChecked() ? "10" : bib1511.isChecked() ? "11" : bib1512.isChecked() ? "12" : bib1596.isChecked() ? "88" : "0");
+        sa.put("bib15", bib1501.isChecked() ? "1" : bib1502.isChecked() ? "2"
+                : bib1503.isChecked() ? "3" : bib1504.isChecked() ? "4" : bib1505.isChecked() ? "5"
+                : bib1506.isChecked() ? "6" : bib1507.isChecked() ? "7" : bib1508.isChecked() ? "8"
+                : bib1509.isChecked() ? "9" : bib1510.isChecked() ? "10" : bib1511.isChecked() ? "11"
+                : bib1512.isChecked() ? "12" : bib1596.isChecked() ? "88" : "0");
         sa.put("bib1588x", bib1596x.getText().toString());
         sa.put("bib1601", bib1601.getText().toString());
         sa.put("bib1602", bib1602.getText().toString());

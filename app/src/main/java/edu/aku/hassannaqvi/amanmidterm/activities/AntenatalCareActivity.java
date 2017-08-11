@@ -580,7 +580,7 @@ public class AntenatalCareActivity extends Activity {
         js.put("anc013", anc013a.isChecked() ? "1" : anc013b.isChecked() ? "2" : anc01399.isChecked() ? "99" : "0");
 
         js.put("anc014", anc014.getText().toString());
-        js.put("anc01499", anc01499.isChecked() ? "1" : "2");
+        js.put("anc01499", anc01499.isChecked() ? "1" : "0");
 
 
         js.put("anc015", anc015a.isChecked() ? "1" : anc015b.isChecked() ? "2" : "0");
