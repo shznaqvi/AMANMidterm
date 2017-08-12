@@ -550,7 +550,7 @@ public class AmanInfoActivity extends Activity {
         sa.put("bib14", bib1401.isChecked() ? "1" : bib1402.isChecked() ? "2" : bib1403.isChecked() ? "3"
                 : bib1404.isChecked() ? "4" : bib1405.isChecked() ? "5" : bib1406.isChecked() ? "6" : bib1407.isChecked() ? "7"
                 : bib1408.isChecked() ? "8" : bib1409.isChecked() ? "9" : bib1488.isChecked() ? "88" : "0");
-        sa.put("bib1488x", bib0988x.getText().toString());
+        sa.put("bib1488x", bib1488x.getText().toString());
         sa.put("bib15", bib1501.isChecked() ? "1" : bib1502.isChecked() ? "2"
                 : bib1503.isChecked() ? "3" : bib1504.isChecked() ? "4" : bib1505.isChecked() ? "5"
                 : bib1506.isChecked() ? "6" : bib1507.isChecked() ? "7" : bib1508.isChecked() ? "8"
