@@ -19,7 +19,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 
 import edu.aku.hassannaqvi.amanmidterm.contract.UsersContract;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
@@ -89,11 +88,8 @@ public class GetUsers extends AsyncTask<String, String, String> {
         //json = json.replaceAll("\\[", "").replaceAll("\\]","");
         Log.d(TAG, result);
         if (json.length() > 0) {
-            ArrayList<UsersContract> userArrayList;
             DatabaseHelper db = new DatabaseHelper(mContext);
             try {
-                userArrayList = new ArrayList<UsersContract>();
-                //JSONObject jsonObject = new JSONObject(json);
                 JSONArray jsonArray = new JSONArray(json);
                 db.syncUser(jsonArray);
                 pd.setMessage("Received: " + jsonArray.length());
