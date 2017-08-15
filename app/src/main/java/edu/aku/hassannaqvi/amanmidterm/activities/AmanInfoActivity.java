@@ -292,12 +292,8 @@ public class AmanInfoActivity extends Activity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (bi0101.isChecked()) {
                     fldGrpbi01.setVisibility(View.VISIBLE);
-                    btnNext.setVisibility(View.VISIBLE);
-                    btnEnd.setVisibility(View.GONE);
                 } else {
                     fldGrpbi01.setVisibility(View.GONE);
-                    btnNext.setVisibility(View.GONE);
-                    btnEnd.setVisibility(View.VISIBLE);
                     bib01.setText(null);
                     bib02.clearCheck();
                     bib03.setText(null);
