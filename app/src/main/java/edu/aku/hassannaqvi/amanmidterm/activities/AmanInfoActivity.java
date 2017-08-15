@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -40,8 +41,8 @@ public class AmanInfoActivity extends Activity {
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
-    /*    @BindView(R.id.biuc)
-        EditText biuc;*/
+    @BindView(R.id.app_header)
+    TextView appHeader;
     @BindView(R.id.biPara)
     EditText biPara;
     @BindView(R.id.biACHW)
@@ -56,6 +57,8 @@ public class AmanInfoActivity extends Activity {
     RadioButton bi0102;
     @BindView(R.id.fldGrpbi01)
     LinearLayout fldGrpbi01;
+    @BindView(R.id.textView3)
+    TextView textView3;
     @BindView(R.id.bib01)
     EditText bib01;
     @BindView(R.id.bib02)
@@ -67,7 +70,29 @@ public class AmanInfoActivity extends Activity {
     @BindView(R.id.bib03)
     EditText bib03;
     @BindView(R.id.bib04)
-    EditText bib04;
+    RadioGroup bib04;
+    @BindView(R.id.bib0401)
+    RadioButton bib0401;
+    @BindView(R.id.bib0402)
+    RadioButton bib0402;
+    @BindView(R.id.bib0403)
+    RadioButton bib0403;
+    @BindView(R.id.bib0404)
+    RadioButton bib0404;
+    @BindView(R.id.bib0405)
+    RadioButton bib0405;
+    @BindView(R.id.bib0406)
+    RadioButton bib0406;
+    @BindView(R.id.bib0407)
+    RadioButton bib0407;
+    @BindView(R.id.bib0408)
+    RadioButton bib0408;
+    @BindView(R.id.bib0409)
+    RadioButton bib0409;
+    @BindView(R.id.bib0488)
+    RadioButton bib0488;
+    @BindView(R.id.bib0488x)
+    EditText bib0488x;
     @BindView(R.id.bib05)
     RadioGroup bib05;
     @BindView(R.id.bib0501)
@@ -100,6 +125,8 @@ public class AmanInfoActivity extends Activity {
     EditText bib0596x;
     @BindView(R.id.bib06)
     EditText bib06;
+    @BindView(R.id.textView2)
+    TextView textView2;
     @BindView(R.id.bib07)
     RadioGroup bib07;
     @BindView(R.id.bib0701)
@@ -109,7 +136,29 @@ public class AmanInfoActivity extends Activity {
     @BindView(R.id.bib08)
     EditText bib08;
     @BindView(R.id.bib09)
-    EditText bib09;
+    RadioGroup bib09;
+    @BindView(R.id.bib0901)
+    RadioButton bib0901;
+    @BindView(R.id.bib0902)
+    RadioButton bib0902;
+    @BindView(R.id.bib0903)
+    RadioButton bib0903;
+    @BindView(R.id.bib0904)
+    RadioButton bib0904;
+    @BindView(R.id.bib0905)
+    RadioButton bib0905;
+    @BindView(R.id.bib0906)
+    RadioButton bib0906;
+    @BindView(R.id.bib0907)
+    RadioButton bib0907;
+    @BindView(R.id.bib0908)
+    RadioButton bib0908;
+    @BindView(R.id.bib0909)
+    RadioButton bib0909;
+    @BindView(R.id.bib0988)
+    RadioButton bib0988;
+    @BindView(R.id.bib0988x)
+    EditText bib0988x;
     @BindView(R.id.bib10)
     RadioGroup bib10;
     @BindView(R.id.bib1001)
@@ -151,7 +200,29 @@ public class AmanInfoActivity extends Activity {
     @BindView(R.id.bib13)
     EditText bib13;
     @BindView(R.id.bib14)
-    EditText bib14;
+    RadioGroup bib14;
+    @BindView(R.id.bib1401)
+    RadioButton bib1401;
+    @BindView(R.id.bib1402)
+    RadioButton bib1402;
+    @BindView(R.id.bib1403)
+    RadioButton bib1403;
+    @BindView(R.id.bib1404)
+    RadioButton bib1404;
+    @BindView(R.id.bib1405)
+    RadioButton bib1405;
+    @BindView(R.id.bib1406)
+    RadioButton bib1406;
+    @BindView(R.id.bib1407)
+    RadioButton bib1407;
+    @BindView(R.id.bib1408)
+    RadioButton bib1408;
+    @BindView(R.id.bib1409)
+    RadioButton bib1409;
+    @BindView(R.id.bib1488)
+    RadioButton bib1488;
+    @BindView(R.id.bib1488x)
+    EditText bib1488x;
     @BindView(R.id.bib15)
     RadioGroup bib15;
     @BindView(R.id.bib1501)
@@ -196,10 +267,11 @@ public class AmanInfoActivity extends Activity {
     EditText bic04;
     @BindView(R.id.bic05)
     EditText bic05;
-    @BindView(R.id.btnNext)
-    Button btnNext;
+
     @BindView(R.id.btnEnd)
     Button btnEnd;
+    @BindView(R.id.btnNext)
+    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -229,19 +301,22 @@ public class AmanInfoActivity extends Activity {
                     bib01.setText(null);
                     bib02.clearCheck();
                     bib03.setText(null);
-                    bib04.setText(null);
+                    bib04.clearCheck();
+                    bib0488x.setText(null);
                     bib05.clearCheck();
                     bib0596x.setText(null);
                     bib06.setText(null);
                     bib07.clearCheck();
                     bib08.setText(null);
-                    bib09.setText(null);
+                    bib09.clearCheck();
+                    bib0988x.setText(null);
                     bib10.clearCheck();
                     bib1096x.setText(null);
                     bib11.setText(null);
                     bib12.clearCheck();
                     bib13.setText(null);
-                    bib14.setText(null);
+                    bib14.clearCheck();
+                    bib1488x.setText(null);
                     bib15.clearCheck();
                     bib1596x.setText(null);
                     bib1601.setText(null);
@@ -251,6 +326,39 @@ public class AmanInfoActivity extends Activity {
                     bic03.setText(null);
                     bic04.setText(null);
                     bic05.setText(null);
+                }
+            }
+        });
+
+        bib04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (bib0401.isChecked() || bib0402.isChecked() || bib0403.isChecked() || bib0405.isChecked()) {
+                    bib0501.setEnabled(false);
+                } else {
+                    bib0501.setEnabled(true);
+                }
+            }
+        });
+
+        bib09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (bib0901.isChecked() || bib0902.isChecked() || bib0903.isChecked() || bib0905.isChecked()) {
+                    bib1001.setEnabled(false);
+                } else {
+                    bib1001.setEnabled(true);
+                }
+            }
+        });
+
+        bib14.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (bib1401.isChecked() || bib1402.isChecked() || bib1403.isChecked() || bib1405.isChecked()) {
+                    bib1501.setEnabled(false);
+                } else {
+                    bib1501.setEnabled(true);
                 }
             }
         });
@@ -298,6 +406,42 @@ public class AmanInfoActivity extends Activity {
                     bib1012.setEnabled(false);
                 } else {
                     bib1012.setEnabled(true);
+                }
+            }
+        });
+
+        bib0488.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib0488x.setVisibility(View.VISIBLE);
+                } else {
+                    bib0488x.setVisibility(View.GONE);
+                    bib0488x.setText(null);
+                }
+            }
+        });
+
+        bib0988.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib0988x.setVisibility(View.VISIBLE);
+                } else {
+                    bib0988x.setVisibility(View.GONE);
+                    bib0988x.setText(null);
+                }
+            }
+        });
+
+        bib1488.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bib1488x.setVisibility(View.VISIBLE);
+                } else {
+                    bib1488x.setVisibility(View.GONE);
+                    bib1488x.setText(null);
                 }
             }
         });
@@ -376,21 +520,42 @@ public class AmanInfoActivity extends Activity {
         sa.put("bib01", bib01.getText().toString());
         sa.put("bib02", bib0201.isChecked() ? "1" : bib0202.isChecked() ? "2" : "0");
         sa.put("bib03", bib03.getText().toString());
-        sa.put("bib04", bib04.getText().toString());
-        sa.put("bib05", bib0501.isChecked() ? "1" : bib0502.isChecked() ? "2" : bib0503.isChecked() ? "3" : bib0504.isChecked() ? "4" : bib0505.isChecked() ? "5" : bib0506.isChecked() ? "6" : bib0507.isChecked() ? "7" : bib0508.isChecked() ? "8" : bib0509.isChecked() ? "9" : bib0510.isChecked() ? "10" : bib0511.isChecked() ? "11" : bib0512.isChecked() ? "12" : bib0596.isChecked() ? "88" : "0");
+        sa.put("bib04", bib0401.isChecked() ? "1" : bib0402.isChecked() ? "2" : bib0403.isChecked() ? "3"
+                : bib0404.isChecked() ? "4" : bib0405.isChecked() ? "5" : bib0406.isChecked() ? "6" : bib0407.isChecked() ? "7"
+                : bib0408.isChecked() ? "8" : bib0409.isChecked() ? "9" : bib0488.isChecked() ? "88" : "0");
+        sa.put("bib0488x", bib0488x.getText().toString());
+        sa.put("bib05", bib0501.isChecked() ? "1" : bib0502.isChecked() ? "2" :
+                bib0503.isChecked() ? "3" : bib0504.isChecked() ? "4" : bib0505.isChecked() ? "5"
+                        : bib0506.isChecked() ? "6" : bib0507.isChecked() ? "7" : bib0508.isChecked() ? "8"
+                        : bib0509.isChecked() ? "9" : bib0510.isChecked() ? "10" : bib0511.isChecked() ? "11"
+                        : bib0512.isChecked() ? "12" : bib0596.isChecked() ? "88" : "0");
         // Others code used in form is 88
         sa.put("bib0588x", bib0596x.getText().toString());
         sa.put("bib06", bib06.getText().toString());
         sa.put("bib07", bib0701.isChecked() ? "1" : bib0702.isChecked() ? "2" : "0");
         sa.put("bib08", bib08.getText().toString());
-        sa.put("bib09", bib09.getText().toString());
-        sa.put("bib10", bib1001.isChecked() ? "1" : bib1002.isChecked() ? "2" : bib1003.isChecked() ? "3" : bib0504.isChecked() ? "4" : bib1005.isChecked() ? "5" : bib1006.isChecked() ? "6" : bib1007.isChecked() ? "7" : bib1008.isChecked() ? "8" : bib1009.isChecked() ? "9" : bib1010.isChecked() ? "10" : bib1011.isChecked() ? "11" : bib1012.isChecked() ? "12" : bib1096.isChecked() ? "88" : "0");
+        sa.put("bib09", bib0901.isChecked() ? "1" : bib0902.isChecked() ? "2" : bib0903.isChecked() ? "3"
+                : bib0904.isChecked() ? "4" : bib0905.isChecked() ? "5" : bib0906.isChecked() ? "6" : bib0907.isChecked() ? "7"
+                : bib0908.isChecked() ? "8" : bib0909.isChecked() ? "9" : bib0988.isChecked() ? "88" : "0");
+        sa.put("bib0988x", bib0988x.getText().toString());
+        sa.put("bib10", bib1001.isChecked() ? "1" : bib1002.isChecked() ? "2" :
+                bib1003.isChecked() ? "3" : bib1004.isChecked() ? "4" :
+                        bib1005.isChecked() ? "5" : bib1006.isChecked() ? "6" : bib1007.isChecked() ? "7"
+                                : bib1008.isChecked() ? "8" : bib1009.isChecked() ? "9" : bib1010.isChecked() ? "10"
+                                : bib1011.isChecked() ? "11" : bib1012.isChecked() ? "12" : bib1096.isChecked() ? "88" : "0");
         sa.put("bib1088x", bib1096x.getText().toString());
         sa.put("bib11", bib11.getText().toString());
         sa.put("bib12", bib1201.isChecked() ? "1" : bib1202.isChecked() ? "2" : "0");
         sa.put("bib13", bib13.getText().toString());
-        sa.put("bib14", bib14.getText().toString());
-        sa.put("bib15", bib1501.isChecked() ? "1" : bib1502.isChecked() ? "2" : bib1503.isChecked() ? "3" : bib1504.isChecked() ? "4" : bib1505.isChecked() ? "5" : bib1506.isChecked() ? "6" : bib1507.isChecked() ? "7" : bib1508.isChecked() ? "8" : bib1509.isChecked() ? "9" : bib1510.isChecked() ? "10" : bib1511.isChecked() ? "11" : bib1512.isChecked() ? "12" : bib1596.isChecked() ? "88" : "0");
+        sa.put("bib14", bib1401.isChecked() ? "1" : bib1402.isChecked() ? "2" : bib1403.isChecked() ? "3"
+                : bib1404.isChecked() ? "4" : bib1405.isChecked() ? "5" : bib1406.isChecked() ? "6" : bib1407.isChecked() ? "7"
+                : bib1408.isChecked() ? "8" : bib1409.isChecked() ? "9" : bib1488.isChecked() ? "88" : "0");
+        sa.put("bib1488x", bib1488x.getText().toString());
+        sa.put("bib15", bib1501.isChecked() ? "1" : bib1502.isChecked() ? "2"
+                : bib1503.isChecked() ? "3" : bib1504.isChecked() ? "4" : bib1505.isChecked() ? "5"
+                : bib1506.isChecked() ? "6" : bib1507.isChecked() ? "7" : bib1508.isChecked() ? "8"
+                : bib1509.isChecked() ? "9" : bib1510.isChecked() ? "10" : bib1511.isChecked() ? "11"
+                : bib1512.isChecked() ? "12" : bib1596.isChecked() ? "88" : "0");
         sa.put("bib1588x", bib1596x.getText().toString());
         sa.put("bib1601", bib1601.getText().toString());
         sa.put("bib1602", bib1602.getText().toString());
@@ -566,24 +731,23 @@ public class AmanInfoActivity extends Activity {
             } else {
                 bib03.setError(null);
             }
-            if (bib04.getText().toString().isEmpty()) {
+            if (bib04.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib04), Toast.LENGTH_LONG).show();
-                bib04.setError("This data is Required!");
+                bib0488.setError("This data is Required!");
                 Log.i(TAG, "bib04: This data is Required!");
                 return false;
             } else {
-                bib04.setError(null);
+                bib0488.setError(null);
             }
-
-            if ((Integer.valueOf(bib04.getText().toString()) < 0)
-                    || (Integer.valueOf(bib04.getText().toString()) > 16)) {
-                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.bib04), Toast.LENGTH_LONG).show();
-                bib04.setError("Range is 1-16");
-                Log.i(TAG, "bib04: Range is 1-16");
+            if (bib0488.isChecked() && bib0488x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib04) + getString(R.string.other), Toast.LENGTH_LONG).show();
+                bib0488x.setError("This data is Required!");
+                Log.i(TAG, "bib0488x: This data is Required!");
                 return false;
             } else {
-                bib04.setError(null);
+                bib0488x.setError(null);
             }
+
 
             if (bib05.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib05), Toast.LENGTH_LONG).show();
@@ -639,22 +803,21 @@ public class AmanInfoActivity extends Activity {
                 bib08.setError(null);
             }
 
-            if (bib09.getText().toString().isEmpty()) {
+            if (bib09.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib09), Toast.LENGTH_LONG).show();
-                bib09.setError("This data is Required!");
+                bib0988.setError("This data is Required!");
                 Log.i(TAG, "bib09: This data is Required!");
                 return false;
             } else {
-                bib09.setError(null);
+                bib0988.setError(null);
             }
-
-            if (Integer.valueOf(bib09.getText().toString()) < 0 || Integer.valueOf(bib09.getText().toString()) > 16) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.bib09), Toast.LENGTH_SHORT).show();
-                bib09.setError("Invalid: Range is 0 - 16");
-                Log.i(TAG, "bib09: Range is 0 - 16 ");
+            if (bib0988.isChecked() && bib0988x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib09) + getString(R.string.other), Toast.LENGTH_LONG).show();
+                bib0988x.setError("This data is Required!");
+                Log.i(TAG, "bib0988x: This data is Required!");
                 return false;
             } else {
-                bib09.setError(null);
+                bib0988x.setError(null);
             }
 
             //=================== Q10==============
@@ -715,22 +878,21 @@ public class AmanInfoActivity extends Activity {
             } else {
                 bib13.setError(null);
             }
-            if (bib14.getText().toString().isEmpty()) {
+            if (bib14.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib14), Toast.LENGTH_LONG).show();
-                bib14.setError("This data is Required!");
+                bib1488.setError("This data is Required!");
                 Log.i(TAG, "bib14: This data is Required!");
                 return false;
             } else {
-                bib14.setError(null);
+                bib1488.setError(null);
             }
-
-            if (Integer.valueOf(bib14.getText().toString()) < 0 || Integer.valueOf(bib14.getText().toString()) > 16) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.bib14), Toast.LENGTH_SHORT).show();
-                bib14.setError("Invalid: Range is 0 - 16");
-                Log.i(TAG, "bib14: Range is 0 - 16 ");
+            if (bib1488.isChecked() && bib1488x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bib14) + getString(R.string.other), Toast.LENGTH_LONG).show();
+                bib1488x.setError("This data is Required!");
+                Log.i(TAG, "bib1488x: This data is Required!");
                 return false;
             } else {
-                bib14.setError(null);
+                bib1488x.setError(null);
             }
 
             if (bib15.getCheckedRadioButtonId() == -1) {
