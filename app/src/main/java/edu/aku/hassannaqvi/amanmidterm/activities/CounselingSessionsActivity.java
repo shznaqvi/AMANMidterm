@@ -39,6 +39,8 @@ public class CounselingSessionsActivity extends Activity {
     RadioButton cs01b;
     @BindView(R.id.fldGrpcs01)
     LinearLayout fldGrpcs01;
+    @BindView(R.id.textView4)
+    TextView textView4;
     @BindView(R.id.fldGrpcs02)
     LinearLayout fldGrpcs02;
     @BindView(R.id.cs02a)
@@ -47,48 +49,55 @@ public class CounselingSessionsActivity extends Activity {
     EditText cs02b;
     @BindView(R.id.cs02c)
     EditText cs02c;
-    @BindView(R.id.cs0288)
-    CheckBox cs0288;
-    /*@BindView(R.id.cs03)
-    RadioGroup cs03;*/
+    @BindView(R.id.cs03)
+    RadioGroup cs03;
     @BindView(R.id.cs03a)
-    CheckBox cs03a;
+    RadioButton cs03a;
     @BindView(R.id.cs03b)
-    CheckBox cs03b;
+    RadioButton cs03b;
     @BindView(R.id.cs03c)
-    CheckBox cs03c;
-    @BindView(R.id.cs0388)
-    CheckBox cs0388;
-    @BindView(R.id.cs0388x)
-    EditText cs0388x;
+    RadioButton cs03c;
+    @BindView(R.id.cs03d)
+    RadioButton cs03d;
     @BindView(R.id.cs04a)
     CheckBox cs04a;
     @BindView(R.id.cs04b)
     CheckBox cs04b;
     @BindView(R.id.cs04c)
     CheckBox cs04c;
-    @BindView(R.id.cs04d)
-    CheckBox cs04d;
-    @BindView(R.id.cs04e)
-    CheckBox cs04e;
-    @BindView(R.id.cs04f)
-    CheckBox cs04f;
-    @BindView(R.id.cs04g)
-    CheckBox cs04g;
-    @BindView(R.id.cs04h)
-    CheckBox cs04h;
-    @BindView(R.id.cs04i)
-    CheckBox cs04i;
-    @BindView(R.id.cs04j)
-    CheckBox cs04j;
-    @BindView(R.id.cs04k)
-    CheckBox cs04k;
-    @BindView(R.id.cs04l)
-    CheckBox cs04l;
     @BindView(R.id.cs0488)
     CheckBox cs0488;
     @BindView(R.id.cs0488x)
     EditText cs0488x;
+    @BindView(R.id.cs05a)
+    CheckBox cs05a;
+    @BindView(R.id.cs05b)
+    CheckBox cs05b;
+    @BindView(R.id.cs05c)
+    CheckBox cs05c;
+    @BindView(R.id.cs05d)
+    CheckBox cs05d;
+    @BindView(R.id.cs05e)
+    CheckBox cs05e;
+    @BindView(R.id.cs05f)
+    CheckBox cs05f;
+    @BindView(R.id.cs05g)
+    CheckBox cs05g;
+    @BindView(R.id.cs05h)
+    CheckBox cs05h;
+    @BindView(R.id.cs05i)
+    CheckBox cs05i;
+    @BindView(R.id.cs05j)
+    CheckBox cs05j;
+    @BindView(R.id.cs05k)
+    CheckBox cs05k;
+    @BindView(R.id.cs05l)
+    CheckBox cs05l;
+    @BindView(R.id.cs0588)
+    CheckBox cs0588;
+    @BindView(R.id.cs0588x)
+    EditText cs0588x;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,67 +116,32 @@ public class CounselingSessionsActivity extends Activity {
                     cs02a.setText(null);
                     cs02b.setText(null);
                     cs02c.setText(null);
-                    cs0288.setChecked(false);
-                    cs03a.setChecked(false);
-                    cs03b.setChecked(false);
-                    cs03c.setChecked(false);
-                    cs0388.setChecked(false);
-                    cs0388x.setText(null);
+                    cs03.clearCheck();
                     cs04a.setChecked(false);
                     cs04b.setChecked(false);
                     cs04c.setChecked(false);
-                    cs04d.setChecked(false);
-                    cs04e.setChecked(false);
-                    cs04f.setChecked(false);
-                    cs04g.setChecked(false);
-                    cs04h.setChecked(false);
-                    cs04i.setChecked(false);
-                    cs04j.setChecked(false);
-                    cs04k.setChecked(false);
-                    cs04l.setChecked(false);
                     cs0488.setChecked(false);
                     cs0488x.setText(null);
+                    cs05a.setChecked(false);
+                    cs05b.setChecked(false);
+                    cs05c.setChecked(false);
+                    cs05d.setChecked(false);
+                    cs05e.setChecked(false);
+                    cs05f.setChecked(false);
+                    cs05g.setChecked(false);
+                    cs05h.setChecked(false);
+                    cs05i.setChecked(false);
+                    cs05j.setChecked(false);
+                    cs05k.setChecked(false);
+                    cs05l.setChecked(false);
+                    cs0588.setChecked(false);
+                    cs0588x.setText(null);
                 }
             }
         });
 
-
-        cs0288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (cs0288.isChecked()) {
-                    cs02a.setText(null);
-                    cs02b.setText(null);
-                    cs02c.setText(null);
-                    cs02a.setEnabled(false);
-                    cs02b.setEnabled(false);
-                    cs02c.setEnabled(false);
-                    fldGrpcs02.setVisibility(View.GONE);
-                } else {
-                    cs02a.setEnabled(true);
-                    cs02b.setEnabled(true);
-                    cs02c.setEnabled(true);
-                    cs0288.setChecked(false);
-                    fldGrpcs02.setVisibility(View.VISIBLE);
-                }
-            }
-        });
 
         // =================== Q03 Others ====================
-
-        cs0388.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    cs0388x.setVisibility(View.VISIBLE);
-                } else {
-                    cs0388x.setVisibility(View.GONE);
-                    cs0388x.setText(null);
-                }
-            }
-        });
-
-        // =================== Q04 Others ====================
 
         cs0488.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -177,6 +151,20 @@ public class CounselingSessionsActivity extends Activity {
                 } else {
                     cs0488x.setVisibility(View.GONE);
                     cs0488x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q04 Others ====================
+
+        cs0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cs0588x.setVisibility(View.VISIBLE);
+                } else {
+                    cs0588x.setVisibility(View.GONE);
+                    cs0588x.setText(null);
                 }
             }
         });
@@ -257,26 +245,26 @@ public class CounselingSessionsActivity extends Activity {
         sCs.put("cs02a", cs02a.getText().toString());
         sCs.put("cs02b", cs02b.getText().toString());
         sCs.put("cs02c", cs02c.getText().toString());
-        sCs.put("cs0288", cs0288.isChecked() ? "88" : "0");
-        sCs.put("cs03a", cs03a.isChecked() ? "1" : "0");
-        sCs.put("cs03b", cs03b.isChecked() ? "2" : "0");
-        sCs.put("cs03c", cs03c.isChecked() ? "3" : "0");
-        sCs.put("cs0388", cs0388.isChecked() ? "88" : "0");
-        sCs.put("cs0388x", cs0388x.getText().toString());
+        sCs.put("cs03", cs03a.isChecked() ? "1" : cs03b.isChecked() ? "2" : cs03c.isChecked() ? "3" : cs03d.isChecked() ? "4" : "0");
         sCs.put("cs04a", cs04a.isChecked() ? "1" : "0");
         sCs.put("cs04b", cs04b.isChecked() ? "2" : "0");
         sCs.put("cs04c", cs04c.isChecked() ? "3" : "0");
-        sCs.put("cs04d", cs04d.isChecked() ? "4" : "0");
-        sCs.put("cs04e", cs04e.isChecked() ? "5" : "0");
-        sCs.put("cs04f", cs04f.isChecked() ? "6" : "0");
-        sCs.put("cs04g", cs04g.isChecked() ? "7" : "0");
-        sCs.put("cs04h", cs04h.isChecked() ? "8" : "0");
-        sCs.put("cs04i", cs04i.isChecked() ? "9" : "0");
-        sCs.put("cs04j", cs04j.isChecked() ? "10" : "0");
-        sCs.put("cs04k", cs04k.isChecked() ? "11" : "0");
-        sCs.put("cs04l", cs04l.isChecked() ? "12" : "0");
         sCs.put("cs0488", cs0488.isChecked() ? "88" : "0");
         sCs.put("cs0488x", cs0488x.getText().toString());
+        sCs.put("cs05a", cs05a.isChecked() ? "1" : "0");
+        sCs.put("cs05b", cs05b.isChecked() ? "2" : "0");
+        sCs.put("cs05c", cs05c.isChecked() ? "3" : "0");
+        sCs.put("cs05d", cs05d.isChecked() ? "4" : "0");
+        sCs.put("cs05e", cs05e.isChecked() ? "5" : "0");
+        sCs.put("cs05f", cs05f.isChecked() ? "6" : "0");
+        sCs.put("cs05g", cs05g.isChecked() ? "7" : "0");
+        sCs.put("cs05h", cs05h.isChecked() ? "8" : "0");
+        sCs.put("cs05i", cs05i.isChecked() ? "9" : "0");
+        sCs.put("cs05j", cs05j.isChecked() ? "10" : "0");
+        sCs.put("cs05k", cs05k.isChecked() ? "11" : "0");
+        sCs.put("cs05l", cs05l.isChecked() ? "12" : "0");
+        sCs.put("cs0588", cs0588.isChecked() ? "88" : "0");
+        sCs.put("cs0588x", cs0588x.getText().toString());
 
         AppMain.fc.setCounsellingSession(String.valueOf(sCs));
 
@@ -292,7 +280,7 @@ public class CounselingSessionsActivity extends Activity {
         if (cs01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cs01), Toast.LENGTH_SHORT).show();
             cs01b.setError("This data is Required!");
-            Log.i(TAG, "b09: This Data is Required!");
+            Log.i(TAG, "cs01: This Data is Required!");
             return false;
         } else {
             cs01b.setError(null);
@@ -300,19 +288,18 @@ public class CounselingSessionsActivity extends Activity {
 
         if (cs01a.isChecked()) {
             //=================== cs02 ==============
-            if ((cs02a.getText().toString().isEmpty() || cs02b.getText().toString().isEmpty() || cs02c.getText().toString().isEmpty())
-                    && !cs0288.isChecked()) {
+            if ((cs02a.getText().toString().isEmpty() || cs02b.getText().toString().isEmpty() || cs02c.getText().toString().isEmpty())) {
                 Toast.makeText(this, "ERROR(empty)" + getString(R.string.pc06), Toast.LENGTH_SHORT).show();
-                cs0288.setError("This data is Required!");
+                cs02c.setError("This data is Required!");
 
                 Log.i(TAG, "cs02: This data is Required!");
                 return false;
             } else {
-                cs0288.setError(null);
+                cs02c.setError(null);
             }
 
 
-            if (!cs0288.isChecked()) {
+            //if (!cs0288.isChecked()) {
 
                 if (Integer.valueOf(cs02a.getText().toString().isEmpty() ? "0" : cs02a.getText().toString()) == 0
                         && Integer.valueOf(cs02b.getText().toString().isEmpty() ? "0" : cs02b.getText().toString()) == 0
@@ -353,36 +340,23 @@ public class CounselingSessionsActivity extends Activity {
                     cs02b.setError(null);
                 }
 
-
-            }
-
-            //=================== cs03==============
-            if (!(cs03a.isChecked() || cs03b.isChecked() || cs03c.isChecked() || cs0388.isChecked())) {
+            if (cs03.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cs03), Toast.LENGTH_SHORT).show();
-                cs0388.setError("This data is Required!");
+                cs03d.setError("This data is Required!");
                 Log.i(TAG, "cs03: This Data is Required!");
                 return false;
             } else {
-                cs0388.setError(null);
+                cs03d.setError(null);
             }
 
-            //=================== others ==============
-            if (cs0388.isChecked() && cs0388x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cs03) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                cs0388x.setError("This data is Required!");
-                Log.i(TAG, "cs0388x: This Data is Required!");
-                return false;
-            } else {
-                cs0388x.setError(null);
-            }
 
-            // ====================== cs04 ===================
-            if (!(cs04a.isChecked() || cs04b.isChecked() || cs04c.isChecked() || cs04d.isChecked()
-                    || cs04e.isChecked() || cs04f.isChecked() || cs04g.isChecked() || cs04h.isChecked() || cs04i.isChecked() || cs04j.isChecked()
-                    || cs04k.isChecked() || cs04l.isChecked() || cs0488.isChecked())) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cs04), Toast.LENGTH_LONG).show();
-                cs0488.setError("This data is Required!");    // Set Error on last check box
-                Log.i(TAG, "b2516: This data is Required!");
+            //}
+
+            //=================== cs04==============
+            if (!(cs04a.isChecked() || cs04b.isChecked() || cs04c.isChecked() || cs0488.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cs04), Toast.LENGTH_SHORT).show();
+                cs0488.setError("This data is Required!");
+                Log.i(TAG, "cs04: This Data is Required!");
                 return false;
             } else {
                 cs0488.setError(null);
@@ -392,10 +366,32 @@ public class CounselingSessionsActivity extends Activity {
             if (cs0488.isChecked() && cs0488x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cs04) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 cs0488x.setError("This data is Required!");
-                Log.i(TAG, "cs0388x: This Data is Required!");
+                Log.i(TAG, "cs0488x: This Data is Required!");
                 return false;
             } else {
                 cs0488x.setError(null);
+            }
+
+            // ====================== cs05 ===================
+            if (!(cs05a.isChecked() || cs05b.isChecked() || cs05c.isChecked() || cs05d.isChecked()
+                    || cs05e.isChecked() || cs05f.isChecked() || cs05g.isChecked() || cs05h.isChecked() || cs05i.isChecked() || cs05j.isChecked()
+                    || cs05k.isChecked() || cs05l.isChecked() || cs0588.isChecked())) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cs05), Toast.LENGTH_LONG).show();
+                cs0588.setError("This data is Required!");    // Set Error on last check box
+                Log.i(TAG, "b2516: This data is Required!");
+                return false;
+            } else {
+                cs0588.setError(null);
+            }
+
+            //=================== others ==============
+            if (cs0588.isChecked() && cs0588x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cs05) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                cs0588x.setError("This data is Required!");
+                Log.i(TAG, "cs0488x: This Data is Required!");
+                return false;
+            } else {
+                cs0588x.setError(null);
             }
         }
         return true;

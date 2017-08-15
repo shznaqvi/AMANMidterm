@@ -743,24 +743,29 @@
     <string name="cs02a">دن پہلے</string>
     <string name="cs02b">مہینے پہلے</string>
     <string name="cs02c">سال پہلے</string>
+    <string name="cs03">کتنی باریہ پیغامات مشورے ملتے ہیں؟ </string>
+    <string name="cs03a">ہر مہینہ</string>
+    <string name="cs03b">2 مہینے بعد</string>
+    <string name="cs03c">3 مہینے بعد</string>
+    <string name="cs03d">3 مہینے سے زیادہ</string>
     <string name="cs0288">میشہ یا عموماً پیغامات /مشورے کے لیے آتی رہتی ہے</string>
-    <string name="cs03">ان صحت سے متعلق مشورے /پیغامات کے ذریعے کیا تھے؟</string>
-    <string name="cs03a"> گھر آکر دی تھی </string>
-    <string name="cs03b">گروپ سیشن /میٹنگ</string>
-    <string name="cs03c"> کمیونٹی کی آگاہی </string>
-    <string name="cs04">ُسکی سیشن یا وزٹ کا کیامقصد تھا ۔یا اس نے آپکو کیا پیغامات /مشورے دی تھی؟</string>
-    <string name="cs04a">حمل کے دوران نگہداشت سے متعلق مشورہ</string>
-    <string name="cs04b">مرکز صحت میں زچگی کے لیے مشورہ </string>
-    <string name="cs04c">زچگی کے بعد کی نگہداشت کے لیے مشورہ</string>
-    <string name="cs04d">زچگی کے ایک گھنٹے کے اندر ماں کا دودھ شروع کروانے کے لیے مشورہ </string>
-    <string name="cs04e">چھے مہینے تک صرف اور صرف ماں کا دودھ پلانا</string>
-    <string name="cs04f">چھے مہینے کے بعداضافی خوراک دینے کا مشورہ </string>
-    <string name="cs04g">بچے کو متوازن خوراک دینے کا مشورہ </string>
-    <string name="cs04h">بچے کو 2 سال تک ماں کا دودھ پلانے کا مشورہ</string>
-    <string name="cs04i">ماں کو متوازن خوراک لینے کا مشورہ</string>
-    <string name="cs04j">صحت و صفائی اور صابن سے ہاتھ دھونےسے متعلق مشورے</string>
-    <string name="cs04k">عام بیماریوں کے علاج کے لیے  </string>
-    <string name="cs04l">خطرناک بیماریوں کے علاج کے لیے کسی مرکز صحت ریفر کرنے کے لیے</string>
+    <string name="cs04">ان صحت سے متعلق مشورے /پیغامات کے ذریعے کیا تھے؟</string>
+    <string name="cs04a"> گھر آکر دی تھی </string>
+    <string name="cs04b">گروپ سیشن /میٹنگ</string>
+    <string name="cs04c"> کمیونٹی کی آگاہی </string>
+    <string name="cs05">ُسکی سیشن یا وزٹ کا کیامقصد تھا ۔یا اس نے آپکو کیا پیغامات /مشورے دی تھی؟</string>
+    <string name="cs05a">حمل کے دوران نگہداشت سے متعلق مشورہ</string>
+    <string name="cs05b">مرکز صحت میں زچگی کے لیے مشورہ </string>
+    <string name="cs05c">زچگی کے بعد کی نگہداشت کے لیے مشورہ</string>
+    <string name="cs05d">زچگی کے ایک گھنٹے کے اندر ماں کا دودھ شروع کروانے کے لیے مشورہ </string>
+    <string name="cs05e">چھے مہینے تک صرف اور صرف ماں کا دودھ پلانا</string>
+    <string name="cs05f">چھے مہینے کے بعداضافی خوراک دینے کا مشورہ </string>
+    <string name="cs05g">بچے کو متوازن خوراک دینے کا مشورہ </string>
+    <string name="cs05h">بچے کو 2 سال تک ماں کا دودھ پلانے کا مشورہ</string>
+    <string name="cs05i">ماں کو متوازن خوراک لینے کا مشورہ</string>
+    <string name="cs05j">صحت و صفائی اور صابن سے ہاتھ دھونےسے متعلق مشورے</string>
+    <string name="cs05k">عام بیماریوں کے علاج کے لیے  </string>
+    <string name="cs05l">خطرناک بیماریوں کے علاج کے لیے کسی مرکز صحت ریفر کرنے کے لیے</string>
 
     <!--SOCIO-ECONOMIC STATUS-->
 

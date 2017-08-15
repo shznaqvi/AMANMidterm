@@ -549,7 +549,7 @@ public class ChildVaccinationActivity extends Activity {
         sc.put("opv2M", opv2Ma.isChecked() ? "1" : opv2Mb.isChecked() ? "2" : "0");
         sc.put("penta2C", penta2Ca.isChecked() ? "1" : penta2Cb.isChecked() ? "2" : "0");
         sc.put("penta2M", penta2Ma.isChecked() ? "1" : penta2Mb.isChecked() ? "2" : "0");
-        sc.put("peneumo2C", pneumo2Ca.isChecked() ? "1" : pneumo2Cb.isChecked() ? "2" : "0");
+        sc.put("pneumo2C", pneumo2Ca.isChecked() ? "1" : pneumo2Cb.isChecked() ? "2" : "0");
         sc.put("pneumo2M", pneumo2Ma.isChecked() ? "1" : pneumo2Mb.isChecked() ? "2" : "0");
         sc.put("opv3C", opv3Ca.isChecked() ? "1" : opv3Cb.isChecked() ? "2" : "0");
         sc.put("opv3M", opv3Ma.isChecked() ? "1" : opv3Mb.isChecked() ? "2" : "0");
