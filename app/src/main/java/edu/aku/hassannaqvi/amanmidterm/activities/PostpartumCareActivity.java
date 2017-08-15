@@ -466,8 +466,14 @@ public class PostpartumCareActivity extends Activity {
         spc.put("pc01", pc01a.isChecked() ? "1" : pc01b.isChecked() ? "2" : "0");
 
         // Radio Group
-        spc.put("pc02", pc02a.isChecked() ? "1" : pc02b.isChecked() ? "2" : pc02c.isChecked() ? "3"
-                : pc02d.isChecked() ? "4" : pc02e.isChecked() ? "5" : pc02f.isChecked() ? "6" : pc0288.isChecked() ? "88" : "0");
+        spc.put("pc02a", pc02a.isChecked() ? "1" : "0");
+        spc.put("pc02b", pc02b.isChecked() ? "2" : "0");
+        spc.put("pc02c", pc02c.isChecked() ? "3" : "0");
+        spc.put("pc02d", pc02d.isChecked() ? "4" : "0");
+        spc.put("pc02e", pc02e.isChecked() ? "5" : "0");
+        spc.put("pc02f", pc02f.isChecked() ? "6" : "0");
+        spc.put("pc0288", pc0288.isChecked() ? "88" : "0");
+
         // Edit Text
         spc.put("pc0288x", pc0288x.getText().toString());
 
