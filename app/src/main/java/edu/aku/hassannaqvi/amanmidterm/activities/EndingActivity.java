@@ -36,6 +36,8 @@ public class EndingActivity extends Activity {
     RadioButton mna7d;
     @BindView(R.id.mna7e)
     RadioButton mna7e;
+    @BindView(R.id.mna7f)
+    RadioButton mna7f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class EndingActivity extends Activity {
             mna7c.setEnabled(false);
             mna7d.setEnabled(false);
             mna7e.setEnabled(false);
+            mna7f.setEnabled(false);
 
 
         } else {
@@ -59,6 +62,7 @@ public class EndingActivity extends Activity {
             mna7c.setEnabled(true);
             mna7d.setEnabled(true);
             mna7e.setEnabled(true);
+            mna7f.setEnabled(true);
 
 
         }
@@ -110,7 +114,7 @@ public class EndingActivity extends Activity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
-        AppMain.fc.setiStatus(mna7a.isChecked() ? "1" : mna7b.isChecked() ? "2" : mna7c.isChecked() ? "3" : mna7d.isChecked() ? "4" : mna7e.isChecked() ? "5" : "0");
+        AppMain.fc.setiStatus(mna7a.isChecked() ? "1" : mna7b.isChecked() ? "2" : mna7c.isChecked() ? "3" : mna7d.isChecked() ? "4" : mna7e.isChecked() ? "5" : mna7f.isChecked() ? "6" : "0");
 
     }
 
@@ -126,5 +130,10 @@ public class EndingActivity extends Activity {
             mna7d.setError(null);
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }

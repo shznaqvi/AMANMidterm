@@ -728,14 +728,14 @@ public class IYCFActivity extends Activity {
                 }
             } else {
 
-                if (!(iy08a.isChecked() || iy08b.isChecked() || iy08c.isChecked() || iy08d.isChecked() || iy0888.isChecked())) {
+                if (!(iy08a.isChecked() || iy08b.isChecked() || iy08c.isChecked() || iy08d.isChecked() || iy08e.isChecked() || iy0888.isChecked())) {
                     iy08a.setError(getString(R.string.rdoerr));
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.iy08), Toast.LENGTH_LONG).show();
                     Log.d(TAG, "iy08a: this data is required ");
-                    iy08a.requestFocus();
+                    iy08e.requestFocus();
                     return false;
                 } else {
-                    iy08a.setError(null);
+                    iy08e.setError(null);
                 }
 
                 if (iy0888.isChecked()) {
@@ -1142,7 +1142,7 @@ public class IYCFActivity extends Activity {
         js.put("iy08c", iy08c.isChecked() ? "3" : "0");
         js.put("iy08d", iy08d.isChecked() ? "4" : "0");
         js.put("iy08e", iy08e.isChecked() ? "5" : "0");
-        js.put("iy0888", iy0888.isChecked() ? "8" : "0");
+        js.put("iy0888", iy0888.isChecked() ? "88" : "0");
         js.put("iy0888x", iy08x.getText().toString());
 
         js.put("iy09", iy09a.isChecked() ? "1" : iy09b.isChecked() ? "2" : "0");

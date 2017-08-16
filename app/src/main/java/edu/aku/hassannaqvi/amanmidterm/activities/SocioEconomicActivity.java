@@ -539,9 +539,10 @@ public class SocioEconomicActivity extends Activity {
         socioeco.put("se01b88x", se01b88x.getText().toString());
         socioeco.put("se01c", se01c01.isChecked() ? "1" : se01c02.isChecked() ? "2" : se01c03.isChecked() ? "3"
                 : se01c04.isChecked() ? "4" : se01c05.isChecked() ? "5" : se01c06.isChecked() ? "6"
-                : se01b88.isChecked() ? "88" : "0");
-        socioeco.put("se01c88x", se01b88x.getText().toString());
-        socioeco.put("se02", se0201.isChecked() ? "1" : se0202.isChecked() ? "2" : se0203.isChecked() ? "3" : "0");
+                : se01c88.isChecked() ? "88" : "0");
+        socioeco.put("se01c88x", se01c88x.getText().toString());
+        socioeco.put("se02", se0201.isChecked() ? "1" : se0202.isChecked() ? "2" : se0203.isChecked() ? "3" : se0203.isChecked() ? "3" : se0288.isChecked() ? "88" : "0");
+        socioeco.put("se0288x", se0288x.getText().toString());
         socioeco.put("se03", se03.getText().toString());
         socioeco.put("se0399", se0399.isChecked() ? "99" : "0");
         socioeco.put("se04", se04.getText().toString());
@@ -558,7 +559,7 @@ public class SocioEconomicActivity extends Activity {
                 : se0888.isChecked() ? "88" : "0");
         socioeco.put("se0888x", se0888x.getText().toString());
         socioeco.put("se09", se0901.isChecked() ? "1" : se0902.isChecked() ? "2" : se0903.isChecked() ? "3"
-                : se0904.isChecked() ? "4" : se0905.isChecked() ? "5" : se0688.isChecked() ? "88" : "0");
+                : se0904.isChecked() ? "4" : se0905.isChecked() ? "5" : se0988.isChecked() ? "88" : "0");
         socioeco.put("se0988x", se0988x.getText().toString());
         socioeco.put("se10", se1001.isChecked() ? "1" : se1002.isChecked() ? "2" : se1003.isChecked() ? "3"
                 : se1004.isChecked() ? "4" : se1005.isChecked() ? "5" : se1006.isChecked() ? "6"
