@@ -161,12 +161,30 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_births_deaths);
         ButterKnife.bind(this);
 
+        try{
+            String s1 = "2017-07-31";
+            Date d = (new SimpleDateFormat("yyyy-MM-dd")).parse(s1);
+            dateToday = (new SimpleDateFormat("dd/MM/yyyy")).format(d);
 
-        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
-        maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_YEAR) + AppMain.MILLISECONDS_IN_DAY));
-        maxDate5Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_5Years) + AppMain.MILLISECONDS_IN_DAY));
-        maxDate49Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_49Years));
-        maxDate15Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_15Years));
+            String s2 = "2016-08-01";
+            Date d1 = (new SimpleDateFormat("yyyy-MM-dd")).parse(s2);
+            maxDateyear = (new SimpleDateFormat("dd/MM/yyyy")).format(d1);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+
+        Calendar c =Calendar.getInstance();
+        c.set(2017,Calendar.JULY,31);
+
+        Calendar c1 =Calendar.getInstance();
+        c1.set(2016,Calendar.AUGUST,01);
+
+//        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
+//        maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_YEAR) + AppMain.MILLISECONDS_IN_DAY));
+        maxDate5Years = new SimpleDateFormat("dd/MM/yyyy").format(c.getTimeInMillis() - ((AppMain.MILLISECONDS_IN_5Years) + AppMain.MILLISECONDS_IN_DAY));
+        maxDate49Years = new SimpleDateFormat("dd/MM/yyyy").format(c.getTimeInMillis() - (AppMain.MILLISECONDS_IN_49Years));
+        maxDate15Years = new SimpleDateFormat("dd/MM/yyyy").format(c.getTimeInMillis() - (AppMain.MILLISECONDS_IN_15Years));
 
 
         for (DatePickerInputEditText de : bddates) {
@@ -177,10 +195,10 @@ public class BirthsDeathsActivity extends AppCompatActivity {
         }
 
 
-        bd05dob1.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_8Days)));
-        bd05dob2.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_8Days)));
-        bd06dob1.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_DAY) * 29));
-        bd06dob2.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_DAY) * 29));
+        bd05dob1.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(c.getTimeInMillis() - (AppMain.MILLISECONDS_IN_8Days)));
+        bd05dob2.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(c.getTimeInMillis() - (AppMain.MILLISECONDS_IN_8Days)));
+        bd06dob1.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(c.getTimeInMillis() - (AppMain.MILLISECONDS_IN_DAY) * 29));
+        bd06dob2.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(c.getTimeInMillis() - (AppMain.MILLISECONDS_IN_DAY) * 29));
         bd07dob1.setMinDate(maxDate5Years);
         bd07dob1.setMaxDate(maxDateyear);
         bd07dob2.setMinDate(maxDate5Years);
@@ -404,8 +422,62 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                bd07dod1.setMinDate(maxDateyear);
+//                bd07dod1.setMinDate(maxDateyear);
                 bd07dod1.setEnabled(true);
+
+                String birthDateStr = bd07dob1.getText().toString();
+
+                Calendar minDeathCal = getCalendarDate(birthDateStr);
+                minDeathCal.add(Calendar.DAY_OF_MONTH, 348);
+                bd07dod1.setMinDate(sdf.format(minDeathCal.getTime()));
+                Calendar maxDeathCal = getCalendarDate(birthDateStr);
+                maxDeathCal.add(Calendar.DAY_OF_YEAR, 1711);
+
+                // If today is less than max, set maximum to today
+                Calendar todayCal = Calendar.getInstance();
+                if (todayCal.before(maxDeathCal)) {
+                    bd07dod1.setMaxDate(sdf.format(todayCal.getTime()));
+                } else {
+                    // If today is greater than max
+                    bd07dod1.setMaxDate(sdf.format(maxDeathCal.getTime()));
+                }
+
+            }
+        });
+
+        bd07dob2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+//                bd07dod1.setMinDate(maxDateyear);
+                bd07dod2.setEnabled(true);
+
+                String birthDateStr = bd07dob2.getText().toString();
+
+                Calendar minDeathCal = getCalendarDate(birthDateStr);
+                minDeathCal.add(Calendar.DAY_OF_MONTH, 348);
+                bd07dod2.setMinDate(sdf.format(minDeathCal.getTime()));
+                Calendar maxDeathCal = getCalendarDate(birthDateStr);
+                maxDeathCal.add(Calendar.DAY_OF_YEAR, 1711);
+
+                // If today is less than max, set maximum to today
+                Calendar todayCal = Calendar.getInstance();
+                if (todayCal.before(maxDeathCal)) {
+                    bd07dod2.setMaxDate(sdf.format(todayCal.getTime()));
+                } else {
+                    // If today is greater than max
+                    bd07dod2.setMaxDate(sdf.format(maxDeathCal.getTime()));
+                }
 
             }
         });
