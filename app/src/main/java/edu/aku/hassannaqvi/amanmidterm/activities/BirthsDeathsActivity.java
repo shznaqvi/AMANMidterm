@@ -220,7 +220,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                bd04dod1.setText(null);
             }
 
             @Override
@@ -250,7 +250,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                bd04dod2.setText(null);
             }
 
             @Override
@@ -280,7 +280,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                bd05dod1.setText(null);
             }
 
             @Override
@@ -313,6 +313,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                bd05dod2.setText(null);
 
             }
 
@@ -345,6 +346,8 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+                bd06dod1.setText(null);
+
             }
 
             @Override
@@ -361,10 +364,10 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 // If today is less than max, set maximum to today
                 Calendar todayCal = Calendar.getInstance();
                 if (todayCal.before(maxDeathCal)) {
-                    bd06dod1.setMaxDate(sdf.format(todayCal.getTime()));
+                    bd06dod1.setMaxDate(dateToday);
                 } else {
                     // If today is greater than max
-                    bd06dod1.setMaxDate(sdf.format(maxDeathCal.getTime()));
+                    bd06dod1.setMaxDate(dateToday);
                 }
 
 
@@ -382,6 +385,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+                bd06dod2.setText(null);
             }
 
             @Override
@@ -399,10 +403,10 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 // If today is less than max, set maximum to today
                 Calendar todayCal = Calendar.getInstance();
                 if (todayCal.before(maxDeathCal)) {
-                    bd06dod2.setMaxDate(sdf.format(todayCal.getTime()));
+                    bd06dod2.setMaxDate(dateToday);
                 } else {
                     // If today is greater than max
-                    bd06dod2.setMaxDate(sdf.format(maxDeathCal.getTime()));
+                    bd06dod2.setMaxDate(dateToday);
                 }
 
             }
@@ -416,7 +420,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                bd07dod1.setText(null);
             }
 
             @Override
@@ -436,10 +440,10 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 // If today is less than max, set maximum to today
                 Calendar todayCal = Calendar.getInstance();
                 if (todayCal.before(maxDeathCal)) {
-                    bd07dod1.setMaxDate(sdf.format(todayCal.getTime()));
+                    bd07dod1.setMaxDate(dateToday);
                 } else {
                     // If today is greater than max
-                    bd07dod1.setMaxDate(sdf.format(maxDeathCal.getTime()));
+                    bd07dod1.setMaxDate(dateToday);
                 }
 
             }
@@ -453,7 +457,7 @@ public class BirthsDeathsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                bd07dod2.setText(null);
             }
 
             @Override
@@ -473,10 +477,10 @@ public class BirthsDeathsActivity extends AppCompatActivity {
                 // If today is less than max, set maximum to today
                 Calendar todayCal = Calendar.getInstance();
                 if (todayCal.before(maxDeathCal)) {
-                    bd07dod2.setMaxDate(sdf.format(todayCal.getTime()));
+                    bd07dod2.setMaxDate(dateToday);
                 } else {
                     // If today is greater than max
-                    bd07dod2.setMaxDate(sdf.format(maxDeathCal.getTime()));
+                    bd07dod2.setMaxDate(dateToday);
                 }
 
             }
