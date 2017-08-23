@@ -531,16 +531,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                FormsTable.ID
+                FormsTable.ID,
+                FormsTable.COLUMN_NAME_HOUSEHOLD,
+                FormsTable.COLUMN_NAME_FORMDATE,
+                FormsTable.COLUMN_NAME_ISTATUS,
+                FormsTable.COLUMN_NAME_SYNCED,
         };
 
         String whereClause = FormsTable.COLUMN_NAME_FORMDATE + " LIKE ?";
-        String[] whereArgs = {spDateT};
+        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                FormsContract.FormsTable.ID + " ASC";
+                FormsTable.ID + " ASC";
 
         Collection<FormsContract> formList = new ArrayList<FormsContract>();
         try {
@@ -555,7 +559,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
-                formList.add(fc.hydrate(c));
+                fc.setID(c.getString(c.getColumnIndex(FormsTable.ID)));
+                fc.setHouseHold(c.getString(c.getColumnIndex(FormsTable.COLUMN_NAME_HOUSEHOLD)));
+                fc.setFormDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_NAME_FORMDATE)));
+                fc.setiStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_NAME_ISTATUS)));
+                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_NAME_SYNCED)));
+                formList.add(fc);
             }
         } finally {
             if (c != null) {

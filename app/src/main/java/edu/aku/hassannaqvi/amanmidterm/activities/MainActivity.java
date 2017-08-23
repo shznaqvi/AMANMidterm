@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,13 +22,17 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.amanmidterm.R;
+import edu.aku.hassannaqvi.amanmidterm.contract.FormsContract;
 import edu.aku.hassannaqvi.amanmidterm.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.amanmidterm.core.AppMain;
+import edu.aku.hassannaqvi.amanmidterm.core.DatabaseHelper;
 import edu.aku.hassannaqvi.amanmidterm.get.GetUsers;
 import edu.aku.hassannaqvi.amanmidterm.sync.SyncForms;
 import edu.aku.hassannaqvi.amanmidterm.sync.SyncIMs;
@@ -99,52 +104,66 @@ public class MainActivity extends Activity {
             builder.show();
         }
 
-
-     /*   DatabaseHelper db = new DatabaseHelper(this);
-        Collection<FormsContract> todaysForms = new ArrayList<>();
-
-        todaysForms = db.getTodayForms();
+        DatabaseHelper db = new DatabaseHelper(this);
+        Collection<FormsContract> todaysForms = db.getTodayForms();
+        Collection<FormsContract> unsyncedForms = db.getUnsyncedForms();
 
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
-        rSumText += "=======================";
-        rSumText += "\r\n\r\n";
-        rSumText += "Total Forms Today: " + todaysForms.size();
+
+        rSumText += "=======================\r\n";
         rSumText += "\r\n";
-        rSumText += "    Forms List: \r\n";
-        String iStatus = "";
-        for (FormsContract fc : todaysForms) {
+        rSumText += "Total Forms Today: " + todaysForms.size() + "\r\n";
+        rSumText += "\r\n";
+        if (todaysForms.size() > 0) {
+            rSumText += "\tFORMS' LIST: \r\n";
+            String iStatus;
+            rSumText += "--------------------------------------------------\r\n";
+            rSumText += "[ HouseHold ID ] \t[Form Status] \t[Sync Status]\r\n";
+            rSumText += "--------------------------------------------------\r\n";
 
-            switch (fc.getiStatus()) {
-                case "1":
-                    iStatus = "Complete";
-                    break;
-                case "2":
-                    iStatus = "House Locked";
-                    break;
-                case "3":
-                    iStatus = "Refused";
-                    break;
-                case "4":
-                    iStatus = "Refused";
-                    break;
+            for (FormsContract fc : todaysForms) {
+                if (fc.getiStatus() != null) {
+                    switch (fc.getiStatus()) {
+                        case "1":
+                            iStatus = "\tComplete";
+                            break;
+                        case "2":
+                            iStatus = "\tIncomplete";
+                            break;
+                        case "3":
+                            iStatus = "\tRefused";
+                            break;
+                        case "4":
+                            iStatus = "\tRefused";
+                            break;
+                        default:
+                            iStatus = "\tN/A";
+                    }
+                } else {
+                    iStatus = "\tN/A";
+                }
+
+                rSumText += "\t"+ fc.getHouseHold();
+
+                rSumText += " \t\t\t\t\t" + iStatus + " ";
+
+                rSumText += (fc.getSynced() == null ? "\t\tNot Synced" : "\t\tSynced");
+                rSumText += "\r\n";
+                rSumText += "--------------------------------------------------\r\n";
             }
-
-            rSumText += fc.getPrimaryUnit() + " " + fc.getHouseHold() + " " + iStatus;
-            rSumText += "\r\n";
-
         }
-
-        rSumText += "--------------------------------------------------\r\n";
         if (AppMain.admin) {
             adminsec.setVisibility(View.VISIBLE);
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
-            rSumText += "Last Update: " + syncPref.getString("LastUpdate", "Never Updated");
+            rSumText += "Last Data Download: \t" + syncPref.getString("LastDownSyncServer", "Never Updated");
             rSumText += "\r\n";
-            rSumText += "Last Synced(DB): " + syncPref.getString("LastSyncDB", "Never Synced");
+            rSumText += "Last Data Upload: \t" + syncPref.getString("LastUpSyncServer", "Never Synced");
+            rSumText += "\r\n";
+            rSumText += "\r\n";
+            rSumText += "Unsynced Forms: \t" + unsyncedForms.size();
             rSumText += "\r\n";
         }
         recordSummary.setText(rSumText);
-*/
 
     }
 
