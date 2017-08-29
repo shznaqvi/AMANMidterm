@@ -83,6 +83,9 @@ public class EndingActivity extends Activity {
             }
 
             if (UpdateDB()) {
+
+                AppMain.chCount = 1;
+
                 finish();
 
                 Toast.makeText(this, "Closing Form!", Toast.LENGTH_SHORT).show();
